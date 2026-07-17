@@ -1,0 +1,35 @@
+---
+import { useTranslations } from '~/i18n/utils';
+import { getCategory, getSubcategory } from '~/data/category-taxonomy';
+import type { Product } from '~/content/schemas/product';
+import { getCatalogRootUrl, getCategoryUrl, getSubcategoryUrl, type Lang } from '~/utils/catalog';
+import Breadcrumb from './Breadcrumb.astro';
+import ProductDetail from './ProductDetail.astro';
+
+interface Props {
+	lang: Lang;
+	product: Product;
+}
+
+const { lang, product } = Astro.props;
+const t = useTranslations(lang);
+
+const homeHref = lang === 'en' ? '/en' : '/';
+const category = getCategory(product.category);
+const subcategory = product.subcategory ? getSubcategory(product.category, product.subcategory) : undefined;
+
+const items: { label: string; href?: string }[] = [
+	{ label: t('catalog.breadcrumb.home'), href: homeHref },
+	{ label: t('catalog.breadcrumb.products'), href: getCatalogRootUrl(lang) },
+];
+if (category) {
+	items.push({ label: category.labels[lang], href: getCategoryUrl(lang, category.slug) });
+}
+if (category && subcategory) {
+	items.push({ label: subcategory.labels[lang], href: getSubcategoryUrl(lang, category.slug, subcategory.slug) });
+}
+items.push({ label: product.name });
+---
+
+<Breadcrumb items={items} />
+<ProductDetail lang={lang} product={product} />

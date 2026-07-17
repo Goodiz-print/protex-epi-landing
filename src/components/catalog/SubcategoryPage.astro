@@ -1,0 +1,31 @@
+---
+import { useTranslations } from '~/i18n/utils';
+import type { Category, Subcategory } from '~/data/category-taxonomy';
+import type { Product } from '~/content/schemas/product';
+import { getCatalogRootUrl, getCategoryUrl, type Lang } from '~/utils/catalog';
+import Breadcrumb from './Breadcrumb.astro';
+import ProductGrid from './ProductGrid.astro';
+
+interface Props {
+	lang: Lang;
+	category: Category;
+	subcategory: Subcategory;
+	products: Product[];
+}
+
+const { lang, category, subcategory, products } = Astro.props;
+const t = useTranslations(lang);
+
+const homeHref = lang === 'en' ? '/en' : '/';
+---
+
+<Breadcrumb
+	items={[
+		{ label: t('catalog.breadcrumb.home'), href: homeHref },
+		{ label: t('catalog.breadcrumb.products'), href: getCatalogRootUrl(lang) },
+		{ label: category.labels[lang], href: getCategoryUrl(lang, category.slug) },
+		{ label: subcategory.labels[lang] },
+	]}
+/>
+<h1 class="mb-6 text-2xl font-semibold text-gray-900">{subcategory.labels[lang]}</h1>
+<ProductGrid lang={lang} products={products} />

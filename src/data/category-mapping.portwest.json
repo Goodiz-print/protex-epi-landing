@@ -1,0 +1,7558 @@
+{
+  "2201": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "2202": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "2207": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "2208": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "2209": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "2210": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "2802": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "2852": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "2885": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "A001": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A002": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A080": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A100": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A105": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A106": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A110": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A111": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A115": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A118": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A120": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A121": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A123": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A124": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A126": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "A140": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A143": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A145": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A146": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A147": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "A148": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A150": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A174": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A175": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A185": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A195": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A197": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A198": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A199": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A200": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A210": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A220": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A230": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A250": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A260": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A270": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A271": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A280": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A281": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A282": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A291": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "A300": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A302": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A304": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A310": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A311": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A312": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A313": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A315": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A320": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A330": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A335": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A340": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A350": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A351": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A352": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A353": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A355": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A356": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A360": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A370": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A371": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A372": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A373": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A374": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A375": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A376": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A377": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A400": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "A402": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A427": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A435": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A445": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A500": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A510": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A520": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A521": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A530": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A540": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A590": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A591": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "A610": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "A611": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A620": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A621": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A622": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A625": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A626": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "A630": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A632": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A633": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A635": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A636": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A637": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A638": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A640": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A641": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A642": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A643": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A644": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A645": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A646": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A647": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A648": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A649": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A650": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A651": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A652": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A655": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A657": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A660": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A661": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A665": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A670": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A671": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A672": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A673": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A674": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A675": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "A676": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A680": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A688": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A689": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "A690": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "A691": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "A696": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "A697": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A699": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A700": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A701": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A715": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A718": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A721": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A722": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A723": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A726": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A727": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A729": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A732": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "A740": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A741": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A742": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A745": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "A747": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A751": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A753": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A755": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A756": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A770": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A771": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A772": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A774": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A775": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A776": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A780": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A783": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A784": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A785": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "A790": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A791": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A792": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A793": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A800": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A801": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A802": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A803": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A804": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "A810": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A812": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A813": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A814": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A815": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "A820": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A824": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A827": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A835": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A845": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A850": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "A881": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A882": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A910": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "A925": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "A930": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AB020": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AB030": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AB129": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AB174": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AB198": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AB199": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AB310": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AB350": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AB351": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AB620": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AB622": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AB625": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AB662": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "AB664": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AB810": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AC01": {
+    "category": "mains",
+    "subcategory": "hygiene-sante"
+  },
+  "AC05": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AF53": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "AF73": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "AP01": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "AP02": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AP10": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AP12": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AP15": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AP18": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AP30": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AP32": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AP35": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AP36": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AP37": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "AP42": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "AP50": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AP51": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AP52": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AP53": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AP54": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "AP55": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AP60": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AP62": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AP65": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AP71": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "AP72": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AP74": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AP75": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AP76": {
+    "category": "mains",
+    "subcategory": "hygiene-sante"
+  },
+  "AP80": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "AP81": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AP82": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "APB80": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "APR12": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "APR15": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "APR18": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AS10": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "AS11": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "AS12": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "AS15": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "AS18": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "AS20": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "AS21": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "AS22": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "AS23": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "AS24": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "AS25": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "AS26": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "B010": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "B013": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "B026": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "B028": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "B029": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "B030": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "B035": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "B036": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "B120": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "B121": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "B123": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "B125": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "B126": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "B127": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "B128": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "B131": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "B133": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "B135": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "B136": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "B140": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "B151": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "B153": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "B171": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "B173": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "B181": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "B183": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "B184": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "B191": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "B192": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "B194": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "B195": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "B196": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "B197": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "B198": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "B209": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "B210": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "B212": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "B220": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "B300": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "B302": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "B303": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "B304": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "B305": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "B306": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "B308": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "B309": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "B310": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "B311": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "B312": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "B313": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "B314": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "B315": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "B316": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "B317": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "B330": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "B331": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "B900": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "B901": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "B903": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "B904": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "B905": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "B907": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "B908": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "B909": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "B910": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "B911": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "B913": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "B916": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "B920": {
+    "category": "mains",
+    "subcategory": "outils-coupe"
+  },
+  "B921": {
+    "category": "mains",
+    "subcategory": "outils-coupe"
+  },
+  "B922": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "B930": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "B940": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "B950": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "B951": {
+    "category": "pieds",
+    "subcategory": "bottes"
+  },
+  "B955": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "B960": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "B965": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "B966": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "B967": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "BIZ1": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "BIZ2": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "BIZ4": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "BIZ5": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "BIZ6": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "BIZ7": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "BT10": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "BX321": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "BX322": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "BX323": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "BZ11": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "BZ12": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "BZ13": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "BZ14": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "BZ17": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "BZ30": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "BZ31": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "BZ443": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "BZ444": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "BZ506": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "BZ523": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "BZ739": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C030": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C070": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C071": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C072": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C073": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C074": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "C075": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C076": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C078": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "C079": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C099": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "C105": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "C184": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C195": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C211": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C276": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "C357": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "C370": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C371": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "C372": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "C374": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "C375": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "C376": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C378": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "C379": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "C394": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C395": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "C464": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C465": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "C466": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "C467": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C468": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "C469": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "C470": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C471": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "C472": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "C473": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C474": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "C475": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C476": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C482": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "C494": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C496": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C565": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "C701": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C704": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C720": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "C733": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "C734": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C736": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C738": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C739": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C746": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C802": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C813": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C814": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "C815": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "C824": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "C833": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C834": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C835": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "C838": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C846": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C851": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C852": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C865": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "C875": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "C890": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CD110": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CD111": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "CD112": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "CD114": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "CD117": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "CD118": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "CD130": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "CD131": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "CD802": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "CD803": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "CD805": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "CD807": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "CD809": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CD811": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CD812": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CD813": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CD816": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "CD817": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "CD818": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "CD820": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "CD822": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CD825": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CD840": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CD842": {
+    "category": "mains",
+    "subcategory": "outils-coupe"
+  },
+  "CD843": {
+    "category": "mains",
+    "subcategory": "outils-coupe"
+  },
+  "CD844": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CD845": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CD846": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CD847": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CD848": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "CD850": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "CD852": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "CD855": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "CD857": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "CD858": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "CD860": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "CD861": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "CD863": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CD864": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "CD867": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "CD869": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "CD870": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "CD871": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "CD872": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CD874": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "CD875": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "CD876": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CD877": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CD880": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "CD881": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CD882": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CD883": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CD884": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CD885": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "CD886": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CD887": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CD888": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "CD889": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "CD891": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CD898": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "CD899": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "CH11": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CH12": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "CH16": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "CR01": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CR15": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "CR40": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CS10": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CS11": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "CS12": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "CS20": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CS21": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CS23": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "CS24": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "CS28": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "CT21": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "CT32": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "CT45": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "CT46": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "CT65": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "CT67": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "CT90": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "CV01": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CV02": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CV04": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "CV05": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "CV06": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "CV09": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "CV11": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "CV24": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "CV25": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "CV26": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "CV28": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "D100": {
+    "category": "usage-unique",
+    "subcategory": null
+  },
+  "D102": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "D118": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "D340": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "DC801": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX402": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX403": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "DX408": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX409": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "DX410": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX411": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX412": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "DX413": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "DX414": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX415": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX416": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX417": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX419": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX420": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX421": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX423": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX426": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX430": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "DX431": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "DX432": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "DX433": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "DX434": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX435": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "DX437": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "DX438": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "DX440": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX441": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "DX442": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "DX443": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX444": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX445": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX446": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX448": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "DX449": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX450": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "DX451": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX452": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX453": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "DX454": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "DX456": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX457": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "DX458": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX460": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX461": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "DX462": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "DX463": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "DX465": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "DX466": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "DX467": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX468": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX470": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX471": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX472": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX473": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "DX474": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "DX475": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "DX476": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "DX477": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "DX479": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "DX480": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX481": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "DX482": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "DX483": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "DX484": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX486": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "DX490": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "DX4E10": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX4E11": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "DX4E40": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "DX4E43": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "DX4E49": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "DX4E60": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "DX4E74": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "DX4E80": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "E043": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "E046": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "E049": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "E052": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "EC10": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "EC11": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "EC195": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "EC210": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "EC300": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "EC40": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "EC70": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "EC76": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "ED01": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "EP02": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "EP04": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "EP06": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "EP07": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "EP08": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "EP09": {
+    "category": "mains",
+    "subcategory": "hygiene-sante"
+  },
+  "EP10": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "EP11": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "EP12": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "EP13": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "EP14": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "EP17": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "EP18": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "EP19": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "EP20": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "EP21": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "EP22": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "EP23": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "EP25": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "EP27": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "EP30": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "ES046": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "ES076": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "ES195": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "ES210": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "ES250": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "ES251": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "ES277": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "ES300": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "ES302": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "ES303": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "ES304": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "ES376": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "ES400": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "ES428": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "ES440": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "ES441": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "ES460": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "ES463": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "ES466": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "ES470": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "ES474": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "ES476": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "ES477": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "ES478": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "ES701": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "ES720": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "ES790": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "ES813": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "ES852": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "ES859": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "ES887": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "ES999": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "ESK50": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "EST46": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "ESX11": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "EV401": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "EV402": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "EV410": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "EV411": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "EV440": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "EV441": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "EV442": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "EV443": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "EV444": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "EV446": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "EV447": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "EV448": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "EV460": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "EV461": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "EV464": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "EV465": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "EV466": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "EV467": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "EV468": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "EV469": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "EV470": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "EV471": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "EV473": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "EV475": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "EV476": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "EV480": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "F205": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "F250": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "F282": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "F285": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "F300": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "F301": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "F302": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "F303": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "F400": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "F401": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "F407": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "F408": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "F409": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "F417": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "F433": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "F437": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "F438": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "F440": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "F441": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "F442": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "F443": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "F465": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "F474": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "F476": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "F477": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "F813": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FA10": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FA11": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FA12": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FA21": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FA22": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FB30": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "FB31": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FC03": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FC04": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FC06": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FC07": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FC08": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "FC09": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "FC10": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FC11": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FC12": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "FC14": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FC16": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FC17": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FC18": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FC19": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FC20": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "FC21": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FC22": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FC23": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FC24": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "FC25": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "FC26": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FC32": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FC38": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "FC39": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "FC44": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FC47": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FC48": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FC49": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FC53": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FC57": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "FC58": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FC60": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "FC61": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FC63": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FC64": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FC65": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "FC66": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FC67": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FC71": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FC72": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FC80": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FC81": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FC82": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FC83": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FC86": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FC90": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FC94": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FC96": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FD01": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FD02": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FD03": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FD04": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FD05": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "FD07": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FD10": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FD15": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FD17": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FD18": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FD22": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FD25": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FD26": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FD27": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "FD33": {
+    "category": "pieds",
+    "subcategory": "bottes"
+  },
+  "FD37": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FD61": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FD62": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FD80": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FD84": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FD90": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FD95": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FE01": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "FE02": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FE03": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FE04": {
+    "category": "pieds",
+    "subcategory": "bottes"
+  },
+  "FE05": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FE06": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FE07": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "FE08": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FE11": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "FE16": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FF50": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FP01": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP02": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP05": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FP08": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FP11": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP12": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP13": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP14": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP15": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP17": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP18": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP19": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP20": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP21": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP22": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP23": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP24": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FP25": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP26": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP30": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FP33": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FP34": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP35": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FP37": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FP40": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP41": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP42": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP44": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP46": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP50": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP51": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP52": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP53": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FP55": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FP56": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP62": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP64": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP65": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP66": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP67": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP71": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP72": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP73": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP74": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FP75": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP80": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP81": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FP90": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP92": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FP98": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FP99": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FR03": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FR06": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR07": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FR08": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR09": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FR10": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "FR11": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR12": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR14": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FR17": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "FR18": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FR19": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FR20": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FR21": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR22": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR25": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "FR26": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR27": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "FR28": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR30": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR31": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR32": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FR33": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FR34": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR35": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR36": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FR37": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FR38": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "FR40": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FR401": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FR402": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR404": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FR405": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FR406": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "FR407": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "FR409": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR41": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "FR410": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "FR412": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR414": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "FR415": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "FR416": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR417": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR418": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR420": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FR426": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "FR427": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "FR43": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "FR432": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR433": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "FR434": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR438": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "FR440": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR445": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "FR450": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR451": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "FR452": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR453": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FR454": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR455": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FR46": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "FR47": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "FR50": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "FR501": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR502": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR503": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR507": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR509": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR51": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR513": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR516": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "FR528": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR529": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR53": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR55": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR56": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "FR57": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FR58": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "FR59": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "FR60": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR601": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR602": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR605": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "FR606": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "FR609": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR61": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "FR615": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR616": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR617": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "FR62": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "FR63": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "FR64": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR65": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR66": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR68": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FR69": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR701": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "FR702": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "FR703": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "FR704": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR707": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR71": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR710": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR711": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "FR712": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR714": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "FR715": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR716": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "FR717": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR718": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FR719": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR72": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "FR720": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "FR722": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "FR731": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "FR732": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "FR733": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "FR734": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "FR736": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "FR737": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "FR738": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR74": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR740": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "FR741": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR75": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR750": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR751": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR755": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR756": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR758": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "FR759": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR76": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR77": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR79": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "FR80": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR805": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "FR806": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR808": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR81": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR85": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FR89": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "FR90": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "FR92": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "FR93": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "FR95": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "FR96": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "FR98": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FS70": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FT05": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "FT08": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "FT12": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FT13": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FT15": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FT18": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FT20": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FT22": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "FT23": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FT24": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FT25": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FT30": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FT31": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FT32": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FT34": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FT35": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FT36": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FT40": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FT42": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FT45": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FT46": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FT49": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FT50": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FT55": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FT60": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FT63": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FT64": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "FT71": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FT72": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FT73": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FV02": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FV03": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FV05": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "FV06": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "FW02": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "FW03": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FW05": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "FW06": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FW07": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FW09": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FW10": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FW11": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FW12": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FW13": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FW14": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "FW16": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FW17": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FW19": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FW20": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FW21": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FW22": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FW23": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FW24": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "FW25": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FW26": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FW29": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FW31": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FW32": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "FW33": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FW34": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FW35": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FW36": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FW39": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FW40": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FW41": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FW42": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FW43": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "FW44": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FW46": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "FW47": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FW48": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FW49": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FW51": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FW57": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FW58": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FW59": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FW63": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "FW64": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FW65": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FW66": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FW69": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "FW71": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FW74": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FW75": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "FW80": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FW81": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FW82": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FW83": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FW84": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FW88": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FW90": {
+    "category": "pieds",
+    "subcategory": "bottes"
+  },
+  "FW94": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FW95": {
+    "category": "pieds",
+    "subcategory": "bottes"
+  },
+  "GL12": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "GL13": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "GL14": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "GL16": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "H440": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "H441": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "H442": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "H443": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "H444": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "H445": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "H446": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "H448": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "HA10": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "HA14": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "HA17": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "HA18": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "HA22": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "HA23": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "HA24": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "HA25": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "HA26": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "HA27": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "HA30": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "HA31": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "HA32": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "HA33": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "HA34": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "HA36": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "HB10": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "HV08": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "HV20": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "HV23": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "HV389": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "HV50": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "HV55": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "ID10": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "IW10": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "IW30": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "IW40": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "JN14": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "KA307": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "KA313": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "KA322": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "KA323": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "KA360": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "KA361": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "KA370": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "KN10": {
+    "category": "mains",
+    "subcategory": "outils-coupe"
+  },
+  "KN20": {
+    "category": "mains",
+    "subcategory": "outils-coupe"
+  },
+  "KN40": {
+    "category": "mains",
+    "subcategory": "outils-coupe"
+  },
+  "KN50": {
+    "category": "mains",
+    "subcategory": "outils-coupe"
+  },
+  "KN90": {
+    "category": "mains",
+    "subcategory": "outils-coupe"
+  },
+  "KN91": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "KP05": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "KP10": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "KP15": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "KP20": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "KP30": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "KP40": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "KP44": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "KP45": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "KP50": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "KP65": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "KS15": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "KS18": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "KS31": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "KS32": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "KS54": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "KX301": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "KX302": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "KX303": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "KX304": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "KX305": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "KX306": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "KX310": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "KX312": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "KX315": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "KX317": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "KX340": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "KX341": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "KX342": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "KX343": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "KX345": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "KX346": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "KX348": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "KX352": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "KX360": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "KX361": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "KX363": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "KX364": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "KX366": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "KX372": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "KX374": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "KX376": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "KX377": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "KX378": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "KX380": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "KX381": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "KX383": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "L043": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "L049": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "L210": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "L440": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "L450": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "L701": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "L711": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "L712": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "LW12": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "LW17": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "LW18": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "LW19": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "LW20": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "LW21": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "LW63": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "LW70": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "LW71": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "LW72": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "LW74": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "LW75": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "LW97": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "MV25": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "MV26": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "MV28": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "MV29": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "MV35": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "MV36": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "MV46": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "MV70": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "MV71": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "MV72": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "MV73": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "MV91": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "MX28": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "P005": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "P100": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P101": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P153": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "P200": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P201": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P203": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P210": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P211": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P223": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P250": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P251": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P261": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P271": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P291": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P292": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P301": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P303": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P304": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P305": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P306": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P307": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P310": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P311": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P350": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P351": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P361": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P371": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P391": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P392": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P393": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P410": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P418": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P421": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P422": {
+    "category": "mains",
+    "subcategory": "hygiene-sante"
+  },
+  "P431": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P440": {
+    "category": "mains",
+    "subcategory": "hygiene-sante"
+  },
+  "P441": {
+    "category": "mains",
+    "subcategory": "hygiene-sante"
+  },
+  "P500": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "P516": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P902": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "P906": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P920": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P921": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P926": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P941": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P946": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "P952": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P970": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P971": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P976": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "P978": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PA00": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
+  },
+  "PA01": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PA02": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PA03": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PA04": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "PA09": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "PA11": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "PA14": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "PA15": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PA16": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PA30": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PA31": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PA40": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "PA47": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "PA48": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "PA49": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "PA50": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PA54": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PA55": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PA58": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "PA63": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PA64": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PA70": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PA71": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PA72": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "PA73": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PA74": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "PA75": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PA76": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PA79": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PA81": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PB32": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PB55": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "PC55": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "PC79": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "PF01": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PF02": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PF20": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PF21": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PF30": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PF35": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PF40": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PF90": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PG01": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PG54": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "PG66": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PG90": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PH55": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "PJ10": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "PJ20": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "PJ50": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "PM32": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PR01": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PR02": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PR03": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PR12": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PR32": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS07": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS09": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS10": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS11": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS12": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS13": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS14": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PS18": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS19": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS20": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS21": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS22": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS23": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "PS24": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS25": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "PS26": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS27": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "PS28": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS30": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS31": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "PS32": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS33": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "PS34": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS35": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS36": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS37": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS38": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "PS41": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "PS43": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "PS44": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "PS45": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "PS46": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "PS47": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "PS50": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PS52": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS53": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS54": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "PS55": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "PS57": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PS58": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS59": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS60": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PS61": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS62": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS63": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS64": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS66": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS67": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS69": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "PS73": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "PS74": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "PS77": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PS79": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "PS84": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "PS87": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PS90": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "PS93": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PS98": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PSB80": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PT01": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PW03": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "PW04": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "PW05": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "PW11": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PW13": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PW14": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "PW15": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "PW17": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PW20": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PW21": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PW210": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PW211": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PW212": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PW213": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PW218": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PW22": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PW231": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PW240": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PW241": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PW26": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PW261": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "PW265": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PW27": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PW270": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PW274": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PW277": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PW278": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PW30": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PW302": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "PW303": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "PW304": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "PW305": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "PW306": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "PW307": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "PW308": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "PW309": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PW310": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "PW311": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "PW312": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "PW317": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PW318": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "PW32": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PW321": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "PW322": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PW325": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "PW326": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "PW327": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "PW328": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "PW329": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "PW33": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PW335": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "PW337": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "PW339": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PW34": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PW340": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "PW342": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "PW344": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "PW345": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "PW346": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PW347": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "PW348": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PW35": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PW351": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "PW352": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "PW353": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "PW355": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "PW356": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "PW357": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "PW358": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "PW359": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "PW360": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "PW362": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "PW364": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "PW365": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "PW367": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "PW368": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "PW369": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "PW37": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PW370": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "PW371": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "PW374": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "PW375": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "PW376": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "PW377": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "PW378": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "PW379": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "PW38": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PW380": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "PW381": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "PW382": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "PW385": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "PW386": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "PW389": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "PW39": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PW399": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PW40": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "PW41": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "PW42": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "PW43": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "PW47": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "PW48": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "PW50": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "PW53": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "PW54": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PW55": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PW56": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PW59": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "PW60": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PW62": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "PW65": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "PW66": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "PW68": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PW69": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "PW72": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "PW73": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "PW74": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "PW75": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "PW76": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "PW77": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "PW78": {
+    "category": "tete",
+    "subcategory": "protection-ouie"
+  },
+  "PW79": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PW80": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PW82": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "PW83": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PW84": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PW85": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PW86": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PW87": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PW89": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PW90": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "PW91": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PW92": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PW93": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PW95": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PW96": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PW97": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "PW98": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PW99": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PX01": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "PX02": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PX03": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "PX05": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "R413": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "R440": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "R441": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "R460": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "R461": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "R462": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "R476": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "R477": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "RT20": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "RT22": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "RT23": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "RT27": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "RT30": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "RT31": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "RT32": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "RT34": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "RT40": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "RT42": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "RT43": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "RT44": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "RT45": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "RT46": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "RT48": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "RT49": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "RT50": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "RT51": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "RT60": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "RT61": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "RT62": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "RT63": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S068": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "S156": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "S160": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S162": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S164": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S165": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S166": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S170": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S171": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "S172": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S173": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "S174": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S175": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S178": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S179": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S180": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S181": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S227": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S231": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S232": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S233": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S234": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S235": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S250": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "S251": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S266": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S267": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S271": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S277": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S278": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S279": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S280": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "S350": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S351": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S352": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "S365": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S376": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S378": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S381": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S385": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S388": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S412": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "S414": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S415": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S418": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S424": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S425": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S426": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S427": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S428": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "S429": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S431": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S433": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S434": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "S435": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "S437": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S438": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "S440": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S441": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S450": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S451": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S452": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S453": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S460": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S461": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S462": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "S463": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S466": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "S467": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S468": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S469": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S471": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S475": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S476": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S477": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S478": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S479": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S480": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S481": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S482": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S485": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S486": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "S487": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S488": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "S489": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "S490": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "S491": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S493": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S495": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S498": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "S503": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S505": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "S507": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S508": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "S509": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "S523": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S530": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "S532": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "S543": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "S544": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S547": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S548": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S549": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S553": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S555": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S556": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S562": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S574": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "S585": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S590": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S591": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "S592": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "S593": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S594": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S595": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S597": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S598": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S599": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S600": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S603": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S604": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S605": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S606": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "S607": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S608": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "S609": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S610": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S611": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S612": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S613": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "S614": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S617": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S624": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S645": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "S647": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "S649": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S650": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S651": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S653": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S656": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S658": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "S665": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "S687": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S710": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "S760": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S765": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S766": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S768": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S769": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S770": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S773": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S774": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S775": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "S776": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S778": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S779": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S780": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S781": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "S783": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S785": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S790": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S794": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S797": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S810": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "S816": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S817": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S839": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S840": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S841": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S843": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "S845": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S849": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "S855": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S867": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S885": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S887": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S889": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S896": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "S899": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "S903": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "S906": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "S917": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S998": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "S999": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "SK05": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "SK11": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "SK12": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "SK13": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "SK18": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "SK20": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "SK22": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "SK23": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "SK33": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "SK34": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "SM15": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "SM20": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "SM30": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "SM33": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "SM50": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "SM60": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "SM61": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "SM63": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "SM80": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "SM90": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "SM91": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "ST11": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "ST30": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "ST31": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "ST36": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "ST40": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "ST41": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "ST43": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "ST44": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "ST45": {
+    "category": "pieds",
+    "subcategory": "bottes"
+  },
+  "ST50": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "ST60": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "ST61": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "ST70": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "ST90": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "SW10": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "SW20": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "SW32": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "SW33": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "SW34": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "T140": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "T141": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "T142": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "T143": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "T146": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "T150": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "T160": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "T161": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "T162": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "T164": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "T165": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "T166": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "T170": {
+    "category": "corps",
+    "subcategory": "equipement-antichute"
+  },
+  "T171": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "T172": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "T173": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "T177": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "T180": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "T181": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "T184": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "T185": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "T190": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "T194": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "T195": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "T197": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "T400": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "T402": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "T500": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "T501": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "T601": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "T602": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "T603": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "T604": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "T701": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "T702": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "T703": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "T704": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "T706": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "T710": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "T718": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "T719": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "T720": {
+    "category": "tete",
+    "subcategory": "protection-yeux"
+  },
+  "T740": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "T745": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "T746": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "T747": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "T748": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "T750": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "T752": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "T753": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "T755": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "T756": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "T801": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "T802": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "T803": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "T830": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "T832": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "T900": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "TB02": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "TB15": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "TB20": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "TK20": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "TK21": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "TK22": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "TK40": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "TK41": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "TK42": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "TK50": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "TK51": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "TK54": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "TX10": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "TX11": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "TX12": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "TX14": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "TX15": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "TX20": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "TX50": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "TX51": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "TX52": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "TX55": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "TX70": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "TX71": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "VA198": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "VA622": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "VB120": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "VB310": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "VB620": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "VB622": {
+    "category": "mains",
+    "subcategory": "gants-protection"
+  },
+  "W1660": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "W1664": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "WEP20": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "WPW80": {
+    "category": "a-trier",
+    "subcategory": null
+  }
+}

@@ -1,0 +1,28 @@
+---
+import { useTranslations } from '../../i18n/utils';
+import type { Product } from '../../content/schemas/product';
+import type { Lang } from '../../utils/catalog';
+import ProductCard from './ProductCard.astro';
+
+interface Props {
+	lang: Lang;
+	products: Product[];
+}
+
+const { lang, products } = Astro.props;
+const t = useTranslations(lang);
+---
+
+{
+	products.length === 0 ? (
+		<p class="text-gray-500">{t('catalog.noProducts')}</p>
+	) : (
+		<ul class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+			{products.map((product) => (
+				<li>
+					<ProductCard lang={lang} product={product} />
+				</li>
+			))}
+		</ul>
+	)
+}
