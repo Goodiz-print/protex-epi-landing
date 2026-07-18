@@ -22,3 +22,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# raw supplier data exports (large, regenerated locally into src/data/catalog/*.json
+# via scripts/generate-catalog-data.mjs — see CLAUDE.md)
+src/data/suppliers/
