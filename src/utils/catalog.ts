@@ -13,6 +13,10 @@ export function getCategoryUrl(lang: Lang, categorySlug: string): string {
 	return `${CATALOG_ROOT[lang]}/${categorySlug}`;
 }
 
+export function getGarmentTypeUrl(lang: Lang, typeSlug: string): string {
+	return `${CATALOG_ROOT[lang]}/type/${typeSlug}`;
+}
+
 export function getSubcategoryUrl(lang: Lang, categorySlug: string, subcategorySlug: string): string {
 	return `${CATALOG_ROOT[lang]}/${categorySlug}/${subcategorySlug}`;
 }

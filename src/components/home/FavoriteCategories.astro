@@ -1,0 +1,30 @@
+---
+import { useTranslations } from '~/i18n/utils';
+import { garmentTypes } from '~/data/garment-types';
+import { getProductsByGarmentType } from '~/content/queries';
+import { getGarmentTypeUrl, type Lang } from '~/utils/catalog';
+import TileGrid from '~/components/catalog/TileGrid.astro';
+
+interface Props {
+	lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const tiles = await Promise.all(
+	garmentTypes.map(async (garmentType) => {
+		const products = await getProductsByGarmentType(garmentType);
+		return {
+			href: getGarmentTypeUrl(lang, garmentType.slug),
+			label: garmentType.labels[lang],
+			image: products[0]?.imageUrl,
+		};
+	}),
+);
+---
+
+<section class="mx-auto max-w-6xl px-4 py-16">
+	<h2 class="mb-6 text-2xl font-semibold text-gray-900">{t('home.favorites.title')}</h2>
+	<TileGrid tiles={tiles} />
+</section>

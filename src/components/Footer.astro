@@ -1,0 +1,68 @@
+---
+import { useTranslations } from '~/i18n/utils';
+import { categoryTaxonomy } from '~/data/category-taxonomy';
+import { getCatalogRootUrl, getCategoryUrl, type Lang } from '~/utils/catalog';
+import LanguagePicker from './LanguagePicker.astro';
+
+interface Props {
+	lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const homeHref = lang === 'en' ? '/en' : '/';
+const categoryLinks = categoryTaxonomy
+	.filter((category) => category.slug !== 'a-trier')
+	.map((category) => ({
+		href: getCategoryUrl(lang, category.slug),
+		label: category.labels[lang],
+	}));
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-gray-200 bg-white">
+	<div class="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:grid-cols-2 lg:grid-cols-4">
+		<div>
+			<p class="font-semibold text-gray-900">{t('site.title')}</p>
+		</div>
+		<div>
+			<p class="mb-3 text-sm font-medium text-gray-900">{t('footer.nav.title')}</p>
+			<ul class="space-y-2 text-sm text-gray-600">
+				<li><a href={homeHref} class="hover:text-gray-900">{t('nav.home')}</a></li>
+				<li><a href={getCatalogRootUrl(lang)} class="hover:text-gray-900">{t('nav.products')}</a></li>
+			</ul>
+		</div>
+		<div>
+			<p class="mb-3 text-sm font-medium text-gray-900">{t('footer.categories.title')}</p>
+			<ul class="space-y-2 text-sm text-gray-600">
+				{
+					categoryLinks.map((link) => (
+						<li>
+							<a href={link.href} class="hover:text-gray-900">
+								{link.label}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+		<div>
+			<p class="mb-3 text-sm font-medium text-gray-900">{t('footer.contact.title')}</p>
+			<ul class="space-y-2 text-sm text-gray-600">
+				<li>{t('footer.contact.addressLine')}</li>
+				<li><a href="tel:0557027587" class="hover:text-gray-900">05 57 02 75 87</a></li>
+				<li>
+					<a href="mailto:contact@protex-epi.com" class="hover:text-gray-900">contact@protex-epi.com</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="border-t border-gray-200">
+		<div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-6 sm:flex-row">
+			<p class="text-sm text-gray-500">© {year} {t('site.title')} — {t('footer.copyright')}</p>
+			<LanguagePicker />
+		</div>
+	</div>
+</footer>

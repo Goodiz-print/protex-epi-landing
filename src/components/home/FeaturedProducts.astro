@@ -1,0 +1,45 @@
+---
+import { useTranslations } from '~/i18n/utils';
+import { getAllProducts } from '~/content/queries';
+import ProductGrid from '~/components/catalog/ProductGrid.astro';
+import type { Lang } from '~/utils/catalog';
+import type { Product } from '~/content/schemas/product';
+
+interface Props {
+	lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const FEATURED_LIMIT = 12;
+
+const allProducts = await getAllProducts();
+const productsByCategory = new Map<string, Product[]>();
+for (const entry of allProducts) {
+	const product = entry.data;
+	if (product.category === 'a-trier') continue;
+	const bucket = productsByCategory.get(product.category);
+	if (bucket) {
+		bucket.push(product);
+	} else {
+		productsByCategory.set(product.category, [product]);
+	}
+}
+
+// TODO: replace with a real "featured/bestseller" flag once product curation exists.
+// Round-robins across categories so the grid isn't dominated by a single range.
+const featured: Product[] = [];
+const buckets = [...productsByCategory.values()];
+for (let round = 0; featured.length < FEATURED_LIMIT && buckets.some((bucket) => bucket.length > round); round++) {
+	for (const bucket of buckets) {
+		if (featured.length >= FEATURED_LIMIT) break;
+		if (bucket[round]) featured.push(bucket[round]);
+	}
+}
+---
+
+<section class="mx-auto max-w-6xl px-4 py-16">
+	<h2 class="mb-6 text-2xl font-semibold text-gray-900">{t('home.featured.title')}</h2>
+	<ProductGrid lang={lang} products={featured} />
+</section>

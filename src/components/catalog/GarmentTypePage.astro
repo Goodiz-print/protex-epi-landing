@@ -1,0 +1,29 @@
+---
+import { useTranslations } from '~/i18n/utils';
+import type { GarmentType } from '~/data/garment-types';
+import type { Product } from '~/content/schemas/product';
+import { getCatalogRootUrl, type Lang } from '~/utils/catalog';
+import Breadcrumb from './Breadcrumb.astro';
+import ProductGrid from './ProductGrid.astro';
+
+interface Props {
+	lang: Lang;
+	garmentType: GarmentType;
+	products: Product[];
+}
+
+const { lang, garmentType, products } = Astro.props;
+const t = useTranslations(lang);
+
+const homeHref = lang === 'en' ? '/en' : '/';
+---
+
+<Breadcrumb
+	items={[
+		{ label: t('catalog.breadcrumb.home'), href: homeHref },
+		{ label: t('catalog.breadcrumb.products'), href: getCatalogRootUrl(lang) },
+		{ label: garmentType.labels[lang] },
+	]}
+/>
+<h1 class="mb-6 text-2xl font-semibold text-gray-900">{garmentType.labels[lang]}</h1>
+<ProductGrid lang={lang} products={products} />
