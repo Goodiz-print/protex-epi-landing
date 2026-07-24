@@ -1,0 +1,25 @@
+---
+import { useTranslations } from '../../i18n/utils';
+import type { Lang } from '../../utils/catalog';
+
+interface Props {
+	lang: Lang;
+	sizes: string[];
+}
+
+const { lang, sizes } = Astro.props;
+const t = useTranslations(lang);
+---
+
+{
+	sizes.length > 0 && (
+		<div>
+			<p class="text-sm font-medium text-gray-500">{t('catalog.sizesAvailable')}</p>
+			<ul class="mt-2 flex flex-wrap gap-2">
+				{sizes.map((size) => (
+					<li class="rounded border border-gray-300 px-2 py-1 text-sm text-gray-700">{size}</li>
+				))}
+			</ul>
+		</div>
+	)
+}

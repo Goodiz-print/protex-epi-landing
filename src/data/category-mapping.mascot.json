@@ -1,0 +1,3750 @@
+{
+  "10001": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "10010": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "10049": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "10090": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "10109": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "10131": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "10135": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "10149": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "10154": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "10169": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "10179": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "10235": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "10279": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "10509": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "10519": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "10539": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "10544": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "10569": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "10579": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "11011": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "11019": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "11119": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "11279": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "12002": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "12004": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "12009": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "12035": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "12049": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "12069": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "12079": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "12102": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "12109": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "12135": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "12154": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "12169": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "12179": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "12209": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "12307": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "12311": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "12355": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "12362": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "12379": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "12479": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "12579": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "12679": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "12779": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "13004": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "13079": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "13501": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "13515": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "13528": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "13565": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "13571": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "13578": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "13579": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "13609": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "13648": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "13651": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "13669": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "13679": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "13809": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "13869": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "13879": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "13892": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "14031": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "14119": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "14131": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "14135": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "14149": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "14249": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "14349": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "14379": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "14449": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "14501": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "14528": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "14548": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "14549": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "14579": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "14779": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15089": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15379": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15501": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15502": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15503": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15509": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15515": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15531": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15535": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15549": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15565": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15569": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15579": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15590": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15603": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15615": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15669": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15679": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15690": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15702": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15703": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15709": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15715": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15719": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15749": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15754": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15759": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15769": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15779": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15902": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15903": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15909": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15935": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15969": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "15979": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "16002": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "16003": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "16079": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "16103": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "16179": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "16279": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "16869": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "16879": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "16909": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "17001": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "17014": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "17015": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "17019": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "17031": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "17035": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "17044": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "17049": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "17079": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "17083": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "17101": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "17103": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "17105": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "17115": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "17149": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "17165": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "17179": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "17205": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "17279": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "17281": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "17283": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "17304": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "17382": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "17384": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "17482": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "17484": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "17531": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "17549": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "17631": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "17731": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "17782": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "17879": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "17979": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18001": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18003": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18008": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18011": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18015": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18025": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18031": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18035": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18044": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18045": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18047": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18048": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18050": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "18053": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18065": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18075": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18078": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18079": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18081": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18082": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18083": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18088": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18091": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18092": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18101": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18103": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18105": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18147": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18149": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18150": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "18153": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18155": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18178": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18179": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18188": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18247": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18249": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18250": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "18279": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18281": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18282": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18283": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18301": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18303": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18311": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18335": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18345": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18347": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18349": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18350": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "18365": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18375": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18378": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18379": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18381": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18382": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18383": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18384": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18388": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18391": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18392": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18393": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18394": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18478": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18479": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18484": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18488": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18494": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18509": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18512": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18531": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18545": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18569": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18579": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18581": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18584": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18601": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18603": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18615": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18665": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18678": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18679": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18688": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18690": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18778": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18779": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18788": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18869": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18879": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18901": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18903": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18915": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18919": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18935": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18969": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18979": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18982": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18990": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "18992": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19001": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19002": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19005": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19008": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19009": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19011": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19012": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19019": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19030": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19031": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19035": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19044": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "19045": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19049": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19050": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "19069": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19078": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19079": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19081": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19082": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19083": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19084": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19090": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19091": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19092": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19093": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19103": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19131": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19144": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "19150": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "19153": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19169": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19178": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19179": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19182": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19184": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19202": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19212": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19244": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19248": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19249": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19279": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19284": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19301": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19303": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19335": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19349": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19353": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19379": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19403": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19435": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19450": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "19453": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19479": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19509": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19519": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19569": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19578": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19579": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19589": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19590": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19669": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19678": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19679": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19781": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19835": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19879": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19881": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19882": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19899": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19901": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19902": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19903": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19935": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "19950": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "19979": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20014": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20015": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20038": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20039": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20050": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "20052": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20054": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20062": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20064": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20065": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20082": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20083": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20084": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20090": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20102": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20104": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20114": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20118": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "20150": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "20154": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20159": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20179": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20181": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20182": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20183": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20191": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20192": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20193": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20204": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20239": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20250": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "20252": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20254": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20279": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20284": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20304": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20309": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20339": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20350": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "20354": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20359": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20382": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20384": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20392": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20404": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20439": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20452": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20454": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20482": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20483": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20484": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20492": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20501": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20502": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20504": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20535": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20539": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20554": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20583": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20593": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20604": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20637": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20638": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20639": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20650": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "20679": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20683": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20693": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20709": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20719": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20739": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20744": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20769": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20779": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20859": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20879": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20882": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20901": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "20954": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20979": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "20990": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "21002": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21004": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21008": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21009": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21014": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21019": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21024": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21034": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21045": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21050": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "21078": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21079": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21090": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21104": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21114": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21124": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21150": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "21178": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21179": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21202": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21204": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21209": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21214": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21224": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21279": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21301": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21309": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21314": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21319": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21324": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21335": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21369": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21379": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21381": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21382": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21383": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21384": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21389": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21404": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21410": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "21450": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "21469": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21479": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21501": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21504": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21509": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21510": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "21519": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21535": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21550": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "21569": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21578": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21579": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21581": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21582": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21583": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21584": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21679": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21804": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21814": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21869": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21879": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21881": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21899": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21904": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21909": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21914": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21979": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "21981": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22001": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22004": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22005": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22011": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22015": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22025": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22035": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22045": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22049": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22050": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "22058": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22059": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22069": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22078": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22079": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22082": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22083": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22084": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22085": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22086": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22102": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22104": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22105": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22111": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22115": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22149": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22150": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "22179": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22182": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22183": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22184": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22186": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22201": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22204": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22215": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22249": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22250": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "22278": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22279": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22281": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22282": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22286": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22302": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22303": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22315": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22325": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22335": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22350": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "22365": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22375": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22378": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22379": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22386": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22413": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "22435": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22450": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "22465": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22479": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22481": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22482": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22486": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22503": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22550": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "22553": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22581": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22582": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22585": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22586": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22603": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22604": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22650": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "22681": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22703": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22704": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22750": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "22803": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22804": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22850": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "22904": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "22950": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "22986": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "23001": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "23002": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "23004": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "23035": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "23050": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "23090": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "23102": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "23104": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "23149": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "23150": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "23179": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "24002": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "24010": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "24035": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "24050": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "24065": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "24069": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "24081": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "24082": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "24083": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "24102": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "24103": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "24110": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "24150": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "24250": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "24279": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "24335": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "24350": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "24401": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "24435": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "24450": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "24509": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "24550": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "24569": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "24579": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "24650": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "24750": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "24850": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "24950": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "25001": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25002": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25003": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25004": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25009": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25012": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25031": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25035": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25049": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25069": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25078": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25081": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25082": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25083": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25084": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25104": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25149": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25181": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25184": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25191": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25204": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25214": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25234": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25249": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25281": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25299": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25304": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25312": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25314": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25334": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25404": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25515": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25565": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25590": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25604": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25615": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25665": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25690": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25704": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25715": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25804": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25815": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "25865": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "26079": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "26091": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "26092": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "26093": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "26191": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "26250": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "50025": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50027": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50077": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "50081": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "50101": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "50102": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "50106": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50113": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50114": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50115": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50117": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50119": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50120": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50121": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50122": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50126": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50127": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50130": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50138": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50145": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "50149": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50164": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "50177": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50178": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50179": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50180": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50181": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50183": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50185": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50187": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "50202": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "50203": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "50204": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50205": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50206": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50216": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
+  },
+  "50301": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50302": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50351": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50352": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50353": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50354": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50363": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50378": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50403": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50404": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "50406": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "50407": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "50410": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "50411": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "50413": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "50415": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50449": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50451": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "50453": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "50454": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "50455": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "50456": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "50548": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50560": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50561": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50562": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "50563": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50564": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50565": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50566": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50567": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50568": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50569": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50570": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50572": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50581": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50592": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50593": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50602": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "50603": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "50604": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "50610": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50611": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50631": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50632": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50633": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50635": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50636": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "50662": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "51579": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "51580": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "51583": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "51584": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "51585": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "51586": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "51587": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "51588": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "51589": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "51590": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "51591": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "51605": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "51625": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00299": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00418": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "00419": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00503": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00510": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00512": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00515": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00516": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00517": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00520": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00525": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00534": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00535": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00539": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "00544": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "00554": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00565": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00572": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00573": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00579": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00583": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00585": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00586": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00592": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00596": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00597": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00718": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "00773": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00780": {
+    "category": "tete",
+    "subcategory": "protection-tete"
+  },
+  "00781": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "00782": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00783": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00784": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00785": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00788": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00907": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00909": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00920": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00922": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00930": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00949": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00955": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00962": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00969": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00979": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "00989": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "03044": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "03079": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "0352A": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "04014": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "05020": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "05023": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "05079": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "05114": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "05242": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "05279": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "06004": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "06014": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "06042": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "06049": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "06131": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "06231": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "06542": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "06609": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "06619": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "06669": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "06679": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "06831": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "07014": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "07060": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "07062": {
+    "category": "corps",
+    "subcategory": "vetements-pluie"
+  },
+  "07090": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "07092": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "07109": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "07114": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "07169": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "07179": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "07223": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "07279": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "07379": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "07479": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "07930": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "08005": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "08131": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "08269": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "08679": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "09004": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "09131": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "09249": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "09279": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "09335": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "09349": {
+    "category": "corps",
+    "subcategory": "vetements-travail"
+  },
+  "F0003": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F0004": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F0074": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F0100": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F0107": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F0108": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F0109": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F0110": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F0111": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F0113": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F0114": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F0121": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F0122": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F0130": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F0134": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F0135": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F0136": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F0137": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F0141": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F0165": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F0210": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F0220": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F0221": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F0250": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F0251": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F0252": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F0253": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F0300": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F0303": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F0451": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F0455": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F0456": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F0460": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F0461": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F0462": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F0463": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F0650": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F0651": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F0660": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F0820": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F0850": {
+    "category": "pieds",
+    "subcategory": "bottes"
+  },
+  "F0960": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F1000": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F1001": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F1002": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F1003": {
+    "category": "pieds",
+    "subcategory": "bottes"
+  },
+  "F1005": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F1006": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F1007": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F1100": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F1102": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F1104": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F1105": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F1106": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F1107": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F1108": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F1110": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F1111": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F1112": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F1115": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F1116": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F1122": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F1300": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F1301": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F1302": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F1303": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F1304": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F1305": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F1500": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F1501": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F1502": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F1503": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F1504": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F1505": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F1520": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F1600": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F1601": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F1602": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F1603": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F1680": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F1681": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F1690": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F2000": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F3000": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F3001": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F3002": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
+  },
+  "F3003": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "F3006": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
+  },
+  "FT070": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FT080": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FT088": {
+    "category": "a-trier",
+    "subcategory": null
+  },
+  "FT090": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FT091": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FT092": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FT100": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FT101": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  },
+  "FT102": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
+  }
+}

@@ -1,0 +1,19 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import GarmentTypePage from '~/components/catalog/GarmentTypePage.astro';
+import { getGarmentTypeStaticPaths, getProductsByGarmentType } from '~/content/queries';
+import { ui } from '~/i18n/ui';
+
+export async function getStaticPaths() {
+	return getGarmentTypeStaticPaths();
+}
+
+const { garmentType } = Astro.props;
+const products = await getProductsByGarmentType(garmentType);
+---
+
+<Layout title={`${garmentType.labels.fr} — ${ui.fr['site.title']}`}>
+	<main class="mx-auto max-w-6xl px-4 py-10">
+		<GarmentTypePage lang="fr" garmentType={garmentType} products={products} />
+	</main>
+</Layout>

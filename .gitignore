@@ -22,3 +22,10 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Mascot raw exports — large source files only needed locally to regenerate the slim
+# CSV (via scripts/prepare-mascot-csv.mjs). The distilled, committed catalog input is
+# src/data/suppliers/mascot/mascot-products.slim.csv.
+src/data/suppliers/mascot/MASCOT_extended_productdata_FR.csv
+src/data/suppliers/mascot/Produits-Table 1.csv
+src/data/suppliers/mascot/Retouches-Table 1.csv

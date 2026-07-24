@@ -1,0 +1,9 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import HomePage from '../../components/home/HomePage.astro';
+import { ui } from '../../i18n/ui';
+---
+
+<Layout title={ui.en['site.title']}>
+	<HomePage lang="en" />
+</Layout>

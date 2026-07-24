@@ -1,0 +1,25 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+import { languages } from '../i18n/ui';
+
+const currentLocale = Astro.currentLocale ?? 'fr';
+---
+
+<nav class="flex gap-2 text-sm">
+	{
+		Object.entries(languages).map(([locale, label]) => (
+			<a
+				href={getRelativeLocaleUrl(locale, '/')}
+				class:list={[
+					'rounded-md px-2 py-1 transition-colors',
+					locale === currentLocale
+						? 'bg-gray-900 text-white'
+						: 'text-gray-600 hover:bg-gray-100',
+				]}
+				aria-current={locale === currentLocale ? 'page' : undefined}
+			>
+				{label}
+			</a>
+		))
+	}
+</nav>

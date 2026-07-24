@@ -1,0 +1,43 @@
+---
+import type { ImageMetadata } from 'astro';
+import { useTranslations } from '~/i18n/utils';
+import { categoryTaxonomy } from '~/data/category-taxonomy';
+import { getProductsByCategory } from '~/content/queries';
+import { getCategoryUrl, type Lang } from '~/utils/catalog';
+import TileGrid from '~/components/catalog/TileGrid.astro';
+import corpsImage from '~/assets/images/veste-haute-visbilite.png';
+
+interface Props {
+	lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const categoryImages: Partial<Record<string, ImageMetadata>> = {
+	corps: corpsImage,
+};
+
+const tiles = await Promise.all(
+	categoryTaxonomy
+		.filter((category) => category.slug !== 'a-trier')
+		.map(async (category) => {
+			let image: ImageMetadata | string | undefined = categoryImages[category.slug];
+			if (!image) {
+				const products = await getProductsByCategory(category.slug);
+				image = products[0]?.imageUrl;
+			}
+			return {
+				href: getCategoryUrl(lang, category.slug),
+				label: category.labels[lang],
+				image,
+				imagePositionClass: category.slug === 'corps' ? 'object-top' : undefined,
+			};
+		}),
+);
+---
+
+<section class="mx-auto max-w-6xl px-4 py-16">
+	<h2 class="mb-6 text-2xl font-semibold text-gray-900">{t('home.categories.title')}</h2>
+	<TileGrid tiles={tiles} />
+</section>

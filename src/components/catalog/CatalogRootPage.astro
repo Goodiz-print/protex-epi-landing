@@ -1,0 +1,24 @@
+---
+import { useTranslations } from '~/i18n/utils';
+import { categoryTaxonomy } from '~/data/category-taxonomy';
+import { getCategoryUrl, type Lang } from '~/utils/catalog';
+import Breadcrumb from './Breadcrumb.astro';
+import TileGrid from './TileGrid.astro';
+
+interface Props {
+	lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const homeHref = lang === 'en' ? '/en' : '/';
+const tiles = categoryTaxonomy.map((category) => ({
+	href: getCategoryUrl(lang, category.slug),
+	label: category.labels[lang],
+}));
+---
+
+<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: homeHref }, { label: t('catalog.breadcrumb.products') }]} />
+<h1 class="mb-6 text-2xl font-semibold text-gray-900">{t('catalog.breadcrumb.products')}</h1>
+<TileGrid tiles={tiles} />

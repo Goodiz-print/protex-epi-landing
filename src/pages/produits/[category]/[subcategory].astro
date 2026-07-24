@@ -1,0 +1,19 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import SubcategoryPage from '~/components/catalog/SubcategoryPage.astro';
+import { getSubcategoryStaticPaths, getProductsBySubcategory } from '~/content/queries';
+import { ui } from '~/i18n/ui';
+
+export async function getStaticPaths() {
+	return getSubcategoryStaticPaths();
+}
+
+const { category, subcategory } = Astro.props;
+const products = await getProductsBySubcategory(category.slug, subcategory.slug);
+---
+
+<Layout title={`${subcategory.labels.fr} — ${ui.fr['site.title']}`}>
+	<main class="mx-auto max-w-6xl px-4 py-10">
+		<SubcategoryPage lang="fr" category={category} subcategory={subcategory} products={products} />
+	</main>
+</Layout>

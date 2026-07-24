@@ -1,0 +1,146 @@
+---
+import { Image } from 'astro:assets';
+import { useTranslations } from '~/i18n/utils';
+import { getCatalogRootUrl, getCategoryUrl, getSubcategoryUrl, type Lang } from '~/utils/catalog';
+import corpsBanner from '~/assets/images/d08d0e3e-0c57-4304-90e2-08403daa43a8.jpg';
+import flameResistantBanner from '~/assets/images/6c90be29-9b21-465f-ae9b-62f2a02cba0d.jpg';
+import planetBanner from '~/assets/images/02f77c30-daa9-44bd-b7cf-3c6ec17be9c6.png';
+
+interface Props {
+	lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const slides = [
+	{ image: corpsBanner, href: getCategoryUrl(lang, 'corps') },
+	{ image: flameResistantBanner, href: getSubcategoryUrl(lang, 'corps', 'vetements-travail') },
+	{ image: planetBanner, href: getCatalogRootUrl(lang) },
+];
+---
+
+<section class="relative overflow-hidden bg-gray-900" data-hero-carousel>
+	<h1 class="sr-only">{t('home.hero.title')}</h1>
+	<p class="sr-only">{t('home.hero.subtitle')}</p>
+
+	<div class="relative h-[300px] sm:h-[480px] lg:h-[560px]">
+		<ul class="flex h-full transition-transform duration-700 ease-in-out" data-track>
+			{
+				slides.map((slide, index) => (
+					<li class="relative h-full w-full shrink-0 basis-full">
+						<a href={slide.href} class="block h-full w-full">
+							<Image
+								src={slide.image}
+								alt=""
+								width={2000}
+								height={769}
+								class="h-full w-full object-cover object-left sm:object-center"
+								loading={index === 0 ? 'eager' : 'lazy'}
+							/>
+						</a>
+					</li>
+				))
+			}
+		</ul>
+
+		<button
+			type="button"
+			data-prev
+			aria-label={t('home.hero.prevSlide')}
+			class="absolute left-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-gray-900/50 text-white transition-colors hover:bg-gray-900/80"
+		>
+			<svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+				<path
+					fill-rule="evenodd"
+					d="M12.79 5.23a.75.75 0 010 1.06L9.06 10l3.73 3.71a.75.75 0 11-1.06 1.06l-4.25-4.25a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 0z"
+					clip-rule="evenodd"
+				/>
+			</svg>
+		</button>
+		<button
+			type="button"
+			data-next
+			aria-label={t('home.hero.nextSlide')}
+			class="absolute right-3 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full bg-gray-900/50 text-white transition-colors hover:bg-gray-900/80"
+		>
+			<svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+				<path
+					fill-rule="evenodd"
+					d="M7.21 14.77a.75.75 0 010-1.06L10.94 10 7.21 6.29a.75.75 0 111.06-1.06l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06 0z"
+					clip-rule="evenodd"
+				/>
+			</svg>
+		</button>
+
+		<div class="absolute inset-x-0 bottom-4 flex justify-center gap-2" data-dots>
+			{
+				slides.map((_, index) => (
+					<button
+						type="button"
+						data-dot={index}
+						aria-label={`${t('home.hero.goToSlide')} ${index + 1}`}
+						class="h-2.5 w-2.5 rounded-full bg-white/50 transition-colors data-[active=true]:bg-white"
+					/>
+				))
+			}
+		</div>
+	</div>
+</section>
+
+<script>
+	function initHeroCarousels() {
+		document.querySelectorAll<HTMLElement>('[data-hero-carousel]').forEach((carousel) => {
+			const track = carousel.querySelector<HTMLElement>('[data-track]');
+			const slides = Array.from(carousel.querySelectorAll<HTMLElement>('[data-track] > li'));
+			const dots = Array.from(carousel.querySelectorAll<HTMLButtonElement>('[data-dot]'));
+			const prevButton = carousel.querySelector<HTMLButtonElement>('[data-prev]');
+			const nextButton = carousel.querySelector<HTMLButtonElement>('[data-next]');
+			if (!track || slides.length === 0) return;
+
+			let current = 0;
+			let timer: ReturnType<typeof setInterval> | undefined;
+			const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+			function goTo(index: number) {
+				current = (index + slides.length) % slides.length;
+				track!.style.transform = `translateX(-${current * 100}%)`;
+				dots.forEach((dot, i) => {
+					dot.dataset.active = String(i === current);
+				});
+			}
+
+			function start() {
+				if (reduceMotion) return;
+				stop();
+				timer = setInterval(() => goTo(current + 1), 6000);
+			}
+
+			function stop() {
+				if (timer) clearInterval(timer);
+			}
+
+			prevButton?.addEventListener('click', () => {
+				goTo(current - 1);
+				start();
+			});
+			nextButton?.addEventListener('click', () => {
+				goTo(current + 1);
+				start();
+			});
+			dots.forEach((dot, index) => {
+				dot.addEventListener('click', () => {
+					goTo(index);
+					start();
+				});
+			});
+			carousel.addEventListener('mouseenter', stop);
+			carousel.addEventListener('mouseleave', start);
+
+			goTo(0);
+			start();
+		});
+	}
+
+	initHeroCarousels();
+</script>

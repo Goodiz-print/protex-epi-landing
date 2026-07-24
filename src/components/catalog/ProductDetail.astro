@@ -1,0 +1,40 @@
+---
+import { Image } from 'astro:assets';
+import { useTranslations } from '../../i18n/utils';
+import type { Product } from '../../content/schemas/product';
+import type { Lang } from '../../utils/catalog';
+import { formatPrice } from '../../utils/format';
+import SizeList from './SizeList.astro';
+
+interface Props {
+	lang: Lang;
+	product: Product;
+}
+
+const { lang, product } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<div class="grid gap-8 md:grid-cols-2">
+	<div class="aspect-square overflow-hidden rounded-lg bg-gray-50">
+		<Image
+			src={product.imageUrl}
+			width={1100}
+			height={1100}
+			alt={product.name}
+			loading="eager"
+			class="h-full w-full object-contain"
+		/>
+	</div>
+	<div>
+		<h1 class="text-2xl font-semibold text-gray-900">{product.name}</h1>
+		<p class="mt-1 text-gray-500">
+			{t('catalog.colourLabel')}: {product.colour}
+		</p>
+		<p class="mt-4 text-xl font-semibold text-gray-900">{formatPrice(product.price, lang)}</p>
+		<p class="mt-4 whitespace-pre-line text-gray-700">{product.description}</p>
+		<div class="mt-6">
+			<SizeList lang={lang} sizes={product.sizes} />
+		</div>
+	</div>
+</div>

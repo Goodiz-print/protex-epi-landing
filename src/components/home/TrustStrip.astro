@@ -1,0 +1,31 @@
+---
+import { useTranslations } from '~/i18n/utils';
+import type { Lang } from '~/utils/catalog';
+
+interface Props {
+	lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const items = [
+	{ titleKey: 'home.usp.catalog.title', bodyKey: 'home.usp.catalog.body' },
+	{ titleKey: 'home.usp.certified.title', bodyKey: 'home.usp.certified.body' },
+	{ titleKey: 'home.usp.expertise.title', bodyKey: 'home.usp.expertise.body' },
+	{ titleKey: 'home.usp.processing.title', bodyKey: 'home.usp.processing.body' },
+] as const;
+---
+
+<section class="border-t border-gray-200 bg-gray-50">
+	<div class="mx-auto grid max-w-6xl grid-cols-2 gap-8 px-4 py-16 lg:grid-cols-4">
+		{
+			items.map((item) => (
+				<div>
+					<p class="font-medium text-gray-900">{t(item.titleKey)}</p>
+					<p class="mt-1 text-sm text-gray-600">{t(item.bodyKey)}</p>
+				</div>
+			))
+		}
+	</div>
+</section>

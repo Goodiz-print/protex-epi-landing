@@ -1,0 +1,24 @@
+---
+import type { Lang } from '~/utils/catalog';
+import Hero from './Hero.astro';
+import FavoriteCategories from './FavoriteCategories.astro';
+import CategoryShowcase from './CategoryShowcase.astro';
+import FeaturedProducts from './FeaturedProducts.astro';
+import QuoteCta from './QuoteCta.astro';
+import LogoTeaser from './LogoTeaser.astro';
+import TrustStrip from './TrustStrip.astro';
+
+interface Props {
+	lang: Lang;
+}
+
+const { lang } = Astro.props;
+---
+
+<Hero lang={lang} />
+<FavoriteCategories lang={lang} />
+<CategoryShowcase lang={lang} />
+<FeaturedProducts lang={lang} />
+<QuoteCta lang={lang} />
+<LogoTeaser lang={lang} />
+<TrustStrip lang={lang} />

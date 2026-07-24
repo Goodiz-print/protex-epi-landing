@@ -1,0 +1,36 @@
+---
+import { useTranslations } from '~/i18n/utils';
+import type { Lang } from '~/utils/catalog';
+
+interface Props {
+	lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section class="bg-blue-600">
+	<div
+		class="mx-auto flex max-w-6xl flex-col items-start gap-6 px-4 py-16 sm:flex-row sm:items-center sm:justify-between"
+	>
+		<div>
+			<h2 class="text-2xl font-semibold text-white">{t('home.quote.title')}</h2>
+			<p class="mt-2 max-w-xl text-blue-100">{t('home.quote.body')}</p>
+		</div>
+		<div class="flex shrink-0 flex-col gap-3 sm:flex-row">
+			<a
+				href="mailto:contact@protex-epi.com"
+				class="inline-block rounded-md bg-white px-6 py-3 text-center font-medium text-blue-700 transition-colors hover:bg-blue-50"
+			>
+				{t('home.quote.cta')}
+			</a>
+			<a
+				href="tel:0557027587"
+				class="inline-block rounded-md border border-blue-300 px-6 py-3 text-center font-medium text-white transition-colors hover:bg-blue-500"
+			>
+				{t('home.quote.call')}
+			</a>
+		</div>
+	</div>
+</section>

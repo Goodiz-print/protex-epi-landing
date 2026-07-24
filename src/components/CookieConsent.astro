@@ -1,0 +1,123 @@
+---
+import { useTranslations } from '../i18n/utils';
+import type { Lang } from '../utils/catalog';
+
+interface Props {
+	lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+
+const categories = [
+	{ key: 'marketing', labelKey: 'cookie.category.marketing', descKey: 'cookie.category.marketingDesc' },
+	{ key: 'performance', labelKey: 'cookie.category.performance', descKey: 'cookie.category.performanceDesc' },
+	{ key: 'analytics', labelKey: 'cookie.category.analytics', descKey: 'cookie.category.analyticsDesc' },
+] as const;
+---
+
+<div
+	data-cookie-consent
+	class="fixed inset-x-0 bottom-0 z-[60] hidden border-t border-gray-200 bg-white p-4 shadow-lg sm:p-6"
+>
+	<div class="mx-auto max-w-6xl">
+		<div class="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+			<div class="max-w-2xl">
+				<p class="font-medium text-gray-900">{t('cookie.title')}</p>
+				<p class="mt-1 text-sm text-gray-600">{t('cookie.body')}</p>
+			</div>
+			<div class="flex shrink-0 flex-wrap gap-2">
+				<button
+					type="button"
+					data-cookie-reject
+					class="rounded-md border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50"
+				>
+					{t('cookie.rejectAll')}
+				</button>
+				<button
+					type="button"
+					data-cookie-accept
+					class="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-500"
+				>
+					{t('cookie.acceptAll')}
+				</button>
+			</div>
+		</div>
+		<details class="mt-4">
+			<summary class="cursor-pointer text-sm font-medium text-gray-700">{t('cookie.customize')}</summary>
+			<div class="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+				<label class="flex items-start gap-2 text-sm text-gray-600">
+					<input type="checkbox" checked disabled class="mt-1" />
+					<span>
+						<span class="block font-medium text-gray-900">{t('cookie.category.functional')}</span>
+						{t('cookie.category.functionalDesc')}
+					</span>
+				</label>
+				{
+					categories.map((category) => (
+						<label class="flex items-start gap-2 text-sm text-gray-600">
+							<input type="checkbox" data-cookie-category={category.key} class="mt-1" />
+							<span>
+								<span class="block font-medium text-gray-900">{t(category.labelKey)}</span>
+								{t(category.descKey)}
+							</span>
+						</label>
+					))
+				}
+			</div>
+			<button
+				type="button"
+				data-cookie-save
+				class="mt-4 rounded-md border border-gray-300 px-4 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-50"
+			>
+				{t('cookie.save')}
+			</button>
+		</details>
+	</div>
+</div>
+
+<script>
+	const STORAGE_KEY = 'protex-epi-cookie-consent';
+
+	interface ConsentPrefs {
+		functional: true;
+		marketing: boolean;
+		performance: boolean;
+		analytics: boolean;
+		decidedAt: number;
+	}
+
+	function initCookieConsent() {
+		const banner = document.querySelector<HTMLElement>('[data-cookie-consent]');
+		if (!banner) return;
+		if (localStorage.getItem(STORAGE_KEY)) return;
+		banner.classList.remove('hidden');
+
+		function save(prefs: Omit<ConsentPrefs, 'decidedAt'>) {
+			const value: ConsentPrefs = { ...prefs, decidedAt: Date.now() };
+			localStorage.setItem(STORAGE_KEY, JSON.stringify(value));
+			banner?.classList.add('hidden');
+		}
+
+		banner.querySelector('[data-cookie-accept]')?.addEventListener('click', () => {
+			save({ functional: true, marketing: true, performance: true, analytics: true });
+		});
+
+		banner.querySelector('[data-cookie-reject]')?.addEventListener('click', () => {
+			save({ functional: true, marketing: false, performance: false, analytics: false });
+		});
+
+		banner.querySelector('[data-cookie-save]')?.addEventListener('click', () => {
+			const isChecked = (key: string) =>
+				banner?.querySelector<HTMLInputElement>(`[data-cookie-category="${key}"]`)?.checked ?? false;
+			save({
+				functional: true,
+				marketing: isChecked('marketing'),
+				performance: isChecked('performance'),
+				analytics: isChecked('analytics'),
+			});
+		});
+	}
+
+	initCookieConsent();
+</script>

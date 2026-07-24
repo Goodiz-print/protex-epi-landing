@@ -1,0 +1,18 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import ProductPage from '~/components/catalog/ProductPage.astro';
+import { getProductStaticPaths } from '~/content/queries';
+import { ui } from '~/i18n/ui';
+
+export async function getStaticPaths() {
+	return getProductStaticPaths();
+}
+
+const { product } = Astro.props;
+---
+
+<Layout title={`${product.name} — ${ui.fr['site.title']}`}>
+	<main class="mx-auto max-w-6xl px-4 py-10">
+		<ProductPage lang="fr" product={product} />
+	</main>
+</Layout>
