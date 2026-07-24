@@ -7,15 +7,24 @@ import {
 	buildBlakladerColourIndex,
 	buildBlakladerMediaIndex,
 	buildBlakladerProductEntry,
+	buildMascotEntry,
 	buildProductEntry,
 	groupBlakladerRows,
+	groupMascotRows,
 	groupPortwestRows,
 	type CategoryMapping,
 	type PortwestCsvRow,
 } from './csv-products-loader.helpers';
 
 export interface PortwestCsvSource {
-	supplier: 'portwest' | 'mascot';
+	supplier: 'portwest';
+	csvPath: string;
+	mappingPath: string;
+}
+
+export interface MascotCsvSource {
+	supplier: 'mascot';
+	// Slim CSV produced by scripts/prepare-mascot-csv.mjs (semicolon-delimited).
 	csvPath: string;
 	mappingPath: string;
 }
@@ -28,19 +37,20 @@ export interface BlakladerCsvSource {
 	mappingPath: string;
 }
 
-export type CsvProductSource = PortwestCsvSource | BlakladerCsvSource;
+export type CsvProductSource = PortwestCsvSource | MascotCsvSource | BlakladerCsvSource;
 
 export interface CsvProductsLoaderOptions {
 	sources: CsvProductSource[];
 }
 
-function readCsv(absPath: string): PortwestCsvRow[] {
+function readCsv(absPath: string, delimiter = ','): PortwestCsvRow[] {
 	const content = readFileSync(absPath, 'utf-8');
 	return parse(content, {
 		columns: true,
 		bom: true,
 		trim: true,
 		skip_empty_lines: true,
+		delimiter,
 	});
 }
 
@@ -85,6 +95,32 @@ async function runSync(options: CsvProductsLoaderOptions, context: LoaderContext
 
 			logger.info(
 				`[blaklader] loaded ${stored} products from ${groups.length} groups / ${commerceRows.length} CSV rows (${commerceAbsPath})`,
+			);
+			continue;
+		}
+
+		if (source.supplier === 'mascot') {
+			const csvAbsPath = resolve(rootPath, source.csvPath);
+			watchedPaths.add(csvAbsPath);
+			const rows = readCsv(csvAbsPath, ';');
+			const groups = groupMascotRows(rows);
+			let stored = 0;
+
+			for (const group of groups) {
+				const { id, data, warnings } = buildMascotEntry(group, mapping);
+				for (const warning of warnings) {
+					logger.warn(`[mascot] ${warning}`);
+				}
+				if (!data) {
+					continue;
+				}
+				const parsedData = await parseData({ id, data });
+				store.set({ id, data: parsedData, digest: generateDigest(parsedData) });
+				stored += 1;
+			}
+
+			logger.info(
+				`[mascot] loaded ${stored} products from ${groups.length} groups / ${rows.length} CSV rows (${csvAbsPath})`,
 			);
 			continue;
 		}

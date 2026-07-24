@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
 	image: {
-		domains: ['d11ak7fd9ypfb7.cloudfront.net', 'cdn.blaklader.com'],
+		domains: ['d11ak7fd9ypfb7.cloudfront.net', 'cdn.blaklader.com', 'pimage.mascot.fr'],
 	},
 	i18n: {
 		defaultLocale: 'fr',

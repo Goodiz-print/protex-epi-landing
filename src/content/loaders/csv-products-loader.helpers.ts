@@ -130,6 +130,106 @@ export function buildProductEntry(
 	};
 }
 
+// --- Mascot (slim CSV distilled by scripts/prepare-mascot-csv.mjs) ---
+//
+// The slim CSV has one row per size variant with clean ASCII columns:
+//   produit, produitQualite, produitQualiteColoris, ean, coloris, taille, nom,
+//   prix2026, image1000, type, qualite, texteTechnique
+// A product "card" = one product-quality-colour (produitQualiteColoris, e.g.
+// 18001-249-010); its sizes are the distinct `taille` values in the group. Category
+// is mapped at product level, keyed by `produit` (e.g. 18001). The 2026 price varies
+// by size, so we display the minimum (the "à partir de" base price).
+
+export interface MascotProductGroup {
+	produit: string;
+	produitQualite: string;
+	produitQualiteColoris: string;
+	rows: PortwestCsvRow[];
+}
+
+export function groupMascotRows(rows: PortwestCsvRow[]): MascotProductGroup[] {
+	const groups = new Map<string, MascotProductGroup>();
+	for (const row of rows) {
+		const key = row['produitQualiteColoris'];
+		let group = groups.get(key);
+		if (!group) {
+			group = {
+				produit: row['produit'],
+				produitQualite: row['produitQualite'],
+				produitQualiteColoris: key,
+				rows: [],
+			};
+			groups.set(key, group);
+		}
+		group.rows.push(row);
+	}
+	return Array.from(groups.values());
+}
+
+export interface BuildMascotProductEntryResult {
+	id: string;
+	data: Product | null;
+	warnings: string[];
+}
+
+export function buildMascotEntry(
+	group: MascotProductGroup,
+	mapping: CategoryMapping,
+): BuildMascotProductEntryResult {
+	const warnings: string[] = [];
+	const firstRow = group.rows[0];
+	const name = firstRow['nom'];
+	const description = firstRow['texteTechnique'] || firstRow['qualite'] || '';
+	const colour = firstRow['coloris'];
+
+	// Prices vary by size; show the lowest ("à partir de"). Comma decimals → dot.
+	const prices = group.rows
+		.map((row) => Number(row['prix2026'].replace(',', '.')))
+		.filter((price) => Number.isFinite(price) && price > 0);
+	const price = prices.length > 0 ? Math.min(...prices) : 0;
+
+	const imageUrl = firstRow['image1000'];
+	const id = buildEntryId('mascot', group.produitQualiteColoris, colour);
+	if (!imageUrl) {
+		warnings.push(`no image for produitQualiteColoris=${group.produitQualiteColoris}, product skipped`);
+		return { id, data: null, warnings };
+	}
+
+	const sizes: string[] = [];
+	const seenSizes = new Set<string>();
+	for (const row of group.rows) {
+		const size = row['taille'];
+		if (size && !seenSizes.has(size)) {
+			seenSizes.add(size);
+			sizes.push(size);
+		}
+	}
+
+	const { category, subcategory } = resolveCategory(mapping, group.produit);
+	const slug = buildProductSlug(name, colour, group.produitQualiteColoris);
+
+	return {
+		id,
+		data: {
+			id,
+			supplier: 'mascot',
+			styleCode: group.produitQualite,
+			name,
+			description,
+			colour,
+			slug,
+			price,
+			currency: 'EUR',
+			imageUrl,
+			sizes,
+			category,
+			subcategory,
+			sourceSkus: group.rows.map((row) => row['ean']),
+		},
+		warnings,
+	};
+}
+
 // --- Blaklader (FAB-DIS 3.0 export) ---
 //
 // REFCIALE is always `<12-char base ref><size suffix>` (e.g. "107916451098C44").

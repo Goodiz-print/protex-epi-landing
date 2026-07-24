@@ -11,6 +11,11 @@ const products = defineCollection({
 				mappingPath: 'src/data/category-mapping.portwest.json',
 			},
 			{
+				supplier: 'mascot',
+				csvPath: 'src/data/suppliers/mascot/mascot-products.slim.csv',
+				mappingPath: 'src/data/category-mapping.mascot.json',
+			},
+			{
 				supplier: 'blaklader',
 				commercePath: 'src/data/suppliers/blaklader/Blaklader - FAB-DIS 3.0 - 2026.xlsm - B01_COMMERCE.csv',
 				variantePath: 'src/data/suppliers/blaklader/Blaklader - FAB-DIS 3.0 - 2026.xlsm - C03_VARIANTE.csv',
