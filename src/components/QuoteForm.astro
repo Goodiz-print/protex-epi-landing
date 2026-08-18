@@ -9,20 +9,31 @@ interface Props {
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 
-// Set PUBLIC_QUOTE_FORM_ENDPOINT to a form-to-email service endpoint (e.g. a Formspree
-// form URL: https://formspree.io/f/xxxxxxx) to activate real submissions. Without it the
-// form falls back to a static "contact us directly" message instead of failing silently.
+// By default the form opens the visitor's own email client via a pre-filled `mailto:`
+// link — no backend or third-party account required. Optionally set
+// PUBLIC_QUOTE_FORM_ENDPOINT to a form-to-email service endpoint (e.g. a Formspree form
+// URL: https://formspree.io/f/xxxxxxx) to submit silently instead.
 const endpoint = import.meta.env.PUBLIC_QUOTE_FORM_ENDPOINT as string | undefined;
+const QUOTE_EMAIL = 'contact@protex-epi.com';
 ---
 
 <form
 	class="grid gap-4"
 	data-quote-form
 	data-endpoint={endpoint ?? ''}
+	data-quote-email={QUOTE_EMAIL}
 	data-msg-submitting={t('quote.form.submitting')}
 	data-msg-success={t('quote.form.success')}
 	data-msg-error={t('quote.form.error')}
+	data-msg-mailto={t('quote.form.mailtoInfo')}
 	data-submit-label={t('quote.form.submit')}
+	data-label-product={t('quote.form.product')}
+	data-label-name={t('quote.form.name')}
+	data-label-company={t('quote.form.company')}
+	data-label-email={t('quote.form.email')}
+	data-label-phone={t('quote.form.phone')}
+	data-label-quantity={t('quote.form.quantity')}
+	data-label-message={t('quote.form.message')}
 >
 	<div>
 		<label for="quote-product" class="mb-1 block text-sm font-medium text-gray-900">
@@ -142,6 +153,7 @@ const endpoint = import.meta.env.PUBLIC_QUOTE_FORM_ENDPOINT as string | undefine
 			}
 
 			const endpoint = form.dataset.endpoint;
+			const quoteEmail = form.dataset.quoteEmail ?? '';
 			const statusEl = form.querySelector<HTMLElement>('[data-form-status]');
 			const submitButton = form.querySelector<HTMLButtonElement>('[data-submit-button]');
 
@@ -154,10 +166,41 @@ const endpoint = import.meta.env.PUBLIC_QUOTE_FORM_ENDPOINT as string | undefine
 				else statusEl.classList.add('bg-blue-50', 'text-blue-700');
 			}
 
+			function fieldValue(name: string) {
+				return (form.elements.namedItem(name) as HTMLInputElement | HTMLTextAreaElement | null)?.value.trim() ?? '';
+			}
+
+			function buildMailtoUrl() {
+				const lines = [
+					[form.dataset.labelProduct, fieldValue('product')],
+					[form.dataset.labelName, fieldValue('name')],
+					[form.dataset.labelCompany, fieldValue('company')],
+					[form.dataset.labelEmail, fieldValue('email')],
+					[form.dataset.labelPhone, fieldValue('phone')],
+					[form.dataset.labelQuantity, fieldValue('quantity')],
+				]
+					.filter(([, value]) => value)
+					.map(([label, value]) => `${label} : ${value}`);
+
+				const message = fieldValue('message');
+				const body = [...lines, '', form.dataset.labelMessage ?? '', message].join('\n');
+				const subject = fieldValue('product')
+					? `Demande de devis — ${fieldValue('product')}`
+					: 'Demande de devis';
+
+				return `mailto:${quoteEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+			}
+
+			function submitViaMailto() {
+				window.location.href = buildMailtoUrl();
+				showStatus(form.dataset.msgMailto ?? '', 'info');
+			}
+
 			if (!endpoint) {
 				form.addEventListener('submit', (event) => {
 					event.preventDefault();
-					showStatus(form.dataset.msgError ?? '', 'error');
+					if (!form.reportValidity()) return;
+					submitViaMailto();
 				});
 				return;
 			}
@@ -180,10 +223,10 @@ const endpoint = import.meta.env.PUBLIC_QUOTE_FORM_ENDPOINT as string | undefine
 						form.reset();
 						showStatus(form.dataset.msgSuccess ?? '', 'success');
 					} else {
-						showStatus(form.dataset.msgError ?? '', 'error');
+						submitViaMailto();
 					}
 				} catch {
-					showStatus(form.dataset.msgError ?? '', 'error');
+					submitViaMailto();
 				} finally {
 					submitButton.disabled = false;
 					submitButton.textContent = form.dataset.submitLabel ?? '';

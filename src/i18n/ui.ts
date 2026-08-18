@@ -50,8 +50,8 @@ export const ui = {
 		'quote.form.success': 'Merci ! Votre demande a bien été envoyée, nous revenons vers vous sous 24h.',
 		'quote.form.error':
 			'Une erreur est survenue lors de l’envoi. Vous pouvez nous contacter directement par téléphone ou e-mail.',
-		'quote.form.notConfigured':
-			'Le formulaire en ligne n’est pas encore actif. Contactez-nous directement par téléphone ou e-mail ci-dessous.',
+		'quote.form.mailtoInfo':
+			'Votre logiciel de messagerie va s’ouvrir avec votre demande pré-remplie : il ne vous reste plus qu’à cliquer sur Envoyer.',
 		'quote.form.requiredHint': 'Champs obligatoires',
 		'catalog.requestQuote': 'Demander un devis',
 		'footer.nav.title': 'Navigation',
@@ -146,7 +146,7 @@ export const ui = {
 		'quote.form.submitting': 'Sending…',
 		'quote.form.success': 'Thank you! Your request has been sent, we will get back to you within 24h.',
 		'quote.form.error': 'Something went wrong while sending. You can reach us directly by phone or email.',
-		'quote.form.notConfigured': 'The online form is not active yet. Please contact us directly by phone or email below.',
+		'quote.form.mailtoInfo': 'Your email client will open with your request pre-filled — just hit Send to finish.',
 		'quote.form.requiredHint': 'Required fields',
 		'catalog.requestQuote': 'Request a quote',
 		'footer.nav.title': 'Navigation',
