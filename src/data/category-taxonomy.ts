@@ -61,17 +61,6 @@ export const categoryTaxonomy: Category[] = [
 		subcategories: [],
 	},
 	{
-		slug: 'collectivites',
-		labels: { fr: 'Collectivités', en: 'Communities' },
-		subcategories: [
-			{ slug: 'protections-tetes', labels: { fr: 'Protections têtes', en: 'Head protection' } },
-			{ slug: 'haut-corps', labels: { fr: 'Haut du corps', en: 'Upper body' } },
-			{ slug: 'bas-corps', labels: { fr: 'Bas du corps', en: 'Lower body' } },
-			{ slug: 'vetements-intemperies', labels: { fr: 'Vêtements intempéries', en: 'Weather clothing' } },
-			{ slug: 'chaussures-bottes', labels: { fr: 'Chaussures & Bottes', en: 'Shoes & boots' } },
-		],
-	},
-	{
 		slug: 'a-trier',
 		labels: { fr: 'À trier', en: 'To sort' },
 		subcategories: [],

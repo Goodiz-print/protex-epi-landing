@@ -1,0 +1,40 @@
+---
+// Set PUBLIC_PLAUSIBLE_DOMAIN to enable analytics. The script only ever loads once the
+// visitor has granted the "analytics" cookie consent category (see CookieConsent.astro).
+const domain = import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN as string | undefined;
+---
+
+{
+	domain && (
+		// define:vars requires a plain inline script (no module imports), so the storage
+		// key and event name below are duplicated from src/utils/consent.ts — keep in sync.
+		<script define:vars={{ domain }}>
+			const STORAGE_KEY = 'protex-epi-cookie-consent';
+			const EVENT_NAME = 'protex-epi:consent-changed';
+
+			function loadPlausible() {
+				if (document.querySelector('script[data-plausible-loaded]')) return;
+				const script = document.createElement('script');
+				script.defer = true;
+				script.dataset.domain = domain;
+				script.dataset.plausibleLoaded = 'true';
+				script.src = 'https://plausible.io/js/script.js';
+				document.head.appendChild(script);
+			}
+
+			function hasAnalyticsConsent() {
+				try {
+					const raw = localStorage.getItem(STORAGE_KEY);
+					return raw ? JSON.parse(raw).analytics === true : false;
+				} catch {
+					return false;
+				}
+			}
+
+			if (hasAnalyticsConsent()) loadPlausible();
+			window.addEventListener(EVENT_NAME, (event) => {
+				if (event.detail && event.detail.analytics) loadPlausible();
+			});
+		</script>
+	)
+}

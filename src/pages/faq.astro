@@ -1,0 +1,58 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Breadcrumb from '~/components/catalog/Breadcrumb.astro';
+import { useTranslations } from '~/i18n/utils';
+import { ui } from '~/i18n/ui';
+
+const lang = 'fr' as const;
+const t = useTranslations(lang);
+const title = t('footer.legal.faq');
+const description = "Questions fréquentes sur les commandes, devis, tailles et livraisons d'équipements de protection individuelle Protex EPI.";
+
+const faqs = [
+	{
+		question: 'Comment passer commande ?',
+		answer:
+			"Protex EPI fonctionne sur devis : parcourez le catalogue, puis envoyez une demande depuis la fiche produit ou notre formulaire de devis. Un conseiller vous répond avec une offre détaillée.",
+	},
+	{
+		question: 'Les équipements sont-ils certifiés ?',
+		answer:
+			"Notre catalogue s'appuie sur des marques reconnues du secteur (Portwest, Blaklader, Mascot) proposant des équipements conformes aux normes de sécurité en vigueur pour chaque catégorie de protection.",
+	},
+	{
+		question: 'Comment choisir la bonne taille ?',
+		answer:
+			"Les tailles disponibles sont indiquées sur chaque fiche produit. En cas de doute, précisez votre besoin dans le formulaire de devis, un conseiller vous aidera à choisir.",
+	},
+	{
+		question: 'Proposez-vous vos produits aux particuliers ?',
+		answer: "Protex EPI s'adresse en priorité aux professionnels. Contactez-nous pour toute autre demande.",
+	},
+	{
+		question: 'Quels sont les délais de livraison ?',
+		answer:
+			"Les délais dépendent des produits et des quantités commandées ; ils vous sont communiqués lors de la confirmation de votre devis.",
+	},
+];
+---
+
+<Layout title={`${title} — ${ui.fr['site.title']}`} description={description}>
+	<main class="mx-auto max-w-3xl px-4 py-10">
+		<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: '/' }, { label: title }]} />
+		<h1 class="mb-6 text-2xl font-semibold text-gray-900">{title}</h1>
+		<div class="space-y-3">
+			{
+				faqs.map((faq) => (
+					<details class="rounded-md border border-gray-200 p-4">
+						<summary class="cursor-pointer font-medium text-gray-900">{faq.question}</summary>
+						<p class="mt-2 text-gray-700">{faq.answer}</p>
+					</details>
+				))
+			}
+		</div>
+		<p class="mt-8 text-gray-700">
+			D'autres questions ? <a href="/contact" class="font-medium text-blue-700 hover:text-blue-800">Contactez-nous</a>.
+		</p>
+	</main>
+</Layout>

@@ -1,0 +1,71 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Breadcrumb from '~/components/catalog/Breadcrumb.astro';
+import LegalNotice from '~/components/LegalNotice.astro';
+import { useTranslations } from '~/i18n/utils';
+import { ui } from '~/i18n/ui';
+
+const lang = 'fr' as const;
+const t = useTranslations(lang);
+const title = t('footer.legal.terms');
+const description = 'Conditions générales de vente Protex EPI.';
+
+const articles = [
+	{
+		heading: 'Article 1 — Objet',
+		body: "Les présentes conditions générales régissent les ventes d'équipements de protection individuelle (EPI) conclues entre Protex EPI et ses clients professionnels, à la suite d'un devis accepté.",
+	},
+	{
+		heading: 'Article 2 — Identification du vendeur',
+		body: '[À compléter : forme juridique, capital social, numéro SIRET, numéro RCS, siège social.]',
+	},
+	{
+		heading: 'Article 3 — Produits et prix',
+		body: '[À compléter : modalités de présentation des produits, devise, conditions de variation des prix, prix HT/TTC.]',
+	},
+	{
+		heading: 'Article 4 — Commande et devis',
+		body: 'Toute commande fait l’objet d’un devis préalable établi à partir de la demande transmise par le client (formulaire de devis, e-mail ou téléphone). [À compléter : modalités précises d’acceptation du devis.]',
+	},
+	{
+		heading: 'Article 5 — Paiement',
+		body: '[À compléter : moyens de paiement acceptés, délais, pénalités de retard.]',
+	},
+	{
+		heading: 'Article 6 — Livraison',
+		body: '[À compléter : zones de livraison, délais, transporteurs, frais.]',
+	},
+	{
+		heading: 'Article 7 — Droit de rétractation',
+		body: '[À compléter : le droit de rétractation ne s’applique en principe pas aux ventes entre professionnels ; à confirmer selon la qualité du client.]',
+	},
+	{
+		heading: 'Article 8 — Garanties',
+		body: '[À compléter : garantie légale de conformité, garantie des vices cachés, garanties constructeur le cas échéant.]',
+	},
+	{
+		heading: 'Article 9 — Droit applicable et litiges',
+		body: '[À compléter : droit applicable, tribunal compétent, médiation de la consommation le cas échéant.]',
+	},
+];
+---
+
+<Layout title={`${title} — ${ui.fr['site.title']}`} description={description} noindex>
+	<main class="mx-auto max-w-3xl px-4 py-10">
+		<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: '/' }, { label: title }]} />
+		<h1 class="mb-4 text-2xl font-semibold text-gray-900">{title}</h1>
+		<LegalNotice
+			text="Ce document est un modèle de structure à but indicatif. Il doit impérativement être relu, complété (identité légale, SIRET, conditions de paiement, livraison, rétractation, droit applicable…) et validé par un professionnel du droit avant toute mise en ligne."
+		/>
+		<div class="space-y-6 text-gray-700">
+			{
+				articles.map((article) => (
+					<section>
+						<h2 class="mb-1 font-semibold text-gray-900">{article.heading}</h2>
+						<p>{article.body}</p>
+					</section>
+				))
+			}
+		</div>
+	</main>
+</Layout>

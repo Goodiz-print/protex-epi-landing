@@ -1,0 +1,70 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Breadcrumb from '~/components/catalog/Breadcrumb.astro';
+import LegalNotice from '~/components/LegalNotice.astro';
+import { useTranslations } from '~/i18n/utils';
+import { ui } from '~/i18n/ui';
+
+const lang = 'en' as const;
+const t = useTranslations(lang);
+const title = t('footer.legal.privacy');
+const description = 'Personal data and cookie policy for the Protex EPI website.';
+---
+
+<Layout title={`${title} — ${ui.en['site.title']}`} description={description} noindex>
+	<main class="mx-auto max-w-3xl px-4 py-10">
+		<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: '/en' }, { label: title }]} />
+		<h1 class="mb-4 text-2xl font-semibold text-gray-900">{title}</h1>
+		<LegalNotice
+			text="This page describes the data actually collected by the site (cookies, quote form). Mentions of the hosting provider, data protection contact and retention periods must be completed before publication."
+		/>
+		<div class="space-y-6 text-gray-700">
+			<section>
+				<h2 class="mb-1 font-semibold text-gray-900">Data controller</h2>
+				<p>
+					Protex EPI, {t('footer.contact.addressLine')} — <a href="mailto:contact@protex-epi.com" class="text-blue-700 hover:text-blue-800">contact@protex-epi.com</a>.
+				</p>
+			</section>
+			<section>
+				<h2 class="mb-1 font-semibold text-gray-900">Data collected</h2>
+				<p>
+					The site collects data voluntarily entered in the
+					<a href="/en/quote" class="text-blue-700 hover:text-blue-800">quote request form</a>
+					 (name, company, email, phone, quantity, message), as well as cookies, based on preferences saved
+					through the consent banner:
+				</p>
+				<ul class="mt-2 list-inside list-disc space-y-1">
+					<li><strong>{t('cookie.category.functional')}</strong> — {t('cookie.category.functionalDesc')}</li>
+					<li><strong>{t('cookie.category.marketing')}</strong> — {t('cookie.category.marketingDesc')}</li>
+					<li><strong>{t('cookie.category.performance')}</strong> — {t('cookie.category.performanceDesc')}</li>
+					<li><strong>{t('cookie.category.analytics')}</strong> — {t('cookie.category.analyticsDesc')}</li>
+				</ul>
+			</section>
+			<section>
+				<h2 class="mb-1 font-semibold text-gray-900">Purposes</h2>
+				<p>Responding to quote requests, operating the site, and, subject to consent, measuring site audience.</p>
+			</section>
+			<section>
+				<h2 class="mb-1 font-semibold text-gray-900">Legal basis</h2>
+				<p>Pre-contractual measures for the quote form; consent for non-essential cookies.</p>
+			</section>
+			<section>
+				<h2 class="mb-1 font-semibold text-gray-900">Retention period</h2>
+				<p>[To be completed.]</p>
+			</section>
+			<section>
+				<h2 class="mb-1 font-semibold text-gray-900">Hosting</h2>
+				<p>[To be completed: identity and location of the site's hosting provider.]</p>
+			</section>
+			<section>
+				<h2 class="mb-1 font-semibold text-gray-900">Your rights</h2>
+				<p>
+					Under GDPR, you have the right to access, rectify, erase and object to your personal data, which
+					you can exercise by contacting
+					<a href="mailto:contact@protex-epi.com" class="text-blue-700 hover:text-blue-800">contact@protex-epi.com</a>.
+					[To be completed: data protection officer contact where applicable.]
+				</p>
+			</section>
+		</div>
+	</main>
+</Layout>

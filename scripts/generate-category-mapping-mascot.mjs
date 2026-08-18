@@ -50,6 +50,19 @@ const RULES = [
 			'thermique', 'grand froid',
 		],
 	},
+
+	// --- Corps — accessoires/composants qui s'attachent à un vêtement de travail Mascot
+	// (capuche amovible, genouillères d'insertion, ceinture, poches flottantes...). Ce ne
+	// sont pas des vêtements en soi, mais faute de catégorie "accessoires" dédiée dans la
+	// taxonomie, on les rattache à leur rayon le plus proche plutôt que de les laisser
+	// non classés.
+	{
+		category: 'corps',
+		subcategory: 'vetements-travail',
+		keywords: [
+			'capuche', 'genouillere', 'tour de cou', 'ceinture', 'porte-badge', 'porte-marteau', 'poche',
+		],
+	},
 ];
 
 function normalize(text) {

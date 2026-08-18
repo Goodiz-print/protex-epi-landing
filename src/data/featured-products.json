@@ -1,0 +1,4 @@
+{
+	"_comment": "Product `id` values (e.g. 'portwest:FW95:blanc') to feature on the homepage, in display order. Curated by the business — leave empty to fall back to an automatic round-robin across categories.",
+	"ids": []
+}

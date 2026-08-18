@@ -1,0 +1,57 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Breadcrumb from '~/components/catalog/Breadcrumb.astro';
+import { useTranslations } from '~/i18n/utils';
+import { ui } from '~/i18n/ui';
+
+const lang = 'en' as const;
+const t = useTranslations(lang);
+const title = t('footer.legal.faq');
+const description = 'Frequently asked questions about ordering, quotes, sizing and delivery of Protex EPI personal protective equipment.';
+
+const faqs = [
+	{
+		question: 'How do I place an order?',
+		answer:
+			'Protex EPI works on a quote basis: browse the catalog, then send a request from a product page or our quote form. An advisor will reply with a detailed offer.',
+	},
+	{
+		question: 'Is the equipment certified?',
+		answer:
+			'Our catalog draws on well-known brands in the sector (Portwest, Blaklader, Mascot) offering equipment compliant with current safety standards for each protection category.',
+	},
+	{
+		question: 'How do I choose the right size?',
+		answer:
+			'Available sizes are listed on each product page. If unsure, describe your needs in the quote form and an advisor will help you choose.',
+	},
+	{
+		question: 'Do you sell to individuals?',
+		answer: 'Protex EPI primarily serves professional customers. Contact us for any other request.',
+	},
+	{
+		question: 'What are the delivery times?',
+		answer: 'Delivery times depend on the products and quantities ordered; they are communicated when your quote is confirmed.',
+	},
+];
+---
+
+<Layout title={`${title} — ${ui.en['site.title']}`} description={description}>
+	<main class="mx-auto max-w-3xl px-4 py-10">
+		<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: '/en' }, { label: title }]} />
+		<h1 class="mb-6 text-2xl font-semibold text-gray-900">{title}</h1>
+		<div class="space-y-3">
+			{
+				faqs.map((faq) => (
+					<details class="rounded-md border border-gray-200 p-4">
+						<summary class="cursor-pointer font-medium text-gray-900">{faq.question}</summary>
+						<p class="mt-2 text-gray-700">{faq.answer}</p>
+					</details>
+				))
+			}
+		</div>
+		<p class="mt-8 text-gray-700">
+			More questions? <a href="/en/contact" class="font-medium text-blue-700 hover:text-blue-800">Contact us</a>.
+		</p>
+	</main>
+</Layout>

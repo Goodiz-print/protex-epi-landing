@@ -1,8 +1,7 @@
 ---
-import { Image } from 'astro:assets';
 import { useTranslations } from '../../i18n/utils';
 import type { Product } from '../../content/schemas/product';
-import type { Lang } from '../../utils/catalog';
+import { getQuoteUrl, type Lang } from '../../utils/catalog';
 import { formatPrice } from '../../utils/format';
 import SizeList from './SizeList.astro';
 
@@ -13,17 +12,20 @@ interface Props {
 
 const { lang, product } = Astro.props;
 const t = useTranslations(lang);
+const quoteHref = `${getQuoteUrl(lang)}?product=${encodeURIComponent(product.name)}&sku=${encodeURIComponent(product.styleCode)}`;
 ---
 
 <div class="grid gap-8 md:grid-cols-2">
 	<div class="aspect-square overflow-hidden rounded-lg bg-gray-50">
-		<Image
+		<img
 			src={product.imageUrl}
-			width={1100}
-			height={1100}
+			width="1100"
+			height="1100"
 			alt={product.name}
 			loading="eager"
+			decoding="async"
 			class="h-full w-full object-contain"
+			onerror="this.onerror=null;this.src='/images/product-placeholder.svg';"
 		/>
 	</div>
 	<div>
@@ -36,5 +38,11 @@ const t = useTranslations(lang);
 		<div class="mt-6">
 			<SizeList lang={lang} sizes={product.sizes} />
 		</div>
+		<a
+			href={quoteHref}
+			class="mt-6 inline-block rounded-md bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700"
+		>
+			{t('catalog.requestQuote')}
+		</a>
 	</div>
 </div>

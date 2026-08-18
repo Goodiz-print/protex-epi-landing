@@ -30,7 +30,16 @@ const imageClass = (tile: Tile) =>
 							href={tile.href}
 							class="group relative block h-40 overflow-hidden rounded-lg border border-gray-200 transition-colors hover:border-gray-400"
 						>
-							<Image src={src} alt="" width={400} height={300} class={imageClass(tile)} />
+							<img
+								src={src}
+								alt=""
+								width="400"
+								height="300"
+								loading="lazy"
+								decoding="async"
+								class={imageClass(tile)}
+								onerror="this.onerror=null;this.src='/images/product-placeholder.svg';"
+							/>
 							<div class="absolute inset-0 bg-gray-900/40" />
 							<span class="absolute inset-x-0 bottom-0 p-3 font-medium text-white">{tile.label}</span>
 						</a>

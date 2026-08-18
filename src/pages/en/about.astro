@@ -1,0 +1,36 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Breadcrumb from '~/components/catalog/Breadcrumb.astro';
+import { useTranslations } from '~/i18n/utils';
+import { ui } from '~/i18n/ui';
+
+const lang = 'en' as const;
+const t = useTranslations(lang);
+const title = t('footer.legal.about');
+const description =
+	'Protex EPI is a personal protective equipment (PPE) supplier for professionals: workwear, gloves, safety footwear, and head, eye, hearing and respiratory protection.';
+---
+
+<Layout title={`${title} — ${ui.en['site.title']}`} description={description}>
+	<main class="mx-auto max-w-3xl px-4 py-10">
+		<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: '/en' }, { label: title }]} />
+		<h1 class="mb-6 text-2xl font-semibold text-gray-900">{title}</h1>
+		<div class="space-y-4 text-gray-700">
+			<p>{description}</p>
+			<p>
+				Our catalog brings together references from well-known brands in the sector — Portwest, Blaklader and
+				Mascot — selected for their compliance with current safety standards and their suitability for the
+				various trades exposed to occupational risks.
+			</p>
+			<p>
+				Every request is handled through a quote: describe what you need (references, sizes, quantities) and an
+				advisor will get back to you with a no-obligation offer.
+			</p>
+			<p>
+				<a href="/en/quote" class="font-medium text-blue-700 hover:text-blue-800">Request a quote</a>
+				 ·
+				<a href="/en/contact" class="font-medium text-blue-700 hover:text-blue-800">Contact us</a>
+			</p>
+		</div>
+	</main>
+</Layout>

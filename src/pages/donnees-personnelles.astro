@@ -1,0 +1,70 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Breadcrumb from '~/components/catalog/Breadcrumb.astro';
+import LegalNotice from '~/components/LegalNotice.astro';
+import { useTranslations } from '~/i18n/utils';
+import { ui } from '~/i18n/ui';
+
+const lang = 'fr' as const;
+const t = useTranslations(lang);
+const title = t('footer.legal.privacy');
+const description = 'Politique de gestion des données personnelles et des cookies du site Protex EPI.';
+---
+
+<Layout title={`${title} — ${ui.fr['site.title']}`} description={description} noindex>
+	<main class="mx-auto max-w-3xl px-4 py-10">
+		<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: '/' }, { label: title }]} />
+		<h1 class="mb-4 text-2xl font-semibold text-gray-900">{title}</h1>
+		<LegalNotice
+			text="Cette page décrit les données réellement collectées par le site (cookies, formulaire de devis). Les mentions relatives à l'hébergeur, au délégué à la protection des données et aux durées de conservation doivent être complétées avant publication."
+		/>
+		<div class="space-y-6 text-gray-700">
+			<section>
+				<h2 class="mb-1 font-semibold text-gray-900">Responsable du traitement</h2>
+				<p>
+					Protex EPI, {t('footer.contact.addressLine')} — <a href="mailto:contact@protex-epi.com" class="text-blue-700 hover:text-blue-800">contact@protex-epi.com</a>.
+				</p>
+			</section>
+			<section>
+				<h2 class="mb-1 font-semibold text-gray-900">Données collectées</h2>
+				<p>
+					Le site collecte les données saisies volontairement dans le
+					<a href="/devis" class="text-blue-700 hover:text-blue-800">formulaire de demande de devis</a>
+					 (nom, société, e-mail, téléphone, quantité, message), ainsi que des cookies, selon les préférences
+					enregistrées via le bandeau de consentement :
+				</p>
+				<ul class="mt-2 list-inside list-disc space-y-1">
+					<li><strong>{t('cookie.category.functional')}</strong> — {t('cookie.category.functionalDesc')}</li>
+					<li><strong>{t('cookie.category.marketing')}</strong> — {t('cookie.category.marketingDesc')}</li>
+					<li><strong>{t('cookie.category.performance')}</strong> — {t('cookie.category.performanceDesc')}</li>
+					<li><strong>{t('cookie.category.analytics')}</strong> — {t('cookie.category.analyticsDesc')}</li>
+				</ul>
+			</section>
+			<section>
+				<h2 class="mb-1 font-semibold text-gray-900">Finalités</h2>
+				<p>Répondre aux demandes de devis, faire fonctionner le site, et, sous réserve du consentement donné, mesurer l’audience du site.</p>
+			</section>
+			<section>
+				<h2 class="mb-1 font-semibold text-gray-900">Base légale</h2>
+				<p>Exécution de mesures précontractuelles pour le formulaire de devis ; consentement pour les cookies non essentiels.</p>
+			</section>
+			<section>
+				<h2 class="mb-1 font-semibold text-gray-900">Durée de conservation</h2>
+				<p>[À compléter.]</p>
+			</section>
+			<section>
+				<h2 class="mb-1 font-semibold text-gray-900">Hébergement</h2>
+				<p>[À compléter : identité et localisation de l’hébergeur du site.]</p>
+			</section>
+			<section>
+				<h2 class="mb-1 font-semibold text-gray-900">Vos droits</h2>
+				<p>
+					Conformément au RGPD, vous disposez d’un droit d’accès, de rectification, d’effacement et
+					d’opposition sur vos données personnelles, exerçable auprès de
+					<a href="mailto:contact@protex-epi.com" class="text-blue-700 hover:text-blue-800">contact@protex-epi.com</a>.
+					[À compléter : contact du délégué à la protection des données le cas échéant.]
+				</p>
+			</section>
+		</div>
+	</main>
+</Layout>

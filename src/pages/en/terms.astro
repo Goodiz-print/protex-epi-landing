@@ -1,0 +1,71 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Breadcrumb from '~/components/catalog/Breadcrumb.astro';
+import LegalNotice from '~/components/LegalNotice.astro';
+import { useTranslations } from '~/i18n/utils';
+import { ui } from '~/i18n/ui';
+
+const lang = 'en' as const;
+const t = useTranslations(lang);
+const title = t('footer.legal.terms');
+const description = 'Protex EPI terms and conditions of sale.';
+
+const articles = [
+	{
+		heading: 'Article 1 — Purpose',
+		body: 'These terms and conditions govern sales of personal protective equipment (PPE) between Protex EPI and its professional customers, following an accepted quote.',
+	},
+	{
+		heading: 'Article 2 — Seller identification',
+		body: '[To be completed: legal form, share capital, company registration number, registered office.]',
+	},
+	{
+		heading: 'Article 3 — Products and pricing',
+		body: '[To be completed: product presentation terms, currency, price variation conditions, VAT-exclusive/inclusive pricing.]',
+	},
+	{
+		heading: 'Article 4 — Orders and quotes',
+		body: 'Every order is subject to a prior quote drawn up from the request submitted by the customer (quote form, email or phone). [To be completed: precise quote acceptance terms.]',
+	},
+	{
+		heading: 'Article 5 — Payment',
+		body: '[To be completed: accepted payment methods, terms, late payment penalties.]',
+	},
+	{
+		heading: 'Article 6 — Delivery',
+		body: '[To be completed: delivery areas, lead times, carriers, fees.]',
+	},
+	{
+		heading: 'Article 7 — Right of withdrawal',
+		body: '[To be completed: the right of withdrawal generally does not apply to business-to-business sales; to confirm based on customer status.]',
+	},
+	{
+		heading: 'Article 8 — Warranties',
+		body: '[To be completed: statutory conformity warranty, hidden defects warranty, manufacturer warranties where applicable.]',
+	},
+	{
+		heading: 'Article 9 — Governing law and disputes',
+		body: '[To be completed: governing law, competent court, consumer mediation where applicable.]',
+	},
+];
+---
+
+<Layout title={`${title} — ${ui.en['site.title']}`} description={description} noindex>
+	<main class="mx-auto max-w-3xl px-4 py-10">
+		<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: '/en' }, { label: title }]} />
+		<h1 class="mb-4 text-2xl font-semibold text-gray-900">{title}</h1>
+		<LegalNotice
+			text="This document is an indicative structural template. It must be reviewed, completed (legal identity, registration number, payment terms, delivery, withdrawal, governing law…) and validated by a legal professional before publication."
+		/>
+		<div class="space-y-6 text-gray-700">
+			{
+				articles.map((article) => (
+					<section>
+						<h2 class="mb-1 font-semibold text-gray-900">{article.heading}</h2>
+						<p>{article.body}</p>
+					</section>
+				))
+			}
+		</div>
+	</main>
+</Layout>

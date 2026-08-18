@@ -2,8 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 import HomePage from '../components/home/HomePage.astro';
 import { ui } from '../i18n/ui';
+import { homeDescription } from '../utils/seo';
 ---
 
-<Layout title={ui.fr['site.title']}>
+<Layout title={ui.fr['site.title']} description={homeDescription('fr')}>
 	<HomePage lang="fr" />
 </Layout>
