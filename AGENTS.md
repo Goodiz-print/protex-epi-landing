@@ -36,6 +36,19 @@ When a supplier ships a new export:
 The CSV parsing / grouping / joining logic lives in `scripts/lib/supplier-csv.ts` and is
 used **only** by step 4 — never at build time.
 
+## Product images
+
+Product images are read from each supplier's CDN URL (Portwest, Blaklader, Mascot) —
+dead links appear over time as those CDNs drift. Run `pnpm run check:images` periodically
+(it makes live HTTP requests to every product image URL, so it takes several minutes) to
+refresh `src/data/known-bad-images.portwest.json` (dead Portwest URLs — the next
+`generate-catalog-data.mjs` run automatically falls back to another size's image from the
+same style+colour when one is available) and `scripts/reports/broken-product-images.json`
+(every product still without a valid image after that, i.e. what renders with
+`/images/product-placeholder.svg`). Rerun `node scripts/generate-catalog-data.mjs`
+afterwards to bake the refreshed blocklist into the committed catalog JSON, then commit
+all three files.
+
 ## Documentation
 
 Full documentation: https://docs.astro.build

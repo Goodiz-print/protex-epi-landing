@@ -86,10 +86,37 @@ export interface BuildProductEntryResult {
 	warnings: string[];
 }
 
+export const PLACEHOLDER_IMAGE_URL = '/images/product-placeholder.svg';
+
+/**
+ * Picks a group's image URL, preferring the first-seen value like resolveDeterministicValue,
+ * but skipping any value known to be a dead CDN link (see src/data/known-bad-images.portwest.json)
+ * in favour of another value from the same group, and falling back to the local placeholder
+ * only when every candidate is known-bad.
+ */
+export function resolvePortwestImage(
+	values: string[],
+	knownBadImageUrls: ReadonlySet<string>,
+): DeterministicValue<string> {
+	const resolution = resolveDeterministicValue(values);
+	if (!knownBadImageUrls.has(resolution.value)) {
+		return resolution;
+	}
+	const alternative = [resolution.value, ...resolution.ignoredValues].find(
+		(candidate) => candidate && !knownBadImageUrls.has(candidate),
+	);
+	return {
+		value: alternative ?? PLACEHOLDER_IMAGE_URL,
+		hadMismatch: resolution.hadMismatch,
+		ignoredValues: resolution.ignoredValues,
+	};
+}
+
 export function buildProductEntry(
 	supplier: 'portwest' | 'mascot' | 'blaklader',
 	group: ProductGroup,
 	mapping: CategoryMapping,
+	knownBadImageUrls: ReadonlySet<string> = new Set(),
 ): BuildProductEntryResult {
 	const warnings: string[] = [];
 	const firstRow = group.rows[0];
@@ -103,10 +130,18 @@ export function buildProductEntry(
 		);
 	}
 
-	const imageResolution = resolveDeterministicValue(group.rows.map((row) => row['Image']));
+	const imageResolution = resolvePortwestImage(
+		group.rows.map((row) => row['Image']),
+		knownBadImageUrls,
+	);
 	if (imageResolution.hadMismatch) {
 		warnings.push(
 			`image mismatch for styleCode=${group.styleCode} colour="${group.colour}": using ${imageResolution.value}, ignored [${imageResolution.ignoredValues.join(', ')}]`,
+		);
+	}
+	if (imageResolution.value === PLACEHOLDER_IMAGE_URL) {
+		warnings.push(
+			`all known images are dead for styleCode=${group.styleCode} colour="${group.colour}", using placeholder`,
 		);
 	}
 
@@ -194,11 +229,11 @@ export function buildMascotEntry(
 		.filter((price) => Number.isFinite(price) && price > 0);
 	const price = prices.length > 0 ? Math.min(...prices) : 0;
 
-	const imageUrl = firstRow['image1000'];
 	const id = buildEntryId('mascot', group.produitQualiteColoris, colour);
+	let imageUrl = firstRow['image1000'];
 	if (!imageUrl) {
-		warnings.push(`no image for produitQualiteColoris=${group.produitQualiteColoris}, product skipped`);
-		return { id, data: null, warnings };
+		warnings.push(`no image for produitQualiteColoris=${group.produitQualiteColoris}, using placeholder`);
+		imageUrl = PLACEHOLDER_IMAGE_URL;
 	}
 
 	const sizes: string[] = [];
@@ -282,7 +317,10 @@ export function buildBlakladerColourIndex(varianteRows: PortwestCsvRow[]): Map<s
 	return index;
 }
 
-/** Keyed by base ref (B03_MEDIA, MTYP=PHOTO rows): picks the lowest-MNUM, highest-resolution photo. */
+/** Web-renderable raster formats; excludes print/vector formats like .eps that browsers can't display. */
+const RASTER_IMAGE_EXTENSION = /\.(jpe?g|png|webp|gif)(\?|$)/i;
+
+/** Keyed by base ref (B03_MEDIA, MTYP=PHOTO rows): picks the lowest-MNUM, highest-resolution raster photo. */
 export function buildBlakladerMediaIndex(mediaRows: PortwestCsvRow[]): Map<string, string> {
 	const photosByBaseRef = new Map<string, PortwestCsvRow[]>();
 	for (const row of mediaRows) {
@@ -301,7 +339,12 @@ export function buildBlakladerMediaIndex(mediaRows: PortwestCsvRow[]): Map<strin
 	const index = new Map<string, string>();
 	for (const [baseRef, photos] of photosByBaseRef) {
 		const sorted = [...photos].sort((a, b) => Number(a['MNUM']) - Number(b['MNUM']));
-		const best = sorted.find((photo) => !photo['MTEXTE'].includes('basse résolution')) ?? sorted[0];
+		const raster = sorted.filter((photo) => RASTER_IMAGE_EXTENSION.test(photo['MURL']));
+		if (raster.length === 0) {
+			// Only non-raster candidates (e.g. .eps) — treat as no image, handled by the caller.
+			continue;
+		}
+		const best = raster.find((photo) => !photo['MTEXTE'].includes('basse résolution')) ?? raster[0];
 		index.set(baseRef, best['MURL']);
 	}
 	return index;
@@ -344,10 +387,10 @@ export function buildBlakladerProductEntry(
 
 	const id = buildEntryId('blaklader', group.baseRef, colourResolution.value);
 
-	const imageUrl = mediaIndex.get(group.baseRef);
+	let imageUrl = mediaIndex.get(group.baseRef);
 	if (!imageUrl) {
-		warnings.push(`no image found for baseRef=${group.baseRef}, product skipped`);
-		return { id, data: null, warnings };
+		warnings.push(`no image found for baseRef=${group.baseRef}, using placeholder`);
+		imageUrl = PLACEHOLDER_IMAGE_URL;
 	}
 
 	const sizes: string[] = [];

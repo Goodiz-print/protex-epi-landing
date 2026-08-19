@@ -1,0 +1,1933 @@
+{
+	"summary": {
+		"checkedUrls": 24822,
+		"brokenUrls": 124,
+		"products": {
+			"portwest": 3444,
+			"mascot": 3025,
+			"blaklader": 2604
+		},
+		"productsStillWithoutImage": 80,
+		"recurringIssues": {
+			"portwestGroupsWithMismatchedSizeImages": 119,
+			"blakladerBaseRefsWithOnlyNonRasterPhotos": 0
+		}
+	},
+	"brokenEntries": [
+		{
+			"supplier": "portwest",
+			"styleCode": "A591",
+			"colour": "Jaune",
+			"sourceSkus": [
+				"A591YERL",
+				"A591YERM",
+				"A591YERXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/A591YER.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/A591YER.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "A633",
+			"colour": "Gris/Noir",
+			"sourceSkus": [
+				"A633G8RL",
+				"A633G8RM",
+				"A633G8RS",
+				"A633G8RXL",
+				"A633G8RXS",
+				"A633G8RXXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/A633G8R.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/A633G8R.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "A676",
+			"colour": "Noir",
+			"sourceSkus": [
+				"A676K8RL",
+				"A676K8RM",
+				"A676K8RS",
+				"A676K8RXL",
+				"A676K8RXS",
+				"A676K8RXXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/A676K8R.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/A676K8R.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "A732",
+			"colour": "Gris/Noir",
+			"sourceSkus": [
+				"A732G8RL",
+				"A732G8RM",
+				"A732G8RS",
+				"A732G8RXL",
+				"A732G8RXXL",
+				"A732G8RXXXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/A732G8R.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/A732G8R.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "A785",
+			"colour": "Vert/Noir",
+			"sourceSkus": [
+				"A785E8RL",
+				"A785E8RM",
+				"A785E8RXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/A785E8R.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/A785E8R.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "A804",
+			"colour": "Bleu/jaune",
+			"sourceSkus": [
+				"A804B2RL",
+				"A804B2RM",
+				"A804B2RS",
+				"A804B2RXL",
+				"A804B2RXS",
+				"A804B2RXXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/A804B2R.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/A804B2R.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "A815",
+			"colour": "Bleu",
+			"sourceSkus": [
+				"A815BLUL",
+				"A815BLUM",
+				"A815BLUS",
+				"A815BLUXL",
+				"A815BLUXS",
+				"A815BLUXXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/A815BLU.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/A815BLU.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "AB662",
+			"colour": "Gris",
+			"sourceSkus": [
+				"AB662G7RL",
+				"AB662G7RM",
+				"AB662G7RS",
+				"AB662G7RXL",
+				"AB662G7RXXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/AB662G7R.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/AB662G7R.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "B300",
+			"colour": " ",
+			"sourceSkus": [
+				"B300DNRL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/B300DNR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/B300DNR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "B311",
+			"colour": "Orange",
+			"sourceSkus": [
+				"B311ORR4XL",
+				"B311ORRL",
+				"B311ORRM",
+				"B311ORRS",
+				"B311ORRXL",
+				"B311ORRXXL",
+				"B311ORRXXXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/B311ORR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/B311ORR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "B311",
+			"colour": "Jaune",
+			"sourceSkus": [
+				"B311YER4XL",
+				"B311YERL",
+				"B311YERM",
+				"B311YERS",
+				"B311YERXL",
+				"B311YERXXL",
+				"B311YERXXXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/B311YER.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/B311YER.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "C378",
+			"colour": "Orange",
+			"sourceSkus": [
+				"C378ORR4XL",
+				"C378ORR5XL",
+				"C378ORR6XL",
+				"C378ORRL",
+				"C378ORRM",
+				"C378ORRS",
+				"C378ORRXL",
+				"C378ORRXS",
+				"C378ORRXXL",
+				"C378ORRXXXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/C378ORR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/C378ORR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "C378",
+			"colour": "Jaune",
+			"sourceSkus": [
+				"C378YER4XL",
+				"C378YER5XL",
+				"C378YER6XL",
+				"C378YERL",
+				"C378YERM",
+				"C378YERS",
+				"C378YERXL",
+				"C378YERXS",
+				"C378YERXXL",
+				"C378YERXXXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/C378YER.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/C378YER.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "C379",
+			"colour": "Orange",
+			"sourceSkus": [
+				"C379ORRL",
+				"C379ORRM",
+				"C379ORRS",
+				"C379ORRXL",
+				"C379ORRXS",
+				"C379ORRXXL",
+				"C379ORRXXXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/C379ORR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/C379ORR.jpg",
+					"ok": false,
+					"status": 0,
+					"error": "fetch failed"
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "C379",
+			"colour": "Jaune",
+			"sourceSkus": [
+				"C379YERL",
+				"C379YERM",
+				"C379YERS",
+				"C379YERXL",
+				"C379YERXS",
+				"C379YERXXL",
+				"C379YERXXXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/C379YER.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/C379YER.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "CD803",
+			"colour": "Noir",
+			"sourceSkus": [
+				"CD803BKRL",
+				"CD803BKRM",
+				"CD803BKRS",
+				"CD803BKRXL",
+				"CD803BKRXXL",
+				"CD803BKRXXXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/CD803BKR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/CD803BKR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "CD816",
+			"colour": "Orange/Noir",
+			"sourceSkus": [
+				"CD816OBR4XL",
+				"CD816OBR5XL",
+				"CD816OBR6XL",
+				"CD816OBRL",
+				"CD816OBRM",
+				"CD816OBRS",
+				"CD816OBRXL",
+				"CD816OBRXXL",
+				"CD816OBRXXXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/CD816OBR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/CD816OBR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "CD816",
+			"colour": "Jaune/Noir",
+			"sourceSkus": [
+				"CD816YBR4XL",
+				"CD816YBR5XL",
+				"CD816YBR6XL",
+				"CD816YBRL",
+				"CD816YBRM",
+				"CD816YBRS",
+				"CD816YBRXL",
+				"CD816YBRXXL",
+				"CD816YBRXXXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/CD816YBR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/CD816YBR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "CD817",
+			"colour": "Orange/Noir",
+			"sourceSkus": [
+				"CD817OBR4XL",
+				"CD817OBR5XL",
+				"CD817OBR6XL",
+				"CD817OBRL",
+				"CD817OBRM",
+				"CD817OBRS",
+				"CD817OBRXL",
+				"CD817OBRXXL",
+				"CD817OBRXXXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/CD817OBR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/CD817OBR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "CD817",
+			"colour": "Jaune/Noir",
+			"sourceSkus": [
+				"CD817YBR4XL",
+				"CD817YBR5XL",
+				"CD817YBR6XL",
+				"CD817YBRL",
+				"CD817YBRM",
+				"CD817YBRS",
+				"CD817YBRXL",
+				"CD817YBRXXL",
+				"CD817YBRXXXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/CD817YBR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/CD817YBR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "CD818",
+			"colour": "Orange/Noir",
+			"sourceSkus": [
+				"CD818OBR4XL",
+				"CD818OBR5XL",
+				"CD818OBR6XL",
+				"CD818OBRL",
+				"CD818OBRM",
+				"CD818OBRS",
+				"CD818OBRXL",
+				"CD818OBRXXL",
+				"CD818OBRXXXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/CD818OBR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/CD818OBR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "CD818",
+			"colour": "Jaune/Noir",
+			"sourceSkus": [
+				"CD818YBR4XL",
+				"CD818YBR5XL",
+				"CD818YBR6XL",
+				"CD818YBRL",
+				"CD818YBRM",
+				"CD818YBRS",
+				"CD818YBRXL",
+				"CD818YBRXXL",
+				"CD818YBRXXXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/CD818YBR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/CD818YBR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "CD820",
+			"colour": "Orange/Noir",
+			"sourceSkus": [
+				"CD820OBR4XL",
+				"CD820OBRL",
+				"CD820OBRM",
+				"CD820OBRS",
+				"CD820OBRXL",
+				"CD820OBRXXL",
+				"CD820OBRXXXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/CD820OBR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/CD820OBR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "CD820",
+			"colour": "Jaune/Noir",
+			"sourceSkus": [
+				"CD820YBR4XL",
+				"CD820YBRL",
+				"CD820YBRM",
+				"CD820YBRS",
+				"CD820YBRXL",
+				"CD820YBRXXL",
+				"CD820YBRXXXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/CD820YBR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/CD820YBR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "DX426",
+			"colour": "Noir",
+			"sourceSkus": [
+				"DX426BKRL",
+				"DX426BKRM",
+				"DX426BKRS",
+				"DX426BKRXL",
+				"DX426BKRXS",
+				"DX426BKRXXL",
+				"DX426BKRXXXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/DX426BKR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/DX426BKR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "DX4E10",
+			"colour": "Noir",
+			"sourceSkus": [
+				"DX4E10BKRL",
+				"DX4E10BKRM",
+				"DX4E10BKRS",
+				"DX4E10BKRXL",
+				"DX4E10BKRXXL",
+				"DX4E10BKRXXXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/DX4E10BKR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/DX4E10BKR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "DX4E10",
+			"colour": "Marine",
+			"sourceSkus": [
+				"DX4E10NVRL",
+				"DX4E10NVRM",
+				"DX4E10NVRS",
+				"DX4E10NVRXL",
+				"DX4E10NVRXXL",
+				"DX4E10NVRXXXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/DX4E10NVR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/DX4E10NVR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "DX4E11",
+			"colour": "Noir",
+			"sourceSkus": [
+				"DX4E11BKRL",
+				"DX4E11BKRM",
+				"DX4E11BKRS",
+				"DX4E11BKRXL",
+				"DX4E11BKRXXL",
+				"DX4E11BKRXXXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/DX4E11BKR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/DX4E11BKR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "DX4E11",
+			"colour": "Marine",
+			"sourceSkus": [
+				"DX4E11NVRL",
+				"DX4E11NVRM",
+				"DX4E11NVRS",
+				"DX4E11NVRXL",
+				"DX4E11NVRXXL",
+				"DX4E11NVRXXXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/DX4E11NVR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/DX4E11NVR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "DX4E49",
+			"colour": "Noir",
+			"sourceSkus": [
+				"DX4E49BKR28",
+				"DX4E49BKR30",
+				"DX4E49BKR32",
+				"DX4E49BKR33",
+				"DX4E49BKR34",
+				"DX4E49BKR36",
+				"DX4E49BKR38",
+				"DX4E49BKR40",
+				"DX4E49BKR41",
+				"DX4E49BKR42",
+				"DX4E49BKR44",
+				"DX4E49BKR46",
+				"DX4E49BKR47",
+				"DX4E49BKR48"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/DX4E49BKR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/DX4E49BKR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "DX4E49",
+			"colour": "Nuits de forêt",
+			"sourceSkus": [
+				"DX4E49FNR28",
+				"DX4E49FNR30",
+				"DX4E49FNR32",
+				"DX4E49FNR33",
+				"DX4E49FNR34",
+				"DX4E49FNR36",
+				"DX4E49FNR38",
+				"DX4E49FNR40",
+				"DX4E49FNR41",
+				"DX4E49FNR42",
+				"DX4E49FNR44",
+				"DX4E49FNR46",
+				"DX4E49FNR47",
+				"DX4E49FNR48"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/DX4E49FNR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/DX4E49FNR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "DX4E49",
+			"colour": "Marine",
+			"sourceSkus": [
+				"DX4E49NVR28",
+				"DX4E49NVR30",
+				"DX4E49NVR32",
+				"DX4E49NVR33",
+				"DX4E49NVR34",
+				"DX4E49NVR36",
+				"DX4E49NVR38",
+				"DX4E49NVR40",
+				"DX4E49NVR41",
+				"DX4E49NVR42",
+				"DX4E49NVR44",
+				"DX4E49NVR46",
+				"DX4E49NVR47",
+				"DX4E49NVR48"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/DX4E49NVR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/DX4E49NVR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "F409",
+			"colour": "Noir",
+			"sourceSkus": [
+				"F409BKRL",
+				"F409BKRM",
+				"F409BKRS",
+				"F409BKRXL",
+				"F409BKRXXL",
+				"F409BKRXXXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/F409BKR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/F409BKR.jpg",
+					"ok": false,
+					"status": 0,
+					"error": "fetch failed"
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "FC47",
+			"colour": "Noir",
+			"sourceSkus": [
+				"FC47BKR38",
+				"FC47BKR39",
+				"FC47BKR40",
+				"FC47BKR41",
+				"FC47BKR42",
+				"FC47BKR43",
+				"FC47BKR44",
+				"FC47BKR45",
+				"FC47BKR46",
+				"FC47BKR47",
+				"FC47BKR48"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/FC47BKR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/FC47BKR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "FE16",
+			"colour": "Noir",
+			"sourceSkus": [
+				"FE16BKR37",
+				"FE16BKR38",
+				"FE16BKR39",
+				"FE16BKR40",
+				"FE16BKR41",
+				"FE16BKR42",
+				"FE16BKR43",
+				"FE16BKR44",
+				"FE16BKR45",
+				"FE16BKR46",
+				"FE16BKR47",
+				"FE16BKR48"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/FE16BKR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/FE16BKR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "FR10",
+			"colour": " ",
+			"sourceSkus": [
+				"FR10NARL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/FR10NAR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/FR10NAR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "FT24",
+			"colour": "Brun",
+			"sourceSkus": [
+				"FT24BRR38",
+				"FT24BRR39",
+				"FT24BRR40",
+				"FT24BRR41",
+				"FT24BRR42",
+				"FT24BRR43",
+				"FT24BRR44",
+				"FT24BRR45",
+				"FT24BRR46",
+				"FT24BRR47",
+				"FT24BRR48"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/FT24BRR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/FT24BRR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "FT40",
+			"colour": "Noir",
+			"sourceSkus": [
+				"FT40BKR38",
+				"FT40BKR39",
+				"FT40BKR40",
+				"FT40BKR41",
+				"FT40BKR42",
+				"FT40BKR43",
+				"FT40BKR44",
+				"FT40BKR45",
+				"FT40BKR46",
+				"FT40BKR47",
+				"FT40BKR48"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/FT40BKR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/FT40BKR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "FT40",
+			"colour": "Blé",
+			"sourceSkus": [
+				"FT40WHE38",
+				"FT40WHE39",
+				"FT40WHE40",
+				"FT40WHE41",
+				"FT40WHE42",
+				"FT40WHE43",
+				"FT40WHE44",
+				"FT40WHE45",
+				"FT40WHE46",
+				"FT40WHE47",
+				"FT40WHE48"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/FT40WHE.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/FT40WHE.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "FT45",
+			"colour": "Noir",
+			"sourceSkus": [
+				"FT45BKR37",
+				"FT45BKR38",
+				"FT45BKR39",
+				"FT45BKR40",
+				"FT45BKR41",
+				"FT45BKR42",
+				"FT45BKR43",
+				"FT45BKR44",
+				"FT45BKR45",
+				"FT45BKR46",
+				"FT45BKR47"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/FT45BKR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/FT45BKR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "FT45",
+			"colour": "Brun",
+			"sourceSkus": [
+				"FT45BRR37",
+				"FT45BRR38",
+				"FT45BRR39",
+				"FT45BRR40",
+				"FT45BRR41",
+				"FT45BRR42",
+				"FT45BRR43",
+				"FT45BRR44",
+				"FT45BRR45",
+				"FT45BRR46",
+				"FT45BRR47"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/FT45BRR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/FT45BRR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "HA36",
+			"colour": "Noir",
+			"sourceSkus": [
+				"HA36BKR"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/HA36BKR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/HA36BKR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "LW75",
+			"colour": "Orange",
+			"sourceSkus": [
+				"LW75ORRL",
+				"LW75ORRM",
+				"LW75ORRS",
+				"LW75ORRXL",
+				"LW75ORRXS",
+				"LW75ORRXXL",
+				"LW75ORRXXXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/LW75ORR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/LW75ORR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "LW75",
+			"colour": "Jaune",
+			"sourceSkus": [
+				"LW75YERL",
+				"LW75YERM",
+				"LW75YERS",
+				"LW75YERXL",
+				"LW75YERXS",
+				"LW75YERXXL",
+				"LW75YERXXXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/LW75YER.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/LW75YER.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "PA79",
+			"colour": "Noir",
+			"sourceSkus": [
+				"PA79BKR"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PA79BKR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PA79BKR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "PF90",
+			"colour": "Incolore",
+			"sourceSkus": [
+				"PF90CLR"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PF90CLR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PF90CLR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "PS74",
+			"colour": "Noir",
+			"sourceSkus": [
+				"PS74BKR"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PS74BKR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PS74BKR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "PS74",
+			"colour": "Orange",
+			"sourceSkus": [
+				"PS74ORR"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PS74ORR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PS74ORR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "PS74",
+			"colour": "Bleu Royal",
+			"sourceSkus": [
+				"PS74RBR"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PS74RBR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PS74RBR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "PS74",
+			"colour": "Blanc",
+			"sourceSkus": [
+				"PS74WHR"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PS74WHR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PS74WHR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "PS74",
+			"colour": "Jaune",
+			"sourceSkus": [
+				"PS74YER"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PS74YER.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PS74YER.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "PS84",
+			"colour": "Noir",
+			"sourceSkus": [
+				"PS84BKR"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PS84BKR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PS84BKR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "PS84",
+			"colour": "Orange",
+			"sourceSkus": [
+				"PS84ORR"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PS84ORR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PS84ORR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "PS84",
+			"colour": "Bleu Royal",
+			"sourceSkus": [
+				"PS84RBR"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PS84RBR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PS84RBR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "PS84",
+			"colour": "Blanc",
+			"sourceSkus": [
+				"PS84WHR"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PS84WHR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PS84WHR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "PS84",
+			"colour": "Jaune",
+			"sourceSkus": [
+				"PS84YER"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PS84YER.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PS84YER.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "S232",
+			"colour": "Navy NV S",
+			"sourceSkus": [
+				"S232NVS28",
+				"S232NVS30",
+				"S232NVS32",
+				"S232NVS34",
+				"S232NVS36",
+				"S232NVS38",
+				"S232NVS40",
+				"S232NVS42"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/S232NVS.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/S232NVS.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "S843",
+			"colour": "Rouge",
+			"sourceSkus": [
+				"S843RERL/XL",
+				"S843RERS/M",
+				"S843RERXXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/S843RER.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/S843RER.jpg",
+					"ok": false,
+					"status": 0,
+					"error": "fetch failed"
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "T146",
+			"colour": "Noir",
+			"sourceSkus": [
+				"T146BKR28",
+				"T146BKR30",
+				"T146BKR32",
+				"T146BKR33",
+				"T146BKR34",
+				"T146BKR36",
+				"T146BKR38",
+				"T146BKR40",
+				"T146BKR41",
+				"T146BKR42",
+				"T146BKR44",
+				"T146BKR46",
+				"T146BKR47",
+				"T146BKR48"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/T146BKR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/T146BKR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "T146",
+			"colour": "Marine",
+			"sourceSkus": [
+				"T146NVR28",
+				"T146NVR30",
+				"T146NVR32",
+				"T146NVR33",
+				"T146NVR34",
+				"T146NVR36",
+				"T146NVR38",
+				"T146NVR40",
+				"T146NVR41",
+				"T146NVR42",
+				"T146NVR44",
+				"T146NVR46",
+				"T146NVR47",
+				"T146NVR48"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/T146NVR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/T146NVR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "WEP20",
+			"colour": "Rose",
+			"sourceSkus": [
+				"WEP20PIR"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/WEP20PIR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/WEP20PIR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "portwest",
+			"styleCode": "WPW80",
+			"colour": "Noir",
+			"sourceSkus": [
+				"WPW80BKR4XL",
+				"WPW80BKRXXXL"
+			],
+			"candidateUrls": [
+				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/WPW80BKR.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/WPW80BKR.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "mascot",
+			"styleCode": "21410-292-010",
+			"colour": "Marine foncé",
+			"sourceSkus": [
+				"5711074935369"
+			],
+			"candidateUrls": [
+				"https://pimage.mascot.fr/21410-292-010_P_1000pxweb.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://pimage.mascot.fr/21410-292-010_P_1000pxweb.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "mascot",
+			"styleCode": "21410-292-17",
+			"colour": "Hi-vis Jaune",
+			"sourceSkus": [
+				"5711074935376"
+			],
+			"candidateUrls": [
+				"https://pimage.mascot.fr/21410-292-17_P_1000pxweb.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://pimage.mascot.fr/21410-292-17_P_1000pxweb.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "mascot",
+			"styleCode": "21510-292-010",
+			"colour": "Marine foncé",
+			"sourceSkus": [
+				"5711074935345"
+			],
+			"candidateUrls": [
+				"https://pimage.mascot.fr/21510-292-010_P_1000pxweb.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://pimage.mascot.fr/21510-292-010_P_1000pxweb.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "mascot",
+			"styleCode": "21510-292-17",
+			"colour": "Hi-vis Jaune",
+			"sourceSkus": [
+				"5711074935352"
+			],
+			"candidateUrls": [
+				"https://pimage.mascot.fr/21510-292-17_P_1000pxweb.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://pimage.mascot.fr/21510-292-17_P_1000pxweb.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "mascot",
+			"styleCode": "24850-436-010",
+			"colour": "Marine foncé",
+			"sourceSkus": [
+				"5715411117678",
+				"5715411117685",
+				"5715411117692"
+			],
+			"candidateUrls": [
+				"https://pimage.mascot.fr/24850-436-010_P_1000pxweb.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://pimage.mascot.fr/24850-436-010_P_1000pxweb.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "mascot",
+			"styleCode": "24950-437-010",
+			"colour": "Marine foncé",
+			"sourceSkus": [
+				"5715411117708",
+				"5715411117715",
+				"5715411117722"
+			],
+			"candidateUrls": [
+				"https://pimage.mascot.fr/24950-437-010_P_1000pxweb.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://pimage.mascot.fr/24950-437-010_P_1000pxweb.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "mascot",
+			"styleCode": "22045-657-010",
+			"colour": "Marine foncé",
+			"sourceSkus": [
+				"5715411047159",
+				"5715411047166",
+				"5715411047173",
+				"5715411047180",
+				"5715411047197",
+				"5715411047203",
+				"5715411047210",
+				"5715411047234",
+				"5715411047241"
+			],
+			"candidateUrls": [
+				"https://pimage.mascot.fr/22045-657-010_P01_1000pxweb.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://pimage.mascot.fr/22045-657-010_P01_1000pxweb.jpg",
+					"ok": false,
+					"status": 0,
+					"error": "fetch failed"
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "mascot",
+			"styleCode": "24050-012-06",
+			"colour": "Blanc",
+			"sourceSkus": [
+				"5715411112505"
+			],
+			"candidateUrls": [
+				"https://pimage.mascot.fr/24050-012-06_P_1000pxweb.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://pimage.mascot.fr/24050-012-06_P_1000pxweb.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "mascot",
+			"styleCode": "24050-012-09",
+			"colour": "Noir",
+			"sourceSkus": [
+				"5715411112574"
+			],
+			"candidateUrls": [
+				"https://pimage.mascot.fr/24050-012-09_P_1000pxweb.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://pimage.mascot.fr/24050-012-09_P_1000pxweb.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "mascot",
+			"styleCode": "24050-012-34",
+			"colour": "Vert forêt",
+			"sourceSkus": [
+				"5715411112581"
+			],
+			"candidateUrls": [
+				"https://pimage.mascot.fr/24050-012-34_P_1000pxweb.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://pimage.mascot.fr/24050-012-34_P_1000pxweb.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "mascot",
+			"styleCode": "24050-012-89",
+			"colour": "Gris anthracite",
+			"sourceSkus": [
+				"5715411112598"
+			],
+			"candidateUrls": [
+				"https://pimage.mascot.fr/24050-012-89_P_1000pxweb.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://pimage.mascot.fr/24050-012-89_P_1000pxweb.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "mascot",
+			"styleCode": "24250-990-09",
+			"colour": "Noir",
+			"sourceSkus": [
+				"5715411112758"
+			],
+			"candidateUrls": [
+				"https://pimage.mascot.fr/24250-990-09_P_1000pxweb.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://pimage.mascot.fr/24250-990-09_P_1000pxweb.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "mascot",
+			"styleCode": "25149-230-0689",
+			"colour": "Blanc/Gris anthracite",
+			"sourceSkus": [
+				"5715411159838",
+				"5715411159845",
+				"5715411159852",
+				"5715411159869",
+				"5715411159876",
+				"5715411159883",
+				"5715411159890",
+				"5715411159906",
+				"5715411159913",
+				"5715411159920",
+				"5715411159937",
+				"5715411159944",
+				"5715411159951",
+				"5715411159968",
+				"5715411159975",
+				"5715411159982",
+				"5715411159999"
+			],
+			"candidateUrls": [
+				"https://pimage.mascot.fr/25149-230-0689_P01_1000pxweb.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://pimage.mascot.fr/25149-230-0689_P01_1000pxweb.jpg",
+					"ok": false,
+					"status": 0,
+					"error": "This operation was aborted"
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "mascot",
+			"styleCode": "26250-990-09",
+			"colour": "Noir",
+			"sourceSkus": [
+				"5715411215930"
+			],
+			"candidateUrls": [
+				"https://pimage.mascot.fr/26250-990-09_P_1000pxweb.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://pimage.mascot.fr/26250-990-09_P_1000pxweb.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "mascot",
+			"styleCode": "FT070-980-0911",
+			"colour": "Noir/Bleu roi",
+			"sourceSkus": [
+				"5711074961153",
+				"5711074961160",
+				"5711074961177"
+			],
+			"candidateUrls": [
+				"https://pimage.mascot.fr/FT070-980-0911_P_1000pxweb.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://pimage.mascot.fr/FT070-980-0911_P_1000pxweb.jpg",
+					"ok": false,
+					"status": 404
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "mascot",
+			"styleCode": "F1601-909-09",
+			"colour": "Noir",
+			"sourceSkus": [
+				"5715411116114",
+				"5715411116121",
+				"5715411116138",
+				"5715411116145",
+				"5715411116152",
+				"5715411116169",
+				"5715411116176",
+				"5715411116183",
+				"5715411116190",
+				"5715411116206",
+				"5715411116213",
+				"5715411116220",
+				"5715411116237",
+				"5715411116244",
+				"5715411116251"
+			],
+			"candidateUrls": [
+				"https://pimage.mascot.fr/F1601-909-09_PS_1000pxweb.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://pimage.mascot.fr/F1601-909-09_PS_1000pxweb.jpg",
+					"ok": false,
+					"status": 0,
+					"error": "This operation was aborted"
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "mascot",
+			"styleCode": "21904-984-71",
+			"colour": "Bleu ciel",
+			"sourceSkus": [
+				"5711074917501",
+				"5711074917518",
+				"5711074917525",
+				"5711074917532",
+				"5711074917549"
+			],
+			"candidateUrls": [
+				"https://pimage.mascot.fr/21904-984-71_P01_1000pxweb.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://pimage.mascot.fr/21904-984-71_P01_1000pxweb.jpg",
+					"ok": false,
+					"status": 0,
+					"error": "This operation was aborted"
+				}
+			],
+			"usingPlaceholder": true
+		},
+		{
+			"supplier": "mascot",
+			"styleCode": "22804-744-7106",
+			"colour": "À carreaux bleu ciel et blancs",
+			"sourceSkus": [
+				"5711074976881",
+				"5711074976898",
+				"5711074976904",
+				"5711074976911",
+				"5711074976928",
+				"5711074976935",
+				"5711074976942",
+				"5711074976959",
+				"5711074976966",
+				"5711074976973",
+				"5711074976980"
+			],
+			"candidateUrls": [
+				"https://pimage.mascot.fr/22804-744-7106_P01_1000pxweb.jpg"
+			],
+			"statuses": [
+				{
+					"url": "https://pimage.mascot.fr/22804-744-7106_P01_1000pxweb.jpg",
+					"ok": false,
+					"status": 0,
+					"error": "fetch failed"
+				}
+			],
+			"usingPlaceholder": true
+		}
+	]
+}
