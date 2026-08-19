@@ -10,7 +10,12 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 ---
 
-<div class="relative w-32 sm:w-56" data-searchbox data-no-results-label={t('search.noResults')} data-pagefind-ignore>
+<div
+	class="relative w-full min-w-0 flex-1 sm:w-56 sm:flex-none"
+	data-searchbox
+	data-no-results-label={t('search.noResults')}
+	data-pagefind-ignore
+>
 	<label for="site-search" class="sr-only">{t('search.label')}</label>
 	<input
 		id="site-search"
