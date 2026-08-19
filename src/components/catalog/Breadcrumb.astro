@@ -1,4 +1,6 @@
 ---
+import { breadcrumbJsonLd } from '~/utils/seo';
+
 interface Crumb {
 	label: string;
 	href?: string;
@@ -9,8 +11,11 @@ interface Props {
 }
 
 const { items } = Astro.props;
+const site = Astro.site ?? new URL(Astro.url.origin);
+const jsonLd = breadcrumbJsonLd(items, site, Astro.url.pathname);
 ---
 
+<script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} />
 <nav class="mb-6 flex flex-wrap items-center gap-1 text-sm text-gray-500" aria-label="Breadcrumb">
 	{
 		items.map((item, index) => (

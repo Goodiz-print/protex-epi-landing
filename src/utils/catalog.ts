@@ -30,3 +30,12 @@ export function getProductUrl(
 	const subcategorySegment = subcategorySlug ?? '_';
 	return `${CATALOG_ROOT[lang]}/${categorySlug}/${subcategorySegment}/${productSlug}`;
 }
+
+const QUOTE_ROOT: Record<Lang, string> = {
+	fr: '/devis',
+	en: '/en/quote',
+};
+
+export function getQuoteUrl(lang: Lang): string {
+	return QUOTE_ROOT[lang];
+}

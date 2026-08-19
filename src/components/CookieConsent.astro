@@ -18,6 +18,7 @@ const categories = [
 
 <div
 	data-cookie-consent
+	data-pagefind-ignore
 	class="fixed inset-x-0 bottom-0 z-[60] hidden border-t border-gray-200 bg-white p-4 shadow-lg sm:p-6"
 >
 	<div class="mx-auto max-w-6xl">
@@ -77,25 +78,18 @@ const categories = [
 </div>
 
 <script>
-	const STORAGE_KEY = 'protex-epi-cookie-consent';
-
-	interface ConsentPrefs {
-		functional: true;
-		marketing: boolean;
-		performance: boolean;
-		analytics: boolean;
-		decidedAt: number;
-	}
+	import { CONSENT_STORAGE_KEY, CONSENT_CHANGED_EVENT, type ConsentPrefs } from '~/utils/consent';
 
 	function initCookieConsent() {
 		const banner = document.querySelector<HTMLElement>('[data-cookie-consent]');
 		if (!banner) return;
-		if (localStorage.getItem(STORAGE_KEY)) return;
+		if (localStorage.getItem(CONSENT_STORAGE_KEY)) return;
 		banner.classList.remove('hidden');
 
 		function save(prefs: Omit<ConsentPrefs, 'decidedAt'>) {
 			const value: ConsentPrefs = { ...prefs, decidedAt: Date.now() };
-			localStorage.setItem(STORAGE_KEY, JSON.stringify(value));
+			localStorage.setItem(CONSENT_STORAGE_KEY, JSON.stringify(value));
+			window.dispatchEvent(new CustomEvent<ConsentPrefs>(CONSENT_CHANGED_EVENT, { detail: value }));
 			banner?.classList.add('hidden');
 		}
 

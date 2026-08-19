@@ -11,18 +11,138 @@ interface Props {
 
 const { lang, products } = Astro.props;
 const t = useTranslations(lang);
+
+const PAGE_SIZE = 24;
+
+const suppliers = [...new Set(products.map((product) => product.supplier))].sort();
+const supplierLabels: Record<string, string> = { portwest: 'Portwest', blaklader: 'Blaklader', mascot: 'Mascot' };
 ---
 
 {
 	products.length === 0 ? (
 		<p class="text-gray-500">{t('catalog.noProducts')}</p>
 	) : (
-		<ul class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-			{products.map((product) => (
-				<li>
-					<ProductCard lang={lang} product={product} />
-				</li>
-			))}
-		</ul>
+		<div data-product-listing data-page-size={PAGE_SIZE}>
+			<div class="mb-4 flex flex-wrap items-end justify-between gap-4">
+				<p class="text-sm text-gray-500" data-results-count>
+					{products.length} {t('catalog.resultsCount')}
+				</p>
+				<div class="flex flex-wrap items-center gap-4">
+					{suppliers.length > 1 && (
+						<fieldset class="flex flex-wrap items-center gap-3">
+							<legend class="mr-1 text-sm text-gray-500">{t('catalog.filter.supplier')}</legend>
+							{suppliers.map((supplier) => (
+								<label class="flex items-center gap-1.5 text-sm text-gray-700">
+									<input type="checkbox" value={supplier} checked data-supplier-filter class="rounded border-gray-300" />
+									{supplierLabels[supplier] ?? supplier}
+								</label>
+							))}
+						</fieldset>
+					)}
+					<label class="flex items-center gap-2 text-sm text-gray-700">
+						{t('catalog.sort.label')}
+						<select data-sort-select class="rounded-md border border-gray-300 px-2 py-1.5 text-sm">
+							<option value="relevance">{t('catalog.sort.relevance')}</option>
+							<option value="price-asc">{t('catalog.sort.priceAsc')}</option>
+							<option value="price-desc">{t('catalog.sort.priceDesc')}</option>
+						</select>
+					</label>
+				</div>
+			</div>
+
+			<p class="hidden text-gray-500" data-no-results>
+				{t('catalog.noResults')}
+			</p>
+
+			<ul class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4" data-product-list>
+				{products.map((product) => (
+					<li data-price={product.price} data-supplier={product.supplier}>
+						<ProductCard lang={lang} product={product} />
+					</li>
+				))}
+			</ul>
+
+			<div class="mt-8 text-center">
+				<button
+					type="button"
+					data-load-more
+					class="hidden rounded-md border border-gray-300 px-6 py-3 font-medium text-gray-900 transition-colors hover:border-gray-400 hover:bg-gray-50"
+				>
+					{t('catalog.loadMore')}
+				</button>
+			</div>
+		</div>
 	)
 }
+
+<script>
+	function initProductListings() {
+		document.querySelectorAll<HTMLElement>('[data-product-listing]').forEach((listing) => {
+			const list = listing.querySelector<HTMLUListElement>('[data-product-list]');
+			const loadMoreButton = listing.querySelector<HTMLButtonElement>('[data-load-more]');
+			const sortSelect = listing.querySelector<HTMLSelectElement>('[data-sort-select]');
+			const supplierCheckboxes = Array.from(
+				listing.querySelectorAll<HTMLInputElement>('[data-supplier-filter]'),
+			);
+			const resultsCount = listing.querySelector<HTMLElement>('[data-results-count]');
+			const noResults = listing.querySelector<HTMLElement>('[data-no-results]');
+			if (!list) return;
+
+			const pageSize = Number(listing.dataset.pageSize ?? '24');
+			const originalOrder = Array.from(list.children) as HTMLLIElement[];
+			let shown = pageSize;
+
+			function selectedSuppliers(): Set<string> {
+				return new Set(supplierCheckboxes.filter((box) => box.checked).map((box) => box.value));
+			}
+
+			function render() {
+				const suppliers = selectedSuppliers();
+				const sortMode = sortSelect?.value ?? 'relevance';
+
+				let items = originalOrder.filter(
+					(item) => supplierCheckboxes.length === 0 || suppliers.has(item.dataset.supplier ?? ''),
+				);
+
+				if (sortMode === 'price-asc') {
+					items = [...items].sort((a, b) => Number(a.dataset.price) - Number(b.dataset.price));
+				} else if (sortMode === 'price-desc') {
+					items = [...items].sort((a, b) => Number(b.dataset.price) - Number(a.dataset.price));
+				}
+
+				list?.replaceChildren(...items);
+
+				items.forEach((item, index) => {
+					item.classList.toggle('hidden', index >= shown);
+				});
+
+				if (resultsCount) {
+					const countText = resultsCount.textContent?.replace(/^\d+/, String(items.length));
+					if (countText) resultsCount.textContent = countText;
+				}
+
+				noResults?.classList.toggle('hidden', items.length > 0);
+				loadMoreButton?.classList.toggle('hidden', items.length <= shown);
+			}
+
+			sortSelect?.addEventListener('change', () => {
+				shown = pageSize;
+				render();
+			});
+			supplierCheckboxes.forEach((box) =>
+				box.addEventListener('change', () => {
+					shown = pageSize;
+					render();
+				}),
+			);
+			loadMoreButton?.addEventListener('click', () => {
+				shown += pageSize;
+				render();
+			});
+
+			render();
+		});
+	}
+
+	initProductListings();
+</script>

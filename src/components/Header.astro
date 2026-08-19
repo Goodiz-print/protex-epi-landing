@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import logo from '../assets/images/logo-protex-EPI.png';
 import Nav from './Nav.astro';
+import SearchBox from './SearchBox.astro';
 import { useTranslations } from '../i18n/utils';
 import type { Lang } from '../utils/catalog';
 
@@ -10,7 +11,7 @@ const homeHref = lang === 'en' ? '/en' : '/';
 const t = useTranslations(lang);
 ---
 
-<header class="sticky top-0 z-50 border-b border-gray-200 bg-white">
+<header class="sticky top-0 z-50 border-b border-gray-200 bg-white" data-pagefind-ignore>
 	<div class="hidden border-b border-gray-100 bg-gray-50 sm:block">
 		<div class="mx-auto flex h-9 max-w-6xl items-center justify-end gap-6 px-4 text-sm text-gray-600">
 			<a href="tel:0557027587" class="flex items-center gap-1.5 hover:text-gray-900" aria-label={t('header.callUs')}>
@@ -36,6 +37,7 @@ const t = useTranslations(lang);
 		<a href={homeHref} class="flex shrink-0 items-center">
 			<Image src={logo} alt="Protex EPI" width={160} height={68} class="h-10 w-auto" />
 		</a>
+		<SearchBox lang={lang} />
 		<Nav lang={lang} />
 	</div>
 </header>

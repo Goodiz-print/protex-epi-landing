@@ -1,0 +1,121 @@
+---
+import { useTranslations } from '~/i18n/utils';
+import type { Lang } from '~/utils/catalog';
+
+interface Props {
+	lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<div class="relative w-32 sm:w-56" data-searchbox data-no-results-label={t('search.noResults')} data-pagefind-ignore>
+	<label for="site-search" class="sr-only">{t('search.label')}</label>
+	<input
+		id="site-search"
+		type="search"
+		autocomplete="off"
+		placeholder={t('search.placeholder')}
+		class="w-full rounded-md border border-gray-300 px-3 py-1.5 text-sm focus:border-gray-500 focus:outline-none"
+		data-search-input
+	/>
+	<ul
+		data-search-results
+		class="absolute left-0 right-0 top-full z-50 mt-1 hidden max-h-96 overflow-y-auto rounded-md border border-gray-200 bg-white p-1 shadow-lg"
+	>
+	</ul>
+</div>
+
+<script>
+	interface PagefindApi {
+		search(query: string): Promise<{
+			results: { data(): Promise<{ url: string; meta?: { title?: string }; excerpt: string }> }[];
+		}>;
+	}
+
+	function debounce<T extends (...args: never[]) => void>(fn: T, delay: number) {
+		let timer: ReturnType<typeof setTimeout>;
+		return (...args: Parameters<T>) => {
+			clearTimeout(timer);
+			timer = setTimeout(() => fn(...args), delay);
+		};
+	}
+
+	function initSearchBoxes() {
+		document.querySelectorAll<HTMLElement>('[data-searchbox]').forEach((box) => {
+			const input = box.querySelector<HTMLInputElement>('[data-search-input]');
+			const results = box.querySelector<HTMLUListElement>('[data-search-results]');
+			if (!input || !results) return;
+
+			const noResultsLabel = box.dataset.noResultsLabel ?? '';
+			// The pagefind module is generated at build time (`pagefind --site dist`) and is
+			// unavailable in `astro dev` — hence the untyped, @vite-ignore'd dynamic import.
+			let pagefind: PagefindApi | null = null;
+			let pagefindFailed = false;
+
+			async function ensurePagefind() {
+				if (pagefind || pagefindFailed) return pagefind;
+				try {
+					const pagefindPath = '/pagefind/pagefind.js';
+					pagefind = await import(/* @vite-ignore */ pagefindPath);
+				} catch {
+					pagefindFailed = true;
+				}
+				return pagefind;
+			}
+
+			function hideResults() {
+				results!.classList.add('hidden');
+				results!.replaceChildren();
+			}
+
+			const runSearch = debounce(async (query: string) => {
+				if (query.trim().length < 2) {
+					hideResults();
+					return;
+				}
+				const pf = await ensurePagefind();
+				if (!pf) return;
+
+				const search = await pf.search(query);
+				const entries = await Promise.all(search.results.slice(0, 8).map((result) => result.data()));
+
+				results!.replaceChildren();
+				if (entries.length === 0) {
+					const li = document.createElement('li');
+					li.className = 'px-3 py-2 text-sm text-gray-500';
+					li.textContent = noResultsLabel;
+					results!.appendChild(li);
+				} else {
+					for (const entry of entries) {
+						const li = document.createElement('li');
+						const a = document.createElement('a');
+						a.href = entry.url;
+						a.className = 'block rounded-md px-3 py-2 hover:bg-gray-50';
+						const title = document.createElement('p');
+						title.className = 'truncate text-sm font-medium text-gray-900';
+						title.textContent = entry.meta?.title ?? entry.url;
+						const excerpt = document.createElement('p');
+						excerpt.className = 'truncate text-xs text-gray-500';
+						excerpt.innerHTML = entry.excerpt;
+						a.append(title, excerpt);
+						li.appendChild(a);
+						results!.appendChild(li);
+					}
+				}
+				results!.classList.remove('hidden');
+			}, 150);
+
+			input.addEventListener('input', () => runSearch(input.value));
+			input.addEventListener('focus', () => {
+				if (input.value.trim().length >= 2) runSearch(input.value);
+			});
+			document.addEventListener('click', (event) => {
+				if (!box.contains(event.target as Node)) hideResults();
+			});
+		});
+	}
+
+	initSearchBoxes();
+</script>

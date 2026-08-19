@@ -1,6 +1,6 @@
 ---
 import { useTranslations } from '~/i18n/utils';
-import type { Lang } from '~/utils/catalog';
+import { getQuoteUrl, type Lang } from '~/utils/catalog';
 
 interface Props {
 	lang: Lang;
@@ -20,7 +20,7 @@ const t = useTranslations(lang);
 		</div>
 		<div class="flex shrink-0 flex-col gap-3 sm:flex-row">
 			<a
-				href="mailto:contact@protex-epi.com"
+				href={getQuoteUrl(lang)}
 				class="inline-block rounded-md bg-white px-6 py-3 text-center font-medium text-blue-700 transition-colors hover:bg-blue-50"
 			>
 				{t('home.quote.cta')}

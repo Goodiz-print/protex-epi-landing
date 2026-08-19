@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets';
 import type { Product } from '../../content/schemas/product';
 import type { Lang } from '../../utils/catalog';
 import { getProductUrl } from '../../utils/catalog';
@@ -19,13 +18,15 @@ const href = getProductUrl(lang, product.category, product.subcategory, product.
 	class="group block overflow-hidden rounded-lg border border-gray-200 transition-colors hover:border-gray-400"
 >
 	<div class="aspect-square overflow-hidden bg-gray-50">
-		<Image
+		<img
 			src={product.imageUrl}
-			width={1100}
-			height={1100}
+			width="1100"
+			height="1100"
 			alt={product.name}
 			loading="lazy"
+			decoding="async"
 			class="h-full w-full object-contain transition-transform group-hover:scale-105"
+			onerror="this.onerror=null;this.src='/images/product-placeholder.svg';"
 		/>
 	</div>
 	<div class="p-3">

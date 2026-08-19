@@ -1,0 +1,19 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Breadcrumb from '~/components/catalog/Breadcrumb.astro';
+import QuoteForm from '~/components/QuoteForm.astro';
+import { useTranslations } from '~/i18n/utils';
+import { ui } from '~/i18n/ui';
+
+const lang = 'fr' as const;
+const t = useTranslations(lang);
+---
+
+<Layout title={`${t('quote.page.title')} — ${ui.fr['site.title']}`} description={t('quote.page.intro')}>
+	<main class="mx-auto max-w-2xl px-4 py-10">
+		<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: '/' }, { label: t('quote.page.title') }]} />
+		<h1 class="mb-3 text-2xl font-semibold text-gray-900">{t('quote.page.title')}</h1>
+		<p class="mb-8 text-gray-600">{t('quote.page.intro')}</p>
+		<QuoteForm lang={lang} />
+	</main>
+</Layout>

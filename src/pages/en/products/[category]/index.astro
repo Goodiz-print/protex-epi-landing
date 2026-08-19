@@ -3,6 +3,7 @@ import Layout from '~/layouts/Layout.astro';
 import CategoryPage from '~/components/catalog/CategoryPage.astro';
 import { getCategoryStaticPaths, getProductsByCategory } from '~/content/queries';
 import { ui } from '~/i18n/ui';
+import { categoryDescription } from '~/utils/seo';
 
 export async function getStaticPaths() {
 	return getCategoryStaticPaths();
@@ -12,7 +13,11 @@ const { category } = Astro.props;
 const products = category.subcategories.length === 0 ? await getProductsByCategory(category.slug) : [];
 ---
 
-<Layout title={`${category.labels.en} — ${ui.en['site.title']}`}>
+<Layout
+	title={`${category.labels.en} — ${ui.en['site.title']}`}
+	description={categoryDescription(category, 'en')}
+	noindex={category.slug === 'a-trier'}
+>
 	<main class="mx-auto max-w-6xl px-4 py-10">
 		<CategoryPage lang="en" category={category} products={products} />
 	</main>

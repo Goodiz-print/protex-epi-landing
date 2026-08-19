@@ -1,0 +1,36 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Breadcrumb from '~/components/catalog/Breadcrumb.astro';
+import { useTranslations } from '~/i18n/utils';
+import { ui } from '~/i18n/ui';
+
+const lang = 'fr' as const;
+const t = useTranslations(lang);
+const title = t('footer.legal.about');
+const description =
+	"Protex EPI est un fournisseur d'équipements de protection individuelle (EPI) pour les professionnels : vêtements de travail, gants, chaussures de sécurité et protections tête, yeux, ouïe et voies respiratoires.";
+---
+
+<Layout title={`${title} — ${ui.fr['site.title']}`} description={description}>
+	<main class="mx-auto max-w-3xl px-4 py-10">
+		<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: '/' }, { label: title }]} />
+		<h1 class="mb-6 text-2xl font-semibold text-gray-900">{title}</h1>
+		<div class="space-y-4 text-gray-700">
+			<p>{description}</p>
+			<p>
+				Notre catalogue rassemble des références de marques reconnues du secteur — Portwest, Blaklader et Mascot —
+				sélectionnées pour leur conformité aux normes de sécurité en vigueur et leur adaptation aux différents
+				métiers exposés à des risques professionnels.
+			</p>
+			<p>
+				Chaque demande est traitée sur devis : décrivez votre besoin (références, tailles, quantités) et un
+				conseiller vous répond avec une offre sans engagement.
+			</p>
+			<p>
+				<a href="/devis" class="font-medium text-blue-700 hover:text-blue-800">Demander un devis</a>
+				 ·
+				<a href="/contact" class="font-medium text-blue-700 hover:text-blue-800">Nous contacter</a>
+			</p>
+		</div>
+	</main>
+</Layout>

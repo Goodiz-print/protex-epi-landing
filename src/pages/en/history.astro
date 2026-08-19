@@ -1,0 +1,30 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Breadcrumb from '~/components/catalog/Breadcrumb.astro';
+import { useTranslations } from '~/i18n/utils';
+import { ui } from '~/i18n/ui';
+
+const lang = 'en' as const;
+const t = useTranslations(lang);
+const title = t('footer.legal.history');
+const description = "Protex EPI's mission: equipping professionals with certified PPE suited to their trade.";
+---
+
+<!-- TODO: replace with the company's real founding story / timeline once provided by the business. -->
+<Layout title={`${title} — ${ui.en['site.title']}`} description={description}>
+	<main class="mx-auto max-w-3xl px-4 py-10">
+		<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: '/en' }, { label: title }]} />
+		<h1 class="mb-6 text-2xl font-semibold text-gray-900">{title}</h1>
+		<div class="space-y-4 text-gray-700">
+			<p>
+				Protex EPI helps companies equip and protect their teams in the field. Drawing on well-known brands in
+				the sector — Portwest, Blaklader, Mascot — and on expertise in current safety standards, Protex EPI
+				builds a catalog designed to meet the requirements of trades exposed to occupational risks.
+			</p>
+			<p>
+				Our approach stays the same with every request: understand the need, propose the right equipment, and
+				support our customers through to delivery.
+			</p>
+		</div>
+	</main>
+</Layout>

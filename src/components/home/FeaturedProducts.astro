@@ -4,6 +4,7 @@ import { getAllProducts } from '~/content/queries';
 import ProductGrid from '~/components/catalog/ProductGrid.astro';
 import type { Lang } from '~/utils/catalog';
 import type { Product } from '~/content/schemas/product';
+import featuredOverride from '~/data/featured-products.json';
 
 interface Props {
 	lang: Lang;
@@ -15,26 +16,32 @@ const t = useTranslations(lang);
 const FEATURED_LIMIT = 12;
 
 const allProducts = await getAllProducts();
-const productsByCategory = new Map<string, Product[]>();
-for (const entry of allProducts) {
-	const product = entry.data;
-	if (product.category === 'a-trier') continue;
-	const bucket = productsByCategory.get(product.category);
-	if (bucket) {
-		bucket.push(product);
-	} else {
-		productsByCategory.set(product.category, [product]);
-	}
+const eligible = allProducts.map((entry) => entry.data).filter((product) => product.category !== 'a-trier');
+
+const productsById = new Map(eligible.map((product) => [product.id, product]));
+const featured: Product[] = [];
+for (const id of featuredOverride.ids) {
+	const product = productsById.get(id);
+	if (product) featured.push(product);
 }
 
-// TODO: replace with a real "featured/bestseller" flag once product curation exists.
-// Round-robins across categories so the grid isn't dominated by a single range.
-const featured: Product[] = [];
-const buckets = [...productsByCategory.values()];
-for (let round = 0; featured.length < FEATURED_LIMIT && buckets.some((bucket) => bucket.length > round); round++) {
-	for (const bucket of buckets) {
-		if (featured.length >= FEATURED_LIMIT) break;
-		if (bucket[round]) featured.push(bucket[round]);
+// Round-robins across categories to fill any remaining slots, so the grid is always
+// full even with no (or a partial) curated list in src/data/featured-products.json.
+if (featured.length < FEATURED_LIMIT) {
+	const alreadyFeatured = new Set(featured.map((product) => product.id));
+	const productsByCategory = new Map<string, Product[]>();
+	for (const product of eligible) {
+		if (alreadyFeatured.has(product.id)) continue;
+		const bucket = productsByCategory.get(product.category);
+		if (bucket) bucket.push(product);
+		else productsByCategory.set(product.category, [product]);
+	}
+	const buckets = [...productsByCategory.values()];
+	for (let round = 0; featured.length < FEATURED_LIMIT && buckets.some((bucket) => bucket.length > round); round++) {
+		for (const bucket of buckets) {
+			if (featured.length >= FEATURED_LIMIT) break;
+			if (bucket[round]) featured.push(bucket[round]);
+		}
 	}
 }
 ---

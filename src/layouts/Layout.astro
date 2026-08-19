@@ -3,31 +3,100 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CookieConsent from '../components/CookieConsent.astro';
+import Analytics from '../components/Analytics.astro';
 import type { Lang } from '../utils/catalog';
 
 interface Props {
-	title?: string;
+	title: string;
+	description?: string;
+	noindex?: boolean;
+	image?: string;
+	jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const { title = 'Astro Basics' } = Astro.props;
+const { title, description, noindex = false, image, jsonLd } = Astro.props;
+
 const lang = (Astro.currentLocale ?? 'fr') as Lang;
+const site = Astro.site ?? new URL(Astro.url.origin);
+
+const FR_ROOT = '/produits';
+const EN_ROOT = '/en/products';
+
+function alternatePath(path: string, targetLang: Lang): string {
+	if (targetLang === 'en') {
+		if (path === '/') return '/en';
+		if (path.startsWith(FR_ROOT)) return EN_ROOT + path.slice(FR_ROOT.length);
+		return path;
+	}
+	if (path.startsWith(EN_ROOT)) return FR_ROOT + path.slice(EN_ROOT.length);
+	if (path === '/en' || path === '/en/') return '/';
+	return path;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, site);
+const frURL = new URL(alternatePath(Astro.url.pathname, 'fr'), site);
+const enURL = new URL(alternatePath(Astro.url.pathname, 'en'), site);
+
+const ogImage = image ? new URL(image, site).toString() : undefined;
+
+const organizationJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'Organization',
+	name: 'Protex EPI',
+	url: site.toString(),
+	email: 'contact@protex-epi.com',
+	telephone: '+33 5 57 02 75 87',
+	address: {
+		'@type': 'PostalAddress',
+		streetAddress: '4 Rue la Motte Picquet',
+		addressLocality: 'Bordeaux',
+		postalCode: '33300',
+		addressCountry: 'FR',
+	},
+};
+
+const jsonLdBlocks = [organizationJsonLd, ...(jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [])];
 ---
 
 <!doctype html>
-<html lang={Astro.currentLocale ?? 'fr'}>
+<html lang={lang}>
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
+
 		<title>{title}</title>
+		{description && <meta name="description" content={description} />}
+		<meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow'} />
+
+		<link rel="canonical" href={canonicalURL.toString()} />
+		<link rel="alternate" hreflang="fr" href={frURL.toString()} />
+		<link rel="alternate" hreflang="en" href={enURL.toString()} />
+		<link rel="alternate" hreflang="x-default" href={frURL.toString()} />
+
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Protex EPI" />
+		<meta property="og:title" content={title} />
+		{description && <meta property="og:description" content={description} />}
+		<meta property="og:url" content={canonicalURL.toString()} />
+		{ogImage && <meta property="og:image" content={ogImage} />}
+		<meta property="og:locale" content={lang === 'fr' ? 'fr_FR' : 'en_US'} />
+
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={title} />
+		{description && <meta name="twitter:description" content={description} />}
+		{ogImage && <meta name="twitter:image" content={ogImage} />}
+
+		{jsonLdBlocks.map((block) => <script type="application/ld+json" is:inline set:html={JSON.stringify(block)} />)}
 	</head>
 	<body>
 		<Header />
 		<slot />
 		<Footer lang={lang} />
 		<CookieConsent lang={lang} />
+		<Analytics />
 	</body>
 </html>
 

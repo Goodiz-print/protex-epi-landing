@@ -19,11 +19,21 @@ const categoryLinks = categoryTaxonomy
 		label: category.labels[lang],
 	}));
 
+const legalPrefix = lang === 'en' ? '/en' : '';
+const legalLinks = [
+	{ href: `${legalPrefix}${lang === 'en' ? '/about' : '/a-propos'}`, label: t('footer.legal.about') },
+	{ href: `${legalPrefix}${lang === 'en' ? '/history' : '/notre-histoire'}`, label: t('footer.legal.history') },
+	{ href: `${legalPrefix}${lang === 'en' ? '/terms' : '/conditions-generales'}`, label: t('footer.legal.terms') },
+	{ href: `${legalPrefix}/contact`, label: t('footer.legal.contact') },
+	{ href: `${legalPrefix}/faq`, label: t('footer.legal.faq') },
+	{ href: `${legalPrefix}${lang === 'en' ? '/privacy' : '/donnees-personnelles'}`, label: t('footer.legal.privacy') },
+];
+
 const year = new Date().getFullYear();
 ---
 
-<footer class="border-t border-gray-200 bg-white">
-	<div class="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:grid-cols-2 lg:grid-cols-4">
+<footer class="border-t border-gray-200 bg-white" data-pagefind-ignore>
+	<div class="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:grid-cols-2 lg:grid-cols-5">
 		<div>
 			<p class="font-semibold text-gray-900">{t('site.title')}</p>
 		</div>
@@ -39,6 +49,20 @@ const year = new Date().getFullYear();
 			<ul class="space-y-2 text-sm text-gray-600">
 				{
 					categoryLinks.map((link) => (
+						<li>
+							<a href={link.href} class="hover:text-gray-900">
+								{link.label}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+		<div>
+			<p class="mb-3 text-sm font-medium text-gray-900">{t('footer.legal.title')}</p>
+			<ul class="space-y-2 text-sm text-gray-600">
+				{
+					legalLinks.map((link) => (
 						<li>
 							<a href={link.href} class="hover:text-gray-900">
 								{link.label}

@@ -2,16 +2,26 @@
 import Layout from '~/layouts/Layout.astro';
 import ProductPage from '~/components/catalog/ProductPage.astro';
 import { getProductStaticPaths } from '~/content/queries';
+import { getProductUrl } from '~/utils/catalog';
 import { ui } from '~/i18n/ui';
+import { productDescription, productJsonLd } from '~/utils/seo';
 
 export async function getStaticPaths() {
 	return getProductStaticPaths();
 }
 
 const { product } = Astro.props;
+const site = Astro.site ?? new URL(Astro.url.origin);
+const productUrl = getProductUrl('fr', product.category, product.subcategory, product.slug);
 ---
 
-<Layout title={`${product.name} — ${ui.fr['site.title']}`}>
+<Layout
+	title={`${product.name} — ${ui.fr['site.title']}`}
+	description={productDescription(product)}
+	image={product.imageUrl}
+	noindex={product.category === 'a-trier'}
+	jsonLd={productJsonLd(product, productUrl, site)}
+>
 	<main class="mx-auto max-w-6xl px-4 py-10">
 		<ProductPage lang="fr" product={product} />
 	</main>
