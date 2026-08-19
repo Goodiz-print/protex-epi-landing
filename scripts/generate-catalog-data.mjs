@@ -1,0 +1,176 @@
+#!/usr/bin/env node
+// Resolves the raw supplier exports into the catalog data the site actually builds from.
+//
+// The site only ever needs the ~14 fields of the `Product` schema per product card.
+// The supplier exports it is derived from are two orders of magnitude bigger (~68 MB of
+// CSV across Portwest, Mascot and Blaklader) and are re-parsed and re-joined on every
+// `astro dev`/`astro build` even though their result only changes when a supplier ships
+// a new export. This script does that work once, manually, and writes a compact JSON per
+// supplier — `src/data/catalog/products.<supplier>.json` — which is what
+// `src/content.config.ts` loads (see `src/content/loaders/json-products-loader.ts`).
+//
+// The raw CSVs are gitignored: only these JSON files are committed.
+//
+// Run manually: `node scripts/generate-catalog-data.mjs`
+// Never run by astro dev/build. Rerun after any new supplier export.
+//
+// The grouping/joining/mapping logic is NOT duplicated here: it is imported from
+// `scripts/lib/supplier-csv.ts`, the single source of truth
+// (Node strips the TypeScript types at import time).
+
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { parse } from 'csv-parse/sync';
+import {
+	buildBlakladerColourIndex,
+	buildBlakladerMediaIndex,
+	buildBlakladerProductEntry,
+	buildMascotEntry,
+	buildProductEntry,
+	groupBlakladerRows,
+	groupMascotRows,
+	groupPortwestRows,
+} from './lib/supplier-csv.ts';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const ROOT = resolve(__dirname, '..');
+const OUT_DIR = resolve(ROOT, 'src/data/catalog');
+
+// Same shape as the old `csvProductsLoader` sources: this is where the supplier → file
+// wiring now lives, since `content.config.ts` only knows about the generated JSON.
+const SOURCES = [
+	{
+		supplier: 'portwest',
+		csvPath: 'src/data/suppliers/portwest/product_sheet_FR_A8_20.csv',
+		mappingPath: 'src/data/category-mapping.portwest.json',
+	},
+	{
+		supplier: 'mascot',
+		// Slim CSV produced by scripts/prepare-mascot-csv.mjs (semicolon-delimited).
+		csvPath: 'src/data/suppliers/mascot/mascot-products.slim.csv',
+		mappingPath: 'src/data/category-mapping.mascot.json',
+	},
+	{
+		supplier: 'blaklader',
+		commercePath: 'src/data/suppliers/blaklader/Blaklader - FAB-DIS 3.0 - 2026.xlsm - B01_COMMERCE.csv',
+		variantePath: 'src/data/suppliers/blaklader/Blaklader - FAB-DIS 3.0 - 2026.xlsm - C03_VARIANTE.csv',
+		mediaPath: 'src/data/suppliers/blaklader/Blaklader - FAB-DIS 3.0 - 2026.xlsm - B03_MEDIA.csv',
+		mappingPath: 'src/data/category-mapping.blaklader.json',
+	},
+];
+
+function readCsv(absPath, delimiter = ',') {
+	const content = readFileSync(absPath, 'utf-8');
+	return parse(content, {
+		columns: true,
+		bom: true,
+		trim: true,
+		skip_empty_lines: true,
+		delimiter,
+	});
+}
+
+function readMapping(source) {
+	return JSON.parse(readFileSync(resolve(ROOT, source.mappingPath), 'utf-8'));
+}
+
+/** One product per line inside a JSON array: compact enough, still diffable in git. */
+function writeCatalog(supplier, products) {
+	mkdirSync(OUT_DIR, { recursive: true });
+	const outPath = resolve(OUT_DIR, `products.${supplier}.json`);
+	const body = products.map((product) => JSON.stringify(product)).join(',\n');
+	writeFileSync(outPath, `[\n${body}\n]\n`, 'utf-8');
+	return outPath;
+}
+
+function buildPortwest(source) {
+	const csvAbsPath = resolve(ROOT, source.csvPath);
+	const mapping = readMapping(source);
+	const rows = readCsv(csvAbsPath);
+	const groups = groupPortwestRows(rows);
+
+	const products = [];
+	const warnings = [];
+	for (const group of groups) {
+		const result = buildProductEntry(source.supplier, group, mapping);
+		warnings.push(...result.warnings);
+		products.push(result.data);
+	}
+
+	return { products, warnings, summary: `${products.length} products from ${rows.length} CSV rows` };
+}
+
+function buildMascot(source) {
+	const csvAbsPath = resolve(ROOT, source.csvPath);
+	const mapping = readMapping(source);
+	const rows = readCsv(csvAbsPath, ';');
+	const groups = groupMascotRows(rows);
+
+	const products = [];
+	const warnings = [];
+	for (const group of groups) {
+		const result = buildMascotEntry(group, mapping);
+		warnings.push(...result.warnings);
+		if (result.data) {
+			products.push(result.data);
+		}
+	}
+
+	return {
+		products,
+		warnings,
+		summary: `${products.length} products from ${groups.length} groups / ${rows.length} CSV rows`,
+	};
+}
+
+function buildBlaklader(source) {
+	const commerceAbsPath = resolve(ROOT, source.commercePath);
+	const mapping = readMapping(source);
+	const commerceRows = readCsv(commerceAbsPath);
+	const colourIndex = buildBlakladerColourIndex(readCsv(resolve(ROOT, source.variantePath)));
+	const mediaIndex = buildBlakladerMediaIndex(readCsv(resolve(ROOT, source.mediaPath)));
+	const groups = groupBlakladerRows(commerceRows);
+
+	const products = [];
+	const warnings = [];
+	for (const group of groups) {
+		const result = buildBlakladerProductEntry(group, colourIndex, mediaIndex, mapping);
+		warnings.push(...result.warnings);
+		if (result.data) {
+			products.push(result.data);
+		}
+	}
+
+	return {
+		products,
+		warnings,
+		summary: `${products.length} products from ${groups.length} groups / ${commerceRows.length} CSV rows`,
+	};
+}
+
+const BUILDERS = {
+	portwest: buildPortwest,
+	mascot: buildMascot,
+	blaklader: buildBlaklader,
+};
+
+function main() {
+	let totalProducts = 0;
+	let totalWarnings = 0;
+
+	for (const source of SOURCES) {
+		const { products, warnings, summary } = BUILDERS[source.supplier](source);
+		for (const warning of warnings) {
+			console.warn(`[${source.supplier}] ${warning}`);
+		}
+		const outPath = writeCatalog(source.supplier, products);
+		console.log(`[${source.supplier}] ${summary} → ${outPath}`);
+		totalProducts += products.length;
+		totalWarnings += warnings.length;
+	}
+
+	console.log(`Done: ${totalProducts} products written, ${totalWarnings} warnings.`);
+}
+
+main();
