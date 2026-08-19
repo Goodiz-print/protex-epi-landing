@@ -2,7 +2,9 @@
 // One-time, standalone suggestion generator for the Blaklader category mapping.
 // Run manually: `node scripts/generate-category-mapping-blaklader.mjs`
 // Never run by `astro dev`/`astro build`, and never overwrites a baseRef
-// that already has a (possibly hand-corrected) entry in the mapping file.
+// that already has a (possibly hand-corrected) entry in the mapping file —
+// entries currently classified as 'a-trier' are the exception: those are
+// re-evaluated against the current RULES on every run.
 
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
@@ -22,10 +24,28 @@ const BASE_REF_LENGTH = 12;
 const UNCLASSIFIED = { category: 'a-trier', subcategory: null };
 
 // Ordered most-specific-first: the first matching rule wins.
-// Matched against the normalized "FAM1L FAM2L" pair from B01_COMMERCE.
+// Matched against the normalized "FAM1L FAM2L LIBELLE40" text from B01_COMMERCE.
 const RULES = [
 	{ category: 'mains', subcategory: 'gants-protection', keywords: ['gant'] },
-	{ category: 'pieds', subcategory: 'accessoires-chaussures', keywords: ['socks', 'chaussette'] },
+	{
+		category: 'pieds',
+		subcategory: 'accessoires-chaussures',
+		keywords: ['socks', 'chaussette', 'semelle', 'lacet', 'cirage', 'brosse a cirage'],
+	},
+	{ category: 'pieds', subcategory: 'bottes', keywords: ['botte', 'waders', 'cuissarde', 'rigger', 'wellington'] },
+	{ category: 'pieds', subcategory: 'chaussures-hautes', keywords: ['mi-haute'] },
+	{
+		category: 'pieds',
+		subcategory: 'chaussures-basses',
+		keywords: ['basket', 'sandale', 'chaussures de securite', 'chaussure de securite', 'chaussures basse', 'chaussure basse'],
+	},
+
+	// Headwear.
+	{
+		category: 'tete',
+		subcategory: 'protection-tete',
+		keywords: ['casquette', 'bonnet', 'cache-cou', 'cagoule', 'chapka', 'bandeau', 'tour de cou'],
+	},
 
 	// Clothing line/collection overrides (checked before the generic garment-type rule below).
 	{ category: 'corps', subcategory: 'vetements-haute-visibilite', keywords: ['high vis', 'hi-vis', 'fluo'] },
@@ -38,7 +58,7 @@ const RULES = [
 		keywords: [
 			'pantalon', 'veste', 'tee shirt', 'sweatershirt', 'short', 'cotte a bretelles',
 			'combinaison', 'gilet', 'polo', 'chemise', 'blouse', 'pirate trousers',
-			'underwear', 'skirt', 'kilt',
+			'underwear', 'skirt', 'kilt', 'ceinture', 'bretelles', 'genouillere', 'tablier', 'capuche',
 		],
 	},
 ];
@@ -50,8 +70,8 @@ function normalize(text) {
 		.toLowerCase();
 }
 
-function classify(fam1l, fam2l) {
-	const haystack = normalize(`${fam1l} ${fam2l}`);
+function classify(fam1l, fam2l, libelle40) {
+	const haystack = normalize(`${fam1l} ${fam2l} ${libelle40 ?? ''}`);
 	for (const rule of RULES) {
 		if (rule.keywords.some((keyword) => haystack.includes(normalize(keyword)))) {
 			return { category: rule.category, subcategory: rule.subcategory };
@@ -76,26 +96,33 @@ function main() {
 	for (const row of rows) {
 		const baseRef = row['REFCIALE'].slice(0, BASE_REF_LENGTH);
 		if (!firstSeenByBaseRef.has(baseRef)) {
-			firstSeenByBaseRef.set(baseRef, { fam1l: row['FAM1L'], fam2l: row['FAM2L'] });
+			firstSeenByBaseRef.set(baseRef, { fam1l: row['FAM1L'], fam2l: row['FAM2L'], libelle40: row['LIBELLE40'] });
 		}
 	}
 
 	const mapping = loadExistingMapping();
 	const alreadyMappedCount = Object.keys(mapping).length;
 	let addedCount = 0;
+	let reclassifiedCount = 0;
 	const perCategoryCount = new Map();
 	const unmatchedPairs = new Map();
 
-	for (const [baseRef, { fam1l, fam2l }] of firstSeenByBaseRef) {
-		if (baseRef in mapping) {
+	for (const [baseRef, { fam1l, fam2l, libelle40 }] of firstSeenByBaseRef) {
+		const existing = mapping[baseRef];
+		const existingCategory = typeof existing === 'string' ? existing : existing?.category;
+		if (existing && existingCategory !== 'a-trier') {
 			continue;
 		}
-		const result = classify(fam1l, fam2l);
+		const result = classify(fam1l, fam2l, libelle40);
 		mapping[baseRef] = result;
-		addedCount += 1;
+		if (existing) {
+			if (result.category !== 'a-trier') reclassifiedCount += 1;
+		} else {
+			addedCount += 1;
+		}
 		perCategoryCount.set(result.category, (perCategoryCount.get(result.category) ?? 0) + 1);
 		if (result.category === 'a-trier') {
-			const pairKey = `${fam1l.trim()} | ${fam2l.trim()}`;
+			const pairKey = `${fam1l.trim()} | ${fam2l.trim()} | ${(libelle40 ?? '').trim()}`;
 			unmatchedPairs.set(pairKey, (unmatchedPairs.get(pairKey) ?? 0) + 1);
 		}
 	}
@@ -109,8 +136,9 @@ function main() {
 	writeFileSync(MAPPING_PATH, `${JSON.stringify(sortedMapping, null, 2)}\n`, 'utf-8');
 
 	console.log(`Total unique base refs in CSV: ${firstSeenByBaseRef.size}`);
-	console.log(`Already mapped (untouched): ${alreadyMappedCount}`);
+	console.log(`Already mapped (untouched): ${alreadyMappedCount - reclassifiedCount}`);
 	console.log(`Newly classified this run: ${addedCount}`);
+	console.log(`Reclassified out of 'a-trier' this run: ${reclassifiedCount}`);
 	console.log('Breakdown of newly classified entries by category:');
 	for (const [category, count] of [...perCategoryCount.entries()].sort((a, b) => b[1] - a[1])) {
 		console.log(`  - ${category}: ${count}`);
