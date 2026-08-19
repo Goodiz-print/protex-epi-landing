@@ -54,16 +54,21 @@ const t = useTranslations(lang);
 			if (!input || !results) return;
 
 			const noResultsLabel = box.dataset.noResultsLabel ?? '';
-			// The pagefind module is generated at build time (`pagefind --site dist`) and is
-			// unavailable in `astro dev` — hence the untyped, @vite-ignore'd dynamic import.
+			// The pagefind module is generated at build time (`pagefind --site dist`), after the
+			// Vite/Rollup build finishes, so it's unavailable in `astro dev` and absent from Vite's
+			// module graph. `@vite-ignore` alone isn't enough to stop Vite's build wrapping this
+			// import with its modulePreload helper — since the target chunk doesn't exist in the
+			// graph, the helper call is left referencing an unresolved `__VITE_PRELOAD__` token,
+			// throwing at runtime and breaking search on every production build. Routing the import
+			// through `new Function` hides it from Vite/Rollup/esbuild's static analysis entirely.
 			let pagefind: PagefindApi | null = null;
 			let pagefindFailed = false;
+			const dynamicImport = new Function('path', 'return import(path)') as (path: string) => Promise<PagefindApi>;
 
 			async function ensurePagefind() {
 				if (pagefind || pagefindFailed) return pagefind;
 				try {
-					const pagefindPath = '/pagefind/pagefind.js';
-					pagefind = await import(/* @vite-ignore */ pagefindPath);
+					pagefind = await dynamicImport('/pagefind/pagefind.js');
 				} catch {
 					pagefindFailed = true;
 				}
