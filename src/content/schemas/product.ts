@@ -10,7 +10,7 @@ export const productSchema = z.object({
 	slug: z.string(),
 	price: z.number(),
 	currency: z.literal('EUR'),
-	imageUrl: z.string().url(),
+	imageUrl: z.string().min(1),
 	sizes: z.array(z.string()),
 	category: z.string(),
 	subcategory: z.string().nullable(),
