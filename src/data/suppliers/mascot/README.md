@@ -17,7 +17,7 @@ modification des routes ni des composants**.
 | `MASCOT_extended_productdata_FR.csv` | **Maître** — 291 Mo, 96 colonnes, ~41 399 lignes (1/variante EAN), ~937 produits. Images, composition, type, tailles, description. | ❌ gitignoré (trop volumineux, local seulement) |
 | `Produits-Table 1.csv` | Prix **2025 + 2026** propres + nom commercial. ~3 047 articles (1 ligne/taille). | ❌ gitignoré |
 | `Retouches-Table 1.csv` | Services de retouche (poches genoux, reconditionnement…). **Non-produits, ignoré.** | ❌ gitignoré |
-| `mascot-products.slim.csv` | **CSV allégé** produit par `scripts/prepare-mascot-csv.mjs` — 33 Mo, 12 colonnes. **C'est le seul fichier lu au runtime.** | ✅ committé |
+| `mascot-products.slim.csv` | **CSV allégé** produit par `scripts/prepare-mascot-csv.mjs` — 33 Mo, 12 colonnes. Intermédiaire local, lu uniquement par `scripts/generate-catalog-data.mjs`. | ❌ gitignoré |
 
 Format des exports bruts : **UTF-8, délimiteur `;`, décimales à virgule** (`132,95`), retours
 CRLF, champs multi-lignes entre guillemets. ⚠️ Plusieurs en-têtes contiennent des **espaces
@@ -105,13 +105,16 @@ Résultat actuel : **880 / 937 (94 %)** classés — corps 756, pieds 106, tête
 
 ```bash
 # 1. Déposer les 3 CSV bruts dans src/data/suppliers/mascot/
-# 2. Distiller le fichier maître (+ jointure prix/nom par EAN) → slim CSV committé
+# 2. Distiller le fichier maître (+ jointure prix/nom par EAN) → slim CSV local
 node scripts/prepare-mascot-csv.mjs
 
 # 3. (Re)générer les suggestions de mapping catégorie (additif, ne réécrit rien)
 node scripts/generate-category-mapping-mascot.mjs
 
-# 4. Vérifier en dev, puis committer mascot-products.slim.csv + category-mapping.mascot.json
+# 4. Régénérer les données catalogue lues au build
+node scripts/generate-catalog-data.mjs
+
+# 5. Vérifier en dev, puis committer src/data/catalog/products.mascot.json + category-mapping.mascot.json
 npx astro dev --background && npx astro dev logs   # doit afficher : [mascot] loaded 3025 products …
 ```
 
@@ -119,8 +122,9 @@ Fichiers de code impliqués :
 
 - `scripts/prepare-mascot-csv.mjs` — distillation extended + jointure prix (streaming, 291 Mo).
 - `scripts/generate-category-mapping-mascot.mjs` — mapping par mots-clés sur `Type de produit`.
-- `src/content/loaders/csv-products-loader.helpers.ts` — `groupMascotRows`, `buildMascotEntry`.
-- `src/content/loaders/csv-products-loader.ts` — source `mascot` (lecture slim en `;`).
+- `scripts/lib/supplier-csv.ts` — `groupMascotRows`, `buildMascotEntry` (lecture slim en `;`).
+- `scripts/generate-catalog-data.mjs` — source `mascot` → `src/data/catalog/products.mascot.json`.
+- `src/content/loaders/json-products-loader.ts` — lecture du JSON pré-calculé au build.
 - `src/content.config.ts` — déclaration de la source Mascot.
 - `astro.config.mjs` — `pimage.mascot.fr` dans `image.domains`.
 
