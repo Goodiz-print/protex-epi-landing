@@ -1,6 +1,7 @@
 ---
 import { useTranslations } from '~/i18n/utils';
 import { getQuoteUrl, type Lang } from '~/utils/catalog';
+import Button from '~/components/ui/Button.astro';
 
 interface Props {
 	lang: Lang;
@@ -8,29 +9,45 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+
+const steps = [
+	{
+		label: t('home.quote.step1'),
+		// speech bubble
+		icon: 'M2 5.25A2.25 2.25 0 014.25 3h11.5A2.25 2.25 0 0118 5.25v6.5A2.25 2.25 0 0115.75 14H8.06l-3.53 3.03A.75.75 0 013.3 16.5V14h.95A2.25 2.25 0 012 11.75v-6.5z',
+	},
+	{
+		label: t('home.quote.step2'),
+		// clock
+		icon: 'M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z',
+	},
+	{
+		label: t('home.quote.step3'),
+		// pencil / form
+		icon: 'M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z',
+	},
+];
 ---
 
-<section class="bg-blue-600">
-	<div
-		class="mx-auto flex max-w-6xl flex-col items-start gap-6 px-4 py-16 sm:flex-row sm:items-center sm:justify-between"
-	>
-		<div>
-			<h2 class="text-2xl font-semibold text-white">{t('home.quote.title')}</h2>
-			<p class="mt-2 max-w-xl text-blue-100">{t('home.quote.body')}</p>
-		</div>
-		<div class="flex shrink-0 flex-col gap-3 sm:flex-row">
-			<a
-				href={getQuoteUrl(lang)}
-				class="inline-block rounded-md bg-white px-6 py-3 text-center font-medium text-blue-700 transition-colors hover:bg-blue-50"
-			>
-				{t('home.quote.cta')}
-			</a>
-			<a
-				href="tel:0557027587"
-				class="inline-block rounded-md border border-blue-300 px-6 py-3 text-center font-medium text-white transition-colors hover:bg-blue-500"
-			>
-				{t('home.quote.call')}
-			</a>
+<section class="border-t border-gray-200 bg-gray-50" data-pagefind-ignore>
+	<div class="mx-auto max-w-6xl px-4 py-14 text-center">
+		<h2 class="font-heading text-2xl font-bold uppercase text-gray-900">{t('home.quote.title')}</h2>
+		<ul class="mx-auto mt-10 grid max-w-4xl gap-8 sm:grid-cols-3">
+			{
+				steps.map((step) => (
+					<li class="flex flex-col items-center gap-4">
+						<span class="flex h-14 w-14 items-center justify-center rounded-full bg-brand text-white">
+							<svg class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+								<path fill-rule="evenodd" d={step.icon} clip-rule="evenodd" />
+							</svg>
+						</span>
+						<p class="font-heading text-sm font-bold uppercase leading-snug text-gray-900">{step.label}</p>
+					</li>
+				))
+			}
+		</ul>
+		<div class="mt-10">
+			<Button href={getQuoteUrl(lang)} variant="primary">{t('home.quote.send')}</Button>
 		</div>
 	</div>
 </section>

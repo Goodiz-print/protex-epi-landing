@@ -5,6 +5,8 @@ import type { Product } from '~/content/schemas/product';
 import { getCatalogRootUrl, getCategoryUrl, getSubcategoryUrl, type Lang } from '~/utils/catalog';
 import Breadcrumb from './Breadcrumb.astro';
 import ProductDetail from './ProductDetail.astro';
+import SimilarProducts from './SimilarProducts.astro';
+import { getColourwaysByStyle, getSimilarProducts } from '~/content/queries';
 
 interface Props {
 	lang: Lang;
@@ -13,6 +15,8 @@ interface Props {
 
 const { lang, product } = Astro.props;
 const t = useTranslations(lang);
+const colourways = await getColourwaysByStyle(product);
+const similar = await getSimilarProducts(product, 4);
 
 const homeHref = lang === 'en' ? '/en' : '/';
 const category = getCategory(product.category);
@@ -32,4 +36,5 @@ items.push({ label: product.name });
 ---
 
 <Breadcrumb items={items} />
-<ProductDetail lang={lang} product={product} />
+<ProductDetail lang={lang} product={product} colourways={colourways} />
+<SimilarProducts lang={lang} groups={similar} />

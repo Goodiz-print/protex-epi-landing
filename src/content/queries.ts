@@ -1,6 +1,8 @@
 import { getCollection } from 'astro:content';
 import { categoryTaxonomy, type Category, type Subcategory } from '~/data/category-taxonomy';
 import { garmentTypes, type GarmentType } from '~/data/garment-types';
+import type { Product } from '~/content/schemas/product';
+import { groupProductsByStyle, styleKey, type ProductGroup } from '~/utils/product-groups';
 
 export async function getAllProducts() {
 	return getCollection('products');
@@ -27,6 +29,52 @@ export async function getProductsBySubcategory(categorySlug: string, subcategory
 	return products
 		.filter((entry) => entry.data.category === categorySlug && entry.data.subcategory === subcategorySlug)
 		.map((entry) => entry.data);
+}
+
+// These two run once per product page (6 000+ at build time), so everything
+// is derived from indexes built a single time and memoized at module level.
+let colourwaysIndexPromise: Promise<Map<string, Product[]>> | null = null;
+function getColourwaysIndex(): Promise<Map<string, Product[]>> {
+	colourwaysIndexPromise ??= getAllProducts().then((products) => {
+		const index = new Map<string, Product[]>();
+		for (const entry of products) {
+			const key = styleKey(entry.data);
+			const bucket = index.get(key);
+			if (bucket) bucket.push(entry.data);
+			else index.set(key, [entry.data]);
+		}
+		return index;
+	});
+	return colourwaysIndexPromise;
+}
+
+let scopedGroupsPromise: Promise<Map<string, ProductGroup[]>> | null = null;
+function getScopedGroups(): Promise<Map<string, ProductGroup[]>> {
+	scopedGroupsPromise ??= getAllProducts().then((products) => {
+		const pools = new Map<string, Product[]>();
+		for (const entry of products) {
+			const scope = `${entry.data.category}|${entry.data.subcategory ?? ''}`;
+			const pool = pools.get(scope);
+			if (pool) pool.push(entry.data);
+			else pools.set(scope, [entry.data]);
+		}
+		return new Map([...pools].map(([scope, pool]) => [scope, groupProductsByStyle(pool)]));
+	});
+	return scopedGroupsPromise;
+}
+
+/** All colourways of the same style (model), current product included. */
+export async function getColourwaysByStyle(product: Product): Promise<Product[]> {
+	const index = await getColourwaysIndex();
+	return index.get(styleKey(product)) ?? [product];
+}
+
+/** Other styles from the same subcategory, one group per style. */
+export async function getSimilarProducts(product: Product, limit = 4): Promise<ProductGroup[]> {
+	const groups = await getScopedGroups();
+	const scoped = groups.get(`${product.category}|${product.subcategory ?? ''}`) ?? [];
+	const key = styleKey(product);
+	return scoped.filter((group) => group.key !== key).slice(0, limit);
 }
 
 export interface GarmentTypeStaticPath {

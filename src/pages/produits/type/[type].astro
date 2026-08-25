@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/Layout.astro';
 import GarmentTypePage from '~/components/catalog/GarmentTypePage.astro';
+import QuoteCta from '~/components/home/QuoteCta.astro';
 import { getGarmentTypeStaticPaths, getProductsByGarmentType } from '~/content/queries';
 import { ui } from '~/i18n/ui';
 import { garmentTypeDescription } from '~/utils/seo';
@@ -20,4 +21,5 @@ const products = await getProductsByGarmentType(garmentType);
 	<main class="mx-auto max-w-6xl px-4 py-10">
 		<GarmentTypePage lang="fr" garmentType={garmentType} products={products} />
 	</main>
+	<QuoteCta lang="fr" />
 </Layout>

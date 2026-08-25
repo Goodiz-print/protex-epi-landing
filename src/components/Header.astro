@@ -3,18 +3,20 @@ import { Image } from 'astro:assets';
 import logo from '../assets/images/logo-protex-EPI.png';
 import Nav from './Nav.astro';
 import SearchBox from './SearchBox.astro';
+import Button from './ui/Button.astro';
+import LanguagePicker from './LanguagePicker.astro';
 import { useTranslations } from '../i18n/utils';
-import type { Lang } from '../utils/catalog';
+import { getQuoteUrl, type Lang } from '../utils/catalog';
 
 const lang = (Astro.currentLocale ?? 'fr') as Lang;
 const homeHref = lang === 'en' ? '/en' : '/';
 const t = useTranslations(lang);
 ---
 
-<header class="sticky top-0 z-50 border-b border-gray-200 bg-white" data-pagefind-ignore>
-	<div class="hidden border-b border-gray-100 bg-gray-50 sm:block">
-		<div class="mx-auto flex h-9 max-w-6xl items-center justify-end gap-6 px-4 text-sm text-gray-600">
-			<a href="tel:0557027587" class="flex items-center gap-1.5 hover:text-gray-900" aria-label={t('header.callUs')}>
+<header class="relative z-50 bg-white" data-pagefind-ignore>
+	<div class="hidden bg-brand sm:block">
+		<div class="mx-auto flex h-9 max-w-6xl items-center justify-end gap-6 px-4 text-sm text-white">
+			<a href="tel:0557027587" class="flex items-center gap-1.5 hover:text-white/80" aria-label={t('header.callUs')}>
 				<svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
 					<path d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-.42 1.409l-.834.834a11.037 11.037 0 006.02 6.02l.834-.834a1.5 1.5 0 011.409-.42l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-7.18 0-13-5.82-13-13V3.5z" />
 				</svg>
@@ -22,7 +24,7 @@ const t = useTranslations(lang);
 			</a>
 			<a
 				href="mailto:contact@protex-epi.com"
-				class="flex items-center gap-1.5 hover:text-gray-900"
+				class="flex items-center gap-1.5 hover:text-white/80"
 				aria-label={t('header.emailUs')}
 			>
 				<svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -33,11 +35,21 @@ const t = useTranslations(lang);
 			</a>
 		</div>
 	</div>
-	<div class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4">
+	<div class="mx-auto flex h-16 max-w-6xl items-center gap-4 px-4 sm:h-[90px] sm:gap-8">
 		<a href={homeHref} class="flex shrink-0 items-center">
-			<Image src={logo} alt="Protex EPI" width={160} height={68} class="h-10 w-auto" />
+			<Image src={logo} alt="Protex EPI" width={212} height={90} class="h-10 w-auto sm:h-16" />
 		</a>
-		<SearchBox lang={lang} />
-		<Nav lang={lang} />
+		<div class="flex min-w-0 flex-1 justify-center">
+			<SearchBox lang={lang} />
+		</div>
+		<div class="hidden shrink-0 items-center gap-4 lg:flex">
+			<Button href={getQuoteUrl(lang)} variant="primary" class="h-10 px-5">{t('home.quote.cta')}</Button>
+			<LanguagePicker />
+		</div>
+	</div>
+	<div class="bg-nav">
+		<div class="mx-auto max-w-6xl px-4">
+			<Nav lang={lang} />
+		</div>
 	</div>
 </header>

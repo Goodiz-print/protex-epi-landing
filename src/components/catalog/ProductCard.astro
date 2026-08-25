@@ -2,22 +2,38 @@
 import type { Product } from '../../content/schemas/product';
 import type { Lang } from '../../utils/catalog';
 import { getProductUrl } from '../../utils/catalog';
-import { formatPrice } from '../../utils/format';
+import { useTranslations } from '../../i18n/utils';
+import { formatPriceRange } from '../../utils/format';
+import { formatSizeRange } from '../../utils/sizes';
 
 interface Props {
 	lang: Lang;
 	product: Product;
+	title?: string;
+	colourways?: Product[];
+	priceRange?: { min: number; max: number };
+	sizes?: string[];
 }
 
-const { lang, product } = Astro.props;
+const MAX_SWATCHES = 5;
+
+const { lang, product, title, colourways, priceRange, sizes } = Astro.props;
+const t = useTranslations(lang);
 const href = getProductUrl(lang, product.category, product.subcategory, product.slug);
+const price = priceRange ?? { min: product.price, max: product.price };
+const sizeRange = formatSizeRange(sizes ?? product.sizes);
+const swatches = (colourways ?? []).length > 1 ? (colourways ?? []).slice(0, MAX_SWATCHES) : [];
+const extraColourways = (colourways ?? []).length - swatches.length;
 ---
 
-<a
-	href={href}
-	class="group block overflow-hidden rounded-lg border border-gray-200 transition-colors hover:border-gray-400"
->
-	<div class="aspect-square overflow-hidden bg-gray-50">
+<div class="group flex h-full flex-col rounded-lg border border-gray-200 bg-white p-3 transition-colors hover:border-gray-400">
+	<a
+		href={href}
+		class="line-clamp-2 min-h-10 font-heading text-sm font-bold uppercase leading-tight text-gray-900 hover:text-brand"
+	>
+		{title ?? product.name}
+	</a>
+	<a href={href} class="mt-2 block aspect-square overflow-hidden bg-white" tabindex="-1" aria-hidden="true">
 		<img
 			src={product.imageUrl}
 			width="1100"
@@ -28,10 +44,42 @@ const href = getProductUrl(lang, product.category, product.subcategory, product.
 			class="h-full w-full object-contain transition-transform group-hover:scale-105"
 			onerror="this.onerror=null;this.src='/images/product-placeholder.svg';"
 		/>
+	</a>
+	{
+		swatches.length > 0 && (
+			<ul class="mt-2 flex items-center gap-1.5">
+				{swatches.map((colourway) => (
+					<li>
+						<a
+							href={getProductUrl(lang, colourway.category, colourway.subcategory, colourway.slug)}
+							class="block h-6 w-6 overflow-hidden rounded-full border border-gray-300 hover:border-brand"
+							title={colourway.colour}
+						>
+							<img
+								src={colourway.imageUrl}
+								width="24"
+								height="24"
+								alt={colourway.colour}
+								loading="lazy"
+								decoding="async"
+								class="h-full w-full scale-150 object-cover"
+								onerror="this.onerror=null;this.src='/images/product-placeholder.svg';"
+							/>
+						</a>
+					</li>
+				))}
+				{extraColourways > 0 && <li class="text-xs text-gray-500">+{extraColourways}</li>}
+			</ul>
+		)
+	}
+	<div class="mt-auto pt-2">
+		{sizeRange && <p class="text-xs text-gray-500">{sizeRange}</p>}
+		<p class="mt-1 text-sm font-bold text-gray-900">{formatPriceRange(price.min, price.max, lang)}</p>
+		<a
+			href={href}
+			class="mt-2 flex h-10 items-center justify-center rounded-card-btn border border-gray-300 font-heading text-xs font-bold uppercase text-gray-900 transition-colors hover:border-brand hover:text-brand"
+		>
+			{t('catalog.viewProduct')}
+		</a>
 	</div>
-	<div class="p-3">
-		<p class="truncate text-sm font-medium text-gray-900">{product.name}</p>
-		<p class="text-xs text-gray-500">{product.colour}</p>
-		<p class="mt-1 text-sm font-semibold text-gray-900">{formatPrice(product.price, lang)}</p>
-	</div>
-</a>
+</div>

@@ -1,0 +1,36 @@
+---
+import { useTranslations } from '../../i18n/utils';
+import type { Lang } from '../../utils/catalog';
+import type { ProductGroup } from '../../utils/product-groups';
+import ProductCard from './ProductCard.astro';
+
+interface Props {
+	lang: Lang;
+	groups: ProductGroup[];
+}
+
+const { lang, groups } = Astro.props;
+const t = useTranslations(lang);
+---
+
+{
+	groups.length > 0 && (
+		<section class="mt-14">
+			<h2 class="mb-6 font-heading text-xl font-bold uppercase text-gray-900">{t('product.similar')}</h2>
+			<ul class="grid grid-cols-2 gap-4 sm:grid-cols-4">
+				{groups.map((group) => (
+					<li>
+						<ProductCard
+							lang={lang}
+							product={group.primary}
+							title={group.displayName}
+							colourways={group.colourways}
+							priceRange={{ min: group.priceMin, max: group.priceMax }}
+							sizes={group.sizes}
+						/>
+					</li>
+				))}
+			</ul>
+		</section>
+	)
+}

@@ -1,0 +1,67 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import { useTranslations } from '~/i18n/utils';
+import { getCatalogRootUrl, type Lang } from '~/utils/catalog';
+import Button from '~/components/ui/Button.astro';
+
+interface Props {
+	lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const catalogHref = getCatalogRootUrl(lang);
+
+// Official logos are picked up automatically once dropped in
+// src/assets/images/brands/<slug>.{svg,png,jpg}; until then the card
+// falls back to a styled wordmark in the brand's colour.
+const brandImages = import.meta.glob<{ default: ImageMetadata }>('../../assets/images/brands/*.{svg,png,jpg,webp}', {
+	eager: true,
+});
+
+const brands = [
+	{ slug: 'portwest', name: 'Portwest', colour: '#00437a', logoBg: '' },
+	{ slug: 'blaklader', name: 'Blåkläder', colour: '#1d1d1b', logoBg: '' },
+	// The official Mascot logo ships baked on a black background.
+	{ slug: 'mascot', name: 'Mascot', colour: '#da291c', logoBg: 'bg-black' },
+].map((brand) => {
+	const imageEntry = Object.entries(brandImages).find(([path]) => path.includes(`/${brand.slug}.`));
+	return { ...brand, image: imageEntry?.[1].default };
+});
+---
+
+<section class="mx-auto max-w-6xl px-4 py-14">
+	<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+		{
+			brands.map((brand) => (
+				<a
+					href={catalogHref}
+					class="group flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white transition-colors hover:border-brand"
+				>
+					<span class={`flex min-h-32 flex-1 items-center justify-center px-6 ${brand.logoBg}`}>
+						{brand.image ? (
+							<Image src={brand.image} alt={brand.name} width={200} height={80} class="max-h-16 w-auto max-w-full object-contain" />
+						) : (
+							<span class="font-heading text-2xl font-extrabold uppercase tracking-wide" style={`color: ${brand.colour}`}>
+								{brand.name}
+							</span>
+						)}
+					</span>
+					<span class="flex h-11 items-center justify-center bg-brand font-heading text-sm font-bold uppercase tracking-wide text-white transition-colors group-hover:bg-brand-dark">
+						{brand.name}
+					</span>
+				</a>
+			))
+		}
+		<div class="flex flex-col justify-between gap-4 rounded-lg bg-nav p-6 text-white sm:col-span-2 lg:col-span-1">
+			<div>
+				<p class="font-heading text-lg font-bold uppercase leading-snug">{t('home.brands.title')}</p>
+				<p class="mt-3 text-sm text-white/80">{t('home.brands.body')}</p>
+			</div>
+			<Button href={catalogHref} variant="primary" class="h-auto min-h-[44px] w-full whitespace-normal py-2 text-xs">
+				{t('home.brands.cta')} →
+			</Button>
+		</div>
+	</div>
+</section>

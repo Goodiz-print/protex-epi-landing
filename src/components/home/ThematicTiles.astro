@@ -1,0 +1,73 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import { garmentTypes } from '~/data/garment-types';
+import { thematicTiles } from '~/data/thematic-tiles';
+import { getProductsByGarmentType, getProductsBySubcategory } from '~/content/queries';
+import type { Lang } from '~/utils/catalog';
+
+interface Props {
+	lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const tiles = await Promise.all(
+	thematicTiles.map(async (tile) => {
+		let image: ImageMetadata | string | undefined = tile.image;
+		if (!image && tile.subcategory) {
+			const products = await getProductsBySubcategory(tile.subcategory.category, tile.subcategory.subcategory);
+			image = products[0]?.imageUrl;
+		}
+		if (!image && tile.garmentType) {
+			const garmentType = garmentTypes.find((type) => type.slug === tile.garmentType);
+			if (garmentType) {
+				const products = await getProductsByGarmentType(garmentType);
+				image = products[0]?.imageUrl;
+			}
+		}
+		return {
+			href: tile.getHref(lang),
+			label: tile.labels[lang],
+			image,
+			imagePositionClass: tile.imagePositionClass,
+		};
+	}),
+);
+---
+
+<section class="mx-auto max-w-6xl px-4 pb-16 pt-4">
+	<ul class="grid gap-4 sm:grid-cols-2">
+		{
+			tiles.map((tile) => (
+				<li>
+					<a href={tile.href} class="group relative block h-52 overflow-hidden rounded-lg sm:h-64">
+						{tile.image &&
+							(typeof tile.image === 'string' ? (
+								<img
+									src={tile.image}
+									alt=""
+									loading="lazy"
+									decoding="async"
+									class={`h-full w-full object-cover transition-transform duration-300 group-hover:scale-105 ${tile.imagePositionClass ?? 'object-center'}`}
+									onerror="this.onerror=null;this.src='/images/product-placeholder.svg';"
+								/>
+							) : (
+								<Image
+									src={tile.image}
+									alt=""
+									width={1200}
+									height={600}
+									class={`h-full w-full object-cover transition-transform duration-300 group-hover:scale-105 ${tile.imagePositionClass ?? 'object-center'}`}
+								/>
+							))}
+						<span class="absolute inset-0 bg-gray-900/40 transition-colors group-hover:bg-gray-900/50" />
+						<span class="absolute inset-x-0 bottom-0 p-5 font-heading text-lg font-bold uppercase text-white">
+							{tile.label}
+						</span>
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</section>

@@ -2,6 +2,10 @@
 import { useTranslations } from '../../i18n/utils';
 import type { Product } from '../../content/schemas/product';
 import type { Lang } from '../../utils/catalog';
+import { getProductUrl } from '../../utils/catalog';
+import { formatPriceRange } from '../../utils/format';
+import { formatSizeRange } from '../../utils/sizes';
+import { groupProductsByStyle } from '../../utils/product-groups';
 import ProductCard from './ProductCard.astro';
 
 interface Props {
@@ -13,83 +17,202 @@ const { lang, products } = Astro.props;
 const t = useTranslations(lang);
 
 const PAGE_SIZE = 24;
+const MAX_SWATCHES = 5;
 
+const groups = groupProductsByStyle(products);
 const suppliers = [...new Set(products.map((product) => product.supplier))].sort();
 const supplierLabels: Record<string, string> = { portwest: 'Portwest', blaklader: 'Blaklader', mascot: 'Mascot' };
+const hasSidebar = Astro.slots.has('sidebar');
+
+// The first page is server-rendered (SEO + no-JS fallback); every model —
+// including the first page — is also serialized in a compact payload the
+// client script uses to render, filter and sort the full listing without
+// shipping thousands of pre-rendered cards in the HTML.
+const payload = groups.map((group) => ({
+	t: group.displayName,
+	h: getProductUrl(lang, group.primary.category, group.primary.subcategory, group.primary.slug),
+	img: group.primary.imageUrl,
+	p: group.priceMin,
+	pl: formatPriceRange(group.priceMin, group.priceMax, lang),
+	s: group.primary.supplier,
+	sz: formatSizeRange(group.sizes),
+	cw:
+		group.colourways.length > 1
+			? group.colourways.slice(0, MAX_SWATCHES).map((colourway) => ({
+					h: getProductUrl(lang, colourway.category, colourway.subcategory, colourway.slug),
+					img: colourway.imageUrl,
+					c: colourway.colour,
+				}))
+			: [],
+	cx: Math.max(0, group.colourways.length - MAX_SWATCHES),
+}));
 ---
 
 {
 	products.length === 0 ? (
 		<p class="text-gray-500">{t('catalog.noProducts')}</p>
 	) : (
-		<div data-product-listing data-page-size={PAGE_SIZE}>
-			<div class="mb-4 flex flex-wrap items-end justify-between gap-4">
-				<p class="text-sm text-gray-500" data-results-count>
-					{products.length} {t('catalog.resultsCount')}
-				</p>
-				<div class="flex flex-wrap items-center gap-4">
-					{suppliers.length > 1 && (
-						<fieldset class="flex flex-wrap items-center gap-3">
-							<legend class="mr-1 text-sm text-gray-500">{t('catalog.filter.supplier')}</legend>
-							{suppliers.map((supplier) => (
-								<label class="flex items-center gap-1.5 text-sm text-gray-700">
-									<input type="checkbox" value={supplier} checked data-supplier-filter class="rounded border-gray-300" />
-									{supplierLabels[supplier] ?? supplier}
-								</label>
-							))}
-						</fieldset>
-					)}
-					<label class="flex items-center gap-2 text-sm text-gray-700">
-						{t('catalog.sort.label')}
-						<select data-sort-select class="rounded-md border border-gray-300 px-2 py-1.5 text-sm">
-							<option value="relevance">{t('catalog.sort.relevance')}</option>
-							<option value="price-asc">{t('catalog.sort.priceAsc')}</option>
-							<option value="price-desc">{t('catalog.sort.priceDesc')}</option>
-						</select>
-					</label>
+		<div
+			data-product-listing
+			data-page-size={PAGE_SIZE}
+			data-view-label={t('catalog.viewProduct')}
+			class={hasSidebar ? 'lg:grid lg:grid-cols-[260px_1fr] lg:items-start lg:gap-8' : ''}
+		>
+			{hasSidebar && <slot name="sidebar" />}
+			<div class="min-w-0">
+				<div class="mb-4 flex flex-wrap items-end justify-between gap-4">
+					<p class="text-sm text-gray-500" data-results-count>
+						{groups.length} {t('catalog.resultsCount')}
+					</p>
+					<div class="flex flex-wrap items-center gap-4">
+						{!hasSidebar && suppliers.length > 1 && (
+							<fieldset class="flex flex-wrap items-center gap-3">
+								<legend class="mr-1 text-sm text-gray-500">{t('catalog.filter.supplier')}</legend>
+								{suppliers.map((supplier) => (
+									<label class="flex items-center gap-1.5 text-sm text-gray-700">
+										<input type="checkbox" value={supplier} checked data-supplier-filter class="rounded border-gray-300" />
+										{supplierLabels[supplier] ?? supplier}
+									</label>
+								))}
+							</fieldset>
+						)}
+						<label class="flex items-center gap-2 text-sm text-gray-700">
+							{t('catalog.sort.label')}
+							<select
+								data-sort-select
+								class="rounded-md border border-gray-300 px-2 py-1.5 text-sm focus:border-brand focus:outline-none"
+							>
+								<option value="relevance">{t('catalog.sort.relevance')}</option>
+								<option value="price-asc">{t('catalog.sort.priceAsc')}</option>
+								<option value="price-desc">{t('catalog.sort.priceDesc')}</option>
+							</select>
+						</label>
+					</div>
 				</div>
-			</div>
 
-			<p class="hidden text-gray-500" data-no-results>
-				{t('catalog.noResults')}
-			</p>
+				<p class="hidden text-gray-500" data-no-results>
+					{t('catalog.noResults')}
+				</p>
 
-			<ul class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4" data-product-list>
-				{products.map((product) => (
-					<li data-price={product.price} data-supplier={product.supplier}>
-						<ProductCard lang={lang} product={product} />
-					</li>
-				))}
-			</ul>
-
-			<div class="mt-8 text-center">
-				<button
-					type="button"
-					data-load-more
-					class="hidden rounded-md border border-gray-300 px-6 py-3 font-medium text-gray-900 transition-colors hover:border-gray-400 hover:bg-gray-50"
+				<ul
+					class={`grid grid-cols-2 gap-4 ${hasSidebar ? 'sm:grid-cols-2 xl:grid-cols-3' : 'sm:grid-cols-3 lg:grid-cols-4'}`}
+					data-product-list
 				>
-					{t('catalog.loadMore')}
-				</button>
+					{groups.slice(0, PAGE_SIZE).map((group) => (
+						<li data-price={group.priceMin} data-supplier={group.primary.supplier}>
+							<ProductCard
+								lang={lang}
+								product={group.primary}
+								title={group.displayName}
+								colourways={group.colourways}
+								priceRange={{ min: group.priceMin, max: group.priceMax }}
+								sizes={group.sizes}
+							/>
+						</li>
+					))}
+				</ul>
+
+				<script
+					type="application/json"
+					data-products-payload
+					set:html={JSON.stringify(payload).replaceAll('<', '\\u003c')}
+				/>
+
+				<div class="mt-8 text-center">
+					<button
+						type="button"
+						data-load-more
+						class="hidden rounded-btn bg-btn-gray px-6 py-3.5 font-heading text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-btn-dark"
+					>
+						{t('catalog.loadMore')}
+					</button>
+				</div>
 			</div>
 		</div>
 	)
 }
 
 <script>
+	interface CardData {
+		t: string;
+		h: string;
+		img: string;
+		p: number;
+		pl: string;
+		s: string;
+		sz: string | null;
+		cw: { h: string; img: string; c: string }[];
+		cx: number;
+	}
+
+	const PLACEHOLDER = '/images/product-placeholder.svg';
+
+	function buildCard(data: CardData, viewLabel: string): HTMLLIElement {
+		const li = document.createElement('li');
+		li.dataset.price = String(data.p);
+		li.dataset.supplier = data.s;
+
+		const swatches =
+			data.cw.length > 0
+				? `<ul class="mt-2 flex items-center gap-1.5">${data.cw
+						.map(
+							(colourway) => `<li><a href="${colourway.h}" class="block h-6 w-6 overflow-hidden rounded-full border border-gray-300 hover:border-brand" title="${colourway.c.replaceAll('"', '&quot;')}"><img src="${colourway.img}" width="24" height="24" alt="${colourway.c.replaceAll('"', '&quot;')}" loading="lazy" decoding="async" class="h-full w-full scale-150 object-cover" onerror="this.onerror=null;this.src='${PLACEHOLDER}';"></a></li>`,
+						)
+						.join('')}${data.cx > 0 ? `<li class="text-xs text-gray-500">+${data.cx}</li>` : ''}</ul>`
+				: '';
+
+		li.innerHTML = `<div class="group flex h-full flex-col rounded-lg border border-gray-200 bg-white p-3 transition-colors hover:border-gray-400">
+			<a href="${data.h}" class="line-clamp-2 min-h-10 font-heading text-sm font-bold uppercase leading-tight text-gray-900 hover:text-brand"></a>
+			<a href="${data.h}" class="mt-2 block aspect-square overflow-hidden bg-white" tabindex="-1" aria-hidden="true"><img src="${data.img}" width="1100" height="1100" alt="" loading="lazy" decoding="async" class="h-full w-full object-contain transition-transform group-hover:scale-105" onerror="this.onerror=null;this.src='${PLACEHOLDER}';"></a>
+			${swatches}
+			<div class="mt-auto pt-2">
+				${data.sz ? '<p class="text-xs text-gray-500" data-sz></p>' : ''}
+				<p class="mt-1 text-sm font-bold text-gray-900" data-pl></p>
+				<a href="${data.h}" class="mt-2 flex h-10 items-center justify-center rounded-card-btn border border-gray-300 font-heading text-xs font-bold uppercase text-gray-900 transition-colors hover:border-brand hover:text-brand">${viewLabel}</a>
+			</div>
+		</div>`;
+
+		const title = li.querySelector('a');
+		if (title) title.textContent = data.t;
+		const titleImg = li.querySelector<HTMLImageElement>('.aspect-square img');
+		if (titleImg) titleImg.alt = data.t;
+		const sz = li.querySelector('[data-sz]');
+		if (sz && data.sz) sz.textContent = data.sz;
+		const pl = li.querySelector('[data-pl]');
+		if (pl) pl.textContent = data.pl;
+		return li;
+	}
+
 	function initProductListings() {
 		document.querySelectorAll<HTMLElement>('[data-product-listing]').forEach((listing) => {
 			const list = listing.querySelector<HTMLUListElement>('[data-product-list]');
 			const loadMoreButton = listing.querySelector<HTMLButtonElement>('[data-load-more]');
 			const sortSelect = listing.querySelector<HTMLSelectElement>('[data-sort-select]');
-			const supplierCheckboxes = Array.from(
-				listing.querySelectorAll<HTMLInputElement>('[data-supplier-filter]'),
-			);
+			const supplierCheckboxes = Array.from(listing.querySelectorAll<HTMLInputElement>('[data-supplier-filter]'));
 			const resultsCount = listing.querySelector<HTMLElement>('[data-results-count]');
 			const noResults = listing.querySelector<HTMLElement>('[data-no-results]');
+			const payloadScript = listing.querySelector<HTMLScriptElement>('[data-products-payload]');
 			if (!list) return;
 
 			const pageSize = Number(listing.dataset.pageSize ?? '24');
-			const originalOrder = Array.from(list.children) as HTMLLIElement[];
+			const viewLabel = listing.dataset.viewLabel ?? '';
+
+			let payload: CardData[] = [];
+			try {
+				payload = payloadScript ? (JSON.parse(payloadScript.textContent ?? '[]') as CardData[]) : [];
+			} catch {
+				payload = [];
+			}
+
+			// The first page of cards is server-rendered; reuse those elements
+			// and lazily build the rest from the JSON payload.
+			const prerendered = Array.from(list.children) as HTMLLIElement[];
+			const items = payload.map((data, index) => ({
+				data,
+				el: (index < prerendered.length ? prerendered[index] : null) as HTMLLIElement | null,
+			}));
+			if (items.length === 0) return;
+
 			let shown = pageSize;
 
 			function selectedSuppliers(): Set<string> {
@@ -100,29 +223,29 @@ const supplierLabels: Record<string, string> = { portwest: 'Portwest', blaklader
 				const suppliers = selectedSuppliers();
 				const sortMode = sortSelect?.value ?? 'relevance';
 
-				let items = originalOrder.filter(
-					(item) => supplierCheckboxes.length === 0 || suppliers.has(item.dataset.supplier ?? ''),
+				let filtered = items.filter(
+					(item) => supplierCheckboxes.length === 0 || suppliers.has(item.data.s),
 				);
 
 				if (sortMode === 'price-asc') {
-					items = [...items].sort((a, b) => Number(a.dataset.price) - Number(b.dataset.price));
+					filtered = [...filtered].sort((a, b) => a.data.p - b.data.p);
 				} else if (sortMode === 'price-desc') {
-					items = [...items].sort((a, b) => Number(b.dataset.price) - Number(a.dataset.price));
+					filtered = [...filtered].sort((a, b) => b.data.p - a.data.p);
 				}
 
-				list?.replaceChildren(...items);
-
-				items.forEach((item, index) => {
-					item.classList.toggle('hidden', index >= shown);
-				});
+				const visible = filtered.slice(0, shown);
+				for (const item of visible) {
+					if (!item.el) item.el = buildCard(item.data, viewLabel);
+				}
+				list?.replaceChildren(...visible.map((item) => item.el as HTMLLIElement));
 
 				if (resultsCount) {
-					const countText = resultsCount.textContent?.replace(/^\d+/, String(items.length));
+					const countText = resultsCount.textContent?.replace(/^\d+/, String(filtered.length));
 					if (countText) resultsCount.textContent = countText;
 				}
 
-				noResults?.classList.toggle('hidden', items.length > 0);
-				loadMoreButton?.classList.toggle('hidden', items.length <= shown);
+				noResults?.classList.toggle('hidden', filtered.length > 0);
+				loadMoreButton?.classList.toggle('hidden', filtered.length <= shown);
 			}
 
 			sortSelect?.addEventListener('change', () => {
