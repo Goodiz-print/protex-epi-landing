@@ -1,6 +1,7 @@
 // Canonical letter-size order, smallest to largest. Numeric sizes (shoe/waist
 // sizes like "42" or "C46") are ranked by their numeric value instead.
-const ALPHA_ORDER = ['3XS', 'XXXS', '2XS', 'XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', '2XL', '3XL', '4XL', '5XL', '6XL', '7XL', '8XL'];
+// prettier-ignore
+const ALPHA_ORDER = ['4XS', 'XXXXS', '3XS', 'XXXS', '2XS', 'XXS', 'XS', 'S', 'M', 'L', 'XL', 'XXL', '2XL', 'XXXL', '3XL', 'XXXXL', '4XL', '5XL', '6XL', '7XL', '8XL'];
 
 function alphaRank(size: string): number {
 	return ALPHA_ORDER.indexOf(size.trim().toUpperCase());

@@ -20,9 +20,6 @@ const PAGE_SIZE = 24;
 const MAX_SWATCHES = 5;
 
 const groups = groupProductsByStyle(products);
-const suppliers = [...new Set(products.map((product) => product.supplier))].sort();
-const supplierLabels: Record<string, string> = { portwest: 'Portwest', blaklader: 'Blaklader', mascot: 'Mascot' };
-const hasSidebar = Astro.slots.has('sidebar');
 
 // The first page is server-rendered (SEO + no-JS fallback); every model —
 // including the first page — is also serialized in a compact payload the
@@ -56,26 +53,15 @@ const payload = groups.map((group) => ({
 			data-product-listing
 			data-page-size={PAGE_SIZE}
 			data-view-label={t('catalog.viewProduct')}
-			class={hasSidebar ? 'lg:grid lg:grid-cols-[260px_1fr] lg:items-start lg:gap-8' : ''}
+			class="lg:grid lg:grid-cols-[260px_1fr] lg:items-start lg:gap-8"
 		>
-			{hasSidebar && <slot name="sidebar" />}
+			<slot name="sidebar" />
 			<div class="min-w-0">
 				<div class="mb-4 flex flex-wrap items-end justify-between gap-4">
 					<p class="text-sm text-gray-500" data-results-count>
 						{groups.length} {t('catalog.resultsCount')}
 					</p>
 					<div class="flex flex-wrap items-center gap-4">
-						{!hasSidebar && suppliers.length > 1 && (
-							<fieldset class="flex flex-wrap items-center gap-3">
-								<legend class="mr-1 text-sm text-gray-500">{t('catalog.filter.supplier')}</legend>
-								{suppliers.map((supplier) => (
-									<label class="flex items-center gap-1.5 text-sm text-gray-700">
-										<input type="checkbox" value={supplier} checked data-supplier-filter class="rounded border-gray-300" />
-										{supplierLabels[supplier] ?? supplier}
-									</label>
-								))}
-							</fieldset>
-						)}
 						<label class="flex items-center gap-2 text-sm text-gray-700">
 							{t('catalog.sort.label')}
 							<select
@@ -94,10 +80,7 @@ const payload = groups.map((group) => ({
 					{t('catalog.noResults')}
 				</p>
 
-				<ul
-					class={`grid grid-cols-2 gap-4 ${hasSidebar ? 'sm:grid-cols-2 xl:grid-cols-3' : 'sm:grid-cols-3 lg:grid-cols-4'}`}
-					data-product-list
-				>
+				<ul class="grid grid-cols-2 gap-4 sm:grid-cols-2 xl:grid-cols-3" data-product-list>
 					{groups.slice(0, PAGE_SIZE).map((group) => (
 						<li data-price={group.priceMin} data-supplier={group.primary.supplier}>
 							<ProductCard

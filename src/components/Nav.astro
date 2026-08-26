@@ -22,7 +22,10 @@ const chevron =
 	'M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z';
 ---
 
-<nav class="relative flex w-full items-center" aria-label={t('nav.products')}>
+{/* Pas de `relative` ici : le drawer mobile (absolute inset-x-0 top-full) doit
+	s'ancrer sur le <header> (relative z-50) pour couvrir toute la largeur du
+	viewport, pas sur la boîte de <nav> qui vit dans le conteneur max-w-6xl. */}
+<nav class="flex w-full items-center" aria-label={t('nav.products')}>
 	<ul class="hidden lg:flex lg:items-stretch">
 		{
 			universes.map((category) => (

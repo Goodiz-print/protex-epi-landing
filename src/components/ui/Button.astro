@@ -1,15 +1,20 @@
 ---
 type Variant = 'primary' | 'dark' | 'gray' | 'outline-white';
+type Size = 'md' | 'sm' | 'auto';
 
 interface Props {
   variant?: Variant;
+  /** Dimensions du bouton — passer par cette prop plutôt que par `class` :
+   * Tailwind ne fusionne pas les utilitaires en conflit (h-*, px-*), c'est
+   * l'ordre d'émission de la feuille de style qui gagne, pas l'appelant. */
+  size?: Size;
   href?: string;
   type?: 'button' | 'submit';
   class?: string;
   [key: string]: unknown;
 }
 
-const { variant = 'primary', href, type = 'button', class: className = '', ...rest } = Astro.props;
+const { variant = 'primary', size = 'md', href, type = 'button', class: className = '', ...rest } = Astro.props;
 
 const variantClasses: Record<Variant, string> = {
   primary: 'bg-brand text-white hover:bg-brand-dark',
@@ -18,7 +23,13 @@ const variantClasses: Record<Variant, string> = {
   'outline-white': 'border border-white text-white hover:bg-white/10',
 };
 
-const classes = `inline-flex h-[50px] items-center justify-center gap-2 rounded-btn px-6 text-center font-heading text-sm font-bold uppercase tracking-wide transition-colors ${variantClasses[variant]} ${className}`;
+const sizeClasses: Record<Size, string> = {
+  md: 'h-[50px] px-6',
+  sm: 'h-10 px-5',
+  auto: 'h-auto min-h-[44px] px-6 py-2',
+};
+
+const classes = `inline-flex items-center justify-center gap-2 rounded-btn text-center font-heading text-sm font-bold uppercase tracking-wide transition-colors ${sizeClasses[size]} ${variantClasses[variant]} ${className}`;
 ---
 
 {
