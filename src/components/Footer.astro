@@ -1,7 +1,7 @@
 ---
 import { useTranslations } from '~/i18n/utils';
 import { categoryTaxonomy } from '~/data/category-taxonomy';
-import { getCatalogRootUrl, getCategoryUrl, type Lang } from '~/utils/catalog';
+import { getCategoryUrl, getQuoteUrl, type Lang } from '~/utils/catalog';
 import LanguagePicker from './LanguagePicker.astro';
 
 interface Props {
@@ -11,7 +11,6 @@ interface Props {
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 
-const homeHref = lang === 'en' ? '/en' : '/';
 const categoryLinks = categoryTaxonomy
 	.filter((category) => category.slug !== 'a-trier')
 	.map((category) => ({
@@ -20,72 +19,81 @@ const categoryLinks = categoryTaxonomy
 	}));
 
 const legalPrefix = lang === 'en' ? '/en' : '';
-const legalLinks = [
+const aboutLinks = [
 	{ href: `${legalPrefix}${lang === 'en' ? '/about' : '/a-propos'}`, label: t('footer.legal.about') },
 	{ href: `${legalPrefix}${lang === 'en' ? '/history' : '/notre-histoire'}`, label: t('footer.legal.history') },
 	{ href: `${legalPrefix}${lang === 'en' ? '/terms' : '/conditions-generales'}`, label: t('footer.legal.terms') },
 	{ href: `${legalPrefix}/contact`, label: t('footer.legal.contact') },
+];
+const customerLinks = [
 	{ href: `${legalPrefix}/faq`, label: t('footer.legal.faq') },
 	{ href: `${legalPrefix}${lang === 'en' ? '/privacy' : '/donnees-personnelles'}`, label: t('footer.legal.privacy') },
+	{ href: getQuoteUrl(lang), label: t('home.quote.cta') },
 ];
 
 const year = new Date().getFullYear();
+const columnTitleClass = 'mb-4 font-heading text-sm font-bold uppercase text-footer-ink';
+const linkClass = 'hover:text-brand';
 ---
 
-<footer class="border-t border-gray-200 bg-white" data-pagefind-ignore>
-	<div class="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:grid-cols-2 lg:grid-cols-5">
+<footer class="bg-footer text-footer-ink" data-pagefind-ignore>
+	<div class="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:grid-cols-2 lg:grid-cols-4">
 		<div>
-			<p class="font-semibold text-gray-900">{t('site.title')}</p>
-		</div>
-		<div>
-			<p class="mb-3 text-sm font-medium text-gray-900">{t('footer.nav.title')}</p>
-			<ul class="space-y-2 text-sm text-gray-600">
-				<li><a href={homeHref} class="hover:text-gray-900">{t('nav.home')}</a></li>
-				<li><a href={getCatalogRootUrl(lang)} class="hover:text-gray-900">{t('nav.products')}</a></li>
-			</ul>
-		</div>
-		<div>
-			<p class="mb-3 text-sm font-medium text-gray-900">{t('footer.categories.title')}</p>
-			<ul class="space-y-2 text-sm text-gray-600">
-				{
-					categoryLinks.map((link) => (
-						<li>
-							<a href={link.href} class="hover:text-gray-900">
-								{link.label}
-							</a>
-						</li>
-					))
-				}
-			</ul>
-		</div>
-		<div>
-			<p class="mb-3 text-sm font-medium text-gray-900">{t('footer.legal.title')}</p>
-			<ul class="space-y-2 text-sm text-gray-600">
-				{
-					legalLinks.map((link) => (
-						<li>
-							<a href={link.href} class="hover:text-gray-900">
-								{link.label}
-							</a>
-						</li>
-					))
-				}
-			</ul>
-		</div>
-		<div>
-			<p class="mb-3 text-sm font-medium text-gray-900">{t('footer.contact.title')}</p>
-			<ul class="space-y-2 text-sm text-gray-600">
+			<p class={columnTitleClass}>{t('footer.headOffice.title')}</p>
+			<ul class="space-y-2 text-sm">
 				<li>{t('footer.contact.addressLine')}</li>
-				<li><a href="tel:0557027587" class="hover:text-gray-900">05 57 02 75 87</a></li>
+				<li><a href="tel:0557027587" class={linkClass}>05 57 02 75 87</a></li>
 				<li>
-					<a href="mailto:contact@protex-epi.com" class="hover:text-gray-900">contact@protex-epi.com</a>
+					<a href="mailto:contact@protex-epi.com" class={linkClass}>contact@protex-epi.com</a>
 				</li>
 			</ul>
 		</div>
+		<div>
+			<p class={columnTitleClass}>{t('footer.categories.title')}</p>
+			<ul class="space-y-2 text-sm">
+				{
+					categoryLinks.map((link) => (
+						<li>
+							<a href={link.href} class={linkClass}>
+								{link.label}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+		<div>
+			<p class={columnTitleClass}>{t('footer.legal.title')}</p>
+			<ul class="space-y-2 text-sm">
+				{
+					aboutLinks.map((link) => (
+						<li>
+							<a href={link.href} class={linkClass}>
+								{link.label}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+		<div>
+			<p class={columnTitleClass}>{t('footer.customers.title')}</p>
+			<ul class="space-y-2 text-sm">
+				{
+					customerLinks.map((link) => (
+						<li>
+							<a href={link.href} class={linkClass}>
+								{link.label}
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</div>
 	</div>
-	<div class="border-t border-gray-200">
+	<div class="border-t border-gray-300">
 		<div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-6 sm:flex-row">
-			<p class="text-sm text-gray-500">© {year} {t('site.title')} — {t('footer.copyright')}</p>
+			<p class="text-sm">© {year} {t('site.title')} — {t('footer.copyright')}</p>
 			<LanguagePicker />
 		</div>
 	</div>

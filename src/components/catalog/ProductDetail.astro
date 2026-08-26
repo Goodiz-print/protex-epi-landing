@@ -1,18 +1,32 @@
 ---
 import { useTranslations } from '../../i18n/utils';
 import type { Product } from '../../content/schemas/product';
-import { getQuoteUrl, type Lang } from '../../utils/catalog';
-import { formatPrice } from '../../utils/format';
+import { getProductUrl, getQuoteUrl, type Lang } from '../../utils/catalog';
+import { formatPriceRange } from '../../utils/format';
+import Button from '../ui/Button.astro';
 import SizeList from './SizeList.astro';
 
 interface Props {
 	lang: Lang;
 	product: Product;
+	colourways?: Product[];
 }
 
-const { lang, product } = Astro.props;
+const { lang, product, colourways = [] } = Astro.props;
 const t = useTranslations(lang);
 const quoteHref = `${getQuoteUrl(lang)}?product=${encodeURIComponent(product.name)}&sku=${encodeURIComponent(product.styleCode)}`;
+
+// price 0 = donnée fournisseur cassée : ignorée pour l'affichage.
+const positivePrices = (colourways.length > 0 ? colourways.map((colourway) => colourway.price) : [product.price]).filter(
+	(price) => price > 0,
+);
+const priceLabel =
+	positivePrices.length > 0
+		? formatPriceRange(Math.min(...positivePrices), Math.max(...positivePrices), lang)
+		: t('catalog.priceOnRequest');
+const otherColourways = colourways.length > 1 ? colourways : [];
+
+const supplierLabels: Record<string, string> = { portwest: 'Portwest', blaklader: 'Blaklader', mascot: 'Mascot' };
 ---
 
 <div class="grid gap-8 md:grid-cols-2">
@@ -29,20 +43,126 @@ const quoteHref = `${getQuoteUrl(lang)}?product=${encodeURIComponent(product.nam
 		/>
 	</div>
 	<div>
-		<h1 class="text-2xl font-semibold text-gray-900">{product.name}</h1>
-		<p class="mt-1 text-gray-500">
-			{t('catalog.colourLabel')}: {product.colour}
-		</p>
-		<p class="mt-4 text-xl font-semibold text-gray-900">{formatPrice(product.price, lang)}</p>
-		<p class="mt-4 whitespace-pre-line text-gray-700">{product.description}</p>
-		<div class="mt-6">
+		<h1 class="font-heading text-3xl font-bold text-gray-900">{product.name}</h1>
+		<p class="mt-2 text-sm text-gray-500">{t('product.number')}: {product.styleCode}</p>
+		<p class="mt-4 text-xl font-bold text-gray-900">{priceLabel}</p>
+
+		{
+			otherColourways.length > 0 ? (
+				<div class="mt-5">
+					<p class="text-sm font-medium text-gray-500">
+						{t('catalog.colourLabel')}: <span class="text-gray-900">{product.colour}</span>
+					</p>
+					<ul class="mt-2 flex flex-wrap gap-2">
+						{otherColourways.map((colourway) => (
+							<li>
+								<a
+									href={getProductUrl(lang, colourway.category, colourway.subcategory, colourway.slug)}
+									title={colourway.colour}
+									aria-current={colourway.id === product.id ? 'page' : undefined}
+									class={`block h-14 w-14 overflow-hidden rounded-md border-2 bg-gray-50 ${
+										colourway.id === product.id ? 'border-brand' : 'border-gray-200 hover:border-gray-400'
+									}`}
+								>
+									<img
+										src={colourway.imageUrl}
+										width="56"
+										height="56"
+										alt={colourway.colour}
+										loading="lazy"
+										decoding="async"
+										class="h-full w-full object-contain"
+										onerror="this.onerror=null;this.src='/images/product-placeholder.svg';"
+									/>
+								</a>
+							</li>
+						))}
+					</ul>
+				</div>
+			) : (
+				<p class="mt-5 text-sm text-gray-500">
+					{t('catalog.colourLabel')}: <span class="text-gray-900">{product.colour}</span>
+				</p>
+			)
+		}
+
+		<div class="mt-5">
 			<SizeList lang={lang} sizes={product.sizes} />
 		</div>
-		<a
-			href={quoteHref}
-			class="mt-6 inline-block rounded-md bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700"
-		>
-			{t('catalog.requestQuote')}
-		</a>
+
+		<div class="mt-8">
+			<Button href={quoteHref} variant="primary">{t('catalog.requestQuote')}</Button>
+		</div>
+
+		<div class="product-tabs mt-10">
+			<input type="radio" name="product-tabs" id="tab-desc" checked class="sr-only" />
+			<input type="radio" name="product-tabs" id="tab-params" class="sr-only" />
+			<div class="tab-labels flex border-b border-gray-300">
+				<label
+					for="tab-desc"
+					class="-mb-px cursor-pointer border-b-2 border-transparent px-4 py-2 font-heading text-sm font-bold uppercase text-gray-500 hover:text-gray-900"
+				>
+					{t('product.tabs.description')}
+				</label>
+				<label
+					for="tab-params"
+					class="-mb-px cursor-pointer border-b-2 border-transparent px-4 py-2 font-heading text-sm font-bold uppercase text-gray-500 hover:text-gray-900"
+				>
+					{t('product.tabs.parameters')}
+				</label>
+			</div>
+			<section data-panel="desc" class="pt-4">
+				<p class="whitespace-pre-line text-gray-700">{product.description}</p>
+			</section>
+			<section data-panel="params" class="pt-4">
+				<table class="w-full text-sm">
+					<tbody>
+						<tr class="border-b border-gray-200">
+							<th class="py-2 pr-4 text-left font-medium text-gray-500">{t('catalog.filter.supplier')}</th>
+							<td class="py-2 text-gray-900">{supplierLabels[product.supplier] ?? product.supplier}</td>
+						</tr>
+						<tr class="border-b border-gray-200">
+							<th class="py-2 pr-4 text-left font-medium text-gray-500">{t('product.number')}</th>
+							<td class="py-2 text-gray-900">{product.styleCode}</td>
+						</tr>
+						<tr class="border-b border-gray-200">
+							<th class="py-2 pr-4 text-left font-medium text-gray-500">{t('catalog.colourLabel')}</th>
+							<td class="py-2 text-gray-900">{product.colour}</td>
+						</tr>
+						{
+							product.sizes.length > 0 && (
+								<tr class="border-b border-gray-200">
+									<th class="py-2 pr-4 text-left font-medium text-gray-500">{t('catalog.sizesAvailable')}</th>
+									<td class="py-2 text-gray-900">{product.sizes.join(', ')}</td>
+								</tr>
+							)
+						}
+						{
+							product.sourceSkus.length > 0 && (
+								<tr>
+									<th class="py-2 pr-4 align-top text-left font-medium text-gray-500">{t('product.skus')}</th>
+									<td class="py-2 text-gray-900">{product.sourceSkus.join(', ')}</td>
+								</tr>
+							)
+						}
+					</tbody>
+				</table>
+			</section>
+		</div>
 	</div>
 </div>
+
+<style>
+	.product-tabs section {
+		display: none;
+	}
+	#tab-desc:checked ~ section[data-panel='desc'],
+	#tab-params:checked ~ section[data-panel='params'] {
+		display: block;
+	}
+	#tab-desc:checked ~ .tab-labels label[for='tab-desc'],
+	#tab-params:checked ~ .tab-labels label[for='tab-params'] {
+		color: var(--color-brand);
+		border-color: var(--color-brand);
+	}
+</style>

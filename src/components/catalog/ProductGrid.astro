@@ -2,145 +2,251 @@
 import { useTranslations } from '../../i18n/utils';
 import type { Product } from '../../content/schemas/product';
 import type { Lang } from '../../utils/catalog';
+import { getProductUrl } from '../../utils/catalog';
+import { groupProductsByStyle } from '../../utils/product-groups';
+import { LISTING_PAGE_SIZE } from '../../utils/listing-payload';
 import ProductCard from './ProductCard.astro';
 
 interface Props {
 	lang: Lang;
 	products: Product[];
+	/**
+	 * URL du payload JSON statique (endpoint listing.json) décrivant TOUS les
+	 * modèles du listing. Le HTML n'embarque que la première page de cartes ;
+	 * le payload n'est téléchargé qu'à la première interaction (tri, filtre,
+	 * « charger plus ») pour ne pas alourdir le document.
+	 */
+	payloadUrl?: string;
 }
 
-const { lang, products } = Astro.props;
+const { lang, products, payloadUrl } = Astro.props;
 const t = useTranslations(lang);
 
-const PAGE_SIZE = 24;
-
-const suppliers = [...new Set(products.map((product) => product.supplier))].sort();
-const supplierLabels: Record<string, string> = { portwest: 'Portwest', blaklader: 'Blaklader', mascot: 'Mascot' };
+const groups = groupProductsByStyle(products);
 ---
 
 {
 	products.length === 0 ? (
 		<p class="text-gray-500">{t('catalog.noProducts')}</p>
 	) : (
-		<div data-product-listing data-page-size={PAGE_SIZE}>
-			<div class="mb-4 flex flex-wrap items-end justify-between gap-4">
-				<p class="text-sm text-gray-500" data-results-count>
-					{products.length} {t('catalog.resultsCount')}
-				</p>
-				<div class="flex flex-wrap items-center gap-4">
-					{suppliers.length > 1 && (
-						<fieldset class="flex flex-wrap items-center gap-3">
-							<legend class="mr-1 text-sm text-gray-500">{t('catalog.filter.supplier')}</legend>
-							{suppliers.map((supplier) => (
-								<label class="flex items-center gap-1.5 text-sm text-gray-700">
-									<input type="checkbox" value={supplier} checked data-supplier-filter class="rounded border-gray-300" />
-									{supplierLabels[supplier] ?? supplier}
-								</label>
-							))}
-						</fieldset>
-					)}
-					<label class="flex items-center gap-2 text-sm text-gray-700">
-						{t('catalog.sort.label')}
-						<select data-sort-select class="rounded-md border border-gray-300 px-2 py-1.5 text-sm">
-							<option value="relevance">{t('catalog.sort.relevance')}</option>
-							<option value="price-asc">{t('catalog.sort.priceAsc')}</option>
-							<option value="price-desc">{t('catalog.sort.priceDesc')}</option>
-						</select>
-					</label>
+		<div
+			data-product-listing
+			data-page-size={LISTING_PAGE_SIZE}
+			data-view-label={t('catalog.viewProduct')}
+			data-payload-url={payloadUrl}
+			data-total={groups.length}
+			class="lg:grid lg:grid-cols-[260px_1fr] lg:items-start lg:gap-8"
+		>
+			<slot name="sidebar" />
+			<div class="min-w-0">
+				<div class="mb-4 flex flex-wrap items-end justify-between gap-4">
+					<p class="text-sm text-gray-500" data-results-count>
+						{groups.length} {t('catalog.resultsCount')}
+					</p>
+					<div class="flex flex-wrap items-center gap-4">
+						<label class="flex items-center gap-2 text-sm text-gray-700">
+							{t('catalog.sort.label')}
+							<select
+								data-sort-select
+								class="rounded-md border border-gray-300 px-2 py-1.5 text-sm focus:border-brand focus:outline-none"
+							>
+								<option value="relevance">{t('catalog.sort.relevance')}</option>
+								<option value="price-asc">{t('catalog.sort.priceAsc')}</option>
+								<option value="price-desc">{t('catalog.sort.priceDesc')}</option>
+							</select>
+						</label>
+					</div>
 				</div>
-			</div>
 
-			<p class="hidden text-gray-500" data-no-results>
-				{t('catalog.noResults')}
-			</p>
+				<p class="hidden text-gray-500" data-no-results>
+					{t('catalog.noResults')}
+				</p>
 
-			<ul class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4" data-product-list>
-				{products.map((product) => (
-					<li data-price={product.price} data-supplier={product.supplier}>
-						<ProductCard lang={lang} product={product} />
-					</li>
-				))}
-			</ul>
+				<ul class="grid grid-cols-2 gap-4 sm:grid-cols-2 xl:grid-cols-3" data-product-list>
+					{groups.slice(0, LISTING_PAGE_SIZE).map((group) => (
+						<li>
+							<ProductCard
+								lang={lang}
+								product={group.primary}
+								title={group.displayName}
+								colourways={group.colourways}
+								priceRange={{ min: group.priceMin, max: group.priceMax }}
+								sizes={group.sizes}
+							/>
+						</li>
+					))}
+				</ul>
 
-			<div class="mt-8 text-center">
-				<button
-					type="button"
-					data-load-more
-					class="hidden rounded-md border border-gray-300 px-6 py-3 font-medium text-gray-900 transition-colors hover:border-gray-400 hover:bg-gray-50"
-				>
-					{t('catalog.loadMore')}
-				</button>
+				<div class="mt-8 text-center">
+					<button
+						type="button"
+						data-load-more
+						class="hidden rounded-btn bg-btn-gray px-6 py-3.5 font-heading text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-btn-dark"
+					>
+						{t('catalog.loadMore')}
+					</button>
+				</div>
+
+				{/* Accès sans JavaScript (et maillage interne pour les crawlers) vers
+				les modèles au-delà de la première page de cartes. */}
+				{groups.length > LISTING_PAGE_SIZE && (
+					<details class="mt-8 border-t border-gray-200 pt-4">
+						<summary class="cursor-pointer text-sm font-medium text-gray-600 hover:text-brand">
+							{t('catalog.allModels')} ({groups.length})
+						</summary>
+						<ul class="mt-3 columns-2 gap-4 text-sm sm:columns-3">
+							{groups.map((group) => (
+								<li class="mb-1 break-inside-avoid">
+									<a
+										href={getProductUrl(lang, group.primary.category, group.primary.subcategory, group.primary.slug)}
+										class="text-gray-600 hover:text-brand"
+									>
+										{group.displayName}
+									</a>
+								</li>
+							))}
+						</ul>
+					</details>
+				)}
 			</div>
 		</div>
 	)
 }
 
 <script>
+	import { escapeHtml } from '../../utils/html';
+	import { colourToCss } from '../../utils/colours';
+	import type { ListingCardData } from '../../utils/listing-payload';
+
+	const PLACEHOLDER = '/images/product-placeholder.svg';
+
+	function buildCard(data: ListingCardData, viewLabel: string): HTMLLIElement {
+		const li = document.createElement('li');
+
+		const swatches =
+			data.cw.length > 0
+				? `<ul class="mt-2 flex items-center gap-1.5">${data.cw
+						.map(
+							(colourway) =>
+								`<li><a href="${escapeHtml(colourway.h)}" class="block h-6 w-6 rounded-full border border-gray-300 hover:border-brand" title="${escapeHtml(colourway.c)}" style="background: ${escapeHtml(colourToCss(colourway.c))}"><span class="sr-only">${escapeHtml(colourway.c)}</span></a></li>`,
+						)
+						.join('')}${data.cx > 0 ? `<li class="text-xs text-gray-500">+${data.cx}</li>` : ''}</ul>`
+				: '';
+
+		li.innerHTML = `<div class="group flex h-full flex-col rounded-lg border border-gray-200 bg-white p-3 transition-colors hover:border-gray-400">
+			<a href="${escapeHtml(data.h)}" class="line-clamp-2 min-h-10 font-heading text-sm font-bold uppercase leading-tight text-gray-900 hover:text-brand">${escapeHtml(data.t)}</a>
+			<a href="${escapeHtml(data.h)}" class="mt-2 block aspect-square overflow-hidden bg-white" tabindex="-1" aria-hidden="true"><img src="${escapeHtml(data.img)}" width="1100" height="1100" alt="${escapeHtml(data.t)}" loading="lazy" decoding="async" class="h-full w-full object-contain transition-transform group-hover:scale-105" onerror="this.onerror=null;this.src='${PLACEHOLDER}';"></a>
+			${swatches}
+			<div class="mt-auto pt-2">
+				${data.sz ? `<p class="text-xs text-gray-500">${escapeHtml(data.sz)}</p>` : ''}
+				<p class="mt-1 text-sm font-bold text-gray-900">${escapeHtml(data.pl)}</p>
+				<a href="${escapeHtml(data.h)}" class="mt-2 flex h-10 items-center justify-center rounded-card-btn border border-gray-300 font-heading text-xs font-bold uppercase text-gray-900 transition-colors hover:border-brand hover:text-brand">${viewLabel}</a>
+			</div>
+		</div>`;
+		return li;
+	}
+
+	interface ListingItem {
+		data: ListingCardData;
+		el: HTMLLIElement | null;
+	}
+
 	function initProductListings() {
 		document.querySelectorAll<HTMLElement>('[data-product-listing]').forEach((listing) => {
 			const list = listing.querySelector<HTMLUListElement>('[data-product-list]');
 			const loadMoreButton = listing.querySelector<HTMLButtonElement>('[data-load-more]');
 			const sortSelect = listing.querySelector<HTMLSelectElement>('[data-sort-select]');
-			const supplierCheckboxes = Array.from(
-				listing.querySelectorAll<HTMLInputElement>('[data-supplier-filter]'),
-			);
+			const supplierCheckboxes = Array.from(listing.querySelectorAll<HTMLInputElement>('[data-supplier-filter]'));
 			const resultsCount = listing.querySelector<HTMLElement>('[data-results-count]');
 			const noResults = listing.querySelector<HTMLElement>('[data-no-results]');
 			if (!list) return;
 
 			const pageSize = Number(listing.dataset.pageSize ?? '24');
-			const originalOrder = Array.from(list.children) as HTMLLIElement[];
+			const viewLabel = escapeHtml(listing.dataset.viewLabel ?? '');
+			const payloadUrl = listing.dataset.payloadUrl;
+			const total = Number(listing.dataset.total ?? '0');
+			const prerendered = Array.from(list.children) as HTMLLIElement[];
+
+			let items: ListingItem[] | null = null;
+			let loading: Promise<ListingItem[] | null> | null = null;
 			let shown = pageSize;
+
+			// Le payload complet n'est téléchargé qu'à la première interaction.
+			function ensureItems(): Promise<ListingItem[] | null> {
+				if (items) return Promise.resolve(items);
+				if (!payloadUrl) return Promise.resolve(null);
+				loading ??= fetch(payloadUrl)
+					.then((response) => (response.ok ? response.json() : Promise.reject(new Error(String(response.status)))))
+					.then((payload: ListingCardData[]) => {
+						items = payload.map((data, index) => ({
+							data,
+							el: index < prerendered.length ? prerendered[index] : null,
+						}));
+						return items;
+					})
+					.catch(() => {
+						loading = null;
+						return null;
+					});
+				return loading;
+			}
 
 			function selectedSuppliers(): Set<string> {
 				return new Set(supplierCheckboxes.filter((box) => box.checked).map((box) => box.value));
 			}
 
 			function render() {
+				if (!items) return;
 				const suppliers = selectedSuppliers();
 				const sortMode = sortSelect?.value ?? 'relevance';
 
-				let items = originalOrder.filter(
-					(item) => supplierCheckboxes.length === 0 || suppliers.has(item.dataset.supplier ?? ''),
+				let filtered = items.filter(
+					(item) => supplierCheckboxes.length === 0 || suppliers.has(item.data.s),
 				);
 
-				if (sortMode === 'price-asc') {
-					items = [...items].sort((a, b) => Number(a.dataset.price) - Number(b.dataset.price));
-				} else if (sortMode === 'price-desc') {
-					items = [...items].sort((a, b) => Number(b.dataset.price) - Number(a.dataset.price));
+				if (sortMode === 'price-asc' || sortMode === 'price-desc') {
+					const direction = sortMode === 'price-asc' ? 1 : -1;
+					filtered = [...filtered].sort((a, b) => {
+						// Les modèles sans prix exploitable vont toujours en fin de liste.
+						if (a.data.p === null && b.data.p === null) return 0;
+						if (a.data.p === null) return 1;
+						if (b.data.p === null) return -1;
+						return (a.data.p - b.data.p) * direction;
+					});
 				}
 
-				list?.replaceChildren(...items);
-
-				items.forEach((item, index) => {
-					item.classList.toggle('hidden', index >= shown);
-				});
+				const visible = filtered.slice(0, shown);
+				for (const item of visible) {
+					if (!item.el) item.el = buildCard(item.data, viewLabel);
+				}
+				list?.replaceChildren(...visible.map((item) => item.el as HTMLLIElement));
 
 				if (resultsCount) {
-					const countText = resultsCount.textContent?.replace(/^\d+/, String(items.length));
+					const countText = resultsCount.textContent?.replace(/^\d+/, String(filtered.length));
 					if (countText) resultsCount.textContent = countText;
 				}
 
-				noResults?.classList.toggle('hidden', items.length > 0);
-				loadMoreButton?.classList.toggle('hidden', items.length <= shown);
+				noResults?.classList.toggle('hidden', filtered.length > 0);
+				loadMoreButton?.classList.toggle('hidden', filtered.length <= shown);
 			}
 
-			sortSelect?.addEventListener('change', () => {
-				shown = pageSize;
-				render();
-			});
-			supplierCheckboxes.forEach((box) =>
-				box.addEventListener('change', () => {
-					shown = pageSize;
+			function refresh(resetShown: boolean) {
+				ensureItems().then((loaded) => {
+					if (!loaded) return;
+					if (resetShown) shown = pageSize;
 					render();
-				}),
-			);
+				});
+			}
+
+			sortSelect?.addEventListener('change', () => refresh(true));
+			supplierCheckboxes.forEach((box) => box.addEventListener('change', () => refresh(true)));
 			loadMoreButton?.addEventListener('click', () => {
 				shown += pageSize;
-				render();
+				refresh(false);
 			});
 
-			render();
+			// Pas de rendu initial : la première page est déjà dans le HTML.
+			if (payloadUrl && total > pageSize) loadMoreButton?.classList.remove('hidden');
 		});
 	}
 

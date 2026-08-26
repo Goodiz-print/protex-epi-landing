@@ -1,1 +1,26 @@
 @import "tailwindcss";
+@import "@fontsource/open-sans/400.css";
+@import "@fontsource/open-sans/600.css";
+@import "@fontsource/open-sans/700.css";
+@import "@fontsource/montserrat/700.css";
+
+@theme {
+  --color-brand: #0071ce;
+  --color-brand-dark: #005ba6;
+  --color-nav: #000000;
+  --color-footer: #eeeeee;
+  --color-footer-ink: #383838;
+  --color-btn-dark: #4b4b4b;
+  --color-btn-gray: #a8a8a8;
+  --color-field: #f8f9fb;
+  --font-sans: "Open Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Montserrat", "Open Sans", ui-sans-serif, system-ui, sans-serif;
+  --radius-btn: 10px;
+  --radius-card-btn: 8px;
+}
+
+@layer base {
+  body {
+    font-size: 0.875rem;
+  }
+}

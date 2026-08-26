@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/Layout.astro';
 import ProductPage from '~/components/catalog/ProductPage.astro';
+import QuoteCta from '~/components/home/QuoteCta.astro';
 import { getProductStaticPaths } from '~/content/queries';
 import { getProductUrl } from '~/utils/catalog';
 import { ui } from '~/i18n/ui';
@@ -25,4 +26,5 @@ const productUrl = getProductUrl('en', product.category, product.subcategory, pr
 	<main class="mx-auto max-w-6xl px-4 py-10">
 		<ProductPage lang="en" product={product} />
 	</main>
+	<QuoteCta lang="en" />
 </Layout>

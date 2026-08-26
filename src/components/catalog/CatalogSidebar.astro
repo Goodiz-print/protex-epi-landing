@@ -1,0 +1,114 @@
+---
+import { categoryTaxonomy } from '~/data/category-taxonomy';
+import { getCategoryUrl, getSubcategoryUrl, type Lang } from '~/utils/catalog';
+import { useTranslations } from '~/i18n/utils';
+
+interface Props {
+	lang: Lang;
+	suppliers?: string[];
+	currentCategory?: string;
+	currentSubcategory?: string;
+}
+
+const { lang, suppliers = [], currentCategory, currentSubcategory } = Astro.props;
+const t = useTranslations(lang);
+
+const supplierLabels: Record<string, string> = { portwest: 'Portwest', blaklader: 'Blaklader', mascot: 'Mascot' };
+const universes = categoryTaxonomy.filter((category) => category.slug !== 'a-trier');
+const toggleId = `sidebar-toggle-${Math.random().toString(36).slice(2, 8)}`;
+---
+
+<aside class="lg:sticky lg:top-4" data-pagefind-ignore>
+	<input type="checkbox" id={toggleId} class="peer sr-only" />
+	<label
+		for={toggleId}
+		class="mb-4 flex cursor-pointer items-center justify-between rounded-lg border border-gray-200 px-4 py-3 font-heading text-sm font-bold uppercase text-gray-900 lg:hidden"
+	>
+		{t('catalog.sidebar.filters')}
+		<svg class="h-4 w-4 text-gray-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+			<path
+				fill-rule="evenodd"
+				d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+				clip-rule="evenodd"></path>
+		</svg>
+	</label>
+
+	<div class="hidden space-y-6 peer-checked:block lg:block">
+		{
+			suppliers.length > 1 && (
+				<section class="rounded-lg border border-gray-200 p-4">
+					<h2 class="mb-3 font-heading text-sm font-bold uppercase text-gray-900">{t('catalog.sidebar.filters')}</h2>
+					<fieldset>
+						<legend class="mb-2 text-sm text-gray-500">{t('catalog.filter.supplier')}</legend>
+						<div class="space-y-2">
+							{suppliers.map((supplier) => (
+								<label class="flex items-center gap-2 text-sm text-gray-700">
+									<input type="checkbox" value={supplier} checked data-supplier-filter class="rounded border-gray-300" />
+									{supplierLabels[supplier] ?? supplier}
+								</label>
+							))}
+						</div>
+					</fieldset>
+				</section>
+			)
+		}
+
+		<section class="rounded-lg border border-gray-200 p-4">
+			<h2 class="mb-3 font-heading text-sm font-bold uppercase text-gray-900">{t('catalog.sidebar.categories')}</h2>
+			<ul class="space-y-1">
+				{
+					universes.map((category) => (
+						<li>
+							<details open={category.slug === currentCategory} class="group">
+								<summary class="flex cursor-pointer list-none items-center justify-between rounded-md px-2 py-1.5 text-sm hover:bg-gray-50">
+									<a
+										href={getCategoryUrl(lang, category.slug)}
+										class={
+											category.slug === currentCategory && !currentSubcategory
+												? 'font-bold text-brand'
+												: 'font-medium text-gray-900 hover:text-brand'
+										}
+									>
+										{category.labels[lang]}
+									</a>
+									{category.subcategories.length > 0 && (
+										<svg
+											class="h-3 w-3 text-gray-400 transition-transform group-open:rotate-180"
+											viewBox="0 0 20 20"
+											fill="currentColor"
+											aria-hidden="true"
+										>
+											<path
+												fill-rule="evenodd"
+												d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+												clip-rule="evenodd"
+											/>
+										</svg>
+									)}
+								</summary>
+								{category.subcategories.length > 0 && (
+									<ul class="mt-1 space-y-1 pl-4">
+										{category.subcategories.map((subcategory) => (
+											<li>
+												<a
+													href={getSubcategoryUrl(lang, category.slug, subcategory.slug)}
+													class={`block rounded-md px-2 py-1 text-sm ${
+														category.slug === currentCategory && subcategory.slug === currentSubcategory
+															? 'font-bold text-brand'
+															: 'text-gray-600 hover:text-brand'
+													}`}
+												>
+													{subcategory.labels[lang]}
+												</a>
+											</li>
+										))}
+									</ul>
+								)}
+							</details>
+						</li>
+					))
+				}
+			</ul>
+		</section>
+	</div>
+</aside>

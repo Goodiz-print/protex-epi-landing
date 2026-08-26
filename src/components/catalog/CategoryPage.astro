@@ -2,10 +2,11 @@
 import { useTranslations } from '~/i18n/utils';
 import type { Category } from '~/data/category-taxonomy';
 import type { Product } from '~/content/schemas/product';
-import { getCatalogRootUrl, getSubcategoryUrl, type Lang } from '~/utils/catalog';
+import { getCatalogRootUrl, getCategoryUrl, getSubcategoryUrl, type Lang } from '~/utils/catalog';
 import Breadcrumb from './Breadcrumb.astro';
 import TileGrid from './TileGrid.astro';
 import ProductGrid from './ProductGrid.astro';
+import CatalogSidebar from './CatalogSidebar.astro';
 
 interface Props {
 	lang: Lang;
@@ -30,5 +31,19 @@ const tiles = category.subcategories.map((subcategory) => ({
 		{ label: category.labels[lang] },
 	]}
 />
-<h1 class="mb-6 text-2xl font-semibold text-gray-900">{category.labels[lang]}</h1>
-{tiles.length > 0 ? <TileGrid tiles={tiles} /> : <ProductGrid lang={lang} products={products} />}
+<h1 class="mb-6 font-heading text-3xl font-bold uppercase text-gray-900">{category.labels[lang]}</h1>
+{
+	tiles.length > 0 && (
+		<div class="mb-8">
+			<TileGrid tiles={tiles} />
+		</div>
+	)
+}
+<ProductGrid lang={lang} products={products} payloadUrl={`${getCategoryUrl(lang, category.slug)}/listing.json`}>
+	<CatalogSidebar
+		slot="sidebar"
+		lang={lang}
+		suppliers={[...new Set(products.map((product) => product.supplier))].sort()}
+		currentCategory={category.slug}
+	/>
+</ProductGrid>

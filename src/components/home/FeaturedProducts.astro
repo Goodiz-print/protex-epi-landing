@@ -1,9 +1,9 @@
 ---
 import { useTranslations } from '~/i18n/utils';
 import { getAllProducts } from '~/content/queries';
-import ProductGrid from '~/components/catalog/ProductGrid.astro';
+import ProductCard from '~/components/catalog/ProductCard.astro';
 import type { Lang } from '~/utils/catalog';
-import type { Product } from '~/content/schemas/product';
+import { groupProductsByStyle, type ProductGroup } from '~/utils/product-groups';
 import featuredOverride from '~/data/featured-products.json';
 
 interface Props {
@@ -17,26 +17,36 @@ const FEATURED_LIMIT = 12;
 
 const allProducts = await getAllProducts();
 const eligible = allProducts.map((entry) => entry.data).filter((product) => product.category !== 'a-trier');
+const groups = groupProductsByStyle(eligible);
 
-const productsById = new Map(eligible.map((product) => [product.id, product]));
-const featured: Product[] = [];
+const groupByProductId = new Map<string, ProductGroup>();
+for (const group of groups) {
+	for (const colourway of group.colourways) {
+		groupByProductId.set(colourway.id, group);
+	}
+}
+
+const featured: ProductGroup[] = [];
+const featuredKeys = new Set<string>();
 for (const id of featuredOverride.ids) {
-	const product = productsById.get(id);
-	if (product) featured.push(product);
+	const group = groupByProductId.get(id);
+	if (group && !featuredKeys.has(group.key)) {
+		featured.push(group);
+		featuredKeys.add(group.key);
+	}
 }
 
 // Round-robins across categories to fill any remaining slots, so the grid is always
 // full even with no (or a partial) curated list in src/data/featured-products.json.
 if (featured.length < FEATURED_LIMIT) {
-	const alreadyFeatured = new Set(featured.map((product) => product.id));
-	const productsByCategory = new Map<string, Product[]>();
-	for (const product of eligible) {
-		if (alreadyFeatured.has(product.id)) continue;
-		const bucket = productsByCategory.get(product.category);
-		if (bucket) bucket.push(product);
-		else productsByCategory.set(product.category, [product]);
+	const groupsByCategory = new Map<string, ProductGroup[]>();
+	for (const group of groups) {
+		if (featuredKeys.has(group.key)) continue;
+		const bucket = groupsByCategory.get(group.primary.category);
+		if (bucket) bucket.push(group);
+		else groupsByCategory.set(group.primary.category, [group]);
 	}
-	const buckets = [...productsByCategory.values()];
+	const buckets = [...groupsByCategory.values()];
 	for (let round = 0; featured.length < FEATURED_LIMIT && buckets.some((bucket) => bucket.length > round); round++) {
 		for (const bucket of buckets) {
 			if (featured.length >= FEATURED_LIMIT) break;
@@ -46,7 +56,22 @@ if (featured.length < FEATURED_LIMIT) {
 }
 ---
 
-<section class="mx-auto max-w-6xl px-4 py-16">
-	<h2 class="mb-6 text-2xl font-semibold text-gray-900">{t('home.featured.title')}</h2>
-	<ProductGrid lang={lang} products={featured} />
+<section class="mx-auto max-w-6xl px-4 py-14">
+	<h2 class="mb-8 text-center font-heading text-xl font-bold uppercase text-gray-900">{t('home.featured.title')}</h2>
+	<ul class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+		{
+			featured.map((group) => (
+				<li>
+					<ProductCard
+						lang={lang}
+						product={group.primary}
+						title={group.displayName}
+						colourways={group.colourways}
+						priceRange={{ min: group.priceMin, max: group.priceMax }}
+						sizes={group.sizes}
+					/>
+				</li>
+			))
+		}
+	</ul>
 </section>
