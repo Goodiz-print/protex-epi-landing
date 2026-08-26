@@ -5,6 +5,8 @@ import { getProductUrl } from '../../utils/catalog';
 import { useTranslations } from '../../i18n/utils';
 import { formatPriceRange } from '../../utils/format';
 import { formatSizeRange } from '../../utils/sizes';
+import { colourToCss } from '../../utils/colours';
+import { MAX_SWATCHES } from '../../utils/listing-payload';
 
 interface Props {
 	lang: Lang;
@@ -15,12 +17,14 @@ interface Props {
 	sizes?: string[];
 }
 
-const MAX_SWATCHES = 5;
-
 const { lang, product, title, colourways, priceRange, sizes } = Astro.props;
 const t = useTranslations(lang);
 const href = getProductUrl(lang, product.category, product.subcategory, product.slug);
-const price = priceRange ?? { min: product.price, max: product.price };
+const price = priceRange ?? {
+	min: product.price > 0 ? product.price : 0,
+	max: product.price > 0 ? product.price : 0,
+};
+const priceLabel = price.max > 0 ? formatPriceRange(price.min, price.max, lang) : t('catalog.priceOnRequest');
 const sizeRange = formatSizeRange(sizes ?? product.sizes);
 const swatches = (colourways ?? []).length > 1 ? (colourways ?? []).slice(0, MAX_SWATCHES) : [];
 const extraColourways = (colourways ?? []).length - swatches.length;
@@ -38,7 +42,7 @@ const extraColourways = (colourways ?? []).length - swatches.length;
 			src={product.imageUrl}
 			width="1100"
 			height="1100"
-			alt={product.name}
+			alt={title ?? product.name}
 			loading="lazy"
 			decoding="async"
 			class="h-full w-full object-contain transition-transform group-hover:scale-105"
@@ -52,19 +56,11 @@ const extraColourways = (colourways ?? []).length - swatches.length;
 					<li>
 						<a
 							href={getProductUrl(lang, colourway.category, colourway.subcategory, colourway.slug)}
-							class="block h-6 w-6 overflow-hidden rounded-full border border-gray-300 hover:border-brand"
+							class="block h-6 w-6 rounded-full border border-gray-300 hover:border-brand"
 							title={colourway.colour}
+							style={`background: ${colourToCss(colourway.colour)}`}
 						>
-							<img
-								src={colourway.imageUrl}
-								width="24"
-								height="24"
-								alt={colourway.colour}
-								loading="lazy"
-								decoding="async"
-								class="h-full w-full scale-150 object-cover"
-								onerror="this.onerror=null;this.src='/images/product-placeholder.svg';"
-							/>
+							<span class="sr-only">{colourway.colour}</span>
 						</a>
 					</li>
 				))}
@@ -74,7 +70,7 @@ const extraColourways = (colourways ?? []).length - swatches.length;
 	}
 	<div class="mt-auto pt-2">
 		{sizeRange && <p class="text-xs text-gray-500">{sizeRange}</p>}
-		<p class="mt-1 text-sm font-bold text-gray-900">{formatPriceRange(price.min, price.max, lang)}</p>
+		<p class="mt-1 text-sm font-bold text-gray-900">{priceLabel}</p>
 		<a
 			href={href}
 			class="mt-2 flex h-10 items-center justify-center rounded-card-btn border border-gray-300 font-heading text-xs font-bold uppercase text-gray-900 transition-colors hover:border-brand hover:text-brand"

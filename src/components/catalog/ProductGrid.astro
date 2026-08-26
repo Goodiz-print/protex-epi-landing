@@ -3,46 +3,26 @@ import { useTranslations } from '../../i18n/utils';
 import type { Product } from '../../content/schemas/product';
 import type { Lang } from '../../utils/catalog';
 import { getProductUrl } from '../../utils/catalog';
-import { formatPriceRange } from '../../utils/format';
-import { formatSizeRange } from '../../utils/sizes';
 import { groupProductsByStyle } from '../../utils/product-groups';
+import { LISTING_PAGE_SIZE } from '../../utils/listing-payload';
 import ProductCard from './ProductCard.astro';
 
 interface Props {
 	lang: Lang;
 	products: Product[];
+	/**
+	 * URL du payload JSON statique (endpoint listing.json) décrivant TOUS les
+	 * modèles du listing. Le HTML n'embarque que la première page de cartes ;
+	 * le payload n'est téléchargé qu'à la première interaction (tri, filtre,
+	 * « charger plus ») pour ne pas alourdir le document.
+	 */
+	payloadUrl?: string;
 }
 
-const { lang, products } = Astro.props;
+const { lang, products, payloadUrl } = Astro.props;
 const t = useTranslations(lang);
 
-const PAGE_SIZE = 24;
-const MAX_SWATCHES = 5;
-
 const groups = groupProductsByStyle(products);
-
-// The first page is server-rendered (SEO + no-JS fallback); every model —
-// including the first page — is also serialized in a compact payload the
-// client script uses to render, filter and sort the full listing without
-// shipping thousands of pre-rendered cards in the HTML.
-const payload = groups.map((group) => ({
-	t: group.displayName,
-	h: getProductUrl(lang, group.primary.category, group.primary.subcategory, group.primary.slug),
-	img: group.primary.imageUrl,
-	p: group.priceMin,
-	pl: formatPriceRange(group.priceMin, group.priceMax, lang),
-	s: group.primary.supplier,
-	sz: formatSizeRange(group.sizes),
-	cw:
-		group.colourways.length > 1
-			? group.colourways.slice(0, MAX_SWATCHES).map((colourway) => ({
-					h: getProductUrl(lang, colourway.category, colourway.subcategory, colourway.slug),
-					img: colourway.imageUrl,
-					c: colourway.colour,
-				}))
-			: [],
-	cx: Math.max(0, group.colourways.length - MAX_SWATCHES),
-}));
 ---
 
 {
@@ -51,8 +31,10 @@ const payload = groups.map((group) => ({
 	) : (
 		<div
 			data-product-listing
-			data-page-size={PAGE_SIZE}
+			data-page-size={LISTING_PAGE_SIZE}
 			data-view-label={t('catalog.viewProduct')}
+			data-payload-url={payloadUrl}
+			data-total={groups.length}
 			class="lg:grid lg:grid-cols-[260px_1fr] lg:items-start lg:gap-8"
 		>
 			<slot name="sidebar" />
@@ -81,8 +63,8 @@ const payload = groups.map((group) => ({
 				</p>
 
 				<ul class="grid grid-cols-2 gap-4 sm:grid-cols-2 xl:grid-cols-3" data-product-list>
-					{groups.slice(0, PAGE_SIZE).map((group) => (
-						<li data-price={group.priceMin} data-supplier={group.primary.supplier}>
+					{groups.slice(0, LISTING_PAGE_SIZE).map((group) => (
+						<li>
 							<ProductCard
 								lang={lang}
 								product={group.primary}
@@ -95,12 +77,6 @@ const payload = groups.map((group) => ({
 					))}
 				</ul>
 
-				<script
-					type="application/json"
-					data-products-payload
-					set:html={JSON.stringify(payload).replaceAll('<', '\\u003c')}
-				/>
-
 				<div class="mt-8 text-center">
 					<button
 						type="button"
@@ -110,60 +86,69 @@ const payload = groups.map((group) => ({
 						{t('catalog.loadMore')}
 					</button>
 				</div>
+
+				{/* Accès sans JavaScript (et maillage interne pour les crawlers) vers
+				les modèles au-delà de la première page de cartes. */}
+				{groups.length > LISTING_PAGE_SIZE && (
+					<details class="mt-8 border-t border-gray-200 pt-4">
+						<summary class="cursor-pointer text-sm font-medium text-gray-600 hover:text-brand">
+							{t('catalog.allModels')} ({groups.length})
+						</summary>
+						<ul class="mt-3 columns-2 gap-4 text-sm sm:columns-3">
+							{groups.map((group) => (
+								<li class="mb-1 break-inside-avoid">
+									<a
+										href={getProductUrl(lang, group.primary.category, group.primary.subcategory, group.primary.slug)}
+										class="text-gray-600 hover:text-brand"
+									>
+										{group.displayName}
+									</a>
+								</li>
+							))}
+						</ul>
+					</details>
+				)}
 			</div>
 		</div>
 	)
 }
 
 <script>
-	interface CardData {
-		t: string;
-		h: string;
-		img: string;
-		p: number;
-		pl: string;
-		s: string;
-		sz: string | null;
-		cw: { h: string; img: string; c: string }[];
-		cx: number;
-	}
+	import { escapeHtml } from '../../utils/html';
+	import { colourToCss } from '../../utils/colours';
+	import type { ListingCardData } from '../../utils/listing-payload';
 
 	const PLACEHOLDER = '/images/product-placeholder.svg';
 
-	function buildCard(data: CardData, viewLabel: string): HTMLLIElement {
+	function buildCard(data: ListingCardData, viewLabel: string): HTMLLIElement {
 		const li = document.createElement('li');
-		li.dataset.price = String(data.p);
-		li.dataset.supplier = data.s;
 
 		const swatches =
 			data.cw.length > 0
 				? `<ul class="mt-2 flex items-center gap-1.5">${data.cw
 						.map(
-							(colourway) => `<li><a href="${colourway.h}" class="block h-6 w-6 overflow-hidden rounded-full border border-gray-300 hover:border-brand" title="${colourway.c.replaceAll('"', '&quot;')}"><img src="${colourway.img}" width="24" height="24" alt="${colourway.c.replaceAll('"', '&quot;')}" loading="lazy" decoding="async" class="h-full w-full scale-150 object-cover" onerror="this.onerror=null;this.src='${PLACEHOLDER}';"></a></li>`,
+							(colourway) =>
+								`<li><a href="${escapeHtml(colourway.h)}" class="block h-6 w-6 rounded-full border border-gray-300 hover:border-brand" title="${escapeHtml(colourway.c)}" style="background: ${escapeHtml(colourToCss(colourway.c))}"><span class="sr-only">${escapeHtml(colourway.c)}</span></a></li>`,
 						)
 						.join('')}${data.cx > 0 ? `<li class="text-xs text-gray-500">+${data.cx}</li>` : ''}</ul>`
 				: '';
 
 		li.innerHTML = `<div class="group flex h-full flex-col rounded-lg border border-gray-200 bg-white p-3 transition-colors hover:border-gray-400">
-			<a href="${data.h}" class="line-clamp-2 min-h-10 font-heading text-sm font-bold uppercase leading-tight text-gray-900 hover:text-brand"></a>
-			<a href="${data.h}" class="mt-2 block aspect-square overflow-hidden bg-white" tabindex="-1" aria-hidden="true"><img src="${data.img}" width="1100" height="1100" alt="" loading="lazy" decoding="async" class="h-full w-full object-contain transition-transform group-hover:scale-105" onerror="this.onerror=null;this.src='${PLACEHOLDER}';"></a>
+			<a href="${escapeHtml(data.h)}" class="line-clamp-2 min-h-10 font-heading text-sm font-bold uppercase leading-tight text-gray-900 hover:text-brand">${escapeHtml(data.t)}</a>
+			<a href="${escapeHtml(data.h)}" class="mt-2 block aspect-square overflow-hidden bg-white" tabindex="-1" aria-hidden="true"><img src="${escapeHtml(data.img)}" width="1100" height="1100" alt="${escapeHtml(data.t)}" loading="lazy" decoding="async" class="h-full w-full object-contain transition-transform group-hover:scale-105" onerror="this.onerror=null;this.src='${PLACEHOLDER}';"></a>
 			${swatches}
 			<div class="mt-auto pt-2">
-				${data.sz ? '<p class="text-xs text-gray-500" data-sz></p>' : ''}
-				<p class="mt-1 text-sm font-bold text-gray-900" data-pl></p>
-				<a href="${data.h}" class="mt-2 flex h-10 items-center justify-center rounded-card-btn border border-gray-300 font-heading text-xs font-bold uppercase text-gray-900 transition-colors hover:border-brand hover:text-brand">${viewLabel}</a>
+				${data.sz ? `<p class="text-xs text-gray-500">${escapeHtml(data.sz)}</p>` : ''}
+				<p class="mt-1 text-sm font-bold text-gray-900">${escapeHtml(data.pl)}</p>
+				<a href="${escapeHtml(data.h)}" class="mt-2 flex h-10 items-center justify-center rounded-card-btn border border-gray-300 font-heading text-xs font-bold uppercase text-gray-900 transition-colors hover:border-brand hover:text-brand">${viewLabel}</a>
 			</div>
 		</div>`;
-
-		const title = li.querySelector('a');
-		if (title) title.textContent = data.t;
-		const titleImg = li.querySelector<HTMLImageElement>('.aspect-square img');
-		if (titleImg) titleImg.alt = data.t;
-		const sz = li.querySelector('[data-sz]');
-		if (sz && data.sz) sz.textContent = data.sz;
-		const pl = li.querySelector('[data-pl]');
-		if (pl) pl.textContent = data.pl;
 		return li;
+	}
+
+	interface ListingItem {
+		data: ListingCardData;
+		el: HTMLLIElement | null;
 	}
 
 	function initProductListings() {
@@ -174,35 +159,44 @@ const payload = groups.map((group) => ({
 			const supplierCheckboxes = Array.from(listing.querySelectorAll<HTMLInputElement>('[data-supplier-filter]'));
 			const resultsCount = listing.querySelector<HTMLElement>('[data-results-count]');
 			const noResults = listing.querySelector<HTMLElement>('[data-no-results]');
-			const payloadScript = listing.querySelector<HTMLScriptElement>('[data-products-payload]');
 			if (!list) return;
 
 			const pageSize = Number(listing.dataset.pageSize ?? '24');
-			const viewLabel = listing.dataset.viewLabel ?? '';
-
-			let payload: CardData[] = [];
-			try {
-				payload = payloadScript ? (JSON.parse(payloadScript.textContent ?? '[]') as CardData[]) : [];
-			} catch {
-				payload = [];
-			}
-
-			// The first page of cards is server-rendered; reuse those elements
-			// and lazily build the rest from the JSON payload.
+			const viewLabel = escapeHtml(listing.dataset.viewLabel ?? '');
+			const payloadUrl = listing.dataset.payloadUrl;
+			const total = Number(listing.dataset.total ?? '0');
 			const prerendered = Array.from(list.children) as HTMLLIElement[];
-			const items = payload.map((data, index) => ({
-				data,
-				el: (index < prerendered.length ? prerendered[index] : null) as HTMLLIElement | null,
-			}));
-			if (items.length === 0) return;
 
+			let items: ListingItem[] | null = null;
+			let loading: Promise<ListingItem[] | null> | null = null;
 			let shown = pageSize;
+
+			// Le payload complet n'est téléchargé qu'à la première interaction.
+			function ensureItems(): Promise<ListingItem[] | null> {
+				if (items) return Promise.resolve(items);
+				if (!payloadUrl) return Promise.resolve(null);
+				loading ??= fetch(payloadUrl)
+					.then((response) => (response.ok ? response.json() : Promise.reject(new Error(String(response.status)))))
+					.then((payload: ListingCardData[]) => {
+						items = payload.map((data, index) => ({
+							data,
+							el: index < prerendered.length ? prerendered[index] : null,
+						}));
+						return items;
+					})
+					.catch(() => {
+						loading = null;
+						return null;
+					});
+				return loading;
+			}
 
 			function selectedSuppliers(): Set<string> {
 				return new Set(supplierCheckboxes.filter((box) => box.checked).map((box) => box.value));
 			}
 
 			function render() {
+				if (!items) return;
 				const suppliers = selectedSuppliers();
 				const sortMode = sortSelect?.value ?? 'relevance';
 
@@ -210,10 +204,15 @@ const payload = groups.map((group) => ({
 					(item) => supplierCheckboxes.length === 0 || suppliers.has(item.data.s),
 				);
 
-				if (sortMode === 'price-asc') {
-					filtered = [...filtered].sort((a, b) => a.data.p - b.data.p);
-				} else if (sortMode === 'price-desc') {
-					filtered = [...filtered].sort((a, b) => b.data.p - a.data.p);
+				if (sortMode === 'price-asc' || sortMode === 'price-desc') {
+					const direction = sortMode === 'price-asc' ? 1 : -1;
+					filtered = [...filtered].sort((a, b) => {
+						// Les modèles sans prix exploitable vont toujours en fin de liste.
+						if (a.data.p === null && b.data.p === null) return 0;
+						if (a.data.p === null) return 1;
+						if (b.data.p === null) return -1;
+						return (a.data.p - b.data.p) * direction;
+					});
 				}
 
 				const visible = filtered.slice(0, shown);
@@ -231,22 +230,23 @@ const payload = groups.map((group) => ({
 				loadMoreButton?.classList.toggle('hidden', filtered.length <= shown);
 			}
 
-			sortSelect?.addEventListener('change', () => {
-				shown = pageSize;
-				render();
-			});
-			supplierCheckboxes.forEach((box) =>
-				box.addEventListener('change', () => {
-					shown = pageSize;
+			function refresh(resetShown: boolean) {
+				ensureItems().then((loaded) => {
+					if (!loaded) return;
+					if (resetShown) shown = pageSize;
 					render();
-				}),
-			);
+				});
+			}
+
+			sortSelect?.addEventListener('change', () => refresh(true));
+			supplierCheckboxes.forEach((box) => box.addEventListener('change', () => refresh(true)));
 			loadMoreButton?.addEventListener('click', () => {
 				shown += pageSize;
-				render();
+				refresh(false);
 			});
 
-			render();
+			// Pas de rendu initial : la première page est déjà dans le HTML.
+			if (payloadUrl && total > pageSize) loadMoreButton?.classList.remove('hidden');
 		});
 	}
 

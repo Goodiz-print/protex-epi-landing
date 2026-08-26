@@ -16,8 +16,14 @@ const { lang, product, colourways = [] } = Astro.props;
 const t = useTranslations(lang);
 const quoteHref = `${getQuoteUrl(lang)}?product=${encodeURIComponent(product.name)}&sku=${encodeURIComponent(product.styleCode)}`;
 
-const priceMin = colourways.length > 0 ? Math.min(...colourways.map((colourway) => colourway.price)) : product.price;
-const priceMax = colourways.length > 0 ? Math.max(...colourways.map((colourway) => colourway.price)) : product.price;
+// price 0 = donnée fournisseur cassée : ignorée pour l'affichage.
+const positivePrices = (colourways.length > 0 ? colourways.map((colourway) => colourway.price) : [product.price]).filter(
+	(price) => price > 0,
+);
+const priceLabel =
+	positivePrices.length > 0
+		? formatPriceRange(Math.min(...positivePrices), Math.max(...positivePrices), lang)
+		: t('catalog.priceOnRequest');
 const otherColourways = colourways.length > 1 ? colourways : [];
 
 const supplierLabels: Record<string, string> = { portwest: 'Portwest', blaklader: 'Blaklader', mascot: 'Mascot' };
@@ -39,7 +45,7 @@ const supplierLabels: Record<string, string> = { portwest: 'Portwest', blaklader
 	<div>
 		<h1 class="font-heading text-3xl font-bold text-gray-900">{product.name}</h1>
 		<p class="mt-2 text-sm text-gray-500">{t('product.number')}: {product.styleCode}</p>
-		<p class="mt-4 text-xl font-bold text-gray-900">{formatPriceRange(priceMin, priceMax, lang)}</p>
+		<p class="mt-4 text-xl font-bold text-gray-900">{priceLabel}</p>
 
 		{
 			otherColourways.length > 0 ? (

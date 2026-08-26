@@ -26,8 +26,10 @@ export function styleKey(product: Product): string {
 }
 
 function displayName(group: ProductGroup): string {
-	if (group.colourways.length < 2) return group.primary.name;
 	const { name, colour } = group.primary;
+	// Some supplier rows ship a blank name — the styleCode beats an empty title.
+	if (!name.trim()) return group.primary.styleCode;
+	if (group.colourways.length < 2) return name;
 	if (colour && name.toLowerCase().endsWith(colour.toLowerCase())) {
 		return name.slice(0, name.length - colour.length).replace(/[\s,/-]+$/, '');
 	}
@@ -45,14 +47,20 @@ export function groupProductsByStyle(products: Product[]): ProductGroup[] {
 				displayName: product.name,
 				primary: product,
 				colourways: [product],
-				priceMin: product.price,
-				priceMax: product.price,
+				// price 0 = donnée fournisseur cassée : les min/max ne gardent
+				// que les prix positifs (0/0 quand le groupe n'en a aucun).
+				priceMin: product.price > 0 ? product.price : 0,
+				priceMax: product.price > 0 ? product.price : 0,
 				sizes: [...product.sizes],
 			});
 		} else {
 			group.colourways.push(product);
-			group.priceMin = Math.min(group.priceMin, product.price);
-			group.priceMax = Math.max(group.priceMax, product.price);
+			// Un coloris au nom vide ne doit pas fournir le titre/l'image de la carte.
+			if (!group.primary.name.trim() && product.name.trim()) group.primary = product;
+			if (product.price > 0) {
+				group.priceMin = group.priceMin > 0 ? Math.min(group.priceMin, product.price) : product.price;
+				group.priceMax = Math.max(group.priceMax, product.price);
+			}
 			for (const size of product.sizes) {
 				if (!group.sizes.includes(size)) group.sizes.push(size);
 			}

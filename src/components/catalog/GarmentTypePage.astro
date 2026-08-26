@@ -2,7 +2,7 @@
 import { useTranslations } from '~/i18n/utils';
 import type { GarmentType } from '~/data/garment-types';
 import type { Product } from '~/content/schemas/product';
-import { getCatalogRootUrl, type Lang } from '~/utils/catalog';
+import { getCatalogRootUrl, getGarmentTypeUrl, type Lang } from '~/utils/catalog';
 import Breadcrumb from './Breadcrumb.astro';
 import ProductGrid from './ProductGrid.astro';
 import CatalogSidebar from './CatalogSidebar.astro';
@@ -27,7 +27,11 @@ const homeHref = lang === 'en' ? '/en' : '/';
 	]}
 />
 <h1 class="mb-6 font-heading text-3xl font-bold uppercase text-gray-900">{garmentType.labels[lang]}</h1>
-<ProductGrid lang={lang} products={products}>
+<ProductGrid
+	lang={lang}
+	products={products}
+	payloadUrl={`${getGarmentTypeUrl(lang, garmentType.slug)}/listing.json`}
+>
 	<CatalogSidebar
 		slot="sidebar"
 		lang={lang}

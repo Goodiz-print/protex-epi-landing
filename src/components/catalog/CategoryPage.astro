@@ -2,7 +2,7 @@
 import { useTranslations } from '~/i18n/utils';
 import type { Category } from '~/data/category-taxonomy';
 import type { Product } from '~/content/schemas/product';
-import { getCatalogRootUrl, getSubcategoryUrl, type Lang } from '~/utils/catalog';
+import { getCatalogRootUrl, getCategoryUrl, getSubcategoryUrl, type Lang } from '~/utils/catalog';
 import Breadcrumb from './Breadcrumb.astro';
 import TileGrid from './TileGrid.astro';
 import ProductGrid from './ProductGrid.astro';
@@ -39,7 +39,7 @@ const tiles = category.subcategories.map((subcategory) => ({
 		</div>
 	)
 }
-<ProductGrid lang={lang} products={products}>
+<ProductGrid lang={lang} products={products} payloadUrl={`${getCategoryUrl(lang, category.slug)}/listing.json`}>
 	<CatalogSidebar
 		slot="sidebar"
 		lang={lang}

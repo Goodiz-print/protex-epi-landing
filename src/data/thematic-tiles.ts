@@ -45,4 +45,16 @@ export const thematicTiles: ThematicTile[] = [
 		garmentType: 'vestes-sweats',
 		getHref: (lang) => getGarmentTypeUrl(lang, 'vestes-sweats'),
 	},
+	{
+		id: 'polos',
+		labels: { fr: 'Polos', en: 'Polos' },
+		garmentType: 'polos',
+		getHref: (lang) => getGarmentTypeUrl(lang, 'polos'),
+	},
+	{
+		id: 'pantalons',
+		labels: { fr: 'Pantalons', en: 'Trousers' },
+		garmentType: 'pantalons',
+		getHref: (lang) => getGarmentTypeUrl(lang, 'pantalons'),
+	},
 ];
