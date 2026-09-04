@@ -1,0 +1,154 @@
+---
+import Breadcrumb from '~/components/catalog/Breadcrumb.astro';
+import { useTranslations } from '~/i18n/utils';
+import type { Lang } from '~/utils/catalog';
+
+interface Props {
+	lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const title = t('search.results.title');
+const homeHref = lang === 'en' ? '/en' : '/';
+---
+
+<main class="mx-auto max-w-6xl px-4 py-10">
+	<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: homeHref }, { label: title }]} />
+	<h1 class="mb-2 font-heading text-3xl font-bold uppercase text-gray-900">{title}</h1>
+	<div
+		data-search-page
+		data-label-for={t('search.results.for')}
+		data-label-count={t('catalog.resultsCount')}
+		data-label-empty={t('search.noResults')}
+		data-label-hint={t('search.results.hint')}
+		data-label-view={t('catalog.viewProduct')}
+		data-pagefind-ignore
+	>
+		<p class="mb-6 text-sm text-gray-500" data-search-summary>{t('search.results.hint')}</p>
+		<ul class="grid grid-cols-2 gap-4 sm:grid-cols-3 xl:grid-cols-4" data-search-grid></ul>
+		<div class="mt-8 text-center">
+			<button
+				type="button"
+				data-search-more
+				class="hidden rounded-btn bg-btn-gray px-6 py-3.5 font-heading text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-btn-dark"
+			>
+				{t('catalog.loadMore')}
+			</button>
+		</div>
+	</div>
+</main>
+
+<script>
+	// Voir SearchBox.astro : le module Pagefind n'existe qu'après le build complet
+	// (`pagefind --site dist`), il est donc absent du graphe de modules de Vite.
+	// L'import doit passer par `new Function` pour échapper à l'analyse statique
+	// (sinon Vite laisse un jeton __VITE_PRELOAD__ non résolu — cf. commit 9a22212).
+	// Corollaire : cette page ne renvoie rien en `astro dev`, tester sur le build.
+	interface PagefindResultData {
+		url: string;
+		excerpt: string;
+		meta?: { title?: string; image?: string; price?: string };
+	}
+	interface PagefindApi {
+		search(query: string): Promise<{ results: { data(): Promise<PagefindResultData> }[] }>;
+	}
+
+	const PLACEHOLDER = '/images/product-placeholder.svg';
+	const PAGE_SIZE = 24;
+
+	async function initSearchPage() {
+		const page = document.querySelector<HTMLElement>('[data-search-page]');
+		if (!page) return;
+		const grid = page.querySelector<HTMLUListElement>('[data-search-grid]');
+		const summary = page.querySelector<HTMLElement>('[data-search-summary]');
+		const moreButton = page.querySelector<HTMLButtonElement>('[data-search-more]');
+		if (!grid || !summary || !moreButton) return;
+
+		const query = new URLSearchParams(window.location.search).get('q')?.trim() ?? '';
+		if (query.length < 2) return;
+		summary.textContent = '…';
+
+		const dynamicImport = new Function('path', 'return import(path)') as (path: string) => Promise<PagefindApi>;
+		let pagefind: PagefindApi;
+		try {
+			pagefind = await dynamicImport('/pagefind/pagefind.js');
+		} catch {
+			summary.textContent = page.dataset.labelEmpty ?? '';
+			return;
+		}
+
+		const search = await pagefind.search(query);
+		const results = search.results;
+		if (results.length === 0) {
+			summary.textContent = `${page.dataset.labelFor} « ${query} » — ${page.dataset.labelEmpty}`;
+			return;
+		}
+		summary.textContent = `${page.dataset.labelFor} « ${query} » — ${results.length} ${page.dataset.labelCount}`;
+
+		const viewLabel = page.dataset.labelView ?? '';
+		let shown = 0;
+
+		function buildCard(data: PagefindResultData): HTMLLIElement {
+			const li = document.createElement('li');
+			const card = document.createElement('div');
+			card.className =
+				'group flex h-full flex-col rounded-lg border border-gray-200 bg-white p-3 transition-colors hover:border-gray-400';
+
+			const titleLink = document.createElement('a');
+			titleLink.href = data.url;
+			titleLink.className =
+				'line-clamp-2 min-h-10 font-heading text-sm font-bold uppercase leading-tight text-gray-900 hover:text-brand';
+			titleLink.textContent = data.meta?.title ?? data.url;
+
+			const imageLink = document.createElement('a');
+			imageLink.href = data.url;
+			imageLink.className = 'mt-2 block aspect-square overflow-hidden bg-white';
+			imageLink.tabIndex = -1;
+			imageLink.setAttribute('aria-hidden', 'true');
+			const img = document.createElement('img');
+			img.src = data.meta?.image ?? PLACEHOLDER;
+			img.alt = '';
+			img.loading = 'lazy';
+			img.decoding = 'async';
+			img.className = 'h-full w-full object-contain transition-transform group-hover:scale-105';
+			img.onerror = () => {
+				img.onerror = null;
+				img.src = PLACEHOLDER;
+			};
+			imageLink.appendChild(img);
+
+			const footer = document.createElement('div');
+			footer.className = 'mt-auto pt-2';
+			if (data.meta?.price) {
+				const price = document.createElement('p');
+				price.className = 'text-sm font-bold text-gray-900';
+				price.textContent = data.meta.price;
+				footer.appendChild(price);
+			}
+			const view = document.createElement('a');
+			view.href = data.url;
+			view.className =
+				'mt-2 flex h-10 items-center justify-center rounded-card-btn border border-gray-300 font-heading text-xs font-bold uppercase text-gray-900 transition-colors hover:border-brand hover:text-brand';
+			view.textContent = viewLabel;
+			footer.appendChild(view);
+
+			card.append(titleLink, imageLink, footer);
+			li.appendChild(card);
+			return li;
+		}
+
+		async function showMore() {
+			const batch = results.slice(shown, shown + PAGE_SIZE);
+			const entries = await Promise.all(batch.map((result) => result.data()));
+			for (const entry of entries) grid!.appendChild(buildCard(entry));
+			shown += batch.length;
+			moreButton!.classList.toggle('hidden', shown >= results.length);
+		}
+
+		moreButton.addEventListener('click', showMore);
+		await showMore();
+	}
+
+	initSearchPage();
+</script>

@@ -126,6 +126,10 @@ export const ui = {
 		'search.placeholder': 'Rechercher',
 		'search.label': 'Rechercher',
 		'search.noResults': 'Aucun résultat.',
+		'search.viewAll': 'Voir tous les résultats',
+		'search.results.title': 'Résultats de recherche',
+		'search.results.for': 'Résultats pour',
+		'search.results.hint': 'Utilisez la barre de recherche ci-dessus pour trouver un produit.',
 	},
 	en: {
 		'site.title': 'Protex EPI',
@@ -245,5 +249,9 @@ export const ui = {
 		'search.placeholder': 'Search',
 		'search.label': 'Search',
 		'search.noResults': 'No results.',
+		'search.viewAll': 'View all results',
+		'search.results.title': 'Search results',
+		'search.results.for': 'Results for',
+		'search.results.hint': 'Use the search bar above to find a product.',
 	},
 } as const;

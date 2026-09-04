@@ -8,17 +8,26 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+
+const searchUrl = lang === 'en' ? '/en/search' : '/recherche';
 ---
 
-<div
+{/* Formulaire GET natif : Entrée mène à la page de résultats même sans JS. */}
+<form
 	class="relative w-full min-w-0 max-w-xl"
+	action={searchUrl}
+	method="get"
+	role="search"
 	data-searchbox
 	data-no-results-label={t('search.noResults')}
+	data-view-all-label={t('search.viewAll')}
+	data-search-url={searchUrl}
 	data-pagefind-ignore
 >
 	<label for="site-search" class="sr-only">{t('search.label')}</label>
 	<input
 		id="site-search"
+		name="q"
 		type="search"
 		autocomplete="off"
 		placeholder={t('search.placeholder')}
@@ -26,7 +35,7 @@ const t = useTranslations(lang);
 		data-search-input
 	/>
 	<button
-		type="button"
+		type="submit"
 		class="absolute right-1 top-1 flex h-8 w-8 items-center justify-center rounded-full bg-brand text-white transition-colors hover:bg-brand-dark"
 		aria-label={t('search.label')}
 		data-search-button
@@ -43,7 +52,7 @@ const t = useTranslations(lang);
 		class="absolute left-0 right-0 top-full z-50 mt-1 hidden max-h-96 overflow-y-auto rounded-md border border-gray-200 bg-white p-1 shadow-lg"
 	>
 	</ul>
-</div>
+</form>
 
 <script>
 	interface PagefindApi {
@@ -67,6 +76,8 @@ const t = useTranslations(lang);
 			if (!input || !results) return;
 
 			const noResultsLabel = box.dataset.noResultsLabel ?? '';
+			const viewAllLabel = box.dataset.viewAllLabel ?? '';
+			const searchUrl = box.dataset.searchUrl ?? '/recherche';
 			// The pagefind module is generated at build time (`pagefind --site dist`), after the
 			// Vite/Rollup build finishes, so it's unavailable in `astro dev` and absent from Vite's
 			// module graph. `@vite-ignore` alone isn't enough to stop Vite's build wrapping this
@@ -126,15 +137,19 @@ const t = useTranslations(lang);
 						li.appendChild(a);
 						results!.appendChild(li);
 					}
+					const viewAllItem = document.createElement('li');
+					const viewAllLink = document.createElement('a');
+					viewAllLink.href = `${searchUrl}?q=${encodeURIComponent(query.trim())}`;
+					viewAllLink.className =
+						'block rounded-md border-t border-gray-100 px-3 py-2 text-sm font-medium text-brand hover:bg-gray-50';
+					viewAllLink.textContent = `${viewAllLabel} →`;
+					viewAllItem.appendChild(viewAllLink);
+					results!.appendChild(viewAllItem);
 				}
 				results!.classList.remove('hidden');
 			}, 150);
 
 			input.addEventListener('input', () => runSearch(input.value));
-			box.querySelector<HTMLButtonElement>('[data-search-button]')?.addEventListener('click', () => {
-				input.focus();
-				runSearch(input.value);
-			});
 			input.addEventListener('focus', () => {
 				if (input.value.trim().length >= 2) runSearch(input.value);
 			});
