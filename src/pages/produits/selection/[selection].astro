@@ -1,0 +1,31 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import SelectionPage from '~/components/catalog/SelectionPage.astro';
+import QuoteCta from '~/components/home/QuoteCta.astro';
+import { getSelectionStaticPaths, getProductsBySelection } from '~/content/queries';
+import { getSelectionUrl } from '~/utils/catalog';
+import { ui } from '~/i18n/ui';
+import { selectionDescription } from '~/utils/seo';
+
+export async function getStaticPaths() {
+	return getSelectionStaticPaths();
+}
+
+const { selection } = Astro.props;
+const products = await getProductsBySelection(selection);
+---
+
+<Layout
+	title={`${selection.labels.fr} — ${ui.fr['site.title']}`}
+	description={selectionDescription(selection, 'fr')}
+>
+	<main class="mx-auto max-w-6xl px-4 py-10">
+		<SelectionPage
+			lang="fr"
+			selection={selection}
+			products={products}
+			payloadUrl={`${getSelectionUrl('fr', selection.slug)}/listing.json`}
+		/>
+	</main>
+	<QuoteCta lang="fr" />
+</Layout>

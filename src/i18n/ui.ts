@@ -31,6 +31,9 @@ export const ui = {
 		'home.brands.cta': 'Découvrir tout le catalogue',
 		'header.callUs': 'Nous appeler',
 		'header.emailUs': 'Nous écrire',
+		'home.info.personalise': 'Je personnalise',
+		'home.info.chorus': 'Facturation simplifiée avec Chorus Pro',
+		'home.info.norms': 'Les normes',
 		'quote.page.title': 'Demander un devis',
 		'quote.page.intro':
 			'Décrivez votre besoin ci-dessous, un conseiller Protex EPI revient vers vous avec une offre sans engagement sous 24h.',
@@ -107,6 +110,12 @@ export const ui = {
 		'catalog.noResults': 'Aucun produit ne correspond à ces filtres.',
 		'nav.home': 'Accueil',
 		'nav.products': 'Produits',
+		'nav.collectivites': 'Collectivités',
+		'collectivites.title': 'Collectivités',
+		'collectivites.intro':
+			'Une sélection d’équipements pensée pour les collectivités territoriales : mairies, départements, régions, universités et établissements publics.',
+		'collectivites.body':
+			'Services techniques, espaces verts, voirie, bâtiments ou police municipale : nous équipons vos agents avec des tenues conformes, identifiables et durables, personnalisables aux couleurs de votre collectivité.',
 		'nav.menu': 'Ouvrir le menu',
 		'nav.close': 'Fermer le menu',
 		'search.placeholder': 'Rechercher',
@@ -137,6 +146,9 @@ export const ui = {
 		'home.brands.cta': 'Browse the full catalog',
 		'header.callUs': 'Call us',
 		'header.emailUs': 'Email us',
+		'home.info.personalise': 'Customise my equipment',
+		'home.info.chorus': 'Simplified invoicing with Chorus Pro',
+		'home.info.norms': 'The standards',
 		'quote.page.title': 'Request a quote',
 		'quote.page.intro':
 			'Tell us what you need below — a Protex EPI advisor will get back to you with a no-obligation offer within 24h.',
@@ -211,6 +223,12 @@ export const ui = {
 		'catalog.noResults': 'No products match these filters.',
 		'nav.home': 'Home',
 		'nav.products': 'Products',
+		'nav.collectivites': 'Local authorities',
+		'collectivites.title': 'Local authorities',
+		'collectivites.intro':
+			'A selection of equipment designed for local authorities: town halls, departments, regions, universities and public institutions.',
+		'collectivites.body':
+			'Technical services, parks and gardens, roads, buildings or municipal police: we equip your teams with compliant, identifiable and durable workwear, customisable in your authority’s colours.',
 		'nav.menu': 'Open menu',
 		'nav.close': 'Close menu',
 		'search.placeholder': 'Search',
