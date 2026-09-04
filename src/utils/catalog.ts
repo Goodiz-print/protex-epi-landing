@@ -31,6 +31,25 @@ export function getProductUrl(
 	return `${CATALOG_ROOT[lang]}/${categorySlug}/${subcategorySegment}/${productSlug}`;
 }
 
+/** Page « méli-mélo » : l'entièreté du catalogue, tous univers confondus. */
+export function getAllProductsUrl(lang: Lang): string {
+	return `${CATALOG_ROOT[lang]}/tous`;
+}
+
+/** Sélection de produits pour les collectivités. */
+export function getCollectivitesUrl(lang: Lang): string {
+	return `${CATALOG_ROOT[lang]}/collectivites`;
+}
+
+const SEARCH_ROOT: Record<Lang, string> = {
+	fr: '/recherche',
+	en: '/en/search',
+};
+
+export function getSearchUrl(lang: Lang): string {
+	return SEARCH_ROOT[lang];
+}
+
 const QUOTE_ROOT: Record<Lang, string> = {
 	fr: '/devis',
 	en: '/en/quote',

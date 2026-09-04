@@ -1,0 +1,132 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Breadcrumb from '~/components/catalog/Breadcrumb.astro';
+import Button from '~/components/ui/Button.astro';
+import { useTranslations } from '~/i18n/utils';
+import { ui } from '~/i18n/ui';
+
+const lang = 'fr' as const;
+const t = useTranslations(lang);
+const title = 'Guide des procédés de marquage';
+const description =
+	'Sérigraphie, broderie, transfert, flocage, tampographie, gravure laser… Notre guide pour choisir le procédé de marquage adapté à vos vêtements de travail, EPI et objets personnalisés.';
+
+const processes = [
+	{
+		name: 'Sérigraphie',
+		principle:
+			'L’encre est poussée à travers un écran (un pochoir maillé) directement sur le support, couleur après couleur. Chaque couleur nécessite son propre écran.',
+		advantages: ['Couleurs vives, opaques et durables', 'Excellent rapport qualité/prix en quantité', 'Grandes surfaces de marquage possibles'],
+		idealFor: 'Les moyennes et grandes séries de textiles : t-shirts, sweats, gilets haute visibilité.',
+		limits: 'Coût fixe par couleur (films et écrans) : peu adaptée aux toutes petites quantités et aux dégradés photographiques.',
+	},
+	{
+		name: 'Broderie',
+		principle:
+			'Le logo est reproduit en fils polyester ou coton, brodés directement dans le textile par des machines multi-têtes à partir d’un fichier de broderie (« programme »).',
+		advantages: ['Rendu haut de gamme et texturé', 'Tenue exceptionnelle aux lavages, y compris industriels', 'Idéale sur les textiles épais'],
+		idealFor: 'Polos, chemises, softshells, parkas, polaires, casquettes et bonnets — tout vêtement « image » porté dans la durée.',
+		limits: 'Moins adaptée aux logos très fins ou aux dégradés ; déconseillée sur les textiles très légers ou imperméables (perforation).',
+	},
+	{
+		name: 'Transfert sérigraphique',
+		principle:
+			'Le visuel est d’abord sérigraphié à l’envers sur un film support, puis reporté sur le vêtement sous presse à chaud.',
+		advantages: ['Précision et finesse des détails', 'S’applique sur les zones difficiles (poches, coutures, manches)', 'Compatible avec les textiles techniques et haute visibilité'],
+		idealFor: 'Les vêtements de travail techniques, les EPI haute visibilité, les matières sensibles à la chaleur directe.',
+		limits: 'Toucher légèrement plus « présent » qu’une sérigraphie directe.',
+	},
+	{
+		name: 'Flocage / marquage thermocollé',
+		principle:
+			'Un film coloré (uni, velours ou pailleté) est découpé à la forme exacte de votre logo ou de votre texte, puis thermocollé sur le textile.',
+		advantages: ['Très lisible, rendu mat ou velours', 'Parfait pour les textes et marquages unis', 'Rapide, y compris à l’unité'],
+		idealFor: 'Les grands marquages dos (« SÉCURITÉ », nom de société), les noms individuels, les petites séries.',
+		limits: 'Une à deux couleurs en pratique ; les logos très complexes sont à orienter vers le DTF.',
+	},
+	{
+		name: 'Impression numérique DTF (Direct To Film)',
+		principle:
+			'Le visuel est imprimé en quadrichromie sur un film, encollé d’une poudre thermofusible, puis transféré sur le vêtement sous presse.',
+		advantages: ['Aucune limite de couleurs, dégradés et photos possibles', 'Pas de frais d’écran : rentable dès la petite quantité', 'Bonne tenue aux lavages'],
+		idealFor: 'Les logos multicolores ou complexes, les petites et moyennes séries, les réassorts fréquents.',
+		limits: 'Sur de très grandes séries, la sérigraphie reste plus économique.',
+	},
+	{
+		name: 'Tampographie',
+		principle:
+			'Un tampon en silicone prélève l’encre sur un cliché gravé et la dépose sur l’objet — y compris sur des surfaces courbes, creuses ou irrégulières.',
+		advantages: ['Grande précision sur petites surfaces', 'S’adapte à presque toutes les formes d’objets', 'Cadence élevée'],
+		idealFor: 'Les casques, gourdes, stylos, badges et petits accessoires.',
+		limits: 'Surface de marquage réduite ; nombre de couleurs limité.',
+	},
+	{
+		name: 'Gravure laser',
+		principle:
+			'Un faisceau laser grave le marquage dans la matière (métal, bois, certains textiles techniques), sans encre ni ajout de matière.',
+		advantages: ['Marquage inaltérable, insensible aux lavages et frottements', 'Rendu sobre et précis', 'Aucune encre : idéal en environnement exigeant'],
+		idealFor: 'Les objets en métal ou bois, les outils, les plaques, certains softshells (effet ton sur ton).',
+		limits: 'Rendu monochrome, dans la teinte de la matière gravée.',
+	},
+];
+---
+
+<Layout title={`${title} — ${ui.fr['site.title']}`} description={description}>
+	<main class="mx-auto max-w-4xl px-4 py-10">
+		<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: '/' }, { label: title }]} />
+		<h1 class="mb-4 font-heading text-3xl font-bold uppercase text-gray-900">{title}</h1>
+		<div class="space-y-4 text-gray-700">
+			<p>
+				Chaque procédé de marquage a ses forces : durabilité, finesse, coût, adaptation au support. Ce guide
+				vous aide à comprendre comment nous personnalisons vos vêtements de travail, EPI et objets, et quel
+				procédé privilégier selon votre projet. En cas de doute, notre atelier vous recommande la meilleure
+				solution en fonction de votre logo, des quantités et des textiles choisis.
+			</p>
+			<p>
+				À noter : partant de bases différentes, les teintes obtenues peuvent légèrement varier par rapport aux
+				références Pantone, notamment sur fonds de couleur — la réglementation européenne sur les métaux lourds
+				et solvants fait évoluer les pigmentations. Sur les EPI, chaque marquage est réalisé dans le respect
+				des normes en vigueur (Règlement (UE) 2016/425).
+			</p>
+		</div>
+
+		<div class="mt-8 space-y-6">
+			{
+				processes.map((process) => (
+					<section class="rounded-lg border border-gray-200 p-5">
+						<h2 class="font-heading text-xl font-bold uppercase text-gray-900">{process.name}</h2>
+						<p class="mt-2 text-gray-700">{process.principle}</p>
+						<div class="mt-3 grid gap-4 sm:grid-cols-2">
+							<div>
+								<h3 class="text-sm font-semibold text-gray-900">Avantages</h3>
+								<ul class="mt-1 list-inside list-disc space-y-1 text-sm text-gray-700">
+									{process.advantages.map((advantage) => (
+										<li>{advantage}</li>
+									))}
+								</ul>
+							</div>
+							<div>
+								<h3 class="text-sm font-semibold text-gray-900">Idéal pour</h3>
+								<p class="mt-1 text-sm text-gray-700">{process.idealFor}</p>
+								<h3 class="mt-3 text-sm font-semibold text-gray-900">À savoir</h3>
+								<p class="mt-1 text-sm text-gray-700">{process.limits}</p>
+							</div>
+						</div>
+					</section>
+				))
+			}
+		</div>
+
+		<div class="mt-10 rounded-lg bg-gray-50 p-6">
+			<h2 class="font-heading text-xl font-bold uppercase text-gray-900">Besoin d’un conseil&nbsp;?</h2>
+			<p class="mt-2 text-gray-700">
+				Envoyez-nous votre logo et vos quantités : nous vous proposons le procédé le plus adapté, avec un bon à
+				tirer gratuit avant toute production.
+			</p>
+			<div class="mt-4 flex flex-wrap gap-3">
+				<Button href="/devis" variant="primary">{t('home.quote.cta')}</Button>
+				<Button href="/personnalisation" variant="dark">La personnalisation</Button>
+			</div>
+		</div>
+	</main>
+</Layout>

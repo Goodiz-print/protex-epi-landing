@@ -2,7 +2,8 @@
 import { useTranslations } from '~/i18n/utils';
 import type { GarmentType } from '~/data/garment-types';
 import type { Product } from '~/content/schemas/product';
-import { getCatalogRootUrl, getGarmentTypeUrl, type Lang } from '~/utils/catalog';
+import { getCategory, getSubcategory } from '~/data/category-taxonomy';
+import { getCatalogRootUrl, getCategoryUrl, getGarmentTypeUrl, getSubcategoryUrl, type Lang } from '~/utils/catalog';
 import Breadcrumb from './Breadcrumb.astro';
 import ProductGrid from './ProductGrid.astro';
 import CatalogSidebar from './CatalogSidebar.astro';
@@ -17,15 +18,28 @@ const { lang, garmentType, products } = Astro.props;
 const t = useTranslations(lang);
 
 const homeHref = lang === 'en' ? '/en' : '/';
+
+const breadcrumbItems: { label: string; href?: string }[] = [
+	{ label: t('catalog.breadcrumb.home'), href: homeHref },
+	{ label: t('catalog.breadcrumb.products'), href: getCatalogRootUrl(lang) },
+];
+if (garmentType.parent) {
+	const category = getCategory(garmentType.parent.category);
+	const subcategory = getSubcategory(garmentType.parent.category, garmentType.parent.subcategory);
+	if (category) {
+		breadcrumbItems.push({ label: category.labels[lang], href: getCategoryUrl(lang, category.slug) });
+		if (subcategory) {
+			breadcrumbItems.push({
+				label: subcategory.labels[lang],
+				href: getSubcategoryUrl(lang, category.slug, subcategory.slug),
+			});
+		}
+	}
+}
+breadcrumbItems.push({ label: garmentType.labels[lang] });
 ---
 
-<Breadcrumb
-	items={[
-		{ label: t('catalog.breadcrumb.home'), href: homeHref },
-		{ label: t('catalog.breadcrumb.products'), href: getCatalogRootUrl(lang) },
-		{ label: garmentType.labels[lang] },
-	]}
-/>
+<Breadcrumb items={breadcrumbItems} />
 <h1 class="mb-6 font-heading text-3xl font-bold uppercase text-gray-900">{garmentType.labels[lang]}</h1>
 <ProductGrid
 	lang={lang}

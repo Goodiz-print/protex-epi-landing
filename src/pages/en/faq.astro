@@ -7,51 +7,86 @@ import { ui } from '~/i18n/ui';
 const lang = 'en' as const;
 const t = useTranslations(lang);
 const title = t('footer.legal.faq');
-const description = 'Frequently asked questions about ordering, quotes, sizing and delivery of Protex EPI personal protective equipment.';
+const description =
+	'Frequently asked questions about Protex EPI orders, quotes, marking, compliance and deliveries of personal protective equipment.';
 
 const faqs = [
 	{
-		question: 'How do I place an order?',
+		question: 'Why does my basket include handling fees for purchases below the limit?',
 		answer:
-			'Protex EPI works on a quote basis: browse the catalog, then send a request from a product page or our quote form. An advisor will reply with a detailed offer.',
+			'We do not run production or packaging per single unit, and the costs of processing quantities below the limit exceed the sale price of the equipment. For a very small number of items, a so-called sub-limit fee is therefore automatically added to the basket.',
 	},
 	{
-		question: 'Is the equipment certified?',
+		question: 'Why can’t I buy just 1 unit of the selected product?',
 		answer:
-			'Our catalog draws on well-known brands in the sector (Portwest, Blaklader, Mascot) offering equipment compliant with current safety standards for each protection category.',
+			'You can order a single item without marking, but the order will carry a processing fee. If you simply want to try a model before ordering in quantity (comfort, size, suitability for the workstation), contact our sales team: we will be happy to lend or send you a sample for an agreed period.',
 	},
 	{
-		question: 'How do I choose the right size?',
+		question: 'Why do you show a price for 1 unit if I can’t buy just 1?',
 		answer:
-			'Available sizes are listed on each product page. If unsure, describe your needs in the quote form and an advisor will help you choose.',
+			'An item can be added to a combined order that already contains other equipment. For example, you can build a workwear order mixing several colours and sizes to equip a whole team. Ordering a single item remains possible, but with a processing fee.',
 	},
 	{
-		question: 'Do you sell to individuals?',
-		answer: 'Protex EPI primarily serves professional customers. Contact us for any other request.',
+		question: 'How do I get the marking price (logo, flock) for several sizes or colours?',
+		answer:
+			'You can enter different sizes, colours and marking positions in our online calculator to get the final marking price on a mixed selection of PPE and workwear.',
+	},
+	{
+		question: 'Can I buy as a private individual, i.e. without a VAT or company registration number?',
+		answer:
+			'No. The sale of personal protective equipment on the www.protex-epi.com e-shop is reserved for professionals: companies, local authorities, public bodies and associations.',
+	},
+	{
+		question: 'How do I know whether a piece of PPE complies with the standards for my industry?',
+		answer:
+			'Each product page states the risk category and the applicable European standards (EN, Regulation (EU) 2016/425). If in doubt about whether an item matches your risk assessment, our technical team can advise you on the right product.',
+	},
+	{
+		question: 'Can I get a certificate of conformity (EU declaration of conformity, datasheet) for my purchases?',
+		answer:
+			'Yes. Datasheets and declarations of conformity are available on each product page or can be sent on request by our sales team, for example for an internal audit or a public procurement bid.',
+	},
+	{
+		question: 'Do you sell under public procurement contracts?',
+		answer:
+			'Yes, we support public buyers (local authorities, public bodies, administrations) with their PPE purchases, including quotes, purchase orders and the supporting documents your procurement procedures require.',
+	},
+	{
+		question: 'Can I return PPE that doesn’t suit me?',
+		answer:
+			'For hygiene and safety reasons, customised, worn or unpackaged PPE cannot be returned. An unworn product in its original packaging can be returned with the prior written agreement of our sales team.',
 	},
 	{
 		question: 'What are the delivery times?',
-		answer: 'Delivery times depend on the products and quantities ordered; they are communicated when your quote is confirmed.',
+		answer:
+			'Times vary with the products and quantities ordered, from a few days for items in stock to several weeks for customised or made-to-order items. A precise time frame is given when your quote or order is confirmed.',
 	},
 ];
+
+const faqJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: faqs.map((faq) => ({
+		'@type': 'Question',
+		name: faq.question,
+		acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+	})),
+};
 ---
 
-<Layout title={`${title} — ${ui.en['site.title']}`} description={description}>
+<Layout title={`${title} — ${ui.en['site.title']}`} description={description} jsonLd={faqJsonLd}>
 	<main class="mx-auto max-w-3xl px-4 py-10">
 		<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: '/en' }, { label: title }]} />
-		<h1 class="mb-6 text-2xl font-semibold text-gray-900">{title}</h1>
-		<div class="space-y-3">
+		<h1 class="mb-6 text-2xl font-semibold text-gray-900">FAQ – PROTEX EPI</h1>
+		<div class="space-y-6">
 			{
 				faqs.map((faq) => (
-					<details class="rounded-md border border-gray-200 p-4">
-						<summary class="cursor-pointer font-medium text-gray-900">{faq.question}</summary>
-						<p class="mt-2 text-gray-700">{faq.answer}</p>
-					</details>
+					<section>
+						<h2 class="mb-1 font-semibold text-gray-900">{faq.question}</h2>
+						<p class="text-gray-700">{faq.answer}</p>
+					</section>
 				))
 			}
 		</div>
-		<p class="mt-8 text-gray-700">
-			More questions? <a href="/en/contact" class="font-medium text-blue-700 hover:text-blue-800">Contact us</a>.
-		</p>
 	</main>
 </Layout>

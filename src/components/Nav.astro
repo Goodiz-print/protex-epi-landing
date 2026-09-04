@@ -1,6 +1,6 @@
 ---
 import { categoryTaxonomy } from '../data/category-taxonomy';
-import { getCatalogRootUrl, getCategoryUrl, getQuoteUrl, getSubcategoryUrl, type Lang } from '../utils/catalog';
+import { getCategoryUrl, getCollectivitesUrl, getQuoteUrl, getSubcategoryUrl, type Lang } from '../utils/catalog';
 import { useTranslations } from '../i18n/utils';
 import LanguagePicker from './LanguagePicker.astro';
 
@@ -59,7 +59,7 @@ const chevron =
 			))
 		}
 		<li>
-			<a href={getCatalogRootUrl(lang)} class={navLinkClass}>{t('nav.products')}</a>
+			<a href={getCollectivitesUrl(lang)} class={navLinkClass}>{t('nav.collectivites')}</a>
 		</li>
 	</ul>
 
@@ -130,7 +130,7 @@ const chevron =
 				)
 			}
 			<li>
-				<a href={getCatalogRootUrl(lang)} class={`block ${mobileLinkClass}`}>{t('nav.products')}</a>
+				<a href={getCollectivitesUrl(lang)} class={`block ${mobileLinkClass}`}>{t('nav.collectivites')}</a>
 			</li>
 			<li>
 				<a href={getQuoteUrl(lang)} class={`block ${mobileLinkClass} text-brand`}>{t('home.quote.cta')}</a>

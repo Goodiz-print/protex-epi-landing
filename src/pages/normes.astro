@@ -1,0 +1,152 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Breadcrumb from '~/components/catalog/Breadcrumb.astro';
+import Button from '~/components/ui/Button.astro';
+import { useTranslations } from '~/i18n/utils';
+import { ui } from '~/i18n/ui';
+
+const lang = 'fr' as const;
+const t = useTranslations(lang);
+const title = 'Les normes des vêtements professionnels et EPI';
+const description =
+	'Comprendre les normes des EPI et vêtements de travail : Règlement (UE) 2016/425, haute visibilité EN ISO 20471, intempéries EN 343, gants EN 388, chaussures EN ISO 20345…';
+
+const norms = [
+	{
+		code: 'EN ISO 13688',
+		name: 'Exigences générales des vêtements de protection',
+		body: 'La norme « socle » de tout vêtement de protection : innocuité des matières, ergonomie, marquage, informations du fabricant et désignation des tailles. Elle s’applique toujours en complément d’une norme spécifique.',
+	},
+	{
+		code: 'EN ISO 20471',
+		name: 'Vêtements haute visibilité',
+		body: 'Signale la présence de l’utilisateur de jour comme de nuit. Trois classes selon les surfaces de matière fluorescente et de bandes rétroréfléchissantes : classe 1 (risque faible) à classe 3 (risque élevé, routes et chantiers). Le choix de la classe dépend de l’analyse de risques du poste.',
+	},
+	{
+		code: 'EN 343',
+		name: 'Protection contre la pluie',
+		body: 'Mesure la résistance à la pénétration de l’eau (classe 1 à 4) et la résistance évaporative — la respirabilité — du vêtement (classe 1 à 4). Un vêtement noté 4/4 offre la meilleure protection et le meilleur confort.',
+	},
+	{
+		code: 'EN 342 / EN 14058',
+		name: 'Protection contre le froid',
+		body: 'EN 342 couvre les ensembles pour environnements froids (au-dessous de −5 °C), EN 14058 les vêtements pour ambiances fraîches. Les valeurs d’isolation thermique et de perméabilité à l’air guident le choix selon la température de travail.',
+	},
+	{
+		code: 'EN ISO 11612',
+		name: 'Protection contre la chaleur et les flammes',
+		body: 'Vêtements protégeant contre une exposition brève à la flamme et à différentes formes de chaleur (convective, radiante, projections de métal en fusion). Les niveaux A1/A2 puis B à F précisent les performances.',
+	},
+	{
+		code: 'EN ISO 11611',
+		name: 'Vêtements de soudeur',
+		body: 'Protection contre les petites projections de métal en fusion et le rayonnement de l’arc de soudage. Deux classes selon l’intensité des travaux de soudage.',
+	},
+	{
+		code: 'EN 1149-5',
+		name: 'Propriétés électrostatiques',
+		body: 'Vêtements dissipant les charges électrostatiques, utilisés en zones ATEX pour éviter les étincelles incendiaires — toujours en association avec une mise à la terre correcte de l’utilisateur.',
+	},
+	{
+		code: 'EN 13034 (type 6)',
+		name: 'Protection chimique limitée',
+		body: 'Protection contre les projections limitées de produits chimiques liquides peu dangereux (brouillards, éclaboussures légères).',
+	},
+	{
+		code: 'IEC 61482-2',
+		name: 'Arc électrique',
+		body: 'Vêtements protégeant contre les effets thermiques d’un arc électrique, pour les travaux sous tension ou à proximité d’installations électriques.',
+	},
+	{
+		code: 'EN 388',
+		name: 'Gants — risques mécaniques',
+		body: 'Quatre à six indices : abrasion, coupure (test Coupe), déchirure, perforation, coupure ISO 13997 et protection aux chocs. Plus l’indice est élevé, plus la protection est importante.',
+	},
+	{
+		code: 'EN 407 / EN 511',
+		name: 'Gants — chaleur et froid',
+		body: 'EN 407 évalue la protection contre les risques thermiques (flamme, chaleur de contact, projections de métal), EN 511 contre le froid convectif, le froid de contact et la pénétration de l’eau.',
+	},
+	{
+		code: 'EN ISO 374',
+		name: 'Gants — risques chimiques et micro-organismes',
+		body: 'Résistance à la perméation de produits chimiques (types A, B, C selon le nombre de produits testés) et protection contre les micro-organismes.',
+	},
+	{
+		code: 'EN ISO 20345',
+		name: 'Chaussures de sécurité',
+		body: 'Chaussures à embout résistant à un choc de 200 joules. Les classes SB, S1, S1P, S2, S3 (et S4/S5 pour les bottes) combinent antistatisme, absorption d’énergie au talon, résistance à l’eau et semelle anti-perforation.',
+	},
+	{
+		code: 'EN 397',
+		name: 'Casques de protection',
+		body: 'Casques de chantier protégeant contre la chute d’objets. Des options couvrent la déformation latérale, les très basses températures et les projections de métal en fusion.',
+	},
+	{
+		code: 'EN 166',
+		name: 'Protection des yeux',
+		body: 'Lunettes et écrans faciaux : résistance mécanique (chocs de différentes énergies), protection contre les liquides, les poussières, les rayonnements optiques selon les filtres.',
+	},
+	{
+		code: 'EN 352',
+		name: 'Protection de l’ouïe',
+		body: 'Casques antibruit et bouchons d’oreilles. La valeur SNR indique l’atténuation globale du bruit en décibels.',
+	},
+	{
+		code: 'EN 149',
+		name: 'Protection respiratoire',
+		body: 'Demi-masques filtrants contre les particules : FFP1, FFP2 et FFP3 selon l’efficacité de filtration (jusqu’à 99 % pour le FFP3).',
+	},
+];
+---
+
+<Layout title={`${title} — ${ui.fr['site.title']}`} description={description}>
+	<main class="mx-auto max-w-4xl px-4 py-10">
+		<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: '/' }, { label: 'Les normes' }]} />
+		<h1 class="mb-4 font-heading text-3xl font-bold uppercase text-gray-900">Les normes</h1>
+		<div class="space-y-4 text-gray-700">
+			<p>
+				Tous les équipements de protection individuelle vendus en Europe sont régis par le
+				<strong>Règlement (UE) 2016/425</strong>, qui les classe en trois catégories selon la gravité du risque
+				couvert&nbsp;: catégorie I (risques mineurs), catégorie II (risques intermédiaires — la plupart des
+				vêtements de travail techniques) et catégorie III (risques graves ou mortels, soumis à un contrôle
+				continu de la production).
+			</p>
+			<p>
+				À ce règlement s’ajoutent des normes européennes (EN) propres à chaque famille de risques. Chaque fiche
+				produit de notre catalogue précise les normes applicables ; les déclarations UE de conformité et les
+				fiches techniques sont disponibles sur simple demande. Voici les principales normes à connaître pour
+				choisir vos équipements.
+			</p>
+		</div>
+
+		<div class="mt-8 space-y-5">
+			{
+				norms.map((norm) => (
+					<section class="rounded-lg border border-gray-200 p-4">
+						<h2 class="font-semibold text-gray-900">
+							<span class="mr-2 inline-block rounded bg-brand px-2 py-0.5 font-heading text-xs font-bold uppercase text-white">
+								{norm.code}
+							</span>
+							{norm.name}
+						</h2>
+						<p class="mt-2 text-sm text-gray-700">{norm.body}</p>
+					</section>
+				))
+			}
+		</div>
+
+		<div class="mt-10 rounded-lg bg-gray-50 p-6">
+			<h2 class="font-heading text-xl font-bold uppercase text-gray-900">Un doute sur la norme adaptée&nbsp;?</h2>
+			<p class="mt-2 text-gray-700">
+				Le choix d’un EPI dépend de votre analyse de risques et de votre document unique. Notre équipe technique
+				vous conseille gratuitement sur la catégorie et la classe de protection adaptées à chaque poste de
+				travail.
+			</p>
+			<div class="mt-4 flex flex-wrap gap-3">
+				<Button href="/devis" variant="primary">{t('home.quote.cta')}</Button>
+				<Button href="/contact" variant="dark">Nous contacter</Button>
+			</div>
+		</div>
+	</main>
+</Layout>

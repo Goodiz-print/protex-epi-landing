@@ -9,12 +9,15 @@ interface Props {
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 
-// By default the form opens the visitor's own email client via a pre-filled `mailto:`
-// link — no backend or third-party account required. Optionally set
-// PUBLIC_QUOTE_FORM_ENDPOINT to a form-to-email service endpoint (e.g. a Formspree form
-// URL: https://formspree.io/f/xxxxxxx) to submit silently instead.
-const endpoint = import.meta.env.PUBLIC_QUOTE_FORM_ENDPOINT as string | undefined;
+// The form submits directly to a form-to-email endpoint so the visitor never
+// has to open their own email client. By default it goes through FormSubmit
+// (AJAX endpoint keyed on the destination address — the first submission
+// triggers a one-time activation email to that address). Set
+// PUBLIC_QUOTE_FORM_ENDPOINT to override with another service (e.g. a
+// Formspree form URL: https://formspree.io/f/xxxxxxx). If the endpoint fails,
+// the form falls back to a pre-filled `mailto:` link.
 const QUOTE_EMAIL = 'contact@protex-epi.com';
+const endpoint = (import.meta.env.PUBLIC_QUOTE_FORM_ENDPOINT as string | undefined) ?? `https://formsubmit.co/ajax/${QUOTE_EMAIL}`;
 ---
 
 <form
@@ -35,7 +38,13 @@ const QUOTE_EMAIL = 'contact@protex-epi.com';
 	data-label-quantity={t('quote.form.quantity')}
 	data-label-message={t('quote.form.message')}
 >
-	<div>
+	{/* Champs de service FormSubmit : sujet, anti-spam, pas de captcha. */}
+	<input type="hidden" name="_subject" value="Demande de devis — protex-epi.com" />
+	<input type="hidden" name="_template" value="table" />
+	<input type="hidden" name="_captcha" value="false" />
+	<input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" class="hidden" />
+
+	<div class="relative">
 		<label for="quote-product" class="mb-1 block text-sm font-medium text-gray-900">
 			{t('quote.form.product')}
 		</label>
@@ -43,10 +52,15 @@ const QUOTE_EMAIL = 'contact@protex-epi.com';
 			id="quote-product"
 			name="product"
 			type="text"
-			readonly
+			autocomplete="off"
 			placeholder={t('quote.form.productPlaceholder')}
-			class="w-full rounded-md border border-gray-300 bg-gray-50 px-3 py-2 text-gray-700"
+			class="w-full rounded-md border border-gray-300 px-3 py-2 text-gray-700 focus:border-gray-500 focus:outline-none"
 		/>
+		<ul
+			data-product-suggestions
+			class="absolute left-0 right-0 top-full z-30 mt-1 hidden max-h-64 overflow-y-auto rounded-md border border-gray-200 bg-white p-1 shadow-lg"
+		>
+		</ul>
 	</div>
 
 	<div class="grid gap-4 sm:grid-cols-2">
@@ -142,6 +156,86 @@ const QUOTE_EMAIL = 'contact@protex-epi.com';
 </form>
 
 <script>
+	interface PagefindApi {
+		search(query: string): Promise<{
+			results: { data(): Promise<{ url: string; meta?: { title?: string } }> }[];
+		}>;
+	}
+
+	// Comme dans SearchBox : le module pagefind est généré après le build Vite,
+	// l'import passe par `new Function` pour échapper à l'analyse statique.
+	let pagefind: PagefindApi | null = null;
+	let pagefindFailed = false;
+	const dynamicImport = new Function('path', 'return import(path)') as (path: string) => Promise<PagefindApi>;
+
+	async function ensurePagefind() {
+		if (pagefind || pagefindFailed) return pagefind;
+		try {
+			pagefind = await dynamicImport('/pagefind/pagefind.js');
+		} catch {
+			pagefindFailed = true;
+		}
+		return pagefind;
+	}
+
+	function debounce<T extends (...args: never[]) => void>(fn: T, delay: number) {
+		let timer: ReturnType<typeof setTimeout>;
+		return (...args: Parameters<T>) => {
+			clearTimeout(timer);
+			timer = setTimeout(() => fn(...args), delay);
+		};
+	}
+
+	// Suggestions de produits sous le champ « Produit concerné » : recherche
+	// dans l'index du site, restreinte aux pages produit du catalogue.
+	function initProductSuggestions(form: HTMLFormElement, productField: HTMLInputElement) {
+		const list = form.querySelector<HTMLUListElement>('[data-product-suggestions]');
+		if (!list) return;
+
+		function hide() {
+			list!.classList.add('hidden');
+			list!.replaceChildren();
+		}
+
+		const run = debounce(async (query: string) => {
+			if (query.trim().length < 2) {
+				hide();
+				return;
+			}
+			const pf = await ensurePagefind();
+			if (!pf) return;
+			const search = await pf.search(query);
+			const entries = (await Promise.all(search.results.slice(0, 20).map((result) => result.data())))
+				.filter((entry) => entry.url.includes('/produits/') || entry.url.includes('/en/products/'))
+				.slice(0, 8);
+			list!.replaceChildren();
+			if (entries.length === 0) {
+				hide();
+				return;
+			}
+			for (const entry of entries) {
+				const li = document.createElement('li');
+				const button = document.createElement('button');
+				button.type = 'button';
+				button.className = 'block w-full rounded-md px-3 py-2 text-left text-sm text-gray-900 hover:bg-gray-50';
+				button.textContent = entry.meta?.title ?? entry.url;
+				button.addEventListener('click', () => {
+					productField.value = entry.meta?.title ?? '';
+					hide();
+					productField.focus();
+				});
+				li.appendChild(button);
+				list!.appendChild(li);
+			}
+			list!.classList.remove('hidden');
+		}, 150);
+
+		productField.addEventListener('input', () => run(productField.value));
+		document.addEventListener('click', (event) => {
+			if (!list.contains(event.target as Node) && event.target !== productField) hide();
+		});
+	}
+
 	function initQuoteForms() {
 		document.querySelectorAll<HTMLFormElement>('[data-quote-form]').forEach((form) => {
 			const params = new URLSearchParams(window.location.search);
@@ -151,6 +245,7 @@ const QUOTE_EMAIL = 'contact@protex-epi.com';
 			if (productField && productName) {
 				productField.value = productSku ? `${productName} (${productSku})` : productName;
 			}
+			if (productField) initProductSuggestions(form, productField);
 
 			const endpoint = form.dataset.endpoint;
 			const quoteEmail = form.dataset.quoteEmail ?? '';
@@ -219,7 +314,12 @@ const QUOTE_EMAIL = 'contact@protex-epi.com';
 						headers: { Accept: 'application/json' },
 						body: new FormData(form),
 					});
-					if (response.ok) {
+					// FormSubmit répond 200 avec { success: "false" } tant que
+					// l'adresse n'est pas activée : on vérifie aussi ce drapeau.
+					const payload = await response.json().catch(() => null);
+					const succeeded =
+						response.ok && (payload?.success === undefined || String(payload.success) === 'true');
+					if (succeeded) {
 						form.reset();
 						showStatus(form.dataset.msgSuccess ?? '', 'success');
 					} else {

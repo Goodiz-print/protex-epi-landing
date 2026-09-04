@@ -1,0 +1,130 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import Layout from '~/layouts/Layout.astro';
+import Breadcrumb from '~/components/catalog/Breadcrumb.astro';
+import Button from '~/components/ui/Button.astro';
+import { useTranslations } from '~/i18n/utils';
+import { ui } from '~/i18n/ui';
+
+const lang = 'en' as const;
+const t = useTranslations(lang);
+const title = 'Customising your PPE and workwear';
+const description =
+	'Embroidery, screen printing, transfer, flock… Protex EPI adds your company logo to your workwear and PPE while preserving compliance with safety standards.';
+
+const gallery = Object.values(
+	import.meta.glob<{ default: ImageMetadata }>('../../assets/images/personnalisation/*.{png,jpg,jpeg,webp}', {
+		eager: true,
+	}),
+).map((module) => module.default);
+
+const processes = [
+	{
+		name: 'Embroidery',
+		body: 'Your logo is stitched directly into the fabric. A premium, textured finish with exceptional durability — embroidery withstands repeated industrial washing. Ideal for polos, softshells, parkas and caps.',
+	},
+	{
+		name: 'Screen printing',
+		body: 'Ink is applied through a screen, one colour at a time. The go-to process for medium and large runs: vivid, opaque colours, excellent wash resistance, and a unit cost that drops with quantity.',
+	},
+	{
+		name: 'Screen-printed transfer',
+		body: 'The design is printed on a film first, then heat-applied to the garment. It suits technical fabrics and hard-to-reach areas (pockets, seams) and works particularly well on hi-vis clothing.',
+	},
+	{
+		name: 'Flock / heat-applied marking',
+		body: 'A film cut to the shape of your logo is heat-pressed onto the fabric. A matt or velvet finish with great legibility: the classic choice for large back prints and lettering.',
+	},
+	{
+		name: 'Digital printing (DTF)',
+		body: 'Your artwork is printed in full colour and transferred onto the garment. No limit on colours or gradients: perfect for complex logos, even in small quantities.',
+	},
+	{
+		name: 'Pad printing',
+		body: 'A soft pad deposits the ink onto the object, including curved or irregular surfaces. The preferred process for accessories and small items (helmets, bottles, promotional items).',
+	},
+	{
+		name: 'Laser engraving',
+		body: 'The marking is engraved into the material itself, without ink. A subtle, precise and permanent result, suitable for metal, wood and some technical textiles.',
+	},
+];
+
+const steps = [
+	{ title: 'Choose your products', body: 'Browse the catalog and select your garments and PPE (sizes, colours, quantities).' },
+	{ title: 'Send us your logo', body: 'Share your logo (ideally as a vector file) and the desired positions: chest, back, sleeve…' },
+	{ title: 'Approve your proof', body: 'We send you a free proof with a simulation of the marking. Nothing goes into production without your approval.' },
+	{ title: 'Production and delivery', body: 'Your equipment is marked in our workshop and delivered directly to your site.' },
+];
+---
+
+<Layout title={`${title} — ${ui.en['site.title']}`} description={description}>
+	<main class="mx-auto max-w-4xl px-4 py-10">
+		<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: '/en' }, { label: 'Customisation' }]} />
+		<h1 class="mb-4 font-heading text-3xl font-bold uppercase text-gray-900">Add my logo</h1>
+		<div class="space-y-4 text-gray-700">
+			<p>
+				Your workwear is your brand’s first ambassador: a well-placed logo turns equipment into a true company
+				uniform. Protex EPI customises its entire catalog — workwear, hi-vis, PPE and accessories — with the
+				logo and colours of your company, local authority or association.
+			</p>
+			<p>
+				Every project is reviewed by our workshop: we recommend the process best suited to your logo, the
+				chosen fabric and how the garment is used, and we validate every marking with you on a proof before
+				production.
+			</p>
+		</div>
+
+		{
+			gallery.length > 0 && (
+				<div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+					{gallery.map((image) => (
+						<Image src={image} alt="" width={600} height={450} class="h-48 w-full rounded-lg object-cover" />
+					))}
+				</div>
+			)
+		}
+
+		<h2 class="mb-4 mt-10 font-heading text-2xl font-bold uppercase text-gray-900">Our marking processes</h2>
+		<div class="space-y-5">
+			{
+				processes.map((process) => (
+					<section>
+						<h3 class="font-semibold text-gray-900">{process.name}</h3>
+						<p class="mt-1 text-gray-700">{process.body}</p>
+					</section>
+				))
+			}
+		</div>
+		<p class="mt-4 text-gray-700">
+			Find more details about each technique in our
+			<a href="/en/marking-guide" class="font-medium text-blue-700 hover:text-blue-800">marking guide</a>.
+		</p>
+
+		<h2 class="mb-4 mt-10 font-heading text-2xl font-bold uppercase text-gray-900">Markings that keep PPE compliant</h2>
+		<p class="text-gray-700">
+			Customising personal protective equipment must never impair its protective properties. Our markings comply
+			with Regulation (EU) 2016/425 and the applicable standards — for instance, on hi-vis clothing
+			(EN ISO 20471), the position and size of the logo preserve the retroreflective and fluorescent areas the
+			standard requires. Learn more about
+			<a href="/en/standards" class="font-medium text-blue-700 hover:text-blue-800">standards</a>.
+		</p>
+
+		<h2 class="mb-4 mt-10 font-heading text-2xl font-bold uppercase text-gray-900">How it works</h2>
+		<ol class="grid gap-4 sm:grid-cols-2">
+			{
+				steps.map((step, index) => (
+					<li class="rounded-lg border border-gray-200 p-4">
+						<p class="font-heading text-sm font-bold uppercase text-brand">Step {index + 1}</p>
+						<p class="mt-1 font-semibold text-gray-900">{step.title}</p>
+						<p class="mt-1 text-sm text-gray-700">{step.body}</p>
+					</li>
+				))
+			}
+		</ol>
+
+		<div class="mt-10">
+			<Button href="/en/quote" variant="primary">{t('home.quote.cta')}</Button>
+		</div>
+	</main>
+</Layout>

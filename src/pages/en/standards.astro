@@ -1,0 +1,149 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Breadcrumb from '~/components/catalog/Breadcrumb.astro';
+import Button from '~/components/ui/Button.astro';
+import { useTranslations } from '~/i18n/utils';
+import { ui } from '~/i18n/ui';
+
+const lang = 'en' as const;
+const t = useTranslations(lang);
+const title = 'Workwear and PPE standards';
+const description =
+	'Understanding PPE and workwear standards: Regulation (EU) 2016/425, hi-vis EN ISO 20471, rain EN 343, gloves EN 388, safety footwear EN ISO 20345…';
+
+const norms = [
+	{
+		code: 'EN ISO 13688',
+		name: 'General requirements for protective clothing',
+		body: 'The baseline standard for all protective clothing: harmlessness of materials, ergonomics, marking, manufacturer information and size designation. It always applies alongside a risk-specific standard.',
+	},
+	{
+		code: 'EN ISO 20471',
+		name: 'High-visibility clothing',
+		body: 'Makes the wearer conspicuous day and night. Three classes based on the areas of fluorescent material and retroreflective tape: class 1 (low risk) to class 3 (high risk — roads and construction sites). The class is chosen from the workstation risk assessment.',
+	},
+	{
+		code: 'EN 343',
+		name: 'Protection against rain',
+		body: 'Rates resistance to water penetration (class 1 to 4) and evaporative resistance — breathability (class 1 to 4). A 4/4 garment offers the best protection and comfort.',
+	},
+	{
+		code: 'EN 342 / EN 14058',
+		name: 'Protection against cold',
+		body: 'EN 342 covers ensembles for cold environments (below −5 °C), EN 14058 garments for cool environments. Thermal insulation and air permeability values guide the choice for the working temperature.',
+	},
+	{
+		code: 'EN ISO 11612',
+		name: 'Protection against heat and flame',
+		body: 'Clothing protecting against brief flame exposure and various forms of heat (convective, radiant, molten metal splash). Performance levels A1/A2 then B to F.',
+	},
+	{
+		code: 'EN ISO 11611',
+		name: 'Welding clothing',
+		body: 'Protection against small molten metal splashes and welding arc radiation. Two classes depending on the intensity of the welding work.',
+	},
+	{
+		code: 'EN 1149-5',
+		name: 'Electrostatic properties',
+		body: 'Clothing that dissipates electrostatic charges, used in ATEX zones to prevent incendiary sparks — always combined with proper earthing of the wearer.',
+	},
+	{
+		code: 'EN 13034 (type 6)',
+		name: 'Limited chemical protection',
+		body: 'Protection against limited splashes of low-hazard liquid chemicals (mists, light spray).',
+	},
+	{
+		code: 'IEC 61482-2',
+		name: 'Electric arc',
+		body: 'Clothing protecting against the thermal effects of an electric arc, for live working or work near electrical installations.',
+	},
+	{
+		code: 'EN 388',
+		name: 'Gloves — mechanical risks',
+		body: 'Four to six ratings: abrasion, blade cut, tear, puncture, ISO 13997 cut and impact protection. The higher the rating, the better the protection.',
+	},
+	{
+		code: 'EN 407 / EN 511',
+		name: 'Gloves — heat and cold',
+		body: 'EN 407 rates protection against thermal risks (flame, contact heat, molten metal splash), EN 511 against convective cold, contact cold and water penetration.',
+	},
+	{
+		code: 'EN ISO 374',
+		name: 'Gloves — chemicals and micro-organisms',
+		body: 'Resistance to chemical permeation (types A, B, C depending on the number of chemicals tested) and protection against micro-organisms.',
+	},
+	{
+		code: 'EN ISO 20345',
+		name: 'Safety footwear',
+		body: 'Footwear with a toe cap resisting a 200-joule impact. Classes SB, S1, S1P, S2, S3 (and S4/S5 for boots) combine antistatic properties, heel energy absorption, water resistance and puncture-resistant soles.',
+	},
+	{
+		code: 'EN 397',
+		name: 'Industrial safety helmets',
+		body: 'Site helmets protecting against falling objects. Options cover lateral deformation, very low temperatures and molten metal splash.',
+	},
+	{
+		code: 'EN 166',
+		name: 'Eye protection',
+		body: 'Spectacles and face shields: mechanical strength (impacts of various energies), protection against liquids, dust and optical radiation depending on the filters.',
+	},
+	{
+		code: 'EN 352',
+		name: 'Hearing protection',
+		body: 'Ear muffs and ear plugs. The SNR value states the overall noise attenuation in decibels.',
+	},
+	{
+		code: 'EN 149',
+		name: 'Respiratory protection',
+		body: 'Filtering half-masks against particles: FFP1, FFP2 and FFP3 by filtration efficiency (up to 99% for FFP3).',
+	},
+];
+---
+
+<Layout title={`${title} — ${ui.en['site.title']}`} description={description}>
+	<main class="mx-auto max-w-4xl px-4 py-10">
+		<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: '/en' }, { label: 'Standards' }]} />
+		<h1 class="mb-4 font-heading text-3xl font-bold uppercase text-gray-900">Standards</h1>
+		<div class="space-y-4 text-gray-700">
+			<p>
+				All personal protective equipment sold in Europe is governed by <strong>Regulation (EU) 2016/425</strong>,
+				which sorts it into three categories by the severity of the risk covered: category I (minor risks),
+				category II (intermediate risks — most technical workwear) and category III (serious or lethal risks,
+				subject to ongoing production control).
+			</p>
+			<p>
+				On top of the regulation, European (EN) standards apply to each family of risks. Every product page in
+				our catalog states the applicable standards; EU declarations of conformity and datasheets are available
+				on request. Here are the main standards to know when choosing your equipment.
+			</p>
+		</div>
+
+		<div class="mt-8 space-y-5">
+			{
+				norms.map((norm) => (
+					<section class="rounded-lg border border-gray-200 p-4">
+						<h2 class="font-semibold text-gray-900">
+							<span class="mr-2 inline-block rounded bg-brand px-2 py-0.5 font-heading text-xs font-bold uppercase text-white">
+								{norm.code}
+							</span>
+							{norm.name}
+						</h2>
+						<p class="mt-2 text-sm text-gray-700">{norm.body}</p>
+					</section>
+				))
+			}
+		</div>
+
+		<div class="mt-10 rounded-lg bg-gray-50 p-6">
+			<h2 class="font-heading text-xl font-bold uppercase text-gray-900">Unsure which standard applies?</h2>
+			<p class="mt-2 text-gray-700">
+				Choosing PPE depends on your risk assessment. Our technical team offers free advice on the right
+				category and protection class for each workstation.
+			</p>
+			<div class="mt-4 flex flex-wrap gap-3">
+				<Button href="/en/quote" variant="primary">{t('home.quote.cta')}</Button>
+				<Button href="/en/contact" variant="dark">Contact us</Button>
+			</div>
+		</div>
+	</main>
+</Layout>

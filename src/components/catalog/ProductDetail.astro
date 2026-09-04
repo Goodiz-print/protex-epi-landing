@@ -39,13 +39,14 @@ const supplierLabels: Record<string, string> = { portwest: 'Portwest', blaklader
 			loading="eager"
 			decoding="async"
 			class="h-full w-full object-contain"
+			data-pagefind-meta="image[src], image_alt[alt]"
 			onerror="this.onerror=null;this.src='/images/product-placeholder.svg';"
 		/>
 	</div>
 	<div>
 		<h1 class="font-heading text-3xl font-bold text-gray-900">{product.name}</h1>
 		<p class="mt-2 text-sm text-gray-500">{t('product.number')}: {product.styleCode}</p>
-		<p class="mt-4 text-xl font-bold text-gray-900">{priceLabel}</p>
+		<p class="mt-4 text-xl font-bold text-gray-900" data-pagefind-meta="price">{priceLabel}</p>
 
 		{
 			otherColourways.length > 0 ? (

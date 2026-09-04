@@ -24,7 +24,9 @@ const slides = [
 	<h1 class="sr-only">{t('home.hero.title')}</h1>
 	<p class="sr-only">{t('home.hero.subtitle')}</p>
 
-	<div class="relative h-[300px] sm:h-[480px] lg:h-[560px]">
+	{/* Les 3 bannières partagent le même ratio 2,6:1 : le conteneur reprend ce
+		ratio pour afficher chaque slide en entier, sans rognage. */}
+	<div class="relative aspect-[13/5] w-full">
 		<ul class="flex h-full transition-transform duration-700 ease-in-out" data-track>
 			{
 				slides.map((slide, index) => (
@@ -33,9 +35,9 @@ const slides = [
 							<Image
 								src={slide.image}
 								alt=""
-								width={2000}
-								height={769}
-								class="h-full w-full object-cover object-left sm:object-center"
+								widths={[768, 1280, 1920, slide.image.width]}
+								sizes="100vw"
+								class="h-full w-full object-cover"
 								loading={index === 0 ? 'eager' : 'lazy'}
 							/>
 						</a>

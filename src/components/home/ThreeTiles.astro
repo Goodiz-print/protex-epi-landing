@@ -1,0 +1,41 @@
+---
+import { Image } from 'astro:assets';
+import type { Lang } from '~/utils/catalog';
+import personaliseImage from '~/assets/images/veste-haute-visbilite.png';
+import chorusImage from '~/assets/images/visuel-facturation-chorus-pro.png';
+import normesImage from '~/assets/images/visuel-les-normes.png';
+
+interface Props {
+	lang: Lang;
+}
+
+const { lang } = Astro.props;
+
+const personaliseHref = lang === 'en' ? '/en/customisation' : '/personnalisation';
+const normesHref = lang === 'en' ? '/en/standards' : '/normes';
+const personaliseLabel = lang === 'en' ? 'Add my logo' : 'Je personnalise';
+const chorusLabel = lang === 'en' ? 'Simplified invoicing with Chorus Pro' : 'Facturation simplifiée avec Chorus Pro';
+const normesLabel = lang === 'en' ? 'Standards' : 'Les normes';
+
+const tileClass = 'relative block h-36 overflow-hidden rounded-lg sm:h-44';
+const imageClass = 'h-full w-full object-cover transition-transform duration-300 group-hover:scale-105';
+---
+
+<section class="bg-gray-100">
+	<div class="mx-auto grid max-w-6xl gap-4 px-4 py-10 sm:grid-cols-3">
+		<a href={personaliseHref} class={`group ${tileClass}`}>
+			<Image src={personaliseImage} alt="" width={800} height={400} class={`${imageClass} object-top`} />
+			<span class="absolute inset-0 bg-gray-900/35 transition-colors group-hover:bg-gray-900/45" />
+			<span class="absolute inset-x-0 bottom-0 p-4 font-heading text-lg font-bold uppercase text-white">
+				{personaliseLabel}
+			</span>
+		</a>
+		{/* Facturation électronique : simple survol, pas de clic (cf. demandes). */}
+		<div class={`group ${tileClass}`}>
+			<Image src={chorusImage} alt={chorusLabel} width={800} height={400} class={imageClass} />
+		</div>
+		<a href={normesHref} class={`group ${tileClass}`} aria-label={normesLabel}>
+			<Image src={normesImage} alt={normesLabel} width={800} height={400} class={imageClass} />
+		</a>
+	</div>
+</section>

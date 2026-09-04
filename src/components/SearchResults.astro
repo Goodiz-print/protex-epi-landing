@@ -1,0 +1,177 @@
+---
+import { useTranslations } from '~/i18n/utils';
+import type { Lang } from '~/utils/catalog';
+
+interface Props {
+	lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<div
+	data-search-page
+	data-no-results-label={t('search.noResults')}
+	data-count-label={t('search.count')}
+	data-view-label={t('catalog.viewProduct')}
+	data-load-more-label={t('catalog.loadMore')}
+	data-pagefind-ignore
+>
+	<form data-search-page-form class="max-w-xl">
+		<label for="search-page-input" class="sr-only">{t('search.label')}</label>
+		<div class="relative">
+			<input
+				id="search-page-input"
+				name="q"
+				type="search"
+				autocomplete="off"
+				placeholder={t('search.placeholder')}
+				class="h-12 w-full rounded-full border-0 bg-field pl-5 pr-14 text-base text-gray-700 shadow-[inset_0_0_0_1px_rgba(0,0,0,0.1)] focus:shadow-[inset_0_0_0_1px_var(--color-brand)] focus:outline-none"
+			/>
+			<button
+				type="submit"
+				class="absolute right-1.5 top-1.5 flex h-9 w-9 items-center justify-center rounded-full bg-brand text-white transition-colors hover:bg-brand-dark"
+				aria-label={t('search.label')}
+			>
+				<svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+					<path
+						fill-rule="evenodd"
+						d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
+						clip-rule="evenodd"></path>
+				</svg>
+			</button>
+		</div>
+	</form>
+
+	<p class="mt-6 hidden text-sm text-gray-500" data-search-count></p>
+	<p class="mt-6 hidden text-gray-500" data-search-empty>{t('search.noResults')}</p>
+
+	<ul class="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3 xl:grid-cols-4" data-search-grid></ul>
+
+	<div class="mt-8 text-center">
+		<button
+			type="button"
+			data-search-more
+			class="hidden rounded-btn bg-btn-gray px-6 py-3.5 font-heading text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-btn-dark"
+		>
+			{t('catalog.loadMore')}
+		</button>
+	</div>
+</div>
+
+<script>
+	interface PagefindResultData {
+		url: string;
+		excerpt: string;
+		meta?: { title?: string; image?: string; image_alt?: string; price?: string };
+	}
+
+	interface PagefindApi {
+		search(query: string): Promise<{ results: { data(): Promise<PagefindResultData> }[] }>;
+	}
+
+	const PAGE_SIZE = 24;
+	const PLACEHOLDER = '/images/product-placeholder.svg';
+
+	function escapeHtml(value: string): string {
+		return value
+			.replaceAll('&', '&amp;')
+			.replaceAll('<', '&lt;')
+			.replaceAll('>', '&gt;')
+			.replaceAll('"', '&quot;')
+			.replaceAll("'", '&#39;');
+	}
+
+	function buildCard(data: PagefindResultData, viewLabel: string): HTMLLIElement {
+		const li = document.createElement('li');
+		const title = escapeHtml(data.meta?.title ?? data.url);
+		const image = data.meta?.image ? escapeHtml(data.meta.image) : PLACEHOLDER;
+		const price = data.meta?.price ? `<p class="mt-1 text-sm font-bold text-gray-900">${escapeHtml(data.meta.price)}</p>` : '';
+		li.innerHTML = `<div class="group flex h-full flex-col rounded-lg border border-gray-200 bg-white p-3 transition-colors hover:border-gray-400">
+			<a href="${escapeHtml(data.url)}" class="line-clamp-2 min-h-10 font-heading text-sm font-bold uppercase leading-tight text-gray-900 hover:text-brand">${title}</a>
+			<a href="${escapeHtml(data.url)}" class="mt-2 block aspect-square overflow-hidden bg-white" tabindex="-1" aria-hidden="true"><img src="${image}" width="600" height="600" alt="${title}" loading="lazy" decoding="async" class="h-full w-full object-contain transition-transform group-hover:scale-105" onerror="this.onerror=null;this.src='${PLACEHOLDER}';"></a>
+			<div class="mt-auto pt-2">
+				${price}
+				<a href="${escapeHtml(data.url)}" class="mt-2 flex h-10 items-center justify-center rounded-card-btn border border-gray-300 font-heading text-xs font-bold uppercase text-gray-900 transition-colors hover:border-brand hover:text-brand">${viewLabel}</a>
+			</div>
+		</div>`;
+		return li;
+	}
+
+	function initSearchPage() {
+		const page = document.querySelector<HTMLElement>('[data-search-page]');
+		if (!page) return;
+		const form = page.querySelector<HTMLFormElement>('[data-search-page-form]');
+		const input = page.querySelector<HTMLInputElement>('#search-page-input');
+		const grid = page.querySelector<HTMLUListElement>('[data-search-grid]');
+		const countEl = page.querySelector<HTMLElement>('[data-search-count]');
+		const emptyEl = page.querySelector<HTMLElement>('[data-search-empty]');
+		const moreButton = page.querySelector<HTMLButtonElement>('[data-search-more]');
+		if (!form || !input || !grid) return;
+
+		const viewLabel = page.dataset.viewLabel ?? '';
+		const countLabel = page.dataset.countLabel ?? '';
+
+		// Même contournement que SearchBox : le module pagefind n'existe qu'après
+		// le build, l'import doit échapper à l'analyse statique de Vite.
+		let pagefind: PagefindApi | null = null;
+		const dynamicImport = new Function('path', 'return import(path)') as (path: string) => Promise<PagefindApi>;
+
+		let results: { data(): Promise<PagefindResultData> }[] = [];
+		let shown = 0;
+
+		async function renderMore() {
+			const batch = results.slice(shown, shown + PAGE_SIZE);
+			const entries = await Promise.all(batch.map((result) => result.data()));
+			for (const entry of entries) grid!.appendChild(buildCard(entry, viewLabel));
+			shown += batch.length;
+			moreButton?.classList.toggle('hidden', shown >= results.length);
+		}
+
+		async function runSearch(query: string) {
+			grid!.replaceChildren();
+			shown = 0;
+			if (query.trim().length < 2) {
+				countEl?.classList.add('hidden');
+				emptyEl?.classList.add('hidden');
+				moreButton?.classList.add('hidden');
+				return;
+			}
+			try {
+				pagefind ??= await dynamicImport('/pagefind/pagefind.js');
+			} catch {
+				return;
+			}
+			const search = await pagefind.search(query);
+			results = search.results;
+			if (countEl) {
+				countEl.textContent = `${results.length} ${countLabel}`;
+				countEl.classList.remove('hidden');
+			}
+			emptyEl?.classList.toggle('hidden', results.length > 0);
+			await renderMore();
+		}
+
+		const params = new URLSearchParams(window.location.search);
+		const initialQuery = params.get('q') ?? '';
+		input.value = initialQuery;
+		if (initialQuery) runSearch(initialQuery);
+
+		form.addEventListener('submit', (event) => {
+			event.preventDefault();
+			const query = input.value;
+			const url = new URL(window.location.href);
+			if (query) url.searchParams.set('q', query);
+			else url.searchParams.delete('q');
+			history.replaceState(null, '', url);
+			runSearch(query);
+		});
+
+		moreButton?.addEventListener('click', () => {
+			renderMore();
+		});
+	}
+
+	initSearchPage();
+</script>

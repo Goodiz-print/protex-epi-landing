@@ -1,0 +1,23 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import SelectionPage from '~/components/catalog/SelectionPage.astro';
+import QuoteCta from '~/components/home/QuoteCta.astro';
+import { getMixedProducts } from '~/content/queries';
+import { getAllProductsUrl } from '~/utils/catalog';
+import { ui } from '~/i18n/ui';
+
+const products = await getMixedProducts();
+---
+
+<Layout title={`${ui.en['allProducts.title']} — ${ui.en['site.title']}`} description={ui.en['allProducts.intro']}>
+	<main class="mx-auto max-w-6xl px-4 py-10">
+		<SelectionPage
+			lang="en"
+			title={ui.en['allProducts.title']}
+			intro={ui.en['allProducts.intro']}
+			products={products}
+			payloadUrl={`${getAllProductsUrl('en')}/listing.json`}
+		/>
+	</main>
+	<QuoteCta lang="en" />
+</Layout>

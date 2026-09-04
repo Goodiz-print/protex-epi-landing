@@ -15,11 +15,11 @@ const { lang } = Astro.props;
 const tiles = await Promise.all(
 	thematicTiles.map(async (tile) => {
 		let image: ImageMetadata | string | undefined = tile.image;
-		if (!image && tile.subcategory) {
+		if (!image && !tile.video && tile.subcategory) {
 			const products = await getProductsBySubcategory(tile.subcategory.category, tile.subcategory.subcategory);
 			image = products[0]?.imageUrl;
 		}
-		if (!image && tile.garmentType) {
+		if (!image && !tile.video && tile.garmentType) {
 			const garmentType = garmentTypes.find((type) => type.slug === tile.garmentType);
 			if (garmentType) {
 				const products = await getProductsByGarmentType(garmentType);
@@ -27,47 +27,119 @@ const tiles = await Promise.all(
 			}
 		}
 		return {
-			href: tile.getHref(lang),
+			href: tile.getHref?.(lang),
 			label: tile.labels[lang],
 			image,
 			imagePositionClass: tile.imagePositionClass,
+			contain: tile.contain ?? false,
+			noOverlay: tile.noOverlay ?? false,
+			hideLabel: tile.hideLabel ?? false,
+			video: tile.video,
 		};
 	}),
 );
+
+const imageClass = (tile: (typeof tiles)[number]) =>
+	tile.contain
+		? 'h-full w-full object-contain p-3 transition-transform duration-300 group-hover:scale-105'
+		: `h-full w-full object-cover transition-transform duration-300 group-hover:scale-105 ${tile.imagePositionClass ?? 'object-center'}`;
 ---
 
 <section class="mx-auto max-w-6xl px-4 pb-16 pt-4">
 	<ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
 		{
-			tiles.map((tile) => (
-				<li>
-					<a href={tile.href} class="group relative block h-52 overflow-hidden rounded-lg sm:h-64">
-						{tile.image &&
-							(typeof tile.image === 'string' ? (
-								<img
-									src={tile.image}
-									alt=""
-									loading="lazy"
-									decoding="async"
-									class={`h-full w-full object-cover transition-transform duration-300 group-hover:scale-105 ${tile.imagePositionClass ?? 'object-center'}`}
-									onerror="this.onerror=null;this.src='/images/product-placeholder.svg';"
-								/>
+			tiles.map((tile) =>
+				tile.video ? (
+					<li>
+						{/* Tuile vidéo : miniature YouTube, l'iframe n'est injectée qu'au clic. */}
+						<div
+							class="group relative block h-52 cursor-pointer overflow-hidden rounded-lg bg-gray-900 sm:h-64"
+							data-video-tile
+							data-youtube-id={tile.video.youtubeId}
+							data-youtube-start={String(tile.video.start ?? 0)}
+							data-video-title={tile.label}
+						>
+							<img
+								src={`https://i.ytimg.com/vi/${tile.video.youtubeId}/hqdefault.jpg`}
+								alt={tile.label}
+								loading="lazy"
+								decoding="async"
+								class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+							/>
+							<span class="absolute inset-0 flex items-center justify-center bg-gray-900/30 transition-colors group-hover:bg-gray-900/40">
+								<span class="flex h-16 w-16 items-center justify-center rounded-full bg-white/90 text-brand shadow-lg transition-transform group-hover:scale-110">
+									<svg class="ml-1 h-8 w-8" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+										<path d="M8 5.14v13.72L19 12 8 5.14z" />
+									</svg>
+								</span>
+							</span>
+						</div>
+					</li>
+				) : (
+					<li>
+						<a
+							href={tile.href}
+							class={`group relative block h-52 overflow-hidden rounded-lg sm:h-64 ${
+								tile.contain ? 'border border-gray-200 bg-white' : ''
+							}`}
+						>
+							{tile.image &&
+								(typeof tile.image === 'string' ? (
+									<img
+										src={tile.image}
+										alt=""
+										loading="lazy"
+										decoding="async"
+										class={imageClass(tile)}
+										onerror="this.onerror=null;this.src='/images/product-placeholder.svg';"
+									/>
+								) : (
+									<Image src={tile.image} alt="" width={1200} height={600} class={imageClass(tile)} />
+								))}
+							{!tile.noOverlay && (
+								<span class="absolute inset-0 bg-gray-900/40 transition-colors group-hover:bg-gray-900/50" />
+							)}
+							{tile.hideLabel ? (
+								<span class="sr-only">{tile.label}</span>
 							) : (
-								<Image
-									src={tile.image}
-									alt=""
-									width={1200}
-									height={600}
-									class={`h-full w-full object-cover transition-transform duration-300 group-hover:scale-105 ${tile.imagePositionClass ?? 'object-center'}`}
-								/>
-							))}
-						<span class="absolute inset-0 bg-gray-900/40 transition-colors group-hover:bg-gray-900/50" />
-						<span class="absolute inset-x-0 bottom-0 p-5 font-heading text-lg font-bold uppercase text-white">
-							{tile.label}
-						</span>
-					</a>
-				</li>
-			))
+								<span
+									class={`absolute inset-x-0 bottom-0 p-5 font-heading text-lg font-bold uppercase ${
+										tile.noOverlay ? 'text-gray-900' : 'text-white'
+									}`}
+								>
+									{tile.label}
+								</span>
+							)}
+						</a>
+					</li>
+				),
+			)
 		}
 	</ul>
 </section>
+
+<script>
+	function initVideoTiles() {
+		document.querySelectorAll<HTMLElement>('[data-video-tile]').forEach((tile) => {
+			tile.addEventListener(
+				'click',
+				() => {
+					const id = tile.dataset.youtubeId;
+					if (!id) return;
+					const start = Number(tile.dataset.youtubeStart ?? '0');
+					const iframe = document.createElement('iframe');
+					iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&start=${start}`;
+					iframe.title = tile.dataset.videoTitle ?? '';
+					iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+					iframe.allowFullscreen = true;
+					iframe.className = 'absolute inset-0 h-full w-full border-0';
+					tile.replaceChildren(iframe);
+					tile.classList.remove('cursor-pointer');
+				},
+				{ once: true },
+			);
+		});
+	}
+
+	initVideoTiles();
+</script>

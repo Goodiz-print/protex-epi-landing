@@ -1,0 +1,23 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import SelectionPage from '~/components/catalog/SelectionPage.astro';
+import QuoteCta from '~/components/home/QuoteCta.astro';
+import { getCollectivitesProducts } from '~/content/queries';
+import { getCollectivitesUrl } from '~/utils/catalog';
+import { ui } from '~/i18n/ui';
+
+const products = await getCollectivitesProducts();
+---
+
+<Layout title={`${ui.fr['collectivites.title']} — ${ui.fr['site.title']}`} description={ui.fr['collectivites.intro']}>
+	<main class="mx-auto max-w-6xl px-4 py-10">
+		<SelectionPage
+			lang="fr"
+			title={ui.fr['collectivites.title']}
+			intro={ui.fr['collectivites.intro']}
+			products={products}
+			payloadUrl={`${getCollectivitesUrl('fr')}/listing.json`}
+		/>
+	</main>
+	<QuoteCta lang="fr" />
+</Layout>

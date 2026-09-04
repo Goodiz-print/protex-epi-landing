@@ -2,8 +2,10 @@
 import { useTranslations } from '~/i18n/utils';
 import type { Category, Subcategory } from '~/data/category-taxonomy';
 import type { Product } from '~/content/schemas/product';
-import { getCatalogRootUrl, getCategoryUrl, getSubcategoryUrl, type Lang } from '~/utils/catalog';
+import { getGarmentTypesBySubcategory } from '~/data/garment-types';
+import { getCatalogRootUrl, getCategoryUrl, getGarmentTypeUrl, getSubcategoryUrl, type Lang } from '~/utils/catalog';
 import Breadcrumb from './Breadcrumb.astro';
+import TileGrid from './TileGrid.astro';
 import ProductGrid from './ProductGrid.astro';
 import CatalogSidebar from './CatalogSidebar.astro';
 
@@ -18,6 +20,13 @@ const { lang, category, subcategory, products } = Astro.props;
 const t = useTranslations(lang);
 
 const homeHref = lang === 'en' ? '/en' : '/';
+
+// Sous-catégories (types de vêtements) affichées uniquement ici, en haut de la
+// page — pas dans le menu (cf. demande « faciliter la navigation »).
+const typeTiles = getGarmentTypesBySubcategory(category.slug, subcategory.slug).map((garmentType) => ({
+	href: getGarmentTypeUrl(lang, garmentType.slug),
+	label: garmentType.labels[lang],
+}));
 ---
 
 <Breadcrumb
@@ -29,6 +38,13 @@ const homeHref = lang === 'en' ? '/en' : '/';
 	]}
 />
 <h1 class="mb-6 font-heading text-3xl font-bold uppercase text-gray-900">{subcategory.labels[lang]}</h1>
+{
+	typeTiles.length > 0 && (
+		<div class="mb-8">
+			<TileGrid tiles={typeTiles} />
+		</div>
+	)
+}
 <ProductGrid
 	lang={lang}
 	products={products}

@@ -1,0 +1,147 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import Layout from '~/layouts/Layout.astro';
+import Breadcrumb from '~/components/catalog/Breadcrumb.astro';
+import Button from '~/components/ui/Button.astro';
+import { useTranslations } from '~/i18n/utils';
+import { ui } from '~/i18n/ui';
+
+const lang = 'fr' as const;
+const t = useTranslations(lang);
+const title = 'Personnalisation de vos EPI et vêtements de travail';
+const description =
+	'Broderie, sérigraphie, transfert, flocage… Protex EPI personnalise vos vêtements de travail et EPI au logo de votre entreprise, dans le respect des normes de sécurité.';
+
+// Les visuels déposés dans src/assets/images/personnalisation/ sont repris
+// automatiquement dans la galerie ci-dessous.
+const gallery = Object.values(
+	import.meta.glob<{ default: ImageMetadata }>('../assets/images/personnalisation/*.{png,jpg,jpeg,webp}', {
+		eager: true,
+	}),
+).map((module) => module.default);
+
+const processes = [
+	{
+		name: 'Broderie',
+		body: 'Le logo est brodé directement dans le textile, fil par fil. Un rendu haut de gamme, en relief, d’une durabilité exceptionnelle : la broderie résiste aux lavages industriels répétés. Idéale pour les polos, softshells, parkas et casquettes.',
+	},
+	{
+		name: 'Sérigraphie',
+		body: 'L’encre est déposée à travers un écran, couleur par couleur. C’est le procédé de référence pour les moyennes et grandes séries : couleurs vives et opaques, excellente tenue, coût dégressif avec la quantité.',
+	},
+	{
+		name: 'Transfert sérigraphique',
+		body: 'Le marquage est d’abord imprimé sur un film, puis appliqué sur le vêtement à chaud. Il épouse les matières techniques et les surfaces difficiles d’accès (poches, coutures) et convient parfaitement aux vêtements haute visibilité.',
+	},
+	{
+		name: 'Flocage / marquage thermocollé',
+		body: 'Un film découpé à la forme de votre logo est thermocollé sur le textile. Rendu mat ou velours, très lisible : c’est la solution classique pour les grands marquages dos et les textes (nom de société, fonction).',
+	},
+	{
+		name: 'Impression numérique (DTF)',
+		body: 'Votre visuel est imprimé en quadrichromie puis transféré sur le vêtement. Aucune limite de couleurs ni de dégradés : parfaite pour les logos complexes, même en petite quantité.',
+	},
+	{
+		name: 'Tampographie',
+		body: 'Un tampon souple dépose l’encre sur l’objet, y compris sur les surfaces courbes ou irrégulières. C’est le procédé privilégié pour les accessoires et petits objets (casques, gourdes, objets publicitaires).',
+	},
+	{
+		name: 'Gravure laser',
+		body: 'Le laser grave le marquage dans la matière, sans encre. Un résultat sobre, précis et inaltérable, adapté au métal, au bois et à certains textiles techniques.',
+	},
+];
+
+const steps = [
+	{
+		title: 'Choisissez vos produits',
+		body: 'Parcourez le catalogue et sélectionnez vos vêtements et EPI (tailles, coloris, quantités).',
+	},
+	{
+		title: 'Envoyez-nous votre logo',
+		body: 'Transmettez votre logo (idéalement en format vectoriel) et les emplacements souhaités : cœur, dos, manche…',
+	},
+	{
+		title: 'Validez votre BAT',
+		body: 'Nous vous envoyons un bon à tirer gratuit avec simulation du marquage. Rien ne part en production sans votre accord.',
+	},
+	{
+		title: 'Production et livraison',
+		body: 'Vos équipements sont marqués dans nos ateliers puis livrés directement sur votre site.',
+	},
+];
+---
+
+<Layout title={`${title} — ${ui.fr['site.title']}`} description={description}>
+	<main class="mx-auto max-w-4xl px-4 py-10">
+		<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: '/' }, { label: 'Personnalisation' }]} />
+		<h1 class="mb-4 font-heading text-3xl font-bold uppercase text-gray-900">Je personnalise</h1>
+		<div class="space-y-4 text-gray-700">
+			<p>
+				Vos vêtements de travail sont le premier support de votre image : un logo bien placé transforme un
+				équipement en véritable uniforme d’entreprise. Protex EPI personnalise l’ensemble de son catalogue —
+				vêtements de travail, haute visibilité, EPI et accessoires — au logo et aux couleurs de votre société,
+				de votre collectivité ou de votre association.
+			</p>
+			<p>
+				Chaque projet est étudié par notre atelier : nous vous recommandons le procédé le mieux adapté à votre
+				logo, au textile choisi et à l’usage du vêtement, et nous validons chaque marquage avec vous sur bon à
+				tirer avant production.
+			</p>
+		</div>
+
+		{
+			gallery.length > 0 && (
+				<div class="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+					{gallery.map((image) => (
+						<Image src={image} alt="" width={600} height={450} class="h-48 w-full rounded-lg object-cover" />
+					))}
+				</div>
+			)
+		}
+
+		<h2 class="mb-4 mt-10 font-heading text-2xl font-bold uppercase text-gray-900">Nos procédés de marquage</h2>
+		<div class="space-y-5">
+			{
+				processes.map((process) => (
+					<section>
+						<h3 class="font-semibold text-gray-900">{process.name}</h3>
+						<p class="mt-1 text-gray-700">{process.body}</p>
+					</section>
+				))
+			}
+		</div>
+		<p class="mt-4 text-gray-700">
+			Retrouvez le détail de chaque technique dans notre
+			<a href="/guide-marquage" class="font-medium text-blue-700 hover:text-blue-800">guide de marquage</a>.
+		</p>
+
+		<h2 class="mb-4 mt-10 font-heading text-2xl font-bold uppercase text-gray-900">
+			Un marquage conforme aux normes EPI
+		</h2>
+		<p class="text-gray-700">
+			La personnalisation d’un équipement de protection individuelle ne doit jamais altérer ses propriétés
+			protectrices. Nos marquages sont réalisés dans le respect du Règlement (UE) 2016/425 et des normes
+			applicables — par exemple, sur un vêtement haute visibilité (EN ISO 20471), l’emplacement et la taille du
+			logo préservent les surfaces rétroréfléchissantes et fluorescentes exigées par la norme. En savoir plus sur
+			<a href="/normes" class="font-medium text-blue-700 hover:text-blue-800">les normes</a>.
+		</p>
+
+		<h2 class="mb-4 mt-10 font-heading text-2xl font-bold uppercase text-gray-900">Comment ça marche&nbsp;?</h2>
+		<ol class="grid gap-4 sm:grid-cols-2">
+			{
+				steps.map((step, index) => (
+					<li class="rounded-lg border border-gray-200 p-4">
+						<p class="font-heading text-sm font-bold uppercase text-brand">Étape {index + 1}</p>
+						<p class="mt-1 font-semibold text-gray-900">{step.title}</p>
+						<p class="mt-1 text-sm text-gray-700">{step.body}</p>
+					</li>
+				))
+			}
+		</ol>
+
+		<div class="mt-10">
+			<Button href="/devis" variant="primary">{t('home.quote.cta')}</Button>
+		</div>
+	</main>
+</Layout>

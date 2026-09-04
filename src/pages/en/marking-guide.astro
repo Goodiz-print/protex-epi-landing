@@ -1,0 +1,131 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Breadcrumb from '~/components/catalog/Breadcrumb.astro';
+import Button from '~/components/ui/Button.astro';
+import { useTranslations } from '~/i18n/utils';
+import { ui } from '~/i18n/ui';
+
+const lang = 'en' as const;
+const t = useTranslations(lang);
+const title = 'Marking processes guide';
+const description =
+	'Screen printing, embroidery, transfer, flock, pad printing, laser engraving… Our guide to choosing the right marking process for your workwear, PPE and personalised items.';
+
+const processes = [
+	{
+		name: 'Screen printing',
+		principle:
+			'Ink is pushed through a mesh screen (a stencil) directly onto the item, one colour at a time. Each colour needs its own screen.',
+		advantages: ['Vivid, opaque, durable colours', 'Excellent value at quantity', 'Large print areas possible'],
+		idealFor: 'Medium and large textile runs: t-shirts, sweatshirts, hi-vis vests.',
+		limits: 'Fixed cost per colour (films and screens): not suited to very small runs or photographic gradients.',
+	},
+	{
+		name: 'Embroidery',
+		principle:
+			'Your logo is reproduced in polyester or cotton threads, stitched directly into the fabric by multi-head machines from a digitised embroidery file.',
+		advantages: ['Premium, textured finish', 'Outstanding wash resistance, including industrial laundry', 'Great on thick fabrics'],
+		idealFor: 'Polos, shirts, softshells, parkas, fleeces, caps and beanies — any long-lasting “image” garment.',
+		limits: 'Less suited to very fine logos or gradients; not recommended on very light or waterproof fabrics (needle perforation).',
+	},
+	{
+		name: 'Screen-printed transfer',
+		principle: 'The design is screen-printed in reverse onto a carrier film, then heat-pressed onto the garment.',
+		advantages: ['Fine detail and precision', 'Reaches difficult areas (pockets, seams, sleeves)', 'Works on technical and hi-vis fabrics'],
+		idealFor: 'Technical workwear, hi-vis PPE, fabrics sensitive to direct heat.',
+		limits: 'Slightly more noticeable hand-feel than direct screen printing.',
+	},
+	{
+		name: 'Flock / heat-applied marking',
+		principle:
+			'A coloured film (plain, velvet or glitter) is cut to the exact shape of your logo or text, then heat-pressed onto the fabric.',
+		advantages: ['Highly legible, matt or velvet finish', 'Perfect for lettering and solid marks', 'Fast, even for single items'],
+		idealFor: 'Large back prints (“SECURITY”, company name), individual names, small runs.',
+		limits: 'One or two colours in practice; complex logos are better served by DTF.',
+	},
+	{
+		name: 'Digital printing (DTF — Direct To Film)',
+		principle:
+			'The artwork is printed in full colour onto a film, coated with hot-melt powder, then transferred onto the garment under a press.',
+		advantages: ['No limit on colours — gradients and photos possible', 'No screen costs: viable from small quantities', 'Good wash resistance'],
+		idealFor: 'Multicolour or complex logos, small and medium runs, frequent re-orders.',
+		limits: 'On very large runs, screen printing remains more economical.',
+	},
+	{
+		name: 'Pad printing',
+		principle:
+			'A silicone pad picks up ink from an engraved plate and deposits it onto the object — including curved, hollow or irregular surfaces.',
+		advantages: ['High precision on small areas', 'Adapts to almost any object shape', 'High throughput'],
+		idealFor: 'Helmets, bottles, pens, badges and small accessories.',
+		limits: 'Small print area; limited number of colours.',
+	},
+	{
+		name: 'Laser engraving',
+		principle:
+			'A laser beam engraves the marking into the material itself (metal, wood, some technical textiles), with no ink or added material.',
+		advantages: ['Permanent marking, unaffected by washing or abrasion', 'Subtle, precise finish', 'No ink: ideal in demanding environments'],
+		idealFor: 'Metal or wooden items, tools, plates, some softshells (tone-on-tone effect).',
+		limits: 'Monochrome result, in the shade of the engraved material.',
+	},
+];
+---
+
+<Layout title={`${title} — ${ui.en['site.title']}`} description={description}>
+	<main class="mx-auto max-w-4xl px-4 py-10">
+		<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: '/en' }, { label: title }]} />
+		<h1 class="mb-4 font-heading text-3xl font-bold uppercase text-gray-900">{title}</h1>
+		<div class="space-y-4 text-gray-700">
+			<p>
+				Every marking process has its strengths: durability, detail, cost, suitability for the material. This
+				guide explains how we personalise your workwear, PPE and objects, and which process to favour for your
+				project. When in doubt, our workshop recommends the best solution for your logo, quantities and chosen
+				fabrics.
+			</p>
+			<p>
+				Note: since base materials differ, the shades obtained can vary slightly from Pantone references,
+				especially on coloured backgrounds — European regulations on heavy metals and solvents make pigments
+				evolve. On PPE, every marking is applied in compliance with the applicable standards
+				(Regulation (EU) 2016/425).
+			</p>
+		</div>
+
+		<div class="mt-8 space-y-6">
+			{
+				processes.map((process) => (
+					<section class="rounded-lg border border-gray-200 p-5">
+						<h2 class="font-heading text-xl font-bold uppercase text-gray-900">{process.name}</h2>
+						<p class="mt-2 text-gray-700">{process.principle}</p>
+						<div class="mt-3 grid gap-4 sm:grid-cols-2">
+							<div>
+								<h3 class="text-sm font-semibold text-gray-900">Advantages</h3>
+								<ul class="mt-1 list-inside list-disc space-y-1 text-sm text-gray-700">
+									{process.advantages.map((advantage) => (
+										<li>{advantage}</li>
+									))}
+								</ul>
+							</div>
+							<div>
+								<h3 class="text-sm font-semibold text-gray-900">Ideal for</h3>
+								<p class="mt-1 text-sm text-gray-700">{process.idealFor}</p>
+								<h3 class="mt-3 text-sm font-semibold text-gray-900">Good to know</h3>
+								<p class="mt-1 text-sm text-gray-700">{process.limits}</p>
+							</div>
+						</div>
+					</section>
+				))
+			}
+		</div>
+
+		<div class="mt-10 rounded-lg bg-gray-50 p-6">
+			<h2 class="font-heading text-xl font-bold uppercase text-gray-900">Need advice?</h2>
+			<p class="mt-2 text-gray-700">
+				Send us your logo and quantities: we will suggest the most suitable process, with a free proof before
+				any production.
+			</p>
+			<div class="mt-4 flex flex-wrap gap-3">
+				<Button href="/en/quote" variant="primary">{t('home.quote.cta')}</Button>
+				<Button href="/en/customisation" variant="dark">Customisation</Button>
+			</div>
+		</div>
+	</main>
+</Layout>

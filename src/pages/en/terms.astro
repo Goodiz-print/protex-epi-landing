@@ -8,61 +8,123 @@ import { ui } from '~/i18n/ui';
 const lang = 'en' as const;
 const t = useTranslations(lang);
 const title = t('footer.legal.terms');
-const description = 'Protex EPI terms and conditions of sale.';
+const description = 'Protex EPI (SAS GOODIZ PRINT) terms and conditions of sale.';
 
 const articles = [
 	{
-		heading: 'Article 1 — Purpose',
-		body: 'These terms and conditions govern sales of personal protective equipment (PPE) between Protex EPI and its professional customers, following an accepted quote.',
+		heading: '1. General',
+		paragraphs: [
+			'Our products, catalog and website www.protex-epi.com are reserved exclusively for companies, works councils, local authorities, retailers and associations. By placing an order with us, the buyer accepts our terms and conditions and waives their own. Any order placed implies acceptance of our terms and conditions of sale. The personal protective equipment (PPE) and workwear shown in our catalogs and websites are not contractual. We reserve the right to make any technical or aesthetic modification we deem necessary, always with a view to improvement. All products shown in our catalogs and websites bearing commercial logos or registered trademarks are given as examples only.',
+		],
 	},
 	{
-		heading: 'Article 2 — Seller identification',
-		body: 'Protex EPI, registered office located at 4 Rue la Motte Picquet, 33300 Bordeaux, France (phone: +33 5 57 02 75 87, email: contact@protex-epi.com). [To be completed: legal form, share capital, company registration number.]',
+		heading: '2. Quotations',
+		paragraphs: [
+			'Quotations given by telephone are estimates and cannot be considered contractual. They may be confirmed, where applicable, by our sales department by e-mail.',
+		],
 	},
 	{
-		heading: 'Article 3 — Products and pricing',
-		body: '[To be completed: product presentation terms, currency, price variation conditions, VAT-exclusive/inclusive pricing.]',
+		heading: '3. Orders',
+		paragraphs: [
+			'Every order must be placed in writing (either our quotation or pro forma returned by e-mail, dated and signed with the words “Read and approved – Order confirmed”, or a purchase order on company letterhead restating the terms and conditions of our quotation). For technical reasons, we reserve the right to deliver and invoice plus or minus 5% of the quantities ordered.',
+		],
 	},
 	{
-		heading: 'Article 4 — Orders and quotes',
-		body: 'Every order is subject to a prior quote drawn up from the request submitted by the customer (quote form, email or phone). [To be completed: precise quote acceptance terms.]',
+		heading: '4. Samples',
+		paragraphs: [
+			'Any sample request must be made in writing (mail or e-mail). Samples are invoiced at the wholesale price plus a €15 (excl. VAT) handling fee.',
+		],
 	},
 	{
-		heading: 'Article 5 — Payment',
-		body: '[To be completed: accepted payment methods, terms, late payment penalties.]',
+		heading: '5. Prices',
+		paragraphs: [
+			'Our prices are exclusive of tax (VAT 20%). They are indicative and may be revised in the event of currency fluctuations, changes in raw material prices (textiles, leather, technical components) or in the taxation applicable on the day of delivery. Our base prices may be discounted. Slight differences in colours, sizes or fabric weights, or extended manufacturing lead times, are tolerated by trade practice and cannot under any circumstances give rise to a claim. Our prices are ex-Bordeaux unless otherwise agreed.',
+		],
 	},
 	{
-		heading: 'Article 6 — Delivery',
-		body: '[To be completed: delivery areas, lead times, carriers, fees.]',
+		heading: '6. Marking and compliance',
+		paragraphs: [
+			'Our products can be customised using various processes: screen printing, pad printing, transfer, embroidery, laser engraving or heat-applied marking, in compliance with the safety standards applicable to personal protective equipment. As base materials differ, we cannot achieve shades and gloss identical to Pantone C references. Given European regulations on heavy metals and solvents, colour pigments evolve, which can lead to slight shade differences depending on the printing process (particularly on coloured backgrounds). Any customisation remains subject to the product’s compliance with the applicable PPE standards (Regulation (EU) 2016/425); claims for manufacturing defects are not admissible.',
+		],
 	},
 	{
-		heading: 'Article 7 — Right of withdrawal',
-		body: '[To be completed: the right of withdrawal generally does not apply to business-to-business sales; to confirm based on customer status.]',
+		heading: '7. Payment terms',
+		paragraphs: [
+			'A cheque for 50% of the total amount (incl. VAT) must accompany the order (returned if we cancel, retained if you cancel, without this giving rise to any compensation). Every customer is subject to an acceptance request with our credit insurance provider. Customers who are refused, or whose delivery deadline is too close to obtain approval, will be asked to pay on order by bank transfer only. For customers with an open account, the balance is payable on receipt of invoice. Any late payment makes all outstanding amounts immediately due. Any delay or postponement of a due date will be invoiced after calculation of late-payment interest and after actual payment. The interest rate is 18% (French law 92-1442 of 31.12.92 on payment terms between businesses). Any late payment automatically entitles us, without prior formal notice, to late-payment penalties based on the ECB rate plus ten (10) points and to a fixed recovery indemnity of €40.',
+		],
 	},
 	{
-		heading: 'Article 8 — Warranties',
-		body: '[To be completed: statutory conformity warranty, hidden defects warranty, manufacturer warranties where applicable.]',
+		heading: '8. Delivery times',
+		paragraphs: [
+			'Once the proof has been approved, delivery takes from 1 week to 4 months depending on the items. These times are indicative. A late delivery cannot under any circumstances give rise to damages, order cancellation, refusal of the goods or postponement of payment.',
+		],
 	},
 	{
-		heading: 'Article 9 — Governing law and disputes',
-		body: '[To be completed: governing law, competent court, consumer mediation where applicable.]',
+		heading: '9. Shipping / Delivery',
+		paragraphs: [
+			'Goods travel at the recipient’s risk. In the event of damage, loss or delay, it is the recipient’s responsibility to make the customary reservations with the carrier within the legal time limits in order to preserve their rights.',
+		],
+	},
+	{
+		heading: '10. Retention of title',
+		paragraphs: [
+			'Pursuant to French law no. 80-335 of 12 May 1980, ownership of delivered and invoiced goods is transferred only upon full payment of the price (this right of claim applies even in the event of receivership or judicial liquidation). Legal ownership of our items therefore passes to the buyer only on the date full payment is made. If the goods are sold in the meantime, the customer must assign the receivable to us, and any payments received on such receivables must be forwarded to us upon receipt. These provisions do not prevent the transfer to the buyer, upon delivery, of the risks of loss or deterioration of the goods sold and of any damage they may cause.',
+		],
+	},
+	{
+		heading: '11. Intellectual property',
+		paragraphs: [
+			'By placing an order with us, you authorise SAS GOODIZ PRINT (trading as PROTEX EPI) to use your logo and name in our catalogs and on our website (examples of customised items, customer references).',
+		],
+	},
+	{
+		heading: '12. Personal data and right to object',
+		paragraphs: [
+			'The information collected by SAS GOODIZ PRINT (PROTEX EPI brand) is collected and recorded by the company for the purpose of performing the service (quotation, order, delivery, invoicing, handling of any claims, customer relations, satisfaction surveys, etc.). Only the data strictly necessary for these purposes is kept, for the periods corresponding to each processing operation.',
+			'In accordance with the French Data Protection Act 78-17 of 6 January 1978, as amended, and European Regulation 2016/679 of 27 April 2016, you have the right to access, rectify, restrict, erase and delete your data, and to object, on legitimate grounds, to the use of your data.',
+			'To exercise these rights, write to contact@protex-epi.com or to SAS GOODIZ PRINT, 4 rue la Motte Picquet – 33300 BORDEAUX, France, stating “Droit des personnes” in the subject line and enclosing a copy of your proof of identity.',
+		],
+	},
+	{
+		heading: '13. Claims',
+		paragraphs: ['Any claim must reach us by registered letter within 48 hours of receipt of the goods.'],
+	},
+	{
+		heading: '14. Returns',
+		paragraphs: [
+			'No return can be accepted without the prior written agreement of SAS GOODIZ PRINT. If the customer returns products without the agreement of SAS GOODIZ PRINT, the products are held at the customer’s disposal and cannot under any circumstances give rise to a credit note; in this case, the customer is liable for the costs and risks of returning the products concerned. SAS GOODIZ PRINT may issue a credit note for a return it deems justified. For hygiene and safety reasons, customised, worn or unpackaged PPE cannot be returned.',
+		],
+	},
+	{
+		heading: '15. Jurisdiction',
+		paragraphs: ['In the event of a dispute, the court of Bordeaux has sole jurisdiction.'],
+	},
+	{
+		heading: '16. Use of site content by customers and by PROTEX EPI',
+		paragraphs: [
+			'The entire content — including the composition and assembly — of the website www.protex-epi.com, including but not limited to texts, graphics, logos, icons, buttons, images, audio clips and software, is owned by SAS GOODIZ PRINT or used with the permission of the owner of the rights, trademark or service. This content is protected by French, European and international law.',
+			'SAS GOODIZ PRINT authorises you to copy content from www.protex-epi.com solely for non-commercial purposes, within your organisation, and exclusively in connection with the purchase of products from PROTEX EPI. You may print a single copy of the content of this site for your personal use, solely for the purposes of learning about, evaluating or acquiring PROTEX EPI services or products.',
+			'Without the express permission of SAS GOODIZ PRINT, you may not print, copy, post, reproduce, publish, distribute, transmit, download, record, store, disclose, alter or modify the content of the PROTEX EPI site, by any means including but not limited to electronic, mechanical, photocopying or recording. You may not use PROTEX EPI icons to create hyperlinks, whether between two other websites or between a website and this site, or use for any reason whatsoever the PROTEX EPI name, registered trademarks or patented designs present on the PROTEX EPI site.',
+			'Any authorisation granted is automatically cancelled if you breach any of the above terms or conditions. You must immediately destroy all saved and/or printed content from this site. Any unauthorised use of any content of this site may violate copyright, trademark or privacy legislation, or legislation on advertising and communications.',
+			'PROTEX EPI asks you to respect its own intellectual property rights and those of others. In particular, by placing an order with PROTEX EPI, you certify that you have the right to use all logos, texts and/or graphics you have submitted to us to customise the chosen items. By placing an order, you also agree that your name and logo may be used on our Customer References page. SAS GOODIZ PRINT reserves the right, in certain circumstances and at its sole discretion, to refuse or accept orders from customers who have infringed or violated the intellectual property rights of a third party.',
+		],
 	},
 ];
 ---
 
-<Layout title={`${title} — ${ui.en['site.title']}`} description={description} noindex>
+<Layout title={`${title} — ${ui.en['site.title']}`} description={description}>
 	<main class="mx-auto max-w-3xl px-4 py-10">
 		<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: '/en' }, { label: title }]} />
-		<h1 class="mb-4 text-2xl font-semibold text-gray-900">{title}</h1>
-		<LegalNotice
-			text="This document is an indicative structural template. It must be reviewed, completed (legal identity, registration number, payment terms, delivery, withdrawal, governing law…) and validated by a legal professional before publication."
-		/>
+		<h1 class="mb-4 text-2xl font-semibold text-gray-900">Terms and Conditions of Sale – PROTEX EPI</h1>
+		<LegalNotice text="This English translation is provided for convenience only. Only the French version of these terms and conditions is legally binding." />
 		<div class="space-y-6 text-gray-700">
 			{
 				articles.map((article) => (
 					<section>
 						<h2 class="mb-1 font-semibold text-gray-900">{article.heading}</h2>
-						<p>{article.body}</p>
+						{article.paragraphs.map((paragraph) => (
+							<p class="mt-2">{paragraph}</p>
+						))}
 					</section>
 				))
 			}
