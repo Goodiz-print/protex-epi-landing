@@ -3,6 +3,7 @@ import { useTranslations } from '~/i18n/utils';
 import type { Category, Subcategory } from '~/data/category-taxonomy';
 import type { Product } from '~/content/schemas/product';
 import { getCatalogRootUrl, getCategoryUrl, getSubcategoryUrl, type Lang } from '~/utils/catalog';
+import { getRefinements } from '~/data/refinements';
 import Breadcrumb from './Breadcrumb.astro';
 import ProductGrid from './ProductGrid.astro';
 import CatalogSidebar from './CatalogSidebar.astro';
@@ -33,6 +34,7 @@ const homeHref = lang === 'en' ? '/en' : '/';
 	lang={lang}
 	products={products}
 	payloadUrl={`${getSubcategoryUrl(lang, category.slug, subcategory.slug)}/listing.json`}
+	refinements={getRefinements(category.slug, subcategory.slug)}
 >
 	<CatalogSidebar
 		slot="sidebar"
