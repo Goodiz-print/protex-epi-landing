@@ -39,7 +39,8 @@ export const ui = {
 		'quote.page.intro':
 			'Décrivez votre besoin ci-dessous, un conseiller Protex EPI revient vers vous avec une offre sans engagement sous 24h.',
 		'quote.form.product': 'Produit concerné',
-		'quote.form.productPlaceholder': 'Demande générale (aucun produit sélectionné)',
+		'quote.form.productPlaceholder': 'Référence ou nom du produit (facultatif)',
+		'quote.form.honeypot': 'Ne pas remplir ce champ',
 		'quote.form.name': 'Nom complet',
 		'quote.form.company': 'Société',
 		'quote.form.email': 'E-mail',
@@ -48,13 +49,14 @@ export const ui = {
 		'quote.form.message': 'Votre message',
 		'quote.form.messagePlaceholder': 'Précisez vos besoins : tailles, coloris, quantités par référence…',
 		'quote.form.submit': 'Envoyer ma demande',
-		'quote.form.submitting': 'Envoi en cours…',
 		'quote.form.success': 'Merci ! Votre demande a bien été envoyée, nous revenons vers vous sous 24h.',
 		'quote.form.error':
 			'Une erreur est survenue lors de l’envoi. Vous pouvez nous contacter directement par téléphone ou e-mail.',
-		'quote.form.mailtoInfo':
-			'Votre logiciel de messagerie va s’ouvrir avec votre demande pré-remplie : il ne vous reste plus qu’à cliquer sur Envoyer.',
 		'quote.form.requiredHint': 'Champs obligatoires',
+		'quote.thanks.title': 'Demande envoyée',
+		'quote.thanks.body':
+			'Un conseiller Protex EPI revient vers vous sous 24h avec une offre sans engagement. Pour toute urgence, appelez-nous au 05 57 02 75 87.',
+		'quote.thanks.backHome': 'Retour à l’accueil',
 		'catalog.requestQuote': 'Demander un devis',
 		'product.number': 'Numéro de produit',
 		'product.tabs.description': 'Description',
@@ -155,7 +157,8 @@ export const ui = {
 		'quote.page.intro':
 			'Tell us what you need below — a Protex EPI advisor will get back to you with a no-obligation offer within 24h.',
 		'quote.form.product': 'Product',
-		'quote.form.productPlaceholder': 'General enquiry (no product selected)',
+		'quote.form.productPlaceholder': 'Product reference or name (optional)',
+		'quote.form.honeypot': 'Do not fill in this field',
 		'quote.form.name': 'Full name',
 		'quote.form.company': 'Company',
 		'quote.form.email': 'Email',
@@ -164,11 +167,13 @@ export const ui = {
 		'quote.form.message': 'Your message',
 		'quote.form.messagePlaceholder': 'Tell us more: sizes, colours, quantities per reference…',
 		'quote.form.submit': 'Send my request',
-		'quote.form.submitting': 'Sending…',
 		'quote.form.success': 'Thank you! Your request has been sent, we will get back to you within 24h.',
 		'quote.form.error': 'Something went wrong while sending. You can reach us directly by phone or email.',
-		'quote.form.mailtoInfo': 'Your email client will open with your request pre-filled — just hit Send to finish.',
 		'quote.form.requiredHint': 'Required fields',
+		'quote.thanks.title': 'Request sent',
+		'quote.thanks.body':
+			'A Protex EPI advisor will get back to you within 24h with a no-obligation offer. For anything urgent, call us on +33 5 57 02 75 87.',
+		'quote.thanks.backHome': 'Back to home',
 		'catalog.requestQuote': 'Request a quote',
 		'product.number': 'Product number',
 		'product.tabs.description': 'Description',

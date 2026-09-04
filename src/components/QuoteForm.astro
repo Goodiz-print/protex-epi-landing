@@ -9,32 +9,21 @@ interface Props {
 const { lang } = Astro.props;
 const t = useTranslations(lang);
 
-// By default the form opens the visitor's own email client via a pre-filled `mailto:`
-// link — no backend or third-party account required. Optionally set
-// PUBLIC_QUOTE_FORM_ENDPOINT to a form-to-email service endpoint (e.g. a Formspree form
-// URL: https://formspree.io/f/xxxxxxx) to submit silently instead.
-const endpoint = import.meta.env.PUBLIC_QUOTE_FORM_ENDPOINT as string | undefined;
-const QUOTE_EMAIL = 'contact@protex-epi.com';
+// Soumission HTML native vers la fonction Netlify (netlify/functions/quote.mts),
+// qui envoie l'e-mail via Resend puis redirige vers /merci — aucun JavaScript
+// requis pour envoyer. Le seul script ci-dessous pré-remplit le champ produit
+// depuis ?product=&sku= (liens « Demander un devis » des fiches produit) et
+// affiche la bannière d'erreur au retour de ?error=1.
 ---
 
-<form
-	class="grid gap-4"
-	data-quote-form
-	data-endpoint={endpoint ?? ''}
-	data-quote-email={QUOTE_EMAIL}
-	data-msg-submitting={t('quote.form.submitting')}
-	data-msg-success={t('quote.form.success')}
-	data-msg-error={t('quote.form.error')}
-	data-msg-mailto={t('quote.form.mailtoInfo')}
-	data-submit-label={t('quote.form.submit')}
-	data-label-product={t('quote.form.product')}
-	data-label-name={t('quote.form.name')}
-	data-label-company={t('quote.form.company')}
-	data-label-email={t('quote.form.email')}
-	data-label-phone={t('quote.form.phone')}
-	data-label-quantity={t('quote.form.quantity')}
-	data-label-message={t('quote.form.message')}
->
+<form method="POST" action="/.netlify/functions/quote" class="grid gap-4" data-quote-form>
+	<input type="hidden" name="locale" value={lang} />
+
+	{/* Piège à bots : masqué visuellement et retiré de l'ordre de tabulation. */}
+	<p class="hidden" aria-hidden="true">
+		<label>{t('quote.form.honeypot')} <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+	</p>
+
 	<div>
 		<label for="quote-product" class="mb-1 block text-sm font-medium text-gray-900">
 			{t('quote.form.product')}
@@ -43,9 +32,9 @@ const QUOTE_EMAIL = 'contact@protex-epi.com';
 			id="quote-product"
 			name="product"
 			type="text"
-			readonly
+			maxlength="300"
 			placeholder={t('quote.form.productPlaceholder')}
-			class="w-full rounded-md border border-gray-300 bg-gray-50 px-3 py-2 text-gray-700"
+			class="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-gray-500 focus:outline-none"
 		/>
 	</div>
 
@@ -59,6 +48,8 @@ const QUOTE_EMAIL = 'contact@protex-epi.com';
 				name="name"
 				type="text"
 				required
+				maxlength="200"
+				autocomplete="name"
 				class="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-gray-500 focus:outline-none"
 			/>
 		</div>
@@ -70,6 +61,8 @@ const QUOTE_EMAIL = 'contact@protex-epi.com';
 				id="quote-company"
 				name="company"
 				type="text"
+				maxlength="200"
+				autocomplete="organization"
 				class="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-gray-500 focus:outline-none"
 			/>
 		</div>
@@ -85,6 +78,8 @@ const QUOTE_EMAIL = 'contact@protex-epi.com';
 				name="email"
 				type="email"
 				required
+				maxlength="254"
+				autocomplete="email"
 				class="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-gray-500 focus:outline-none"
 			/>
 		</div>
@@ -96,6 +91,8 @@ const QUOTE_EMAIL = 'contact@protex-epi.com';
 				id="quote-phone"
 				name="phone"
 				type="tel"
+				maxlength="50"
+				autocomplete="tel"
 				class="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-gray-500 focus:outline-none"
 			/>
 		</div>
@@ -123,6 +120,7 @@ const QUOTE_EMAIL = 'contact@protex-epi.com';
 			id="quote-message"
 			name="message"
 			rows="4"
+			maxlength="5000"
 			placeholder={t('quote.form.messagePlaceholder')}
 			class="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-gray-500 focus:outline-none"
 		></textarea>
@@ -130,110 +128,29 @@ const QUOTE_EMAIL = 'contact@protex-epi.com';
 
 	<p class="text-xs text-gray-500">{t('quote.form.requiredHint')} (*)</p>
 
-	<div data-form-status role="status" aria-live="polite" class="hidden rounded-md p-3 text-sm"></div>
+	<div data-form-error role="alert" class="hidden rounded-md bg-red-50 p-3 text-sm text-red-700">
+		{t('quote.form.error')}
+	</div>
 
 	<button
 		type="submit"
-		data-submit-button
-		class="inline-flex w-fit items-center rounded-md bg-blue-600 px-6 py-3 font-medium text-white transition-colors hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-60"
+		class="inline-flex w-fit items-center rounded-md bg-brand px-6 py-3 font-medium text-white transition-colors hover:bg-brand-dark"
 	>
 		{t('quote.form.submit')}
 	</button>
 </form>
 
 <script>
-	function initQuoteForms() {
-		document.querySelectorAll<HTMLFormElement>('[data-quote-form]').forEach((form) => {
-			const params = new URLSearchParams(window.location.search);
-			const productField = form.querySelector<HTMLInputElement>('#quote-product');
-			const productName = params.get('product');
-			const productSku = params.get('sku');
-			if (productField && productName) {
-				productField.value = productSku ? `${productName} (${productSku})` : productName;
-			}
-
-			const endpoint = form.dataset.endpoint;
-			const quoteEmail = form.dataset.quoteEmail ?? '';
-			const statusEl = form.querySelector<HTMLElement>('[data-form-status]');
-			const submitButton = form.querySelector<HTMLButtonElement>('[data-submit-button]');
-
-			function showStatus(message: string, kind: 'info' | 'success' | 'error') {
-				if (!statusEl) return;
-				statusEl.textContent = message;
-				statusEl.classList.remove('hidden', 'bg-blue-50', 'text-blue-700', 'bg-green-50', 'text-green-700', 'bg-red-50', 'text-red-700');
-				if (kind === 'success') statusEl.classList.add('bg-green-50', 'text-green-700');
-				else if (kind === 'error') statusEl.classList.add('bg-red-50', 'text-red-700');
-				else statusEl.classList.add('bg-blue-50', 'text-blue-700');
-			}
-
-			function fieldValue(name: string) {
-				return (form.elements.namedItem(name) as HTMLInputElement | HTMLTextAreaElement | null)?.value.trim() ?? '';
-			}
-
-			function buildMailtoUrl() {
-				const lines = [
-					[form.dataset.labelProduct, fieldValue('product')],
-					[form.dataset.labelName, fieldValue('name')],
-					[form.dataset.labelCompany, fieldValue('company')],
-					[form.dataset.labelEmail, fieldValue('email')],
-					[form.dataset.labelPhone, fieldValue('phone')],
-					[form.dataset.labelQuantity, fieldValue('quantity')],
-				]
-					.filter(([, value]) => value)
-					.map(([label, value]) => `${label} : ${value}`);
-
-				const message = fieldValue('message');
-				const body = [...lines, '', form.dataset.labelMessage ?? '', message].join('\n');
-				const subject = fieldValue('product')
-					? `Demande de devis — ${fieldValue('product')}`
-					: 'Demande de devis';
-
-				return `mailto:${quoteEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-			}
-
-			function submitViaMailto() {
-				window.location.href = buildMailtoUrl();
-				showStatus(form.dataset.msgMailto ?? '', 'info');
-			}
-
-			if (!endpoint) {
-				form.addEventListener('submit', (event) => {
-					event.preventDefault();
-					if (!form.reportValidity()) return;
-					submitViaMailto();
-				});
-				return;
-			}
-
-			form.addEventListener('submit', async (event) => {
-				event.preventDefault();
-				if (!submitButton) return;
-				submitButton.disabled = true;
-				submitButton.textContent = form.dataset.msgSubmitting ?? '';
-				showStatus('', 'info');
-				statusEl?.classList.add('hidden');
-
-				try {
-					const response = await fetch(endpoint, {
-						method: 'POST',
-						headers: { Accept: 'application/json' },
-						body: new FormData(form),
-					});
-					if (response.ok) {
-						form.reset();
-						showStatus(form.dataset.msgSuccess ?? '', 'success');
-					} else {
-						submitViaMailto();
-					}
-				} catch {
-					submitViaMailto();
-				} finally {
-					submitButton.disabled = false;
-					submitButton.textContent = form.dataset.submitLabel ?? '';
-				}
-			});
-		});
-	}
-
-	initQuoteForms();
+	document.querySelectorAll<HTMLFormElement>('[data-quote-form]').forEach((form) => {
+		const params = new URLSearchParams(window.location.search);
+		const productField = form.querySelector<HTMLInputElement>('#quote-product');
+		const productName = params.get('product');
+		const productSku = params.get('sku');
+		if (productField && productName) {
+			productField.value = productSku ? `${productName} (${productSku})` : productName;
+		}
+		if (params.get('error') === '1') {
+			form.querySelector<HTMLElement>('[data-form-error]')?.classList.remove('hidden');
+		}
+	});
 </script>
