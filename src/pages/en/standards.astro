@@ -1,0 +1,123 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Breadcrumb from '~/components/catalog/Breadcrumb.astro';
+import Button from '~/components/ui/Button.astro';
+import { useTranslations } from '~/i18n/utils';
+import { ui } from '~/i18n/ui';
+
+const lang = 'en' as const;
+const t = useTranslations(lang);
+const title = 'Professional clothing standards';
+const description =
+	'Understand the standards applicable to PPE and workwear: Regulation (EU) 2016/425, risk categories and the main EN standards (EN ISO 20471, EN 343, EN ISO 11612…).';
+
+const categories = [
+	{
+		name: 'Category I — minor risks',
+		body: 'Simple-design equipment protecting against superficial risks (friction, light splashes, mild weather). CE marking is required.',
+	},
+	{
+		name: 'Category II — serious risks',
+		body: 'Equipment protecting against risks that can cause serious injury. It undergoes an EU type examination by a notified body; CE marking and the year of manufacture are mandatory.',
+	},
+	{
+		name: 'Category III — fatal or irreversible risks',
+		body: 'Equipment protecting against the most serious hazards (falls from height, chemical, thermal or electrical risks…). Production is continuously monitored by a notified body.',
+	},
+];
+
+const norms = [
+	{ code: 'EN 343', label: 'Protection against rain and bad weather' },
+	{ code: 'EN 1149-5', label: 'Electrostatic properties (antistatic)' },
+	{ code: 'EN ISO 11611', label: 'Protective clothing for welding and allied processes' },
+	{ code: 'EN ISO 11612', label: 'Protection against heat and flame' },
+	{ code: 'EN 13034', label: 'Protection against liquid chemical splashes (type 6)' },
+	{ code: 'EN 13758-2', label: 'Protection against solar UV radiation' },
+	{ code: 'EN 14058', label: 'Protection against cool environments' },
+	{ code: 'EN 14404', label: 'Knee protection for work in a kneeling position' },
+	{ code: 'ISO 15797', label: 'Suitability for industrial laundering' },
+	{ code: 'EN 17353', label: 'Enhanced visibility for medium-risk situations' },
+	{ code: 'EN ISO 20471', label: 'High-visibility clothing — classes 1 to 3' },
+	{ code: 'IEC 61482-2', label: 'Protection against the thermal hazards of an electric arc' },
+];
+---
+
+<Layout title={`${title} — ${ui.en['site.title']}`} description={description}>
+	<main class="mx-auto max-w-3xl px-4 py-10">
+		<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: '/en' }, { label: 'Standards' }]} />
+		<h1 class="mb-6 text-2xl font-semibold text-gray-900">{title}</h1>
+		<div class="space-y-6 text-gray-700">
+			<section class="space-y-4">
+				<p>
+					At work, the whole body can and must be protected. Depending on the activity, legislation requires specific
+					equipment: helmets and head protection, safety footwear, clothing against chemical splashes, thermal
+					protection, high visibility, hearing and respiratory protection, or fall-arrest harnesses.
+				</p>
+				<p>
+					Personal protective equipment (PPE) is a device intended to be worn or held by a person to protect them
+					against one or more risks to their health or safety. Its effectiveness depends on it actually being worn,
+					day in day out: comfort and user tolerance are therefore essential selection criteria.
+				</p>
+			</section>
+
+			<section class="space-y-4">
+				<h2 class="font-semibold text-gray-900">The European regulatory framework</h2>
+				<p>
+					<strong>Regulation (EU) 2016/425</strong> lays down the requirements applicable to PPE placed on the
+					European market. It guarantees both a high level of protection for users and the free movement of this
+					equipment within the Union. All equipment distributed by Protex EPI complies with it.
+				</p>
+			</section>
+
+			<section class="space-y-4">
+				<h2 class="font-semibold text-gray-900">The three PPE categories</h2>
+				{
+					categories.map((category) => (
+						<p>
+							<strong class="text-gray-900">{category.name}.</strong> {category.body}
+						</p>
+					))
+				}
+			</section>
+
+			<section class="space-y-4">
+				<h2 class="font-semibold text-gray-900">The main EN standards for professional clothing</h2>
+				<p>
+					Every product page in our catalog lists the applicable standards. Here are the main ones you will find on
+					our workwear:
+				</p>
+				<div class="overflow-x-auto">
+					<table class="w-full border-collapse text-sm">
+						<thead>
+							<tr class="border-b-2 border-gray-300 text-left">
+								<th class="py-2 pr-4 font-semibold text-gray-900">Standard</th>
+								<th class="py-2 font-semibold text-gray-900">Protection covered</th>
+							</tr>
+						</thead>
+						<tbody>
+							{
+								norms.map((norm) => (
+									<tr class="border-b border-gray-200">
+										<td class="whitespace-nowrap py-2 pr-4 font-medium text-gray-900">{norm.code}</td>
+										<td class="py-2">{norm.label}</td>
+									</tr>
+								))
+							}
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+			<section class="space-y-4">
+				<h2 class="font-semibold text-gray-900">Need help choosing?</h2>
+				<p>
+					If you are unsure whether an item matches your risk assessment, our technical team can advise you on the
+					right product and provide data sheets and EU declarations of conformity on request.
+				</p>
+				<p>
+					<Button href="/en/quote" variant="primary" size="sm">Request a quote</Button>
+				</p>
+			</section>
+		</div>
+	</main>
+</Layout>

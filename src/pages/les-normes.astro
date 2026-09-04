@@ -1,0 +1,126 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Breadcrumb from '~/components/catalog/Breadcrumb.astro';
+import Button from '~/components/ui/Button.astro';
+import { useTranslations } from '~/i18n/utils';
+import { ui } from '~/i18n/ui';
+
+const lang = 'fr' as const;
+const t = useTranslations(lang);
+const title = 'Les normes des vêtements professionnels';
+const description =
+	'Comprendre les normes applicables aux EPI et vêtements de travail : Règlement (UE) 2016/425, catégories de risque et principales normes EN (EN ISO 20471, EN 343, EN ISO 11612…).';
+
+const categories = [
+	{
+		name: 'Catégorie I — risques mineurs',
+		body: "Équipements de conception simple protégeant contre des risques superficiels (frottements, petites projections, intempéries légères). Le marquage CE est requis.",
+	},
+	{
+		name: 'Catégorie II — risques importants',
+		body: "Équipements protégeant contre des risques pouvant entraîner des lésions graves. Ils font l'objet d'un examen UE de type par un organisme notifié ; le marquage CE et l'année de fabrication sont obligatoires.",
+	},
+	{
+		name: 'Catégorie III — risques mortels ou irréversibles',
+		body: "Équipements protégeant contre les dangers les plus graves (chutes de hauteur, risques chimiques, thermiques, électriques…). Leur production est contrôlée en continu par un organisme notifié.",
+	},
+];
+
+const norms = [
+	{ code: 'EN 343', label: 'Protection contre la pluie et les intempéries' },
+	{ code: 'EN 1149-5', label: 'Propriétés électrostatiques (antistatique)' },
+	{ code: 'EN ISO 11611', label: 'Vêtements de protection pour le soudage et techniques connexes' },
+	{ code: 'EN ISO 11612', label: 'Protection contre la chaleur et les flammes' },
+	{ code: 'EN 13034', label: 'Protection contre les pulvérisations de produits chimiques liquides (type 6)' },
+	{ code: 'EN 13758-2', label: 'Protection contre le rayonnement UV solaire' },
+	{ code: 'EN 14058', label: 'Protection contre les environnements frais' },
+	{ code: 'EN 14404', label: 'Protection des genoux pour le travail agenouillé' },
+	{ code: 'ISO 15797', label: 'Aptitude au lavage industriel' },
+	{ code: 'EN 17353', label: 'Visibilité améliorée pour situations à risque modéré' },
+	{ code: 'EN ISO 20471', label: 'Vêtements à haute visibilité — classes 1 à 3' },
+	{ code: 'IEC 61482-2', label: "Protection contre les dangers thermiques d'un arc électrique" },
+];
+---
+
+<Layout title={`${title} — ${ui.fr['site.title']}`} description={description}>
+	<main class="mx-auto max-w-3xl px-4 py-10">
+		<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: '/' }, { label: 'Les normes' }]} />
+		<h1 class="mb-6 text-2xl font-semibold text-gray-900">{title}</h1>
+		<div class="space-y-6 text-gray-700">
+			<section class="space-y-4">
+				<p>
+					Lors de l'exercice professionnel, l'ensemble du corps peut et doit être protégé. Selon l'activité, la
+					législation impose le port d'équipements spécifiques : casques et protections de la tête, chaussures de
+					sécurité, vêtements contre les projections chimiques, protection thermique, haute visibilité, protections
+					auditives et respiratoires ou encore harnais antichute.
+				</p>
+				<p>
+					Un équipement de protection individuelle (EPI) est un dispositif destiné à être porté ou tenu par une
+					personne en vue de la protéger contre un ou plusieurs risques susceptibles de menacer sa santé ou sa
+					sécurité. Son efficacité dépend de son port effectif et régulier : le confort et la tolérance de
+					l'utilisateur sont donc des critères de choix essentiels.
+				</p>
+			</section>
+
+			<section class="space-y-4">
+				<h2 class="font-semibold text-gray-900">Le cadre réglementaire européen</h2>
+				<p>
+					Le <strong>Règlement (UE) 2016/425</strong> établit les exigences applicables aux EPI mis sur le marché
+					européen. Il garantit à la fois un niveau de protection élevé pour les utilisateurs et la libre circulation
+					de ces équipements dans l'Union. Tous les équipements distribués par Protex EPI y sont conformes.
+				</p>
+			</section>
+
+			<section class="space-y-4">
+				<h2 class="font-semibold text-gray-900">Les trois catégories d'EPI</h2>
+				{
+					categories.map((category) => (
+						<p>
+							<strong class="text-gray-900">{category.name}.</strong> {category.body}
+						</p>
+					))
+				}
+			</section>
+
+			<section class="space-y-4">
+				<h2 class="font-semibold text-gray-900">Les principales normes EN des vêtements professionnels</h2>
+				<p>
+					Chaque fiche produit de notre catalogue précise les normes applicables. Voici les principales normes que
+					vous rencontrerez sur nos vêtements de travail :
+				</p>
+				<div class="overflow-x-auto">
+					<table class="w-full border-collapse text-sm">
+						<thead>
+							<tr class="border-b-2 border-gray-300 text-left">
+								<th class="py-2 pr-4 font-semibold text-gray-900">Norme</th>
+								<th class="py-2 font-semibold text-gray-900">Protection couverte</th>
+							</tr>
+						</thead>
+						<tbody>
+							{
+								norms.map((norm) => (
+									<tr class="border-b border-gray-200">
+										<td class="whitespace-nowrap py-2 pr-4 font-medium text-gray-900">{norm.code}</td>
+										<td class="py-2">{norm.label}</td>
+									</tr>
+								))
+							}
+						</tbody>
+					</table>
+				</div>
+			</section>
+
+			<section class="space-y-4">
+				<h2 class="font-semibold text-gray-900">Besoin d'aide pour choisir ?</h2>
+				<p>
+					En cas de doute sur l'adéquation d'un équipement à votre analyse de risques ou à votre document unique,
+					notre équipe technique vous conseille sur le choix du produit et vous fournit fiches techniques et
+					déclarations UE de conformité sur simple demande.
+				</p>
+				<p>
+					<Button href="/devis" variant="primary" size="sm">Demander un devis</Button>
+				</p>
+			</section>
+		</div>
+	</main>
+</Layout>

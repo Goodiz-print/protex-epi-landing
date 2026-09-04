@@ -34,6 +34,7 @@ export const ui = {
 		'home.info.personalise': 'Je personnalise',
 		'home.info.chorus': 'Facturation simplifiée avec Chorus Pro',
 		'home.info.norms': 'Les normes',
+		'home.tiles.playVideo': 'Lire la vidéo',
 		'quote.page.title': 'Demander un devis',
 		'quote.page.intro':
 			'Décrivez votre besoin ci-dessous, un conseiller Protex EPI revient vers vous avec une offre sans engagement sous 24h.',
@@ -149,6 +150,7 @@ export const ui = {
 		'home.info.personalise': 'Customise my equipment',
 		'home.info.chorus': 'Simplified invoicing with Chorus Pro',
 		'home.info.norms': 'The standards',
+		'home.tiles.playVideo': 'Play video',
 		'quote.page.title': 'Request a quote',
 		'quote.page.intro':
 			'Tell us what you need below — a Protex EPI advisor will get back to you with a no-obligation offer within 24h.',
