@@ -8,29 +8,93 @@ const lang = 'en' as const;
 const t = useTranslations(lang);
 const title = t('footer.legal.about');
 const description =
-	'Protex EPI is a personal protective equipment (PPE) supplier for professionals: workwear, gloves, safety footwear, and head, eye, hearing and respiratory protection.';
+	'ProTex EPI designs and customises workwear and PPE for professionals and public organisations. A Goodiz Print group brand, based in Bordeaux.';
+
+const publics = [
+	{ name: 'Town halls', body: 'Municipal workshops, parks and gardens, field work and front-desk teams.' },
+	{ name: 'Departments and regions', body: 'Parks, secondary schools, roads and heritage sites.' },
+	{ name: 'Universities', body: 'Technical staff, laboratories, reception and campus security.' },
+	{ name: 'Public institutions', body: 'Textile and PPE lots consistent with your institutional identity.' },
+];
+
+const engagements = [
+	'Ocean preservation, alongside the SEAQUAL® INITIATIVE',
+	'Support for beehives and biodiversity in France',
+	'Priority to textiles made in France and Europe whenever the reference allows',
+	'Reforestation: one order, one tree planted',
+];
 ---
 
 <Layout title={`${title} — ${ui.en['site.title']}`} description={description}>
 	<main class="mx-auto max-w-3xl px-4 py-10">
 		<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: '/en' }, { label: title }]} />
-		<h1 class="mb-6 text-2xl font-semibold text-gray-900">{title}</h1>
-		<div class="space-y-4 text-gray-700">
-			<p>{description}</p>
-			<p>
-				Our catalog brings together references from well-known brands in the sector — Portwest, Blaklader and
-				Mascot — selected for their compliance with current safety standards and their suitability for the
-				various trades exposed to occupational risks.
-			</p>
-			<p>
-				Every request is handled through a quote: describe what you need (references, sizes, quantities) and an
-				advisor will get back to you with a no-obligation offer.
-			</p>
-			<p>
-				<a href="/en/quote" class="font-medium text-blue-700 hover:text-blue-800">Request a quote</a>
-				 ·
-				<a href="/en/contact" class="font-medium text-blue-700 hover:text-blue-800">Contact us</a>
-			</p>
+		<h1 class="mb-6 text-2xl font-semibold text-gray-900">About us</h1>
+		<div class="space-y-6 text-gray-700">
+			<section class="space-y-4">
+				<p class="text-lg font-medium text-gray-900">Equipment in your organisation's image.</p>
+				<p>
+					ProTex EPI designs and customises workwear and personal protective equipment for companies and public
+					organisations. Town halls, departments, regions, universities: a single point of contact, from study to
+					delivery.
+				</p>
+				<p>
+					Technical services, parks, roads, buildings, campuses, collective catering or municipal police: your teams
+					need compliant, identifiable garments built to last.
+					<a href="/en/collectivites" class="font-medium text-brand hover:text-brand-dark">
+						Discover our Local authorities selection</a
+					>.
+				</p>
+			</section>
+
+			<section class="space-y-4">
+				<h2 class="font-semibold text-gray-900">An offer designed for public buyers</h2>
+				{
+					publics.map((item) => (
+						<p>
+							<strong class="text-gray-900">{item.name}.</strong> {item.body}
+						</p>
+					))
+				}
+			</section>
+
+			<section class="space-y-4">
+				<h2 class="font-semibold text-gray-900">A Goodiz Print group brand</h2>
+				<p>
+					From Bordeaux, the Goodiz Print group supports public and private organisations with their customised
+					textile and professional merchandise projects. ProTex EPI is the brand dedicated to personal protective
+					equipment and workwear: the same standard of service, applied to the constraints of the field and of
+					public procurement.
+				</p>
+			</section>
+
+			<section class="space-y-4">
+				<h2 class="font-semibold text-gray-900">Your identity, durably marked</h2>
+				<p>
+					Embroidery, screen printing or transfer: the technique is chosen according to the fabric, the volume and
+					the conditions of use — chest, back, sleeve or sewn-on patch. A visual proof precedes every approval.
+					Clear quote, marking mock-up, advice on sizes and colours, then production follow-up: the goal is to equip
+					your teams without weighing down your procedures.
+					<a href="/en/customisation" class="font-medium text-brand hover:text-brand-dark">More about customisation</a>.
+				</p>
+			</section>
+
+			<section class="space-y-4">
+				<h2 class="font-semibold text-gray-900">The group's commitments, applied to PPE</h2>
+				<ul class="list-inside list-disc space-y-1">
+					{engagements.map((engagement) => <li>{engagement}</li>)}
+				</ul>
+			</section>
+
+			<section class="space-y-4">
+				<h2 class="font-semibold text-gray-900">From Bordeaux</h2>
+				<p>
+					Restocking or launching a first lot? Let's talk about your teams, your deadlines and your brand
+					guidelines:
+					<a href="tel:+33557027587" class="font-medium text-brand hover:text-brand-dark">+33 5 57 02 75 87</a>
+					 ·
+					<a href="/en/quote" class="font-medium text-brand hover:text-brand-dark">Request a quote</a>
+				</p>
+			</section>
 		</div>
 	</main>
 </Layout>

@@ -22,14 +22,38 @@ const site = Astro.site ?? new URL(Astro.url.origin);
 const FR_ROOT = '/produits';
 const EN_ROOT = '/en/products';
 
+// Paires FR ↔ EN des pages hors catalogue (les pages /collectivites/* sont
+// couvertes par la règle de préfixe : même chemin, préfixé /en côté anglais).
+const PAGE_ALTERNATES: Record<string, string> = {
+	'/a-propos': '/en/about',
+	'/conditions-generales': '/en/terms',
+	'/donnees-personnelles': '/en/privacy',
+	'/faq': '/en/faq',
+	'/contact': '/en/contact',
+	'/devis': '/en/quote',
+	'/personnalisation': '/en/customisation',
+	'/les-normes': '/en/standards',
+	'/guide-marquage': '/en/marking-guide',
+	'/merci': '/en/thank-you',
+	'/recherche': '/en/search',
+};
+const PAGE_ALTERNATES_REVERSE = Object.fromEntries(
+	Object.entries(PAGE_ALTERNATES).map(([fr, en]) => [en, fr]),
+);
+
 function alternatePath(path: string, targetLang: Lang): string {
+	const normalized = path !== '/' && path.endsWith('/') ? path.slice(0, -1) : path;
 	if (targetLang === 'en') {
-		if (path === '/') return '/en';
+		if (normalized === '/') return '/en';
+		if (PAGE_ALTERNATES[normalized]) return PAGE_ALTERNATES[normalized];
+		if (normalized.startsWith('/collectivites')) return `/en${normalized}`;
 		if (path.startsWith(FR_ROOT)) return EN_ROOT + path.slice(FR_ROOT.length);
 		return path;
 	}
+	if (normalized === '/en') return '/';
+	if (PAGE_ALTERNATES_REVERSE[normalized]) return PAGE_ALTERNATES_REVERSE[normalized];
+	if (normalized.startsWith('/en/collectivites')) return normalized.slice('/en'.length);
 	if (path.startsWith(EN_ROOT)) return FR_ROOT + path.slice(EN_ROOT.length);
-	if (path === '/en' || path === '/en/') return '/';
 	return path;
 }
 

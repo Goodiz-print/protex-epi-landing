@@ -21,12 +21,12 @@ const categoryLinks = categoryTaxonomy
 const legalPrefix = lang === 'en' ? '/en' : '';
 const aboutLinks = [
 	{ href: `${legalPrefix}${lang === 'en' ? '/about' : '/a-propos'}`, label: t('footer.legal.about') },
-	{ href: `${legalPrefix}${lang === 'en' ? '/history' : '/notre-histoire'}`, label: t('footer.legal.history') },
 	{ href: `${legalPrefix}${lang === 'en' ? '/terms' : '/conditions-generales'}`, label: t('footer.legal.terms') },
 	{ href: `${legalPrefix}/contact`, label: t('footer.legal.contact') },
 ];
 const customerLinks = [
 	{ href: `${legalPrefix}/faq`, label: t('footer.legal.faq') },
+	{ href: `${legalPrefix}${lang === 'en' ? '/marking-guide' : '/guide-marquage'}`, label: t('footer.legal.markingGuide') },
 	{ href: `${legalPrefix}${lang === 'en' ? '/privacy' : '/donnees-personnelles'}`, label: t('footer.legal.privacy') },
 	{ href: getQuoteUrl(lang), label: t('home.quote.cta') },
 ];

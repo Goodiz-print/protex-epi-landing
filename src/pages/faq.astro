@@ -7,37 +7,75 @@ import { ui } from '~/i18n/ui';
 const lang = 'fr' as const;
 const t = useTranslations(lang);
 const title = t('footer.legal.faq');
-const description = "Questions fréquentes sur les commandes, devis, tailles et livraisons d'équipements de protection individuelle Protex EPI.";
+const description =
+	"Questions fréquentes sur les commandes, devis, marquage, conformité aux normes et livraisons d'équipements de protection individuelle Protex EPI.";
 
+// Contenu fourni par le client (FAQ_Protex_EPI.md, sept. 2026).
 const faqs = [
 	{
-		question: 'Comment passer commande ?',
+		question: 'Pourquoi mon panier contient-il des frais de manutention pour les achats sous la limite ?',
 		answer:
-			"Protex EPI fonctionne sur devis : parcourez le catalogue, puis envoyez une demande depuis la fiche produit ou notre formulaire de devis. Un conseiller vous répond avec une offre détaillée.",
+			'Nous ne traitons pas de production ni de conditionnement à la pièce et les coûts associés au traitement de quantités inférieures à la limite dépassent le prix de vente des équipements. Pour un très petit nombre de pièces, une commission dite de sous-limite est donc automatiquement ajoutée au panier.',
 	},
 	{
-		question: 'Les équipements sont-ils certifiés ?',
+		question: 'Pourquoi ne puis-je pas acheter seulement 1 pièce du produit sélectionné ?',
 		answer:
-			"Notre catalogue s'appuie sur des marques reconnues du secteur (Portwest, Blaklader, Mascot) proposant des équipements conformes aux normes de sécurité en vigueur pour chaque catégorie de protection.",
+			'Vous pouvez commander un article seul, sans marquage, mais la commande devra être accompagnée de frais de traitement. Si vous souhaitez uniquement tester un modèle avant de passer commande en quantité (confort, taille, conformité au poste de travail), contactez notre service commercial : nous nous ferons un plaisir de vous prêter ou vous faire parvenir un échantillon pour la durée convenue.',
 	},
 	{
-		question: 'Comment choisir la bonne taille ?',
+		question: 'Pourquoi indiquez-vous un prix pour 1 pièce alors que je ne peux pas en acheter seulement 1 ?',
 		answer:
-			"Les tailles disponibles sont indiquées sur chaque fiche produit. En cas de doute, précisez votre besoin dans le formulaire de devis, un conseiller vous aidera à choisir.",
+			'Un article peut être ajouté à une commande combinée contenant déjà d’autres équipements. Par exemple, vous pouvez constituer une commande de vêtements de travail avec un ou plusieurs coloris et tailles différents pour équiper toute une équipe. Il reste également possible de commander un seul article, mais avec des frais de traitement.',
 	},
 	{
-		question: 'Proposez-vous vos produits aux particuliers ?',
-		answer: "Protex EPI s'adresse en priorité aux professionnels. Contactez-nous pour toute autre demande.",
+		question: 'Comment connaître le prix du marquage (logo, floquage) pour plusieurs tailles ou coloris ?',
+		answer:
+			'Vous pouvez renseigner différentes tailles, coloris et emplacements de marquage dans notre demande de devis pour obtenir le prix final du marquage sur un mélange diversifié d’EPI et de vêtements de travail.',
+	},
+	{
+		question: 'Puis-je acheter en tant que particulier, c’est-à-dire sans numéro de TVA ou SIRET ?',
+		answer:
+			'Non, la vente d’équipements de protection individuelle sur la e-boutique www.protex-epi.com est réservée aux professionnels : entreprises, collectivités, établissements publics et associations.',
+	},
+	{
+		question: 'Comment savoir si un EPI est conforme aux normes en vigueur pour mon secteur d’activité ?',
+		answer:
+			'Chaque fiche produit précise la catégorie de risque et les normes européennes applicables (EN, Règlement (UE) 2016/425). En cas de doute sur l’adéquation d’un équipement à votre analyse de risques ou à votre document unique, notre équipe technique peut vous conseiller sur le choix du produit.',
+	},
+	{
+		question: 'Puis-je obtenir un certificat de conformité (déclaration UE de conformité, fiche technique) pour mes achats ?',
+		answer:
+			'Oui. Les fiches techniques et déclarations de conformité sont disponibles sur chaque fiche produit ou peuvent vous être transmises sur simple demande à notre service commercial, notamment dans le cadre d’un contrôle interne ou d’une réponse à un marché public.',
+	},
+	{
+		question: 'Vendez-vous dans le cadre des marchés publics ?',
+		answer:
+			'Oui, nous accompagnons les acheteurs publics (collectivités, établissements publics, administrations) dans leurs achats d’EPI, y compris pour l’émission de devis, bons de commande et pièces justificatives nécessaires à vos procédures d’achat.',
+	},
+	{
+		question: 'Puis-je retourner un EPI qui ne convient pas ?',
+		answer:
+			'Pour des raisons d’hygiène et de sécurité, les EPI personnalisés, portés ou déconditionnés ne peuvent pas faire l’objet d’un retour. Un produit non porté et dans son emballage d’origine peut être retourné après accord préalable écrit de notre service commercial.',
 	},
 	{
 		question: 'Quels sont les délais de livraison ?',
 		answer:
-			"Les délais dépendent des produits et des quantités commandées ; ils vous sont communiqués lors de la confirmation de votre devis.",
+			'Les délais varient selon les produits et les quantités commandées, de quelques jours pour les articles en stock à plusieurs semaines pour les commandes personnalisées ou fabriquées sur mesure. Un délai précis vous est communiqué lors de la confirmation de votre devis ou commande.',
 	},
 ];
+
+const faqJsonLd = {
+	'@context': 'https://schema.org',
+	'@type': 'FAQPage',
+	mainEntity: faqs.map((faq) => ({
+		'@type': 'Question',
+		name: faq.question,
+		acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+	})),
+};
 ---
 
-<Layout title={`${title} — ${ui.fr['site.title']}`} description={description}>
+<Layout title={`${title} — ${ui.fr['site.title']}`} description={description} jsonLd={faqJsonLd}>
 	<main class="mx-auto max-w-3xl px-4 py-10">
 		<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: '/' }, { label: title }]} />
 		<h1 class="mb-6 text-2xl font-semibold text-gray-900">{title}</h1>
@@ -52,7 +90,7 @@ const faqs = [
 			}
 		</div>
 		<p class="mt-8 text-gray-700">
-			D'autres questions ? <a href="/contact" class="font-medium text-blue-700 hover:text-blue-800">Contactez-nous</a>.
+			D'autres questions ? <a href="/contact" class="font-medium text-brand hover:text-brand-dark">Contactez-nous</a>.
 		</p>
 	</main>
 </Layout>

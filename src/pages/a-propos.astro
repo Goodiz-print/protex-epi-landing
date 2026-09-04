@@ -8,29 +8,97 @@ const lang = 'fr' as const;
 const t = useTranslations(lang);
 const title = t('footer.legal.about');
 const description =
-	"Protex EPI est un fournisseur d'équipements de protection individuelle (EPI) pour les professionnels : vêtements de travail, gants, chaussures de sécurité et protections tête, yeux, ouïe et voies respiratoires.";
+	"ProTex EPI conçoit et personnalise les vêtements de travail et les EPI des professionnels et des organismes publics. Une marque du groupe Goodiz Print, depuis Bordeaux.";
+
+const publics = [
+	{ name: 'Mairies', body: 'Ateliers municipaux, espaces verts, interventions et accueil du public.' },
+	{ name: 'Départements et régions', body: 'Parcs, collèges, lycées, routes et sites patrimoniaux.' },
+	{ name: 'Universités', body: 'Personnel technique, laboratoires, accueil et sécurité des campus.' },
+	{
+		name: 'Établissements publics',
+		body: 'Lots textile et EPI cohérents avec votre identité institutionnelle.',
+	},
+];
+
+const engagements = [
+	'Préservation des océans, aux côtés de SEAQUAL® INITIATIVE',
+	'Soutien aux ruches et à la biodiversité en France',
+	'Priorité au textile fabriqué en France et en Europe, lorsque la référence le permet',
+	'Reforestation : une commande, un arbre planté',
+];
 ---
 
 <Layout title={`${title} — ${ui.fr['site.title']}`} description={description}>
 	<main class="mx-auto max-w-3xl px-4 py-10">
 		<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: '/' }, { label: title }]} />
-		<h1 class="mb-6 text-2xl font-semibold text-gray-900">{title}</h1>
-		<div class="space-y-4 text-gray-700">
-			<p>{description}</p>
-			<p>
-				Notre catalogue rassemble des références de marques reconnues du secteur — Portwest, Blaklader et Mascot —
-				sélectionnées pour leur conformité aux normes de sécurité en vigueur et leur adaptation aux différents
-				métiers exposés à des risques professionnels.
-			</p>
-			<p>
-				Chaque demande est traitée sur devis : décrivez votre besoin (références, tailles, quantités) et un
-				conseiller vous répond avec une offre sans engagement.
-			</p>
-			<p>
-				<a href="/devis" class="font-medium text-blue-700 hover:text-blue-800">Demander un devis</a>
-				 ·
-				<a href="/contact" class="font-medium text-blue-700 hover:text-blue-800">Nous contacter</a>
-			</p>
+		<h1 class="mb-6 text-2xl font-semibold text-gray-900">Qui sommes-nous</h1>
+		<div class="space-y-6 text-gray-700">
+			<section class="space-y-4">
+				<p class="text-lg font-medium text-gray-900">Des équipements à l'image de votre organisation.</p>
+				<p>
+					ProTex EPI conçoit et personnalise les vêtements de travail et les équipements de protection individuelle
+					des entreprises et des organismes publics. Mairies, départements, régions, universités : un interlocuteur
+					unique, de l'étude à la livraison.
+				</p>
+				<p>
+					Services techniques, espaces verts, voirie, bâtiments, campus, restauration collective ou police
+					municipale : vos agents ont besoin de tenues conformes, identifiables et capables de durer.
+					<a href="/collectivites" class="font-medium text-brand hover:text-brand-dark">
+						Découvrez notre sélection Collectivités</a
+					>.
+				</p>
+			</section>
+
+			<section class="space-y-4">
+				<h2 class="font-semibold text-gray-900">Une offre pensée pour les acheteurs publics</h2>
+				{
+					publics.map((item) => (
+						<p>
+							<strong class="text-gray-900">{item.name}.</strong> {item.body}
+						</p>
+					))
+				}
+			</section>
+
+			<section class="space-y-4">
+				<h2 class="font-semibold text-gray-900">Une marque du groupe Goodiz Print</h2>
+				<p>
+					Depuis Bordeaux, le groupe Goodiz Print accompagne les organisations publiques et privées dans leurs
+					projets de textile personnalisé et d'objets professionnels. ProTex EPI est la marque dédiée aux
+					équipements de protection individuelle et aux vêtements de travail : vous retrouvez la même exigence de
+					suivi, appliquée aux contraintes du terrain et de la commande publique.
+				</p>
+			</section>
+
+			<section class="space-y-4">
+				<h2 class="font-semibold text-gray-900">Votre identité, marquée durablement</h2>
+				<p>
+					Broderie, sérigraphie ou transfert : la technique est choisie selon le textile, le volume et les
+					conditions d'usage — poitrine, dos, manche ou patch rapporté. Une visualisation précède chaque validation.
+					Devis lisible, maquette de marquage, conseil sur les tailles et les coloris, puis suivi de production :
+					l'objectif est d'habiller vos équipes sans alourdir vos procédures. Une même identité peut ensuite se
+					décliner sur tous les lots : voirie, bâtiments, ateliers ou campus.
+					<a href="/personnalisation" class="font-medium text-brand hover:text-brand-dark">En savoir plus sur la personnalisation</a>.
+				</p>
+			</section>
+
+			<section class="space-y-4">
+				<h2 class="font-semibold text-gray-900">Les engagements du groupe, appliqués aux EPI</h2>
+				<ul class="list-inside list-disc space-y-1">
+					{engagements.map((engagement) => <li>{engagement}</li>)}
+				</ul>
+			</section>
+
+			<section class="space-y-4">
+				<h2 class="font-semibold text-gray-900">Depuis Bordeaux</h2>
+				<p>
+					Un renouvellement de stock ou un premier lot à lancer ? Parlons de vos équipes, de vos délais et de votre
+					charte graphique :
+					<a href="tel:0557027587" class="font-medium text-brand hover:text-brand-dark">05 57 02 75 87</a>
+					 ·
+					<a href="/devis" class="font-medium text-brand hover:text-brand-dark">Demander un devis</a>
+				</p>
+			</section>
 		</div>
 	</main>
 </Layout>

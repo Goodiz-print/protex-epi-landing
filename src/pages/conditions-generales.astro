@@ -1,51 +1,116 @@
 ---
 import Layout from '~/layouts/Layout.astro';
 import Breadcrumb from '~/components/catalog/Breadcrumb.astro';
-import LegalNotice from '~/components/LegalNotice.astro';
 import { useTranslations } from '~/i18n/utils';
 import { ui } from '~/i18n/ui';
 
 const lang = 'fr' as const;
 const t = useTranslations(lang);
 const title = t('footer.legal.terms');
-const description = 'Conditions générales de vente Protex EPI.';
+const description = 'Conditions générales de vente de PROTEX EPI (SAS GOODIZ PRINT).';
 
-const articles = [
+// Texte définitif fourni par le client (CGV_Protex_EPI.md, sept. 2026).
+const articles: { heading: string; paragraphs: string[] }[] = [
 	{
-		heading: 'Article 1 — Objet',
-		body: "Les présentes conditions générales régissent les ventes d'équipements de protection individuelle (EPI) conclues entre Protex EPI et ses clients professionnels, à la suite d'un devis accepté.",
+		heading: '1. Généralités',
+		paragraphs: [
+			"Nos produits, notre catalogue et notre site Internet www.protex-epi.com sont réservés exclusivement aux entreprises, comités d'entreprises, collectivités, commerces et associations. Du seul fait de nous passer commande, l'acheteur accepte nos conditions générales et renonce à se prévaloir des siennes. Toute commande passée implique l'adhésion à nos conditions générales de vente. Les équipements de protection individuelle (EPI) et vêtements de travail figurant sur nos catalogues et sites Internet ne sont pas contractuels. Nous nous réservons le droit d'apporter toute modification technique ou esthétique que nous jugeons nécessaire et ce, toujours dans le but d'une amélioration. Tous les produits figurant sur nos catalogues et sites Internet et sur lesquels apparaissent des logos commerciaux ou des marques déposées sont donnés à titre d'exemple uniquement.",
+		],
 	},
 	{
-		heading: 'Article 2 — Identification du vendeur',
-		body: 'Protex EPI, dont le siège social est situé 4 Rue la Motte Picquet, 33300 Bordeaux, France (téléphone : 05 57 02 75 87, e-mail : contact@protex-epi.com). [À compléter : forme juridique, capital social, numéro SIRET, numéro RCS.]',
+		heading: '2. Devis',
+		paragraphs: [
+			"Les devis donnés par téléphone sont des devis estimatifs et ne peuvent être considérés comme contractuels. Les devis susmentionnés pourront être confirmés le cas échéant par notre service commercial par e-mail.",
+		],
 	},
 	{
-		heading: 'Article 3 — Produits et prix',
-		body: '[À compléter : modalités de présentation des produits, devise, conditions de variation des prix, prix HT/TTC.]',
+		heading: '3. Commandes',
+		paragraphs: [
+			"Toute commande doit faire l'objet d'un ordre écrit (soit notre devis ou proforma retourné par mail, daté et signé avec la mention : Lu et approuvé – Bon pour Commande – soit un bon de commande reprenant les termes et conditions de notre devis sur papier entête). Pour des raisons techniques, nous nous réservons le droit de livrer et de facturer plus ou moins 5 % des quantités commandées.",
+		],
 	},
 	{
-		heading: 'Article 4 — Commande et devis',
-		body: 'Toute commande fait l’objet d’un devis préalable établi à partir de la demande transmise par le client (formulaire de devis, e-mail ou téléphone). [À compléter : modalités précises d’acceptation du devis.]',
+		heading: '4. Échantillons',
+		paragraphs: [
+			"Toute demande d'échantillon doit se faire par demande écrite (courrier ou e-mail). Les échantillons sont facturés au prix de gros avec une majoration de 15 € HT pour frais de dossier.",
+		],
 	},
 	{
-		heading: 'Article 5 — Paiement',
-		body: '[À compléter : moyens de paiement acceptés, délais, pénalités de retard.]',
+		heading: '5. Prix',
+		paragraphs: [
+			"Nos prix s'entendent hors taxes (T.V.A. 20 %). Ils sont donnés à titre indicatif, ils peuvent être révisés en cas de fluctuation monétaire, variation du cours des matières premières (textiles, cuir, composants techniques) ou de la fiscalité en vigueur le jour de la livraison. Nos prix de base peuvent être remisés. De légères différences dans les coloris, les tailles, les grammages, ou une augmentation des délais pour la fabrication sont tolérées par les usages et ne peuvent en aucun cas donner droit à réclamation. Nos prix s'entendent départ de Bordeaux sauf conditions particulières.",
+		],
 	},
 	{
-		heading: 'Article 6 — Livraison',
-		body: '[À compléter : zones de livraison, délais, transporteurs, frais.]',
+		heading: '6. Marquage et conformité',
+		paragraphs: [
+			"La personnalisation de nos produits peut se faire suivant différents procédés : sérigraphie, tampographie, transfert, broderie, gravure laser ou marquage thermocollé, dans le respect des normes de sécurité applicables aux équipements de protection individuelle. Partant de bases différentes, nous ne pouvons obtenir la teinte et la brillance identiques aux références Pantone C. Compte tenu de la réglementation européenne sur les métaux lourds et solvants, les pigmentations des couleurs évoluent, ce qui peut entraîner quelques différences de teintes en fonction des procédés d'impression (notamment sur fonds de couleur). Toute personnalisation reste soumise à la conformité du produit aux normes EPI en vigueur (Règlement (UE) 2016/425) ; les réclamations pour vice de fabrication ne sont pas recevables.",
+		],
 	},
 	{
-		heading: 'Article 7 — Droit de rétractation',
-		body: '[À compléter : le droit de rétractation ne s’applique en principe pas aux ventes entre professionnels ; à confirmer selon la qualité du client.]',
+		heading: '7. Conditions de règlement',
+		paragraphs: [
+			"Un chèque de 50 % du montant TTC devra être joint à la commande (restitué en cas d'annulation de notre part et conservé en cas d'annulation de votre part, sans que cela puisse entraîner une quelconque indemnité). Tout client fait l'objet d'une demande d'acceptation de dossier à notre organisme d'assurance-crédit. Pour les clients essuyant un refus ou dont le délai de livraison est trop rapproché pour obtenir un accord, il sera demandé un règlement à la commande par virement bancaire exclusivement. Pour les clients ayant un compte ouvert, le solde du règlement s'effectuera à réception de facture. Tout retard de paiement entraîne l'exigibilité immédiate des sommes restantes dues. Tout retard ou report d'échéance fera l'objet d'une facturation après décompte des intérêts de retard et après paiement effectif. Le taux d'intérêts sera de 18 % (loi 92-1442 du 31.12.92 relative aux délais de paiement entre les entreprises). Tout retard de règlement donnera lieu de plein droit et sans qu'aucune mise en demeure ne soit nécessaire au paiement de pénalités de retard sur la base du taux BCE majoré de dix (10) points et au paiement d'une indemnité forfaitaire pour frais de recouvrement d'un montant de 40 €.",
+		],
 	},
 	{
-		heading: 'Article 8 — Garanties',
-		body: '[À compléter : garantie légale de conformité, garantie des vices cachés, garanties constructeur le cas échéant.]',
+		heading: '8. Délais de livraison',
+		paragraphs: [
+			"Après accord sur le bon à tirer, le délai de livraison est de 1 semaine à 4 mois selon les articles. Ces délais sont donnés à titre indicatif. Un éventuel retard de livraison ne pourra en aucun cas donner lieu à des dommages et intérêts, à une annulation de commande, à un refus de réception de marchandise ou à un report de règlement.",
+		],
 	},
 	{
-		heading: 'Article 9 — Droit applicable et litiges',
-		body: '[À compléter : droit applicable, tribunal compétent, médiation de la consommation le cas échéant.]',
+		heading: '9. Expéditions / Livraisons',
+		paragraphs: [
+			"Les marchandises expédiées voyagent aux risques et périls du destinataire. En cas d'avarie, de perte ou de retard, il appartient au destinataire de faire les réserves d'usage auprès du transporteur pour conserver ses droits dans les délais légaux.",
+		],
+	},
+	{
+		heading: '10. Réserve de propriété',
+		paragraphs: [
+			"En application de la loi n° 80-335 du 12 mai 1980 (J.O. du 12/13.05.1980), le transfert de propriété des marchandises livrées et facturées est suspendu jusqu'au paiement intégral du prix (applicable au droit de revendication, même en cas de redressement judiciaire ou de liquidation judiciaire). La propriété juridique de nos articles ne sera donc transférée à l'acquéreur qu'à la date où celui-ci en aura intégralement payé le prix. Si la marchandise est vendue entre-temps, il appartient au client de nous céder la créance et si des règlements sur ces créances sont effectués, ils doivent nous être transmis dès réception. Ces dispositions ne font pas obstacle au transfert à l'acheteur, dès la livraison, des risques de perte ou de détérioration des biens vendus ainsi que des dommages qu'ils pourraient occasionner.",
+		],
+	},
+	{
+		heading: '11. Propriété intellectuelle',
+		paragraphs: [
+			"En nous passant commande, vous autorisez SAS GOODIZ PRINT (marque commerciale PROTEX EPI) à utiliser votre logo et votre nom dans nos catalogues et sur notre site web (exemple d'objets personnalisés, références client).",
+		],
+	},
+	{
+		heading: "12. Données personnelles et droit d'opposition",
+		paragraphs: [
+			"Les informations recueillies par SAS GOODIZ PRINT (marque PROTEX EPI) sont collectées et enregistrées par l'entreprise aux fins de réalisation de la prestation (devis, commande, livraison, facturation, suivi des éventuelles réclamations, relation Client, enquête de satisfaction, etc.).",
+			"Seules les données strictement nécessaires à ces finalités sont conservées et ce, pendant les durées correspondant à chaque traitement.",
+			"Conformément à la Loi Informatique et Libertés 78-17 du 6 janvier 1978 modifiée, et au Règlement Européen 2016/679 du 27 avril 2016, vous bénéficiez d'un droit d'accès, de rectification, de limitation, d'effacement, de suppression de vos données. Vous pouvez également vous opposer, pour un motif légitime, à l'utilisation de vos données.",
+			"Si vous souhaitez exercer ces droits, vous pouvez adresser un courrier électronique ou postal aux adresses suivantes : contact@protex-epi.com ou par courrier à l'adresse de la société SAS GOODIZ PRINT, 4 rue la Motte Picquet – 33300 BORDEAUX France, en précisant dans l'objet « Droit des personnes » et en joignant la copie de votre justificatif d'identité.",
+		],
+	},
+	{
+		heading: '13. Réclamations',
+		paragraphs: [
+			"Toute réclamation devra nous parvenir sous 48 heures après réception de la marchandise par lettre recommandée.",
+		],
+	},
+	{
+		heading: '14. Retour des produits',
+		paragraphs: [
+			"Tout retour ne peut être accepté sans un accord préalable écrit de SAS GOODIZ PRINT. Dans le cas où le Client retourne les produits sans l'accord de SAS GOODIZ PRINT, les produits sont tenus à la disposition du Client et ne peuvent en aucun cas donner lieu à un avoir ; dans ce cas, le Client se porte garant et responsable des frais et risques de retour des produits concernés. SAS GOODIZ PRINT pourra établir un avoir pour une reprise qu'elle estime justifiée. Pour des raisons d'hygiène et de sécurité, les EPI personnalisés, portés ou déconditionnés ne peuvent faire l'objet d'un retour.",
+		],
+	},
+	{
+		heading: '15. Compétence',
+		paragraphs: ["En cas de litige, le tribunal de Bordeaux est seul compétent."],
+	},
+	{
+		heading: '16. Utilisation du contenu du site par les clients et par PROTEX EPI',
+		paragraphs: [
+			"Les contenus intégraux – y compris la composition et l'assemblage – du site www.protex-epi.com incluant mais ne se limitant pas aux textes, graphiques, logos, icônes, boutons, images, clips audio et logiciels, sont des éléments dont les droits sont détenus par SAS GOODIZ PRINT ou utilisés avec l'autorisation du propriétaire des droits, de la marque ou du service. Les contenus sont ainsi protégés par les lois françaises, européennes et internationales.",
+			"SAS GOODIZ PRINT vous autorise à copier les éléments de contenu figurant sur le site www.protex-epi.com, uniquement à des fins non commerciales, au sein de votre organisation, et dans le cadre exclusif de l'achat des produits auprès de PROTEX EPI. Vous pouvez imprimer une seule copie des éléments de contenu figurant sur ce site pour votre usage personnel, aux seules fins d'apprendre, évaluer ou acquérir les services ou les produits de PROTEX EPI.",
+			"Sans l'autorisation expresse de SAS GOODIZ PRINT, vous ne pouvez en aucun cas imprimer, copier, poster, reproduire, publier, distribuer, transmettre, télécharger, enregistrer, stocker, dévoiler, altérer ou modifier les éléments de contenu du site de PROTEX EPI, comprenant mais ne se limitant pas à l'électronique, la mécanique, la photocopie ou l'enregistrement. Vous n'avez pas le droit d'utiliser les icônes de PROTEX EPI pour créer des liens hypertextes, que ce soit entre 2 autres sites Internet ou entre un site Internet et le présent site, ou d'utiliser pour quelque raison que ce soit le nom de PROTEX EPI, les marques déposées ou les dessins brevetés présents sur le site de PROTEX EPI.",
+			"Toute autorisation octroyée s'annule automatiquement si vous violez l'un des termes ou l'une des conditions précités. Vous devez immédiatement détruire tous les éléments de contenu du présent site enregistrés et/ou imprimés. Toute utilisation non autorisée de n'importe quel élément de contenu du présent site peut violer la législation relative aux droits d'auteur, droits des marques, droits de confidentialité, ou la législation relative à la publicité et à la communication.",
+			"PROTEX EPI vous demande de respecter ses propres droits de propriété intellectuelle, mais également de respecter les droits de propriété intellectuelle d'autrui. Notamment, en passant commande auprès de PROTEX EPI, vous certifiez que vous avez le droit d'utiliser tous les logos, textes et/ou graphiques que vous nous avez soumis afin de personnaliser les articles choisis. En passant commande, vous acceptez aussi que votre nom et votre logo soient utilisés sur notre page Références Clients. SAS GOODIZ PRINT se réserve le droit, dans certaines circonstances et à notre entière discrétion, de refuser ou d'accepter des commandes provenant de clients qui ont enfreint ou violé les droits de propriété intellectuelle d'un tiers.",
+		],
 	},
 ];
 ---
@@ -53,16 +118,15 @@ const articles = [
 <Layout title={`${title} — ${ui.fr['site.title']}`} description={description} noindex>
 	<main class="mx-auto max-w-3xl px-4 py-10">
 		<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: '/' }, { label: title }]} />
-		<h1 class="mb-4 text-2xl font-semibold text-gray-900">{title}</h1>
-		<LegalNotice
-			text="Ce document est un modèle de structure à but indicatif. Il doit impérativement être relu, complété (identité légale, SIRET, conditions de paiement, livraison, rétractation, droit applicable…) et validé par un professionnel du droit avant toute mise en ligne."
-		/>
+		<h1 class="mb-6 text-2xl font-semibold text-gray-900">Conditions Générales de Vente – PROTEX EPI</h1>
 		<div class="space-y-6 text-gray-700">
 			{
 				articles.map((article) => (
-					<section>
-						<h2 class="mb-1 font-semibold text-gray-900">{article.heading}</h2>
-						<p>{article.body}</p>
+					<section class="space-y-3">
+						<h2 class="font-semibold text-gray-900">{article.heading}</h2>
+						{article.paragraphs.map((paragraph) => (
+							<p>{paragraph}</p>
+						))}
 					</section>
 				))
 			}
