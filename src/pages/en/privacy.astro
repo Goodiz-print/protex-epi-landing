@@ -1,7 +1,6 @@
 ---
 import Layout from '~/layouts/Layout.astro';
 import Breadcrumb from '~/components/catalog/Breadcrumb.astro';
-import LegalNotice from '~/components/LegalNotice.astro';
 import { useTranslations } from '~/i18n/utils';
 import { ui } from '~/i18n/ui';
 
@@ -15,14 +14,11 @@ const description = 'Personal data and cookie policy for the Protex EPI website.
 	<main class="mx-auto max-w-3xl px-4 py-10">
 		<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: '/en' }, { label: title }]} />
 		<h1 class="mb-4 text-2xl font-semibold text-gray-900">{title}</h1>
-		<LegalNotice
-			text="This page describes the data actually collected by the site (cookies, quote form). Mentions of the hosting provider, data protection contact and retention periods must be completed before publication."
-		/>
 		<div class="space-y-6 text-gray-700">
 			<section>
 				<h2 class="mb-1 font-semibold text-gray-900">Data controller</h2>
 				<p>
-					Protex EPI, {t('footer.contact.addressLine')} — <a href="mailto:contact@protex-epi.com" class="text-blue-700 hover:text-blue-800">contact@protex-epi.com</a>.
+					SAS GOODIZ PRINT (PROTEX EPI brand), {t('footer.contact.addressLine')} — <a href="mailto:contact@protex-epi.com" class="text-blue-700 hover:text-blue-800">contact@protex-epi.com</a>.
 				</p>
 			</section>
 			<section>
@@ -50,19 +46,31 @@ const description = 'Personal data and cookie policy for the Protex EPI website.
 			</section>
 			<section>
 				<h2 class="mb-1 font-semibold text-gray-900">Retention period</h2>
-				<p>[To be completed.]</p>
+				<p>Only the data strictly necessary for the purposes above is kept, for the following periods:</p>
+				<ul class="mt-2 list-inside list-disc space-y-1">
+					<li>Quote requests and pre-contractual exchanges: 3 years from the last contact;</li>
+					<li>Customer order data: 5 years from the end of the business relationship;</li>
+					<li>Accounting documents (invoices): 10 years, as required by law;</li>
+					<li>Cookies and audience measurement: 13 months at most, according to saved preferences.</li>
+				</ul>
 			</section>
 			<section>
 				<h2 class="mb-1 font-semibold text-gray-900">Hosting</h2>
-				<p>[To be completed: identity and location of the site's hosting provider.]</p>
+				<p>
+					The site is hosted by Netlify, Inc. (San Francisco, USA), which relies on delivery points located in
+					particular within the European Union. Quote form data is passed to our e-mail delivery provider for the
+					sole purpose of routing your request to our sales team.
+				</p>
 			</section>
 			<section>
 				<h2 class="mb-1 font-semibold text-gray-900">Your rights</h2>
 				<p>
-					Under GDPR, you have the right to access, rectify, erase and object to your personal data, which
-					you can exercise by contacting
-					<a href="mailto:contact@protex-epi.com" class="text-blue-700 hover:text-blue-800">contact@protex-epi.com</a>.
-					[To be completed: data protection officer contact where applicable.]
+					Under the amended French Data Protection Act of 6 January 1978 and European Regulation 2016/679 (GDPR),
+					you have the right to access, rectify, restrict, erase and object to your personal data. To exercise it,
+					send your request to
+					<a href="mailto:contact@protex-epi.com" class="text-blue-700 hover:text-blue-800">contact@protex-epi.com</a>
+					or by post to SAS GOODIZ PRINT, 4 rue la Motte Picquet, 33300 Bordeaux, France, stating “Droit des
+					personnes” in the subject line and enclosing a copy of proof of identity.
 				</p>
 			</section>
 		</div>

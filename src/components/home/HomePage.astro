@@ -2,6 +2,7 @@
 import type { Lang } from '~/utils/catalog';
 import Hero from './Hero.astro';
 import BrandsStrip from './BrandsStrip.astro';
+import InfoTiles from './InfoTiles.astro';
 import FeaturedProducts from './FeaturedProducts.astro';
 import QuoteCta from './QuoteCta.astro';
 import ThematicTiles from './ThematicTiles.astro';
@@ -15,6 +16,7 @@ const { lang } = Astro.props;
 
 <Hero lang={lang} />
 <BrandsStrip lang={lang} />
+<InfoTiles lang={lang} />
 <FeaturedProducts lang={lang} />
 <QuoteCta lang={lang} />
 <ThematicTiles lang={lang} />

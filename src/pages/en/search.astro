@@ -1,0 +1,14 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import SearchResultsPage from '~/components/SearchResultsPage.astro';
+import { useTranslations } from '~/i18n/utils';
+import { ui } from '~/i18n/ui';
+
+const lang = 'en' as const;
+const t = useTranslations(lang);
+const title = t('search.results.title');
+---
+
+<Layout title={`${title} — ${ui.en['site.title']}`} description={title} noindex>
+	<SearchResultsPage lang={lang} />
+</Layout>

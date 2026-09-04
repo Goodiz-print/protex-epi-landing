@@ -5,6 +5,7 @@ import type { Lang } from '../../utils/catalog';
 import { getProductUrl } from '../../utils/catalog';
 import { groupProductsByStyle } from '../../utils/product-groups';
 import { LISTING_PAGE_SIZE } from '../../utils/listing-payload';
+import type { Refinement } from '../../data/refinements';
 import ProductCard from './ProductCard.astro';
 
 interface Props {
@@ -17,12 +18,24 @@ interface Props {
 	 * « charger plus ») pour ne pas alourdir le document.
 	 */
 	payloadUrl?: string;
+	/**
+	 * Sous-catégories de niveau 3 affichées en puces de filtre au-dessus du
+	 * listing (src/data/refinements.ts). Filtrage côté client sur le nom du
+	 * modèle, synchronisé avec le paramètre d'URL ?type=.
+	 */
+	refinements?: Refinement[];
 }
 
-const { lang, products, payloadUrl } = Astro.props;
+const { lang, products, payloadUrl, refinements = [] } = Astro.props;
 const t = useTranslations(lang);
 
 const groups = groupProductsByStyle(products);
+
+// Les classes d'état (actif/inactif) sont togglées telles quelles par le script
+// client (activateChip) : les garder synchronisées avec CHIP_ACTIVE / CHIP_IDLE.
+const chipBase = 'rounded-full border px-3 py-1.5 text-sm transition-colors';
+const chipIdle = 'border-gray-300 text-gray-700 hover:border-brand hover:text-brand';
+const chipActive = 'border-brand bg-brand text-white';
 ---
 
 {
@@ -39,6 +52,24 @@ const groups = groupProductsByStyle(products);
 		>
 			<slot name="sidebar" />
 			<div class="min-w-0">
+				{refinements.length > 0 && (
+					<nav class="mb-5 flex flex-wrap gap-2" aria-label={t('catalog.refinements.label')}>
+						<a href="?" data-refinement-chip="" class={`${chipBase} ${chipActive}`} aria-current="true">
+							{t('catalog.refinements.all')}
+						</a>
+						{refinements.map((refinement) => (
+							<a
+								href={`?type=${refinement.slug}`}
+								data-refinement-chip={refinement.slug}
+								data-groups={JSON.stringify(refinement.groups)}
+								data-exclude={JSON.stringify(refinement.exclude ?? [])}
+								class={`${chipBase} ${chipIdle}`}
+							>
+								{refinement.labels[lang]}
+							</a>
+						))}
+					</nav>
+				)}
 				<div class="mb-4 flex flex-wrap items-end justify-between gap-4">
 					<p class="text-sm text-gray-500" data-results-count>
 						{groups.length} {t('catalog.resultsCount')}
@@ -116,6 +147,7 @@ const groups = groupProductsByStyle(products);
 <script>
 	import { escapeHtml } from '../../utils/html';
 	import { colourToCss } from '../../utils/colours';
+	import { matchesGroups, normalizeName } from '../../data/selections';
 	import type { ListingCardData } from '../../utils/listing-payload';
 
 	const PLACEHOLDER = '/images/product-placeholder.svg';
@@ -157,6 +189,7 @@ const groups = groupProductsByStyle(products);
 			const loadMoreButton = listing.querySelector<HTMLButtonElement>('[data-load-more]');
 			const sortSelect = listing.querySelector<HTMLSelectElement>('[data-sort-select]');
 			const supplierCheckboxes = Array.from(listing.querySelectorAll<HTMLInputElement>('[data-supplier-filter]'));
+			const refinementChips = Array.from(listing.querySelectorAll<HTMLAnchorElement>('[data-refinement-chip]'));
 			const resultsCount = listing.querySelector<HTMLElement>('[data-results-count]');
 			const noResults = listing.querySelector<HTMLElement>('[data-no-results]');
 			if (!list) return;
@@ -170,6 +203,31 @@ const groups = groupProductsByStyle(products);
 			let items: ListingItem[] | null = null;
 			let loading: Promise<ListingItem[] | null> | null = null;
 			let shown = pageSize;
+			let activeRefinement: { groups: string[][]; exclude: string[] } | null = null;
+
+			// Mêmes listes que chipActive / chipIdle côté serveur.
+			const CHIP_ACTIVE = ['border-brand', 'bg-brand', 'text-white'];
+			const CHIP_IDLE = ['border-gray-300', 'text-gray-700', 'hover:border-brand', 'hover:text-brand'];
+
+			function activateChip(slug: string): boolean {
+				let found = false;
+				for (const chip of refinementChips) {
+					const isActive = (chip.dataset.refinementChip ?? '') === slug;
+					for (const cls of CHIP_ACTIVE) chip.classList.toggle(cls, isActive);
+					for (const cls of CHIP_IDLE) chip.classList.toggle(cls, !isActive);
+					if (isActive) chip.setAttribute('aria-current', 'true');
+					else chip.removeAttribute('aria-current');
+					if (isActive && slug) {
+						found = true;
+						activeRefinement = {
+							groups: JSON.parse(chip.dataset.groups ?? '[]'),
+							exclude: JSON.parse(chip.dataset.exclude ?? '[]'),
+						};
+					}
+				}
+				if (!slug || !found) activeRefinement = null;
+				return found;
+			}
 
 			// Le payload complet n'est téléchargé qu'à la première interaction.
 			function ensureItems(): Promise<ListingItem[] | null> {
@@ -203,6 +261,11 @@ const groups = groupProductsByStyle(products);
 				let filtered = items.filter(
 					(item) => supplierCheckboxes.length === 0 || suppliers.has(item.data.s),
 				);
+
+				if (activeRefinement) {
+					const { groups, exclude } = activeRefinement;
+					filtered = filtered.filter((item) => matchesGroups(normalizeName(item.data.t), groups, exclude));
+				}
 
 				if (sortMode === 'price-asc' || sortMode === 'price-desc') {
 					const direction = sortMode === 'price-asc' ? 1 : -1;
@@ -245,8 +308,28 @@ const groups = groupProductsByStyle(products);
 				refresh(false);
 			});
 
+			refinementChips.forEach((chip) => {
+				chip.addEventListener('click', (event) => {
+					event.preventDefault();
+					const slug = chip.dataset.refinementChip ?? '';
+					activateChip(slug);
+					const url = new URL(window.location.href);
+					if (slug) url.searchParams.set('type', slug);
+					else url.searchParams.delete('type');
+					history.replaceState(null, '', url);
+					refresh(true);
+				});
+			});
+
 			// Pas de rendu initial : la première page est déjà dans le HTML.
 			if (payloadUrl && total > pageSize) loadMoreButton?.classList.remove('hidden');
+
+			// Lien profond ?type= : on active la puce correspondante et on force le
+			// premier rendu filtré (donc le téléchargement du payload).
+			if (refinementChips.length > 0) {
+				const requested = new URLSearchParams(window.location.search).get('type') ?? '';
+				if (requested && activateChip(requested)) refresh(true);
+			}
 		});
 	}
 

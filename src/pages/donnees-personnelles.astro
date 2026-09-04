@@ -1,7 +1,6 @@
 ---
 import Layout from '~/layouts/Layout.astro';
 import Breadcrumb from '~/components/catalog/Breadcrumb.astro';
-import LegalNotice from '~/components/LegalNotice.astro';
 import { useTranslations } from '~/i18n/utils';
 import { ui } from '~/i18n/ui';
 
@@ -15,14 +14,11 @@ const description = 'Politique de gestion des données personnelles et des cooki
 	<main class="mx-auto max-w-3xl px-4 py-10">
 		<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: '/' }, { label: title }]} />
 		<h1 class="mb-4 text-2xl font-semibold text-gray-900">{title}</h1>
-		<LegalNotice
-			text="Cette page décrit les données réellement collectées par le site (cookies, formulaire de devis). Les mentions relatives à l'hébergeur, au délégué à la protection des données et aux durées de conservation doivent être complétées avant publication."
-		/>
 		<div class="space-y-6 text-gray-700">
 			<section>
 				<h2 class="mb-1 font-semibold text-gray-900">Responsable du traitement</h2>
 				<p>
-					Protex EPI, {t('footer.contact.addressLine')} — <a href="mailto:contact@protex-epi.com" class="text-blue-700 hover:text-blue-800">contact@protex-epi.com</a>.
+					SAS GOODIZ PRINT (marque PROTEX EPI), {t('footer.contact.addressLine')} — <a href="mailto:contact@protex-epi.com" class="text-blue-700 hover:text-blue-800">contact@protex-epi.com</a>.
 				</p>
 			</section>
 			<section>
@@ -50,19 +46,34 @@ const description = 'Politique de gestion des données personnelles et des cooki
 			</section>
 			<section>
 				<h2 class="mb-1 font-semibold text-gray-900">Durée de conservation</h2>
-				<p>[À compléter.]</p>
+				<p>
+					Seules les données strictement nécessaires aux finalités décrites ci-dessus sont conservées, pendant les
+					durées suivantes :
+				</p>
+				<ul class="mt-2 list-inside list-disc space-y-1">
+					<li>Demandes de devis et échanges précontractuels : 3 ans à compter du dernier contact ;</li>
+					<li>Données relatives aux commandes des clients : 5 ans à compter de la fin de la relation commerciale ;</li>
+					<li>Documents et pièces comptables (factures) : 10 ans, conformément aux obligations légales ;</li>
+					<li>Cookies et mesure d’audience : 13 mois maximum, selon les préférences enregistrées.</li>
+				</ul>
 			</section>
 			<section>
 				<h2 class="mb-1 font-semibold text-gray-900">Hébergement</h2>
-				<p>[À compléter : identité et localisation de l’hébergeur du site.]</p>
+				<p>
+					Le site est hébergé par Netlify, Inc. (San Francisco, États-Unis), qui s’appuie sur des points de
+					diffusion situés notamment dans l’Union européenne. Les données du formulaire de devis sont transmises à
+					notre prestataire d’envoi d’e-mails à seule fin d’acheminer votre demande à notre service commercial.
+				</p>
 			</section>
 			<section>
 				<h2 class="mb-1 font-semibold text-gray-900">Vos droits</h2>
 				<p>
-					Conformément au RGPD, vous disposez d’un droit d’accès, de rectification, d’effacement et
-					d’opposition sur vos données personnelles, exerçable auprès de
-					<a href="mailto:contact@protex-epi.com" class="text-blue-700 hover:text-blue-800">contact@protex-epi.com</a>.
-					[À compléter : contact du délégué à la protection des données le cas échéant.]
+					Conformément à la loi Informatique et Libertés du 6 janvier 1978 modifiée et au Règlement européen
+					2016/679 (RGPD), vous disposez d’un droit d’accès, de rectification, de limitation, d’effacement et
+					d’opposition sur vos données personnelles. Pour l’exercer, adressez votre demande à
+					<a href="mailto:contact@protex-epi.com" class="text-blue-700 hover:text-blue-800">contact@protex-epi.com</a>
+					ou par courrier à SAS GOODIZ PRINT, 4 rue la Motte Picquet, 33300 Bordeaux, France, en précisant en objet
+					« Droit des personnes » et en joignant la copie d’un justificatif d’identité.
 				</p>
 			</section>
 		</div>

@@ -1,6 +1,7 @@
 import { getCollection } from 'astro:content';
 import { categoryTaxonomy, type Category, type Subcategory } from '~/data/category-taxonomy';
 import { garmentTypes, type GarmentType } from '~/data/garment-types';
+import { collectiviteSections, matchesSelection, selections, type Selection } from '~/data/selections';
 import type { Product } from '~/content/schemas/product';
 import { groupProductsByStyle, styleKey, type ProductGroup } from '~/utils/product-groups';
 
@@ -22,6 +23,22 @@ export async function getProductsByGarmentType(garmentType: GarmentType) {
 			return garmentType.keywords.some((keyword) => name.includes(keyword));
 		})
 		.map((entry) => entry.data);
+}
+
+export async function getProductsBySelection(selection: Selection) {
+	const products = await getAllProducts();
+	let matched = products.filter((entry) => matchesSelection(selection, entry.data)).map((entry) => entry.data);
+	if (selection.limit) {
+		// Le plafond s'applique en nombre de modèles : on garde tous les coloris
+		// des `limit` premiers groupes pour ne pas tronquer les pastilles.
+		const kept = new Set(
+			groupProductsByStyle(matched)
+				.slice(0, selection.limit)
+				.map((group) => group.key),
+		);
+		matched = matched.filter((product) => kept.has(styleKey(product)));
+	}
+	return matched;
 }
 
 export async function getProductsBySubcategory(categorySlug: string, subcategorySlug: string) {
@@ -86,6 +103,30 @@ export function getGarmentTypeStaticPaths(): GarmentTypeStaticPath[] {
 	return garmentTypes.map((garmentType) => ({
 		params: { type: garmentType.slug },
 		props: { garmentType },
+	}));
+}
+
+export interface SelectionStaticPath {
+	params: { selection: string };
+	props: { selection: Selection };
+}
+
+export function getSelectionStaticPaths(): SelectionStaticPath[] {
+	return selections.map((selection) => ({
+		params: { selection: selection.slug },
+		props: { selection },
+	}));
+}
+
+export interface CollectiviteSectionStaticPath {
+	params: { section: string };
+	props: { selection: Selection };
+}
+
+export function getCollectiviteSectionStaticPaths(): CollectiviteSectionStaticPath[] {
+	return collectiviteSections.map((selection) => ({
+		params: { section: selection.slug },
+		props: { selection },
 	}));
 }
 

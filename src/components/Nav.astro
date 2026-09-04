@@ -1,8 +1,18 @@
 ---
+import { Image } from 'astro:assets';
 import { categoryTaxonomy } from '../data/category-taxonomy';
-import { getCatalogRootUrl, getCategoryUrl, getQuoteUrl, getSubcategoryUrl, type Lang } from '../utils/catalog';
+import { collectiviteSections } from '../data/selections';
+import {
+	getCategoryUrl,
+	getCollectivitesUrl,
+	getCollectiviteSectionUrl,
+	getQuoteUrl,
+	getSubcategoryUrl,
+	type Lang,
+} from '../utils/catalog';
 import { useTranslations } from '../i18n/utils';
 import LanguagePicker from './LanguagePicker.astro';
+import collectivitesBanner from '../assets/images/nav/collectivites.png';
 
 interface Props {
 	lang: Lang;
@@ -26,7 +36,7 @@ const chevron =
 	s'ancrer sur le <header> (relative z-50) pour couvrir toute la largeur du
 	viewport, pas sur la boîte de <nav> qui vit dans le conteneur max-w-6xl. */}
 <nav class="flex w-full items-center" aria-label={t('nav.products')}>
-	<ul class="hidden lg:flex lg:items-stretch">
+	<ul class="hidden w-full lg:flex lg:items-stretch">
 		{
 			universes.map((category) => (
 				<li class="group relative">
@@ -58,8 +68,30 @@ const chevron =
 				</li>
 			))
 		}
-		<li>
-			<a href={getCatalogRootUrl(lang)} class={navLinkClass}>{t('nav.products')}</a>
+		{/* Onglet Collectivités : bandeau bleu comme sur l'ancien site protex-epi.com. */}
+		<li class="group relative ml-auto">
+			<a href={getCollectivitesUrl(lang)} class="flex h-full items-center">
+				<Image
+					src={collectivitesBanner}
+					alt={t('nav.collectivites')}
+					height={108}
+					class="h-[54px] w-auto"
+					loading="eager"
+				/>
+			</a>
+			<div class="invisible absolute right-0 top-full z-50 min-w-56 rounded-b-lg border border-gray-200 bg-white p-2 opacity-0 shadow-lg transition-opacity duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+				<ul>
+					{
+						collectiviteSections.map((section) => (
+							<li>
+								<a href={getCollectiviteSectionUrl(lang, section.slug)} class={subLinkClass}>
+									{section.labels[lang]}
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</div>
 		</li>
 	</ul>
 
@@ -130,7 +162,33 @@ const chevron =
 				)
 			}
 			<li>
-				<a href={getCatalogRootUrl(lang)} class={`block ${mobileLinkClass}`}>{t('nav.products')}</a>
+				<details class="group">
+					<summary class={`flex cursor-pointer list-none items-center justify-between ${mobileLinkClass} text-brand`}>
+						{t('nav.collectivites')}
+						<svg
+							class="h-3 w-3 text-gray-400 transition-transform group-open:rotate-180"
+							viewBox="0 0 20 20"
+							fill="currentColor"
+							aria-hidden="true"
+						>
+							<path fill-rule="evenodd" d={chevron} clip-rule="evenodd" />
+						</svg>
+					</summary>
+					<ul class="mt-1 flex flex-col gap-1 pl-4">
+						<li>
+							<a href={getCollectivitesUrl(lang)} class={subLinkClass}>{t('nav.collectivites')}</a>
+						</li>
+						{
+							collectiviteSections.map((section) => (
+								<li>
+									<a href={getCollectiviteSectionUrl(lang, section.slug)} class={subLinkClass}>
+										{section.labels[lang]}
+									</a>
+								</li>
+							))
+						}
+					</ul>
+				</details>
 			</li>
 			<li>
 				<a href={getQuoteUrl(lang)} class={`block ${mobileLinkClass} text-brand`}>{t('home.quote.cta')}</a>

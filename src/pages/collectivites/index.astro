@@ -1,0 +1,38 @@
+---
+import Layout from '~/layouts/Layout.astro';
+import Breadcrumb from '~/components/catalog/Breadcrumb.astro';
+import TileGrid from '~/components/catalog/TileGrid.astro';
+import QuoteCta from '~/components/home/QuoteCta.astro';
+import { collectiviteSections } from '~/data/selections';
+import { getProductsBySelection } from '~/content/queries';
+import { getCollectiviteSectionUrl } from '~/utils/catalog';
+import { useTranslations } from '~/i18n/utils';
+import { ui } from '~/i18n/ui';
+
+const lang = 'fr' as const;
+const t = useTranslations(lang);
+const title = t('collectivites.title');
+
+// Chaque tuile de section illustre la sélection avec la photo de son premier produit.
+const tiles = await Promise.all(
+	collectiviteSections.map(async (section) => {
+		const products = await getProductsBySelection(section);
+		return {
+			href: getCollectiviteSectionUrl(lang, section.slug),
+			label: section.labels[lang],
+			image: products[0]?.imageUrl,
+		};
+	}),
+);
+---
+
+<Layout title={`${title} — ${ui.fr['site.title']}`} description={t('collectivites.intro')}>
+	<main class="mx-auto max-w-6xl px-4 py-10">
+		<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: '/' }, { label: title }]} />
+		<h1 class="mb-4 font-heading text-3xl font-bold uppercase text-gray-900">{title}</h1>
+		<p class="mb-8 max-w-3xl text-gray-700">{t('collectivites.intro')}</p>
+		<TileGrid tiles={tiles} />
+		<p class="mt-8 max-w-3xl text-gray-700">{t('collectivites.body')}</p>
+	</main>
+	<QuoteCta lang={lang} />
+</Layout>

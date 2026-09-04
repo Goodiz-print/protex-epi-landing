@@ -1,0 +1,36 @@
+---
+import { useTranslations } from '~/i18n/utils';
+import type { Selection } from '~/data/selections';
+import type { Product } from '~/content/schemas/product';
+import { getCatalogRootUrl, type Lang } from '~/utils/catalog';
+import Breadcrumb from './Breadcrumb.astro';
+import ProductGrid from './ProductGrid.astro';
+import CatalogSidebar from './CatalogSidebar.astro';
+
+interface Props {
+	lang: Lang;
+	selection: Selection;
+	products: Product[];
+	payloadUrl: string;
+	/** Élément intermédiaire du fil d'Ariane (défaut : racine du catalogue). */
+	parent?: { label: string; href: string };
+}
+
+const { lang, selection, products, payloadUrl, parent } = Astro.props;
+const t = useTranslations(lang);
+
+const homeHref = lang === 'en' ? '/en' : '/';
+const parentItem = parent ?? { label: t('catalog.breadcrumb.products'), href: getCatalogRootUrl(lang) };
+---
+
+<Breadcrumb
+	items={[{ label: t('catalog.breadcrumb.home'), href: homeHref }, parentItem, { label: selection.labels[lang] }]}
+/>
+<h1 class="mb-6 font-heading text-3xl font-bold uppercase text-gray-900">{selection.labels[lang]}</h1>
+<ProductGrid lang={lang} products={products} payloadUrl={payloadUrl}>
+	<CatalogSidebar
+		slot="sidebar"
+		lang={lang}
+		suppliers={[...new Set(products.map((product) => product.supplier))].sort()}
+	/>
+</ProductGrid>

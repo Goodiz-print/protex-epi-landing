@@ -17,6 +17,23 @@ export function getGarmentTypeUrl(lang: Lang, typeSlug: string): string {
 	return `${CATALOG_ROOT[lang]}/type/${typeSlug}`;
 }
 
+export function getSelectionUrl(lang: Lang, selectionSlug: string): string {
+	return `${CATALOG_ROOT[lang]}/selection/${selectionSlug}`;
+}
+
+const COLLECTIVITES_ROOT: Record<Lang, string> = {
+	fr: '/collectivites',
+	en: '/en/collectivites',
+};
+
+export function getCollectivitesUrl(lang: Lang): string {
+	return COLLECTIVITES_ROOT[lang];
+}
+
+export function getCollectiviteSectionUrl(lang: Lang, sectionSlug: string): string {
+	return `${COLLECTIVITES_ROOT[lang]}/${sectionSlug}`;
+}
+
 export function getSubcategoryUrl(lang: Lang, categorySlug: string, subcategorySlug: string): string {
 	return `${CATALOG_ROOT[lang]}/${categorySlug}/${subcategorySlug}`;
 }

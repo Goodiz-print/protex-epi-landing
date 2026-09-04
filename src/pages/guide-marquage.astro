@@ -1,0 +1,104 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '~/layouts/Layout.astro';
+import Breadcrumb from '~/components/catalog/Breadcrumb.astro';
+import { useTranslations } from '~/i18n/utils';
+import { ui } from '~/i18n/ui';
+import broderieLogo from '~/assets/images/personnalisation/broderie-logo.png';
+
+const lang = 'fr' as const;
+const t = useTranslations(lang);
+const title = t('footer.legal.markingGuide');
+const description =
+	'Guide des procédés de marquage Protex EPI : broderie, sérigraphie, transfert, impression numérique, sublimation, gravure laser et tampographie — avantages et limites de chaque technique.';
+
+// Adapté du guide des procédés de marquage du groupe Goodiz Print, restreint
+// aux techniques pertinentes pour les EPI et le textile professionnel.
+const techniques = [
+	{
+		name: 'Broderie',
+		body: "Le logo est brodé au fil directement dans le textile, jusqu'à 15 coloris de fils différents (environ 370 teintes disponibles). C'est la technique la plus valorisante pour les vêtements d'entreprise portés au quotidien.",
+		pros: ['Apparence haut de gamme et représentative', 'Excellente durabilité mécanique et longue durée de vie', 'Idéale pour polos, sweats, vestes, bonnets et casquettes'],
+		cons: ['Prix plus élevé pour les motifs sophistiqués', 'Les très grands motifs peuvent raidir le textile', 'Dégradés de couleurs impossibles à reproduire fidèlement'],
+	},
+	{
+		name: 'Sérigraphie',
+		body: "L'encre est déposée à travers un écran, couleur par couleur, jusqu'à 8 couleurs. C'est la référence pour les surfaces lisses et planes et les grandes séries.",
+		pros: ['Marquage de qualité, durable, aux couleurs vives', 'Excellent rapport qualité-prix sur les grosses commandes', 'Parfaite pour les grands formats (dos de vestes, gilets)'],
+		cons: ['Peu adaptée aux petites séries (frais de calage)', 'Impossible sur les bords et coutures', 'Production un peu plus longue'],
+	},
+	{
+		name: 'Transfert (marquage thermocollé)',
+		body: "Le visuel est imprimé sur un film puis thermocollé sur le textile. Un marquage net et précis, adapté aux logos détaillés ou multicolores, y compris en petites séries.",
+		pros: ['Détails nets, logos multicolores fidèles', 'Adapté aux petites et moyennes séries', 'Préserve les surfaces réfléchissantes des vêtements haute visibilité'],
+		cons: ['Durabilité légèrement inférieure à la broderie', "Rendu plus « posé » qu'imprimé dans la fibre"],
+	},
+	{
+		name: 'Impression numérique',
+		body: "Impression directe du visuel sur le textile, sans préparation d'écrans. Elle autorise la photo et la quadrichromie, jusqu'aux bords du support.",
+		pros: ['Visuels en couleur, photos et dégradés possibles', "Impression jusqu'aux bords, surfaces rugueuses acceptées", 'Aucun frais de calage : idéale en petite quantité'],
+		cons: ['Teintes Pantone exactes non garanties', 'Réservée principalement aux textiles en coton', 'Coût élevé sur les gros volumes'],
+	},
+	{
+		name: 'Sublimation',
+		body: "L'encre est transformée en gaz à 200 °C et pénètre les fibres polyester : le visuel fait corps avec le textile, avec une préservation maximale des nuances.",
+		pros: ['Impression photo en couleur, sans toucher perceptible', 'Grandes surfaces possibles', 'Délais courts'],
+		cons: ['Uniquement sur polyester (souvent fonds clairs)', 'Teintes Pantone difficiles à garantir'],
+	},
+	{
+		name: 'Gravure laser',
+		body: "Le laser grave le visuel directement dans la matière — métal, bois, plastique et textiles polaires. Le rendu ton sur ton est sobre et définitif.",
+		pros: ['Très haute durabilité, précision du logo', 'Rendu élégant et discret, sans encre', 'Adaptée aux accessoires (outils, gourdes) et à la polaire'],
+		cons: ['Pas de choix de couleur (rendu ton sur ton)', 'Matériaux compatibles uniquement', 'Petits détails très fins impossibles sur polaire'],
+	},
+	{
+		name: 'Tampographie',
+		body: "Un tampon souple dépose l'encre sur l'objet : la technique industrielle de référence pour les petits logos (jusqu'à 7 cm) sur les objets et accessoires, jusqu'à 4 couleurs.",
+		pros: ['Couleurs Pantone spécifiques possibles', 'Économique sur les grandes séries', 'Adaptée aux petits objets (casques, accessoires)'],
+		cons: ['Petits sujets uniquement, sans dégradés lisses', 'Durabilité moindre que la gravure', 'Surfaces complexes problématiques'],
+	},
+];
+---
+
+<Layout title={`${title} — ${ui.fr['site.title']}`} description={description}>
+	<main class="mx-auto max-w-3xl px-4 py-10">
+		<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: '/' }, { label: title }]} />
+		<h1 class="mb-6 text-2xl font-semibold text-gray-900">Guide des procédés de marquage</h1>
+		<div class="space-y-6 text-gray-700">
+			<p>
+				Chaque support et chaque volume appellent une technique de marquage différente. Ce guide présente les
+				procédés que nous utilisons sur les EPI, les vêtements de travail et leurs accessoires. Pour un conseil
+				personnalisé, rendez-vous sur la page
+				<a href="/personnalisation" class="font-medium text-brand hover:text-brand-dark">Personnalisation</a>
+				ou <a href="/devis" class="font-medium text-brand hover:text-brand-dark">demandez un devis</a>.
+			</p>
+			<Image src={broderieLogo} alt="Broderie d'un logo en cours sur machine" width={1200} height={800} class="rounded-lg" />
+			{
+				techniques.map((technique) => (
+					<section class="rounded-lg border border-gray-200 p-5">
+						<h2 class="mb-2 font-heading text-lg font-bold text-gray-900">{technique.name}</h2>
+						<p class="mb-3">{technique.body}</p>
+						<div class="grid gap-4 sm:grid-cols-2">
+							<div>
+								<h3 class="mb-1 text-sm font-semibold text-green-700">Avantages</h3>
+								<ul class="list-inside list-disc space-y-1 text-sm">
+									{technique.pros.map((pro) => <li>{pro}</li>)}
+								</ul>
+							</div>
+							<div>
+								<h3 class="mb-1 text-sm font-semibold text-gray-500">Limites</h3>
+								<ul class="list-inside list-disc space-y-1 text-sm">
+									{technique.cons.map((con) => <li>{con}</li>)}
+								</ul>
+							</div>
+						</div>
+					</section>
+				))
+			}
+			<p>
+				Toute personnalisation est réalisée dans le respect des normes applicables aux EPI (Règlement (UE) 2016/425) —
+				voir aussi <a href="/les-normes" class="font-medium text-brand hover:text-brand-dark">notre page sur les normes</a>.
+			</p>
+		</div>
+	</main>
+</Layout>

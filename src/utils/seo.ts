@@ -39,6 +39,13 @@ export function garmentTypeDescription(garmentType: GarmentType, lang: Lang): st
 		: `Professional ${label} at ${BRAND}: browse our selection across all protection ranges.`;
 }
 
+export function selectionDescription(selection: { labels: { fr: string; en: string } }, lang: Lang): string {
+	const label = selection.labels[lang];
+	return lang === 'fr'
+		? `${label} — notre sélection d'EPI et de vêtements de travail certifiés pour professionnels, chez ${BRAND}.`
+		: `${label} — our selection of certified PPE and workwear for professionals, at ${BRAND}.`;
+}
+
 export function productDescription(product: Product): string {
 	const text = product.description?.trim();
 	if (text) return text.length > 300 ? `${text.slice(0, 297)}…` : text;

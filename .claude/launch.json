@@ -6,6 +6,12 @@
       "runtimeExecutable": "bash",
       "runtimeArgs": ["-c", "export PATH=/Users/malolebrin/.nvm/versions/node/v22.17.1/bin:$PATH && npm run dev -- --port 4322"],
       "port": 4322
+    },
+    {
+      "name": "astro-preview",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "export PATH=/Users/malolebrin/.nvm/versions/node/v22.17.1/bin:$PATH && npm run preview -- --port 4323"],
+      "port": 4323
     }
   ]
 }

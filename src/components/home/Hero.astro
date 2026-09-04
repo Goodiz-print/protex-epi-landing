@@ -24,7 +24,9 @@ const slides = [
 	<h1 class="sr-only">{t('home.hero.title')}</h1>
 	<p class="sr-only">{t('home.hero.subtitle')}</p>
 
-	<div class="relative h-[300px] sm:h-[480px] lg:h-[560px]">
+	{/* Ratio natif des 3 visuels (2,6:1) : les slides ne sont plus rognées ;
+		le max-h ne tronque légèrement que sur les écrans plus larges que 1560px. */}
+	<div class="relative aspect-[13/5] max-h-[600px] w-full">
 		<ul class="flex h-full transition-transform duration-700 ease-in-out" data-track>
 			{
 				slides.map((slide, index) => (
@@ -35,7 +37,7 @@ const slides = [
 								alt=""
 								width={2000}
 								height={769}
-								class="h-full w-full object-cover object-left sm:object-center"
+								class="h-full w-full object-cover object-center"
 								loading={index === 0 ? 'eager' : 'lazy'}
 							/>
 						</a>
