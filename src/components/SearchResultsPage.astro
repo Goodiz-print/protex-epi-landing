@@ -23,6 +23,7 @@ const homeHref = lang === 'en' ? '/en' : '/';
 		data-label-empty={t('search.noResults')}
 		data-label-hint={t('search.results.hint')}
 		data-label-view={t('catalog.viewProduct')}
+		data-search-index-url={lang === 'en' ? '/en/search-index.json' : '/search-index.json'}
 		data-pagefind-ignore
 	>
 		<p class="mb-6 text-sm text-gray-500" data-search-summary>{t('search.results.hint')}</p>
@@ -40,19 +41,7 @@ const homeHref = lang === 'en' ? '/en' : '/';
 </main>
 
 <script>
-	// Voir SearchBox.astro : le module Pagefind n'existe qu'après le build complet
-	// (`pagefind --site dist`), il est donc absent du graphe de modules de Vite.
-	// L'import doit passer par `new Function` pour échapper à l'analyse statique
-	// (sinon Vite laisse un jeton __VITE_PRELOAD__ non résolu — cf. commit 9a22212).
-	// Corollaire : cette page ne renvoie rien en `astro dev`, tester sur le build.
-	interface PagefindResultData {
-		url: string;
-		excerpt: string;
-		meta?: { title?: string; image?: string; price?: string };
-	}
-	interface PagefindApi {
-		search(query: string): Promise<{ results: { data(): Promise<PagefindResultData> }[] }>;
-	}
+	import { loadSearchEngine, type PagefindResultData } from '~/utils/catalog-search';
 
 	const PLACEHOLDER = '/images/product-placeholder.svg';
 	const PAGE_SIZE = 24;
@@ -69,16 +58,16 @@ const homeHref = lang === 'en' ? '/en' : '/';
 		if (query.length < 2) return;
 		summary.textContent = '…';
 
-		const dynamicImport = new Function('path', 'return import(path)') as (path: string) => Promise<PagefindApi>;
-		let pagefind: PagefindApi;
+		const searchIndexUrl = page.dataset.searchIndexUrl ?? '/search-index.json';
+		let engine;
 		try {
-			pagefind = await dynamicImport('/pagefind/pagefind.js');
+			engine = await loadSearchEngine(searchIndexUrl);
 		} catch {
 			summary.textContent = page.dataset.labelEmpty ?? '';
 			return;
 		}
 
-		const search = await pagefind.search(query);
+		const search = await engine.search(query);
 		const results = search.results;
 		if (results.length === 0) {
 			summary.textContent = `${page.dataset.labelFor} « ${query} » — ${page.dataset.labelEmpty}`;

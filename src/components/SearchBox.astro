@@ -10,6 +10,7 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 
 const searchUrl = lang === 'en' ? '/en/search' : '/recherche';
+const searchIndexUrl = lang === 'en' ? '/en/search-index.json' : '/search-index.json';
 ---
 
 {/* Formulaire GET natif : Entrée mène à la page de résultats même sans JS. */}
@@ -22,6 +23,7 @@ const searchUrl = lang === 'en' ? '/en/search' : '/recherche';
 	data-no-results-label={t('search.noResults')}
 	data-view-all-label={t('search.viewAll')}
 	data-search-url={searchUrl}
+	data-search-index-url={searchIndexUrl}
 	data-pagefind-ignore
 >
 	<label for="site-search" class="sr-only">{t('search.label')}</label>
@@ -55,11 +57,7 @@ const searchUrl = lang === 'en' ? '/en/search' : '/recherche';
 </form>
 
 <script>
-	interface PagefindApi {
-		search(query: string): Promise<{
-			results: { data(): Promise<{ url: string; meta?: { title?: string }; excerpt: string }> }[];
-		}>;
-	}
+	import { loadSearchEngine, type PagefindApi } from '~/utils/catalog-search';
 
 	function debounce<T extends (...args: never[]) => void>(fn: T, delay: number) {
 		let timer: ReturnType<typeof setTimeout>;
@@ -78,21 +76,14 @@ const searchUrl = lang === 'en' ? '/en/search' : '/recherche';
 			const noResultsLabel = box.dataset.noResultsLabel ?? '';
 			const viewAllLabel = box.dataset.viewAllLabel ?? '';
 			const searchUrl = box.dataset.searchUrl ?? '/recherche';
-			// The pagefind module is generated at build time (`pagefind --site dist`), after the
-			// Vite/Rollup build finishes, so it's unavailable in `astro dev` and absent from Vite's
-			// module graph. `@vite-ignore` alone isn't enough to stop Vite's build wrapping this
-			// import with its modulePreload helper — since the target chunk doesn't exist in the
-			// graph, the helper call is left referencing an unresolved `__VITE_PRELOAD__` token,
-			// throwing at runtime and breaking search on every production build. Routing the import
-			// through `new Function` hides it from Vite/Rollup/esbuild's static analysis entirely.
+			const searchIndexUrl = box.dataset.searchIndexUrl ?? '/search-index.json';
 			let pagefind: PagefindApi | null = null;
 			let pagefindFailed = false;
-			const dynamicImport = new Function('path', 'return import(path)') as (path: string) => Promise<PagefindApi>;
 
 			async function ensurePagefind() {
 				if (pagefind || pagefindFailed) return pagefind;
 				try {
-					pagefind = await dynamicImport('/pagefind/pagefind.js');
+					pagefind = await loadSearchEngine(searchIndexUrl);
 				} catch {
 					pagefindFailed = true;
 				}
