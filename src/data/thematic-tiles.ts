@@ -27,9 +27,10 @@ export const thematicTiles: ThematicTile[] = [
 		id: 'vestes-haute-visibilite',
 		labels: { fr: 'Vestes haute visibilité', en: 'High-visibility jackets' },
 		image: hiVisImage,
-		// Photo entière, sans effet sombre ni rognage (retour client).
+		// Photo claire : bandeau brand plutôt qu’un voile sombre.
+		// object-left : le modèle est à gauche du 2:1, object-cover recadre le mur.
 		noScrim: true,
-		fitClass: 'object-contain bg-white',
+		imagePositionClass: 'object-left',
 		getHref: (lang) => getSelectionUrl(lang, 'vestes-haute-visibilite'),
 	},
 	{

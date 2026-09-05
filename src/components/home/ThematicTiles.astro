@@ -13,7 +13,7 @@ const t = useTranslations(lang);
 
 const cardClass = 'group relative block h-52 overflow-hidden rounded-lg sm:h-64';
 const imageClass = (fitClass?: string, positionClass?: string) =>
-	`h-full w-full transition-transform duration-300 group-hover:scale-105 ${fitClass ?? 'object-cover'} ${positionClass ?? 'object-center'}`;
+	`absolute inset-0 h-full w-full transition-transform duration-300 group-hover:scale-105 ${fitClass ?? 'object-cover'} ${positionClass ?? 'object-center'}`;
 ---
 
 <section class="mx-auto max-w-6xl px-4 pb-16 pt-4">
@@ -64,7 +64,7 @@ const imageClass = (fitClass?: string, positionClass?: string) =>
 							)}
 							<span
 								class={`absolute inset-x-0 bottom-0 font-heading text-lg font-bold uppercase text-white ${
-									tile.noScrim ? 'bg-brand px-5 py-3' : 'p-5'
+									tile.noScrim ? 'rounded-b-lg bg-brand px-5 py-3' : 'p-5'
 								}`}
 							>
 								{tile.labels[lang]}
