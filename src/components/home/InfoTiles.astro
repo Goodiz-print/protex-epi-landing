@@ -17,10 +17,11 @@ const t = useTranslations(lang);
 interface InfoTile {
 	label: string;
 	image: ImageMetadata;
-	/** Absent pour la case Chorus Pro : simple survol, pas de clic (demande client). */
+	/** Absent pour Chorus Pro : survol uniquement, pas de clic. */
 	href?: string;
-	/** Le titre est déjà incrusté dans le visuel : pas de bandeau texte par-dessus. */
-	labelOnImage?: boolean;
+	/** Fond visible si l’image ne remplit pas la carte (object-contain). */
+	bgClass: string;
+	imageClass: string;
 }
 
 const tiles: InfoTile[] = [
@@ -28,46 +29,162 @@ const tiles: InfoTile[] = [
 		label: t('home.info.personalise'),
 		image: jePersonnalise,
 		href: lang === 'en' ? '/en/customisation' : '/personnalisation',
+		bgClass: 'bg-[#e6e8ec]',
+		imageClass: 'absolute inset-0 h-full w-full object-cover',
 	},
 	{
 		label: t('home.info.chorus'),
 		image: facturationPro,
-		labelOnImage: true,
+		bgClass: 'bg-[#4BC2F1]',
+		imageClass: 'absolute inset-0 h-full w-full object-contain',
 	},
 	{
 		label: t('home.info.norms'),
 		image: normes,
 		href: lang === 'en' ? '/en/standards' : '/les-normes',
-		labelOnImage: true,
+		bgClass: 'bg-gray-800',
+		imageClass: 'absolute inset-0 h-full w-full object-contain',
 	},
 ];
 
-// Les visuels Chorus Pro et Normes sont en 2:1 : les cases adoptent ce ratio
-// pour les afficher entiers, sans aucun rognage.
-const cardClass = 'group relative block aspect-[2/1] overflow-hidden rounded-lg border border-gray-200';
-const imageClass = 'h-full w-full object-cover transition-transform duration-300 group-hover:scale-105';
-const labelClass =
-	'absolute inset-x-0 bottom-0 bg-gradient-to-t from-gray-900/70 to-transparent p-4 pt-8 font-heading text-base font-bold uppercase text-white';
+const cardClass =
+	'relative block aspect-[2/1] overflow-hidden rounded-lg no-underline transition duration-300 hover:-translate-y-1 hover:shadow-[0_14px_36px_rgba(0,0,0,0.2)]';
 ---
 
-<section class="mx-auto max-w-6xl px-4 pb-14">
-	<ul class="grid gap-4 sm:grid-cols-3">
-		{
-			tiles.map((tile) => (
-				<li>
-					{tile.href ? (
-						<a href={tile.href} aria-label={tile.label} class={`${cardClass} transition-colors hover:border-brand`}>
-							<Image src={tile.image} alt={tile.labelOnImage ? tile.label : ''} width={800} class={imageClass} />
-							{!tile.labelOnImage && <span class={labelClass}>{tile.label}</span>}
-						</a>
-					) : (
-						<div class={cardClass}>
-							<Image src={tile.image} alt={tile.labelOnImage ? tile.label : ''} width={800} class={imageClass} />
-							{!tile.labelOnImage && <span class={labelClass}>{tile.label}</span>}
-						</div>
-					)}
-				</li>
-			))
-		}
-	</ul>
+<section class="info-tiles bg-[#f3f4f6] px-4 py-10 sm:py-14" aria-label={t('home.info.section')}>
+	<div class="info-tiles__inner relative mx-auto max-w-6xl">
+		<p class="info-tiles__cta">
+			<span class="info-tiles__cta-text">
+				{t('home.info.personaliseLine1')}<br />{t('home.info.personaliseLine2')}
+			</span>
+			<span class="info-tiles__cta-arrow" aria-hidden="true">
+				<svg viewBox="0 0 50 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						class="info-tiles__arrow-line"
+						d="M18 2 C20 12, 16 20, 22 28 C26 34, 34 32, 40 28"
+						stroke="#0071ce"
+						stroke-width="3.5"
+						stroke-linecap="round"></path>
+					<path
+						class="info-tiles__arrow-head"
+						d="M34 22 L42 28 L35 35"
+						stroke="#0071ce"
+						stroke-width="3.5"
+						stroke-linecap="round"
+						stroke-linejoin="round"></path>
+				</svg>
+			</span>
+		</p>
+		<ul class="grid gap-3.5 sm:grid-cols-3">
+			{
+				tiles.map((tile) => (
+					<li>
+						{tile.href ? (
+							<a href={tile.href} aria-label={tile.label} class={`${cardClass} ${tile.bgClass}`}>
+								<Image src={tile.image} alt="" width={800} class={tile.imageClass} />
+							</a>
+						) : (
+							<div class={`${cardClass} ${tile.bgClass} cursor-default`} title={tile.label}>
+								<Image src={tile.image} alt={tile.label} width={800} class={tile.imageClass} />
+							</div>
+						)}
+					</li>
+				))
+			}
+		</ul>
+	</div>
 </section>
+
+<style>
+	.info-tiles__cta {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-end;
+		gap: 0;
+		margin: 0 0 14px 10px;
+		transform: rotate(-4deg);
+		animation: info-tiles-bounce-mobile 3s ease-in-out infinite;
+		pointer-events: none;
+		white-space: nowrap;
+	}
+
+	.info-tiles__cta-text {
+		font-family: var(--font-hand);
+		font-size: 1.75rem;
+		line-height: 1.1;
+		color: var(--color-brand);
+		text-align: center;
+		-webkit-text-stroke: 0.5px #f3f4f6;
+		text-shadow: 2px 2px 0 rgb(0 113 206 / 0.15);
+	}
+
+	.info-tiles__cta-arrow svg {
+		width: 50px;
+		height: 45px;
+	}
+
+	.info-tiles__arrow-line {
+		stroke-dasharray: 200;
+		stroke-dashoffset: 200;
+		animation: info-tiles-draw 1.8s ease forwards 0.5s;
+	}
+
+	.info-tiles__arrow-head {
+		stroke-dasharray: 60;
+		stroke-dashoffset: 60;
+		animation: info-tiles-draw 0.6s ease forwards 2s;
+	}
+
+	@keyframes info-tiles-draw {
+		to {
+			stroke-dashoffset: 0;
+		}
+	}
+
+	@keyframes info-tiles-bounce-mobile {
+		0%,
+		100% {
+			transform: rotate(-4deg) translateY(0);
+		}
+		50% {
+			transform: rotate(-4deg) translateY(-5px);
+		}
+	}
+
+	@media (min-width: 1500px) {
+		.info-tiles__inner {
+			overflow: visible;
+		}
+
+		.info-tiles__cta {
+			position: absolute;
+			right: calc(100% + 20px);
+			top: 50%;
+			margin: 0;
+			flex-direction: column;
+			align-items: center;
+			transform: translateY(-50%) rotate(-6deg);
+			animation: info-tiles-bounce 3s ease-in-out infinite;
+			z-index: 10;
+		}
+
+		.info-tiles__cta-text {
+			font-size: 2rem;
+		}
+
+		.info-tiles__cta-arrow {
+			align-self: flex-end;
+			margin-top: -2px;
+		}
+
+		@keyframes info-tiles-bounce {
+			0%,
+			100% {
+				transform: translateY(-50%) rotate(-6deg);
+			}
+			50% {
+				transform: translateY(calc(-50% - 5px)) rotate(-6deg);
+			}
+		}
+	}
+</style>

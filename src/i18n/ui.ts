@@ -32,8 +32,11 @@ export const ui = {
 		'header.callUs': 'Nous appeler',
 		'header.emailUs': 'Nous écrire',
 		'home.info.personalise': 'Je personnalise',
+		'home.info.personaliseLine1': 'Je',
+		'home.info.personaliseLine2': 'personnalise',
 		'home.info.chorus': 'Facturation simplifiée avec Chorus Pro',
 		'home.info.norms': 'Les normes',
+		'home.info.section': 'Personnalisation, facturation et normes',
 		'home.tiles.playVideo': 'Lire la vidéo',
 		'quote.page.title': 'Demander un devis',
 		'quote.page.intro':
@@ -156,8 +159,11 @@ export const ui = {
 		'header.callUs': 'Call us',
 		'header.emailUs': 'Email us',
 		'home.info.personalise': 'Customise my equipment',
+		'home.info.personaliseLine1': 'I',
+		'home.info.personaliseLine2': 'customise',
 		'home.info.chorus': 'Simplified invoicing with Chorus Pro',
 		'home.info.norms': 'The standards',
+		'home.info.section': 'Customisation, invoicing and standards',
 		'home.tiles.playVideo': 'Play video',
 		'quote.page.title': 'Request a quote',
 		'quote.page.intro':

@@ -1,0 +1,100 @@
+---
+import { Image } from 'astro:assets';
+import Breadcrumb from '~/components/catalog/Breadcrumb.astro';
+import Button from '~/components/ui/Button.astro';
+import { useTranslations } from '~/i18n/utils';
+import { getSubcategoryUrl, type Lang } from '~/utils/catalog';
+import { standardsCategories, standardsCopy as copy, workwearStandards } from '~/data/standards-copy';
+import normesHero from '~/assets/images/visuel-les-normes.png';
+
+interface Props {
+	lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const homeHref = lang === 'en' ? '/en' : '/';
+const quoteHref = lang === 'en' ? '/en/quote' : '/devis';
+---
+
+<main class="mx-auto max-w-6xl px-4 py-10">
+	<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: homeHref }, { label: copy.h1[lang] }]} />
+	<h1 class="mb-6 font-heading text-3xl font-bold uppercase text-gray-900">{copy.h1[lang]}</h1>
+
+	<Image
+		src={normesHero}
+		alt={copy.h1[lang]}
+		width={1600}
+		height={800}
+		class="mb-8 aspect-[2/1] w-full rounded-lg object-cover"
+	/>
+
+	<div class="space-y-8 text-gray-700">
+		<section class="space-y-4">
+			<p>{copy.intro1[lang]}</p>
+			<p>{copy.intro2[lang]}</p>
+		</section>
+
+		<section class="space-y-4">
+			<h2 class="font-heading text-2xl font-bold uppercase text-gray-900">{copy.regulationTitle[lang]}</h2>
+			<p>{copy.regulationBody[lang]}</p>
+		</section>
+
+		<section class="space-y-4">
+			<h2 class="font-heading text-2xl font-bold uppercase text-gray-900">{copy.categoriesTitle[lang]}</h2>
+			<div class="grid gap-4 md:grid-cols-3">
+				{
+					standardsCategories[lang].map((category) => (
+						<article class="rounded-lg border border-gray-200 p-5">
+							<h3 class="mb-2 font-heading font-bold text-gray-900">{category.name}</h3>
+							<p class="text-sm">{category.body}</p>
+						</article>
+					))
+				}
+			</div>
+		</section>
+
+		<section class="space-y-4">
+			<h2 class="font-heading text-2xl font-bold uppercase text-gray-900">{copy.normsTitle[lang]}</h2>
+			<p>{copy.normsIntro[lang]}</p>
+			<div class="grid gap-3 sm:grid-cols-2">
+				{
+					workwearStandards.map((norm) => (
+						<details class="group rounded-lg border border-gray-200 open:border-brand">
+							<summary class="cursor-pointer list-none px-4 py-3 font-heading text-sm font-bold text-gray-900 marker:content-none [&::-webkit-details-marker]:hidden">
+								<span class="flex items-start justify-between gap-3">
+									<span>
+										<span class="text-brand">{norm.code}</span>
+										<span class="mt-1 block font-sans text-sm font-normal text-gray-700">{norm.label[lang]}</span>
+									</span>
+									<span class="mt-1 text-gray-400 transition group-open:rotate-45" aria-hidden="true">
+										+
+									</span>
+								</span>
+							</summary>
+							<div class="space-y-3 px-4 pb-4 text-sm">
+								<p>{norm.detail[lang]}</p>
+								{norm.catalog && (
+									<p>
+										<a
+											href={getSubcategoryUrl(lang, norm.catalog[0], norm.catalog[1])}
+											class="font-medium text-brand hover:text-brand-dark"
+										>
+											{copy.catalogLink[lang]} →
+										</a>
+									</p>
+								)}
+							</div>
+						</details>
+					))
+				}
+			</div>
+		</section>
+
+		<section class="rounded-lg bg-gray-50 p-8 text-center">
+			<h2 class="mb-3 font-heading text-xl font-bold text-gray-900">{copy.helpTitle[lang]}</h2>
+			<p class="mb-6">{copy.helpBody[lang]}</p>
+			<Button href={quoteHref} variant="primary">{copy.ctaButton[lang]}</Button>
+		</section>
+	</div>
+</main>
