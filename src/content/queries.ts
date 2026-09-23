@@ -35,6 +35,17 @@ export async function getProductsByGarmentType(garmentType: GarmentType) {
 
 export async function getProductsBySelection(selection: Selection) {
 	const products = await getAllProducts();
+	if (selection.picks) {
+		// Sélection explicite : tous les coloris des modèles choisis, dans l'ordre
+		// des picks (un modèle absent du catalogue est simplement ignoré).
+		const rank = new Map(selection.picks.map((key, index) => [key, index]));
+		const picked = products
+			.map((entry) => entry.data)
+			.filter((product) => product.category !== 'a-trier' && rank.has(styleKey(product)));
+		if (picked.length > 0) {
+			return picked.sort((a, b) => rank.get(styleKey(a))! - rank.get(styleKey(b))!);
+		}
+	}
 	let matched = products.filter((entry) => matchesSelection(selection, entry.data)).map((entry) => entry.data);
 	if (selection.limit) {
 		// Le plafond s'applique en nombre de modèles : on garde tous les coloris

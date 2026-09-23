@@ -23,11 +23,16 @@ export interface Selection {
 	/** Un produit appartient à la sélection si AU MOINS UNE règle matche. */
 	rules: SelectionRule[];
 	/**
-	 * Plafond de modèles (groupes de coloris) affichés — utilisé par les
-	 * sections Collectivités pour « faire ressortir quelques produits »
-	 * plutôt que le catalogue entier.
+	 * Plafond de modèles (groupes de coloris) affichés, appliqué aux règles.
 	 */
 	limit?: number;
+	/**
+	 * Sélection explicite de modèles (clés `supplier:styleCode`, cf. styleKey de
+	 * utils/product-groups.ts), affichés dans cet ordre avec tous leurs coloris.
+	 * Quand `picks` est renseigné, `rules`/`limit` sont ignorés — utilisé par les
+	 * sections Collectivités pour « faire ressortir uniquement quelques produits ».
+	 */
+	picks?: string[];
 }
 
 /** Minuscules + suppression des diacritiques, pour matcher « Visibilité » avec `visibilite`. */
@@ -102,12 +107,33 @@ export const selections: Selection[] = [
 ];
 
 // Univers Collectivités : mêmes slugs de sections que l'ancien site
-// protex-epi.com (/fr/protections-tetes, /fr/haut-du-corps, …). La curation par
-// mots-clés + plafond est un premier jet à faire valider par le client.
+// protex-epi.com (/fr/protections-tetes, /fr/haut-du-corps, …). Le client veut
+// « uniquement quelques produits susceptibles de plaire à une collectivité » :
+// chaque section est une courte liste de modèles choisis à la main dans le
+// catalogue (inspiration : gamme collectivités epi-store — agents des services
+// techniques, voirie, espaces verts, propreté), dans l'ordre d'affichage voulu.
+// Proposition à faire valider par le client ; `rules` sert de repli si un
+// modèle disparaît du catalogue (jamais utilisé tant que `picks` matche).
 export const collectiviteSections: Selection[] = [
 	{
 		slug: 'protections-tetes',
 		labels: { fr: 'Protections têtes', en: 'Head protection' },
+		picks: [
+			'portwest:PS55', // Casque Endurance (6 coloris)
+			'portwest:PW50', // Casque de sécurité Expertbase
+			'portwest:PS63', // Casque Travaux en hauteur Endurance ventilé
+			'portwest:PS59', // Casquette anti-heurt AirTech
+			'portwest:PW79', // Casquette anti-heurt visière longue
+			'portwest:HB10', // Casquette baseball HV
+			'portwest:HA22', // Casquette de protection solaire respirante
+			'portwest:HA14', // Bonnet Hi-Vis réversible
+			'blaklader:20631037', // Bonnet stretch jaune fluo
+			'portwest:PW32', // Lunette Enveloppante
+			'portwest:PS33', // Lunette de sécurité PW Screen Plus
+			'portwest:PW40', // Casque anti-bruit Classic
+			'portwest:PS41', // Casque Anti-bruit Super HV
+			'portwest:EP13', // Bouchons d'oreille en mousse PU (30 paires)
+		],
 		rules: [
 			{
 				scope: { category: 'tete' },
@@ -119,6 +145,24 @@ export const collectiviteSections: Selection[] = [
 	{
 		slug: 'haut-du-corps',
 		labels: { fr: 'Haut du corps', en: 'Upper body' },
+		picks: [
+			'portwest:S466', // Parka HV Bicolore (6 coloris)
+			'portwest:PW367', // Parka PW3 Hi-Vis 5-en-1
+			'portwest:DX466', // Parka 4 en 1 DX4 Hi-Vis
+			'portwest:T402', // Softshell Haute-Visibilité PW3
+			'portwest:S424', // Veste softshell Classic Hi-Vis
+			'portwest:T164', // Veste de travail HV avec panneaux en mesh
+			'portwest:CD861', // Veste de travail WX2 Eco Hi-Vis
+			'portwest:PW374', // Bodywarmer réversible haute visibilité PW3
+			'portwest:C472', // Gilet à bandes et à bretelles Hi-Vis
+			'portwest:S477', // Polo Hi-Vis manches courtes
+			'portwest:T180', // Polo HV PW3
+			'portwest:S277', // Polo HV Manches Longues
+			'portwest:S478', // T-Shirt Hi-Vis
+			'portwest:B303', // Sweatshirt Haute Visibilité
+			'portwest:B317', // Sweat Hi-Vis bicolore zippé à capuche
+			'portwest:CD812', // Polo WX2 manches courtes (uni, pour les services)
+		],
 		rules: [
 			{
 				scope: { category: 'corps' },
@@ -130,6 +174,21 @@ export const collectiviteSections: Selection[] = [
 	{
 		slug: 'bas-du-corps',
 		labels: { fr: 'Bas du corps', en: 'Lower body' },
+		picks: [
+			'portwest:ES046', // Pantalon de travail HV Essential ES1 (4 coloris)
+			'portwest:L049', // Pantalon combat Hi-Vis Bicolore
+			'portwest:TX71', // Pantalon Haute-Visibilité Séville
+			'portwest:PW342', // Pantalon extrême haute visibilité PW3
+			'portwest:DX453', // Pantalon de travail stretch DX4 HV
+			'portwest:CD888', // Pantalon de travail stretch HV Classe 1 Eco WX2
+			'portwest:CD131', // Pantalon de travail coton léger WX1
+			'portwest:CD111', // Pantalon de travail en coton bicolore WX1
+			'portwest:T601', // Pantalon PW3
+			'portwest:E043', // Bermuda HiVis Poly-coton
+			'portwest:L043', // Short en poly-coton léger haute visibilité
+			'portwest:S790', // Bermuda Combat
+			'portwest:CD114', // Bermuda coton bicolore WX1
+		],
 		rules: [
 			{
 				scope: { category: 'corps' },
@@ -141,12 +200,40 @@ export const collectiviteSections: Selection[] = [
 	{
 		slug: 'vetements-intemperies',
 		labels: { fr: 'Vêtements intempéries', en: 'Weatherproof clothing' },
+		picks: [
+			'portwest:S466', // Parka HV Bicolore
+			'portwest:BX323', // Veste de pluie Ultimate haute-visibilité 3 en 1
+			'portwest:T166', // Veste de pluie HV PW3 (3L)
+			'portwest:S166', // Veste de pluie HV bicolore
+			'portwest:ES440', // Veste de pluie HV Essential ES1
+			'portwest:S440', // Veste de pluie Classic (6 coloris)
+			'portwest:S250', // Veste Sealtex Ocean
+			'portwest:H444', // Pantalon de pluie Hi-Vis bicolore
+			'portwest:DX448', // Pantalon de pluie DX4 HV
+			'portwest:S441', // Pantalon de pluie Classic
+			'portwest:L440', // Ensemble de pluie (veste + pantalon)
+			'portwest:L450', // Ensemble de pluie Sealtex Essential
+		],
 		rules: [{ scope: { category: 'corps', subcategory: 'vetements-pluie' }, groups: [] }],
 		limit: 60,
 	},
 	{
 		slug: 'chaussures-bottes',
 		labels: { fr: 'Chaussures & Bottes', en: 'Footwear & Boots' },
+		picks: [
+			'portwest:FW43', // Derby Steelite Kumo S3
+			'portwest:FC24', // Chaussures basses composite textile S1 SR FO
+			'portwest:FD27', // Chaussure Compositelite Protector S3 ESD HRO
+			'portwest:FT22', // Basket textile 0B ESD SR
+			'portwest:FW02', // Steelite Trainer aéré S1P
+			'portwest:FW24', // Brodequin S3 Kumo surembout renforcé
+			'portwest:FW69', // Brodequin Mustang Steelite S3
+			'portwest:FC60', // Brodequin cuir nubuck composite S3S HRO
+			'portwest:FE01', // Chaussure haute Bevel Composite S3S ESD
+			'portwest:FW95', // Bottes de sécurité Wellington S5 (4 coloris)
+			'portwest:FD33', // Botte Steelite Kumo doublée de fourrure S3
+			'portwest:FD05', // Botte fourrée S3L SC HRO CI SR
+		],
 		rules: [
 			{
 				scope: { category: 'pieds' },
