@@ -11,14 +11,20 @@
 //
 // The raw CSVs are gitignored: only these JSON files are committed.
 //
-// Run manually: `node scripts/generate-catalog-data.mjs`
+// Run manually: `node scripts/generate-catalog-data.mjs [--supplier portwest,mascot]`
 // Never run by astro dev/build. Rerun after any new supplier export.
+//
+// A supplier whose export is missing from src/data/suppliers/<supplier>/ is skipped and its
+// committed catalog JSON is left as is, so the script can run on a machine that only has one
+// supplier's files. The manual fixes are re-applied on top of the export: category overrides
+// (already merged into category-mapping.<supplier>.json by reclassify-catalog.mjs) and image
+// overrides (src/data/image-overrides.<supplier>.json).
 //
 // The grouping/joining/mapping logic is NOT duplicated here: it is imported from
 // `scripts/lib/supplier-csv.ts`, the single source of truth
 // (Node strips the TypeScript types at import time).
 
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parse } from 'csv-parse/sync';
@@ -159,11 +165,38 @@ const BUILDERS = {
 	blaklader: buildBlaklader,
 };
 
+/** Every raw file this source reads, relative to the project root. */
+function exportFiles(source) {
+	return [source.csvPath, source.commercePath, source.variantePath, source.mediaPath].filter(Boolean);
+}
+
+function parseSuppliers(argv) {
+	const index = argv.indexOf('--supplier');
+	if (index === -1) return SOURCES.map((source) => source.supplier);
+	const wanted = (argv[index + 1] ?? '').split(',').map((value) => value.trim());
+	for (const supplier of wanted) {
+		if (!SOURCES.some((source) => source.supplier === supplier)) {
+			console.error(`Unknown supplier ${supplier}`);
+			process.exit(1);
+		}
+	}
+	return wanted;
+}
+
 function main() {
+	const suppliers = parseSuppliers(process.argv.slice(2));
 	let totalProducts = 0;
 	let totalWarnings = 0;
 
 	for (const source of SOURCES) {
+		if (!suppliers.includes(source.supplier)) continue;
+		const missing = exportFiles(source).filter((path) => !existsSync(resolve(ROOT, path)));
+		if (missing.length > 0) {
+			console.log(
+				`[${source.supplier}] export not found (${missing.join(', ')}) — keeping the committed src/data/catalog/products.${source.supplier}.json`,
+			);
+			continue;
+		}
 		const { products, warnings, summary } = BUILDERS[source.supplier](source);
 		// Manual image fixes (src/data/image-overrides.<supplier>.json) win over the export.
 		const overrides = readImageOverrides(resolve(ROOT, `src/data/image-overrides.${source.supplier}.json`));
