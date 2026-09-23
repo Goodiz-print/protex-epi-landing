@@ -12,14 +12,21 @@ import {
 import { getListingPriority } from '~/data/listing-priorities';
 import type { Product } from '~/content/schemas/product';
 import { groupProductsByStyle, styleKey, type ProductGroup } from '~/utils/product-groups';
+import { demoteProductsWithoutImage } from '~/utils/product-image';
 
 export async function getAllProducts() {
 	return getCollection('products');
 }
 
+// Dans tous les listings, les produits qui n'ont que l'image de substitution
+// passent en fin de liste (tri stable) : ils ne doivent pas occuper les
+// premières cartes d'une page. Appliqué côté serveur, donc à la fois au HTML
+// pré-rendu et au payload listing.json (appariés index par index).
 export async function getProductsByCategory(categorySlug: string) {
 	const products = await getAllProducts();
-	return products.filter((entry) => entry.data.category === categorySlug).map((entry) => entry.data);
+	return demoteProductsWithoutImage(
+		products.filter((entry) => entry.data.category === categorySlug).map((entry) => entry.data),
+	);
 }
 
 export async function getProductsByGarmentType(garmentType: GarmentType) {
@@ -57,7 +64,7 @@ export async function getProductsBySelection(selection: Selection) {
 		);
 		matched = matched.filter((product) => kept.has(styleKey(product)));
 	}
-	return matched;
+	return demoteProductsWithoutImage(matched);
 }
 
 export async function getProductsBySubcategory(categorySlug: string, subcategorySlug: string) {
@@ -70,10 +77,13 @@ export async function getProductsBySubcategory(categorySlug: string, subcategory
 	// l'ordre relatif des autres (tri stable). Appliqué ici pour que la première
 	// page HTML et le payload listing.json restent alignés index par index.
 	const priority = getListingPriority(categorySlug, subcategorySlug);
-	if (!priority) return scoped;
+	if (!priority) return demoteProductsWithoutImage(scoped);
 	const isPriority = (product: Product) =>
 		matchesGroups(normalizeName(product.name), priority.groups, priority.exclude);
-	return [...scoped.filter(isPriority), ...scoped.filter((product) => !isPriority(product))];
+	return demoteProductsWithoutImage([
+		...scoped.filter(isPriority),
+		...scoped.filter((product) => !isPriority(product)),
+	]);
 }
 
 // These two run once per product page (6 000+ at build time), so everything

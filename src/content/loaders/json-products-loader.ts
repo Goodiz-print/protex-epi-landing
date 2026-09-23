@@ -3,6 +3,7 @@ import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { Loader, LoaderContext } from 'astro/loaders';
 import type { Product } from '../schemas/product.ts';
+import { isIncompleteProduct } from '../../utils/product-image.ts';
 
 // Reads the pre-computed catalog data written by `scripts/generate-catalog-data.mjs`.
 // All the CSV parsing, joining and category mapping happens in that script, manually,
@@ -30,12 +31,22 @@ async function runSync(options: JsonProductsLoaderOptions, context: LoaderContex
 
 		const products: Product[] = JSON.parse(readFileSync(jsonAbsPath, 'utf-8'));
 
+		// Les fiches sans photo NI prix restent dans le JSON (données brutes) mais ne
+		// sont pas publiées : ni page produit, ni listing, ni index de recherche.
+		let skipped = 0;
 		for (const product of products) {
+			if (isIncompleteProduct(product)) {
+				skipped++;
+				continue;
+			}
 			const parsedData = await parseData({ id: product.id, data: product });
 			store.set({ id: product.id, data: parsedData, digest: generateDigest(parsedData) });
 		}
 
-		logger.info(`[${source.supplier}] loaded ${products.length} products (${jsonAbsPath})`);
+		logger.info(
+			`[${source.supplier}] loaded ${products.length - skipped} products (${jsonAbsPath})` +
+				(skipped > 0 ? `, ${skipped} skipped without image nor price` : ''),
+		);
 	}
 }
 

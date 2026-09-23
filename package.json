@@ -11,7 +11,10 @@
     "build": "astro build && pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro",
-    "check:images": "node scripts/check-product-images.mjs"
+    "check:images": "node scripts/check-product-images.mjs",
+    "generate:catalog": "node scripts/generate-catalog-data.mjs",
+    "reclassify:catalog": "node scripts/reclassify-catalog.mjs",
+    "apply:image-overrides": "node scripts/apply-image-overrides.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
