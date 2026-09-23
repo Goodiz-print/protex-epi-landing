@@ -32,6 +32,7 @@ import {
 	groupMascotRows,
 	groupPortwestRows,
 } from './lib/supplier-csv.ts';
+import { applyImageOverrides, readImageOverrides } from './lib/image-overrides.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -164,6 +165,11 @@ function main() {
 
 	for (const source of SOURCES) {
 		const { products, warnings, summary } = BUILDERS[source.supplier](source);
+		// Manual image fixes (src/data/image-overrides.<supplier>.json) win over the export.
+		const overrides = readImageOverrides(resolve(ROOT, `src/data/image-overrides.${source.supplier}.json`));
+		const { changed, unknown } = applyImageOverrides(products, overrides);
+		if (changed > 0) console.log(`[${source.supplier}] ${changed} image override(s) applied`);
+		for (const id of unknown) warnings.push(`image override for unknown product id ${id}`);
 		for (const warning of warnings) {
 			console.warn(`[${source.supplier}] ${warning}`);
 		}

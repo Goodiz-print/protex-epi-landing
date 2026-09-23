@@ -1,0 +1,3 @@
+{
+	"_comment": "Images produit corrigées à la main (clé = id du produit dans src/data/catalog/products.portwest.json, valeur = URL complète d'une photo valide, ex. relevée sur portwest.com). Appliquer avec `node scripts/apply-image-overrides.mjs` ; `generate-catalog-data.mjs` les réapplique à chaque régénération. Les fiches encore sans photo sont listées dans scripts/reports/broken-product-images.json."
+}

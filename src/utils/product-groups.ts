@@ -1,4 +1,5 @@
 import type { Product } from '~/content/schemas/product';
+import { hasProductImage } from '~/utils/product-image';
 
 // One group = one style (model), aggregating its colourway products.
 // Mirrors the reference site, which shows one listing card per model
@@ -55,8 +56,14 @@ export function groupProductsByStyle(products: Product[]): ProductGroup[] {
 			});
 		} else {
 			group.colourways.push(product);
-			// Un coloris au nom vide ne doit pas fournir le titre/l'image de la carte.
-			if (!group.primary.name.trim() && product.name.trim()) group.primary = product;
+			// Un coloris au nom vide, ou sans photo, ne doit pas fournir le titre/l'image
+			// de la carte quand un autre coloris du même modèle peut le faire.
+			if (
+				(!group.primary.name.trim() && product.name.trim()) ||
+				(!hasProductImage(group.primary) && hasProductImage(product) && product.name.trim())
+			) {
+				group.primary = product;
+			}
 			if (product.price > 0) {
 				group.priceMin = group.priceMin > 0 ? Math.min(group.priceMin, product.price) : product.price;
 				group.priceMax = Math.max(group.priceMax, product.price);

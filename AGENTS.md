@@ -45,15 +45,6 @@ patches `src/data/catalog/products.<supplier>.json` in place, so no supplier exp
 needed. Commit the overrides, the mapping and the catalog JSON together. Product URLs
 embed the category, so a moved product changes URL.
 
-### Reclassifying products without the CSVs
-
-Manual category fixes go in `src/data/category-overrides.<supplier>.json` (keyed by style
-code). Run `node scripts/reclassify-catalog.mjs`: it merges the overrides into
-`src/data/category-mapping.<supplier>.json` (so the next regeneration keeps them) **and**
-patches `src/data/catalog/products.<supplier>.json` in place, so no supplier export is
-needed. Commit the overrides, the mapping and the catalog JSON together. Product URLs
-embed the category, so a moved product changes URL.
-
 ## Product images
 
 Product images are read from each supplier's CDN URL (Portwest, Blaklader, Mascot) —
@@ -66,6 +57,22 @@ same style+colour when one is available) and `scripts/reports/broken-product-ima
 `/images/product-placeholder.svg`). Rerun `node scripts/generate-catalog-data.mjs`
 afterwards to bake the refreshed blocklist into the committed catalog JSON, then commit
 all three files.
+
+### Fixing a product image without the CSVs
+
+Put the valid URL in `src/data/image-overrides.<supplier>.json`, keyed by the product `id`
+from the catalog JSON (e.g. `"portwest:FT45:noir": "https://…/FT45BKR.jpg"`), then run
+`node scripts/apply-image-overrides.mjs` and commit both files. `generate-catalog-data.mjs`
+re-applies the overrides on every regeneration, so they survive a new supplier export.
+
+### Products without image
+
+A product whose `imageUrl` is the placeholder **and** whose price is 0 is treated as an
+unfinished supplier row (not yet sold on the FR market): the loader skips it, so it has no
+product page, no listing card and no search entry (see `src/utils/product-image.ts`). It
+comes back automatically once an image override or a new export gives it a photo or a price.
+Products that only lack the photo stay published but are sorted last in every listing, and a
+model whose first colourway has no photo takes its card image from another colourway.
 
 ## Documentation
 
