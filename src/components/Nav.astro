@@ -12,7 +12,7 @@ import {
 } from '../utils/catalog';
 import { useTranslations } from '../i18n/utils';
 import LanguagePicker from './LanguagePicker.astro';
-import collectivitesBanner from '../assets/images/nav/collectivites.png';
+import collectivitesLogo from '../assets/images/nav/collectivites-logo.png';
 
 interface Props {
 	lang: Lang;
@@ -68,18 +68,19 @@ const chevron =
 				</li>
 			))
 		}
-		{/* Onglet Collectivités : bandeau bleu comme sur l'ancien site protex-epi.com. */}
-		<li class="group relative ml-auto">
-			<a href={getCollectivitesUrl(lang)} class="flex h-full items-center">
-				<Image
-					src={collectivitesBanner}
-					alt={t('nav.collectivites')}
-					height={108}
-					class="h-[54px] w-auto"
-					loading="eager"
-				/>
+		{/* Onglet Collectivités : même onglet que les autres univers (padding, chevron,
+			dropdown) mais sur fond brand permanent — le bleu du survol — avec le logo
+			« Collectivités » du client à la place du libellé texte. */}
+		<li class="group relative">
+			{/* Logo à 40px (au lieu du texte 16px) — padding vertical réduit pour garder
+				les 54px de hauteur des autres onglets. */}
+			<a href={getCollectivitesUrl(lang)} class={`${navLinkClass.replace('py-[15px]', 'py-[7px]')} bg-brand hover:bg-brand-dark`}>
+				<Image src={collectivitesLogo} alt={t('nav.collectivites')} height={80} class="h-10 w-auto" loading="eager" />
+				<svg class="h-3 w-3 text-white/60" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+					<path fill-rule="evenodd" d={chevron} clip-rule="evenodd" />
+				</svg>
 			</a>
-			<div class="invisible absolute right-0 top-full z-50 min-w-56 rounded-b-lg border border-gray-200 bg-white p-2 opacity-0 shadow-lg transition-opacity duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+			<div class="invisible absolute left-0 top-full z-50 min-w-56 rounded-b-lg border border-gray-200 bg-white p-2 opacity-0 shadow-lg transition-opacity duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
 				<ul>
 					{
 						collectiviteSections.map((section) => (
