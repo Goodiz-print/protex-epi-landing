@@ -110,7 +110,7 @@ export const customisationTechniques = {
 		},
 		{
 			name: 'Sérigraphie',
-			body: 'La référence pour les grandes séries et les grands formats : couleurs franches, bon rapport qualité-prix et rendu homogène sur toute la dotation — t-shirts, gilets, dos de vestes.',
+			body: 'Le choix incontournable pour les grandes séries et les grands formats : des couleurs franches, un rendu homogène et durable, et un excellent rapport qualité-prix. Idéale pour les t-shirts, sweats, gilets, vestes et autres textiles.',
 		},
 	],
 	en: [
@@ -124,7 +124,7 @@ export const customisationTechniques = {
 		},
 		{
 			name: 'Screen printing',
-			body: 'The reference for large runs and large formats: solid colours, strong value and a consistent finish across the whole fleet — t-shirts, vests, jacket backs.',
+			body: 'The go-to choice for large runs and large formats: bold colours, a consistent and durable finish, and excellent value for money. Ideal for t-shirts, sweatshirts, vests, jackets and other textiles.',
 		},
 	],
 };

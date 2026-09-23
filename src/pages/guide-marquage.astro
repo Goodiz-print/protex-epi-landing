@@ -4,7 +4,7 @@ import Layout from '~/layouts/Layout.astro';
 import Breadcrumb from '~/components/catalog/Breadcrumb.astro';
 import { useTranslations } from '~/i18n/utils';
 import { ui } from '~/i18n/ui';
-import broderieLogo from '~/assets/images/personnalisation/broderie-logo.png';
+import broderieImage from '~/assets/images/personnalisation/broderie.jpg';
 
 const lang = 'fr' as const;
 const t = useTranslations(lang);
@@ -72,7 +72,7 @@ const techniques = [
 				<a href="/personnalisation" class="font-medium text-brand hover:text-brand-dark">Personnalisation</a>
 				ou <a href="/devis" class="font-medium text-brand hover:text-brand-dark">demandez un devis</a>.
 			</p>
-			<Image src={broderieLogo} alt="Broderie d'un logo en cours sur machine" width={1200} height={800} class="rounded-lg" />
+			<Image src={broderieImage} alt="Broderie d'un logo en cours sur machine" width={1200} height={1200} class="rounded-lg" />
 			{
 				techniques.map((technique) => (
 					<section class="rounded-lg border border-gray-200 p-5">

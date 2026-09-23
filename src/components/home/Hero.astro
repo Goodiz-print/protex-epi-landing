@@ -24,9 +24,10 @@ const slides = [
 	<h1 class="sr-only">{t('home.hero.title')}</h1>
 	<p class="sr-only">{t('home.hero.subtitle')}</p>
 
-	{/* Ratio natif des 3 visuels (2,6:1) : les slides ne sont plus rognées ;
-		le max-h ne tronque légèrement que sur les écrans plus larges que 1560px. */}
-	<div class="relative aspect-[13/5] max-h-[600px] w-full">
+	{/* Ratio natif des 3 visuels (2,6:1) sur toute la largeur, sans plafond de
+		hauteur : les slides ne sont jamais rognées (retour client : texte et bouton
+		des slides tronqués sur les grands écrans). */}
+	<div class="relative aspect-[13/5] w-full overflow-hidden">
 		<ul class="flex h-full transition-transform duration-700 ease-in-out" data-track>
 			{
 				slides.map((slide, index) => (

@@ -4,21 +4,28 @@ import hiVisImage from '~/assets/images/veste-haute-visbilite.png';
 import masquesImage from '~/assets/images/tiles/masques.jpg';
 import summerImage from '~/assets/images/tiles/summer.jpg';
 import winterImage from '~/assets/images/tiles/winter-1.jpg';
-import collectivitesImage from '~/assets/images/tiles/collectivites.jpg';
+import collectivitesLogo from '~/assets/images/nav/collectivites-logo.png';
 
 // Grandes tuiles thématiques en bas de page d'accueil (bloc de 6 demandé par
-// le client, septembre 2026). Chaque tuile porte son visuel dédié ; la tuile
-// vidéo joue le film Portwest en lite-embed (clic → iframe youtube-nocookie).
+// le client, septembre 2026). Chaque tuile porte son visuel dédié, sans voile
+// sombre ni bandeau (retour client) ; le libellé est posé en blanc ombré sur la
+// photo. La tuile Collectivités affiche le logo du client sur fond brand, et la
+// tuile vidéo joue le film Portwest en lecture automatique muette.
 export interface ThematicTile {
 	id: string;
 	labels: Record<Lang, string>;
 	image?: ImageMetadata;
 	imagePositionClass?: string;
-	/** Pas de voile sombre (photo produit sur fond clair, demande client). */
-	noScrim?: boolean;
 	/** Remplace object-cover, ex. `object-contain bg-white` pour ne rien rogner. */
 	fitClass?: string;
-	video?: { youtubeId: string; start?: number };
+	/** Logo centré sur fond brand à la place d'une photo (le logo fait office de libellé). */
+	logo?: ImageMetadata;
+	/**
+	 * Vidéo en lecture automatique muette. `src` (fichier local sous public/, ex.
+	 * `/videos/portwest.mp4`) a priorité sur `youtubeId` : déposer le fichier fourni
+	 * par Portwest pour supprimer toute requête vers YouTube.
+	 */
+	video?: { youtubeId?: string; start?: number; src?: string };
 	getHref?: (lang: Lang) => string;
 }
 
@@ -27,9 +34,7 @@ export const thematicTiles: ThematicTile[] = [
 		id: 'vestes-haute-visibilite',
 		labels: { fr: 'Vestes haute visibilité', en: 'High-visibility jackets' },
 		image: hiVisImage,
-		// Photo claire : bandeau brand plutôt qu’un voile sombre.
 		// object-left : le modèle est à gauche du 2:1, object-cover recadre le mur.
-		noScrim: true,
 		imagePositionClass: 'object-left',
 		getHref: (lang) => getSelectionUrl(lang, 'vestes-haute-visibilite'),
 	},
@@ -48,7 +53,7 @@ export const thematicTiles: ThematicTile[] = [
 	{
 		id: 'collectivites',
 		labels: { fr: 'Collectivités', en: 'Local authorities' },
-		image: collectivitesImage,
+		logo: collectivitesLogo,
 		getHref: (lang) => getCollectivitesUrl(lang),
 	},
 	{

@@ -1,7 +1,15 @@
 import { getCollection } from 'astro:content';
 import { categoryTaxonomy, type Category, type Subcategory } from '~/data/category-taxonomy';
 import { garmentTypes, type GarmentType } from '~/data/garment-types';
-import { collectiviteSections, matchesSelection, selections, type Selection } from '~/data/selections';
+import {
+	collectiviteSections,
+	matchesGroups,
+	matchesSelection,
+	normalizeName,
+	selections,
+	type Selection,
+} from '~/data/selections';
+import { getListingPriority } from '~/data/listing-priorities';
 import type { Product } from '~/content/schemas/product';
 import { groupProductsByStyle, styleKey, type ProductGroup } from '~/utils/product-groups';
 
@@ -27,6 +35,17 @@ export async function getProductsByGarmentType(garmentType: GarmentType) {
 
 export async function getProductsBySelection(selection: Selection) {
 	const products = await getAllProducts();
+	if (selection.picks) {
+		// Sélection explicite : tous les coloris des modèles choisis, dans l'ordre
+		// des picks (un modèle absent du catalogue est simplement ignoré).
+		const rank = new Map(selection.picks.map((key, index) => [key, index]));
+		const picked = products
+			.map((entry) => entry.data)
+			.filter((product) => product.category !== 'a-trier' && rank.has(styleKey(product)));
+		if (picked.length > 0) {
+			return picked.sort((a, b) => rank.get(styleKey(a))! - rank.get(styleKey(b))!);
+		}
+	}
 	let matched = products.filter((entry) => matchesSelection(selection, entry.data)).map((entry) => entry.data);
 	if (selection.limit) {
 		// Le plafond s'applique en nombre de modèles : on garde tous les coloris
@@ -43,9 +62,18 @@ export async function getProductsBySelection(selection: Selection) {
 
 export async function getProductsBySubcategory(categorySlug: string, subcategorySlug: string) {
 	const products = await getAllProducts();
-	return products
+	const scoped = products
 		.filter((entry) => entry.data.category === categorySlug && entry.data.subcategory === subcategorySlug)
 		.map((entry) => entry.data);
+
+	// « Top résultats » : les modèles prioritaires passent devant, sans changer
+	// l'ordre relatif des autres (tri stable). Appliqué ici pour que la première
+	// page HTML et le payload listing.json restent alignés index par index.
+	const priority = getListingPriority(categorySlug, subcategorySlug);
+	if (!priority) return scoped;
+	const isPriority = (product: Product) =>
+		matchesGroups(normalizeName(product.name), priority.groups, priority.exclude);
+	return [...scoped.filter(isPriority), ...scoped.filter((product) => !isPriority(product))];
 }
 
 // These two run once per product page (6 000+ at build time), so everything

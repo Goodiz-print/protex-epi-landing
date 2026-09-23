@@ -2,18 +2,20 @@
 import { Image } from 'astro:assets';
 import { thematicTiles } from '~/data/thematic-tiles';
 import type { Lang } from '~/utils/catalog';
-import { useTranslations } from '~/i18n/utils';
 
 interface Props {
 	lang: Lang;
 }
 
 const { lang } = Astro.props;
-const t = useTranslations(lang);
 
 const cardClass = 'group relative block h-52 overflow-hidden rounded-lg sm:h-64';
 const imageClass = (fitClass?: string, positionClass?: string) =>
 	`absolute inset-0 h-full w-full transition-transform duration-300 group-hover:scale-105 ${fitClass ?? 'object-cover'} ${positionClass ?? 'object-center'}`;
+// Plus de voile sombre ni de bandeau (retour client) : le libellé reste lisible
+// sur la photo grâce à une ombre portée.
+const labelClass =
+	'pointer-events-none absolute inset-x-0 bottom-0 p-5 font-heading text-lg font-bold uppercase text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.85),0_0_14px_rgba(0,0,0,0.55)]';
 ---
 
 <section class="mx-auto max-w-6xl px-4 pb-16 pt-4">
@@ -22,33 +24,39 @@ const imageClass = (fitClass?: string, positionClass?: string) =>
 			thematicTiles.map((tile) => (
 				<li>
 					{tile.video ? (
-						<div class={`${cardClass} bg-gray-900`} data-video-tile>
-							<button
-								type="button"
-								class="group/play absolute inset-0 h-full w-full cursor-pointer"
-								data-video-play
-								data-video-id={tile.video.youtubeId}
-								data-video-start={tile.video.start ?? 0}
-								aria-label={`${t('home.tiles.playVideo')} — ${tile.labels[lang]}`}
-							>
-								<img
-									src={`https://i.ytimg.com/vi/${tile.video.youtubeId}/hqdefault.jpg`}
-									alt=""
-									loading="lazy"
-									decoding="async"
-									class="h-full w-full object-cover"
+						<div
+							class={`${cardClass} bg-gray-900`}
+							data-video-tile
+							data-video-id={tile.video.src ? undefined : tile.video.youtubeId}
+							data-video-start={tile.video.start ?? 0}
+							data-video-title={tile.labels[lang]}
+						>
+							{tile.video.src && (
+								<video
+									src={tile.video.src}
+									autoplay
+									muted
+									loop
+									playsinline
+									preload="metadata"
+									aria-label={tile.labels[lang]}
+									class="absolute inset-0 h-full w-full object-cover"
 								/>
-								<span class="absolute inset-0 bg-gray-900/30 transition-colors group-hover/play:bg-gray-900/40" />
-								<span class="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-brand text-white shadow-lg transition-transform group-hover/play:scale-110">
-									<svg class="ml-1 h-7 w-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-										<path d="M8 5.14v13.72L19 12 8 5.14z" />
-									</svg>
-								</span>
-								<span class="absolute inset-x-0 bottom-0 p-5 text-left font-heading text-lg font-bold uppercase text-white">
-									{tile.labels[lang]}
-								</span>
-							</button>
+							)}
+							<span class={labelClass}>{tile.labels[lang]}</span>
 						</div>
+					) : tile.logo ? (
+						<a
+							href={tile.getHref?.(lang)}
+							class={`${cardClass} flex items-center justify-center bg-brand transition-colors hover:bg-brand-dark`}
+						>
+							<Image
+								src={tile.logo}
+								alt={tile.labels[lang]}
+								height={164}
+								class="h-16 w-auto transition-transform duration-300 group-hover:scale-105 sm:h-20"
+							/>
+						</a>
 					) : (
 						<a href={tile.getHref?.(lang)} class={cardClass}>
 							{tile.image && (
@@ -59,16 +67,7 @@ const imageClass = (fitClass?: string, positionClass?: string) =>
 									class={imageClass(tile.fitClass, tile.imagePositionClass)}
 								/>
 							)}
-							{!tile.noScrim && (
-								<span class="absolute inset-0 bg-gray-900/40 transition-colors group-hover:bg-gray-900/50" />
-							)}
-							<span
-								class={`absolute inset-x-0 bottom-0 font-heading text-lg font-bold uppercase text-white ${
-									tile.noScrim ? 'rounded-b-lg bg-brand px-5 py-3' : 'p-5'
-								}`}
-							>
-								{tile.labels[lang]}
-							</span>
+							<span class={labelClass}>{tile.labels[lang]}</span>
 						</a>
 					)}
 				</li>
@@ -78,20 +77,56 @@ const imageClass = (fitClass?: string, positionClass?: string) =>
 </section>
 
 <script>
-	// Lite-embed : l'iframe YouTube (domaine nocookie) n'est injectée qu'au clic,
-	// aucune requête vers YouTube avant une action explicite du visiteur.
-	document.querySelectorAll<HTMLButtonElement>('[data-video-play]').forEach((button) => {
-		button.addEventListener('click', () => {
-			const tile = button.closest<HTMLElement>('[data-video-tile]');
-			const { videoId, videoStart } = button.dataset;
-			if (!tile || !videoId) return;
-			const iframe = document.createElement('iframe');
-			iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?start=${videoStart ?? 0}&autoplay=1`;
-			iframe.title = button.getAttribute('aria-label') ?? '';
-			iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-			iframe.allowFullscreen = true;
-			iframe.className = 'absolute inset-0 h-full w-full';
-			tile.replaceChildren(iframe);
+	// Lecture automatique muette (demande client). Sans fichier local, l'iframe
+	// YouTube (domaine nocookie) n'est injectée que lorsque la tuile approche du
+	// viewport : aucune requête vers YouTube tant que le bloc n'est pas visible.
+	// En boucle grâce à playlist=<id> ; sans autoplay si l'utilisateur préfère
+	// réduire les animations.
+	const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+	function mountYoutube(tile: HTMLElement) {
+		const { videoId, videoStart, videoTitle } = tile.dataset;
+		if (!videoId || tile.querySelector('iframe')) return;
+		const params = new URLSearchParams({
+			autoplay: reduceMotion ? '0' : '1',
+			mute: '1',
+			loop: '1',
+			playlist: videoId,
+			controls: '0',
+			playsinline: '1',
+			modestbranding: '1',
+			rel: '0',
+			start: videoStart ?? '0',
 		});
-	});
+		const iframe = document.createElement('iframe');
+		iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?${params}`;
+		iframe.title = videoTitle ?? '';
+		iframe.allow = 'autoplay; encrypted-media; picture-in-picture';
+		iframe.setAttribute('tabindex', '-1');
+		iframe.className = 'absolute inset-0 h-full w-full';
+		tile.prepend(iframe);
+	}
+
+	const tiles = Array.from(document.querySelectorAll<HTMLElement>('[data-video-tile]'));
+	if (reduceMotion) {
+		tiles.forEach((tile) => tile.querySelector('video')?.removeAttribute('autoplay'));
+	}
+	const pending = tiles.filter((tile) => tile.dataset.videoId);
+	if (pending.length > 0) {
+		if ('IntersectionObserver' in window) {
+			const observer = new IntersectionObserver(
+				(entries) => {
+					for (const entry of entries) {
+						if (!entry.isIntersecting) continue;
+						mountYoutube(entry.target as HTMLElement);
+						observer.unobserve(entry.target);
+					}
+				},
+				{ rootMargin: '200px 0px' },
+			);
+			pending.forEach((tile) => observer.observe(tile));
+		} else {
+			pending.forEach(mountYoutube);
+		}
+	}
 </script>

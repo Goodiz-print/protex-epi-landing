@@ -49,6 +49,17 @@ export default async (req: Request): Promise<Response> => {
     message.length <= MAX.message
   if (!valid) return redirect(errorPath)
 
+  // Sans clé Resend, l'appel API échouerait en 401 : on le dit explicitement
+  // dans les logs Netlify (Logs → Functions → quote) pour diagnostiquer en un
+  // coup d'œil une variable d'environnement absente ou hors scope « Functions ».
+  const apiKey = process.env.RESEND_API_KEY
+  if (!apiKey) {
+    console.error(
+      'RESEND_API_KEY manquante : ajouter la variable dans Netlify (Site configuration → Environment variables, scope Functions) puis redéployer. Voir .env.example.',
+    )
+    return redirect(errorPath)
+  }
+
   const subject = product ? `[Site] Demande de devis — ${product}` : '[Site] Demande de devis'
 
   const rows: Array<[string, string]> = [
@@ -85,7 +96,7 @@ export default async (req: Request): Promise<Response> => {
   const res = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: {
-      Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+      Authorization: `Bearer ${apiKey}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
@@ -99,6 +110,8 @@ export default async (req: Request): Promise<Response> => {
   })
 
   if (!res.ok) {
+    // 401 = clé invalide ; 403 « domain is not verified » = le domaine de FROM
+    // (protex-epi.com) n'est pas vérifié dans Resend (Domains → DNS SPF/DKIM).
     console.error('Échec de l’envoi Resend :', res.status, await res.text())
     return redirect(errorPath)
   }
