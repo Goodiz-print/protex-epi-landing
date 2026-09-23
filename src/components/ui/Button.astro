@@ -1,5 +1,5 @@
 ---
-type Variant = 'primary' | 'dark' | 'gray' | 'outline-white';
+type Variant = 'primary' | 'dark' | 'gray' | 'outline-white' | 'white';
 type Size = 'md' | 'sm' | 'auto';
 
 interface Props {
@@ -21,6 +21,7 @@ const variantClasses: Record<Variant, string> = {
   dark: 'bg-btn-dark text-white hover:bg-nav',
   gray: 'bg-btn-gray text-white hover:bg-btn-dark',
   'outline-white': 'border border-white text-white hover:bg-white/10',
+  white: 'bg-white text-brand-dark hover:bg-gray-100',
 };
 
 const sizeClasses: Record<Size, string> = {
