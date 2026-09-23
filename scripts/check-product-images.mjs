@@ -258,6 +258,8 @@ export function parseArgs(argv) {
 	const options = { suppliers: SUPPLIERS, source: 'auto', dryRun: false, concurrency: 24 };
 	for (let index = 0; index < argv.length; index++) {
 		const arg = argv[index];
+		// `pnpm run check:images -- --dry-run` forwards the separator itself.
+		if (arg === '--') continue;
 		if (arg === '--dry-run') options.dryRun = true;
 		else if (arg === '--supplier') options.suppliers = argv[++index].split(',').map((value) => value.trim());
 		else if (arg === '--source') options.source = argv[++index];
@@ -403,8 +405,10 @@ export async function run({ root = DEFAULT_ROOT, fetchImpl = globalThis.fetch, l
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-	run(parseArgs(process.argv.slice(2))).catch((error) => {
-		console.error(error.message);
-		process.exit(1);
-	});
+	Promise.resolve()
+		.then(() => run(parseArgs(process.argv.slice(2))))
+		.catch((error) => {
+			console.error(error.message);
+			process.exit(1);
+		});
 }

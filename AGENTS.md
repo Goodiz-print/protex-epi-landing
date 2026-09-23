@@ -10,6 +10,10 @@ Manage the background server with `astro dev stop`, `astro dev status`, and `ast
 
 ## Catalog data
 
+Detailed, step-by-step documentation of every catalog script (inputs, outputs, procedures)
+lives in `docs/scripts-catalogue.md`. npm aliases: `pnpm run generate:catalog`,
+`pnpm run reclassify:catalog`, `pnpm run apply:image-overrides`, `pnpm run check:images`.
+
 The product catalog is **not** built from the supplier CSVs at build time. The raw
 exports live in `src/data/suppliers/` and are **gitignored**; what is committed and
 what `astro dev`/`astro build` actually read is the pre-computed
