@@ -88,12 +88,14 @@ const equipmentAlts = {
 		{
 			customisationEquipment[lang].map((item, index) => (
 				<figure class="overflow-hidden rounded-lg border border-gray-200">
+					{/* Carré plein (sources 1408²) : le logo brodé reste entièrement visible.
+						La photo de dos (portrait) est recadrée sur le haut du dos, où est le logo. */}
 					<Image
 						src={equipmentImages[index]}
 						alt={equipmentAlts[lang][index]}
-						width={600}
-						height={600}
-						class:list={['h-48 w-full object-cover', index === 1 && 'object-top']}
+						width={800}
+						height={800}
+						class:list={['aspect-square w-full object-cover', index === 1 ? 'object-[center_28%]' : 'object-center']}
 					/>
 					<figcaption class="p-4 text-sm text-gray-700">
 						<strong class="text-gray-900">{item.title}</strong> — {item.body}
@@ -125,7 +127,8 @@ const equipmentAlts = {
 		{
 			customisationTechniques[lang].map((technique, index) => (
 				<article class="overflow-hidden rounded-lg border border-gray-200">
-					<Image src={techniqueImages[index]} alt={`${technique.name}`} width={600} height={400} class="h-44 w-full object-cover" />
+					{/* Sources carrées affichées entières : le « Mon logo » n'est plus coupé. */}
+					<Image src={techniqueImages[index]} alt={`${technique.name}`} width={800} height={800} class="aspect-square w-full object-cover" />
 					<div class="p-4">
 						<h3 class="mb-2 font-heading text-lg font-bold text-gray-900">{technique.name}</h3>
 						<p class="text-sm text-gray-700">{technique.body}</p>
