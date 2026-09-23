@@ -36,6 +36,24 @@ When a supplier ships a new export:
 The CSV parsing / grouping / joining logic lives in `scripts/lib/supplier-csv.ts` and is
 used **only** by step 4 — never at build time.
 
+### Reclassifying products without the CSVs
+
+Manual category fixes go in `src/data/category-overrides.<supplier>.json` (keyed by style
+code). Run `node scripts/reclassify-catalog.mjs`: it merges the overrides into
+`src/data/category-mapping.<supplier>.json` (so the next regeneration keeps them) **and**
+patches `src/data/catalog/products.<supplier>.json` in place, so no supplier export is
+needed. Commit the overrides, the mapping and the catalog JSON together. Product URLs
+embed the category, so a moved product changes URL.
+
+### Reclassifying products without the CSVs
+
+Manual category fixes go in `src/data/category-overrides.<supplier>.json` (keyed by style
+code). Run `node scripts/reclassify-catalog.mjs`: it merges the overrides into
+`src/data/category-mapping.<supplier>.json` (so the next regeneration keeps them) **and**
+patches `src/data/catalog/products.<supplier>.json` in place, so no supplier export is
+needed. Commit the overrides, the mapping and the catalog JSON together. Product URLs
+embed the category, so a moved product changes URL.
+
 ## Product images
 
 Product images are read from each supplier's CDN URL (Portwest, Blaklader, Mascot) —
