@@ -1,0 +1,153 @@
+{
+  "_comment": "Reclassifications manuelles Blåkläder. Clé = référence Blåkläder (styleCode du catalogue). Appliqué au mapping et au catalogue commité par `node scripts/reclassify-catalog.mjs`. `name` est informatif.",
+  "151615128900": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Poches flottantes amovibles retardant"
+  },
+  "151615129900": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Poches flottantes amovibles retardant"
+  },
+  "151615143300": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Poches flottantes amovibles retardant"
+  },
+  "151615148900": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Poches flottantes amovibles retardant"
+  },
+  "151615169900": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Poches flottantes amovibles retardant"
+  },
+  "211018009900": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Poche porte-badge Noir"
+  },
+  "211200009900": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Porte-outils Noir"
+  },
+  "211300009900": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Porte-marteau Noir"
+  },
+  "211400009900": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Adaptateur pour porte-marteau Noir"
+  },
+  "213000009900": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Porte-carte Noir"
+  },
+  "213490180010": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Renforts thermocollants - pack X10"
+  },
+  "213500009900": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Renforts thermocollants Noir"
+  },
+  "213600009900": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Renforts thermocollants retardant"
+  },
+  "215918459800": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Poches flottantes amovibles Gris foncé"
+  },
+  "215918459900": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Poches flottantes amovibles Noir"
+  },
+  "215918608900": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Poches flottantes amovibles Marine"
+  },
+  "215918609400": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Poches flottantes amovibles Gris clair"
+  },
+  "215918609900": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Poches flottantes amovibles Noir"
+  },
+  "217019488900": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Poches flottantes amovibles Marine"
+  },
+  "217019488953": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Poches flottantes amovibles"
+  },
+  "217019489900": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Poches flottantes amovibles Noir"
+  },
+  "217019489933": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Poches flottantes amovibles Noir/Jaune"
+  },
+  "217019489955": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Poches flottantes amovibles Noir/Rouge"
+  },
+  "217219875300": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Extension pour femme enceinte Orange"
+  },
+  "217619489900": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Poche à outils à fixation pression Noir"
+  },
+  "217719489900": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Poche à outils à fixation pression Noir"
+  },
+  "309900009900": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Sac de Voyage à roulettes 110 L Noir"
+  },
+  "402000009900": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Porte-marteau Noir"
+  },
+  "988000009900": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Batterie de rechange Noir"
+  },
+  "988100009900": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Chargeur de rechange Noir"
+  }
+}

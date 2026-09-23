@@ -42,8 +42,9 @@ used **only** by step 4 — never at build time.
 
 ### Reclassifying products without the CSVs
 
-Manual category fixes go in `src/data/category-overrides.<supplier>.json` (keyed by style
-code). Run `node scripts/reclassify-catalog.mjs`: it merges the overrides into
+Manual category fixes go in `src/data/category-overrides.<supplier>.json`, keyed like the
+mapping: style code (Portwest), base ref (Blaklader), product number without the quality
+suffix (Mascot: `24150`, not `24150-M99`). Run `node scripts/reclassify-catalog.mjs`: it merges the overrides into
 `src/data/category-mapping.<supplier>.json` (so the next regeneration keeps them) **and**
 patches `src/data/catalog/products.<supplier>.json` in place, so no supplier export is
 needed. Commit the overrides, the mapping and the catalog JSON together. Product URLs
@@ -85,10 +86,12 @@ re-applies the overrides on every regeneration, so they survive a new supplier e
 
 ### Products without image
 
-A product whose `imageUrl` is the placeholder **and** whose price is 0 is treated as an
-unfinished supplier row (not yet sold on the FR market): the loader skips it, so it has no
-product page, no listing card and no search entry (see `src/utils/product-image.ts`). It
-comes back automatically once an image override or a new export gives it a photo or a price.
+A product whose `imageUrl` is the placeholder **and** whose price is 0, or whose name, colour
+and description are all blank (Portwest price-list rows with no product sheet: a whole
+reference left `a-trier`, or an unlabelled colourway next to named ones), is treated as an
+unfinished supplier row: the loader skips it, so it has no product page, no listing card and
+no search entry (see `src/utils/product-image.ts`). It comes back automatically once an image
+override or a new export gives it a photo, a price or a name.
 Products that only lack the photo stay published but are sorted last in every listing, and a
 model whose first colourway has no photo takes its card image from another colourway.
 

@@ -1,0 +1,13 @@
+{
+  "_comment": "Reclassifications manuelles Mascot. Clé = numéro produit Mascot (partie avant le tiret du styleCode du catalogue, ex. `24150` pour `24150-M99`), comme dans category-mapping.mascot.json. Appliqué au mapping et au catalogue commité par `node scripts/reclassify-catalog.mjs`. `name` est informatif.",
+  "24150": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "MASCOT WORKWEAR sac"
+  },
+  "FT088": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Spray imperméabilisant"
+  }
+}

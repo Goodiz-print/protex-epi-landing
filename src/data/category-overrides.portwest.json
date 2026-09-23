@@ -1,9 +1,24 @@
 {
   "_comment": "Reclassifications manuelles Portwest (retours client sept. 2026 : PDF update_V2 point 8 + Excel protex-epi-sous-categories-tete-mains). Clé = Style Code Portwest. Appliqué au mapping et au catalogue commité par `node scripts/reclassify-catalog.mjs` (utilisable sans les CSV fournisseurs). `name` est informatif.",
+  "AB662": {
+    "category": "mains",
+    "subcategory": "gants-protection",
+    "name": "Cut 13 PU Multipack  (Pk12)"
+  },
+  "AP80": {
+    "category": "mains",
+    "subcategory": "gants-protection",
+    "name": "Liquid Pro"
+  },
   "AS25": {
     "category": "corps",
     "subcategory": "vetements-travail",
     "name": "sweat shirt anti statique ESD"
+  },
+  "B035": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Set d'accessoires d'hiver (3pcs)"
   },
   "B198": {
     "category": "corps",
@@ -40,6 +55,11 @@
     "subcategory": "vetements-travail",
     "name": "Fourre-tout Kitbag"
   },
+  "B903": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Sac de transport"
+  },
   "B904": {
     "category": "corps",
     "subcategory": "vetements-travail",
@@ -49,6 +69,21 @@
     "category": "corps",
     "subcategory": "vetements-travail",
     "name": "Sac à dos Hi-Vis"
+  },
+  "B907": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Sac à roulettes multipoches"
+  },
+  "B908": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Sac à roulette"
+  },
+  "B909": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Sac de transport à roulettes"
   },
   "B930": {
     "category": "corps",
@@ -64,6 +99,11 @@
     "category": "corps",
     "subcategory": "vetements-travail",
     "name": "Sac de sport 60L"
+  },
+  "BT10": {
+    "category": "mains",
+    "subcategory": "hygiene-sante",
+    "name": "Ruban de signalisation (pk 18)"
   },
   "BX323": {
     "category": "corps",
@@ -145,6 +185,11 @@
     "subcategory": "vetements-travail",
     "name": "Veste de travail WX2 Stretch"
   },
+  "CH16": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Chainsaw Braces"
+  },
   "CS11": {
     "category": "corps",
     "subcategory": "vetements-travail",
@@ -154,6 +199,16 @@
     "category": "corps",
     "subcategory": "vetements-travail",
     "name": "Combinaison Frigoriste"
+  },
+  "CV05": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Foulard Rafraîchissant"
+  },
+  "CV06": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Serviette Rafraichissante"
   },
   "DX409": {
     "category": "corps",
@@ -195,6 +250,11 @@
     "subcategory": "vetements-haute-visibilite",
     "name": "DX4 Hi-Vis 1/4 Zip Hoodie"
   },
+  "DX4E80": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "DX4 Evolution Zipped Midlayer"
+  },
   "E043": {
     "category": "corps",
     "subcategory": "vetements-haute-visibilite",
@@ -229,6 +289,11 @@
     "category": "corps",
     "subcategory": "vetements-travail",
     "name": "Polo Iona"
+  },
+  "FA21": {
+    "category": "mains",
+    "subcategory": "hygiene-sante",
+    "name": "Kit véhicule 2 personnes"
   },
   "FB30": {
     "category": "corps",
@@ -265,10 +330,20 @@
     "subcategory": "chaussures-hautes",
     "name": "Brodequin cuir nubuck composite S3S HRO FO SR"
   },
+  "FC94": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures",
+    "name": "Pince à glace antidérapante avec pointes en acier"
+  },
   "FD05": {
     "category": "pieds",
     "subcategory": "bottes",
     "name": "Botte fourrée S3L SC HRO CI SR"
+  },
+  "FP99": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Sac de transport Nylon"
   },
   "FR10": {
     "category": "corps",
@@ -395,10 +470,30 @@
     "subcategory": "protection-tete",
     "name": "Casquette Imperméable PW3"
   },
+  "HV20": {
+    "category": "mains",
+    "subcategory": "hygiene-sante",
+    "name": "Signalisation pour sol mouillé"
+  },
+  "ID10": {
+    "category": "mains",
+    "subcategory": "hygiene-sante",
+    "name": "Porte Identité"
+  },
   "KA361": {
     "category": "corps",
     "subcategory": "vetements-travail",
     "name": "Gilet réversible KA3"
+  },
+  "KP05": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Tapis pour s'agenouiller"
+  },
+  "KP15": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Tapis pour s'agenouiller Total Confort"
   },
   "KP65": {
     "category": "corps",
@@ -449,6 +544,46 @@
     "category": "corps",
     "subcategory": "vetements-haute-visibilite",
     "name": "Combinaison HV Modflame RIS Marine/Orange"
+  },
+  "PA50": {
+    "category": "tete",
+    "subcategory": "protection-tete",
+    "name": "Lampe frontale LED"
+  },
+  "PA63": {
+    "category": "tete",
+    "subcategory": "protection-tete",
+    "name": "Lampe frontale Dual Power"
+  },
+  "PA64": {
+    "category": "tete",
+    "subcategory": "protection-tete",
+    "name": "Lampe frontale Ultra Power"
+  },
+  "PA70": {
+    "category": "tete",
+    "subcategory": "protection-tete",
+    "name": "Lampe frontale rechargeable par USB"
+  },
+  "PA71": {
+    "category": "tete",
+    "subcategory": "protection-tete",
+    "name": "Lampe frontale rechargeable USB"
+  },
+  "PA73": {
+    "category": "tete",
+    "subcategory": "protection-tete",
+    "name": "Lampe collier rechargeable par USB"
+  },
+  "PA79": {
+    "category": "tete",
+    "subcategory": "protection-tete",
+    "name": "Flexible LED Head Light"
+  },
+  "PA81": {
+    "category": "tete",
+    "subcategory": "protection-tete",
+    "name": "Lampe frontale focalisante haute puissance"
   },
   "PJ10": {
     "category": "corps",
@@ -780,6 +915,61 @@
     "subcategory": "protection-tete",
     "name": "Casquette plate de chef"
   },
+  "SM15": {
+    "category": "mains",
+    "subcategory": "hygiene-sante",
+    "name": "Rouleau absorbant Maintenance"
+  },
+  "SM20": {
+    "category": "mains",
+    "subcategory": "hygiene-sante",
+    "name": "Tapis absorbant Maintenance"
+  },
+  "SM30": {
+    "category": "mains",
+    "subcategory": "hygiene-sante",
+    "name": "Kit absorbant de maintenance 20 litres"
+  },
+  "SM33": {
+    "category": "mains",
+    "subcategory": "hygiene-sante",
+    "name": "Kit abosrbant de maintenance 120 litres"
+  },
+  "SM50": {
+    "category": "mains",
+    "subcategory": "hygiene-sante",
+    "name": "Tapis absorbant pour hydrocarbures uniquement"
+  },
+  "SM60": {
+    "category": "mains",
+    "subcategory": "hygiene-sante",
+    "name": "Kit absorbant 20 litres, hydrocarbures uniquement"
+  },
+  "SM61": {
+    "category": "mains",
+    "subcategory": "hygiene-sante",
+    "name": "Kit absorbants 50 litres pour hydrocarbures uniquement"
+  },
+  "SM63": {
+    "category": "mains",
+    "subcategory": "hygiene-sante",
+    "name": "kit absorbants 120 litres pour hydrocarbures uniquement"
+  },
+  "SM80": {
+    "category": "mains",
+    "subcategory": "hygiene-sante",
+    "name": "Tapis absorbant chimique"
+  },
+  "SM90": {
+    "category": "mains",
+    "subcategory": "hygiene-sante",
+    "name": "Kit absorbant 20 litres, produits chimiques"
+  },
+  "SM91": {
+    "category": "mains",
+    "subcategory": "hygiene-sante",
+    "name": "Kit absorbant 50 litres, produits chimiques"
+  },
   "ST43": {
     "category": "usage-unique",
     "subcategory": null,
@@ -789,6 +979,11 @@
     "category": "pieds",
     "subcategory": "accessoires-chaussures",
     "name": "Couvre-bottes BizTex® Microporeux Type 6PB (200 paires)"
+  },
+  "ST61": {
+    "category": "usage-unique",
+    "subcategory": null,
+    "name": "Biztex Microporous Hood  Pk100"
   },
   "T160": {
     "category": "corps",
@@ -869,6 +1064,16 @@
     "category": "corps",
     "subcategory": "vetements-travail",
     "name": "Polo WX3"
+  },
+  "TB02": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Sac à outils ouvert"
+  },
+  "TB15": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Porte Outils de sécurité"
   },
   "TK41": {
     "category": "corps",

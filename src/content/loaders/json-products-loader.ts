@@ -31,8 +31,9 @@ async function runSync(options: JsonProductsLoaderOptions, context: LoaderContex
 
 		const products: Product[] = JSON.parse(readFileSync(jsonAbsPath, 'utf-8'));
 
-		// Les fiches sans photo NI prix restent dans le JSON (données brutes) mais ne
-		// sont pas publiées : ni page produit, ni listing, ni index de recherche.
+		// Les fiches incomplètes (ligne vide, ou sans photo NI prix — cf. isIncompleteProduct)
+		// restent dans le JSON (données brutes) mais ne sont pas publiées : ni page
+		// produit, ni listing, ni index de recherche.
 		let skipped = 0;
 		for (const product of products) {
 			if (isIncompleteProduct(product)) {
@@ -45,7 +46,7 @@ async function runSync(options: JsonProductsLoaderOptions, context: LoaderContex
 
 		logger.info(
 			`[${source.supplier}] loaded ${products.length - skipped} products (${jsonAbsPath})` +
-				(skipped > 0 ? `, ${skipped} skipped without image nor price` : ''),
+				(skipped > 0 ? `, ${skipped} skipped as incomplete (empty row, or neither image nor price)` : ''),
 		);
 	}
 }

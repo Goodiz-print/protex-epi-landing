@@ -816,8 +816,8 @@
     "subcategory": "gants-protection"
   },
   "AB662": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "mains",
+    "subcategory": "gants-protection"
   },
   "AB664": {
     "category": "mains",
@@ -948,8 +948,8 @@
     "subcategory": "hygiene-sante"
   },
   "AP80": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "mains",
+    "subcategory": "gants-protection"
   },
   "AP81": {
     "category": "mains",
@@ -1048,8 +1048,8 @@
     "subcategory": "protection-tete"
   },
   "B035": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "B036": {
     "category": "tete",
@@ -1256,8 +1256,8 @@
     "subcategory": "vetements-travail"
   },
   "B903": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "B904": {
     "category": "corps",
@@ -1268,16 +1268,16 @@
     "subcategory": "vetements-travail"
   },
   "B907": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "B908": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "B909": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "B910": {
     "category": "corps",
@@ -1368,8 +1368,8 @@
     "subcategory": "vetements-haute-visibilite"
   },
   "BT10": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "mains",
+    "subcategory": "hygiene-sante"
   },
   "BX321": {
     "category": "corps",
@@ -1956,8 +1956,8 @@
     "subcategory": "vetements-pluie"
   },
   "CH16": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "CR01": {
     "category": "corps",
@@ -2044,12 +2044,12 @@
     "subcategory": "protection-tete"
   },
   "CV05": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "CV06": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "CV09": {
     "category": "corps",
@@ -2388,8 +2388,8 @@
     "subcategory": "vetements-travail"
   },
   "DX4E80": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "E043": {
     "category": "corps",
@@ -2888,8 +2888,8 @@
     "subcategory": "hygiene-sante"
   },
   "FA21": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "mains",
+    "subcategory": "hygiene-sante"
   },
   "FA22": {
     "category": "mains",
@@ -3088,8 +3088,8 @@
     "subcategory": "accessoires-chaussures"
   },
   "FC94": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
   },
   "FC96": {
     "category": "a-trier",
@@ -3428,8 +3428,8 @@
     "subcategory": "equipement-antichute"
   },
   "FP99": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "FR03": {
     "category": "corps",
@@ -4516,8 +4516,8 @@
     "subcategory": null
   },
   "HV20": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "mains",
+    "subcategory": "hygiene-sante"
   },
   "HV23": {
     "category": "corps",
@@ -4536,8 +4536,8 @@
     "subcategory": "vetements-haute-visibilite"
   },
   "ID10": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "mains",
+    "subcategory": "hygiene-sante"
   },
   "IW10": {
     "category": "mains",
@@ -4608,16 +4608,16 @@
     "subcategory": null
   },
   "KP05": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "KP10": {
     "category": "corps",
     "subcategory": "vetements-travail"
   },
   "KP15": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "KP20": {
     "category": "corps",
@@ -5200,8 +5200,8 @@
     "subcategory": "protection-tete"
   },
   "PA50": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "tete",
+    "subcategory": "protection-tete"
   },
   "PA54": {
     "category": "corps",
@@ -5216,28 +5216,28 @@
     "subcategory": "protection-tete"
   },
   "PA63": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "tete",
+    "subcategory": "protection-tete"
   },
   "PA64": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "tete",
+    "subcategory": "protection-tete"
   },
   "PA70": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "tete",
+    "subcategory": "protection-tete"
   },
   "PA71": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "tete",
+    "subcategory": "protection-tete"
   },
   "PA72": {
     "category": "tete",
     "subcategory": "protection-tete"
   },
   "PA73": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "tete",
+    "subcategory": "protection-tete"
   },
   "PA74": {
     "category": "tete",
@@ -5252,12 +5252,12 @@
     "subcategory": "vetements-travail"
   },
   "PA79": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "tete",
+    "subcategory": "protection-tete"
   },
   "PA81": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "tete",
+    "subcategory": "protection-tete"
   },
   "PB32": {
     "category": "tete",
@@ -7068,48 +7068,48 @@
     "subcategory": "accessoires-chaussures"
   },
   "SM15": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "mains",
+    "subcategory": "hygiene-sante"
   },
   "SM20": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "mains",
+    "subcategory": "hygiene-sante"
   },
   "SM30": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "mains",
+    "subcategory": "hygiene-sante"
   },
   "SM33": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "mains",
+    "subcategory": "hygiene-sante"
   },
   "SM50": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "mains",
+    "subcategory": "hygiene-sante"
   },
   "SM60": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "mains",
+    "subcategory": "hygiene-sante"
   },
   "SM61": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "mains",
+    "subcategory": "hygiene-sante"
   },
   "SM63": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "mains",
+    "subcategory": "hygiene-sante"
   },
   "SM80": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "mains",
+    "subcategory": "hygiene-sante"
   },
   "SM90": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "mains",
+    "subcategory": "hygiene-sante"
   },
   "SM91": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "mains",
+    "subcategory": "hygiene-sante"
   },
   "ST11": {
     "category": "corps",
@@ -7156,7 +7156,7 @@
     "subcategory": "vetements-travail"
   },
   "ST61": {
-    "category": "a-trier",
+    "category": "usage-unique",
     "subcategory": null
   },
   "ST70": {
@@ -7420,12 +7420,12 @@
     "subcategory": "vetements-travail"
   },
   "TB02": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "TB15": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "TB20": {
     "category": "corps",

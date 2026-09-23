@@ -28,7 +28,7 @@ src/content/loaders/json-products-loader.ts   lu par astro dev / astro build
 | --- | --- | --- |
 | `src/data/suppliers/<fournisseur>/…` | Exports bruts (Portwest CSV, Mascot extended + slim, Blaklader FAB-DIS). Voir `src/data/suppliers/mascot/README.md` pour Mascot. | ❌ (`*.csv` gitignorés) |
 | `src/data/category-mapping.<f>.json` | Catégorie / sous-catégorie par code style. **Source de vérité** pour la régénération. | ✅ |
-| `src/data/category-overrides.<f>.json` | Corrections manuelles de catégorie (clé = code style). | ✅ |
+| `src/data/category-overrides.<f>.json` | Corrections manuelles de catégorie (clé = code style ; Mascot : numéro produit sans la qualité). | ✅ |
 | `src/data/catalog/products.<f>.json` | Catalogue pré-calculé, un produit (= un coloris) par ligne. **Ce que le site lit.** | ✅ |
 | `src/data/image-overrides.<f>.json` | Corrections manuelles d'image (clé = `id` du produit, valeur = URL). | ✅ |
 | `src/data/known-bad-images.portwest.json` | URL du CDN Portwest confirmées mortes. | ✅ |
@@ -86,6 +86,10 @@ fusionnés dans le mapping, les overrides d'image sont réappliqués par le scri
    ```
 
    (`name` est un simple commentaire ; seuls `category` et `subcategory` sont lus.)
+
+   La clé est celle du mapping : code style Portwest, référence de base Blåkläder, et pour
+   Mascot le numéro produit **sans** la qualité (`24150`, pas `24150-M99` : tous les
+   produits-qualités du modèle sont reclassés).
 
 2. `pnpm run reclassify:catalog`
 3. Committer overrides + mapping + catalogue ensemble.
@@ -155,6 +159,10 @@ Logique dans `src/utils/product-image.ts` :
   France). Le loader ne la publie pas : pas de page produit, pas de carte, pas d'entrée de
   recherche. Elle réapparaît dès qu'un override ou un nouvel export lui donne une photo ou
   un prix.
+- **Ligne vide** (ni nom, ni coloris, ni description) : ligne du tarif Portwest sans fiche
+  produit — ~100 références entières restées « à trier », et ~130 coloris orphelins sans
+  libellé à côté des coloris nommés du même modèle. Même traitement : non publiée tant
+  qu'un nouvel export ne la complète pas.
 - **Sans photo mais avec prix** : publiée, mais reléguée en fin de tous les listings (tri
   stable).
 - **Modèle dont le premier coloris n'a pas de photo** : la carte prend l'image d'un autre
