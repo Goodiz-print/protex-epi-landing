@@ -1,9 +1,1129 @@
 {
-  "_comment": "Reclassifications manuelles Mascot. Clé = numéro produit Mascot (partie avant le tiret du styleCode du catalogue, ex. `24150` pour `24150-M99`), comme dans category-mapping.mascot.json. Appliqué au mapping et au catalogue commité par `node scripts/reclassify-catalog.mjs`. `name` est informatif.",
+  "10049": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Pisa"
+  },
+  "10544": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Macallen avec boutons-pression"
+  },
+  "11019": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Safara"
+  },
+  "11119": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Tombos"
+  },
+  "12379": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Patos"
+  },
+  "13809": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Biel"
+  },
+  "13869": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Davos"
+  },
+  "13879": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Arbon"
+  },
+  "13892": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Renens"
+  },
+  "15501": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Harlow"
+  },
+  "15502": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Blackpool"
+  },
+  "15503": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Sheffield"
+  },
+  "15509": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Oxford"
+  },
+  "15515": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Dartford"
+  },
+  "15531": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Wigan"
+  },
+  "15535": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Hastings"
+  },
+  "15549": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Luton"
+  },
+  "15565": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Grimsby"
+  },
+  "15569": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Newcastle"
+  },
+  "15579": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Kendal"
+  },
+  "15590": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Surpantalon, poches genouillères"
+  },
+  "15669": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Sunderland"
+  },
+  "15679": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Leeds"
+  },
+  "15690": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Ashford"
+  },
+  "15902": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Kiama"
+  },
+  "15903": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Mildura"
+  },
+  "15909": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Forster"
+  },
+  "15935": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Penrith"
+  },
+  "15969": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Gosford"
+  },
+  "15979": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Maitland"
+  },
+  "16869": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Devonport"
+  },
+  "16879": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Geraldton"
+  },
+  "16909": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Bunbury"
+  },
+  "17019": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Combinaison, poches genouillères, léger"
+  },
+  "17531": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon, poches flottantes"
+  },
+  "17549": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantacourt, poches genouillères"
+  },
+  "18281": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "T-shirt, encolure en V, manches l."
+  },
+  "18282": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "T-shirt, encolure en V"
+  },
+  "18283": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Polo, manches longues"
+  },
+  "18512": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste soft shell, modèle femme, EN20471"
+  },
+  "18545": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste grand froid, modèle femme"
+  },
+  "18869": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Salopette, unicolore"
+  },
+  "18879": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon, poches cuisse, unicolore"
+  },
+  "19001": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste d'extérieur, tissu léger"
+  },
+  "19002": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste softshell"
+  },
+  "19005": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pull demi-zippé"
+  },
+  "19008": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste, coupe femme, ULTIMATE STRETCH"
+  },
+  "19009": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste, ULTIMATE STRETCH"
+  },
+  "19011": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste d'extérieur, femme, tissu léger"
+  },
+  "19012": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste softshell, coupe femme"
+  },
+  "19019": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Combinaison grand froid CLIMASCOT®,léger"
+  },
+  "19030": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Parka CLIMASCOT®, tissu léger"
+  },
+  "19031": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon, poches flottantes, stretch"
+  },
+  "19035": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste grand froid CLIMASCOT®,tissu léger"
+  },
+  "19044": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Capuche, réglable"
+  },
+  "19045": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste grand froid CLIMASCOT®,coupe femme"
+  },
+  "19049": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantacourt, poches flottantes , stretch"
+  },
+  "19050": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Poches flottantes, stretch,paire de deux"
+  },
+  "19069": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Combinaison sans manche,ULTIMATE STRETCH"
+  },
+  "19078": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon, femme, DIAMOND, poches genoux"
+  },
+  "19079": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon, poches genouillères, stretch"
+  },
+  "19081": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "T-shirt, manches longues, coupe moderne"
+  },
+  "19082": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "T-shirt, coupe moderne"
+  },
+  "19083": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Polo, coupe moderne"
+  },
+  "19084": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Sweatshirt, coupe moderne"
+  },
+  "19090": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon grand froid, poches genoux"
+  },
+  "19091": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "T-shirt, manches longues, coupe femme"
+  },
+  "19092": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "T-shirt, coupe femme"
+  },
+  "19093": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Polo, coupe femme"
+  },
+  "19103": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pull polaire zippé"
+  },
+  "19131": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon, poches flottantes, stretch"
+  },
+  "19144": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Capuche, casque de sécurité, réglable"
+  },
+  "19153": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pull polaire zippé, coupe femme"
+  },
+  "19169": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Combinaison sans manche,ULTIMATE STRETCH"
+  },
+  "19178": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon, femme, DIAMOND, poches genoux"
+  },
+  "19179": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon, poches genouillères, stretch"
+  },
+  "19182": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "T-shirt avec impression"
+  },
+  "19184": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Sweatshirt zippé, coupe moderne"
+  },
+  "19202": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste softshell, effets réfléchissants"
+  },
+  "19212": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Soft shell femme, effets réflechissants"
+  },
+  "19244": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Jupe, DIAMOND, ULTIMATE STRETCH"
+  },
+  "19248": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Short, femme, coupe DIAMOND, stretch"
+  },
+  "19249": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Short, ULTIMATE STRETCH"
+  },
+  "19279": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon, poches genoux,ULTIMATE STRETCH"
+  },
+  "19284": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Sweat capuche zippé, coupe moderne"
+  },
+  "19301": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste d'extérieur, doublure tissu léger"
+  },
+  "19303": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pull polaire demi-zippé"
+  },
+  "19335": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste grand froid avec CLIMASCOT®"
+  },
+  "19349": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Short avec poches flottantes , stretch"
+  },
+  "19353": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pull polaire demi-zippé, coupe femme"
+  },
+  "19379": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon, poches cuisse,ULTIMATE STRETCH"
+  },
+  "19403": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pull polaire zippé"
+  },
+  "19435": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste d'hiver avec CLIMASCOT®"
+  },
+  "19453": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pull polaire zippé, coupe femme"
+  },
+  "19479": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon, poches genoux,ULTIMATE STRETCH"
+  },
+  "19509": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste, zones stretch"
+  },
+  "19519": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Combinaison, poches genoux,zones stretch"
+  },
+  "19569": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Salopette, poches genoux, zones stretch"
+  },
+  "19578": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon, femme, DIAMOND, poches genoux"
+  },
+  "19579": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon, poches genoux, zones stretch"
+  },
+  "19589": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Gilet porte-outils, ULTIMATE STRETCH"
+  },
+  "19590": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Surpantalon, doublure tissu léger"
+  },
+  "19669": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Salopette, poches genoux, zones stretch"
+  },
+  "19678": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon, femme, DIAMOND, poches genoux"
+  },
+  "19679": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon, poches genoux, zones stretch"
+  },
+  "19835": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste grand froid, doublure matelassée"
+  },
+  "19879": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon, poches genoux,ULTIMATE STRETCH"
+  },
+  "19901": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste d'extérieur, enfant, tissu léger"
+  },
+  "19902": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Vestes softshell enfant"
+  },
+  "19903": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pull polaire pour enfants, zippé"
+  },
+  "19935": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Vestes grand froid enfant, CLIMASCOT®"
+  },
+  "19979": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon enfant, ULTIMATE STRETCH"
+  },
+  "20501": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Harlow"
+  },
+  "20502": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Blackpool"
+  },
+  "20535": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Hastings"
+  },
+  "20859": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon, poches cuisse, unicolore"
+  },
+  "20879": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon avec poches genouillères"
+  },
+  "20882": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "T-shirt, encolure en V, coupe moderne"
+  },
+  "21002": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste softshell"
+  },
+  "21008": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste, femme, ULTIMATE STRETCH"
+  },
+  "21009": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste, ULTIMATE STRETCH"
+  },
+  "21019": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Combinaison grand froid, poches genoux"
+  },
+  "21045": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste grand froid, coupe femme"
+  },
+  "21078": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon, femme, DIAMOND, poches genoux"
+  },
+  "21079": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon, poches genoux,ULTIMATE STRETCH"
+  },
+  "21090": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Surpantalon"
+  },
+  "21178": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon, femme, DIAMOND, poches genoux"
+  },
+  "21179": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon, poches genoux,ULTIMATE STRETCH"
+  },
+  "21202": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste softshell"
+  },
+  "21209": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste, ULTIMATE STRETCH"
+  },
+  "21279": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon, poches genoux,ULTIMATE STRETCH"
+  },
+  "21301": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste d'extérieur"
+  },
+  "21309": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste, zones stretch"
+  },
+  "21319": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Combinaison, poches genoux,zones stretch"
+  },
+  "21335": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste grand froid"
+  },
+  "21369": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Salopette, poches genoux, zones stretch"
+  },
+  "21379": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon, poches genoux, zones stretch"
+  },
+  "21381": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "T-shirt, manches longues, coupe moderne"
+  },
+  "21382": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "T-shirt, coupe moderne"
+  },
+  "21383": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Polo, manches longues"
+  },
+  "21384": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Sweatshirt, coupe moderne"
+  },
+  "21389": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Gilet porte-outils"
+  },
+  "21469": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Salopette, poches genoux, zones stretch"
+  },
+  "21479": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon, poches genoux, zones stretch"
+  },
+  "21501": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste d'extérieur"
+  },
+  "21509": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste, zones stretch"
+  },
+  "21519": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Combinaison, poches genoux,zones stretch"
+  },
+  "21535": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste grand froid"
+  },
+  "21569": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Salopette, poches genoux, zones stretch"
+  },
+  "21578": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon poches genouillères,coupe femme"
+  },
+  "21579": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon, poches genoux, zones stretch"
+  },
+  "21581": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "T-shirt, manches longues, coupe moderne"
+  },
+  "21582": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "T-shirt, coupe moderne"
+  },
+  "21583": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Polo, manches longues"
+  },
+  "21584": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Sweatshirt, coupe moderne"
+  },
+  "22082": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "T-shirt, coupe moderne"
+  },
+  "22083": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Polo, coupe moderne"
+  },
+  "22084": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Sweatshirt, coupe moderne"
+  },
+  "22182": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "T-shirt, coupe moderne"
+  },
+  "22183": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Polo, coupe moderne"
+  },
+  "22184": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Sweatshirt, coupe moderne"
+  },
+  "23001": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste d'extérieur, imperméable"
+  },
+  "23002": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste softshell avec capuche"
+  },
+  "23035": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste d'hiver avec CLIMASCOT®"
+  },
+  "24002": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste Softshell"
+  },
+  "24065": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Gilet Softshell"
+  },
+  "24069": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Combinaison sans manche, stretch"
+  },
+  "24081": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "T-shirt, manches longues, coupe moderne"
+  },
+  "24082": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "T-shirt, coupe moderne"
+  },
+  "24083": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Polo, coupe moderne"
+  },
+  "24102": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste Softshell"
+  },
+  "24103": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pull polaire zippé"
+  },
+  "24110": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Poches flottantes, Click Pocket System"
+  },
   "24150": {
     "category": "corps",
     "subcategory": "vetements-travail",
     "name": "MASCOT WORKWEAR sac"
+  },
+  "24279": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon avec poches cuisse, stretch"
+  },
+  "24335": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste d'hiver avec CLIMASCOT®"
+  },
+  "24401": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste d'extérieur, poids léger"
+  },
+  "24435": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste d'hiver avec CLIMASCOT®"
+  },
+  "24509": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste, zones stretch"
+  },
+  "24569": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Salopette, poches genoux, zones stretch"
+  },
+  "24579": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon, poches genoux, zones stretch"
+  },
+  "25001": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste d'extérieur"
+  },
+  "25002": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste softshell"
+  },
+  "25003": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pull polaire zippé"
+  },
+  "25035": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste d'hiver avec CLIMASCOT®"
+  },
+  "25049": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Short"
+  },
+  "25081": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "T-shirt, manches longues, coupe moderne"
+  },
+  "25082": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "T-shirt, coupe moderne"
+  },
+  "25083": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Polo, coupe moderne"
+  },
+  "25084": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Sweatshirt, coupe moderne"
+  },
+  "25249": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantacourt, poches genouillères, stretch"
+  },
+  "50106": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Melita"
+  },
+  "50113": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Espinosa"
+  },
+  "50114": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Itabuna"
+  },
+  "50115": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Maringa"
+  },
+  "50117": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Anadia"
+  },
+  "50126": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Wigton"
+  },
+  "50127": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Sandwell"
+  },
+  "50130": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Murton"
+  },
+  "50138": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Corby"
+  },
+  "50592": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Townsville"
+  },
+  "50593": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Bowen"
+  },
+  "51625": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Calais"
+  },
+  "_comment": "Reclassifications manuelles Mascot. Clé = numéro produit Mascot (partie avant le tiret du styleCode du catalogue, ex. `24150` pour `24150-M99`), comme dans category-mapping.mascot.json. Les modèles dont tous les coloris sont « Hi-vis » vont en Vêtements haute visibilité. Appliqué au mapping et au catalogue commité par `node scripts/reclassify-catalog.mjs`. `name` est informatif.",
+  "00419": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Utah"
+  },
+  "00534": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® St Moritz"
+  },
+  "00535": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Kaprun"
+  },
+  "00544": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® MacAllen avec zippée"
+  },
+  "00592": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Lech"
+  },
+  "00930": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Savona"
+  },
+  "05020": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Innsbruck"
+  },
+  "05023": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Genova"
+  },
+  "05114": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® MacCall avec boutons-pression"
+  },
+  "05242": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Salzburg"
+  },
+  "06004": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Jona"
+  },
+  "06831": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Lungern"
+  },
+  "07090": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Linz"
+  },
+  "07092": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Wels"
+  },
+  "07109": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Cameta"
+  },
+  "07169": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Barras"
+  },
+  "07179": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Olinda"
+  },
+  "07223": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Teresina"
+  },
+  "07930": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Vancouver"
+  },
+  "08005": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Calgary"
+  },
+  "09131": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Almas"
+  },
+  "09335": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "MASCOT® Loreto"
   },
   "FT088": {
     "category": "corps",

@@ -30,6 +30,14 @@
     "source": "https://www.portwest.com/products/view/A910/WHR",
     "confidence": "high"
   },
+  "AS24": {
+    "name": "Sweat-shirt antistatique ESD",
+    "note": "Correction manuelle (faute de frappe / coloris tronqué de l’export)"
+  },
+  "AS25": {
+    "name": "Sweat-shirt zippé antistatique ESD",
+    "note": "Correction manuelle (faute de frappe / coloris tronqué de l’export)"
+  },
   "B026": {
     "name": "Bonnet tricot réfléchissant doublé Insulatex",
     "description": "Bonnet en tricot acrylique intégrant des fils réfléchissants pour la visibilité, doublure Insulatex en polyester contre le froid et le vent.",
@@ -102,11 +110,19 @@
     "source": "https://www.hivis.co.uk/polo-shirt-with-cut-resistant-sleeves-portwest-cr15.html",
     "confidence": "high"
   },
+  "CV06": {
+    "name": "Serviette rafraîchissante",
+    "note": "Correction manuelle (faute de frappe / coloris tronqué de l’export)"
+  },
   "CV11": {
     "name": "Bonnet rafraîchissant Cooling Crown",
     "description": "Bonnet léger rafraîchissant à activer en le trempant dans l'eau, jusqu'à 8 h de fraîcheur pour prévenir le stress thermique ; dos élastiqué, se porte sous un casque ou un chapeau.",
     "source": "https://www.portwest.com/products/view/CV11",
     "confidence": "high"
+  },
+  "CV28": {
+    "name": "Gilet rafraîchissant",
+    "note": "Correction manuelle (faute de frappe / coloris tronqué de l’export)"
   },
   "E052": {
     "name": "Combinaison haute visibilité X",
@@ -617,6 +633,10 @@
     "description": "Pantalon de service à pinces en polyviscose (65 % polyester, 35 % viscose, 260 g) avec deux poches latérales en biais et une poche arrière boutonnée.",
     "source": "https://www.portwest.com/products/view/S710/BKR",
     "confidence": "high"
+  },
+  "SM33": {
+    "name": "Kit absorbant de maintenance 120 litres",
+    "note": "Correction manuelle (faute de frappe / coloris tronqué de l’export)"
   },
   "ST31": {
     "name": "Blouse BizTex® SMS type PB[6] (Pk50)",

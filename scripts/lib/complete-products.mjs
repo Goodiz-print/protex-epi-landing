@@ -16,10 +16,14 @@
 //
 // Used by `generate-catalog-data.mjs` (right after each builder, so a regeneration keeps
 // the names) and by `complete-catalog.mjs` (patches the committed catalog without the CSVs).
-// Idempotent: a completed product has a name (and a colour) and is not changed again.
+// It also fixes named products: an override `name` / `description` / `colours` entry always
+// wins (translations, typos), and every product's text is normalised (whitespace runs,
+// truncated Portwest colour suffixes such as « Orange/Noir Shor »).
+// Idempotent: a second run changes nothing.
 
 import { existsSync, readFileSync } from 'node:fs';
 import { buildEntryId, buildProductSlug } from './supplier-csv.ts';
+import { slugify } from '../../src/utils/slugify.ts';
 
 export function readProductOverrides(path) {
 	if (!existsSync(path)) return {};
@@ -71,51 +75,79 @@ function mergeSizes(target, extra) {
 	return merged.sort((a, b) => sizeRank(a) - sizeRank(b));
 }
 
+// Colour labels the Portwest export garbles, whatever the model.
+const COLOUR_FIXES = { 'Navy NV S': 'Marine Short' };
+
+const decodeEntities = (value) => value.replace(/&nbsp;/gi, ' ').replace(/&amp;/gi, '&');
+
 /**
- * Completes the products in place (and drops the rows merged into an existing colourway).
- * Returns the new product array and a report.
+ * `&nbsp;` decoded, whitespace runs collapsed, ends trimmed; Portwest colour labels fixed
+ * (suffix truncated by the export: « Orange/Noir Shor » → « Orange/Noir Short »).
+ */
+function normaliseText(product) {
+	const name = decodeEntities(product.name).replace(/\s+/g, ' ').trim();
+	let colour = decodeEntities(product.colour)
+		.replace(/\s+/g, ' ')
+		.trim()
+		.replace(/ (?:Shor|Sho|Sh)$/, ' Short');
+	colour = COLOUR_FIXES[colour] ?? colour;
+	const description = decodeEntities(product.description).replace(/[ \t]{2,}/g, ' ').trim();
+	const changed = name !== product.name || colour !== product.colour || description !== product.description;
+	Object.assign(product, { name, colour, description });
+	return changed;
+}
+
+/**
+ * Completes and fixes the products in place (and drops the rows merged into an existing
+ * colourway). Returns the new product array and a report. Three passes so the result does
+ * not depend on product order: (1) normalise + apply overrides, (2) fill the blanks from
+ * sibling colourways and the colour table, (3) rebuild id/slug of every changed product.
  */
 export function completeProducts(supplier, products, overrides = {}) {
+	const styleCodes = new Set(products.map((product) => product.styleCode));
+	const report = {
+		named: 0,
+		renamed: 0,
+		coloured: 0,
+		normalised: 0,
+		merged: 0,
+		unknownColourCodes: [],
+		unmatchedOverrides: Object.keys(overrides).filter((styleCode) => !styleCodes.has(styleCode)),
+	};
+	const original = new Map(products.map((product) => [product, { name: product.name, colour: product.colour }]));
+	const wasBlank = new Set(products.filter((product) => isBlank(product.name)));
+
+	// 1. Normalisation, then the overrides, which always win over the export.
+	for (const product of products) {
+		if (normaliseText(product)) report.normalised++;
+		const override = overrides[product.styleCode];
+		if (!override) continue;
+		if (override.name) product.name = override.name.trim();
+		if (override.description) product.description = override.description.trim();
+		const code = supplier === 'portwest' ? portwestColourCode(product) : null;
+		const colour = code ? override.colours?.[code] : undefined;
+		if (colour) product.colour = colour;
+	}
+
+	// 2. Blanks: name/description from a named colourway of the model; Portwest colour from
+	//    the same code on the model, else the most frequent name for that code in the catalog
+	//    (override `colours` included for codes the catalog never names).
 	const colourTable = supplier === 'portwest' ? buildColourTable(products) : new Map();
-	// Codes the catalog never names but an override does (e.g. AQR → Aqua) apply to every
-	// model, so a single pass gives the same result as repeated runs.
 	for (const { colours } of Object.values(overrides)) {
 		for (const [code, name] of Object.entries(colours ?? {})) {
 			if (!colourTable.has(code)) colourTable.set(code, name);
 		}
 	}
-	const byId = new Map(products.map((product) => [product.id, product]));
-	const styleCodes = new Set(products.map((product) => product.styleCode));
-	const merged = new Set();
-	const report = {
-		named: 0,
-		coloured: 0,
-		merged: 0,
-		unknownColourCodes: [],
-		unmatchedOverrides: Object.keys(overrides).filter((styleCode) => !styleCodes.has(styleCode)),
-	};
-
 	for (const product of products) {
-		const needsName = isBlank(product.name);
-		const needsColour = supplier === 'portwest' && isBlank(product.colour);
-		if (!needsName && !needsColour) continue;
-		const override = overrides[product.styleCode];
-
-		if (needsName) {
+		if (isBlank(product.name)) {
 			const sibling = products.find(
 				(other) => other !== product && other.styleCode === product.styleCode && !isBlank(other.name),
 			);
-			const source = override?.name ? override : sibling;
-			if (!source) continue;
-			product.name = source.name.trim();
-			if (isBlank(product.description) && !isBlank(source.description)) {
-				product.description = source.description.trim();
-			}
+			if (!sibling) continue;
+			product.name = sibling.name;
+			if (isBlank(product.description)) product.description = sibling.description;
 		}
-
-		if (needsColour) {
-			// Colour code → name: the override's `colours` map, then the same code on a named
-			// colourway of the model, then the most frequent name for that code in the catalog.
+		if (supplier === 'portwest' && isBlank(product.colour)) {
 			const code = portwestColourCode(product);
 			const sameCode = products.find(
 				(other) =>
@@ -124,33 +156,44 @@ export function completeProducts(supplier, products, overrides = {}) {
 					!isBlank(other.colour) &&
 					portwestColourCode(other) === code,
 			);
-			const colour = override?.colours?.[code] ?? sameCode?.colour ?? (code ? colourTable.get(code) : undefined);
-			if (colour) {
-				product.colour = colour;
-			} else {
-				report.unknownColourCodes.push(`${product.styleCode}${code ?? ''}`);
-				if (!needsName) continue;
-			}
+			const colour = sameCode?.colour ?? (code ? colourTable.get(code) : undefined);
+			if (colour) product.colour = colour;
+			else report.unknownColourCodes.push(`${product.styleCode}${code ?? ''}`);
 		}
+	}
 
-		// Rebuild id/slug the way the builders do. Their key is the middle part of the id:
-		// the style code (Portwest), produit-qualité-coloris (Mascot) or base ref (Blaklader).
+	// 3. Rebuild id/slug the way the builders do. Their key is the middle part of the id:
+	//    the style code (Portwest), produit-qualité-coloris (Mascot) or base ref (Blaklader).
+	//    A colourway whose new id already exists is merged into it.
+	const byId = new Map(products.map((product) => [product.id, product]));
+	const merged = new Set();
+	for (const product of products) {
+		const before = original.get(product);
+		// Compared by slug form: a whitespace-only fix does not change the URL.
+		const nameChanged = slugify(product.name) !== slugify(before.name);
+		const colourChanged = slugify(product.colour) !== slugify(before.colour);
+		if (!nameChanged && !colourChanged && !wasBlank.has(product)) continue;
+		if (isBlank(product.name)) continue;
+
 		const colour = product.colour.trim();
 		const entryKey = product.id.split(':')[1];
 		const id = buildEntryId(supplier, entryKey, colour);
 		const existing = byId.get(id);
-		if (existing && existing !== product) {
+		if (existing && existing !== product && !merged.has(existing)) {
 			existing.sizes = mergeSizes(existing.sizes ?? [], product.sizes ?? []);
 			existing.sourceSkus = [...new Set([...(existing.sourceSkus ?? []), ...(product.sourceSkus ?? [])])];
 			merged.add(product);
 			report.merged++;
 			continue;
 		}
+		const slug = buildProductSlug(product.name, colour, entryKey);
+		if (id === product.id && slug === product.slug) continue;
 		byId.delete(product.id);
 		product.id = id;
-		product.slug = buildProductSlug(product.name, colour, entryKey);
+		product.slug = slug;
 		byId.set(id, product);
-		if (needsName) report.named++;
+		if (wasBlank.has(product)) report.named++;
+		else if (nameChanged) report.renamed++;
 		else report.coloured++;
 	}
 
