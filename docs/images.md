@@ -45,14 +45,13 @@ export default defineConfig({
 });
 ```
 
-## Migration des images existantes
+## Ce qui reste dans `public/`
 
-`Header.astro` et `Footer.astro` utilisent encore une balise `<img src="/logo.png">` classique (fichier dans `public/`). À migrer :
+Seuls des fichiers dont l'URL doit rester fixe y sont servis tels quels : le favicon (`favicon.svg`, `favicon.ico`, `apple-touch-icon.png`), `robots.txt` et `images/product-placeholder.svg` (l'image de substitution des produits sans photo, référencée par son chemin dans le catalogue JSON). Le logo est déjà importé depuis `src/assets/images/` et affiché avec `<Image />` (voir `Header.astro`).
 
-1. Déplacer `public/logo.png` vers `src/assets/images/logo.png`.
-2. Remplacer les balises `<img>` par `<Image />` comme décrit ci-dessus.
+## Images produits
 
-Le `favicon.png`/`favicon.svg` et l'image utilisée pour `og:image` dans `src/layouts/Layout.astro` restent dans `public/` : ce sont des URLs qui doivent rester stables et accessibles telles quelles par les réseaux sociaux/moteurs de recherche.
+Les photos du catalogue ne passent pas par `astro:assets` : ce sont les URL des CDN fournisseurs, stockées dans `src/data/catalog/products.<fournisseur>.json`. Leur vérification et leur correction sont décrites dans `docs/scripts-catalogue.md` (procédures 3 et 4).
 
 ## Référence
 
