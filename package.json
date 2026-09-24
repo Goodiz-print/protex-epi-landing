@@ -14,7 +14,8 @@
     "check:images": "node scripts/check-product-images.mjs",
     "generate:catalog": "node scripts/generate-catalog-data.mjs",
     "reclassify:catalog": "node scripts/reclassify-catalog.mjs",
-    "apply:image-overrides": "node scripts/apply-image-overrides.mjs"
+    "apply:image-overrides": "node scripts/apply-image-overrides.mjs",
+		"complete:catalog": "node scripts/complete-catalog.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",

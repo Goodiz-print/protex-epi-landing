@@ -1,0 +1,48 @@
+{
+  "_comment": "Noms de produits absents de l'export Mascot. Clé = styleCode du catalogue (produit-qualité, ex. `25181-786`). `name` nomme la référence ; `source` et `confidence` sont informatifs. Appliqué au catalogue commité par `node scripts/complete-catalog.mjs` et réappliqué par `generate-catalog-data.mjs`.",
+  "25181-786": {
+    "name": "T-shirt, manches longues, coupe moderne",
+    "source": "https://www.unishoreworkwear.com/en/products/mascot-crossover-heren-t-shirt-met-lange-mouwen-25181",
+    "confidence": "medium"
+  },
+  "25191-786": {
+    "name": "T-shirt, manches longues, coupe femme moderne",
+    "source": "https://www.unishoreworkwear.com/en/products/mascot-crossover-dames-t-shirt-met-lange-mouwen-25191",
+    "confidence": "medium"
+  },
+  "25281-381": {
+    "name": "Tricot fonctionnel, laine, coupe moderne",
+    "source": "https://www.unishoreworkwear.com/en/products/mascot-crossover-functioneel-wol-onderhemd-25281",
+    "confidence": "medium"
+  },
+  "25299-381": {
+    "name": "Caleçon long fonctionnel, laine",
+    "source": "https://www.mascotwebshop.dk/arbejdstoj/funktionsundertoj/underbukser",
+    "confidence": "low"
+  },
+  "26093-961": {
+    "name": "Polo, manches longues, coupe femme",
+    "source": "https://www.unishoreworkwear.com/en/products/mascot-crossover-dames-poloshirt-met-lange-mouwen-26093",
+    "confidence": "medium"
+  },
+  "26191-959": {
+    "name": "T-shirt, manches longues, coupe femme",
+    "source": "https://www.unishoreworkwear.com/en/products/mascot-crossover-dames-t-shirt-met-lange-mouwen-26191",
+    "confidence": "medium"
+  },
+  "F1112-704": {
+    "name": "Chaussures de sécurité basses SB, protection électrique, BOA®",
+    "source": "https://www.unishoreworkwear.com/en/products/mascot-footwear-electrosafe-veiligheidsschoenen-laag-elektrisch-beschermd-boa-sb-f1112",
+    "confidence": "medium"
+  },
+  "F1115-704": {
+    "name": "Chaussures de sécurité hautes SB, protection électrique, BOA®",
+    "source": "https://www.unishoreworkwear.com/en/products/mascot-footwear-electrosafe-veiligheidsschoenen-hoog-elektrisch-beschermd-sb-boa-f1115",
+    "confidence": "medium"
+  },
+  "F1116-704": {
+    "name": "Sandales de sécurité SB, protection électrique, lacets",
+    "source": "https://www.unishoreworkwear.com/en/products/mascot-footwear-electrosafe-dames-werksandalen-elektrisch-beschermd-sb-f1116",
+    "confidence": "medium"
+  }
+}

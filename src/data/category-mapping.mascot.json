@@ -2340,8 +2340,8 @@
     "subcategory": "vetements-travail"
   },
   "24150": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "24250": {
     "category": "corps",
@@ -3720,8 +3720,8 @@
     "subcategory": "accessoires-chaussures"
   },
   "FT088": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "FT090": {
     "category": "pieds",

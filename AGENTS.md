@@ -12,7 +12,8 @@ Manage the background server with `astro dev stop`, `astro dev status`, and `ast
 
 Detailed, step-by-step documentation of every catalog script (inputs, outputs, procedures)
 lives in `docs/scripts-catalogue.md`. npm aliases: `pnpm run generate:catalog`,
-`pnpm run reclassify:catalog`, `pnpm run apply:image-overrides`, `pnpm run check:images`.
+`pnpm run reclassify:catalog`, `pnpm run complete:catalog`, `pnpm run apply:image-overrides`,
+`pnpm run check:images`.
 
 The product catalog is **not** built from the supplier CSVs at build time. The raw
 exports live in `src/data/suppliers/` and are **gitignored**; what is committed and
@@ -42,8 +43,9 @@ used **only** by step 4 — never at build time.
 
 ### Reclassifying products without the CSVs
 
-Manual category fixes go in `src/data/category-overrides.<supplier>.json` (keyed by style
-code). Run `node scripts/reclassify-catalog.mjs`: it merges the overrides into
+Manual category fixes go in `src/data/category-overrides.<supplier>.json`, keyed like the
+mapping: style code (Portwest), base ref (Blaklader), product number without the quality
+suffix (Mascot: `24150`, not `24150-M99`). Run `node scripts/reclassify-catalog.mjs`: it merges the overrides into
 `src/data/category-mapping.<supplier>.json` (so the next regeneration keeps them) **and**
 patches `src/data/catalog/products.<supplier>.json` in place, so no supplier export is
 needed. Commit the overrides, the mapping and the catalog JSON together. Product URLs
@@ -74,7 +76,8 @@ Options: `--supplier portwest,mascot`, `--source csv|catalog`, `--dry-run`, `--c
 
 `node scripts/generate-catalog-data.mjs [--supplier …]` rebuilds the catalog JSON from the
 exports; a supplier whose export is missing is skipped and keeps its committed JSON. Category
-overrides (merged into the mapping) and image overrides are re-applied on every run.
+overrides (merged into the mapping), product-name overrides and image overrides are re-applied
+on every run.
 
 ### Fixing a product image without the CSVs
 
@@ -83,12 +86,31 @@ from the catalog JSON (e.g. `"portwest:FT45:noir": "https://…/FT45BKR.jpg"`), 
 `node scripts/apply-image-overrides.mjs` and commit both files. `generate-catalog-data.mjs`
 re-applies the overrides on every regeneration, so they survive a new supplier export.
 
+### Products without a name
+
+Portwest ships price-list rows with no product sheet (SKU, price and photo, but no name,
+colour nor description); a few Mascot qualities lack a name. `scripts/lib/complete-products.mjs`
+names them — `node scripts/complete-catalog.mjs` on the committed catalog, and
+`generate-catalog-data.mjs` on every regeneration:
+
+- an unlabelled colourway of a named model takes the model's name/description and a colour
+  from its SKU colour code (resolved from the rest of the catalog); if that colour already
+  exists on the model, its sizes/SKUs are merged into it;
+- a whole reference takes its name from `src/data/product-overrides.<supplier>.json`, keyed by
+  catalog `styleCode` (`name`, optional `description`, `colours: { "<code>": "<colour>" }` for
+  colour codes nothing else names; `source`/`confidence` are informative). Its category goes in
+  `category-overrides.<supplier>.json` as usual.
+
+Commit the overrides, the mapping and the catalog JSON together. See
+`docs/scripts-catalogue.md` (procedure 5).
+
 ### Products without image
 
-A product whose `imageUrl` is the placeholder **and** whose price is 0 is treated as an
-unfinished supplier row (not yet sold on the FR market): the loader skips it, so it has no
-product page, no listing card and no search entry (see `src/utils/product-image.ts`). It
-comes back automatically once an image override or a new export gives it a photo or a price.
+A product whose `imageUrl` is the placeholder **and** whose price is 0, or whose name, colour
+and description are all blank (a Portwest price-list row that `complete-catalog.mjs` could not
+name), is treated as an unfinished supplier row: the loader skips it, so it has no product page, no listing card and
+no search entry (see `src/utils/product-image.ts`). It comes back automatically once an image
+override or a new export gives it a photo, a price or a name.
 Products that only lack the photo stay published but are sorted last in every listing, and a
 model whose first colourway has no photo takes its card image from another colourway.
 

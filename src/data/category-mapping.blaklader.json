@@ -860,24 +860,24 @@
     "subcategory": "vetements-pluie"
   },
   "151615128900": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "151615129900": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "151615143300": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "151615148900": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "151615169900": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "152016458699": {
     "category": "corps",
@@ -2488,60 +2488,60 @@
     "subcategory": "protection-tete"
   },
   "211018009900": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "211200009900": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "211300009900": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "211400009900": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "212719489900": {
     "category": "corps",
     "subcategory": "vetements-travail"
   },
   "213000009900": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "213490180010": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "213500009900": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "213600009900": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "215918459800": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "215918459900": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "215918608900": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "215918609400": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "215918609900": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "216218119900": {
     "category": "corps",
@@ -2588,32 +2588,32 @@
     "subcategory": "vetements-travail"
   },
   "217019488900": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "217019488953": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "217019489900": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "217019489933": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "217019489955": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "217219873300": {
     "category": "corps",
     "subcategory": "vetements-haute-visibilite"
   },
   "217219875300": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
   },
   "217519773300": {
     "category": "corps",
@@ -2628,12 +2628,12 @@
     "subcategory": "vetements-haute-visibilite"
   },
   "217619489900": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "217719489900": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "218319489900": {
     "category": "corps",
@@ -3704,8 +3704,8 @@
     "subcategory": "vetements-haute-visibilite"
   },
   "309900009900": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "310013809900": {
     "category": "corps",
@@ -6760,8 +6760,8 @@
     "subcategory": "vetements-travail"
   },
   "402000009900": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "402318043389": {
     "category": "corps",
@@ -10408,11 +10408,11 @@
     "subcategory": "vetements-travail"
   },
   "988000009900": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "988100009900": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   }
 }

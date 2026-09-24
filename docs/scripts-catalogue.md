@@ -15,6 +15,7 @@ src/data/suppliers/<fournisseur>/*.csv      exports bruts (gitignorés, machines
         ▼
 generate-catalog-data.mjs ───────────────▶ src/data/catalog/products.<f>.json    (committé)
         ▲                                            ▲
+        │                            complete-catalog.mjs      ◀─ product-overrides.<f>.json
         │                            apply-image-overrides.mjs ◀─ image-overrides.<f>.json
         │                            check-product-images.mjs  ─▶ known-bad-images.portwest.json
         │                                                       ─▶ scripts/reports/broken-product-images.json
@@ -28,8 +29,9 @@ src/content/loaders/json-products-loader.ts   lu par astro dev / astro build
 | --- | --- | --- |
 | `src/data/suppliers/<fournisseur>/…` | Exports bruts (Portwest CSV, Mascot extended + slim, Blaklader FAB-DIS). Voir `src/data/suppliers/mascot/README.md` pour Mascot. | ❌ (`*.csv` gitignorés) |
 | `src/data/category-mapping.<f>.json` | Catégorie / sous-catégorie par code style. **Source de vérité** pour la régénération. | ✅ |
-| `src/data/category-overrides.<f>.json` | Corrections manuelles de catégorie (clé = code style). | ✅ |
+| `src/data/category-overrides.<f>.json` | Corrections manuelles de catégorie (clé = code style ; Mascot : numéro produit sans la qualité). | ✅ |
 | `src/data/catalog/products.<f>.json` | Catalogue pré-calculé, un produit (= un coloris) par ligne. **Ce que le site lit.** | ✅ |
+| `src/data/product-overrides.<f>.json` | Noms des produits que l'export laisse vides (clé = `styleCode` du catalogue) : `name`, `description`, `colours` (code couleur SKU → couleur). | ✅ |
 | `src/data/image-overrides.<f>.json` | Corrections manuelles d'image (clé = `id` du produit, valeur = URL). | ✅ |
 | `src/data/known-bad-images.portwest.json` | URL du CDN Portwest confirmées mortes. | ✅ |
 | `scripts/reports/broken-product-images.json` | Rapport : produits encore sans photo valide. | ✅ |
@@ -47,14 +49,16 @@ Tous se lancent depuis la racine du projet avec `node scripts/<nom>.mjs` (ou l'a
 | `generate-category-mapping.mjs` | Propose une catégorie aux références Portwest **nouvelles** (mots-clés). Additif : ne réécrit jamais une entrée existante, sauf celles en `a-trier`. | export Portwest | `category-mapping.portwest.json` | Oui (Portwest) |
 | `generate-category-mapping-blaklader.mjs` | Idem pour Blaklader. | FAB-DIS B01_COMMERCE | `category-mapping.blaklader.json` | Oui (Blaklader) |
 | `generate-category-mapping-mascot.mjs` | Idem pour Mascot (après `prepare-mascot-csv.mjs`). | slim CSV Mascot | `category-mapping.mascot.json` | Oui (Mascot) |
-| `generate-catalog-data.mjs [--supplier a,b]` — `pnpm run generate:catalog` | Reconstruit le catalogue JSON à partir des exports + mapping. Un fournisseur dont l'export manque est **ignoré** (son JSON committé est conservé). Réapplique `known-bad-images` (image de repli) et `image-overrides`. | exports + mapping + known-bad + image-overrides | `src/data/catalog/products.<f>.json` | Oui, pour les fournisseurs traités |
+| `generate-catalog-data.mjs [--supplier a,b]` — `pnpm run generate:catalog` | Reconstruit le catalogue JSON à partir des exports + mapping. Un fournisseur dont l'export manque est **ignoré** (son JSON committé est conservé). Réapplique `known-bad-images` (image de repli), `product-overrides` (noms) et `image-overrides`. | exports + mapping + known-bad + product-overrides + image-overrides | `src/data/catalog/products.<f>.json` | Oui, pour les fournisseurs traités |
 | `reclassify-catalog.mjs` — `pnpm run reclassify:catalog` | Fusionne `category-overrides.<f>.json` dans le mapping **et** patche le catalogue JSON. Idempotent. | category-overrides | mapping + catalogue | Non |
+| `complete-catalog.mjs` — `pnpm run complete:catalog` | Nomme les produits sans nom (coloris orphelins d'après leur modèle, références entières d'après `product-overrides.<f>.json`) et fusionne les tailles d'un coloris en double. Idempotent. | product-overrides | catalogue | Non |
 | `apply-image-overrides.mjs` — `pnpm run apply:image-overrides` | Patche le catalogue JSON avec `image-overrides.<f>.json`. Idempotent. | image-overrides | catalogue | Non |
 | `check-product-images.mjs` — `pnpm run check:images` | Vérifie en HTTP chaque URL d'image, patche le catalogue, met à jour la liste known-bad et le rapport (détail ci-dessous). | catalogue (+ exports s'ils sont là) | catalogue, image-overrides, known-bad, rapport | Non |
 
 Bibliothèques (non exécutables) : `scripts/lib/supplier-csv.ts` (parsing / groupage / jointure
 des exports, utilisé uniquement par `generate-catalog-data.mjs`) et
-`scripts/lib/image-overrides.mjs` (lecture / application des overrides d'image).
+`scripts/lib/image-overrides.mjs` (lecture / application des overrides d'image) et
+`scripts/lib/complete-products.mjs` (nommage des produits sans nom).
 
 ## Procédures
 
@@ -86,6 +90,10 @@ fusionnés dans le mapping, les overrides d'image sont réappliqués par le scri
    ```
 
    (`name` est un simple commentaire ; seuls `category` et `subcategory` sont lus.)
+
+   La clé est celle du mapping : code style Portwest, référence de base Blåkläder, et pour
+   Mascot le numéro produit **sans** la qualité (`24150`, pas `24150-M99` : tous les
+   produits-qualités du modèle sont reclassés).
 
 2. `pnpm run reclassify:catalog`
 3. Committer overrides + mapping + catalogue ensemble.
@@ -147,7 +155,45 @@ apparaît dans le catalogue JSON :
 
 puis `pnpm run apply:image-overrides` et committer les deux fichiers.
 
-### 5. Ce que le site fait d'un produit sans photo
+### 5. Nommer un produit sans nom
+
+L'export Portwest contient des lignes de tarif sans fiche produit : un SKU, un prix et une
+photo, mais ni nom, ni coloris, ni description (Mascot : quelques qualités sans nom).
+`complete-catalog.mjs` (et `generate-catalog-data.mjs`, à chaque régénération) les complète :
+
+- **coloris orphelin** d'un modèle dont d'autres coloris sont nommés : il prend le nom et la
+  description du modèle, et sa couleur est déduite du code couleur des SKU (`A100K8RL` →
+  `K8R` → « Noir », d'après les autres produits du catalogue). Si ce coloris existe déjà sur
+  le modèle, ses tailles et SKU y sont fusionnés et la ligne disparaît ;
+- **référence entière** sans voisin nommé : le nom vient de
+  `src/data/product-overrides.<fournisseur>.json` (clé = `styleCode` du catalogue) ; sa
+  catégorie se règle comme d'habitude dans `category-overrides.<fournisseur>.json`.
+
+```json
+{
+  "FW09": {
+    "name": "Brodequin Steelite Protector S1P embout anti-abrasion",
+    "description": "Brodequin de sécurité S1P avec embout anti-abrasion…",
+    "source": "https://www.portwest.com/products/view/FW09/BKR",
+    "confidence": "high"
+  },
+  "B210": { "colours": { "AQR": "Aqua" } }
+}
+```
+
+`colours` traduit un code couleur que le reste du catalogue ne nomme jamais ; il vaut pour
+tout le catalogue. `source` et `confidence` sont informatifs (les noms actuels ont été
+retrouvés par recherche web sur portwest.com / mascot et des revendeurs).
+
+```bash
+pnpm run complete:catalog       # nomme les produits
+pnpm run reclassify:catalog     # si des catégories ont été ajoutées
+```
+
+Committer overrides, mapping et catalogue ensemble. Le script signale les codes couleur
+inconnus (`unknown colour code …`) : les ajouter dans `colours`.
+
+### 6. Ce que le site fait d'un produit sans photo
 
 Logique dans `src/utils/product-image.ts` :
 
@@ -155,6 +201,9 @@ Logique dans `src/utils/product-image.ts` :
   France). Le loader ne la publie pas : pas de page produit, pas de carte, pas d'entrée de
   recherche. Elle réapparaît dès qu'un override ou un nouvel export lui donne une photo ou
   un prix.
+- **Ligne vide** (ni nom, ni coloris, ni description) que la procédure 5 n'a pas pu
+  nommer : même traitement, non publiée tant qu'un override ou un nouvel export ne la
+  complète pas.
 - **Sans photo mais avec prix** : publiée, mais reléguée en fin de tous les listings (tri
   stable).
 - **Modèle dont le premier coloris n'a pas de photo** : la carte prend l'image d'un autre

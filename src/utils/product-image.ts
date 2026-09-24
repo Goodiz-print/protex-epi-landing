@@ -8,12 +8,18 @@ export function hasProductImage(product: Pick<Product, 'imageUrl'>): boolean {
 }
 
 /**
- * Fiche fournisseur incomplète : ni photo valide, ni prix. Ce sont des références
- * pas encore commercialisées sur le marché FR (nom anglais brut dans l'export,
- * photo absente du CDN) — on ne les publie pas plutôt que d'afficher une carte
- * vide (retour client : « images manquantes » dans Pieds > Bottes de sécurité).
+ * Fiche fournisseur incomplète, non publiée plutôt que d'afficher une carte vide :
+ * - ni photo valide, ni prix : références pas encore commercialisées sur le marché FR
+ *   (nom anglais brut dans l'export, photo absente du CDN — retour client « images
+ *   manquantes » dans Pieds > Bottes de sécurité) ;
+ * - ligne vide (ni nom, ni coloris, ni description) : ligne de tarif Portwest sans
+ *   fiche produit que scripts/complete-catalog.mjs n'a pas su nommer (ni coloris voisin
+ *   nommé, ni entrée dans src/data/product-overrides.<fournisseur>.json).
  */
-export function isIncompleteProduct(product: Pick<Product, 'imageUrl' | 'price'>): boolean {
+export function isIncompleteProduct(
+	product: Pick<Product, 'imageUrl' | 'price' | 'name' | 'colour' | 'description'>,
+): boolean {
+	if (!product.name.trim() && !product.colour.trim() && !product.description.trim()) return true;
 	return !hasProductImage(product) && !(product.price > 0);
 }
 

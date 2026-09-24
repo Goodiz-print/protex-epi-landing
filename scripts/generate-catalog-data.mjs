@@ -18,7 +18,8 @@
 // committed catalog JSON is left as is, so the script can run on a machine that only has one
 // supplier's files. The manual fixes are re-applied on top of the export: category overrides
 // (already merged into category-mapping.<supplier>.json by reclassify-catalog.mjs) and image
-// overrides (src/data/image-overrides.<supplier>.json).
+// overrides (src/data/image-overrides.<supplier>.json), after naming the rows the export left
+// blank (scripts/lib/complete-products.mjs + src/data/product-overrides.<supplier>.json).
 //
 // The grouping/joining/mapping logic is NOT duplicated here: it is imported from
 // `scripts/lib/supplier-csv.ts`, the single source of truth
@@ -39,6 +40,7 @@ import {
 	groupPortwestRows,
 } from './lib/supplier-csv.ts';
 import { applyImageOverrides, readImageOverrides } from './lib/image-overrides.mjs';
+import { completeProducts, readProductOverrides } from './lib/complete-products.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
@@ -197,7 +199,22 @@ function main() {
 			);
 			continue;
 		}
-		const { products, warnings, summary } = BUILDERS[source.supplier](source);
+		const built = BUILDERS[source.supplier](source);
+		const { warnings, summary } = built;
+		// Names for the rows the export leaves blank (src/data/product-overrides.<supplier>.json
+		// + sibling colourways). Before the image overrides, which are keyed by the final id.
+		const { products, report } = completeProducts(
+			source.supplier,
+			built.products,
+			readProductOverrides(resolve(ROOT, `src/data/product-overrides.${source.supplier}.json`)),
+		);
+		if (report.named + report.coloured + report.merged > 0) {
+			console.log(
+				`[${source.supplier}] ${report.named} product(s) named, ${report.coloured} coloured, ${report.merged} merged into an existing colourway`,
+			);
+		}
+		for (const code of report.unknownColourCodes) warnings.push(`unknown colour code ${code}`);
+		for (const styleCode of report.unmatchedOverrides) warnings.push(`product override for unknown style ${styleCode}`);
 		// Manual image fixes (src/data/image-overrides.<supplier>.json) win over the export.
 		const overrides = readImageOverrides(resolve(ROOT, `src/data/image-overrides.${source.supplier}.json`));
 		const { changed, unknown } = applyImageOverrides(products, overrides);
