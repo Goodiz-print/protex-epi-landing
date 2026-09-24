@@ -31,7 +31,7 @@ src/content/loaders/json-products-loader.ts   lu par astro dev / astro build
 | `src/data/category-mapping.<f>.json` | Catégorie / sous-catégorie par code style. **Source de vérité** pour la régénération. | ✅ |
 | `src/data/category-overrides.<f>.json` | Corrections manuelles de catégorie (clé = code style ; Mascot : numéro produit sans la qualité). | ✅ |
 | `src/data/catalog/products.<f>.json` | Catalogue pré-calculé, un produit (= un coloris) par ligne. **Ce que le site lit.** | ✅ |
-| `src/data/product-overrides.<f>.json` | Noms des produits que l'export laisse vides (clé = `styleCode` du catalogue) : `name`, `description`, `colours` (code couleur SKU → couleur). | ✅ |
+| `src/data/product-overrides.<f>.json` | Noms et corrections de fiches (clé = `styleCode` du catalogue) : `name`, `description`, `colours` (code couleur SKU → couleur). Prioritaires sur l'export. | ✅ |
 | `src/data/image-overrides.<f>.json` | Corrections manuelles d'image (clé = `id` du produit, valeur = URL). | ✅ |
 | `src/data/known-bad-images.portwest.json` | URL du CDN Portwest confirmées mortes. | ✅ |
 | `scripts/reports/broken-product-images.json` | Rapport : produits encore sans photo valide. | ✅ |
@@ -51,7 +51,7 @@ Tous se lancent depuis la racine du projet avec `node scripts/<nom>.mjs` (ou l'a
 | `generate-category-mapping-mascot.mjs` | Idem pour Mascot (après `prepare-mascot-csv.mjs`). | slim CSV Mascot | `category-mapping.mascot.json` | Oui (Mascot) |
 | `generate-catalog-data.mjs [--supplier a,b]` — `pnpm run generate:catalog` | Reconstruit le catalogue JSON à partir des exports + mapping. Un fournisseur dont l'export manque est **ignoré** (son JSON committé est conservé). Réapplique `known-bad-images` (image de repli), `product-overrides` (noms) et `image-overrides`. | exports + mapping + known-bad + product-overrides + image-overrides | `src/data/catalog/products.<f>.json` | Oui, pour les fournisseurs traités |
 | `reclassify-catalog.mjs` — `pnpm run reclassify:catalog` | Fusionne `category-overrides.<f>.json` dans le mapping **et** patche le catalogue JSON. Idempotent. | category-overrides | mapping + catalogue | Non |
-| `complete-catalog.mjs` — `pnpm run complete:catalog` | Nomme les produits sans nom (coloris orphelins d'après leur modèle, références entières d'après `product-overrides.<f>.json`) et fusionne les tailles d'un coloris en double. Idempotent. | product-overrides | catalogue | Non |
+| `complete-catalog.mjs` — `pnpm run complete:catalog` | Nomme les produits sans nom (coloris orphelins d'après leur modèle, références entières d'après `product-overrides.<f>.json`), applique les renommages / corrections de `product-overrides`, normalise les textes et fusionne les tailles d'un coloris en double. Idempotent. | product-overrides | catalogue | Non |
 | `apply-image-overrides.mjs` — `pnpm run apply:image-overrides` | Patche le catalogue JSON avec `image-overrides.<f>.json`. Idempotent. | image-overrides | catalogue | Non |
 | `check-product-images.mjs` — `pnpm run check:images` | Vérifie en HTTP chaque URL d'image, patche le catalogue, met à jour la liste known-bad et le rapport (détail ci-dessous). | catalogue (+ exports s'ils sont là) | catalogue, image-overrides, known-bad, rapport | Non |
 
@@ -155,7 +155,7 @@ apparaît dans le catalogue JSON :
 
 puis `pnpm run apply:image-overrides` et committer les deux fichiers.
 
-### 5. Nommer un produit sans nom
+### 5. Nommer, renommer ou corriger une fiche produit
 
 L'export Portwest contient des lignes de tarif sans fiche produit : un SKU, un prix et une
 photo, mais ni nom, ni coloris, ni description (Mascot : quelques qualités sans nom).
@@ -168,6 +168,14 @@ photo, mais ni nom, ni coloris, ni description (Mascot : quelques qualités sans
 - **référence entière** sans voisin nommé : le nom vient de
   `src/data/product-overrides.<fournisseur>.json` (clé = `styleCode` du catalogue) ; sa
   catégorie se règle comme d'habitude dans `category-overrides.<fournisseur>.json`.
+
+Les mêmes `product-overrides` **l'emportent toujours sur l'export** : une entrée `name` /
+`description` renomme ou corrige une fiche déjà nommée (noms Portwest restés en anglais,
+fautes de frappe), une entrée `colours` renomme un coloris du modèle. Et chaque produit est
+**normalisé** automatiquement : `&nbsp;` décodé, espaces multiples réduits, coloris tronqués
+par l'export Portwest corrigés (« Orange/Noir Shor » → « Orange/Noir Short »,
+« Navy NV S » → « Marine Short »). Un correctif d'espaces ne change pas l'URL ; un
+renommage, si (le slug contient le nom et le coloris).
 
 ```json
 {

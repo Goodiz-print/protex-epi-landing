@@ -9,7 +9,7 @@
   },
   "2207": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-travail"
   },
   "2208": {
     "category": "corps",
@@ -829,7 +829,7 @@
   },
   "AC01": {
     "category": "mains",
-    "subcategory": "hygiene-sante"
+    "subcategory": "gants-protection"
   },
   "AC05": {
     "category": "mains",
@@ -945,7 +945,7 @@
   },
   "AP76": {
     "category": "mains",
-    "subcategory": "hygiene-sante"
+    "subcategory": "gants-protection"
   },
   "AP80": {
     "category": "mains",
@@ -1109,7 +1109,7 @@
   },
   "B153": {
     "category": "corps",
-    "subcategory": "equipement-antichute"
+    "subcategory": "vetements-travail"
   },
   "B171": {
     "category": "corps",
@@ -1133,7 +1133,7 @@
   },
   "B191": {
     "category": "corps",
-    "subcategory": "equipement-antichute"
+    "subcategory": "vetements-travail"
   },
   "B192": {
     "category": "corps",
@@ -1193,11 +1193,11 @@
   },
   "B305": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "B306": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "B308": {
     "category": "corps",
@@ -1249,7 +1249,7 @@
   },
   "B900": {
     "category": "corps",
-    "subcategory": "equipement-antichute"
+    "subcategory": "vetements-travail"
   },
   "B901": {
     "category": "corps",
@@ -1281,27 +1281,27 @@
   },
   "B910": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-travail"
   },
   "B911": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-travail"
   },
   "B913": {
     "category": "corps",
-    "subcategory": "equipement-antichute"
+    "subcategory": "vetements-travail"
   },
   "B916": {
     "category": "corps",
     "subcategory": "vetements-travail"
   },
   "B920": {
-    "category": "mains",
-    "subcategory": "outils-coupe"
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "B921": {
-    "category": "mains",
-    "subcategory": "outils-coupe"
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "B922": {
     "category": "corps",
@@ -1317,7 +1317,7 @@
   },
   "B950": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-travail"
   },
   "B951": {
     "category": "corps",
@@ -1333,15 +1333,15 @@
   },
   "B965": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-travail"
   },
   "B966": {
-    "category": "pieds",
-    "subcategory": "chaussures-basses"
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "B967": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-travail"
   },
   "BIZ1": {
     "category": "corps",
@@ -1501,7 +1501,7 @@
   },
   "C370": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "C371": {
     "category": "corps",
@@ -1521,7 +1521,7 @@
   },
   "C376": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "C378": {
     "category": "corps",
@@ -1541,7 +1541,7 @@
   },
   "C464": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "C465": {
     "category": "corps",
@@ -1549,15 +1549,15 @@
   },
   "C466": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "C467": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "C468": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-haute-visibilite"
   },
   "C469": {
     "category": "corps",
@@ -1565,7 +1565,7 @@
   },
   "C470": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "C471": {
     "category": "corps",
@@ -1577,7 +1577,7 @@
   },
   "C473": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "C474": {
     "category": "corps",
@@ -1585,11 +1585,11 @@
   },
   "C475": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "C476": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "C482": {
     "category": "corps",
@@ -1597,11 +1597,11 @@
   },
   "C494": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "C496": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "C565": {
     "category": "corps",
@@ -1749,7 +1749,7 @@
   },
   "CD807": {
     "category": "corps",
-    "subcategory": "equipement-antichute"
+    "subcategory": "vetements-haute-visibilite"
   },
   "CD809": {
     "category": "corps",
@@ -1781,7 +1781,7 @@
   },
   "CD820": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "CD822": {
     "category": "corps",
@@ -1796,12 +1796,12 @@
     "subcategory": "vetements-travail"
   },
   "CD842": {
-    "category": "mains",
-    "subcategory": "outils-coupe"
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "CD843": {
-    "category": "mains",
-    "subcategory": "outils-coupe"
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "CD844": {
     "category": "corps",
@@ -1817,7 +1817,7 @@
   },
   "CD847": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "CD848": {
     "category": "corps",
@@ -1829,7 +1829,7 @@
   },
   "CD852": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "CD855": {
     "category": "corps",
@@ -1853,7 +1853,7 @@
   },
   "CD863": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "CD864": {
     "category": "corps",
@@ -1953,7 +1953,7 @@
   },
   "CH12": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-travail"
   },
   "CH16": {
     "category": "corps",
@@ -1993,7 +1993,7 @@
   },
   "CS23": {
     "category": "tete",
-    "subcategory": "protection-respiratoire"
+    "subcategory": "protection-tete"
   },
   "CS24": {
     "category": "tete",
@@ -2037,7 +2037,7 @@
   },
   "CV02": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "CV04": {
     "category": "tete",
@@ -2080,12 +2080,12 @@
     "subcategory": null
   },
   "D102": {
-    "category": "tete",
-    "subcategory": "protection-tete"
+    "category": "usage-unique",
+    "subcategory": null
   },
   "D118": {
-    "category": "corps",
-    "subcategory": "vetements-travail"
+    "category": "usage-unique",
+    "subcategory": null
   },
   "D340": {
     "category": "pieds",
@@ -2097,11 +2097,11 @@
   },
   "DX402": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "DX403": {
     "category": "corps",
-    "subcategory": "equipement-antichute"
+    "subcategory": "vetements-travail"
   },
   "DX408": {
     "category": "corps",
@@ -2137,7 +2137,7 @@
   },
   "DX416": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "DX417": {
     "category": "corps",
@@ -2145,7 +2145,7 @@
   },
   "DX419": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "DX420": {
     "category": "corps",
@@ -2169,7 +2169,7 @@
   },
   "DX431": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-travail"
   },
   "DX432": {
     "category": "corps",
@@ -2181,7 +2181,7 @@
   },
   "DX434": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "DX435": {
     "category": "corps",
@@ -2217,11 +2217,11 @@
   },
   "DX445": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "DX446": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "DX448": {
     "category": "corps",
@@ -2233,7 +2233,7 @@
   },
   "DX450": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-travail"
   },
   "DX451": {
     "category": "corps",
@@ -2273,7 +2273,7 @@
   },
   "DX462": {
     "category": "corps",
-    "subcategory": "vetements-haute-visibilite"
+    "subcategory": "vetements-pluie"
   },
   "DX463": {
     "category": "corps",
@@ -2313,15 +2313,15 @@
   },
   "DX474": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-travail"
   },
   "DX475": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-haute-visibilite"
   },
   "DX476": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-travail"
   },
   "DX477": {
     "category": "corps",
@@ -2349,11 +2349,11 @@
   },
   "DX484": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "DX486": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-travail"
   },
   "DX490": {
     "category": "corps",
@@ -2397,7 +2397,7 @@
   },
   "E046": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "E049": {
     "category": "corps",
@@ -2464,8 +2464,8 @@
     "subcategory": "protection-ouie"
   },
   "EP09": {
-    "category": "mains",
-    "subcategory": "hygiene-sante"
+    "category": "tete",
+    "subcategory": "protection-ouie"
   },
   "EP10": {
     "category": "tete",
@@ -2533,7 +2533,7 @@
   },
   "ES076": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "ES195": {
     "category": "corps",
@@ -2545,15 +2545,15 @@
   },
   "ES250": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "ES251": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "ES277": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "ES300": {
     "category": "corps",
@@ -2565,15 +2565,15 @@
   },
   "ES303": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "ES304": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "ES376": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "ES400": {
     "category": "corps",
@@ -2581,7 +2581,7 @@
   },
   "ES428": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "ES440": {
     "category": "corps",
@@ -2593,15 +2593,15 @@
   },
   "ES460": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "ES463": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "ES466": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-haute-visibilite"
   },
   "ES470": {
     "category": "corps",
@@ -2609,19 +2609,19 @@
   },
   "ES474": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "ES476": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "ES477": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "ES478": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "ES701": {
     "category": "corps",
@@ -2661,7 +2661,7 @@
   },
   "EST46": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "ESX11": {
     "category": "corps",
@@ -2669,11 +2669,11 @@
   },
   "EV401": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-haute-visibilite"
   },
   "EV402": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-haute-visibilite"
   },
   "EV410": {
     "category": "corps",
@@ -2689,11 +2689,11 @@
   },
   "EV441": {
     "category": "corps",
-    "subcategory": "equipement-antichute"
+    "subcategory": "vetements-travail"
   },
   "EV442": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "EV443": {
     "category": "corps",
@@ -2713,7 +2713,7 @@
   },
   "EV448": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "EV460": {
     "category": "corps",
@@ -2725,7 +2725,7 @@
   },
   "EV464": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-travail"
   },
   "EV465": {
     "category": "corps",
@@ -2737,11 +2737,11 @@
   },
   "EV467": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "EV468": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-haute-visibilite"
   },
   "EV469": {
     "category": "corps",
@@ -2761,7 +2761,7 @@
   },
   "EV475": {
     "category": "corps",
-    "subcategory": "equipement-antichute"
+    "subcategory": "vetements-travail"
   },
   "EV476": {
     "category": "corps",
@@ -2793,7 +2793,7 @@
   },
   "F301": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "F302": {
     "category": "corps",
@@ -2801,7 +2801,7 @@
   },
   "F303": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "F400": {
     "category": "corps",
@@ -2904,8 +2904,8 @@
     "subcategory": "vetements-travail"
   },
   "FC03": {
-    "category": "corps",
-    "subcategory": "equipement-antichute"
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
   },
   "FC04": {
     "category": "pieds",
@@ -2913,11 +2913,11 @@
   },
   "FC06": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-basses"
   },
   "FC07": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-basses"
   },
   "FC08": {
     "category": "pieds",
@@ -2929,11 +2929,11 @@
   },
   "FC10": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FC11": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FC12": {
     "category": "pieds",
@@ -2941,23 +2941,23 @@
   },
   "FC14": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-basses"
   },
   "FC16": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FC17": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FC18": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FC19": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-basses"
   },
   "FC20": {
     "category": "pieds",
@@ -2965,15 +2965,15 @@
   },
   "FC21": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FC22": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FC23": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-basses"
   },
   "FC24": {
     "category": "pieds",
@@ -2985,11 +2985,11 @@
   },
   "FC26": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FC32": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-basses"
   },
   "FC38": {
     "category": "pieds",
@@ -3009,19 +3009,19 @@
   },
   "FC48": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FC49": {
     "category": "pieds",
-    "subcategory": "bottes"
+    "subcategory": "chaussures-hautes"
   },
   "FC53": {
     "category": "pieds",
     "subcategory": "chaussures-hautes"
   },
   "FC57": {
-    "category": "corps",
-    "subcategory": "vetements-pluie"
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
   },
   "FC58": {
     "category": "pieds",
@@ -3033,7 +3033,7 @@
   },
   "FC61": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-basses"
   },
   "FC63": {
     "category": "pieds",
@@ -3049,23 +3049,23 @@
   },
   "FC66": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-basses"
   },
   "FC67": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-basses"
   },
   "FC71": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FC72": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-basses"
   },
   "FC80": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-basses"
   },
   "FC81": {
     "category": "pieds",
@@ -3097,19 +3097,19 @@
   },
   "FD01": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FD02": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FD03": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FD04": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FD05": {
     "category": "pieds",
@@ -3117,15 +3117,15 @@
   },
   "FD07": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FD10": {
-    "category": "corps",
-    "subcategory": "equipement-antichute"
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
   },
   "FD15": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FD17": {
     "category": "pieds",
@@ -3133,19 +3133,19 @@
   },
   "FD18": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-basses"
   },
   "FD22": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FD25": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FD26": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FD27": {
     "category": "pieds",
@@ -3153,11 +3153,11 @@
   },
   "FD33": {
     "category": "pieds",
-    "subcategory": "bottes"
+    "subcategory": "chaussures-hautes"
   },
   "FD37": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FD61": {
     "category": "pieds",
@@ -3165,11 +3165,11 @@
   },
   "FD62": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-basses"
   },
   "FD80": {
-    "category": "corps",
-    "subcategory": "vetements-travail"
+    "category": "pieds",
+    "subcategory": "bottes"
   },
   "FD84": {
     "category": "pieds",
@@ -3177,11 +3177,11 @@
   },
   "FD90": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "bottes"
   },
   "FD95": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "bottes"
   },
   "FE01": {
     "category": "pieds",
@@ -3189,19 +3189,19 @@
   },
   "FE02": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FE03": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-basses"
   },
   "FE04": {
     "category": "pieds",
-    "subcategory": "bottes"
+    "subcategory": "chaussures-hautes"
   },
   "FE05": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FE06": {
     "category": "pieds",
@@ -3213,7 +3213,7 @@
   },
   "FE08": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-basses"
   },
   "FE11": {
     "category": "pieds",
@@ -3241,7 +3241,7 @@
   },
   "FP08": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "equipement-antichute"
   },
   "FP11": {
     "category": "corps",
@@ -3441,7 +3441,7 @@
   },
   "FR07": {
     "category": "corps",
-    "subcategory": "equipement-antichute"
+    "subcategory": "vetements-travail"
   },
   "FR08": {
     "category": "corps",
@@ -3513,7 +3513,7 @@
   },
   "FR31": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "FR32": {
     "category": "corps",
@@ -3561,7 +3561,7 @@
   },
   "FR405": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-travail"
   },
   "FR406": {
     "category": "corps",
@@ -3573,7 +3573,7 @@
   },
   "FR409": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "FR41": {
     "category": "corps",
@@ -3581,7 +3581,7 @@
   },
   "FR410": {
     "category": "corps",
-    "subcategory": "vetements-haute-visibilite"
+    "subcategory": "vetements-pluie"
   },
   "FR412": {
     "category": "corps",
@@ -3597,7 +3597,7 @@
   },
   "FR416": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "FR417": {
     "category": "corps",
@@ -3609,7 +3609,7 @@
   },
   "FR420": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-haute-visibilite"
   },
   "FR426": {
     "category": "corps",
@@ -3633,7 +3633,7 @@
   },
   "FR434": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "FR438": {
     "category": "corps",
@@ -3641,7 +3641,7 @@
   },
   "FR440": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "FR445": {
     "category": "corps",
@@ -3649,7 +3649,7 @@
   },
   "FR450": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "FR451": {
     "category": "corps",
@@ -3657,11 +3657,11 @@
   },
   "FR452": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "FR453": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-haute-visibilite"
   },
   "FR454": {
     "category": "corps",
@@ -3697,11 +3697,11 @@
   },
   "FR507": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "FR509": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "FR51": {
     "category": "corps",
@@ -3717,7 +3717,7 @@
   },
   "FR528": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "FR529": {
     "category": "corps",
@@ -3749,7 +3749,7 @@
   },
   "FR60": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "FR601": {
     "category": "corps",
@@ -3777,11 +3777,11 @@
   },
   "FR615": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "FR616": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "FR617": {
     "category": "corps",
@@ -3809,7 +3809,7 @@
   },
   "FR68": {
     "category": "corps",
-    "subcategory": "equipement-antichute"
+    "subcategory": "vetements-travail"
   },
   "FR69": {
     "category": "corps",
@@ -3833,11 +3833,11 @@
   },
   "FR707": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "FR71": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "FR710": {
     "category": "corps",
@@ -3857,7 +3857,7 @@
   },
   "FR715": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "FR716": {
     "category": "corps",
@@ -3865,15 +3865,15 @@
   },
   "FR717": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "FR718": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "FR719": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "FR72": {
     "category": "corps",
@@ -3929,7 +3929,7 @@
   },
   "FR75": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "FR750": {
     "category": "corps",
@@ -3941,11 +3941,11 @@
   },
   "FR755": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "FR756": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "FR758": {
     "category": "corps",
@@ -3961,11 +3961,11 @@
   },
   "FR77": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "FR79": {
     "category": "corps",
-    "subcategory": "vetements-haute-visibilite"
+    "subcategory": "vetements-pluie"
   },
   "FR80": {
     "category": "corps",
@@ -3989,7 +3989,7 @@
   },
   "FR85": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "FR89": {
     "category": "corps",
@@ -4005,7 +4005,7 @@
   },
   "FR93": {
     "category": "corps",
-    "subcategory": "equipement-antichute"
+    "subcategory": "vetements-travail"
   },
   "FR95": {
     "category": "corps",
@@ -4021,11 +4021,11 @@
   },
   "FS70": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-basses"
   },
   "FT05": {
-    "category": "corps",
-    "subcategory": "vetements-pluie"
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
   },
   "FT08": {
     "category": "pieds",
@@ -4037,11 +4037,11 @@
   },
   "FT13": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FT15": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-basses"
   },
   "FT18": {
     "category": "pieds",
@@ -4049,7 +4049,7 @@
   },
   "FT20": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-basses"
   },
   "FT22": {
     "category": "pieds",
@@ -4057,7 +4057,7 @@
   },
   "FT23": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FT24": {
     "category": "pieds",
@@ -4065,23 +4065,23 @@
   },
   "FT25": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-basses"
   },
   "FT30": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FT31": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FT32": {
-    "category": "corps",
-    "subcategory": "vetements-travail"
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
   },
   "FT34": {
-    "category": "corps",
-    "subcategory": "vetements-travail"
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
   },
   "FT35": {
     "category": "pieds",
@@ -4089,7 +4089,7 @@
   },
   "FT36": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-basses"
   },
   "FT40": {
     "category": "pieds",
@@ -4105,7 +4105,7 @@
   },
   "FT46": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-basses"
   },
   "FT49": {
     "category": "pieds",
@@ -4113,15 +4113,15 @@
   },
   "FT50": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-basses"
   },
   "FT55": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-basses"
   },
   "FT60": {
-    "category": "corps",
-    "subcategory": "vetements-pluie"
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
   },
   "FT63": {
     "category": "pieds",
@@ -4137,27 +4137,27 @@
   },
   "FT72": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FT73": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-basses"
   },
   "FV02": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FV03": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FV05": {
-    "category": "corps",
-    "subcategory": "vetements-pluie"
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
   },
   "FV06": {
-    "category": "corps",
-    "subcategory": "vetements-pluie"
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
   },
   "FW02": {
     "category": "pieds",
@@ -4165,7 +4165,7 @@
   },
   "FW03": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FW05": {
     "category": "pieds",
@@ -4173,11 +4173,11 @@
   },
   "FW06": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FW07": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FW09": {
     "category": "pieds",
@@ -4185,11 +4185,11 @@
   },
   "FW10": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FW11": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FW12": {
     "category": "pieds",
@@ -4197,7 +4197,7 @@
   },
   "FW13": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FW14": {
     "category": "pieds",
@@ -4205,11 +4205,11 @@
   },
   "FW16": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FW17": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FW19": {
     "category": "pieds",
@@ -4221,15 +4221,15 @@
   },
   "FW21": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FW22": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FW23": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FW24": {
     "category": "pieds",
@@ -4245,11 +4245,11 @@
   },
   "FW29": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FW31": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FW32": {
     "category": "pieds",
@@ -4261,11 +4261,11 @@
   },
   "FW34": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-basses"
   },
   "FW35": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FW36": {
     "category": "pieds",
@@ -4273,7 +4273,7 @@
   },
   "FW39": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-basses"
   },
   "FW40": {
     "category": "pieds",
@@ -4313,31 +4313,31 @@
   },
   "FW51": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FW57": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FW58": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-basses"
   },
   "FW59": {
     "category": "pieds",
     "subcategory": "chaussures-basses"
   },
   "FW63": {
-    "category": "corps",
-    "subcategory": "vetements-travail"
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
   },
   "FW64": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-basses"
   },
   "FW65": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FW66": {
     "category": "pieds",
@@ -4353,23 +4353,23 @@
   },
   "FW74": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "bottes"
   },
   "FW75": {
-    "category": "corps",
-    "subcategory": "vetements-pluie"
+    "category": "pieds",
+    "subcategory": "bottes"
   },
   "FW80": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-basses"
   },
   "FW81": {
     "category": "pieds",
     "subcategory": "chaussures-basses"
   },
   "FW82": {
-    "category": "corps",
-    "subcategory": "equipement-antichute"
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
   },
   "FW83": {
     "category": "pieds",
@@ -4377,11 +4377,11 @@
   },
   "FW84": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "bottes"
   },
   "FW88": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "chaussures-hautes"
   },
   "FW90": {
     "category": "pieds",
@@ -4389,7 +4389,7 @@
   },
   "FW94": {
     "category": "pieds",
-    "subcategory": "accessoires-chaussures"
+    "subcategory": "bottes"
   },
   "FW95": {
     "category": "pieds",
@@ -4413,19 +4413,19 @@
   },
   "H440": {
     "category": "corps",
-    "subcategory": "vetements-haute-visibilite"
+    "subcategory": "vetements-pluie"
   },
   "H441": {
     "category": "corps",
-    "subcategory": "vetements-haute-visibilite"
+    "subcategory": "vetements-pluie"
   },
   "H442": {
     "category": "corps",
-    "subcategory": "vetements-haute-visibilite"
+    "subcategory": "vetements-pluie"
   },
   "H443": {
     "category": "corps",
-    "subcategory": "vetements-haute-visibilite"
+    "subcategory": "vetements-pluie"
   },
   "H444": {
     "category": "corps",
@@ -4441,7 +4441,7 @@
   },
   "H448": {
     "category": "corps",
-    "subcategory": "vetements-haute-visibilite"
+    "subcategory": "vetements-pluie"
   },
   "HA10": {
     "category": "tete",
@@ -4464,8 +4464,8 @@
     "subcategory": "protection-tete"
   },
   "HA23": {
-    "category": "corps",
-    "subcategory": "vetements-haute-visibilite"
+    "category": "tete",
+    "subcategory": "protection-tete"
   },
   "HA24": {
     "category": "tete",
@@ -4476,8 +4476,8 @@
     "subcategory": "protection-tete"
   },
   "HA26": {
-    "category": "corps",
-    "subcategory": "vetements-haute-visibilite"
+    "category": "tete",
+    "subcategory": "protection-tete"
   },
   "HA27": {
     "category": "tete",
@@ -4520,8 +4520,8 @@
     "subcategory": "hygiene-sante"
   },
   "HV23": {
-    "category": "corps",
-    "subcategory": "vetements-haute-visibilite"
+    "category": "tete",
+    "subcategory": "protection-tete"
   },
   "HV389": {
     "category": "pieds",
@@ -4565,7 +4565,7 @@
   },
   "KA322": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-travail"
   },
   "KA323": {
     "category": "corps",
@@ -4621,7 +4621,7 @@
   },
   "KP20": {
     "category": "corps",
-    "subcategory": "equipement-antichute"
+    "subcategory": "vetements-travail"
   },
   "KP30": {
     "category": "corps",
@@ -4641,7 +4641,7 @@
   },
   "KP50": {
     "category": "corps",
-    "subcategory": "equipement-antichute"
+    "subcategory": "vetements-travail"
   },
   "KP65": {
     "category": "corps",
@@ -4669,15 +4669,15 @@
   },
   "KX301": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "KX302": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "KX303": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "KX304": {
     "category": "corps",
@@ -4705,7 +4705,7 @@
   },
   "KX317": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-travail"
   },
   "KX340": {
     "category": "corps",
@@ -4713,7 +4713,7 @@
   },
   "KX341": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "KX342": {
     "category": "corps",
@@ -4733,7 +4733,7 @@
   },
   "KX348": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "KX352": {
     "category": "corps",
@@ -4885,7 +4885,7 @@
   },
   "MV28": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "MV29": {
     "category": "corps",
@@ -4901,7 +4901,7 @@
   },
   "MV46": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "MV70": {
     "category": "corps",
@@ -5064,24 +5064,24 @@
     "subcategory": "protection-respiratoire"
   },
   "P422": {
-    "category": "mains",
-    "subcategory": "hygiene-sante"
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
   },
   "P431": {
     "category": "tete",
     "subcategory": "protection-respiratoire"
   },
   "P440": {
-    "category": "mains",
-    "subcategory": "hygiene-sante"
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
   },
   "P441": {
-    "category": "mains",
-    "subcategory": "hygiene-sante"
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
   },
   "P500": {
     "category": "tete",
-    "subcategory": "protection-yeux"
+    "subcategory": "protection-respiratoire"
   },
   "P516": {
     "category": "tete",
@@ -5204,8 +5204,8 @@
     "subcategory": "protection-tete"
   },
   "PA54": {
-    "category": "corps",
-    "subcategory": "vetements-travail"
+    "category": "tete",
+    "subcategory": "protection-tete"
   },
   "PA55": {
     "category": "tete",
@@ -5244,12 +5244,12 @@
     "subcategory": "protection-tete"
   },
   "PA75": {
-    "category": "mains",
-    "subcategory": "hygiene-sante"
+    "category": "tete",
+    "subcategory": "protection-tete"
   },
   "PA76": {
-    "category": "corps",
-    "subcategory": "vetements-travail"
+    "category": "tete",
+    "subcategory": "protection-tete"
   },
   "PA79": {
     "category": "tete",
@@ -5773,7 +5773,7 @@
   },
   "PW321": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "PW322": {
     "category": "corps",
@@ -5865,7 +5865,7 @@
   },
   "PW355": {
     "category": "corps",
-    "subcategory": "vetements-haute-visibilite"
+    "subcategory": "vetements-pluie"
   },
   "PW356": {
     "category": "corps",
@@ -5885,7 +5885,7 @@
   },
   "PW360": {
     "category": "corps",
-    "subcategory": "vetements-haute-visibilite"
+    "subcategory": "vetements-pluie"
   },
   "PW362": {
     "category": "corps",
@@ -5933,11 +5933,11 @@
   },
   "PW376": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "PW377": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "PW378": {
     "category": "corps",
@@ -5969,11 +5969,11 @@
   },
   "PW386": {
     "category": "corps",
-    "subcategory": "vetements-haute-visibilite"
+    "subcategory": "vetements-pluie"
   },
   "PW389": {
     "category": "corps",
-    "subcategory": "vetements-haute-visibilite"
+    "subcategory": "vetements-pluie"
   },
   "PW39": {
     "category": "tete",
@@ -5981,7 +5981,7 @@
   },
   "PW399": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-travail"
   },
   "PW40": {
     "category": "tete",
@@ -6041,11 +6041,11 @@
   },
   "PW65": {
     "category": "tete",
-    "subcategory": "protection-tete"
+    "subcategory": "protection-yeux"
   },
   "PW66": {
     "category": "tete",
-    "subcategory": "protection-tete"
+    "subcategory": "protection-yeux"
   },
   "PW68": {
     "category": "tete",
@@ -6093,15 +6093,15 @@
   },
   "PW82": {
     "category": "corps",
-    "subcategory": "equipement-antichute"
+    "subcategory": "vetements-travail"
   },
   "PW83": {
     "category": "corps",
-    "subcategory": "equipement-antichute"
+    "subcategory": "vetements-travail"
   },
   "PW84": {
     "category": "corps",
-    "subcategory": "equipement-antichute"
+    "subcategory": "vetements-travail"
   },
   "PW85": {
     "category": "corps",
@@ -6133,7 +6133,7 @@
   },
   "PW93": {
     "category": "tete",
-    "subcategory": "protection-tete"
+    "subcategory": "protection-yeux"
   },
   "PW95": {
     "category": "tete",
@@ -6168,8 +6168,8 @@
     "subcategory": "protection-yeux"
   },
   "PX05": {
-    "category": "corps",
-    "subcategory": "vetements-travail"
+    "category": "tete",
+    "subcategory": "protection-tete"
   },
   "R413": {
     "category": "corps",
@@ -6177,7 +6177,7 @@
   },
   "R440": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "R441": {
     "category": "corps",
@@ -6185,7 +6185,7 @@
   },
   "R460": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "R461": {
     "category": "corps",
@@ -6193,19 +6193,19 @@
   },
   "R462": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "R476": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "R477": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "RT20": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "RT22": {
     "category": "corps",
@@ -6269,11 +6269,11 @@
   },
   "RT50": {
     "category": "corps",
-    "subcategory": "vetements-haute-visibilite"
+    "subcategory": "vetements-pluie"
   },
   "RT51": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-pluie"
   },
   "RT60": {
     "category": "corps",
@@ -6309,11 +6309,11 @@
   },
   "S164": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-pluie"
   },
   "S165": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-pluie"
   },
   "S166": {
     "category": "corps",
@@ -6345,7 +6345,7 @@
   },
   "S178": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "S179": {
     "category": "corps",
@@ -6389,7 +6389,7 @@
   },
   "S251": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-pluie"
   },
   "S266": {
     "category": "corps",
@@ -6397,7 +6397,7 @@
   },
   "S267": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "S271": {
     "category": "corps",
@@ -6405,7 +6405,7 @@
   },
   "S277": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "S278": {
     "category": "corps",
@@ -6481,7 +6481,7 @@
   },
   "S426": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "S427": {
     "category": "corps",
@@ -6489,11 +6489,11 @@
   },
   "S428": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "S429": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-haute-visibilite"
   },
   "S431": {
     "category": "corps",
@@ -6537,7 +6537,7 @@
   },
   "S452": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-pluie"
   },
   "S453": {
     "category": "corps",
@@ -6565,7 +6565,7 @@
   },
   "S467": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "S468": {
     "category": "corps",
@@ -6637,15 +6637,15 @@
   },
   "S491": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-pluie"
   },
   "S493": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-pluie"
   },
   "S495": {
     "category": "corps",
-    "subcategory": "vetements-haute-visibilite"
+    "subcategory": "vetements-pluie"
   },
   "S498": {
     "category": "corps",
@@ -6761,7 +6761,7 @@
   },
   "S599": {
     "category": "corps",
-    "subcategory": "vetements-haute-visibilite"
+    "subcategory": "vetements-pluie"
   },
   "S600": {
     "category": "corps",
@@ -6785,7 +6785,7 @@
   },
   "S607": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-travail"
   },
   "S608": {
     "category": "corps",
@@ -6793,7 +6793,7 @@
   },
   "S609": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-travail"
   },
   "S610": {
     "category": "corps",
@@ -6817,7 +6817,7 @@
   },
   "S617": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "S624": {
     "category": "corps",
@@ -6885,7 +6885,7 @@
   },
   "S769": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "S770": {
     "category": "corps",
@@ -6897,11 +6897,11 @@
   },
   "S774": {
     "category": "corps",
-    "subcategory": "vetements-haute-visibilite"
+    "subcategory": "vetements-pluie"
   },
   "S775": {
     "category": "corps",
-    "subcategory": "vetements-haute-visibilite"
+    "subcategory": "vetements-pluie"
   },
   "S776": {
     "category": "corps",
@@ -6909,19 +6909,19 @@
   },
   "S778": {
     "category": "corps",
-    "subcategory": "vetements-haute-visibilite"
+    "subcategory": "vetements-pluie"
   },
   "S779": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-pluie"
   },
   "S780": {
     "category": "corps",
-    "subcategory": "vetements-haute-visibilite"
+    "subcategory": "vetements-pluie"
   },
   "S781": {
     "category": "corps",
-    "subcategory": "vetements-haute-visibilite"
+    "subcategory": "vetements-pluie"
   },
   "S783": {
     "category": "corps",
@@ -6977,7 +6977,7 @@
   },
   "S849": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-travail"
   },
   "S855": {
     "category": "corps",
@@ -7033,7 +7033,7 @@
   },
   "SK11": {
     "category": "pieds",
-    "subcategory": "chaussures-basses"
+    "subcategory": "accessoires-chaussures"
   },
   "SK12": {
     "category": "pieds",
@@ -7056,8 +7056,8 @@
     "subcategory": "accessoires-chaussures"
   },
   "SK23": {
-    "category": "corps",
-    "subcategory": "vetements-pluie"
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
   },
   "SK33": {
     "category": "pieds",
@@ -7112,28 +7112,28 @@
     "subcategory": "hygiene-sante"
   },
   "ST11": {
-    "category": "corps",
-    "subcategory": "vetements-travail"
+    "category": "usage-unique",
+    "subcategory": null
   },
   "ST30": {
-    "category": "corps",
-    "subcategory": "vetements-travail"
+    "category": "usage-unique",
+    "subcategory": null
   },
   "ST31": {
     "category": "usage-unique",
     "subcategory": null
   },
   "ST36": {
-    "category": "corps",
-    "subcategory": "vetements-haute-visibilite"
+    "category": "usage-unique",
+    "subcategory": null
   },
   "ST40": {
-    "category": "corps",
-    "subcategory": "vetements-travail"
+    "category": "usage-unique",
+    "subcategory": null
   },
   "ST41": {
-    "category": "corps",
-    "subcategory": "vetements-pluie"
+    "category": "usage-unique",
+    "subcategory": null
   },
   "ST43": {
     "category": "usage-unique",
@@ -7141,27 +7141,27 @@
   },
   "ST44": {
     "category": "pieds",
-    "subcategory": "chaussures-basses"
+    "subcategory": "accessoires-chaussures"
   },
   "ST45": {
     "category": "pieds",
     "subcategory": "accessoires-chaussures"
   },
   "ST50": {
-    "category": "corps",
-    "subcategory": "vetements-travail"
+    "category": "usage-unique",
+    "subcategory": null
   },
   "ST60": {
-    "category": "corps",
-    "subcategory": "vetements-travail"
+    "category": "usage-unique",
+    "subcategory": null
   },
   "ST61": {
     "category": "usage-unique",
     "subcategory": null
   },
   "ST70": {
-    "category": "corps",
-    "subcategory": "vetements-travail"
+    "category": "usage-unique",
+    "subcategory": null
   },
   "ST90": {
     "category": "usage-unique",
@@ -7189,15 +7189,15 @@
   },
   "T140": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "T141": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "T142": {
     "category": "corps",
-    "subcategory": "equipement-antichute"
+    "subcategory": "vetements-haute-visibilite"
   },
   "T143": {
     "category": "corps",
@@ -7229,7 +7229,7 @@
   },
   "T165": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "T166": {
     "category": "corps",
@@ -7237,7 +7237,7 @@
   },
   "T170": {
     "category": "corps",
-    "subcategory": "equipement-antichute"
+    "subcategory": "vetements-haute-visibilite"
   },
   "T171": {
     "category": "corps",
@@ -7249,7 +7249,7 @@
   },
   "T173": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "T177": {
     "category": "corps",
@@ -7321,7 +7321,7 @@
   },
   "T701": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-travail"
   },
   "T702": {
     "category": "corps",
@@ -7333,7 +7333,7 @@
   },
   "T704": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-travail"
   },
   "T706": {
     "category": "corps",
@@ -7365,7 +7365,7 @@
   },
   "T746": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-travail"
   },
   "T747": {
     "category": "corps",
@@ -7377,7 +7377,7 @@
   },
   "T750": {
     "category": "corps",
-    "subcategory": "vetements-pluie"
+    "subcategory": "vetements-travail"
   },
   "T752": {
     "category": "corps",
@@ -7429,7 +7429,7 @@
   },
   "TB20": {
     "category": "corps",
-    "subcategory": "equipement-antichute"
+    "subcategory": "vetements-travail"
   },
   "TK20": {
     "category": "corps",
@@ -7497,11 +7497,11 @@
   },
   "TX51": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "TX52": {
     "category": "corps",
-    "subcategory": "vetements-travail"
+    "subcategory": "vetements-haute-visibilite"
   },
   "TX55": {
     "category": "corps",

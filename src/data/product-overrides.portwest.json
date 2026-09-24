@@ -1,5 +1,49 @@
 {
   "_comment": "Noms de produits absents de l'export Portwest (lignes de tarif sans fiche produit). Clé = Style Code. `name` (+ `description` facultative) nomme une référence entière ; `colours` traduit un code couleur SKU que le reste du catalogue ne nomme jamais. `source` et `confidence` sont informatifs. Appliqué au catalogue commité par `node scripts/complete-catalog.mjs` et réappliqué par `generate-catalog-data.mjs`.",
+  "A126": {
+    "name": "Gant Grip 13 nylon enduit PU",
+    "source": "https://www.unishoreworkwear.com/en/products/portwest-grip-13-nylon-pu-werkhandschoen-a126",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
+  "A147": {
+    "name": "Gant anti-froid Cold 13 latex enduit 3/4",
+    "description": "Gant anti-froid Cold 13 latex enduit 3/4",
+    "source": "https://portwest.com/products/gloves/cold-protection-gloves/coldprotection/1",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
+  },
+  "A250": {
+    "name": "Gant Tergsus en cuir",
+    "source": "https://www.workker.fr/cuir/1657-gant-de-travail-tergsus-en-cuir-a250-portwest.html",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
+  "A281": {
+    "name": "Gant Mechanic 120 paume cuir",
+    "source": "https://needhamsuniforms.co.uk/product/a281",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
+  "A282": {
+    "name": "Gant Mechanic 120 paume cuir doublé",
+    "source": "https://www.bksafetywear.co.uk/portwest-gloves.html",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
+  "A291": {
+    "name": "Gant de protection tronçonneuse 150 cuir Classe 1",
+    "source": "https://www.unishoreworkwear.com/en/products/portwest-kettingzaaghandschoen-150-geitenleer-klasse-1-a291",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
+  "A591": {
+    "name": "Gant résistant à la chaleur 350 °C",
+    "description": "Gant résistant à la chaleur 350 °C",
+    "source": "https://www.portwest.com/products/view/A590/WHR",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
+  },
   "A610": {
     "name": "Gant grip latex coupure B",
     "description": "Gant anti-coupure à support sans couture en para-aramide, paume enduite de latex crêpé pour une bonne préhension en milieu sec ou humide. Conforme EN 388:2016 (3X43B) et EN ISO 21420.",
@@ -18,17 +62,107 @@
       "Y5R": "Jaune/Rouge"
     }
   },
+  "A675": {
+    "name": "Gant anti-coupures CS G18 nitrile sablé",
+    "source": "https://www.portwest.com/products/category/csseries",
+    "confidence": "medium",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
   "A696": {
     "name": "Gant LR13 ESD bouts des doigts enduits PU (Pk12)",
     "description": "Gant anti-coupure niveau B en polyester et fibre de carbone jauge 13 dissipant l'électricité statique, bouts des doigts enduits de PU pour une grande dextérité et compatibles écrans tactiles. Vendu par paquet de 12 paires, idéal pour l'assemblage électronique et les travaux de précision.",
     "source": "https://www.portwest.com/products/view/A696/G6R",
     "confidence": "high"
   },
+  "A701": {
+    "name": "Gant Mechanic 81",
+    "source": "https://www.portwest.com/products/gloves/X/3/1",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
+  "A732": {
+    "name": "Gant anti-impact CS F18 nitrile",
+    "description": "Gant anti-impact CS F18 nitrile",
+    "source": "https://www.portwest.com/products/view/A673/K8R",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
+  },
+  "A741": {
+    "name": "Gant mitaine Mechanic 251",
+    "source": "https://www.unishoreworkwear.com/en/products/portwest-mechanic-251-vingerloze-werkhandschoen-a741",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
+  "A785": {
+    "name": "Gant ignifugé arc électrique anti-impact coupure D13",
+    "description": "Gant ignifugé arc électrique anti-impact coupure D13",
+    "source": "https://www.portwest.com/products/view/A780/E8R",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
+  },
+  "A815": {
+    "name": "Gant chimique Chem 330 Keto Resister",
+    "description": "Gant chimique Chem 330 Keto Resister",
+    "source": "https://www.portwest.com/products/gloves/chemical-protection/70/1",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
+  },
   "A910": {
     "name": "Gant jetable en latex poudré (Pk100)",
     "description": "Gant jetable ambidextre en latex naturel poudré, surface lisse et poignet roulé, boîte de 100. AQL 1,5, conforme EN ISO 21420 ; adapté à l'alimentaire, à la maintenance et au nettoyage.",
     "source": "https://www.portwest.com/products/view/A910/WHR",
     "confidence": "high"
+  },
+  "AP01": {
+    "name": "Gant Thermo Pro",
+    "source": "https://www.manutan-collectivites.fr/product/gants-de-protection-thermo-pro-glove-portwest-mig7645428.html",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
+  "AP37": {
+    "name": "Gant Grip 15 mousse de nitrile écran tactile",
+    "source": "https://www.unishoreworkwear.com/en/products/portwest-grip-15-nitrile-foam-touch-screen-werkhandschoenen-ap37",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
+  "AP42": {
+    "name": "Gant anti-coupures E15 silicone résistant à la chaleur",
+    "source": "https://www.bksafetywear.co.uk/portwest-ap42-cut-e15-silicone-heat-glove.html",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
+  "AP51": {
+    "name": "Gant anti-coupures F15 nitrile Aqua",
+    "source": "https://www.bksafetywear.co.uk/portwest-ap51-cut-f15-nitrile-aqua-glove.html",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
+  "AP53": {
+    "name": "Gant anti-froid anti-coupures F15 nitrile",
+    "source": "https://www.unishoreworkwear.com/en/products/portwest-cold-f15-nitrile-aqua-cut-handschoen-ap53",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
+  "AP54": {
+    "name": "Gant Impact F13 mousse de nitrile étanche",
+    "source": "https://www.portwest.com/products/view/AP54/G8R",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
+  "AP82": {
+    "name": "Gant Grip 15 latex écran tactile",
+    "description": "Gant Grip 15 latex écran tactile",
+    "source": "https://www.portwest.com/products/gloves/X/3/1",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
+  },
+  "AS24": {
+    "name": "Sweat-shirt antistatique ESD",
+    "note": "Correction manuelle (faute de frappe / coloris tronqué de l’export)"
+  },
+  "AS25": {
+    "name": "Sweat-shirt zippé antistatique ESD",
+    "note": "Correction manuelle (faute de frappe / coloris tronqué de l’export)"
   },
   "B026": {
     "name": "Bonnet tricot réfléchissant doublé Insulatex",
@@ -66,11 +200,46 @@
     "source": "https://www.portwest.com/products/view/B220/BKR",
     "confidence": "high"
   },
+  "B311": {
+    "name": "Sweatshirt haute visibilité échafaudeur",
+    "description": "Sweatshirt haute visibilité échafaudeur",
+    "source": "https://www.portwest.com/products/clothing/X/1/8",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
+  },
+  "B313": {
+    "name": "Sweatshirt haute visibilité en maille",
+    "description": "Sweatshirt haute visibilité en maille, col rond et manches longues, avec bandes rétroréfléchissantes argentées sur la poitrine, les épaules et les manches.",
+    "source": "https://www.unishoreworkwear.com/en/products/portwest-hi-vis-knit-sweatshirt-kl-3-b313",
+    "confidence": "medium",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
+  "C378": {
+    "name": "Gilet Executive haute visibilité",
+    "description": "Gilet Executive haute visibilité",
+    "source": "https://www.portwest.com/products/clothing/vests/137/8",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
+  },
+  "C379": {
+    "name": "Gilet Executive haute visibilité femme",
+    "description": "Gilet Executive haute visibilité femme",
+    "source": "https://www.portwest.com/products/view/US392/YER",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
+  },
   "C471": {
     "name": "Gilet haute visibilité manches courtes",
     "description": "Gilet haute visibilité à manches courtes en maille polyester 125 g, léger pour rester au frais, avec bandes réfléchissantes HiVisTex. Conforme EN ISO 20471 et ANSI.",
     "source": "https://portwest.co.uk/products/view/C471/YER",
     "confidence": "high"
+  },
+  "C482": {
+    "name": "Veste Executive haute visibilité",
+    "description": "Veste Executive haute visibilité",
+    "source": "https://www.portwest.com/products/clothing/X/1/8",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
   },
   "C565": {
     "name": "Blouson bomber haute visibilité X 3-en-1",
@@ -90,11 +259,59 @@
     "source": "https://www.portwest.com/products/view/C835/WHR",
     "confidence": "high"
   },
+  "CD803": {
+    "name": "Pantalon jogger stretch WX2 Eco",
+    "description": "Pantalon jogger stretch WX2 Eco",
+    "source": "https://www.spontex-workwear.co.uk/products/cd803-wx2-eco-stretch-jogger",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
+  },
+  "CD816": {
+    "name": "T-shirt haute visibilité WX2 manches courtes",
+    "description": "T-shirt haute visibilité WX2 manches courtes",
+    "source": "https://www.spontex-workwear.co.uk/products/cd816-wx2-hi-vis-t-shirt-s-s",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
+  },
+  "CD817": {
+    "name": "T-shirt haute visibilité WX2 manches longues",
+    "description": "T-shirt haute visibilité WX2 manches longues",
+    "source": "https://www.spontex-workwear.co.uk/products/cd817-wx2-hi-vis-t-shirt-l-s",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
+  },
+  "CD818": {
+    "name": "Polo haute visibilité WX2 manches courtes",
+    "description": "Polo haute visibilité WX2 manches courtes",
+    "source": "https://www.spontex-workwear.co.uk/products/cd818-wx2-hi-vis-polo-shirt-s-s",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
+  },
+  "CD820": {
+    "name": "Veste d'hiver haute visibilité WX2 Traffic",
+    "description": "Veste d'hiver haute visibilité bicolore de la gamme WX2, imperméable avec coutures entièrement étanchées. Bandes réfléchissantes pour une bonne visibilité sur chantier et en bord de route.",
+    "source": "https://www.spontex-workwear.co.uk/products/cd820-wx2-hv-winter-traffic-jacket",
+    "confidence": "medium",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
+  "CD880": {
+    "name": "Pantalon stretch coupe slim WX2",
+    "description": "Pantalon stretch coupe slim WX2",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
+  },
   "CD884": {
     "colours": {
       "FGS": "Vert Forêt Short"
     },
     "source": "https://www.safetecdirect.co.uk/products/cd884/portwest-cd884-polycotton-essential-super-work-trouser-245"
+  },
+  "CH16": {
+    "name": "Bretelles pour pantalon tronçonneuse",
+    "description": "Bretelles pour pantalon tronçonneuse",
+    "source": "https://www.hall-fast.com/news/post/portwest-type-a-vs-type-c-chainsaw-trousers-choosing-the-right-protection-configuration",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
   },
   "CR15": {
     "name": "Polo manches anti-coupures",
@@ -102,11 +319,67 @@
     "source": "https://www.hivis.co.uk/polo-shirt-with-cut-resistant-sleeves-portwest-cr15.html",
     "confidence": "high"
   },
+  "CV06": {
+    "name": "Serviette rafraîchissante",
+    "note": "Correction manuelle (faute de frappe / coloris tronqué de l’export)"
+  },
   "CV11": {
     "name": "Bonnet rafraîchissant Cooling Crown",
     "description": "Bonnet léger rafraîchissant à activer en le trempant dans l'eau, jusqu'à 8 h de fraîcheur pour prévenir le stress thermique ; dos élastiqué, se porte sous un casque ou un chapeau.",
     "source": "https://www.portwest.com/products/view/CV11",
     "confidence": "high"
+  },
+  "CV28": {
+    "name": "Gilet rafraîchissant",
+    "note": "Correction manuelle (faute de frappe / coloris tronqué de l’export)"
+  },
+  "DX403": {
+    "name": "Pantalon léger DX4 poches flottantes démontables",
+    "source": "https://www.unishoreworkwear.com/en/products/portwest-dx4-lightweight-detachable-holsterzakken-werkbroek-dx403",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
+  "DX413": {
+    "name": "T-shirt haute visibilité DX4 manches courtes",
+    "source": "https://www.portwest.com/products/view/DX413/OBR",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
+  "DX451": {
+    "name": "Short holster DX4 Craft",
+    "source": "https://www.portwest.com/products/view/DX451/BKR",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
+  "DX4E40": {
+    "name": "Pantalon holster DX4 Evolution",
+    "description": "Pantalon holster DX4 Evolution",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
+  },
+  "DX4E43": {
+    "name": "Pantalon de service DX4 Evolution",
+    "description": "Pantalon de service DX4 Evolution",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
+  },
+  "DX4E60": {
+    "name": "Veste d'hiver DX4 Evolution",
+    "description": "Veste d'hiver DX4 Evolution",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
+  },
+  "DX4E74": {
+    "name": "Veste softshell DX4 Evolution",
+    "description": "Veste softshell DX4 Evolution",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
+  },
+  "DX4E80": {
+    "name": "Veste intermédiaire zippée DX4 Evolution",
+    "description": "Veste intermédiaire zippée DX4 Evolution",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
   },
   "E052": {
     "name": "Combinaison haute visibilité X",
@@ -138,6 +411,30 @@
     "source": "https://www.portwest.com/products/view/EC76/YER",
     "confidence": "high"
   },
+  "ED01": {
+    "name": "Casque antibruit Classic Low",
+    "source": "https://www.portwest.com/products/view/PW40/RER",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
+  },
+  "ES428": {
+    "name": "Veste softshell haute visibilité ES1 Essential (2 couches)",
+    "source": "https://allegro.pl/produkt/kurtka-portwest-es428-yer-rozmiar-xl-3aa1ad8d-456d-4990-8451-8e74ee10087a",
+    "confidence": "medium",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
+  "EV464": {
+    "name": "Blouson softshell bomber EV4 (3 couches)",
+    "source": "https://www.spworkwear.co.uk/product/portwest-ev4-softshell-bomber-jacket-3l-ev464/",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
+  "EV469": {
+    "name": "Veste de pluie compactable EV4 Enhanced",
+    "source": "https://www.portwest.com/products/category/ev4",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
   "F282": {
     "name": "Polaire femme Aran",
     "description": "Veste polaire femme en polyester léger anti-bouloches, fermeture zippée, poches zippées, poignets élastiqués et bas réglable par cordon. Conforme EN 14058 classe 1.",
@@ -156,11 +453,30 @@
     "source": "https://www.portwest.com/products/view/FC04/No%20Colour",
     "confidence": "high"
   },
+  "FC09": {
+    "name": "Basket de sécurité perforée Compositelite S1P",
+    "source": "https://www.portwest.com/products/view/FC09/BKO",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
   "FC44": {
     "name": "Chaussure de sécurité Thor S3 Compositelite",
     "description": "Chaussure de sécurité basse classique S3, 100 % non métallique, tige en cuir pleine fleur hydrofuge, embout et semelle intercalaire composites. Semelle PU/TPU double densité antidérapante et résistante aux huiles.",
     "source": "https://www.portwest.com/products/view/FC44/BKR",
     "confidence": "high"
+  },
+  "FC48": {
+    "name": "Brodequin de fonderie composite SB",
+    "source": "https://www.unishoreworkwear.com/en/products/portwest-composite-leather-gieterij-werkschoen-sb-fc48",
+    "confidence": "medium",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
+  "FC49": {
+    "name": "Botte haute de fonderie composite SB",
+    "description": "Botte haute de fonderie à embout composite, certifiée SB, pour la manutention des métaux et le travail près de l'aluminium fondu. Coutures en fil aramide résistant à la flamme.",
+    "source": "https://www.unishoreworkwear.com/en/products/portwest-composite-leather-gieterij-werkschoen-sb-fc48",
+    "confidence": "medium",
+    "note": "Nom traduit (fiche Portwest en anglais)"
   },
   "FC53": {
     "name": "Basket de sécurité montante Reno S1P Compositelite",
@@ -204,6 +520,18 @@
     "source": "https://www.workwear.co.uk/portwest-fd61-compositelite-laced-safety-shoes-white.html",
     "confidence": "medium"
   },
+  "FE04": {
+    "name": "Brodequin mi-haut Girder composite S3S ESD SR FO",
+    "source": "https://www.unishoreworkwear.com/en/products/portwest-girder-composite-mid-boot-s3s-esd-sr-fo-fe04",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
+  "FE16": {
+    "name": "Sandale de sécurité composite en cuir suédé",
+    "description": "Sandale de sécurité composite en cuir suédé",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
+  },
   "FR40": {
     "name": "Masque ignifugé réutilisable (boîte de 25)",
     "description": "Masque en tissu 100 % coton ignifugé, une couche, classé ARC2, réutilisable et lavable à 60 °C. Attaches derrière la tête sans pression sur les oreilles ; conditionné individuellement, boîte de 25.",
@@ -215,6 +543,12 @@
       "RET": "Rouge Tall"
     },
     "source": "https://www.misterworker.com/en-us/portwest/flame-resistant-anti-static-350g-red-tall-coverall-fr50ret/69465.html"
+  },
+  "FT08": {
+    "name": "Basket de sécurité tricot Compositelite laçage câble S1P",
+    "source": "https://www.portwest.com/products/view/FT08/BGY",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
   },
   "FT12": {
     "name": "Botte rigger Steelite Pro S3 CI HRO",
@@ -246,6 +580,12 @@
     "source": "https://www.portwest.com/products/view/FT49/BKR",
     "confidence": "high"
   },
+  "FT60": {
+    "name": "Basket de sécurité Compositelite Mersey S1P",
+    "source": "https://portwest.co.uk/products/view/FT60/BKB",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
   "FT63": {
     "name": "Brodequin Steelite Trouper S1P",
     "description": "Brodequin de sécurité avec doublure respirante et œillets fermés, embout acier 200 joules et semelle anti-perforation acier. Semelle double densité antistatique, antidérapante SRC et résistante aux hydrocarbures.",
@@ -257,6 +597,12 @@
     "description": "Boots de sécurité type dealer (sans lacets) en cuir nubuck pleine fleur, soufflets élastiqués et tirants avant/arrière pour un chaussage facile, pare-pierre TPU. Embout et semelle anti-perforation acier, semelle antistatique antidérapante SRC.",
     "source": "https://www.portwest.com/products/view/FT71/BKR",
     "confidence": "high"
+  },
+  "FW02": {
+    "name": "Basket de sécurité Steelite perforée S1P",
+    "source": "https://www.portwest.com/products/view/FW02/BLU",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
   },
   "FW09": {
     "name": "Brodequin Steelite Protector S1P embout anti-abrasion",
@@ -300,11 +646,23 @@
     "source": "https://www.portwest.com/products/view/FW33/WHR",
     "confidence": "high"
   },
+  "FW34": {
+    "name": "Basket de sécurité Steelite Lusum S1P HRO",
+    "source": "https://www.portwest.com/products/view/FW34/BKR",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
   "FW36": {
     "name": "Basket basse Steelite Loire S1P HRO",
     "description": "Basket de sécurité basse en croûte de cuir velours, embout et semelle intercalaire acier, semelle légère EVA/caoutchouc. Antistatique, antidérapante SRC, résistante à la chaleur 300 °C et aux hydrocarbures.",
     "source": "https://www.portwest.com/products/view/FW36/GRR",
     "confidence": "high"
+  },
+  "FW39": {
+    "name": "Basket de sécurité femme Steelite S1P HRO",
+    "source": "https://www.lawson-his.co.uk/portwest-fw39-steelite-ladies-safety-trainer-s1p-hro",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
   },
   "FW40": {
     "name": "Chaussure montante de randonnée Limes OB",
@@ -417,6 +775,12 @@
     "source": "https://www.lawson-his.co.uk/portwest-lw71-ladies-hi-vis-trousers-high-visibility-yellow",
     "confidence": "high"
   },
+  "LW75": {
+    "name": "T-shirt haute visibilité femme manches courtes",
+    "description": "T-shirt haute visibilité femme manches courtes",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
+  },
   "P005": {
     "name": "Masque anti-poussière (Pk50)",
     "description": "Masque anti-poussière jetable non certifié, pour le confort face aux poussières non toxiques (pollen, poussière domestique). Boîte de 50.",
@@ -447,11 +811,57 @@
     "source": "https://www.portwest.com/products/view/P978/GRR",
     "confidence": "high"
   },
+  "PA79": {
+    "name": "Lampe frontale LED flexible",
+    "description": "Lampe frontale LED flexible",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
+  },
+  "PF21": {
+    "name": "Visière grillagée en acier gravé Plus",
+    "description": "Visière grillagée en acier inoxydable gravé, avec plus de 70 % de transmission lumineuse, qui protège le visage des particules et débris projetés tout en laissant respirer. Compatible avec le serre-tête PF01 et le support de visière PF02 ; adaptée aux travaux forestiers, à l'arboriculture et à l'entretien des espaces verts.",
+    "source": "https://www.unishoreworkwear.com/en/products/portwest-etched-stalen-mesh-vizier-pf21",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
+  "PF90": {
+    "name": "Écran anti-arc électrique Classe 1",
+    "description": "Écran anti-arc électrique Classe 1",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
+  },
+  "PG90": {
+    "name": "Lunettes-masque de soudeur",
+    "source": "https://www.workker.fr/yeux-visage/2381-lunettes-masque-soudeur-portwest.html",
+    "confidence": "medium",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
   "PS50": {
     "name": "Casque de sécurité ventilé Arrow",
     "description": "Casque de chantier léger en polypropylène haute densité avec 8 aérations et harnais PE 6 points, réglable par boucle de 53 à 65 cm. Fente latérale pour accessoires et bandeau anti-transpiration.",
     "source": "https://portwest.com/products/view/PS50/YER",
     "confidence": "high"
+  },
+  "PS77": {
+    "name": "Casque de sécurité Synergy Type 2 non ventilé",
+    "description": "Casque de sécurité Type 2 (protection contre les chocs sur le dessus et les côtés de la tête) à coque lisse non ventilée résistant aux chocs et à l'abrasion. Jugulaire et suspension interne répartissant la pression ; profil compact adapté aux espaces confinés, au BTP et à l'industrie.",
+    "source": "https://www.unishoreworkwear.com/en/products/portwest-synergy-veiligheidshelm-type-2-ongeventileerd-ps77",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
+  "PS87": {
+    "name": "Casque de sécurité Synergy Type 2 ventilé",
+    "description": "Casque de sécurité Type 2 (protection contre les chocs sur le dessus et les côtés de la tête) à coque ventilée pour le confort lors des longues journées. Jugulaire de maintien et suspension interne ; adapté au BTP et aux sites industriels.",
+    "source": "https://www.unishoreworkwear.com/en/products/portwest-synergy-veiligheidshelm-type-2-geventileerd-ps87",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
+  "PSB80": {
+    "name": "Casque à visière intégrée",
+    "description": "Casque de sécurité ventilé en ABS avec visière en polycarbonate injecté qui se rétracte dans la coque lorsqu'elle n'est pas utilisée. Double certification EN 397 et EN 12492 (deux options de jugulaire), mousse EPS intérieure et réglage par molette.",
+    "source": "https://mistermateriaux.com/produit/protection-de-la-tete/tgeidm",
+    "confidence": "medium",
+    "note": "Nom traduit (fiche Portwest en anglais)"
   },
   "PW211": {
     "name": "T-shirt PW2 manches courtes",
@@ -525,6 +935,18 @@
     "source": "https://www.misupplies.co.uk/clothing-c12/womens-workwear-c636/coats-jackets-c640/womens-softshell-jackets-c745/portwest-pw278-pw2-womens-softshell-2l-p76669",
     "confidence": "high"
   },
+  "PW312": {
+    "name": "T-shirt haute visibilité PW3 Classe 1 manches longues",
+    "source": "https://www.hoffmann-group.com/FR/fr/hof/p/PW312OBRM-",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
+  "PW318": {
+    "name": "T-shirt haute visibilité PW3 manches courtes",
+    "source": "https://www.oxwork.com/tee-shirt-haute-visibilite-portwest-mc-coton-comfort.html",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
   "PW322": {
     "name": "Pantalon harnais PW3",
     "description": "Pantalon de travail stretch (Titanmill Plus Stretch 65 % polyester, 33 % coton, 2 % élasthanne, 245 g) conçu pour le port d'un harnais, avec 8 poches dont poches genouillères, passepoil réfléchissant et accès anneau D. Système de sangle aux chevilles pour les échelles.",
@@ -543,6 +965,12 @@
     "source": "https://www.portwest.com/products/view/PW92/CLR",
     "confidence": "high"
   },
+  "PX02": {
+    "name": "Visière pour casques Synergy",
+    "description": "Visière pour casques Synergy",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
+  },
   "R461": {
     "name": "Parka Traffic RWS 3-en-1",
     "description": "Parka haute visibilité 3-en-1 en polyester Oxford 300D enduit PU, imperméable et respirante à coutures étanchées, avec veste polaire intérieure amovible et bandes réfléchissantes en configuration RWS. Certifiée EN ISO 20471 classe 3.",
@@ -560,6 +988,18 @@
       "CBR": "Pied de poule noir/blanc"
     },
     "source": "https://www.portwest.com/products/view/S068/CBR"
+  },
+  "S180": {
+    "name": "T-shirt haute visibilité échafaudeur manches courtes",
+    "description": "T-shirt haute visibilité échafaudeur manches courtes",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
+  },
+  "S181": {
+    "name": "T-shirt haute visibilité échafaudeur manches longues",
+    "description": "T-shirt haute visibilité échafaudeur manches longues",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
   },
   "S462": {
     "name": "Parka bicolore haute visibilité Classic",
@@ -612,11 +1052,45 @@
     "source": "https://www.portwest.com/products/view/S592/YER",
     "confidence": "high"
   },
+  "S624": {
+    "name": "Veste de pluie 3 en 1 Professional",
+    "source": "https://www.unishoreworkwear.com/en/products/portwest-professional-3-in-1-regenjas-s624",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
+  "S645": {
+    "name": "Haut de sous-vêtement chauffant manches longues",
+    "source": "https://www.unishoreworkwear.com/en/products/portwest-verwarmde-base-layer-top-longsleeve-s645",
+    "confidence": "medium",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
+  "S647": {
+    "name": "Veste softshell chauffante (3 couches)",
+    "source": "https://www.bksafetywear.co.uk/portwest-s649-heated-softshell-gilet-2l.html",
+    "confidence": "medium",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
   "S710": {
     "name": "Pantalon London",
     "description": "Pantalon de service à pinces en polyviscose (65 % polyester, 35 % viscose, 260 g) avec deux poches latérales en biais et une poche arrière boutonnée.",
     "source": "https://www.portwest.com/products/view/S710/BKR",
     "confidence": "high"
+  },
+  "SK12": {
+    "name": "Chaussettes de randonnée Coolmax",
+    "source": "https://www.allclothing.co.uk/product/portwest-sk12-coolmax-hiker-sock/",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
+  "SK23": {
+    "name": "Chaussettes imperméables Performance",
+    "source": "https://portwest.com/products/view/SK23/BKR",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
+  "SM33": {
+    "name": "Kit absorbant de maintenance 120 litres",
+    "note": "Correction manuelle (faute de frappe / coloris tronqué de l’export)"
   },
   "ST31": {
     "name": "Blouse BizTex® SMS type PB[6] (Pk50)",
@@ -624,11 +1098,61 @@
     "source": "https://portwest.com/products/view/ST31/WHR",
     "confidence": "high"
   },
+  "ST61": {
+    "name": "Cagoule BizTex microporeuse (lot de 100)",
+    "description": "Cagoule jetable en BizTex microporeux : non-tissé polypropylène laminé d'un film polyéthylène microporeux qui bloque les liquides tout en laissant s'évacuer la vapeur d'eau. Vendue par lot de 100.",
+    "source": "http://www.portwest.com/biztex-microporous-hood-type-6pb",
+    "confidence": "medium",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
   "ST90": {
     "name": "Combinaison BizTex® Pro type 5/6",
     "description": "Combinaison de protection en maille polyester laminée d'un film polyéthylène, réutilisable (lavable jusqu'à 5 fois), capuche, poignets, chevilles et taille élastiqués, zip double sens sous rabat. Conforme EN ISO 13982 type 5B, EN 13034 type 6B et EN 14126.",
     "source": "https://www.portwest.com/products/view/ST90/WHR",
     "confidence": "high"
+  },
+  "T143": {
+    "name": "Pantalon Combat léger",
+    "source": "https://www.alive-sr.com/products/portwest-t143-orange",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
+  },
+  "T177": {
+    "name": "Veste de pluie haute visibilité femme PW3 (3 couches)",
+    "description": "Veste de pluie haute visibilité femme PW3 (3 couches)",
+    "source": "https://www.workwearexpress.com/portwest-pw3-hi-vis-rain-jacket-3l",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
+  },
+  "T190": {
+    "name": "Veste softshell PW3 Enhanced (3 couches)",
+    "description": "Veste softshell PW3 Enhanced (3 couches)",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
+  },
+  "T194": {
+    "name": "Sweat-shirt PW3 Enhanced",
+    "description": "Sweat-shirt PW3 Enhanced",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
+  },
+  "T195": {
+    "name": "T-shirt PW3 Enhanced manches courtes",
+    "description": "T-shirt PW3 Enhanced manches courtes",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
+  },
+  "T197": {
+    "name": "Polo PW3 Enhanced manches courtes",
+    "description": "Polo PW3 Enhanced manches courtes",
+    "confidence": "low",
+    "note": "Nom traduit (fiche Portwest en anglais) — traduction directe, aucune fiche produit trouvée"
+  },
+  "T748": {
+    "name": "Short de travail WX3 lavage industriel",
+    "source": "https://www.portwest.com/products/view/T748/BKR",
+    "confidence": "high",
+    "note": "Nom traduit (fiche Portwest en anglais)"
   },
   "TK20": {
     "colours": {

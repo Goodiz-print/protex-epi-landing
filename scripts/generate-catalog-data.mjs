@@ -208,9 +208,9 @@ function main() {
 			built.products,
 			readProductOverrides(resolve(ROOT, `src/data/product-overrides.${source.supplier}.json`)),
 		);
-		if (report.named + report.coloured + report.merged > 0) {
+		if (report.named + report.renamed + report.coloured + report.merged > 0) {
 			console.log(
-				`[${source.supplier}] ${report.named} product(s) named, ${report.coloured} coloured, ${report.merged} merged into an existing colourway`,
+				`[${source.supplier}] ${report.named} product(s) named, ${report.renamed} renamed, ${report.coloured} recoloured, ${report.merged} merged into an existing colourway`,
 			);
 		}
 		for (const code of report.unknownColourCodes) warnings.push(`unknown colour code ${code}`);

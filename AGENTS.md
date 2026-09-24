@@ -101,6 +101,12 @@ names them — `node scripts/complete-catalog.mjs` on the committed catalog, and
   colour codes nothing else names; `source`/`confidence` are informative). Its category goes in
   `category-overrides.<supplier>.json` as usual.
 
+The same overrides always win over the export, so they also rename or fix named products
+(English Portwest names translated, typos, a garbled colour via `colours`). Every product's
+text is normalised too: `&nbsp;` decoded, whitespace collapsed, colour labels the Portwest
+export truncates fixed (`Orange/Noir Shor` → `Orange/Noir Short`, `Navy NV S` →
+`Marine Short`). Renaming changes the product URL (the slug embeds name and colour).
+
 Commit the overrides, the mapping and the catalog JSON together. See
 `docs/scripts-catalogue.md` (procedure 5).
 
