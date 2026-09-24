@@ -360,8 +360,8 @@
     "subcategory": "gants-protection"
   },
   "A610": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "mains",
+    "subcategory": "gants-protection"
   },
   "A611": {
     "category": "mains",
@@ -384,8 +384,8 @@
     "subcategory": "gants-protection"
   },
   "A626": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "mains",
+    "subcategory": "gants-protection"
   },
   "A630": {
     "category": "mains",
@@ -536,8 +536,8 @@
     "subcategory": "gants-protection"
   },
   "A696": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "mains",
+    "subcategory": "gants-protection"
   },
   "A697": {
     "category": "mains",
@@ -756,8 +756,8 @@
     "subcategory": "gants-protection"
   },
   "A910": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "mains",
+    "subcategory": "gants-protection"
   },
   "A925": {
     "category": "mains",
@@ -1032,12 +1032,12 @@
     "subcategory": "protection-tete"
   },
   "B026": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "tete",
+    "subcategory": "protection-tete"
   },
   "B028": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "tete",
+    "subcategory": "protection-tete"
   },
   "B029": {
     "category": "tete",
@@ -1100,8 +1100,8 @@
     "subcategory": "vetements-travail"
   },
   "B140": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "B151": {
     "category": "corps",
@@ -1136,8 +1136,8 @@
     "subcategory": "equipement-antichute"
   },
   "B192": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "B194": {
     "category": "corps",
@@ -1172,8 +1172,8 @@
     "subcategory": "vetements-travail"
   },
   "B220": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "B300": {
     "category": "corps",
@@ -1568,8 +1568,8 @@
     "subcategory": "vetements-travail"
   },
   "C471": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
   },
   "C472": {
     "category": "corps",
@@ -1604,8 +1604,8 @@
     "subcategory": "vetements-travail"
   },
   "C565": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
   },
   "C701": {
     "category": "corps",
@@ -1616,8 +1616,8 @@
     "subcategory": "vetements-travail"
   },
   "C720": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "C733": {
     "category": "corps",
@@ -1672,8 +1672,8 @@
     "subcategory": "vetements-travail"
   },
   "C835": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "C838": {
     "category": "corps",
@@ -1964,8 +1964,8 @@
     "subcategory": "vetements-travail"
   },
   "CR15": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "CR40": {
     "category": "corps",
@@ -2056,8 +2056,8 @@
     "subcategory": "vetements-travail"
   },
   "CV11": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "tete",
+    "subcategory": "protection-tete"
   },
   "CV24": {
     "category": "tete",
@@ -2404,16 +2404,16 @@
     "subcategory": "vetements-haute-visibilite"
   },
   "E052": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
   },
   "EC10": {
     "category": "corps",
     "subcategory": "vetements-haute-visibilite"
   },
   "EC11": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
   },
   "EC195": {
     "category": "corps",
@@ -2428,16 +2428,16 @@
     "subcategory": "vetements-travail"
   },
   "EC40": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
   },
   "EC70": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
   },
   "EC76": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
   },
   "ED01": {
     "category": "tete",
@@ -2780,8 +2780,8 @@
     "subcategory": "vetements-haute-visibilite"
   },
   "F282": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "F285": {
     "category": "corps",
@@ -2808,8 +2808,8 @@
     "subcategory": "vetements-travail"
   },
   "F401": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "F407": {
     "category": "corps",
@@ -2908,8 +2908,8 @@
     "subcategory": "equipement-antichute"
   },
   "FC04": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
   },
   "FC06": {
     "category": "pieds",
@@ -3000,8 +3000,8 @@
     "subcategory": "chaussures-hautes"
   },
   "FC44": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
   },
   "FC47": {
     "category": "pieds",
@@ -3016,16 +3016,16 @@
     "subcategory": "bottes"
   },
   "FC53": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
   },
   "FC57": {
     "category": "corps",
     "subcategory": "vetements-pluie"
   },
   "FC58": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
   },
   "FC60": {
     "category": "pieds",
@@ -3036,12 +3036,12 @@
     "subcategory": "accessoires-chaussures"
   },
   "FC63": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
   },
   "FC64": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
   },
   "FC65": {
     "category": "pieds",
@@ -3092,8 +3092,8 @@
     "subcategory": "accessoires-chaussures"
   },
   "FC96": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
   },
   "FD01": {
     "category": "pieds",
@@ -3128,8 +3128,8 @@
     "subcategory": "accessoires-chaussures"
   },
   "FD17": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
   },
   "FD18": {
     "category": "pieds",
@@ -3160,8 +3160,8 @@
     "subcategory": "accessoires-chaussures"
   },
   "FD61": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
   },
   "FD62": {
     "category": "pieds",
@@ -3544,8 +3544,8 @@
     "subcategory": "vetements-haute-visibilite"
   },
   "FR40": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
   },
   "FR401": {
     "category": "corps",
@@ -4032,8 +4032,8 @@
     "subcategory": "chaussures-basses"
   },
   "FT12": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
   },
   "FT13": {
     "category": "pieds",
@@ -4044,8 +4044,8 @@
     "subcategory": "accessoires-chaussures"
   },
   "FT18": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
   },
   "FT20": {
     "category": "pieds",
@@ -4084,8 +4084,8 @@
     "subcategory": "vetements-travail"
   },
   "FT35": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
   },
   "FT36": {
     "category": "pieds",
@@ -4096,8 +4096,8 @@
     "subcategory": "bottes"
   },
   "FT42": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
   },
   "FT45": {
     "category": "pieds",
@@ -4108,8 +4108,8 @@
     "subcategory": "accessoires-chaussures"
   },
   "FT49": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
   },
   "FT50": {
     "category": "pieds",
@@ -4124,16 +4124,16 @@
     "subcategory": "vetements-pluie"
   },
   "FT63": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
   },
   "FT64": {
     "category": "pieds",
     "subcategory": "chaussures-basses"
   },
   "FT71": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
   },
   "FT72": {
     "category": "pieds",
@@ -4180,8 +4180,8 @@
     "subcategory": "accessoires-chaussures"
   },
   "FW09": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
   },
   "FW10": {
     "category": "pieds",
@@ -4192,8 +4192,8 @@
     "subcategory": "accessoires-chaussures"
   },
   "FW12": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
   },
   "FW13": {
     "category": "pieds",
@@ -4212,12 +4212,12 @@
     "subcategory": "accessoires-chaussures"
   },
   "FW19": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
   },
   "FW20": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
   },
   "FW21": {
     "category": "pieds",
@@ -4236,12 +4236,12 @@
     "subcategory": "chaussures-hautes"
   },
   "FW25": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
   },
   "FW26": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
   },
   "FW29": {
     "category": "pieds",
@@ -4256,8 +4256,8 @@
     "subcategory": "chaussures-hautes"
   },
   "FW33": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
   },
   "FW34": {
     "category": "pieds",
@@ -4268,20 +4268,20 @@
     "subcategory": "accessoires-chaussures"
   },
   "FW36": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
   },
   "FW39": {
     "category": "pieds",
     "subcategory": "accessoires-chaussures"
   },
   "FW40": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
   },
   "FW41": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
   },
   "FW42": {
     "category": "pieds",
@@ -4292,24 +4292,24 @@
     "subcategory": "chaussures-basses"
   },
   "FW44": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
   },
   "FW46": {
     "category": "pieds",
     "subcategory": "chaussures-basses"
   },
   "FW47": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
   },
   "FW48": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
   },
   "FW49": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
   },
   "FW51": {
     "category": "pieds",
@@ -4324,8 +4324,8 @@
     "subcategory": "accessoires-chaussures"
   },
   "FW59": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "chaussures-basses"
   },
   "FW63": {
     "category": "corps",
@@ -4340,8 +4340,8 @@
     "subcategory": "accessoires-chaussures"
   },
   "FW66": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "chaussures-hautes"
   },
   "FW69": {
     "category": "pieds",
@@ -4512,8 +4512,8 @@
     "subcategory": "protection-tete"
   },
   "HV08": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures"
   },
   "HV20": {
     "category": "mains",
@@ -4604,8 +4604,8 @@
     "subcategory": "outils-coupe"
   },
   "KN91": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "mains",
+    "subcategory": "outils-coupe"
   },
   "KP05": {
     "category": "corps",
@@ -4648,8 +4648,8 @@
     "subcategory": "vetements-travail"
   },
   "KS15": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "KS18": {
     "category": "corps",
@@ -4708,24 +4708,24 @@
     "subcategory": "vetements-pluie"
   },
   "KX340": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "KX341": {
     "category": "corps",
     "subcategory": "vetements-travail"
   },
   "KX342": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "KX343": {
     "category": "corps",
     "subcategory": "vetements-travail"
   },
   "KX345": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "KX346": {
     "category": "corps",
@@ -4748,8 +4748,8 @@
     "subcategory": "vetements-pluie"
   },
   "KX363": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "KX364": {
     "category": "corps",
@@ -4836,16 +4836,16 @@
     "subcategory": "vetements-travail"
   },
   "LW19": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "LW20": {
     "category": "corps",
     "subcategory": "vetements-travail"
   },
   "LW21": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "LW63": {
     "category": "corps",
@@ -4856,8 +4856,8 @@
     "subcategory": "vetements-haute-visibilite"
   },
   "LW71": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
   },
   "LW72": {
     "category": "corps",
@@ -4928,8 +4928,8 @@
     "subcategory": "vetements-travail"
   },
   "P005": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
   },
   "P100": {
     "category": "tete",
@@ -4940,8 +4940,8 @@
     "subcategory": "protection-respiratoire"
   },
   "P153": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
   },
   "P200": {
     "category": "tete",
@@ -5088,8 +5088,8 @@
     "subcategory": "protection-respiratoire"
   },
   "P902": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
   },
   "P906": {
     "category": "tete",
@@ -5112,8 +5112,8 @@
     "subcategory": "protection-respiratoire"
   },
   "P946": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
   },
   "P952": {
     "category": "tete",
@@ -5132,8 +5132,8 @@
     "subcategory": "protection-respiratoire"
   },
   "P978": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "tete",
+    "subcategory": "protection-respiratoire"
   },
   "PA00": {
     "category": "tete",
@@ -5496,8 +5496,8 @@
     "subcategory": "protection-ouie"
   },
   "PS50": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "tete",
+    "subcategory": "protection-tete"
   },
   "PS52": {
     "category": "tete",
@@ -5648,16 +5648,16 @@
     "subcategory": "vetements-travail"
   },
   "PW211": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "PW212": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
   },
   "PW213": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
   },
   "PW218": {
     "category": "corps",
@@ -5668,16 +5668,16 @@
     "subcategory": "protection-yeux"
   },
   "PW231": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
   },
   "PW240": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "PW241": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
   },
   "PW26": {
     "category": "tete",
@@ -5688,28 +5688,28 @@
     "subcategory": "vetements-haute-visibilite"
   },
   "PW265": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
   },
   "PW27": {
     "category": "tete",
     "subcategory": "protection-yeux"
   },
   "PW270": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "PW274": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
   },
   "PW277": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
   },
   "PW278": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "PW30": {
     "category": "tete",
@@ -5776,8 +5776,8 @@
     "subcategory": "vetements-travail"
   },
   "PW322": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "PW325": {
     "category": "corps",
@@ -5844,8 +5844,8 @@
     "subcategory": "vetements-travail"
   },
   "PW348": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
   },
   "PW35": {
     "category": "tete",
@@ -6128,8 +6128,8 @@
     "subcategory": "protection-yeux"
   },
   "PW92": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "tete",
+    "subcategory": "protection-yeux"
   },
   "PW93": {
     "category": "tete",
@@ -6188,8 +6188,8 @@
     "subcategory": "vetements-travail"
   },
   "R461": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
   },
   "R462": {
     "category": "corps",
@@ -6232,8 +6232,8 @@
     "subcategory": "vetements-haute-visibilite"
   },
   "RT34": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
   },
   "RT40": {
     "category": "corps",
@@ -6552,8 +6552,8 @@
     "subcategory": "vetements-haute-visibilite"
   },
   "S462": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
   },
   "S463": {
     "category": "corps",
@@ -6616,8 +6616,8 @@
     "subcategory": "vetements-haute-visibilite"
   },
   "S486": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-pluie"
   },
   "S487": {
     "category": "corps",
@@ -6648,8 +6648,8 @@
     "subcategory": "vetements-haute-visibilite"
   },
   "S498": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
   },
   "S503": {
     "category": "corps",
@@ -6664,20 +6664,20 @@
     "subcategory": "vetements-pluie"
   },
   "S508": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-pluie"
   },
   "S509": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-pluie"
   },
   "S523": {
     "category": "corps",
     "subcategory": "vetements-travail"
   },
   "S530": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-pluie"
   },
   "S532": {
     "category": "corps",
@@ -6732,12 +6732,12 @@
     "subcategory": "vetements-pluie"
   },
   "S591": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite"
   },
   "S592": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-pluie"
   },
   "S593": {
     "category": "corps",
@@ -6864,8 +6864,8 @@
     "subcategory": "vetements-travail"
   },
   "S710": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "S760": {
     "category": "corps",
@@ -7120,7 +7120,7 @@
     "subcategory": "vetements-travail"
   },
   "ST31": {
-    "category": "a-trier",
+    "category": "usage-unique",
     "subcategory": null
   },
   "ST36": {
@@ -7164,7 +7164,7 @@
     "subcategory": "vetements-travail"
   },
   "ST90": {
-    "category": "a-trier",
+    "category": "usage-unique",
     "subcategory": null
   },
   "SW10": {
@@ -7488,8 +7488,8 @@
     "subcategory": "vetements-travail"
   },
   "TX20": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "corps",
+    "subcategory": "vetements-travail"
   },
   "TX50": {
     "category": "corps",
@@ -7516,12 +7516,12 @@
     "subcategory": "vetements-haute-visibilite"
   },
   "VA198": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "mains",
+    "subcategory": "gants-protection"
   },
   "VA622": {
-    "category": "a-trier",
-    "subcategory": null
+    "category": "mains",
+    "subcategory": "gants-protection"
   },
   "VB120": {
     "category": "mains",

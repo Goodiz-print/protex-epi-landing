@@ -1,5 +1,25 @@
 {
   "_comment": "Reclassifications manuelles Portwest (retours client sept. 2026 : PDF update_V2 point 8 + Excel protex-epi-sous-categories-tete-mains). Clé = Style Code Portwest. Appliqué au mapping et au catalogue commité par `node scripts/reclassify-catalog.mjs` (utilisable sans les CSV fournisseurs). `name` est informatif.",
+  "A610": {
+    "category": "mains",
+    "subcategory": "gants-protection",
+    "name": "Gant grip latex coupure B"
+  },
+  "A626": {
+    "category": "mains",
+    "subcategory": "gants-protection",
+    "name": "Gant nitrile Vis-Tex Cut D13"
+  },
+  "A696": {
+    "category": "mains",
+    "subcategory": "gants-protection",
+    "name": "Gant LR13 ESD bouts des doigts enduits PU (Pk12)"
+  },
+  "A910": {
+    "category": "mains",
+    "subcategory": "gants-protection",
+    "name": "Gant jetable en latex poudré (Pk100)"
+  },
   "AB662": {
     "category": "mains",
     "subcategory": "gants-protection",
@@ -15,15 +35,40 @@
     "subcategory": "vetements-travail",
     "name": "sweat shirt anti statique ESD"
   },
+  "B026": {
+    "category": "tete",
+    "subcategory": "protection-tete",
+    "name": "Bonnet tricot réfléchissant doublé Insulatex"
+  },
+  "B028": {
+    "category": "tete",
+    "subcategory": "protection-tete",
+    "name": "Bonnet avec double lampe LED rechargeable"
+  },
   "B035": {
     "category": "corps",
     "subcategory": "vetements-travail",
     "name": "Set d'accessoires d'hiver (3pcs)"
   },
+  "B140": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "T-shirt Venice"
+  },
+  "B192": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "T-shirt femme Turin"
+  },
   "B198": {
     "category": "corps",
     "subcategory": "vetements-travail",
     "name": "T-shirt en coton Portwest manches courtes"
+  },
+  "B220": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Polo coton Verona"
   },
   "B302": {
     "category": "corps",
@@ -125,10 +170,30 @@
     "subcategory": "vetements-haute-visibilite",
     "name": "Blouson 3-en-1 Pro Hi-Vis"
   },
+  "C471": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Gilet haute visibilité manches courtes"
+  },
+  "C565": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Blouson bomber haute visibilité X 3-en-1"
+  },
+  "C720": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Pantalon Tradesman poches holster"
+  },
   "C733": {
     "category": "corps",
     "subcategory": "vetements-travail",
     "name": "Veste de cuisine Cumbria"
+  },
+  "C835": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Veste de cuisine Surrey manches longues"
   },
   "C875": {
     "category": "corps",
@@ -190,6 +255,11 @@
     "subcategory": "vetements-travail",
     "name": "Chainsaw Braces"
   },
+  "CR15": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Polo manches anti-coupures"
+  },
   "CS11": {
     "category": "corps",
     "subcategory": "vetements-travail",
@@ -209,6 +279,11 @@
     "category": "corps",
     "subcategory": "vetements-travail",
     "name": "Serviette Rafraichissante"
+  },
+  "CV11": {
+    "category": "tete",
+    "subcategory": "protection-tete",
+    "name": "Bonnet rafraîchissant Cooling Crown"
   },
   "DX409": {
     "category": "corps",
@@ -260,6 +335,31 @@
     "subcategory": "vetements-haute-visibilite",
     "name": "Bermuda HiVis Poly-coton"
   },
+  "E052": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Combinaison haute visibilité X"
+  },
+  "EC11": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Polo Eco Haute Visibilité manches longues (Pack de 6)"
+  },
+  "EC40": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon Eco haute visibilité"
+  },
+  "EC70": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste polaire Eco haute visibilité"
+  },
+  "EC76": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Gilet Eco haute visibilité baudrier (Pack de 10)"
+  },
   "ED01": {
     "category": "tete",
     "subcategory": "protection-ouie",
@@ -274,6 +374,16 @@
     "category": "corps",
     "subcategory": "vetements-pluie",
     "name": "Veste imper-respirante à capuche HV EV4 (3L)"
+  },
+  "F282": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Polaire femme Aran"
+  },
+  "F401": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Polaire City bicolore"
   },
   "F407": {
     "category": "corps",
@@ -300,6 +410,11 @@
     "subcategory": "vetements-travail",
     "name": "Parka 3000"
   },
+  "FC04": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses",
+    "name": "Sandale de sécurité Tagus ESD S1P Compositelite"
+  },
   "FC08": {
     "category": "pieds",
     "subcategory": "chaussures-basses",
@@ -325,20 +440,60 @@
     "subcategory": "chaussures-hautes",
     "name": "Chaussure haute nubuck S3 HRO SR FO SC"
   },
+  "FC44": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses",
+    "name": "Chaussure de sécurité Thor S3 Compositelite"
+  },
+  "FC53": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes",
+    "name": "Basket de sécurité montante Reno S1P Compositelite"
+  },
+  "FC58": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes",
+    "name": "Brodequin de sécurité Avich S3 Compositelite"
+  },
   "FC60": {
     "category": "pieds",
     "subcategory": "chaussures-hautes",
     "name": "Brodequin cuir nubuck composite S3S HRO FO SR"
+  },
+  "FC63": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes",
+    "name": "Brodequin Compositelite Trekker S1"
+  },
+  "FC64": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses",
+    "name": "Chaussure Compositelite Trekker S1"
   },
   "FC94": {
     "category": "pieds",
     "subcategory": "accessoires-chaussures",
     "name": "Pince à glace antidérapante avec pointes en acier"
   },
+  "FC96": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures",
+    "name": "Crampons antidérapants universels"
+  },
   "FD05": {
     "category": "pieds",
     "subcategory": "bottes",
     "name": "Botte fourrée S3L SC HRO CI SR"
+  },
+  "FD17": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes",
+    "name": "Brodequin Steelite Met Protector S3 M"
+  },
+  "FD61": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses",
+    "name": "Chaussure de sécurité à lacets Compositelite S2"
   },
   "FP99": {
     "category": "corps",
@@ -349,6 +504,11 @@
     "category": "corps",
     "subcategory": "vetements-travail",
     "name": "Polo manches longues Modaflame"
+  },
+  "FR40": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire",
+    "name": "Masque ignifugé réutilisable (boîte de 25)"
   },
   "FR426": {
     "category": "corps",
@@ -445,15 +605,130 @@
     "subcategory": "vetements-travail",
     "name": "Chemise Bizflame 88/12"
   },
+  "FT12": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes",
+    "name": "Botte rigger Steelite Pro S3 CI HRO"
+  },
+  "FT18": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses",
+    "name": "Basket de sécurité Steelite Wire Lace S1P HRO"
+  },
   "FT22": {
     "category": "pieds",
     "subcategory": "chaussures-basses",
     "name": "Basket textile 0B ESD SR"
   },
+  "FT35": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses",
+    "name": "Basket basse Compositelite Ogwen S1P"
+  },
+  "FT42": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes",
+    "name": "Brodequin randonnée Steelite femme S3"
+  },
+  "FT49": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes",
+    "name": "Bottine Steelite Lily femme S1P"
+  },
+  "FT63": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes",
+    "name": "Brodequin Steelite Trouper S1P"
+  },
+  "FT71": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes",
+    "name": "Boots dealer de sécurité Warwick"
+  },
+  "FW09": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes",
+    "name": "Brodequin Steelite Protector S1P embout anti-abrasion"
+  },
+  "FW12": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes",
+    "name": "Botte rigger Steelite S1P CI HRO"
+  },
+  "FW19": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses",
+    "name": "Chaussure de travail O1"
+  },
+  "FW20": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes",
+    "name": "Brodequin de travail O1"
+  },
+  "FW25": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses",
+    "name": "Basket de sécurité Steelite S1P"
+  },
+  "FW26": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses",
+    "name": "Chaussure de sécurité Steelite Air Cushion SB"
+  },
   "FW32": {
     "category": "pieds",
     "subcategory": "chaussures-hautes",
     "name": "Chaussure mi-haute cuir nubuck embout acier S3 HRO"
+  },
+  "FW33": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses",
+    "name": "Basket de sécurité Steelite Arx S1P HRO"
+  },
+  "FW36": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses",
+    "name": "Basket basse Steelite Loire S1P HRO"
+  },
+  "FW40": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes",
+    "name": "Chaussure montante de randonnée Limes OB"
+  },
+  "FW41": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses",
+    "name": "Chaussure de sécurité Steelite femme S1"
+  },
+  "FW44": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses",
+    "name": "Chaussure de sécurité Steelite Thor S3"
+  },
+  "FW47": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses",
+    "name": "Chaussure de sécurité de ville Steelite Executive Oxford S1P"
+  },
+  "FW48": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses",
+    "name": "Sandale de sécurité Steelite ESD Ebro S1"
+  },
+  "FW49": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses",
+    "name": "Escarpin de sécurité femme Steelite S1"
+  },
+  "FW59": {
+    "category": "pieds",
+    "subcategory": "chaussures-basses",
+    "name": "Chaussure Steelite Mustang S3"
+  },
+  "FW66": {
+    "category": "pieds",
+    "subcategory": "chaussures-hautes",
+    "name": "Brodequin de randonnée Steelite All Weather S3 WR"
   },
   "H444": {
     "category": "corps",
@@ -470,6 +745,11 @@
     "subcategory": "protection-tete",
     "name": "Casquette Imperméable PW3"
   },
+  "HV08": {
+    "category": "pieds",
+    "subcategory": "accessoires-chaussures",
+    "name": "Clip lumineux LED pour chaussures"
+  },
   "HV20": {
     "category": "mains",
     "subcategory": "hygiene-sante",
@@ -484,6 +764,11 @@
     "category": "corps",
     "subcategory": "vetements-travail",
     "name": "Gilet réversible KA3"
+  },
+  "KN91": {
+    "category": "mains",
+    "subcategory": "outils-coupe",
+    "name": "Lames de rechange pour cutters KN30 et KN40 (Pk10)"
   },
   "KP05": {
     "category": "corps",
@@ -500,6 +785,11 @@
     "subcategory": "vetements-travail",
     "name": "Genouillère stabilisatrice en mousse de gel"
   },
+  "KS15": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Pantalon Slate à poches holster"
+  },
   "KS18": {
     "category": "corps",
     "subcategory": "vetements-travail",
@@ -515,15 +805,45 @@
     "subcategory": "vetements-pluie",
     "name": "Bomber de pluie HV KX3"
   },
+  "KX340": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Short KX3 Ripstop"
+  },
+  "KX342": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Pantalon KX3 en denim à poches holster"
+  },
+  "KX345": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Pantalon de combat KX3 à cordon"
+  },
   "KX360": {
     "category": "corps",
     "subcategory": "vetements-travail",
     "name": "Parka KX3"
   },
+  "KX363": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Bodywarmer softshell KX3 (3L)"
+  },
   "L043": {
     "category": "corps",
     "subcategory": "vetements-haute-visibilite",
     "name": "Short en poly-coton léger haute visibilité"
+  },
+  "LW19": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Tunique stretch classique aide à domicile, femme"
+  },
+  "LW21": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Tunique médicale stretch, femme"
   },
   "LW63": {
     "category": "corps",
@@ -535,6 +855,11 @@
     "subcategory": "vetements-haute-visibilite",
     "name": "Parka femme Hi-Vis respirante"
   },
+  "LW71": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon haute visibilité femme"
+  },
   "LW97": {
     "category": "corps",
     "subcategory": "vetements-travail",
@@ -544,6 +869,31 @@
     "category": "corps",
     "subcategory": "vetements-haute-visibilite",
     "name": "Combinaison HV Modflame RIS Marine/Orange"
+  },
+  "P005": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire",
+    "name": "Masque anti-poussière (Pk50)"
+  },
+  "P153": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire",
+    "name": "Masque pliable FFP1 à valve Dolomite (Pk20)"
+  },
+  "P902": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire",
+    "name": "Filtre à gaz A2 à baïonnette (Pk6)"
+  },
+  "P946": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire",
+    "name": "Filtre à particules P3 à filetage universel (Pk6)"
+  },
+  "P978": {
+    "category": "tete",
+    "subcategory": "protection-respiratoire",
+    "name": "Filtre combiné ABEK1P3 sous blister (Pk2)"
   },
   "PA50": {
     "category": "tete",
@@ -625,6 +975,11 @@
     "subcategory": "protection-yeux",
     "name": "Lunettes Ultra"
   },
+  "PS50": {
+    "category": "tete",
+    "subcategory": "protection-tete",
+    "name": "Casque de sécurité ventilé Arrow"
+  },
   "PS52": {
     "category": "tete",
     "subcategory": "protection-tete",
@@ -685,10 +1040,65 @@
     "subcategory": "vetements-travail",
     "name": "Polo PW2 M/C"
   },
+  "PW211": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "T-shirt PW2 manches courtes"
+  },
+  "PW212": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Polo haute visibilité PW2 manches courtes"
+  },
+  "PW213": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "T-shirt haute visibilité PW2 manches courtes"
+  },
   "PW218": {
     "category": "corps",
     "subcategory": "vetements-travail",
     "name": "Polo coton majoritaire manches longues PW2"
+  },
+  "PW231": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Bodywarmer polaire haute visibilité PW2"
+  },
+  "PW240": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Pantalon de service PW2"
+  },
+  "PW241": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Pantalon de service haute visibilité PW2"
+  },
+  "PW265": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Veste de pluie haute visibilité PW2"
+  },
+  "PW270": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Polaire PW2"
+  },
+  "PW274": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Polaire haute visibilité PW2"
+  },
+  "PW277": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Sweat-shirt haute-visibilité à col rond PW2"
+  },
+  "PW278": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Veste softshell femme PW2 (2 couches)"
   },
   "PW308": {
     "category": "corps",
@@ -720,6 +1130,11 @@
     "subcategory": "vetements-haute-visibilite",
     "name": "Polo Haute Visibilité PW3 Cotton Comfort Manches Courtes"
   },
+  "PW322": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Pantalon harnais PW3"
+  },
   "PW325": {
     "category": "corps",
     "subcategory": "vetements-haute-visibilite",
@@ -729,6 +1144,11 @@
     "category": "corps",
     "subcategory": "vetements-haute-visibilite",
     "name": "Pantalon extrême haute visibilité PW3"
+  },
+  "PW348": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Short haute visibilité PW3"
   },
   "PW362": {
     "category": "corps",
@@ -815,10 +1235,25 @@
     "subcategory": "protection-tete",
     "name": "Casquette anti-heurt visière courte"
   },
+  "PW92": {
+    "category": "tete",
+    "subcategory": "protection-yeux",
+    "name": "Ecran de rechange incolore"
+  },
   "R413": {
     "category": "corps",
     "subcategory": "vetements-travail",
     "name": "T-shirt RWS"
+  },
+  "R461": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Parka Traffic RWS 3-en-1"
+  },
+  "RT34": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Blouson Hi-Vis respirant RIS"
   },
   "RT48": {
     "category": "corps",
@@ -860,15 +1295,45 @@
     "subcategory": "vetements-travail",
     "name": "Blouson Iona Lite"
   },
+  "S462": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Parka bicolore haute visibilité Classic"
+  },
   "S466": {
     "category": "corps",
     "subcategory": "vetements-haute-visibilite",
     "name": "Parka HV Bicolore"
   },
+  "S486": {
+    "category": "corps",
+    "subcategory": "vetements-pluie",
+    "name": "Pantalon de pluie Hi-Vis bicolore Traffic"
+  },
+  "S498": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Blouson bomber Sealtex Ultra haute visibilité"
+  },
   "S505": {
     "category": "corps",
     "subcategory": "vetements-travail",
     "name": "Parka isolante Limax"
+  },
+  "S508": {
+    "category": "corps",
+    "subcategory": "vetements-pluie",
+    "name": "Veste Corporate Shell homme"
+  },
+  "S509": {
+    "category": "corps",
+    "subcategory": "vetements-pluie",
+    "name": "Veste Corporate Shell femme"
+  },
+  "S530": {
+    "category": "corps",
+    "subcategory": "vetements-pluie",
+    "name": "Veste respirante Arbroath doublée polaire"
   },
   "S532": {
     "category": "corps",
@@ -879,6 +1344,16 @@
     "category": "corps",
     "subcategory": "vetements-travail",
     "name": "Veste 3 en 1 pour femmes"
+  },
+  "S591": {
+    "category": "corps",
+    "subcategory": "vetements-haute-visibilite",
+    "name": "Blouson bomber Extrême"
+  },
+  "S592": {
+    "category": "corps",
+    "subcategory": "vetements-pluie",
+    "name": "Capuche Extrême"
   },
   "S606": {
     "category": "corps",
@@ -899,6 +1374,11 @@
     "category": "corps",
     "subcategory": "vetements-travail",
     "name": "Polaire North Sea"
+  },
+  "S710": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Pantalon London"
   },
   "S899": {
     "category": "tete",
@@ -970,6 +1450,11 @@
     "subcategory": "hygiene-sante",
     "name": "Kit absorbant 50 litres, produits chimiques"
   },
+  "ST31": {
+    "category": "usage-unique",
+    "subcategory": null,
+    "name": "Blouse BizTex® SMS type PB[6] (Pk50)"
+  },
   "ST43": {
     "category": "usage-unique",
     "subcategory": null,
@@ -984,6 +1469,11 @@
     "category": "usage-unique",
     "subcategory": null,
     "name": "Biztex Microporous Hood  Pk100"
+  },
+  "ST90": {
+    "category": "usage-unique",
+    "subcategory": null,
+    "name": "Combinaison BizTex® Pro type 5/6"
   },
   "T160": {
     "category": "corps",
@@ -1105,6 +1595,11 @@
     "subcategory": "vetements-travail",
     "name": "Combinaison Portwest Texo  Contrast"
   },
+  "TX20": {
+    "category": "corps",
+    "subcategory": "vetements-travail",
+    "name": "Polo Portwest Texo Contrast"
+  },
   "TX50": {
     "category": "corps",
     "subcategory": "vetements-haute-visibilite",
@@ -1119,5 +1614,15 @@
     "category": "corps",
     "subcategory": "vetements-haute-visibilite",
     "name": "Pantalon Haute-Visibilité Séville"
+  },
+  "VA198": {
+    "category": "mains",
+    "subcategory": "gants-protection",
+    "name": "Gant Vending antistatique bout des doigts enduit PU"
+  },
+  "VA622": {
+    "category": "mains",
+    "subcategory": "gants-protection",
+    "name": "Gant Vending anti-coupures paume enduite PU"
   }
 }

@@ -12,9 +12,9 @@ export function hasProductImage(product: Pick<Product, 'imageUrl'>): boolean {
  * - ni photo valide, ni prix : références pas encore commercialisées sur le marché FR
  *   (nom anglais brut dans l'export, photo absente du CDN — retour client « images
  *   manquantes » dans Pieds > Bottes de sécurité) ;
- * - ligne vide (ni nom, ni coloris, ni description) : lignes de tarif Portwest sans
- *   fiche produit — soit une référence entière restée « à trier » faute de quoi la
- *   classer, soit un coloris orphelin sans libellé à côté des coloris nommés du modèle.
+ * - ligne vide (ni nom, ni coloris, ni description) : ligne de tarif Portwest sans
+ *   fiche produit que scripts/complete-catalog.mjs n'a pas su nommer (ni coloris voisin
+ *   nommé, ni entrée dans src/data/product-overrides.<fournisseur>.json).
  */
 export function isIncompleteProduct(
 	product: Pick<Product, 'imageUrl' | 'price' | 'name' | 'colour' | 'description'>,

@@ -1,0 +1,663 @@
+{
+  "_comment": "Noms de produits absents de l'export Portwest (lignes de tarif sans fiche produit). Clé = Style Code. `name` (+ `description` facultative) nomme une référence entière ; `colours` traduit un code couleur SKU que le reste du catalogue ne nomme jamais. `source` et `confidence` sont informatifs. Appliqué au catalogue commité par `node scripts/complete-catalog.mjs` et réappliqué par `generate-catalog-data.mjs`.",
+  "A610": {
+    "name": "Gant grip latex coupure B",
+    "description": "Gant anti-coupure à support sans couture en para-aramide, paume enduite de latex crêpé pour une bonne préhension en milieu sec ou humide. Conforme EN 388:2016 (3X43B) et EN ISO 21420.",
+    "source": "https://www.portwest.com/products/view/A610/YBL",
+    "confidence": "high",
+    "colours": {
+      "YBL": "Jaune/Bleu"
+    }
+  },
+  "A626": {
+    "name": "Gant nitrile Vis-Tex Cut D13",
+    "description": "Gant anti-coupure haute visibilité, support sans couture jauge 13, paume enduite de nitrile sablé pour la dextérité et l'adhérence. Testé contre la chaleur de contact, conforme EN 388:2016 et ANSI/ISEA 105 niveau A4.",
+    "source": "https://www.portwest.com/products/view/A626/Y5R",
+    "confidence": "high",
+    "colours": {
+      "Y5R": "Jaune/Rouge"
+    }
+  },
+  "A696": {
+    "name": "Gant LR13 ESD bouts des doigts enduits PU (Pk12)",
+    "description": "Gant anti-coupure niveau B en polyester et fibre de carbone jauge 13 dissipant l'électricité statique, bouts des doigts enduits de PU pour une grande dextérité et compatibles écrans tactiles. Vendu par paquet de 12 paires, idéal pour l'assemblage électronique et les travaux de précision.",
+    "source": "https://www.portwest.com/products/view/A696/G6R",
+    "confidence": "high"
+  },
+  "A910": {
+    "name": "Gant jetable en latex poudré (Pk100)",
+    "description": "Gant jetable ambidextre en latex naturel poudré, surface lisse et poignet roulé, boîte de 100. AQL 1,5, conforme EN ISO 21420 ; adapté à l'alimentaire, à la maintenance et au nettoyage.",
+    "source": "https://www.portwest.com/products/view/A910/WHR",
+    "confidence": "high"
+  },
+  "B026": {
+    "name": "Bonnet tricot réfléchissant doublé Insulatex",
+    "description": "Bonnet en tricot acrylique intégrant des fils réfléchissants pour la visibilité, doublure Insulatex en polyester contre le froid et le vent.",
+    "source": "https://www.portwest.com/products/view/B026/BKR",
+    "confidence": "high"
+  },
+  "B028": {
+    "name": "Bonnet avec double lampe LED rechargeable",
+    "description": "Bonnet en acrylique équipé de deux lampes LED amovibles rechargeables par USB (150 lumens à l'avant, 100 lumens à l'arrière), 3 modes et jusqu'à 4 h d'autonomie. Pour travailler ou se déplacer dans des conditions de faible luminosité.",
+    "source": "https://www.portwest.com/products/view/B028/NAR",
+    "confidence": "high"
+  },
+  "B140": {
+    "name": "T-shirt Venice",
+    "description": "T-shirt léger en polyester/coton, confortable et résistant, avec protection UPF 50+ ; idéal par temps chaud.",
+    "source": "https://www.camlab.co.uk/b140-portwest-venice-t-shirt",
+    "confidence": "medium"
+  },
+  "B192": {
+    "name": "T-shirt femme Turin",
+    "description": "T-shirt femme coupe ajustée en coton 100 % premium, pour le travail comme pour la tenue d'entreprise ; se porte seul ou sous un sweat.",
+    "source": "https://www.portwest.com/products/view/B192/NAR",
+    "confidence": "high"
+  },
+  "B210": {
+    "colours": {
+      "AQR": "Aqua"
+    },
+    "source": "https://www.portwest.com/products/view/B210/AQR"
+  },
+  "B220": {
+    "name": "Polo coton Verona",
+    "description": "Polo en piqué 100 % coton peigné 220 g, col et poignets en bord-côte, patte trois boutons et fentes latérales ; protection UPF 50+, idéal pour la tenue d'entreprise et la personnalisation.",
+    "source": "https://www.portwest.com/products/view/B220/BKR",
+    "confidence": "high"
+  },
+  "C471": {
+    "name": "Gilet haute visibilité manches courtes",
+    "description": "Gilet haute visibilité à manches courtes en maille polyester 125 g, léger pour rester au frais, avec bandes réfléchissantes HiVisTex. Conforme EN ISO 20471 et ANSI.",
+    "source": "https://portwest.co.uk/products/view/C471/YER",
+    "confidence": "high"
+  },
+  "C565": {
+    "name": "Blouson bomber haute visibilité X 3-en-1",
+    "description": "Blouson bomber haute visibilité 3-en-1 imperméable à coutures étanchées (EN 343 classe 3:1), manches amovibles, doublure et col fourrés détachables, capuche dissimulée et 8 poches. Tissu Oxford 300D polyester enduit PU avec finition anti-taches.",
+    "source": "https://www.portwest.com/products/view/C565/No%20Colour",
+    "confidence": "high"
+  },
+  "C720": {
+    "name": "Pantalon Tradesman poches holster",
+    "description": "Pantalon de travail multipoches (8 poches) en polycoton résistant aux accrocs, poches holster, poches cargo, porte-marteau et poches genouillères à chargement par le bas ; coutures doublées et points d'arrêt aux zones de tension.",
+    "source": "https://www.portwest.com/products/view/C720/BKT",
+    "confidence": "high"
+  },
+  "C835": {
+    "name": "Veste de cuisine Surrey manches longues",
+    "description": "Veste de cuisine coupe ajustée en coton, fermeture croisée à pressions dissimulées, empiècements MeshAir Pro au dos et sous les bras pour la respirabilité et finition anti-taches.",
+    "source": "https://www.portwest.com/products/view/C835/WHR",
+    "confidence": "high"
+  },
+  "CD884": {
+    "colours": {
+      "FGS": "Vert Forêt Short"
+    },
+    "source": "https://www.safetecdirect.co.uk/products/cd884/portwest-cd884-polycotton-essential-super-work-trouser-245"
+  },
+  "CR15": {
+    "name": "Polo manches anti-coupures",
+    "description": "Polo manches longues en tissu Cotton Comfort respirant et évacuant l'humidité, manches en tissu anti-coupure niveau D, passe-pouces et boucle de patte pour lunettes ou stylo.",
+    "source": "https://www.hivis.co.uk/polo-shirt-with-cut-resistant-sleeves-portwest-cr15.html",
+    "confidence": "high"
+  },
+  "CV11": {
+    "name": "Bonnet rafraîchissant Cooling Crown",
+    "description": "Bonnet léger rafraîchissant à activer en le trempant dans l'eau, jusqu'à 8 h de fraîcheur pour prévenir le stress thermique ; dos élastiqué, se porte sous un casque ou un chapeau.",
+    "source": "https://www.portwest.com/products/view/CV11",
+    "confidence": "high"
+  },
+  "E052": {
+    "name": "Combinaison haute visibilité X",
+    "description": "Combinaison haute visibilité bicolore dos en X en polyester/coton avec finition anti-taches Texpel et UPF 40+, bandes réfléchissantes, poignets tricotés, taille élastiquée et zip double sens. Conforme EN ISO 20471 et ANSI.",
+    "source": "https://www.portwest.com/products/view/E052/YGR",
+    "confidence": "high"
+  },
+  "EC11": {
+    "name": "Polo Eco Haute Visibilité manches longues (Pack de 6)",
+    "description": "Polo haute visibilité manches longues en polyester 100 % recyclé, respirant et évacuant l'humidité, avec bandes réfléchissantes sur le corps et les manches ; vendu par lot de 6. Conforme EN ISO 20471 classe 3.",
+    "source": "https://www.workwear.co.uk/portwest-ec11-eco-hi-vis-yellow-long-sleeve-polo-shirt-pack-of-6.html",
+    "confidence": "high"
+  },
+  "EC40": {
+    "name": "Pantalon Eco haute visibilité",
+    "description": "Pantalon haute visibilité en polyester/coton recyclé, taille semi-élastiquée, 9 poches dont poches cargo, mètre et genouillères, ourlet ajustable et bandes réfléchissantes. Conforme EN ISO 20471 après 50 lavages, UPF 40+.",
+    "source": "https://www.portwest.com/products/view/EC40/ORR",
+    "confidence": "high"
+  },
+  "EC70": {
+    "name": "Veste polaire Eco haute visibilité",
+    "description": "Veste polaire haute visibilité en polyester 100 % recyclé anti-bouloches, deux poches zippées, poche téléphone intérieure, taille à cordon élastique et bandes réfléchissantes. Conforme EN ISO 20471 classe 3 après 25 lavages, UPF 40+.",
+    "source": "https://www.portwest.com/products/view/EC70/ORR",
+    "confidence": "high"
+  },
+  "EC76": {
+    "name": "Gilet Eco haute visibilité baudrier (Pack de 10)",
+    "description": "Gilet haute visibilité en polyester 100 % recyclé (bouteilles PET), fermeture auto-agrippante, bandes réfléchissantes ceinture et bretelles, poche poitrine ; vendu par lot de 10. Conforme EN ISO 20471 et ANSI/ISEA 107.",
+    "source": "https://www.portwest.com/products/view/EC76/YER",
+    "confidence": "high"
+  },
+  "F282": {
+    "name": "Polaire femme Aran",
+    "description": "Veste polaire femme en polyester léger anti-bouloches, fermeture zippée, poches zippées, poignets élastiqués et bas réglable par cordon. Conforme EN 14058 classe 1.",
+    "source": "https://portwest.com/products/view/F282/AQR",
+    "confidence": "high"
+  },
+  "F401": {
+    "name": "Polaire City bicolore",
+    "description": "Veste polaire bicolore épaisse en polaire double face anti-bouloches 410 g, deux poches basses zippées, poche poitrine, poignets élastiqués et bas réglable par cordon ; zips contrastés argent.",
+    "source": "https://www.portwest.com/products/view/F401/GRR",
+    "confidence": "high"
+  },
+  "FC04": {
+    "name": "Sandale de sécurité Tagus ESD S1P Compositelite",
+    "description": "Sandale de sécurité 100 % non métallique ESD classe 3, embout et semelle anti-perforation composites, fermeture auto-agrippante et sangle réglable, tige perforée respirante. Semelle PU double densité antidérapante SRC, résistante aux hydrocarbures.",
+    "source": "https://www.portwest.com/products/view/FC04/No%20Colour",
+    "confidence": "high"
+  },
+  "FC44": {
+    "name": "Chaussure de sécurité Thor S3 Compositelite",
+    "description": "Chaussure de sécurité basse classique S3, 100 % non métallique, tige en cuir pleine fleur hydrofuge, embout et semelle intercalaire composites. Semelle PU/TPU double densité antidérapante et résistante aux huiles.",
+    "source": "https://www.portwest.com/products/view/FC44/BKR",
+    "confidence": "high"
+  },
+  "FC53": {
+    "name": "Basket de sécurité montante Reno S1P Compositelite",
+    "description": "Chaussure de sécurité mi-montante 100 % non métallique en cuir suédé, doublure respirante, embout et semelle anti-perforation composites, soufflet anti-pénétration d'eau. Semelle double densité antidérapante SRC résistante aux hydrocarbures, conforme EN ISO 20345.",
+    "source": "https://www.portwest.com/products/view/FC53/BER",
+    "confidence": "high"
+  },
+  "FC58": {
+    "name": "Brodequin de sécurité Avich S3 Compositelite",
+    "description": "Brodequin de sécurité S3 100 % non métallique, léger et respirant, embout composite 200 J et semelle intercalaire composite, renfort de cheville TPU rembourré et empiècements réfléchissants. Semelle double densité antidérapante SRC résistante aux hydrocarbures.",
+    "source": "https://www.portwest.com/products/view/FC58/BKR",
+    "confidence": "high"
+  },
+  "FC63": {
+    "name": "Brodequin Compositelite Trekker S1",
+    "description": "Brodequin de sécurité style randonnée 100 % non métallique, embout composite 200 joules, tige croûte de cuir velours et textile avec doublure mesh 3D respirante. Semelle double densité antistatique, résistante aux hydrocarbures, antidérapante SRC.",
+    "source": "https://www.portwest.com/products/view/FC63/BKR",
+    "confidence": "high"
+  },
+  "FC64": {
+    "name": "Chaussure Compositelite Trekker S1",
+    "description": "Chaussure de sécurité basse style randonnée non métallique, embout composite, tige croûte de cuir velours et textile avec doublure mesh 3D respirante. Semelle PU/PU antidérapante et résistante aux hydrocarbures, conforme EN ISO 20345 S1.",
+    "source": "https://www.portwest.com/products/view/FC64/BKR",
+    "confidence": "high"
+  },
+  "FC96": {
+    "name": "Crampons antidérapants universels",
+    "description": "Surchaussure antiglisse en caoutchouc adaptée à la plupart des chaussures, y compris sans embout de sécurité. Crampons en carbure de tungstène pratiquement non étincelants et talon d'extraction pour un retrait facile.",
+    "source": "https://www.portwest.com/products/view/FC96/BKR",
+    "confidence": "high"
+  },
+  "FD17": {
+    "name": "Brodequin Steelite Met Protector S3 M",
+    "description": "Brodequin de sécurité avec protection métatarsienne interne (XRD Poron), embout acier et semelle intercalaire composite. Tige hydrofuge, semelle antistatique, antidérapante SRC et résistante aux hydrocarbures ; idéal mines, pétrole et gaz, BTP.",
+    "source": "https://www.portwest.com/products/view/FD17/BKR",
+    "confidence": "high"
+  },
+  "FD61": {
+    "name": "Chaussure de sécurité à lacets Compositelite S2",
+    "description": "Basket de sécurité sans métal en microfibre hydrofuge facile à nettoyer, doublure et semelle de propreté antimicrobiennes, embout composite. Semelle antistatique, antidérapante SRC ; adaptée à l'agroalimentaire, la pharmacie et la restauration (EN ISO 20345 S2).",
+    "source": "https://www.workwear.co.uk/portwest-fd61-compositelite-laced-safety-shoes-white.html",
+    "confidence": "medium"
+  },
+  "FR40": {
+    "name": "Masque ignifugé réutilisable (boîte de 25)",
+    "description": "Masque en tissu 100 % coton ignifugé, une couche, classé ARC2, réutilisable et lavable à 60 °C. Attaches derrière la tête sans pression sur les oreilles ; conditionné individuellement, boîte de 25.",
+    "source": "https://portwest.com/products/view/FR40/NAR",
+    "confidence": "high"
+  },
+  "FR50": {
+    "colours": {
+      "RET": "Rouge Tall"
+    },
+    "source": "https://www.misterworker.com/en-us/portwest/flame-resistant-anti-static-350g-red-tall-coverall-fr50ret/69465.html"
+  },
+  "FT12": {
+    "name": "Botte rigger Steelite Pro S3 CI HRO",
+    "description": "Botte de sécurité type rigger en croûte de cuir fourrée, embout et semelle intercalaire acier, protection de cheville renforcée et pare-pierre TPU. Semelle PU/caoutchouc antidérapante SRC, résistante à la chaleur (300 °C), aux hydrocarbures et isolante du froid (EN ISO 20345 S3 CI HRO).",
+    "source": "https://www.portwest.com/products/view/FT12/TAR",
+    "confidence": "high"
+  },
+  "FT18": {
+    "name": "Basket de sécurité Steelite Wire Lace S1P HRO",
+    "description": "Basket de sécurité avec système de laçage rapide à câble, embout acier et semelle anti-perforation. Tige cuir et daim avec mesh respirant, col et languette rembourrés, semelle résistante à la chaleur 300 °C.",
+    "source": "https://www.portwest.com/products/view/FT18/GGN",
+    "confidence": "high"
+  },
+  "FT35": {
+    "name": "Basket basse Compositelite Ogwen S1P",
+    "description": "Basket de sécurité basse à tige KPU moulée et mesh respirant, embout composite et semelle anti-perforation, semelle EVA/caoutchouc. Semelle de propreté amortissante, conforme EN 20345 S1P SRC.",
+    "source": "https://www.portwest.com/products/view/FT35/BGN",
+    "confidence": "high"
+  },
+  "FT42": {
+    "name": "Brodequin randonnée Steelite femme S3",
+    "description": "Brodequin de sécurité à coupe féminine en cuir nubuck pleine fleur hydrofuge, embout acier et semelle intercalaire composite PU. Semelle double densité antistatique, antidérapante SRC et résistante aux hydrocarbures.",
+    "source": "https://www.portwest.com/products/view/FT42/BKR",
+    "confidence": "high"
+  },
+  "FT49": {
+    "name": "Bottine Steelite Lily femme S1P",
+    "description": "Bottine de sécurité pour femme avec embout acier et semelle intercalaire anti-perforation composite. Semelle double densité antistatique, antidérapante et résistante aux hydrocarbures.",
+    "source": "https://www.portwest.com/products/view/FT49/BKR",
+    "confidence": "high"
+  },
+  "FT63": {
+    "name": "Brodequin Steelite Trouper S1P",
+    "description": "Brodequin de sécurité avec doublure respirante et œillets fermés, embout acier 200 joules et semelle anti-perforation acier. Semelle double densité antistatique, antidérapante SRC et résistante aux hydrocarbures.",
+    "source": "https://www.portwest.com/products/view/FT63/BKR",
+    "confidence": "high"
+  },
+  "FT71": {
+    "name": "Boots dealer de sécurité Warwick",
+    "description": "Boots de sécurité type dealer (sans lacets) en cuir nubuck pleine fleur, soufflets élastiqués et tirants avant/arrière pour un chaussage facile, pare-pierre TPU. Embout et semelle anti-perforation acier, semelle antistatique antidérapante SRC.",
+    "source": "https://www.portwest.com/products/view/FT71/BKR",
+    "confidence": "high"
+  },
+  "FW09": {
+    "name": "Brodequin Steelite Protector S1P embout anti-abrasion",
+    "description": "Brodequin de sécurité en croûte de cuir avec pare-pierre protégeant l'avant du pied, embout acier 200 joules et semelle intercalaire acier. Semelle PU/PU antistatique, antidérapante SRC et résistante aux hydrocarbures (EN ISO 20345 S1P) ; idéal carreleurs, plombiers, poseurs de moquette.",
+    "source": "https://www.portwest.com/products/view/FW09/BKR",
+    "confidence": "high"
+  },
+  "FW12": {
+    "name": "Botte rigger Steelite S1P CI HRO",
+    "description": "Botte de sécurité type rigger en croûte de cuir, doublure fourrée et passants pour les pouces facilitant l'enfilage. Embout et semelle intercalaire acier, semelle antistatique antidérapante SRC, résistante à la chaleur 300 °C et aux hydrocarbures.",
+    "source": "https://www.lawson-his.co.uk/portwest-fw12-steelite-rigger-boot-s1p-ci-hro-available-in-black-or-tan",
+    "confidence": "high"
+  },
+  "FW19": {
+    "name": "Chaussure de travail O1",
+    "description": "Chaussure de travail (sans embout de sécurité) légère et souple en croûte de cuir, semelle PU/PU double densité. Antistatique, antidérapante SRC et résistante aux hydrocarbures, conforme EN ISO 20347 O1 ; pour travaux légers et loisirs.",
+    "source": "https://www.portwest.com/products/view/FW19/BKR",
+    "confidence": "high"
+  },
+  "FW20": {
+    "name": "Brodequin de travail O1",
+    "description": "Brodequin de travail (sans embout de sécurité) léger en croûte de cuir, semelle PU/PU double densité. Antistatique, antidérapant SRC, résistant aux hydrocarbures et à la chaleur 120 °C, conforme EN ISO 20347 O1.",
+    "source": "https://www.portwest.com/products/view/FW20/BKR",
+    "confidence": "high"
+  },
+  "FW25": {
+    "name": "Basket de sécurité Steelite S1P",
+    "description": "Basket de sécurité au style sportif, embout et semelle intercalaire acier. Semelle double densité antistatique et résistante aux hydrocarbures, protection S1P.",
+    "source": "https://www.portwest.com/products/view/FW25/BKR",
+    "confidence": "high"
+  },
+  "FW26": {
+    "name": "Chaussure de sécurité Steelite Air Cushion SB",
+    "description": "Chaussure de sécurité de ville à lacets en cuir pleine fleur, embout acier et semelle PVC à coussin d'air amortissante. Semelle résistante aux hydrocarbures et antidérapante SRA (EN 20345 SB) ; idéale sécurité, transport, accueil.",
+    "source": "https://www.portwest.com/products/view/FW26/BKR",
+    "confidence": "high"
+  },
+  "FW33": {
+    "name": "Basket de sécurité Steelite Arx S1P HRO",
+    "description": "Basket de sécurité basse au style sportif en croûte de cuir, embout et semelle anti-perforation acier, semelle EVA/caoutchouc. Antistatique, antidérapante SRC, résistante à la chaleur 300 °C et aux hydrocarbures ; pour l'industrie légère.",
+    "source": "https://www.portwest.com/products/view/FW33/WHR",
+    "confidence": "high"
+  },
+  "FW36": {
+    "name": "Basket basse Steelite Loire S1P HRO",
+    "description": "Basket de sécurité basse en croûte de cuir velours, embout et semelle intercalaire acier, semelle légère EVA/caoutchouc. Antistatique, antidérapante SRC, résistante à la chaleur 300 °C et aux hydrocarbures.",
+    "source": "https://www.portwest.com/products/view/FW36/GRR",
+    "confidence": "high"
+  },
+  "FW40": {
+    "name": "Chaussure montante de randonnée Limes OB",
+    "description": "Chaussure de travail montante style randonnée (sans embout de sécurité) en croûte de cuir velours marine et vert citron, pare-pierre cousu et tirants avant/arrière. Semelle EVA/caoutchouc antidérapante et résistante aux hydrocarbures (EN ISO 20347 OB).",
+    "source": "https://www.portwest.com/products/view/FW40/NAR",
+    "confidence": "high"
+  },
+  "FW41": {
+    "name": "Chaussure de sécurité Steelite femme S1",
+    "description": "Chaussure de sécurité basse pour femme, embout acier, protection S1 et confort pour un port prolongé.",
+    "source": "https://www.portwest.com/products/view/FW41/BKR",
+    "confidence": "high"
+  },
+  "FW44": {
+    "name": "Chaussure de sécurité Steelite Thor S3",
+    "description": "Chaussure de sécurité en cuir pleine fleur hydrofuge, embout acier 200 joules et semelle anti-perforation acier. Semelle PU/TPU double densité antistatique, antidérapante SRC et résistante aux hydrocarbures.",
+    "source": "https://www.portwest.com/products/view/FW44/BKR",
+    "confidence": "high"
+  },
+  "FW47": {
+    "name": "Chaussure de sécurité de ville Steelite Executive Oxford S1P",
+    "description": "Chaussure de sécurité style Oxford en cuir pleine fleur, embout acier 200 joules et semelle anti-perforation acier. Semelle double densité antistatique, antidérapante SRC et résistante aux hydrocarbures.",
+    "source": "https://www.portwest.com/products/view/FW47/BKR",
+    "confidence": "high"
+  },
+  "FW48": {
+    "name": "Sandale de sécurité Steelite ESD Ebro S1",
+    "description": "Sandale de sécurité en microfibre à tige perforée très respirante, fermeture auto-agrippante, embout acier. Dissipatrice ESD, conforme EN 61340-4-3 classe 3 et EN ISO 20345 S1.",
+    "source": "https://www.portwest.com/products/view/FW48/WHR",
+    "confidence": "high"
+  },
+  "FW49": {
+    "name": "Escarpin de sécurité femme Steelite S1",
+    "description": "Escarpin de sécurité pour femme avec embout acier, semelle résistante aux hydrocarbures et zone du talon absorbant l'énergie. Certifié S1.",
+    "source": "https://www.portwest.com/products/view/FW49/BKR",
+    "confidence": "high"
+  },
+  "FW59": {
+    "name": "Chaussure Steelite Mustang S3",
+    "description": "Chaussure de sécurité en cuir huilé avec embout et semelle anti-perforation en acier, semelle PU/TPU bi-densité antidérapante SRC, résistante aux hydrocarbures et antistatique. Certifiée S3.",
+    "source": "https://www.workwearsupermarket.com/portwest-steelite-mustang-shoes-s3_fw59",
+    "confidence": "high"
+  },
+  "FW66": {
+    "name": "Brodequin de randonnée Steelite All Weather S3 WR",
+    "description": "Brodequin style randonnée en croûte de cuir de vache avec doublure imperméable et respirante, embout et semelle anti-perforation en acier. Semelle antistatique, résistante aux hydrocarbures et à la chaleur de contact (120 °C), certifiée S3 WR SRC.",
+    "source": "https://www.portwest.com/products/view/FW66/BKR",
+    "confidence": "high"
+  },
+  "HV08": {
+    "name": "Clip lumineux LED pour chaussures",
+    "description": "Clip LED qui se fixe à l'arrière de toute chaussure pour améliorer la visibilité, avec modes fixe et clignotant. Vendu par paire, piles CR2032 incluses.",
+    "source": "https://www.portwest.co.uk/products/view/HV08/GNR",
+    "confidence": "high"
+  },
+  "KN91": {
+    "name": "Lames de rechange pour cutters KN30 et KN40 (Pk10)",
+    "description": "Lames de rechange en acier carbone à double tranchant pour les cutters de sécurité KN30 et KN40. Vendues par paquet de 10.",
+    "source": "https://portwest.com/products/view/KN91/NCR",
+    "confidence": "high"
+  },
+  "KS15": {
+    "name": "Pantalon Slate à poches holster",
+    "description": "Pantalon de travail en tissu Kingsmill 300 g (65 % polyester, 35 % coton) résistant à l'abrasion, avec poches holster escamotables, poches genouillères, porte-marteau et ceinture élastiquée.",
+    "source": "https://portwest.com/products/view/KS15/BKR",
+    "confidence": "high"
+  },
+  "KX340": {
+    "name": "Short KX3 Ripstop",
+    "description": "Short de travail coupe ajustée en tissu ripstop extensible, avec entrejambe à gousset, taille élastiquée sur les côtés et poches cuisse multifonctions.",
+    "source": "https://www.portwest.com/products/view/KX340/BKR",
+    "confidence": "high"
+  },
+  "KX342": {
+    "name": "Pantalon KX3 en denim à poches holster",
+    "description": "Pantalon de travail coupe ajustée en denim stretch (98 % coton, 2 % élasthanne, 420 g) renforcé polyester 600D, avec 11 poches dont des poches holster amovibles et des poches genouillères.",
+    "source": "https://www.totalworkwear.co.uk/all-mens-womens-work-trousers/portwest-kx3-slim-fit-holster-denim-trouser-kx342.html",
+    "confidence": "high",
+    "colours": {
+      "INR": "Indigo"
+    }
+  },
+  "KX345": {
+    "name": "Pantalon de combat KX3 à cordon",
+    "description": "Pantalon de travail coupe fuselée en ripstop polycoton stretch, avec taille entièrement élastiquée et cordon de serrage. Six poches dont poche mètre et poche zippée, poches genouillères accessibles par le bas.",
+    "source": "https://www.safetecdirect.co.uk/products/kx345/portwest-kx345-kx3-black-ripstop-stretch-slim-fit-drawstring-combat-work-trousers-230g",
+    "confidence": "high"
+  },
+  "KX363": {
+    "name": "Bodywarmer softshell KX3 (3L)",
+    "description": "Gilet sans manches en softshell 3 couches ripstop déperlant (imperméabilité 8 000 mm, respirabilité 3 000 g/m²/24 h) avec isolation Insulatex et doublure micro-polaire gaufrée. Nombreuses poches dont poches chauffe-mains et poche poitrine.",
+    "source": "https://www.portwest.com/products/view/KX363/",
+    "confidence": "high"
+  },
+  "LW19": {
+    "name": "Tunique stretch classique aide à domicile, femme",
+    "description": "Tunique femme en sergé polycoton stretch Kingsmill (65 % polyester, 33 % coton, 2 % élasthanne, 145 g) avec dos action, fermeture zippée dissimulée, 3 poches et poche à ciseaux.",
+    "source": "https://www.totalworkwear.co.uk/all-work-shirts-and-tops/portwest-womens-stretch-classic-care-home-tunic-lw19.html",
+    "confidence": "high"
+  },
+  "LW21": {
+    "name": "Tunique médicale stretch, femme",
+    "description": "Tunique médicale pour femme en polycoton stretch léger avec dos action, coupe ajustée, destinée aux secteurs médical et esthétique.",
+    "source": "https://www.portwest.com/products/view/LW21/WHR",
+    "confidence": "high"
+  },
+  "LW71": {
+    "name": "Pantalon haute visibilité femme",
+    "description": "Pantalon haute visibilité coupé pour femme en polycoton 245 g avec finition anti-taches Texpel, bandes réfléchissantes, 7 poches et poches genouillères internes. Certifié EN ISO 20471 classe 2.",
+    "source": "https://www.lawson-his.co.uk/portwest-lw71-ladies-hi-vis-trousers-high-visibility-yellow",
+    "confidence": "high"
+  },
+  "P005": {
+    "name": "Masque anti-poussière (Pk50)",
+    "description": "Masque anti-poussière jetable non certifié, pour le confort face aux poussières non toxiques (pollen, poussière domestique). Boîte de 50.",
+    "source": "https://portwest.com/products/view/P005/No%20Colour",
+    "confidence": "high"
+  },
+  "P153": {
+    "name": "Masque pliable FFP1 à valve Dolomite (Pk20)",
+    "description": "Masque FFP1 pliable à plat avec soupape d'expiration, pince-nez réglable et mousse nasale ; testé au colmatage à la dolomie (D). Emballé individuellement, boîte de 20.",
+    "source": "https://www.portwest.com/products/view/P153/No%20Colour",
+    "confidence": "high"
+  },
+  "P902": {
+    "name": "Filtre à gaz A2 à baïonnette (Pk6)",
+    "description": "Filtre à gaz de type A classe 2 contre les gaz et vapeurs organiques (point d'ébullition > 65 °C), à raccord baïonnette Portwest. Compatible masques P500, P420, P430, P421, P431 ; EN 14387.",
+    "source": "https://www.portwest.com/products/view/P902/BKR",
+    "confidence": "high"
+  },
+  "P946": {
+    "name": "Filtre à particules P3 à filetage universel (Pk6)",
+    "description": "Filtre à particules P3 R réutilisable (EN 143) à raccord fileté universel EN 148-1, pour masques complets compatibles. Paquet de 6.",
+    "source": "https://www.portwest.com/products/view/P946/BKR",
+    "confidence": "high"
+  },
+  "P978": {
+    "name": "Filtre combiné ABEK1P3 sous blister (Pk2)",
+    "description": "Deux filtres combinés ABEK1P3 (P970) contre gaz et vapeurs organiques, inorganiques, acides, ammoniac et particules, à filetage spécial pour le demi-masque P410. EN 14387 et EN 143 ; emballés individuellement.",
+    "source": "https://www.portwest.com/products/view/P978/GRR",
+    "confidence": "high"
+  },
+  "PS50": {
+    "name": "Casque de sécurité ventilé Arrow",
+    "description": "Casque de chantier léger en polypropylène haute densité avec 8 aérations et harnais PE 6 points, réglable par boucle de 53 à 65 cm. Fente latérale pour accessoires et bandeau anti-transpiration.",
+    "source": "https://portwest.com/products/view/PS50/YER",
+    "confidence": "high"
+  },
+  "PW211": {
+    "name": "T-shirt PW2 manches courtes",
+    "description": "T-shirt coupe ajustée à empiècements contrastés en coton majoritaire (55 % coton, 45 % polyester, 144 g), évacuant l'humidité, UPF 40+.",
+    "source": "https://www.portwest.com/products/view/PW211/BZR",
+    "confidence": "high"
+  },
+  "PW212": {
+    "name": "Polo haute visibilité PW2 manches courtes",
+    "description": "Polo haute visibilité coupe ajustée en tissu Cotton Comfort respirant (55 % coton, 45 % polyester, 144 g) avec empiècement poitrine contrasté, sans métal. Certifié EN ISO 20471 classe 2.",
+    "source": "https://portwest.com/products/view/PW212/YBR",
+    "confidence": "high"
+  },
+  "PW213": {
+    "name": "T-shirt haute visibilité PW2 manches courtes",
+    "description": "T-shirt haute visibilité en tissu Cotton Comfort respirant (55 % coton, 45 % polyester, 144 g) avec empiècement poitrine contrasté et col côtelé. Certifié EN ISO 20471, UPF 40+.",
+    "source": "https://www.portwest.com/products/view/PW213/OBR",
+    "confidence": "high"
+  },
+  "PW231": {
+    "name": "Bodywarmer polaire haute visibilité PW2",
+    "description": "Gilet sans manches haute visibilité en polaire anti-bouloches 250 g (100 % polyester) avec doublure dos en filet, empiècement poitrine contrasté et bandes réfléchissantes. Certifié EN ISO 20471.",
+    "source": "https://portwest.com/products/view/PW231",
+    "confidence": "high"
+  },
+  "PW240": {
+    "name": "Pantalon de service PW2",
+    "description": "Pantalon de travail en polycoton résistant, sans pièces métalliques apparentes, avec 6 poches, porte-marteau, coutures triples, taille élastiquée sur les côtés et ourlet ajustable. UPF 40+.",
+    "source": "https://www.portwest.com/products/view/PW240/BDR",
+    "confidence": "high",
+    "colours": {
+      "BDR": "Noir/Rouge"
+    }
+  },
+  "PW241": {
+    "name": "Pantalon de service haute visibilité PW2",
+    "description": "Pantalon haute visibilité en tissu Kingsmill avec finition anti-taches Texpel, garnitures sans métal, 5 poches, bandes réfléchissantes et longueur de jambe ajustable. Certifié EN ISO 20471.",
+    "source": "https://www.harveysupplies.co.uk/workwear/hivis-workwear/hivis-trousers/portwest-pw2-hi-vis-service-trouser-pw241/",
+    "confidence": "high"
+  },
+  "PW265": {
+    "name": "Veste de pluie haute visibilité PW2",
+    "description": "Veste de pluie haute visibilité en tissu imperméable 300D à coutures étanches, col doublé polaire et capuche amovible. Sans métal apparent, 3 poches dont poche téléphone dissimulée, bandes rétroréfléchissantes.",
+    "source": "https://www.bksafetywear.co.uk/portwest-pw265-pw2-hi-vis-rain-jacket.html",
+    "confidence": "high"
+  },
+  "PW270": {
+    "name": "Polaire PW2",
+    "description": "Polaire 100 % polyester anti-bouloche 210 g avec empiècement poitrine contrasté, 2 poches latérales zippées et passant radio. Sans pièce métallique apparente (amagnétique).",
+    "source": "https://portwest.com/products/view/PW270/BDR",
+    "confidence": "high",
+    "colours": {
+      "BDR": "Noir/Rouge"
+    }
+  },
+  "PW274": {
+    "name": "Polaire haute visibilité PW2",
+    "description": "Polaire haute visibilité légère anti-bouloche doublée mesh, avec empiècement poitrine contrasté, 5 poches et passant radio. Certifiée EN ISO 20471 classe 3.",
+    "source": "https://www.portwest.com/products/view/PW274/YBR",
+    "confidence": "high"
+  },
+  "PW277": {
+    "name": "Sweat-shirt haute-visibilité à col rond PW2",
+    "description": "Sweat-shirt haute visibilité en maille 65 % polyester / 35 % coton 300 g à envers gratté, col rond, poignets et bas côtelés. Certifié EN ISO 20471 après 50 lavages, tissu UPF 40+.",
+    "source": "https://documents.portwest.com/datasheet.php?style=PW277&lang=FR&itemcol=PW277OBR",
+    "confidence": "high"
+  },
+  "PW278": {
+    "name": "Veste softshell femme PW2 (2 couches)",
+    "description": "Softshell femme 2 couches (94 % polyester, 6 % élasthanne contrecollé micro-polaire, 280 g), coupe-vent, respirante et déperlante. Coudes préformés, poignets élastiqués et bas réglable par cordon.",
+    "source": "https://www.misupplies.co.uk/clothing-c12/womens-workwear-c636/coats-jackets-c640/womens-softshell-jackets-c745/portwest-pw278-pw2-womens-softshell-2l-p76669",
+    "confidence": "high"
+  },
+  "PW322": {
+    "name": "Pantalon harnais PW3",
+    "description": "Pantalon de travail stretch (Titanmill Plus Stretch 65 % polyester, 33 % coton, 2 % élasthanne, 245 g) conçu pour le port d'un harnais, avec 8 poches dont poches genouillères, passepoil réfléchissant et accès anneau D. Système de sangle aux chevilles pour les échelles.",
+    "source": "https://www.safetyone.ro/fr/vetements/p/pw322.html",
+    "confidence": "high"
+  },
+  "PW348": {
+    "name": "Short haute visibilité PW3",
+    "description": "Short haute visibilité en polycoton avec finition anti-taches Texpel, bande réfléchissante HiVisTex Pro, poche mètre et poche cuisse. Conforme EN ISO 20471 classe 1.",
+    "source": "https://www.portwest.com/products/view/PW348/OBR",
+    "confidence": "high"
+  },
+  "PW92": {
+    "name": "Ecran de rechange incolore",
+    "description": "Visière de rechange en polycarbonate incolore 200 x 400 mm pour serre-têtes PW90 et PW91 (compatible PW58 et PS58), protection contre les impacts à moyenne énergie. Certifiée EN 166 (1B).",
+    "source": "https://www.portwest.com/products/view/PW92/CLR",
+    "confidence": "high"
+  },
+  "R461": {
+    "name": "Parka Traffic RWS 3-en-1",
+    "description": "Parka haute visibilité 3-en-1 en polyester Oxford 300D enduit PU, imperméable et respirante à coutures étanchées, avec veste polaire intérieure amovible et bandes réfléchissantes en configuration RWS. Certifiée EN ISO 20471 classe 3.",
+    "source": "https://www.portwest.com/products/view/R461/ORR",
+    "confidence": "high"
+  },
+  "RT34": {
+    "name": "Blouson Hi-Vis respirant RIS",
+    "description": "Blouson haute visibilité imperméable et respirant (polyester Oxford 300D enduit PU), doublé et matelassé, capuche dissimulée dans le col. Certifié EN ISO 20471 classe 3, EN 343 classe 3:2, EN 342 et RIS-3279-TOM (orange).",
+    "source": "https://www.portwest.com/products/view/RT34/No%20Colour",
+    "confidence": "high"
+  },
+  "S068": {
+    "colours": {
+      "CBR": "Pied de poule noir/blanc"
+    },
+    "source": "https://www.portwest.com/products/view/S068/CBR"
+  },
+  "S462": {
+    "name": "Parka bicolore haute visibilité Classic",
+    "description": "Parka d'hiver haute visibilité bicolore en polyester Oxford 300D enduit PU, imperméable à coutures étanchées, doublure matelassée et capuche intégrée. Certifiée EN ISO 20471 classe 3, EN 343 classe 3:1 et EN 342.",
+    "source": "https://www.portwest.com/products/view/S462/YER",
+    "confidence": "high"
+  },
+  "S486": {
+    "name": "Pantalon de pluie Hi-Vis bicolore Traffic",
+    "description": "Surpantalon de pluie haute visibilité bicolore léger en polyester Oxford 300D enduit PU, taille élastiquée, accès latéraux et bas réglables par pressions. Certifié EN ISO 20471 classe 2 et EN 343 classe 3:1.",
+    "source": "https://www.safetecdirect.co.uk/products/s486yer/portwest-s486-yellownavy-two-tone-hi-vis-waterproof-trousers",
+    "confidence": "high",
+    "colours": {
+      "YER": "Jaune/Marine"
+    }
+  },
+  "S498": {
+    "name": "Blouson bomber Sealtex Ultra haute visibilité",
+    "description": "Blouson bomber haute visibilité en tissu Sealtex Ultra imperméable, coupe-vent et respirant, coutures soudées, col doublé polaire et capuche escamotable, doublure ouatinée. Certifié EN ISO 20471 classe 3 et EN 343 classe 3:1.",
+    "source": "https://workweargurus.com/products/portwest-s498-sealtex-ultra-bomber-jacket-yellow",
+    "confidence": "high"
+  },
+  "S508": {
+    "name": "Veste Corporate Shell homme",
+    "description": "Veste imperméable et respirante légère en microfibre polyester à membrane TPU, doublure mesh, coutures étanchées et capuche réglable par cordon. Conforme EN 343 classe 3:2.",
+    "source": "https://www.ifd-outillage.fr/veste-corporate-shell-homme-marine-s508-portwest",
+    "confidence": "high"
+  },
+  "S509": {
+    "name": "Veste Corporate Shell femme",
+    "description": "Veste imperméable et respirante légère coupe femme, rabat tempête, poches zippées, coutures étanchées, capuche et bas réglables par cordon. Version femme de la S508.",
+    "source": "https://www.portwest.com/products/view/S509/BKR",
+    "confidence": "high"
+  },
+  "S530": {
+    "name": "Veste respirante Arbroath doublée polaire",
+    "description": "Veste imperméable, coupe-vent et respirante en microfibre polyester finition peau de pêche enduite PU, doublure polaire 280 g, double rabat tempête et capuche escamotable. Gamme pluie Technik.",
+    "source": "https://www.portwest.com/products/view/S530/No%20Colour",
+    "confidence": "high"
+  },
+  "S591": {
+    "name": "Blouson bomber Extrême",
+    "description": "Blouson bomber haute visibilité gamme PWR en Oxford stretch 300D enduit PU, imperméable et respirant à coutures étanchées, doublure mesh et 8 poches. Certifié EN ISO 20471 classe 3, EN 343 classe 4:3 et RIS-3279-TOM.",
+    "source": "https://www.portwest.com/products/view/S591/YER",
+    "confidence": "high"
+  },
+  "S592": {
+    "name": "Capuche Extrême",
+    "description": "Capuche tempête intégrale haute visibilité avec protège-visage enveloppant, compatible avec toutes les vestes de la gamme PWR ; imperméable et respirante, coutures étanchées. Conforme EN 343 classe 3:3.",
+    "source": "https://www.portwest.com/products/view/S592/YER",
+    "confidence": "high"
+  },
+  "S710": {
+    "name": "Pantalon London",
+    "description": "Pantalon de service à pinces en polyviscose (65 % polyester, 35 % viscose, 260 g) avec deux poches latérales en biais et une poche arrière boutonnée.",
+    "source": "https://www.portwest.com/products/view/S710/BKR",
+    "confidence": "high"
+  },
+  "ST31": {
+    "name": "Blouse BizTex® SMS type PB[6] (Pk50)",
+    "description": "Blouse jetable en polypropylène SMS trois couches (spunbond/meltblown/spunbond) respirante, barrière aux liquides et particules, fermeture par pressions dissimulées. Conforme EN 13034 type PB[6] et EN 1149-5, vendue par carton de 50.",
+    "source": "https://portwest.com/products/view/ST31/WHR",
+    "confidence": "high"
+  },
+  "ST90": {
+    "name": "Combinaison BizTex® Pro type 5/6",
+    "description": "Combinaison de protection en maille polyester laminée d'un film polyéthylène, réutilisable (lavable jusqu'à 5 fois), capuche, poignets, chevilles et taille élastiqués, zip double sens sous rabat. Conforme EN ISO 13982 type 5B, EN 13034 type 6B et EN 14126.",
+    "source": "https://www.portwest.com/products/view/ST90/WHR",
+    "confidence": "high"
+  },
+  "TK20": {
+    "colours": {
+      "AQR": "Aqua"
+    },
+    "source": "https://documents.portwest.com/datasheet.php?style=TK20&lang=GB&itemcol=TK20AQR"
+  },
+  "TX11": {
+    "colours": {
+      "EKR": "Kaki Epic"
+    },
+    "source": "https://www.key-supplies.co.uk/ProductGrp/contrast-trouser-epic-khaki-ekr"
+  },
+  "TX20": {
+    "name": "Polo Portwest Texo Contrast",
+    "description": "Polo de travail 65 % polyester / 35 % coton 210 g avec empiècements contrastés, poche poitrine et patte boutonnée ; tissu UPF 50+ qui ne rétrécit pas et ne se décolore pas.",
+    "source": "https://portwest.com/products/view/TX20/BKR",
+    "confidence": "high"
+  },
+  "VA198": {
+    "name": "Gant Vending antistatique bout des doigts enduit PU",
+    "description": "Gant antistatique en nylon jauge 13 et fibre de carbone, bout des doigts enduit PU pour une grande dextérité, adapté aux environnements ESD. Emballé individuellement et compressé pour distributeurs automatiques.",
+    "source": "https://www.portwest.com/products/view/VA198/G7R",
+    "confidence": "high"
+  },
+  "VA622": {
+    "name": "Gant Vending anti-coupures paume enduite PU",
+    "description": "Gant anti-coupures (niveau C / coupure 5) en tricot jauge 13 sans couture, paume enduite PU pour l'adhérence et la dextérité ; EN 388. Emballé individuellement et compressé pour distributeurs automatiques.",
+    "source": "https://portwest.com/products/view/VA622/G7R",
+    "confidence": "high"
+  }
+}
