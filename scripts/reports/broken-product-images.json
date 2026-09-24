@@ -1,23 +1,42 @@
 {
 	"summary": {
-		"checkedUrls": 24822,
-		"brokenUrls": 124,
+		"checkedAt": "2026-09-23T08:55:33.274Z",
+		"checkedUrls": 12315,
+		"urls": {
+			"ok": 10186,
+			"dead": 2083,
+			"unknown": 46
+		},
+		"source": {
+			"portwest": "csv",
+			"mascot": "catalog",
+			"blaklader": "catalog"
+		},
 		"products": {
 			"portwest": 3444,
 			"mascot": 3025,
 			"blaklader": 2604
 		},
-		"productsStillWithoutImage": 80,
-		"recurringIssues": {
-			"portwestGroupsWithMismatchedSizeImages": 119,
-			"blakladerBaseRefsWithOnlyNonRasterPhotos": 0
-		}
+		"catalogProductsUpdated": {
+			"portwest": 8,
+			"mascot": 13,
+			"blaklader": 0
+		},
+		"imagesRecoveredByDerivedUrl": {
+			"portwest": 0,
+			"mascot": 13,
+			"blaklader": 0
+		},
+		"productsStillWithoutImage": 54
 	},
 	"brokenEntries": [
 		{
 			"supplier": "portwest",
+			"id": "portwest:A591:jaune",
 			"styleCode": "A591",
 			"colour": "Jaune",
+			"name": "Heat Resistant 350°C Glove",
+			"price": 7.3,
 			"sourceSkus": [
 				"A591YERL",
 				"A591YERM",
@@ -29,16 +48,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/A591YER.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:A633:gris-noir",
 			"styleCode": "A633",
 			"colour": "Gris/Noir",
+			"name": "Gant Coupure CS C18 Nitrile",
+			"price": 0,
 			"sourceSkus": [
 				"A633G8RL",
 				"A633G8RM",
@@ -53,16 +76,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/A633G8R.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:A676:noir",
 			"styleCode": "A676",
 			"colour": "Noir",
+			"name": "Gant anti-coupure nitrile CT F18",
+			"price": 0,
 			"sourceSkus": [
 				"A676K8RL",
 				"A676K8RM",
@@ -77,40 +104,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/A676K8R.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
-			"styleCode": "A732",
-			"colour": "Gris/Noir",
-			"sourceSkus": [
-				"A732G8RL",
-				"A732G8RM",
-				"A732G8RS",
-				"A732G8RXL",
-				"A732G8RXXL",
-				"A732G8RXXXL"
-			],
-			"candidateUrls": [
-				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/A732G8R.jpg"
-			],
-			"statuses": [
-				{
-					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/A732G8R.jpg",
-					"ok": false,
-					"status": 404
-				}
-			],
-			"usingPlaceholder": true
-		},
-		{
-			"supplier": "portwest",
+			"id": "portwest:A785:vert-noir",
 			"styleCode": "A785",
 			"colour": "Vert/Noir",
+			"name": "FR Arc Impact Cut D13 Glove",
+			"price": 11.75,
 			"sourceSkus": [
 				"A785E8RL",
 				"A785E8RM",
@@ -122,16 +129,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/A785E8R.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:A804:bleu-jaune",
 			"styleCode": "A804",
 			"colour": "Bleu/jaune",
+			"name": "Chem 300 Neoprene Latex Gloves",
+			"price": 1.2,
 			"sourceSkus": [
 				"A804B2RL",
 				"A804B2RM",
@@ -146,16 +157,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/A804B2R.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:A815:bleu",
 			"styleCode": "A815",
 			"colour": "Bleu",
+			"name": "Chem 330 Keto Resister Glove",
+			"price": 11.25,
 			"sourceSkus": [
 				"A815BLUL",
 				"A815BLUM",
@@ -170,39 +185,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/A815BLU.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
-			"styleCode": "AB662",
-			"colour": "Gris",
-			"sourceSkus": [
-				"AB662G7RL",
-				"AB662G7RM",
-				"AB662G7RS",
-				"AB662G7RXL",
-				"AB662G7RXXL"
-			],
-			"candidateUrls": [
-				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/AB662G7R.jpg"
-			],
-			"statuses": [
-				{
-					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/AB662G7R.jpg",
-					"ok": false,
-					"status": 404
-				}
-			],
-			"usingPlaceholder": true
-		},
-		{
-			"supplier": "portwest",
+			"id": "portwest:B300:",
 			"styleCode": "B300",
 			"colour": " ",
+			"name": " ",
+			"price": 9.95,
 			"sourceSkus": [
 				"B300DNRL"
 			],
@@ -212,66 +208,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/B300DNR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
-			"styleCode": "B311",
-			"colour": "Orange",
-			"sourceSkus": [
-				"B311ORR4XL",
-				"B311ORRL",
-				"B311ORRM",
-				"B311ORRS",
-				"B311ORRXL",
-				"B311ORRXXL",
-				"B311ORRXXXL"
-			],
-			"candidateUrls": [
-				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/B311ORR.jpg"
-			],
-			"statuses": [
-				{
-					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/B311ORR.jpg",
-					"ok": false,
-					"status": 404
-				}
-			],
-			"usingPlaceholder": true
-		},
-		{
-			"supplier": "portwest",
-			"styleCode": "B311",
-			"colour": "Jaune",
-			"sourceSkus": [
-				"B311YER4XL",
-				"B311YERL",
-				"B311YERM",
-				"B311YERS",
-				"B311YERXL",
-				"B311YERXXL",
-				"B311YERXXXL"
-			],
-			"candidateUrls": [
-				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/B311YER.jpg"
-			],
-			"statuses": [
-				{
-					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/B311YER.jpg",
-					"ok": false,
-					"status": 404
-				}
-			],
-			"usingPlaceholder": true
-		},
-		{
-			"supplier": "portwest",
+			"id": "portwest:C378:orange",
 			"styleCode": "C378",
 			"colour": "Orange",
+			"name": "Hi-Vis Executive Vest",
+			"price": 4.75,
 			"sourceSkus": [
 				"C378ORR4XL",
 				"C378ORR5XL",
@@ -290,16 +240,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/C378ORR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:C378:jaune",
 			"styleCode": "C378",
 			"colour": "Jaune",
+			"name": "Hi-Vis Executive Vest",
+			"price": 4.75,
 			"sourceSkus": [
 				"C378YER4XL",
 				"C378YER5XL",
@@ -318,16 +272,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/C378YER.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:C379:orange",
 			"styleCode": "C379",
 			"colour": "Orange",
+			"name": "Hi-Vis Women's Executive Vest",
+			"price": 3.95,
 			"sourceSkus": [
 				"C379ORRL",
 				"C379ORRM",
@@ -343,17 +301,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/C379ORR.jpg",
-					"ok": false,
-					"status": 0,
-					"error": "fetch failed"
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:C379:jaune",
 			"styleCode": "C379",
 			"colour": "Jaune",
+			"name": "Hi-Vis Women's Executive Vest",
+			"price": 3.95,
 			"sourceSkus": [
 				"C379YERL",
 				"C379YERM",
@@ -369,16 +330,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/C379YER.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:CD803:noir",
 			"styleCode": "CD803",
 			"colour": "Noir",
+			"name": "WX2 Eco Stretch Jogger",
+			"price": 17.75,
 			"sourceSkus": [
 				"CD803BKRL",
 				"CD803BKRM",
@@ -393,16 +358,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/CD803BKR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:CD816:orange-noir",
 			"styleCode": "CD816",
 			"colour": "Orange/Noir",
+			"name": "WX2 Hi-Vis T-Shirt S/S",
+			"price": 8.95,
 			"sourceSkus": [
 				"CD816OBR4XL",
 				"CD816OBR5XL",
@@ -420,16 +389,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/CD816OBR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:CD816:jaune-noir",
 			"styleCode": "CD816",
 			"colour": "Jaune/Noir",
+			"name": "WX2 Hi-Vis T-Shirt S/S",
+			"price": 8.95,
 			"sourceSkus": [
 				"CD816YBR4XL",
 				"CD816YBR5XL",
@@ -447,16 +420,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/CD816YBR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:CD817:orange-noir",
 			"styleCode": "CD817",
 			"colour": "Orange/Noir",
+			"name": "WX2 Hi-Vis T-Shirt L/S",
+			"price": 9.95,
 			"sourceSkus": [
 				"CD817OBR4XL",
 				"CD817OBR5XL",
@@ -474,16 +451,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/CD817OBR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:CD817:jaune-noir",
 			"styleCode": "CD817",
 			"colour": "Jaune/Noir",
+			"name": "WX2 Hi-Vis T-Shirt L/S",
+			"price": 9.95,
 			"sourceSkus": [
 				"CD817YBR4XL",
 				"CD817YBR5XL",
@@ -501,16 +482,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/CD817YBR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:CD818:orange-noir",
 			"styleCode": "CD818",
 			"colour": "Orange/Noir",
+			"name": "WX2 Hi-Vis Polo Shirt S/S",
+			"price": 9.5,
 			"sourceSkus": [
 				"CD818OBR4XL",
 				"CD818OBR5XL",
@@ -528,16 +513,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/CD818OBR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:CD818:jaune-noir",
 			"styleCode": "CD818",
 			"colour": "Jaune/Noir",
+			"name": "WX2 Hi-Vis Polo Shirt S/S",
+			"price": 9.5,
 			"sourceSkus": [
 				"CD818YBR4XL",
 				"CD818YBR5XL",
@@ -555,16 +544,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/CD818YBR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:CD820:orange-noir",
 			"styleCode": "CD820",
 			"colour": "Orange/Noir",
+			"name": "WX2 HV Winter Traffic Jacket",
+			"price": 30.95,
 			"sourceSkus": [
 				"CD820OBR4XL",
 				"CD820OBRL",
@@ -580,16 +573,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/CD820OBR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:CD820:jaune-noir",
 			"styleCode": "CD820",
 			"colour": "Jaune/Noir",
+			"name": "WX2 HV Winter Traffic Jacket",
+			"price": 30.95,
 			"sourceSkus": [
 				"CD820YBR4XL",
 				"CD820YBRL",
@@ -605,16 +602,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/CD820YBR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:DX426:noir",
 			"styleCode": "DX426",
 			"colour": "Noir",
+			"name": "Gilet porte-outils DX4",
+			"price": 40,
 			"sourceSkus": [
 				"DX426BKRL",
 				"DX426BKRM",
@@ -630,16 +631,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/DX426BKR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:DX4E10:noir",
 			"styleCode": "DX4E10",
 			"colour": "Noir",
+			"name": "DX4 Evolution Polo Shirt",
+			"price": 12.5,
 			"sourceSkus": [
 				"DX4E10BKRL",
 				"DX4E10BKRM",
@@ -654,16 +659,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/DX4E10BKR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:DX4E10:marine",
 			"styleCode": "DX4E10",
 			"colour": "Marine",
+			"name": "DX4 Evolution Polo Shirt",
+			"price": 12.5,
 			"sourceSkus": [
 				"DX4E10NVRL",
 				"DX4E10NVRM",
@@ -678,16 +687,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/DX4E10NVR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:DX4E11:noir",
 			"styleCode": "DX4E11",
 			"colour": "Noir",
+			"name": "DX4 Evolution T-Shirt",
+			"price": 0,
 			"sourceSkus": [
 				"DX4E11BKRL",
 				"DX4E11BKRM",
@@ -702,16 +715,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/DX4E11BKR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:DX4E11:marine",
 			"styleCode": "DX4E11",
 			"colour": "Marine",
+			"name": "DX4 Evolution T-Shirt",
+			"price": 0,
 			"sourceSkus": [
 				"DX4E11NVRL",
 				"DX4E11NVRM",
@@ -726,16 +743,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/DX4E11NVR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:DX4E49:noir",
 			"styleCode": "DX4E49",
 			"colour": "Noir",
+			"name": "DX4 Evolution Work Trouser",
+			"price": 0,
 			"sourceSkus": [
 				"DX4E49BKR28",
 				"DX4E49BKR30",
@@ -758,16 +779,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/DX4E49BKR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:DX4E49:nuits-de-foret",
 			"styleCode": "DX4E49",
 			"colour": "Nuits de forêt",
+			"name": "DX4 Evolution Work Trouser",
+			"price": 0,
 			"sourceSkus": [
 				"DX4E49FNR28",
 				"DX4E49FNR30",
@@ -790,16 +815,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/DX4E49FNR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:DX4E49:marine",
 			"styleCode": "DX4E49",
 			"colour": "Marine",
+			"name": "DX4 Evolution Work Trouser",
+			"price": 0,
 			"sourceSkus": [
 				"DX4E49NVR28",
 				"DX4E49NVR30",
@@ -822,41 +851,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/DX4E49NVR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
-			"styleCode": "F409",
-			"colour": "Noir",
-			"sourceSkus": [
-				"F409BKRL",
-				"F409BKRM",
-				"F409BKRS",
-				"F409BKRXL",
-				"F409BKRXXL",
-				"F409BKRXXXL"
-			],
-			"candidateUrls": [
-				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/F409BKR.jpg"
-			],
-			"statuses": [
-				{
-					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/F409BKR.jpg",
-					"ok": false,
-					"status": 0,
-					"error": "fetch failed"
-				}
-			],
-			"usingPlaceholder": true
-		},
-		{
-			"supplier": "portwest",
+			"id": "portwest:FC47:noir",
 			"styleCode": "FC47",
 			"colour": "Noir",
+			"name": "Weld boot S3L CI HI HRO FO WG",
+			"price": 0,
 			"sourceSkus": [
 				"FC47BKR38",
 				"FC47BKR39",
@@ -876,16 +884,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/FC47BKR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:FE16:noir",
 			"styleCode": "FE16",
 			"colour": "Noir",
+			"name": "Composite Suede Leather Sandal",
+			"price": 22,
 			"sourceSkus": [
 				"FE16BKR37",
 				"FE16BKR38",
@@ -906,16 +918,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/FE16BKR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:FR10:",
 			"styleCode": "FR10",
 			"colour": " ",
+			"name": " ",
+			"price": 29.95,
 			"sourceSkus": [
 				"FR10NARL"
 			],
@@ -925,16 +941,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/FR10NAR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:FT24:brun",
 			"styleCode": "FT24",
 			"colour": "Brun",
+			"name": "Comp Rigger S3L SC HRO LG SR",
+			"price": 0,
 			"sourceSkus": [
 				"FT24BRR38",
 				"FT24BRR39",
@@ -954,16 +974,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/FT24BRR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:FT40:noir",
 			"styleCode": "FT40",
 			"colour": "Noir",
+			"name": "Nubuck Lace Boot S3S HRO SR FO",
+			"price": 0,
 			"sourceSkus": [
 				"FT40BKR38",
 				"FT40BKR39",
@@ -983,16 +1007,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/FT40BKR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:FT40:ble",
 			"styleCode": "FT40",
 			"colour": "Blé",
+			"name": "Nubuck Lace Boot S3S HRO SR FO",
+			"price": 0,
 			"sourceSkus": [
 				"FT40WHE38",
 				"FT40WHE39",
@@ -1012,16 +1040,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/FT40WHE.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:FT45:noir",
 			"styleCode": "FT45",
 			"colour": "Noir",
+			"name": "WP Steel Boot S7 SC HRO LG SR",
+			"price": 0,
 			"sourceSkus": [
 				"FT45BKR37",
 				"FT45BKR38",
@@ -1041,16 +1073,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/FT45BKR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:FT45:brun",
 			"styleCode": "FT45",
 			"colour": "Brun",
+			"name": "WP Steel Boot S7 SC HRO LG SR",
+			"price": 0,
 			"sourceSkus": [
 				"FT45BRR37",
 				"FT45BRR38",
@@ -1070,16 +1106,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/FT45BRR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:HA36:noir",
 			"styleCode": "HA36",
 			"colour": "Noir",
+			"name": "Portwest Trucker Cap",
+			"price": 3.1,
 			"sourceSkus": [
 				"HA36BKR"
 			],
@@ -1089,16 +1129,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/HA36BKR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:LW75:orange",
 			"styleCode": "LW75",
 			"colour": "Orange",
+			"name": "Hi-Vis Women's T-Shirt S/S",
+			"price": 6.5,
 			"sourceSkus": [
 				"LW75ORRL",
 				"LW75ORRM",
@@ -1114,16 +1158,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/LW75ORR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:LW75:jaune",
 			"styleCode": "LW75",
 			"colour": "Jaune",
+			"name": "Hi-Vis Women's T-Shirt S/S",
+			"price": 6.5,
 			"sourceSkus": [
 				"LW75YERL",
 				"LW75YERM",
@@ -1139,16 +1187,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/LW75YER.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:PA79:noir",
 			"styleCode": "PA79",
 			"colour": "Noir",
+			"name": "Flexible LED Head Light",
+			"price": 4.95,
 			"sourceSkus": [
 				"PA79BKR"
 			],
@@ -1158,16 +1210,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PA79BKR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:PF90:incolore",
 			"styleCode": "PF90",
 			"colour": "Incolore",
+			"name": "Arc Visor   Class I",
+			"price": 32,
 			"sourceSkus": [
 				"PF90CLR"
 			],
@@ -1177,16 +1233,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PF90CLR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:PS74:noir",
 			"styleCode": "PS74",
 			"colour": "Noir",
+			"name": "Expertbase Pro sans ventilation",
+			"price": 3.8,
 			"sourceSkus": [
 				"PS74BKR"
 			],
@@ -1196,16 +1256,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PS74BKR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:PS74:orange",
 			"styleCode": "PS74",
 			"colour": "Orange",
+			"name": "Expertbase Pro sans ventilation",
+			"price": 3.8,
 			"sourceSkus": [
 				"PS74ORR"
 			],
@@ -1215,16 +1279,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PS74ORR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:PS74:bleu-royal",
 			"styleCode": "PS74",
 			"colour": "Bleu Royal",
+			"name": "Expertbase Pro sans ventilation",
+			"price": 3.8,
 			"sourceSkus": [
 				"PS74RBR"
 			],
@@ -1234,16 +1302,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PS74RBR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:PS74:blanc",
 			"styleCode": "PS74",
 			"colour": "Blanc",
+			"name": "Expertbase Pro sans ventilation",
+			"price": 3.8,
 			"sourceSkus": [
 				"PS74WHR"
 			],
@@ -1253,16 +1325,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PS74WHR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:PS74:jaune",
 			"styleCode": "PS74",
 			"colour": "Jaune",
+			"name": "Expertbase Pro sans ventilation",
+			"price": 3.8,
 			"sourceSkus": [
 				"PS74YER"
 			],
@@ -1272,16 +1348,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PS74YER.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:PS84:noir",
 			"styleCode": "PS84",
 			"colour": "Noir",
+			"name": "Expertbase Pro ventilé",
+			"price": 3.8,
 			"sourceSkus": [
 				"PS84BKR"
 			],
@@ -1291,16 +1371,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PS84BKR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:PS84:orange",
 			"styleCode": "PS84",
 			"colour": "Orange",
+			"name": "Expertbase Pro ventilé",
+			"price": 3.8,
 			"sourceSkus": [
 				"PS84ORR"
 			],
@@ -1310,16 +1394,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PS84ORR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:PS84:bleu-royal",
 			"styleCode": "PS84",
 			"colour": "Bleu Royal",
+			"name": "Expertbase Pro ventilé",
+			"price": 3.8,
 			"sourceSkus": [
 				"PS84RBR"
 			],
@@ -1329,16 +1417,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PS84RBR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:PS84:blanc",
 			"styleCode": "PS84",
 			"colour": "Blanc",
+			"name": "Expertbase Pro ventilé",
+			"price": 3.8,
 			"sourceSkus": [
 				"PS84WHR"
 			],
@@ -1348,16 +1440,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PS84WHR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:PS84:jaune",
 			"styleCode": "PS84",
 			"colour": "Jaune",
+			"name": "Expertbase Pro ventilé",
+			"price": 3.8,
 			"sourceSkus": [
 				"PS84YER"
 			],
@@ -1367,16 +1463,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/PS84YER.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:S232:navy-nv-s",
 			"styleCode": "S232",
 			"colour": "Navy NV S",
+			"name": "Pantalon Chino Slim Stretch extensible",
+			"price": 13.75,
 			"sourceSkus": [
 				"S232NVS28",
 				"S232NVS30",
@@ -1393,102 +1493,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/S232NVS.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
-			"styleCode": "S843",
-			"colour": "Rouge",
-			"sourceSkus": [
-				"S843RERL/XL",
-				"S843RERS/M",
-				"S843RERXXL"
-			],
-			"candidateUrls": [
-				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/S843RER.jpg"
-			],
-			"statuses": [
-				{
-					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/S843RER.jpg",
-					"ok": false,
-					"status": 0,
-					"error": "fetch failed"
-				}
-			],
-			"usingPlaceholder": true
-		},
-		{
-			"supplier": "portwest",
-			"styleCode": "T146",
-			"colour": "Noir",
-			"sourceSkus": [
-				"T146BKR28",
-				"T146BKR30",
-				"T146BKR32",
-				"T146BKR33",
-				"T146BKR34",
-				"T146BKR36",
-				"T146BKR38",
-				"T146BKR40",
-				"T146BKR41",
-				"T146BKR42",
-				"T146BKR44",
-				"T146BKR46",
-				"T146BKR47",
-				"T146BKR48"
-			],
-			"candidateUrls": [
-				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/T146BKR.jpg"
-			],
-			"statuses": [
-				{
-					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/T146BKR.jpg",
-					"ok": false,
-					"status": 404
-				}
-			],
-			"usingPlaceholder": true
-		},
-		{
-			"supplier": "portwest",
-			"styleCode": "T146",
-			"colour": "Marine",
-			"sourceSkus": [
-				"T146NVR28",
-				"T146NVR30",
-				"T146NVR32",
-				"T146NVR33",
-				"T146NVR34",
-				"T146NVR36",
-				"T146NVR38",
-				"T146NVR40",
-				"T146NVR41",
-				"T146NVR42",
-				"T146NVR44",
-				"T146NVR46",
-				"T146NVR47",
-				"T146NVR48"
-			],
-			"candidateUrls": [
-				"https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/T146NVR.jpg"
-			],
-			"statuses": [
-				{
-					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/T146NVR.jpg",
-					"ok": false,
-					"status": 404
-				}
-			],
-			"usingPlaceholder": true
-		},
-		{
-			"supplier": "portwest",
+			"id": "portwest:WEP20:rose",
 			"styleCode": "WEP20",
 			"colour": "Rose",
+			"name": "Ear Plug Dispenser (500)",
+			"price": 0,
 			"sourceSkus": [
 				"WEP20PIR"
 			],
@@ -1498,16 +1516,20 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/WEP20PIR.jpg",
-					"ok": false,
-					"status": 404
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
 		},
 		{
 			"supplier": "portwest",
+			"id": "portwest:WPW80:noir",
 			"styleCode": "WPW80",
 			"colour": "Noir",
+			"name": "Support Belt",
+			"price": 0,
 			"sourceSkus": [
 				"WPW80BKR4XL",
 				"WPW80BKRXXXL"
@@ -1518,413 +1540,9 @@
 			"statuses": [
 				{
 					"url": "https://d11ak7fd9ypfb7.cloudfront.net/styles1100px/WPW80BKR.jpg",
-					"ok": false,
-					"status": 404
-				}
-			],
-			"usingPlaceholder": true
-		},
-		{
-			"supplier": "mascot",
-			"styleCode": "21410-292-010",
-			"colour": "Marine foncé",
-			"sourceSkus": [
-				"5711074935369"
-			],
-			"candidateUrls": [
-				"https://pimage.mascot.fr/21410-292-010_P_1000pxweb.jpg"
-			],
-			"statuses": [
-				{
-					"url": "https://pimage.mascot.fr/21410-292-010_P_1000pxweb.jpg",
-					"ok": false,
-					"status": 404
-				}
-			],
-			"usingPlaceholder": true
-		},
-		{
-			"supplier": "mascot",
-			"styleCode": "21410-292-17",
-			"colour": "Hi-vis Jaune",
-			"sourceSkus": [
-				"5711074935376"
-			],
-			"candidateUrls": [
-				"https://pimage.mascot.fr/21410-292-17_P_1000pxweb.jpg"
-			],
-			"statuses": [
-				{
-					"url": "https://pimage.mascot.fr/21410-292-17_P_1000pxweb.jpg",
-					"ok": false,
-					"status": 404
-				}
-			],
-			"usingPlaceholder": true
-		},
-		{
-			"supplier": "mascot",
-			"styleCode": "21510-292-010",
-			"colour": "Marine foncé",
-			"sourceSkus": [
-				"5711074935345"
-			],
-			"candidateUrls": [
-				"https://pimage.mascot.fr/21510-292-010_P_1000pxweb.jpg"
-			],
-			"statuses": [
-				{
-					"url": "https://pimage.mascot.fr/21510-292-010_P_1000pxweb.jpg",
-					"ok": false,
-					"status": 404
-				}
-			],
-			"usingPlaceholder": true
-		},
-		{
-			"supplier": "mascot",
-			"styleCode": "21510-292-17",
-			"colour": "Hi-vis Jaune",
-			"sourceSkus": [
-				"5711074935352"
-			],
-			"candidateUrls": [
-				"https://pimage.mascot.fr/21510-292-17_P_1000pxweb.jpg"
-			],
-			"statuses": [
-				{
-					"url": "https://pimage.mascot.fr/21510-292-17_P_1000pxweb.jpg",
-					"ok": false,
-					"status": 404
-				}
-			],
-			"usingPlaceholder": true
-		},
-		{
-			"supplier": "mascot",
-			"styleCode": "24850-436-010",
-			"colour": "Marine foncé",
-			"sourceSkus": [
-				"5715411117678",
-				"5715411117685",
-				"5715411117692"
-			],
-			"candidateUrls": [
-				"https://pimage.mascot.fr/24850-436-010_P_1000pxweb.jpg"
-			],
-			"statuses": [
-				{
-					"url": "https://pimage.mascot.fr/24850-436-010_P_1000pxweb.jpg",
-					"ok": false,
-					"status": 404
-				}
-			],
-			"usingPlaceholder": true
-		},
-		{
-			"supplier": "mascot",
-			"styleCode": "24950-437-010",
-			"colour": "Marine foncé",
-			"sourceSkus": [
-				"5715411117708",
-				"5715411117715",
-				"5715411117722"
-			],
-			"candidateUrls": [
-				"https://pimage.mascot.fr/24950-437-010_P_1000pxweb.jpg"
-			],
-			"statuses": [
-				{
-					"url": "https://pimage.mascot.fr/24950-437-010_P_1000pxweb.jpg",
-					"ok": false,
-					"status": 404
-				}
-			],
-			"usingPlaceholder": true
-		},
-		{
-			"supplier": "mascot",
-			"styleCode": "22045-657-010",
-			"colour": "Marine foncé",
-			"sourceSkus": [
-				"5715411047159",
-				"5715411047166",
-				"5715411047173",
-				"5715411047180",
-				"5715411047197",
-				"5715411047203",
-				"5715411047210",
-				"5715411047234",
-				"5715411047241"
-			],
-			"candidateUrls": [
-				"https://pimage.mascot.fr/22045-657-010_P01_1000pxweb.jpg"
-			],
-			"statuses": [
-				{
-					"url": "https://pimage.mascot.fr/22045-657-010_P01_1000pxweb.jpg",
-					"ok": false,
-					"status": 0,
-					"error": "fetch failed"
-				}
-			],
-			"usingPlaceholder": true
-		},
-		{
-			"supplier": "mascot",
-			"styleCode": "24050-012-06",
-			"colour": "Blanc",
-			"sourceSkus": [
-				"5715411112505"
-			],
-			"candidateUrls": [
-				"https://pimage.mascot.fr/24050-012-06_P_1000pxweb.jpg"
-			],
-			"statuses": [
-				{
-					"url": "https://pimage.mascot.fr/24050-012-06_P_1000pxweb.jpg",
-					"ok": false,
-					"status": 404
-				}
-			],
-			"usingPlaceholder": true
-		},
-		{
-			"supplier": "mascot",
-			"styleCode": "24050-012-09",
-			"colour": "Noir",
-			"sourceSkus": [
-				"5715411112574"
-			],
-			"candidateUrls": [
-				"https://pimage.mascot.fr/24050-012-09_P_1000pxweb.jpg"
-			],
-			"statuses": [
-				{
-					"url": "https://pimage.mascot.fr/24050-012-09_P_1000pxweb.jpg",
-					"ok": false,
-					"status": 404
-				}
-			],
-			"usingPlaceholder": true
-		},
-		{
-			"supplier": "mascot",
-			"styleCode": "24050-012-34",
-			"colour": "Vert forêt",
-			"sourceSkus": [
-				"5715411112581"
-			],
-			"candidateUrls": [
-				"https://pimage.mascot.fr/24050-012-34_P_1000pxweb.jpg"
-			],
-			"statuses": [
-				{
-					"url": "https://pimage.mascot.fr/24050-012-34_P_1000pxweb.jpg",
-					"ok": false,
-					"status": 404
-				}
-			],
-			"usingPlaceholder": true
-		},
-		{
-			"supplier": "mascot",
-			"styleCode": "24050-012-89",
-			"colour": "Gris anthracite",
-			"sourceSkus": [
-				"5715411112598"
-			],
-			"candidateUrls": [
-				"https://pimage.mascot.fr/24050-012-89_P_1000pxweb.jpg"
-			],
-			"statuses": [
-				{
-					"url": "https://pimage.mascot.fr/24050-012-89_P_1000pxweb.jpg",
-					"ok": false,
-					"status": 404
-				}
-			],
-			"usingPlaceholder": true
-		},
-		{
-			"supplier": "mascot",
-			"styleCode": "24250-990-09",
-			"colour": "Noir",
-			"sourceSkus": [
-				"5715411112758"
-			],
-			"candidateUrls": [
-				"https://pimage.mascot.fr/24250-990-09_P_1000pxweb.jpg"
-			],
-			"statuses": [
-				{
-					"url": "https://pimage.mascot.fr/24250-990-09_P_1000pxweb.jpg",
-					"ok": false,
-					"status": 404
-				}
-			],
-			"usingPlaceholder": true
-		},
-		{
-			"supplier": "mascot",
-			"styleCode": "25149-230-0689",
-			"colour": "Blanc/Gris anthracite",
-			"sourceSkus": [
-				"5715411159838",
-				"5715411159845",
-				"5715411159852",
-				"5715411159869",
-				"5715411159876",
-				"5715411159883",
-				"5715411159890",
-				"5715411159906",
-				"5715411159913",
-				"5715411159920",
-				"5715411159937",
-				"5715411159944",
-				"5715411159951",
-				"5715411159968",
-				"5715411159975",
-				"5715411159982",
-				"5715411159999"
-			],
-			"candidateUrls": [
-				"https://pimage.mascot.fr/25149-230-0689_P01_1000pxweb.jpg"
-			],
-			"statuses": [
-				{
-					"url": "https://pimage.mascot.fr/25149-230-0689_P01_1000pxweb.jpg",
-					"ok": false,
-					"status": 0,
-					"error": "This operation was aborted"
-				}
-			],
-			"usingPlaceholder": true
-		},
-		{
-			"supplier": "mascot",
-			"styleCode": "26250-990-09",
-			"colour": "Noir",
-			"sourceSkus": [
-				"5715411215930"
-			],
-			"candidateUrls": [
-				"https://pimage.mascot.fr/26250-990-09_P_1000pxweb.jpg"
-			],
-			"statuses": [
-				{
-					"url": "https://pimage.mascot.fr/26250-990-09_P_1000pxweb.jpg",
-					"ok": false,
-					"status": 404
-				}
-			],
-			"usingPlaceholder": true
-		},
-		{
-			"supplier": "mascot",
-			"styleCode": "FT070-980-0911",
-			"colour": "Noir/Bleu roi",
-			"sourceSkus": [
-				"5711074961153",
-				"5711074961160",
-				"5711074961177"
-			],
-			"candidateUrls": [
-				"https://pimage.mascot.fr/FT070-980-0911_P_1000pxweb.jpg"
-			],
-			"statuses": [
-				{
-					"url": "https://pimage.mascot.fr/FT070-980-0911_P_1000pxweb.jpg",
-					"ok": false,
-					"status": 404
-				}
-			],
-			"usingPlaceholder": true
-		},
-		{
-			"supplier": "mascot",
-			"styleCode": "F1601-909-09",
-			"colour": "Noir",
-			"sourceSkus": [
-				"5715411116114",
-				"5715411116121",
-				"5715411116138",
-				"5715411116145",
-				"5715411116152",
-				"5715411116169",
-				"5715411116176",
-				"5715411116183",
-				"5715411116190",
-				"5715411116206",
-				"5715411116213",
-				"5715411116220",
-				"5715411116237",
-				"5715411116244",
-				"5715411116251"
-			],
-			"candidateUrls": [
-				"https://pimage.mascot.fr/F1601-909-09_PS_1000pxweb.jpg"
-			],
-			"statuses": [
-				{
-					"url": "https://pimage.mascot.fr/F1601-909-09_PS_1000pxweb.jpg",
-					"ok": false,
-					"status": 0,
-					"error": "This operation was aborted"
-				}
-			],
-			"usingPlaceholder": true
-		},
-		{
-			"supplier": "mascot",
-			"styleCode": "21904-984-71",
-			"colour": "Bleu ciel",
-			"sourceSkus": [
-				"5711074917501",
-				"5711074917518",
-				"5711074917525",
-				"5711074917532",
-				"5711074917549"
-			],
-			"candidateUrls": [
-				"https://pimage.mascot.fr/21904-984-71_P01_1000pxweb.jpg"
-			],
-			"statuses": [
-				{
-					"url": "https://pimage.mascot.fr/21904-984-71_P01_1000pxweb.jpg",
-					"ok": false,
-					"status": 0,
-					"error": "This operation was aborted"
-				}
-			],
-			"usingPlaceholder": true
-		},
-		{
-			"supplier": "mascot",
-			"styleCode": "22804-744-7106",
-			"colour": "À carreaux bleu ciel et blancs",
-			"sourceSkus": [
-				"5711074976881",
-				"5711074976898",
-				"5711074976904",
-				"5711074976911",
-				"5711074976928",
-				"5711074976935",
-				"5711074976942",
-				"5711074976959",
-				"5711074976966",
-				"5711074976973",
-				"5711074976980"
-			],
-			"candidateUrls": [
-				"https://pimage.mascot.fr/22804-744-7106_P01_1000pxweb.jpg"
-			],
-			"statuses": [
-				{
-					"url": "https://pimage.mascot.fr/22804-744-7106_P01_1000pxweb.jpg",
-					"ok": false,
-					"status": 0,
-					"error": "fetch failed"
+					"origin": "export",
+					"status": 404,
+					"verdict": "dead"
 				}
 			],
 			"usingPlaceholder": true
