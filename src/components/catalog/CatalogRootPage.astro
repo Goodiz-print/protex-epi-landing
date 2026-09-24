@@ -13,10 +13,14 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 
 const homeHref = lang === 'en' ? '/en' : '/';
-const tiles = categoryTaxonomy.map((category) => ({
-	href: getCategoryUrl(lang, category.slug),
-	label: category.labels[lang],
-}));
+// « À trier » est une catégorie technique (produits pas encore classés) : pas de tuile,
+// comme dans Nav, CatalogSidebar et Footer.
+const tiles = categoryTaxonomy
+	.filter((category) => category.slug !== 'a-trier')
+	.map((category) => ({
+		href: getCategoryUrl(lang, category.slug),
+		label: category.labels[lang],
+	}));
 ---
 
 <Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: homeHref }, { label: t('catalog.breadcrumb.products') }]} />
