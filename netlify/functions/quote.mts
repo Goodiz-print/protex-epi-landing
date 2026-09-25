@@ -15,7 +15,7 @@ const MAX = { product: 300, name: 200, company: 200, email: 254, phone: 50, quan
    le formulaire muet pour la journée. D'où trois limites complémentaires :
    un délai de remplissage minimum, un quota par IP, et un plafond global
    nettement sous celui de Resend. */
-const MIN_FILL_MS = 3_000 // Personne ne remplit le formulaire en moins de 3 s.
+const MIN_FILL_MS = 1_500 // Un robot naïf poste en moins de 500 ms ; un humain avec autofill peut passer sous 3 s.
 const PER_IP_PER_HOUR = 5
 const PER_IP_PER_DAY = 10
 const GLOBAL_PER_DAY = 60 // Marge sous les 100 e-mails/jour du plan gratuit Resend.
@@ -91,7 +91,10 @@ export default async (req: Request): Promise<Response> => {
 
   /* Piège à bots et remplissage instantané : on fait comme si l'envoi avait
      réussi, pour ne rien apprendre au robot sur ce qui l'a bloqué. */
-  if (field('bot-field')) return redirect(thanksPath)
+  if (field('bot-field')) {
+    console.warn('Soumission rejetée : piège à bots rempli')
+    return redirect(thanksPath)
+  }
   if (filledTooFast(field('started-at'), Date.now())) {
     console.warn('Soumission rejetée : formulaire rempli en moins de', MIN_FILL_MS, 'ms')
     return redirect(thanksPath)
@@ -206,6 +209,15 @@ export default async (req: Request): Promise<Response> => {
     console.error('Échec de l’envoi Resend :', res.status, await res.text())
     return redirect(errorPath)
   }
+
+  // L'identifiant permet de retrouver le message dans Resend → Emails : présent
+  // ici mais absent de la boîte = problème de délivrabilité côté Resend/Google,
+  // pas côté site.
+  let id = '(réponse Resend illisible)'
+  try {
+    id = String((await res.json())?.id ?? id)
+  } catch {}
+  console.log('Demande de devis transmise à Resend, id', id)
 
   return redirect(thanksPath)
 }
