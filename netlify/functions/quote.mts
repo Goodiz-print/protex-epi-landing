@@ -2,10 +2,73 @@
    Resend (même mécanique que la landing promotional-sourcing). Le formulaire
    poste en HTML natif (pas de JS requis) ; on répond par des redirections 303. */
 
+import { getStore } from '@netlify/blobs'
+
 const TO = 'contact@protex-epi.com'
 const FROM = 'Protex EPI <noreply@protex-epi.com>'
 
 const MAX = { product: 300, name: 200, company: 200, email: 254, phone: 50, quantity: 20, message: 5000 }
+
+/* Garde-fous anti-abus. Le piège à bots ci-dessous n'arrête que les robots
+   naïfs, et le plan gratuit Resend est plafonné à 100 e-mails par jour : un
+   robot qui poste en boucle épuiserait le quota en quelques minutes et rendrait
+   le formulaire muet pour la journée. D'où trois limites complémentaires :
+   un délai de remplissage minimum, un quota par IP, et un plafond global
+   nettement sous celui de Resend. */
+const MIN_FILL_MS = 3_000 // Personne ne remplit le formulaire en moins de 3 s.
+const PER_IP_PER_HOUR = 5
+const PER_IP_PER_DAY = 10
+const GLOBAL_PER_DAY = 60 // Marge sous les 100 e-mails/jour du plan gratuit Resend.
+
+const HOUR_MS = 3_600_000
+const DAY_MS = 24 * HOUR_MS
+
+/* Netlify pose l'IP réelle du client dans x-nf-client-connection-ip ; le repli
+   sur x-forwarded-for sert au développement local (`netlify dev`). */
+const clientIp = (req: Request) =>
+  req.headers.get('x-nf-client-connection-ip') ??
+  req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ??
+  ''
+
+/* Le formulaire est servi en statique : impossible de signer un jeton au
+   rendu, le champ `started-at` est donc rempli par le script de la page. Un
+   robot qui ne l'envoie pas (comme un visiteur sans JavaScript) passe cette
+   vérification — ce sont les quotas ci-dessous qui protègent le quota Resend. */
+const filledTooFast = (startedAt: string, now: number) => {
+  const started = Number(startedAt)
+  return Number.isFinite(started) && started > 0 && now - started < MIN_FILL_MS
+}
+
+type Verdict = 'ok' | 'ip-quota' | 'daily-quota'
+
+/* Compteurs persistés dans Netlify Blobs (inclus dans le plan gratuit, aucune
+   variable d'environnement à poser) : les horodatages des envois par IP sur
+   24 h glissantes, et un compteur par journée UTC. */
+const consumeQuota = async (ip: string, now: number): Promise<Verdict> => {
+  const store = getStore({ name: 'quote-throttle', consistency: 'strong' })
+  const dayKey = `day:${new Date(now).toISOString().slice(0, 10)}`
+  const ipKey = ip ? `ip:${ip}` : ''
+
+  const [rawHits, rawCount] = await Promise.all([
+    ipKey ? store.get(ipKey, { type: 'json' }) : null,
+    store.get(dayKey, { type: 'json' }),
+  ])
+
+  const hits: number[] = (Array.isArray(rawHits) ? rawHits : []).filter(
+    (value: unknown): value is number => typeof value === 'number' && now - value < DAY_MS,
+  )
+  const dayCount: number = typeof rawCount === 'number' ? rawCount : 0
+
+  if (ipKey && hits.length >= PER_IP_PER_DAY) return 'ip-quota'
+  if (ipKey && hits.filter((at) => now - at < HOUR_MS).length >= PER_IP_PER_HOUR) return 'ip-quota'
+  if (dayCount >= GLOBAL_PER_DAY) return 'daily-quota'
+
+  await Promise.all([
+    ipKey ? store.setJSON(ipKey, [...hits, now]) : null,
+    store.setJSON(dayKey, dayCount + 1),
+  ])
+  return 'ok'
+}
 
 const escapeHtml = (value: string) =>
   value.replace(
@@ -26,8 +89,13 @@ export default async (req: Request): Promise<Response> => {
   const thanksPath = locale === 'en' ? '/en/thank-you/' : '/merci/'
   const errorPath = locale === 'en' ? '/en/quote/?error=1' : '/devis/?error=1'
 
-  // Piège à bots : on fait comme si l'envoi avait réussi.
+  /* Piège à bots et remplissage instantané : on fait comme si l'envoi avait
+     réussi, pour ne rien apprendre au robot sur ce qui l'a bloqué. */
   if (field('bot-field')) return redirect(thanksPath)
+  if (filledTooFast(field('started-at'), Date.now())) {
+    console.warn('Soumission rejetée : formulaire rempli en moins de', MIN_FILL_MS, 'ms')
+    return redirect(thanksPath)
+  }
 
   const product = field('product')
   const name = field('name')
@@ -48,6 +116,29 @@ export default async (req: Request): Promise<Response> => {
     quantity.length <= MAX.quantity &&
     message.length <= MAX.message
   if (!valid) return redirect(errorPath)
+
+  /* Quotas, consommés seulement par une soumission valide. Contrairement au
+     piège à bots, on renvoie ici la page d'erreur : un visiteur légitime qui
+     tombe sur la limite doit savoir que sa demande n'est pas partie et peut
+     nous appeler, alors que le robot, lui, ignore la réponse. */
+  let verdict: Verdict = 'ok'
+  try {
+    verdict = await consumeQuota(clientIp(req), Date.now())
+  } catch (error) {
+    // Blobs indisponible (incident, `netlify dev` sans store) : on laisse
+    // passer plutôt que de perdre une vraie demande, mais on le trace.
+    console.error('Garde-fou anti-abus inopérant (Netlify Blobs) :', error)
+  }
+  if (verdict === 'ip-quota') {
+    console.warn('Soumission rejetée : quota par IP atteint')
+    return redirect(errorPath)
+  }
+  if (verdict === 'daily-quota') {
+    console.error(
+      `Soumission rejetée : plafond de ${GLOBAL_PER_DAY} envois/jour atteint. Si ce n'est pas une attaque, relever GLOBAL_PER_DAY (plan Resend gratuit : 100 e-mails/jour).`,
+    )
+    return redirect(errorPath)
+  }
 
   // Sans clé Resend, l'appel API échouerait en 401 : on le dit explicitement
   // dans les logs Netlify (Logs → Functions → quote) pour diagnostiquer en un

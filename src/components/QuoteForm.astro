@@ -11,9 +11,10 @@ const t = useTranslations(lang);
 
 // Soumission HTML native vers la fonction Netlify (netlify/functions/quote.mts),
 // qui envoie l'e-mail via Resend puis redirige vers /merci — aucun JavaScript
-// requis pour envoyer. Le seul script ci-dessous pré-remplit le champ produit
-// depuis ?product=&sku= (liens « Demander un devis » des fiches produit) et
-// affiche la bannière d'erreur au retour de ?error=1.
+// requis pour envoyer. Le script ci-dessous pré-remplit le champ produit depuis
+// ?product=&sku= (liens « Demander un devis » des fiches produit), affiche la
+// bannière d'erreur au retour de ?error=1 et horodate l'ouverture de la page
+// pour le garde-fou anti-bots.
 ---
 
 <form method="POST" action="/.netlify/functions/quote" class="grid gap-4" data-quote-form>
@@ -23,6 +24,11 @@ const t = useTranslations(lang);
 	<p class="hidden" aria-hidden="true">
 		<label>{t('quote.form.honeypot')} <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
 	</p>
+
+	{/* Horodatage d'ouverture de la page, posé par le script ci-dessous : la
+	    fonction rejette un envoi trop rapide pour être humain. Reste vide sans
+	    JavaScript, auquel cas la vérification est simplement ignorée. */}
+	<input type="hidden" name="started-at" value="" data-started-at />
 
 	<div>
 		<label for="quote-product" class="mb-1 block text-sm font-medium text-gray-900">
@@ -143,6 +149,8 @@ const t = useTranslations(lang);
 <script>
 	document.querySelectorAll<HTMLFormElement>('[data-quote-form]').forEach((form) => {
 		const params = new URLSearchParams(window.location.search);
+		const startedAt = form.querySelector<HTMLInputElement>('[data-started-at]');
+		if (startedAt) startedAt.value = String(Date.now());
 		const productField = form.querySelector<HTMLInputElement>('#quote-product');
 		const productName = params.get('product');
 		const productSku = params.get('sku');
