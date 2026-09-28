@@ -37,10 +37,7 @@ export interface Selection {
 
 /** Minuscules + suppression des diacritiques, pour matcher « Visibilité » avec `visibilite`. */
 export function normalizeName(value: string): string {
-	return value
-		.toLowerCase()
-		.normalize('NFD')
-		.replace(/[̀-ͯ]/g, '');
+	return value.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
 }
 
 /** Matching pur (partagé avec le script client des puces de sous-catégories). */

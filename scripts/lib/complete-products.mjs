@@ -91,7 +91,9 @@ function normaliseText(product) {
 		.trim()
 		.replace(/ (?:Shor|Sho|Sh)$/, ' Short');
 	colour = COLOUR_FIXES[colour] ?? colour;
-	const description = decodeEntities(product.description).replace(/[ \t]{2,}/g, ' ').trim();
+	const description = decodeEntities(product.description)
+		.replace(/[ \t]{2,}/g, ' ')
+		.trim();
 	const changed = name !== product.name || colour !== product.colour || description !== product.description;
 	Object.assign(product, { name, colour, description });
 	return changed;

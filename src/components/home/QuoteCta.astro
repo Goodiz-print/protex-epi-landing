@@ -33,21 +33,21 @@ const steps = [
 	<div class="mx-auto max-w-6xl px-4 py-14 text-center">
 		<h2 class="font-heading text-2xl font-bold uppercase text-gray-900">{t('home.quote.title')}</h2>
 		<ul class="mx-auto mt-10 grid max-w-4xl gap-8 sm:grid-cols-3">
-			{
-				steps.map((step) => (
-					<li class="flex flex-col items-center gap-4">
-						<span class="flex h-14 w-14 items-center justify-center rounded-full bg-brand text-white">
-							<svg class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-								<path fill-rule="evenodd" d={step.icon} clip-rule="evenodd" />
-							</svg>
-						</span>
-						<p class="font-heading text-sm font-bold uppercase leading-snug text-gray-900">{step.label}</p>
-					</li>
-				))
-			}
+			{steps.map((step) => (
+				<li class="flex flex-col items-center gap-4">
+					<span class="flex h-14 w-14 items-center justify-center rounded-full bg-brand text-white">
+						<svg class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+							<path fill-rule="evenodd" d={step.icon} clip-rule="evenodd" />
+						</svg>
+					</span>
+					<p class="font-heading text-sm font-bold uppercase leading-snug text-gray-900">{step.label}</p>
+				</li>
+			))}
 		</ul>
 		<div class="mt-10">
-			<Button href={getQuoteUrl(lang)} variant="primary">{t('home.quote.send')}</Button>
+			<Button href={getQuoteUrl(lang)} variant="primary">
+				{t('home.quote.send')}
+			</Button>
 		</div>
 	</div>
 </section>

@@ -173,11 +173,19 @@ export interface CategoryStaticPath {
 	props: { category: Category };
 }
 
-export function getCategoryStaticPaths(): CategoryStaticPath[] {
-	return categoryTaxonomy.map((category) => ({
-		params: { category: category.slug },
-		props: { category },
-	}));
+/**
+ * `a-trier` n'a de page (noindex) que tant qu'il reste des produits non classés : une
+ * page vide publiée pour rien sinon. Les autres univers ont toujours leur page.
+ */
+export async function getCategoryStaticPaths(): Promise<CategoryStaticPath[]> {
+	const products = await getAllProducts();
+	const hasUnsorted = products.some((entry) => entry.data.category === 'a-trier');
+	return categoryTaxonomy
+		.filter((category) => category.slug !== 'a-trier' || hasUnsorted)
+		.map((category) => ({
+			params: { category: category.slug },
+			props: { category },
+		}));
 }
 
 export interface SubcategoryStaticPath {

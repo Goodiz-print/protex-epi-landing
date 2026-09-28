@@ -45,7 +45,9 @@ const cardClass =
 	<div class="info-tiles__inner relative mx-auto max-w-6xl">
 		<p class="info-tiles__cta">
 			<span class="info-tiles__cta-text">
-				{t('home.info.personaliseLine1')}<br />{t('home.info.personaliseLine2')}
+				{t('home.info.personaliseLine1')}
+				<br />
+				{t('home.info.personaliseLine2')}
 			</span>
 			<span class="info-tiles__cta-arrow" aria-hidden="true">
 				<svg viewBox="0 0 50 45" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -54,42 +56,42 @@ const cardClass =
 						d="M18 2 C20 12, 16 20, 22 28 C26 34, 34 32, 40 28"
 						stroke="#0071ce"
 						stroke-width="3.5"
-						stroke-linecap="round"></path>
+						stroke-linecap="round"
+					></path>
 					<path
 						class="info-tiles__arrow-head"
 						d="M34 22 L42 28 L35 35"
 						stroke="#0071ce"
 						stroke-width="3.5"
 						stroke-linecap="round"
-						stroke-linejoin="round"></path>
+						stroke-linejoin="round"
+					></path>
 				</svg>
 			</span>
 		</p>
 		<ul class="grid gap-3.5 sm:grid-cols-3">
-			{
-				tiles.map((tile) => {
-					const photo = (
-						<span
-							class="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
-							style={`background-image: url(${tile.image.src})`}
-							aria-hidden="true"
-						/>
-					);
-					return (
-						<li>
-							{tile.href ? (
-								<a href={tile.href} aria-label={tile.label} class={cardClass}>
-									{photo}
-								</a>
-							) : (
-								<div class={`${cardClass} cursor-default`} title={tile.label} role="img" aria-label={tile.label}>
-									{photo}
-								</div>
-							)}
-						</li>
-					);
-				})
-			}
+			{tiles.map((tile) => {
+				const photo = (
+					<span
+						class="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-105"
+						style={`background-image: url(${tile.image.src})`}
+						aria-hidden="true"
+					/>
+				);
+				return (
+					<li>
+						{tile.href ? (
+							<a href={tile.href} aria-label={tile.label} class={cardClass}>
+								{photo}
+							</a>
+						) : (
+							<div class={`${cardClass} cursor-default`} title={tile.label} role="img" aria-label={tile.label}>
+								{photo}
+							</div>
+						)}
+					</li>
+				);
+			})}
 		</ul>
 	</div>
 </section>

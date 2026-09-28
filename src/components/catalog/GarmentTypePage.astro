@@ -27,11 +27,7 @@ const homeHref = lang === 'en' ? '/en' : '/';
 	]}
 />
 <h1 class="mb-6 font-heading text-3xl font-bold uppercase text-gray-900">{garmentType.labels[lang]}</h1>
-<ProductGrid
-	lang={lang}
-	products={products}
-	payloadUrl={`${getGarmentTypeUrl(lang, garmentType.slug)}/listing.json`}
->
+<ProductGrid lang={lang} products={products} payloadUrl={`${getGarmentTypeUrl(lang, garmentType.slug)}/listing.json`}>
 	<CatalogSidebar
 		slot="sidebar"
 		lang={lang}

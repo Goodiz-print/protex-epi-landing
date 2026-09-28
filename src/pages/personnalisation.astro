@@ -7,6 +7,9 @@ import { ui } from '~/i18n/ui';
 const lang = 'fr' as const;
 ---
 
-<Layout title={`${customisationCopy.metaTitle[lang]} — ${ui.fr['site.title']}`} description={customisationCopy.metaDescription[lang]}>
+<Layout
+	title={`${customisationCopy.metaTitle[lang]} — ${ui.fr['site.title']}`}
+	description={customisationCopy.metaDescription[lang]}
+>
 	<PersonnalisationPage lang={lang} />
 </Layout>

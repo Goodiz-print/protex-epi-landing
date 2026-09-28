@@ -62,9 +62,7 @@ function firstUrl(value) {
 // https://pimage.mascot.fr/18001-249-010_P01_1000pxweb.jpg. Used as a fallback when
 // the export's image column is empty.
 function constructedImageUrl(produitQualiteColoris) {
-	return produitQualiteColoris
-		? `https://pimage.mascot.fr/${produitQualiteColoris}_P01_1000pxweb.jpg`
-		: '';
+	return produitQualiteColoris ? `https://pimage.mascot.fr/${produitQualiteColoris}_P01_1000pxweb.jpg` : '';
 }
 
 function csvEscape(value) {

@@ -27,7 +27,8 @@ for (const supplier of SUPPLIERS) {
 	const overrides = readProductOverrides(resolve(ROOT, `src/data/product-overrides.${supplier}.json`));
 	const catalogPath = resolve(ROOT, `src/data/catalog/products.${supplier}.json`);
 	const { products, report } = completeProducts(supplier, JSON.parse(readFileSync(catalogPath, 'utf-8')), overrides);
-	if (report.named + report.renamed + report.coloured + report.normalised + report.merged > 0) writeCatalog(catalogPath, products);
+	if (report.named + report.renamed + report.coloured + report.normalised + report.merged > 0)
+		writeCatalog(catalogPath, products);
 
 	const stillBlank = products.filter((product) => !product.name.trim()).length;
 	console.log(

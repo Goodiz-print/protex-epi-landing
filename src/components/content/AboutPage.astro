@@ -70,8 +70,7 @@ const checkIcon =
 		<div
 			class="absolute inset-0 -z-10 bg-linear-to-r from-gray-950/90 via-gray-950/40 via-60% to-gray-950/20"
 			aria-hidden="true"
-		>
-		</div>
+		></div>
 		<div class={`${container} relative w-full pb-14 pt-20`}>
 			<p class="mb-3 font-heading text-xs font-bold uppercase tracking-[0.16em]">{copy.heroKicker[lang]}</p>
 			<h1 class="max-w-3xl font-heading text-3xl font-bold uppercase leading-tight sm:text-4xl lg:text-5xl">
@@ -79,11 +78,9 @@ const checkIcon =
 			</h1>
 			<p class="mt-4 max-w-2xl text-base text-gray-100 sm:text-lg">{copy.heroLead[lang]}</p>
 			<ul class="mt-6 flex flex-wrap gap-2">
-				{
-					aboutPills[lang].map((pill) => (
-						<li class="rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs sm:text-sm">{pill}</li>
-					))
-				}
+				{aboutPills[lang].map((pill) => (
+					<li class="rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs sm:text-sm">{pill}</li>
+				))}
 			</ul>
 		</div>
 	</section>
@@ -95,17 +92,18 @@ const checkIcon =
 			<h2 class={h2Class}>{copy.publicsTitle[lang]}</h2>
 			<p class={`${leadClass} mt-3`}>
 				{copy.publicsLead[lang]}{' '}
-				<a href={collectivitesHref} class={linkClass}>{copy.publicsLink[lang]}</a>.
+				<a href={collectivitesHref} class={linkClass}>
+					{copy.publicsLink[lang]}
+				</a>
+				.
 			</p>
 			<ul class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-				{
-					aboutPublics[lang].map((item) => (
-						<li class="rounded-lg border border-gray-200 bg-white p-5">
-							<h3 class={cardTitleClass}>{item.title}</h3>
-							<p class={cardBodyClass}>{item.body}</p>
-						</li>
-					))
-				}
+				{aboutPublics[lang].map((item) => (
+					<li class="rounded-lg border border-gray-200 bg-white p-5">
+						<h3 class={cardTitleClass}>{item.title}</h3>
+						<p class={cardBodyClass}>{item.body}</p>
+					</li>
+				))}
 			</ul>
 		</div>
 	</section>
@@ -135,26 +133,24 @@ const checkIcon =
 			<p class={tagClass}>{copy.catalogTag[lang]}</p>
 			<h2 class={h2Class}>{copy.catalogTitle[lang]}</h2>
 			<ul class="mt-6 grid gap-4 sm:grid-cols-3">
-				{
-					aboutCatalog[lang].map((item, index) => (
-						<li>
-							<article class={cardClass}>
-								{/* La photo de dos (portrait) est cadrée sur le haut du dos, où est le logo. */}
-								<Image
-									src={catalogImages[index]}
-									alt={item.alt}
-									width={800}
-									height={600}
-									class:list={['h-48 w-full object-cover', index === 0 ? 'object-[center_28%]' : 'object-center']}
-								/>
-								<div class="p-4">
-									<h3 class={cardTitleClass}>{item.title}</h3>
-									<p class={cardBodyClass}>{item.body}</p>
-								</div>
-							</article>
-						</li>
-					))
-				}
+				{aboutCatalog[lang].map((item, index) => (
+					<li>
+						<article class={cardClass}>
+							{/* La photo de dos (portrait) est cadrée sur le haut du dos, où est le logo. */}
+							<Image
+								src={catalogImages[index]}
+								alt={item.alt}
+								width={800}
+								height={600}
+								class:list={['h-48 w-full object-cover', index === 0 ? 'object-[center_28%]' : 'object-center']}
+							/>
+							<div class="p-4">
+								<h3 class={cardTitleClass}>{item.title}</h3>
+								<p class={cardBodyClass}>{item.body}</p>
+							</div>
+						</article>
+					</li>
+				))}
 			</ul>
 		</div>
 	</section>
@@ -166,29 +162,30 @@ const checkIcon =
 			<h2 class={h2Class}>{copy.customisationTitle[lang]}</h2>
 			<p class={`${leadClass} mt-3`}>
 				{copy.customisationLead[lang]}{' '}
-				<a href={customisationHref} class={linkClass}>{copy.customisationLink[lang]}</a>.
+				<a href={customisationHref} class={linkClass}>
+					{copy.customisationLink[lang]}
+				</a>
+				.
 			</p>
 			<ul class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-				{
-					aboutTechniques[lang].map((item, index) => (
-						<li>
-							<article class={cardClass}>
-								{/* Le visuel « emplacements » ne fait que 608 px de large : pas d'agrandissement. */}
-								<Image
-									src={techniqueImages[index]}
-									alt={item.alt}
-									width={index === 3 ? 608 : 800}
-									height={index === 3 ? 426 : 600}
-									class="aspect-[4/3] w-full object-cover object-center"
-								/>
-								<div class="p-4">
-									<h3 class={cardTitleClass}>{item.title}</h3>
-									<p class={cardBodyClass}>{item.body}</p>
-								</div>
-							</article>
-						</li>
-					))
-				}
+				{aboutTechniques[lang].map((item, index) => (
+					<li>
+						<article class={cardClass}>
+							{/* Le visuel « emplacements » ne fait que 608 px de large : pas d'agrandissement. */}
+							<Image
+								src={techniqueImages[index]}
+								alt={item.alt}
+								width={index === 3 ? 608 : 800}
+								height={index === 3 ? 426 : 600}
+								class="aspect-[4/3] w-full object-cover object-center"
+							/>
+							<div class="p-4">
+								<h3 class={cardTitleClass}>{item.title}</h3>
+								<p class={cardBodyClass}>{item.body}</p>
+							</div>
+						</article>
+					</li>
+				))}
 			</ul>
 		</div>
 	</section>
@@ -219,18 +216,23 @@ const checkIcon =
 				<p class="mb-2 font-heading text-xs font-bold uppercase tracking-[0.12em] text-blue-300">
 					{copy.commitmentsTag[lang]}
 				</p>
-				<h2 class="font-heading text-2xl font-bold uppercase leading-tight sm:text-3xl">{copy.commitmentsTitle[lang]}</h2>
+				<h2 class="font-heading text-2xl font-bold uppercase leading-tight sm:text-3xl">
+					{copy.commitmentsTitle[lang]}
+				</h2>
 				<ul class="mt-5 space-y-3 text-base text-gray-300">
-					{
-						aboutCommitments[lang].map((item) => (
-							<li class="flex gap-3">
-								<svg class="mt-1 h-4 w-4 shrink-0 text-blue-300" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-									<path fill-rule="evenodd" d={checkIcon} clip-rule="evenodd" />
-								</svg>
-								{item}
-							</li>
-						))
-					}
+					{aboutCommitments[lang].map((item) => (
+						<li class="flex gap-3">
+							<svg
+								class="mt-1 h-4 w-4 shrink-0 text-blue-300"
+								viewBox="0 0 20 20"
+								fill="currentColor"
+								aria-hidden="true"
+							>
+								<path fill-rule="evenodd" d={checkIcon} clip-rule="evenodd" />
+							</svg>
+							{item}
+						</li>
+					))}
 				</ul>
 			</div>
 			<div class="relative min-h-[280px] overflow-hidden rounded-lg">
@@ -256,7 +258,9 @@ const checkIcon =
 			<a href={copy.phoneHref[lang]} class="mt-4 block font-heading text-3xl font-bold tracking-tight hover:underline">
 				{copy.phoneLabel[lang]}
 			</a>
-			<Button href={quoteHref} variant="white" class="mt-6">{copy.ctaButton[lang]}</Button>
+			<Button href={quoteHref} variant="white" class="mt-6">
+				{copy.ctaButton[lang]}
+			</Button>
 		</div>
 	</section>
 </main>

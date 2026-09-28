@@ -25,16 +25,16 @@ src/content/loaders/json-products-loader.ts   lu par astro dev / astro build
 
 ### Fichiers de données
 
-| Fichier | Rôle | Versionné ? |
-| --- | --- | --- |
-| `src/data/suppliers/<fournisseur>/…` | Exports bruts (Portwest CSV, Mascot extended + slim, Blaklader FAB-DIS). Voir `src/data/suppliers/mascot/README.md` pour Mascot. | ❌ (`*.csv` gitignorés) |
-| `src/data/category-mapping.<f>.json` | Catégorie / sous-catégorie par code style. **Source de vérité** pour la régénération. | ✅ |
-| `src/data/category-overrides.<f>.json` | Corrections manuelles de catégorie (clé = code style ; Mascot : numéro produit sans la qualité). | ✅ |
-| `src/data/catalog/products.<f>.json` | Catalogue pré-calculé, un produit (= un coloris) par ligne. **Ce que le site lit.** | ✅ |
-| `src/data/product-overrides.<f>.json` | Noms et corrections de fiches (clé = `styleCode` du catalogue) : `name`, `description`, `colours` (code couleur SKU → couleur). Prioritaires sur l'export. | ✅ |
-| `src/data/image-overrides.<f>.json` | Corrections manuelles d'image (clé = `id` du produit, valeur = URL). | ✅ |
-| `src/data/known-bad-images.portwest.json` | URL du CDN Portwest confirmées mortes. | ✅ |
-| `scripts/reports/broken-product-images.json` | Rapport : produits encore sans photo valide. | ✅ |
+| Fichier                                      | Rôle                                                                                                                                                       | Versionné ?             |
+| -------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------- |
+| `src/data/suppliers/<fournisseur>/…`         | Exports bruts (Portwest CSV, Mascot extended + slim, Blaklader FAB-DIS). Voir `src/data/suppliers/mascot/README.md` pour Mascot.                           | ❌ (`*.csv` gitignorés) |
+| `src/data/category-mapping.<f>.json`         | Catégorie / sous-catégorie par code style. **Source de vérité** pour la régénération.                                                                      | ✅                      |
+| `src/data/category-overrides.<f>.json`       | Corrections manuelles de catégorie (clé = code style ; Mascot : numéro produit sans la qualité).                                                           | ✅                      |
+| `src/data/catalog/products.<f>.json`         | Catalogue pré-calculé, un produit (= un coloris) par ligne. **Ce que le site lit.**                                                                        | ✅                      |
+| `src/data/product-overrides.<f>.json`        | Noms et corrections de fiches (clé = `styleCode` du catalogue) : `name`, `description`, `colours` (code couleur SKU → couleur). Prioritaires sur l'export. | ✅                      |
+| `src/data/image-overrides.<f>.json`          | Corrections manuelles d'image (clé = `id` du produit, valeur = URL).                                                                                       | ✅                      |
+| `src/data/known-bad-images.portwest.json`    | URL du CDN Portwest confirmées mortes.                                                                                                                     | ✅                      |
+| `scripts/reports/broken-product-images.json` | Rapport : produits encore sans photo valide.                                                                                                               | ✅                      |
 
 Fournisseurs : `portwest`, `mascot`, `blaklader`.
 
@@ -43,17 +43,17 @@ Fournisseurs : `portwest`, `mascot`, `blaklader`.
 Tous se lancent depuis la racine du projet avec `node scripts/<nom>.mjs` (ou l'alias
 `pnpm run …` indiqué). Aucun n'est exécuté par `astro dev` / `astro build`.
 
-| Script | Ce qu'il fait | Entrées | Sorties | Exports nécessaires ? |
-| --- | --- | --- | --- | --- |
-| `prepare-mascot-csv.mjs` | Distille l'export Mascot « extended » (291 Mo) en CSV allégé et y joint prix 2026 + nom commercial (par EAN). | `MASCOT_extended_productdata_FR.csv`, `Produits-Table 1.csv` | `src/data/suppliers/mascot/mascot-products.slim.csv` | Oui (Mascot) |
-| `generate-category-mapping.mjs` | Propose une catégorie aux références Portwest **nouvelles** (mots-clés). Additif : ne réécrit jamais une entrée existante, sauf celles en `a-trier`. | export Portwest | `category-mapping.portwest.json` | Oui (Portwest) |
-| `generate-category-mapping-blaklader.mjs` | Idem pour Blaklader. | FAB-DIS B01_COMMERCE | `category-mapping.blaklader.json` | Oui (Blaklader) |
-| `generate-category-mapping-mascot.mjs` | Idem pour Mascot (après `prepare-mascot-csv.mjs`). | slim CSV Mascot | `category-mapping.mascot.json` | Oui (Mascot) |
-| `generate-catalog-data.mjs [--supplier a,b]` — `pnpm run generate:catalog` | Reconstruit le catalogue JSON à partir des exports + mapping. Un fournisseur dont l'export manque est **ignoré** (son JSON committé est conservé). Réapplique `known-bad-images` (image de repli), `product-overrides` (noms) et `image-overrides`. | exports + mapping + known-bad + product-overrides + image-overrides | `src/data/catalog/products.<f>.json` | Oui, pour les fournisseurs traités |
-| `reclassify-catalog.mjs` — `pnpm run reclassify:catalog` | Fusionne `category-overrides.<f>.json` dans le mapping **et** patche le catalogue JSON. Idempotent. | category-overrides | mapping + catalogue | Non |
-| `complete-catalog.mjs` — `pnpm run complete:catalog` | Nomme les produits sans nom (coloris orphelins d'après leur modèle, références entières d'après `product-overrides.<f>.json`), applique les renommages / corrections de `product-overrides`, normalise les textes et fusionne les tailles d'un coloris en double. Idempotent. | product-overrides | catalogue | Non |
-| `apply-image-overrides.mjs` — `pnpm run apply:image-overrides` | Patche le catalogue JSON avec `image-overrides.<f>.json`. Idempotent. | image-overrides | catalogue | Non |
-| `check-product-images.mjs` — `pnpm run check:images` | Vérifie en HTTP chaque URL d'image, patche le catalogue, met à jour la liste known-bad et le rapport (détail ci-dessous). | catalogue (+ exports s'ils sont là) | catalogue, image-overrides, known-bad, rapport | Non |
+| Script                                                                     | Ce qu'il fait                                                                                                                                                                                                                                                                 | Entrées                                                             | Sorties                                              | Exports nécessaires ?              |
+| -------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- | ---------------------------------------------------- | ---------------------------------- |
+| `prepare-mascot-csv.mjs`                                                   | Distille l'export Mascot « extended » (291 Mo) en CSV allégé et y joint prix 2026 + nom commercial (par EAN).                                                                                                                                                                 | `MASCOT_extended_productdata_FR.csv`, `Produits-Table 1.csv`        | `src/data/suppliers/mascot/mascot-products.slim.csv` | Oui (Mascot)                       |
+| `generate-category-mapping.mjs`                                            | Propose une catégorie aux références Portwest **nouvelles** (mots-clés). Additif : ne réécrit jamais une entrée existante, sauf celles en `a-trier`.                                                                                                                          | export Portwest                                                     | `category-mapping.portwest.json`                     | Oui (Portwest)                     |
+| `generate-category-mapping-blaklader.mjs`                                  | Idem pour Blaklader.                                                                                                                                                                                                                                                          | FAB-DIS B01_COMMERCE                                                | `category-mapping.blaklader.json`                    | Oui (Blaklader)                    |
+| `generate-category-mapping-mascot.mjs`                                     | Idem pour Mascot (après `prepare-mascot-csv.mjs`).                                                                                                                                                                                                                            | slim CSV Mascot                                                     | `category-mapping.mascot.json`                       | Oui (Mascot)                       |
+| `generate-catalog-data.mjs [--supplier a,b]` — `pnpm run generate:catalog` | Reconstruit le catalogue JSON à partir des exports + mapping. Un fournisseur dont l'export manque est **ignoré** (son JSON committé est conservé). Réapplique `known-bad-images` (image de repli), `product-overrides` (noms) et `image-overrides`.                           | exports + mapping + known-bad + product-overrides + image-overrides | `src/data/catalog/products.<f>.json`                 | Oui, pour les fournisseurs traités |
+| `reclassify-catalog.mjs` — `pnpm run reclassify:catalog`                   | Fusionne `category-overrides.<f>.json` dans le mapping **et** patche le catalogue JSON. Idempotent.                                                                                                                                                                           | category-overrides                                                  | mapping + catalogue                                  | Non                                |
+| `complete-catalog.mjs` — `pnpm run complete:catalog`                       | Nomme les produits sans nom (coloris orphelins d'après leur modèle, références entières d'après `product-overrides.<f>.json`), applique les renommages / corrections de `product-overrides`, normalise les textes et fusionne les tailles d'un coloris en double. Idempotent. | product-overrides                                                   | catalogue                                            | Non                                |
+| `apply-image-overrides.mjs` — `pnpm run apply:image-overrides`             | Patche le catalogue JSON avec `image-overrides.<f>.json`. Idempotent.                                                                                                                                                                                                         | image-overrides                                                     | catalogue                                            | Non                                |
+| `check-product-images.mjs` — `pnpm run check:images`                       | Vérifie en HTTP chaque URL d'image, patche le catalogue, met à jour la liste known-bad et le rapport (détail ci-dessous).                                                                                                                                                     | catalogue (+ exports s'ils sont là)                                 | catalogue, image-overrides, known-bad, rapport       | Non                                |
 
 Bibliothèques (non exécutables) : `scripts/lib/supplier-csv.ts` (parsing / groupage / jointure
 des exports, utilisé uniquement par `generate-catalog-data.mjs`) et
@@ -127,12 +127,12 @@ Une requête HTTP par URL distincte (~25 000) : compter plusieurs minutes.
 
 **Ce que le script écrit** (sauf `--dry-run`) :
 
-| Fichier | Mise à jour |
-| --- | --- |
-| `src/data/catalog/products.<f>.json` | Chaque produit garde son URL si elle répond ; sinon prend le 1ᵉʳ candidat vivant ; sinon le placeholder `/images/product-placeholder.svg`. |
-| `src/data/image-overrides.<f>.json` | Une photo retrouvée via une URL **dérivée** y est enregistrée, pour survivre à une régénération. |
-| `src/data/known-bad-images.portwest.json` | Fusion : les URL Portwest confirmées mortes sont ajoutées, celles redevenues vivantes retirées. |
-| `scripts/reports/broken-product-images.json` | Résumé du run + liste des produits encore sans photo (id, nom, prix, URL testées et statuts). |
+| Fichier                                      | Mise à jour                                                                                                                                |
+| -------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| `src/data/catalog/products.<f>.json`         | Chaque produit garde son URL si elle répond ; sinon prend le 1ᵉʳ candidat vivant ; sinon le placeholder `/images/product-placeholder.svg`. |
+| `src/data/image-overrides.<f>.json`          | Une photo retrouvée via une URL **dérivée** y est enregistrée, pour survivre à une régénération.                                           |
+| `src/data/known-bad-images.portwest.json`    | Fusion : les URL Portwest confirmées mortes sont ajoutées, celles redevenues vivantes retirées.                                            |
+| `scripts/reports/broken-product-images.json` | Résumé du run + liste des produits encore sans photo (id, nom, prix, URL testées et statuts).                                              |
 
 **Règles de sûreté :**
 

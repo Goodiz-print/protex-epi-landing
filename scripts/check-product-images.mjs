@@ -163,10 +163,9 @@ function exportCandidatesBlaklader(root) {
 	const byKey = new Map();
 	for (const [baseRef, photos] of photosByBaseRef) {
 		const sorted = [...photos].sort((a, b) => Number(a['MNUM']) - Number(b['MNUM']));
-		byKey.set(
-			baseRef,
-			[...new Set(sorted.map((photo) => photo['MURL']).filter((url) => RASTER_IMAGE_EXTENSION.test(url)))],
-		);
+		byKey.set(baseRef, [
+			...new Set(sorted.map((photo) => photo['MURL']).filter((url) => RASTER_IMAGE_EXTENSION.test(url))),
+		]);
 	}
 	return byKey;
 }
@@ -286,12 +285,18 @@ export async function run({ root = DEFAULT_ROOT, fetchImpl = globalThis.fetch, l
 		}
 		const collected = collectEntries(root, supplier, resolvedSource);
 		perSupplier.set(supplier, { ...collected, source: resolvedSource });
-		log(`[${supplier}] ${collected.products.length} products, candidates from ${resolvedSource === 'csv' ? 'the raw export' : 'the committed catalog'}`);
+		log(
+			`[${supplier}] ${collected.products.length} products, candidates from ${resolvedSource === 'csv' ? 'the raw export' : 'the committed catalog'}`,
+		);
 	}
 
 	// 2. Live check.
 	const allUrls = [
-		...new Set([...perSupplier.values()].flatMap(({ entries }) => entries.flatMap((entry) => entry.candidates.map((c) => c.url)))),
+		...new Set(
+			[...perSupplier.values()].flatMap(({ entries }) =>
+				entries.flatMap((entry) => entry.candidates.map((c) => c.url)),
+			),
+		),
 	];
 	log(`Checking ${allUrls.length} distinct image URLs (concurrency ${concurrency})...`);
 	const results = await checkAllUrls(allUrls, { fetchImpl, concurrency, log });
@@ -346,7 +351,11 @@ export async function run({ root = DEFAULT_ROOT, fetchImpl = globalThis.fetch, l
 					price: product.price,
 					sourceSkus: product.sourceSkus,
 					candidateUrls: candidates.map((candidate) => candidate.url),
-					statuses: candidates.map((candidate) => ({ url: candidate.url, origin: candidate.origin, ...results.get(candidate.url) })),
+					statuses: candidates.map((candidate) => ({
+						url: candidate.url,
+						origin: candidate.origin,
+						...results.get(candidate.url),
+					})),
 					usingPlaceholder: true,
 				});
 			}
@@ -369,7 +378,9 @@ export async function run({ root = DEFAULT_ROOT, fetchImpl = globalThis.fetch, l
 		source: Object.fromEntries([...perSupplier].map(([supplier, { source }]) => [supplier, source])),
 		products: Object.fromEntries([...perSupplier].map(([supplier, { products }]) => [supplier, products.length])),
 		catalogProductsUpdated: Object.fromEntries([...changes].map(([supplier, change]) => [supplier, change.catalog])),
-		imagesRecoveredByDerivedUrl: Object.fromEntries([...changes].map(([supplier, change]) => [supplier, change.overrides])),
+		imagesRecoveredByDerivedUrl: Object.fromEntries(
+			[...changes].map(([supplier, change]) => [supplier, change.overrides]),
+		),
 		productsStillWithoutImage: brokenEntries.length,
 	};
 
@@ -377,9 +388,7 @@ export async function run({ root = DEFAULT_ROOT, fetchImpl = globalThis.fetch, l
 	log(JSON.stringify(summary, null, 2));
 
 	if (offline) {
-		log(
-			`\n${counts.unknown}/${allUrls.length} URLs could not be checked (network problem?): nothing written.`,
-		);
+		log(`\n${counts.unknown}/${allUrls.length} URLs could not be checked (network problem?): nothing written.`);
 		return { summary, brokenEntries, written: false };
 	}
 	if (dryRun) {
@@ -398,7 +407,8 @@ export async function run({ root = DEFAULT_ROOT, fetchImpl = globalThis.fetch, l
 	log(`Wrote ${reportPath} (${brokenEntries.length} products still without a valid image)`);
 	for (const [supplier, change] of changes) {
 		if (change.catalog > 0) log(`Patched src/data/catalog/products.${supplier}.json (${change.catalog} products)`);
-		if (change.overrides > 0) log(`Recorded ${change.overrides} recovered URL(s) in src/data/image-overrides.${supplier}.json`);
+		if (change.overrides > 0)
+			log(`Recorded ${change.overrides} recovered URL(s) in src/data/image-overrides.${supplier}.json`);
 	}
 	log('Commit the catalog, overrides, known-bad list and report together.');
 	return { summary, brokenEntries, written: true };

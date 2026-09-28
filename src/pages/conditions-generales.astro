@@ -20,7 +20,7 @@ const articles: { heading: string; paragraphs: string[] }[] = [
 	{
 		heading: '2. Devis',
 		paragraphs: [
-			"Les devis donnés par téléphone sont des devis estimatifs et ne peuvent être considérés comme contractuels. Les devis susmentionnés pourront être confirmés le cas échéant par notre service commercial par e-mail.",
+			'Les devis donnés par téléphone sont des devis estimatifs et ne peuvent être considérés comme contractuels. Les devis susmentionnés pourront être confirmés le cas échéant par notre service commercial par e-mail.',
 		],
 	},
 	{
@@ -56,7 +56,7 @@ const articles: { heading: string; paragraphs: string[] }[] = [
 	{
 		heading: '8. Délais de livraison',
 		paragraphs: [
-			"Après accord sur le bon à tirer, le délai de livraison est de 1 semaine à 4 mois selon les articles. Ces délais sont donnés à titre indicatif. Un éventuel retard de livraison ne pourra en aucun cas donner lieu à des dommages et intérêts, à une annulation de commande, à un refus de réception de marchandise ou à un report de règlement.",
+			'Après accord sur le bon à tirer, le délai de livraison est de 1 semaine à 4 mois selon les articles. Ces délais sont donnés à titre indicatif. Un éventuel retard de livraison ne pourra en aucun cas donner lieu à des dommages et intérêts, à une annulation de commande, à un refus de réception de marchandise ou à un report de règlement.',
 		],
 	},
 	{
@@ -81,7 +81,7 @@ const articles: { heading: string; paragraphs: string[] }[] = [
 		heading: "12. Données personnelles et droit d'opposition",
 		paragraphs: [
 			"Les informations recueillies par SAS GOODIZ PRINT (marque PROTEX EPI) sont collectées et enregistrées par l'entreprise aux fins de réalisation de la prestation (devis, commande, livraison, facturation, suivi des éventuelles réclamations, relation Client, enquête de satisfaction, etc.).",
-			"Seules les données strictement nécessaires à ces finalités sont conservées et ce, pendant les durées correspondant à chaque traitement.",
+			'Seules les données strictement nécessaires à ces finalités sont conservées et ce, pendant les durées correspondant à chaque traitement.',
 			"Conformément à la Loi Informatique et Libertés 78-17 du 6 janvier 1978 modifiée, et au Règlement Européen 2016/679 du 27 avril 2016, vous bénéficiez d'un droit d'accès, de rectification, de limitation, d'effacement, de suppression de vos données. Vous pouvez également vous opposer, pour un motif légitime, à l'utilisation de vos données.",
 			"Si vous souhaitez exercer ces droits, vous pouvez adresser un courrier électronique ou postal aux adresses suivantes : contact@protex-epi.com ou par courrier à l'adresse de la société SAS GOODIZ PRINT, 4 rue la Motte Picquet – 33300 BORDEAUX France, en précisant dans l'objet « Droit des personnes » et en joignant la copie de votre justificatif d'identité.",
 		],
@@ -89,7 +89,7 @@ const articles: { heading: string; paragraphs: string[] }[] = [
 	{
 		heading: '13. Réclamations',
 		paragraphs: [
-			"Toute réclamation devra nous parvenir sous 48 heures après réception de la marchandise par lettre recommandée.",
+			'Toute réclamation devra nous parvenir sous 48 heures après réception de la marchandise par lettre recommandée.',
 		],
 	},
 	{
@@ -100,7 +100,7 @@ const articles: { heading: string; paragraphs: string[] }[] = [
 	},
 	{
 		heading: '15. Compétence',
-		paragraphs: ["En cas de litige, le tribunal de Bordeaux est seul compétent."],
+		paragraphs: ['En cas de litige, le tribunal de Bordeaux est seul compétent.'],
 	},
 	{
 		heading: '16. Utilisation du contenu du site par les clients et par PROTEX EPI',
@@ -120,16 +120,14 @@ const articles: { heading: string; paragraphs: string[] }[] = [
 		<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: '/' }, { label: title }]} />
 		<h1 class="mb-6 text-2xl font-semibold text-gray-900">Conditions Générales de Vente – PROTEX EPI</h1>
 		<div class="space-y-6 text-gray-700">
-			{
-				articles.map((article) => (
-					<section class="space-y-3">
-						<h2 class="font-semibold text-gray-900">{article.heading}</h2>
-						{article.paragraphs.map((paragraph) => (
-							<p>{paragraph}</p>
-						))}
-					</section>
-				))
-			}
+			{articles.map((article) => (
+				<section class="space-y-3">
+					<h2 class="font-semibold text-gray-900">{article.heading}</h2>
+					{article.paragraphs.map((paragraph) => (
+						<p>{paragraph}</p>
+					))}
+				</section>
+			))}
 		</div>
 	</main>
 </Layout>

@@ -32,13 +32,11 @@ const tiles = category.subcategories.map((subcategory) => ({
 	]}
 />
 <h1 class="mb-6 font-heading text-3xl font-bold uppercase text-gray-900">{category.labels[lang]}</h1>
-{
-	tiles.length > 0 && (
-		<div class="mb-8">
-			<TileGrid tiles={tiles} />
-		</div>
-	)
-}
+{tiles.length > 0 && (
+	<div class="mb-8">
+		<TileGrid tiles={tiles} />
+	</div>
+)}
 <ProductGrid lang={lang} products={products} payloadUrl={`${getCategoryUrl(lang, category.slug)}/listing.json`}>
 	<CatalogSidebar
 		slot="sidebar"
