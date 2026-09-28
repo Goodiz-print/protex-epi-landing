@@ -119,19 +119,20 @@ const articles: { heading: string; paragraphs: string[] }[] = [
 		<h1 class="mb-6 text-2xl font-semibold text-gray-900">General Terms and Conditions of Sale – PROTEX EPI</h1>
 		<p class="mb-6 rounded-md bg-gray-50 p-4 text-sm text-gray-600">
 			This English translation is provided for convenience only. In the event of any discrepancy, the
-			<a href="/conditions-generales" class="font-medium text-brand hover:text-brand-dark">French version</a> prevails.
+			<a href="/conditions-generales" class="font-medium text-brand hover:text-brand-dark">
+				French version
+			</a>{' '}
+			prevails.
 		</p>
 		<div class="space-y-6 text-gray-700">
-			{
-				articles.map((article) => (
-					<section class="space-y-3">
-						<h2 class="font-semibold text-gray-900">{article.heading}</h2>
-						{article.paragraphs.map((paragraph) => (
-							<p>{paragraph}</p>
-						))}
-					</section>
-				))
-			}
+			{articles.map((article) => (
+				<section class="space-y-3">
+					<h2 class="font-semibold text-gray-900">{article.heading}</h2>
+					{article.paragraphs.map((paragraph) => (
+						<p>{paragraph}</p>
+					))}
+				</section>
+			))}
 		</div>
 	</main>
 </Layout>

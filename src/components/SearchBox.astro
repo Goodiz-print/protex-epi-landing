@@ -26,7 +26,9 @@ const searchIndexUrl = lang === 'en' ? '/en/search-index.json' : '/search-index.
 	data-search-index-url={searchIndexUrl}
 	data-pagefind-ignore
 >
-	<label for="site-search" class="sr-only">{t('search.label')}</label>
+	<label for="site-search" class="sr-only">
+		{t('search.label')}
+	</label>
 	<input
 		id="site-search"
 		name="q"
@@ -46,14 +48,14 @@ const searchIndexUrl = lang === 'en' ? '/en/search-index.json' : '/search-index.
 			<path
 				fill-rule="evenodd"
 				d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z"
-				clip-rule="evenodd"></path>
+				clip-rule="evenodd"
+			></path>
 		</svg>
 	</button>
 	<ul
 		data-search-results
 		class="absolute left-0 right-0 top-full z-50 mt-1 hidden max-h-96 overflow-y-auto rounded-md border border-gray-200 bg-white p-1 shadow-lg"
-	>
-	</ul>
+	></ul>
 </form>
 
 <script>

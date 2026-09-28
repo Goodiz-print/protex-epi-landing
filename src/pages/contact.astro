@@ -8,7 +8,9 @@ const lang = 'fr' as const;
 const t = useTranslations(lang);
 const title = t('footer.legal.contact');
 const description = 'Contactez Protex EPI : adresse, téléphone, e-mail, ou envoyez directement une demande de devis.';
-const mapsHref = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent('4 Rue la Motte Picquet, 33300 Bordeaux, France');
+const mapsHref =
+	'https://www.google.com/maps/search/?api=1&query=' +
+	encodeURIComponent('4 Rue la Motte Picquet, 33300 Bordeaux, France');
 ---
 
 <Layout title={`${title} — ${ui.fr['site.title']}`} description={description}>
@@ -24,16 +26,23 @@ const mapsHref = 'https://www.google.com/maps/search/?api=1&query=' + encodeURIC
 			</li>
 			<li>
 				<span class="font-medium text-gray-900">Téléphone : </span>
-				<a href="tel:0557027587" class="text-blue-700 hover:text-blue-800">05 57 02 75 87</a>
+				<a href="tel:0557027587" class="text-blue-700 hover:text-blue-800">
+					05 57 02 75 87
+				</a>
 			</li>
 			<li>
 				<span class="font-medium text-gray-900">E-mail : </span>
-				<a href="mailto:contact@protex-epi.com" class="text-blue-700 hover:text-blue-800">contact@protex-epi.com</a>
+				<a href="mailto:contact@protex-epi.com" class="text-blue-700 hover:text-blue-800">
+					contact@protex-epi.com
+				</a>
 			</li>
 		</ul>
 		<p class="mt-8 text-gray-700">
 			Pour une demande précise (produits, quantités, délais), utilisez plutôt notre
-			<a href="/devis" class="font-medium text-blue-700 hover:text-blue-800">formulaire de demande de devis</a>.
+			<a href="/devis" class="font-medium text-blue-700 hover:text-blue-800">
+				formulaire de demande de devis
+			</a>
+			.
 		</p>
 	</main>
 </Layout>

@@ -37,9 +37,7 @@ const PAGE_ALTERNATES: Record<string, string> = {
 	'/merci': '/en/thank-you',
 	'/recherche': '/en/search',
 };
-const PAGE_ALTERNATES_REVERSE = Object.fromEntries(
-	Object.entries(PAGE_ALTERNATES).map(([fr, en]) => [en, fr]),
-);
+const PAGE_ALTERNATES_REVERSE = Object.fromEntries(Object.entries(PAGE_ALTERNATES).map(([fr, en]) => [en, fr]));
 
 function alternatePath(path: string, targetLang: Lang): string {
 	const normalized = path !== '/' && path.endsWith('/') ? path.slice(0, -1) : path;
@@ -115,7 +113,9 @@ const jsonLdBlocks = [organizationJsonLd, ...(jsonLd ? (Array.isArray(jsonLd) ? 
 		{description && <meta name="twitter:description" content={description} />}
 		{ogImage && <meta name="twitter:image" content={ogImage} />}
 
-		{jsonLdBlocks.map((block) => <script type="application/ld+json" is:inline set:html={JSON.stringify(block)} />)}
+		{jsonLdBlocks.map((block) => (
+			<script type="application/ld+json" is:inline set:html={JSON.stringify(block)} />
+		))}
 	</head>
 	<body>
 		<Header />

@@ -8,7 +8,7 @@ export const standardsCopy = {
 		en: 'Professional clothing standards',
 	} satisfies Copy,
 	metaDescription: {
-		fr: "Comprendre les normes EPI et vêtements de travail : Règlement (UE) 2016/425, catégories de risque et principales normes EN (EN ISO 20471, EN 343, EN ISO 11612…).",
+		fr: 'Comprendre les normes EPI et vêtements de travail : Règlement (UE) 2016/425, catégories de risque et principales normes EN (EN ISO 20471, EN 343, EN ISO 11612…).',
 		en: 'Understand PPE and workwear standards: Regulation (EU) 2016/425, risk categories and the main EN standards (EN ISO 20471, EN 343, EN ISO 11612…).',
 	} satisfies Copy,
 	h1: {
@@ -53,7 +53,7 @@ export const standardsCategories = {
 	fr: [
 		{
 			name: 'Catégorie I — risques mineurs',
-			body: "Équipements de conception simple, destinés à des risques dont les effets sont superficiels ou facilement réversibles (frottements, petites projections, intempéries légères). Le marquage CE est obligatoire.",
+			body: 'Équipements de conception simple, destinés à des risques dont les effets sont superficiels ou facilement réversibles (frottements, petites projections, intempéries légères). Le marquage CE est obligatoire.',
 		},
 		{
 			name: 'Catégorie II — risques importants',
@@ -61,7 +61,7 @@ export const standardsCategories = {
 		},
 		{
 			name: 'Catégorie III — risques mortels ou irréversibles',
-			body: "Équipements protégeant contre les dangers les plus graves (chutes de hauteur, risques chimiques, thermiques, électriques…). La production est contrôlée en continu par un organisme notifié.",
+			body: 'Équipements protégeant contre les dangers les plus graves (chutes de hauteur, risques chimiques, thermiques, électriques…). La production est contrôlée en continu par un organisme notifié.',
 		},
 	],
 	en: [
@@ -140,7 +140,7 @@ export const workwearStandards: StandardEntry[] = [
 		code: 'EN 13758-2',
 		label: { fr: 'Protection contre le rayonnement UV solaire', en: 'Protection against solar UV radiation' },
 		detail: {
-			fr: "Le tissu filtre une part du rayonnement ultraviolet. Utile pour les métiers exposés au soleil, en complément des autres protections (casquette, lunettes, crème).",
+			fr: 'Le tissu filtre une part du rayonnement ultraviolet. Utile pour les métiers exposés au soleil, en complément des autres protections (casquette, lunettes, crème).',
 			en: 'The fabric filters part of ultraviolet radiation. Useful for sun-exposed jobs, on top of other protection (cap, glasses, sunscreen).',
 		},
 	},
@@ -164,7 +164,7 @@ export const workwearStandards: StandardEntry[] = [
 		code: 'ISO 15797',
 		label: { fr: 'Aptitude au lavage industriel', en: 'Suitability for industrial laundering' },
 		detail: {
-			fr: "Elle vérifie que le vêtement et son marquage tiennent les cycles de blanchisserie industrielle (température, chimie, séchage). Utile pour les parcs gérés en location ou en pressing centralisé.",
+			fr: 'Elle vérifie que le vêtement et son marquage tiennent les cycles de blanchisserie industrielle (température, chimie, séchage). Utile pour les parcs gérés en location ou en pressing centralisé.',
 			en: 'It checks that the garment and its marking withstand industrial laundry cycles (temperature, chemistry, drying). Useful for fleets managed through rental or central laundering.',
 		},
 	},
@@ -175,7 +175,7 @@ export const workwearStandards: StandardEntry[] = [
 			en: 'Enhanced visibility for medium-risk situations',
 		},
 		detail: {
-			fr: "Une visibilité renforcée hors des exigences de la haute visibilité « route ». Elle concerne des situations à risque plus modéré, sans remplacer un vêtement EN ISO 20471 lorsque celui-ci est obligatoire.",
+			fr: 'Une visibilité renforcée hors des exigences de la haute visibilité « route ». Elle concerne des situations à risque plus modéré, sans remplacer un vêtement EN ISO 20471 lorsque celui-ci est obligatoire.',
 			en: 'Enhanced visibility outside the requirements of road high-visibility clothing. It covers more moderate-risk situations and does not replace an EN ISO 20471 garment when that is mandatory.',
 		},
 	},
@@ -183,7 +183,7 @@ export const workwearStandards: StandardEntry[] = [
 		code: 'EN ISO 20471',
 		label: { fr: 'Vêtements à haute visibilité — classes 1 à 3', en: 'High-visibility clothing — classes 1 to 3' },
 		detail: {
-			fr: "Elle impose des surfaces minimales de tissu fluorescent et de bandes rétroréfléchissantes, de jour comme de nuit. La classe 3 offre la plus grande visibilité. Le marquage ne doit pas réduire ces surfaces.",
+			fr: 'Elle impose des surfaces minimales de tissu fluorescent et de bandes rétroréfléchissantes, de jour comme de nuit. La classe 3 offre la plus grande visibilité. Le marquage ne doit pas réduire ces surfaces.',
 			en: 'It requires minimum areas of fluorescent fabric and retro-reflective bands, by day and by night. Class 3 offers the highest visibility. Marking must not reduce these areas.',
 		},
 		catalog: ['corps', 'vetements-haute-visibilite'],

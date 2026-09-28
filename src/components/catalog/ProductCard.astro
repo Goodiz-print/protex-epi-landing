@@ -49,25 +49,23 @@ const extraColourways = (colourways ?? []).length - swatches.length;
 			onerror="this.onerror=null;this.src='/images/product-placeholder.svg';"
 		/>
 	</a>
-	{
-		swatches.length > 0 && (
-			<ul class="mt-2 flex items-center gap-1.5">
-				{swatches.map((colourway) => (
-					<li>
-						<a
-							href={getProductUrl(lang, colourway.category, colourway.subcategory, colourway.slug)}
-							class="block h-6 w-6 rounded-full border border-gray-300 hover:border-brand"
-							title={colourway.colour}
-							style={`background: ${colourToCss(colourway.colour)}`}
-						>
-							<span class="sr-only">{colourway.colour}</span>
-						</a>
-					</li>
-				))}
-				{extraColourways > 0 && <li class="text-xs text-gray-500">+{extraColourways}</li>}
-			</ul>
-		)
-	}
+	{swatches.length > 0 && (
+		<ul class="mt-2 flex items-center gap-1.5">
+			{swatches.map((colourway) => (
+				<li>
+					<a
+						href={getProductUrl(lang, colourway.category, colourway.subcategory, colourway.slug)}
+						class="block h-6 w-6 rounded-full border border-gray-300 hover:border-brand"
+						title={colourway.colour}
+						style={`background: ${colourToCss(colourway.colour)}`}
+					>
+						<span class="sr-only">{colourway.colour}</span>
+					</a>
+				</li>
+			))}
+			{extraColourways > 0 && <li class="text-xs text-gray-500">+{extraColourways}</li>}
+		</ul>
+	)}
 	<div class="mt-auto pt-2">
 		{sizeRange && <p class="text-xs text-gray-500">{sizeRange}</p>}
 		<p class="mt-1 text-sm font-bold text-gray-900">{priceLabel}</p>

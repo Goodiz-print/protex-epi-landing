@@ -43,9 +43,7 @@ for (const supplier of SUPPLIERS) {
 	const overridesPath = resolve(ROOT, `src/data/category-overrides.${supplier}.json`);
 	if (!existsSync(overridesPath)) continue;
 
-	const overrides = Object.fromEntries(
-		Object.entries(readJson(overridesPath)).filter(([key]) => !key.startsWith('_')),
-	);
+	const overrides = Object.fromEntries(Object.entries(readJson(overridesPath)).filter(([key]) => !key.startsWith('_')));
 
 	// 1. Mapping: overwrite (or add) the entry for every overridden mapping key.
 	const mappingPath = resolve(ROOT, `src/data/category-mapping.${supplier}.json`);

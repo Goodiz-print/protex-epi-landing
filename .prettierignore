@@ -6,3 +6,7 @@ public/
 scripts/reports/
 # Catalogs (one product per line), mappings and overrides are written by the catalog scripts.
 src/data/**/*.json
+.claude/
+# prettier-plugin-astro moves the `//` comment of the `domain && (…)` expression onto the
+# code line, commenting the <script> out — keep this file formatted by hand.
+src/components/Analytics.astro

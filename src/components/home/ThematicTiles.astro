@@ -20,59 +20,52 @@ const labelClass =
 
 <section class="mx-auto max-w-6xl px-4 pb-16 pt-4">
 	<ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-		{
-			thematicTiles.map((tile) => (
-				<li>
-					{tile.video ? (
-						<div
-							class={`${cardClass} bg-gray-900`}
-							data-video-tile
-							data-video-id={tile.video.src ? undefined : tile.video.youtubeId}
-							data-video-start={tile.video.start ?? 0}
-							data-video-title={tile.labels[lang]}
-						>
-							{tile.video.src && (
-								<video
-									src={tile.video.src}
-									autoplay
-									muted
-									loop
-									playsinline
-									preload="metadata"
-									aria-label={tile.labels[lang]}
-									class="absolute inset-0 h-full w-full object-cover"
-								/>
-							)}
-							<span class={labelClass}>{tile.labels[lang]}</span>
-						</div>
-					) : tile.logo ? (
-						<a
-							href={tile.getHref?.(lang)}
-							class={`${cardClass} flex items-center justify-center bg-brand transition-colors hover:bg-brand-dark`}
-						>
-							<Image
-								src={tile.logo}
-								alt={tile.labels[lang]}
-								height={164}
-								class="h-16 w-auto transition-transform duration-300 group-hover:scale-105 sm:h-20"
+		{thematicTiles.map((tile) => (
+			<li>
+				{tile.video ? (
+					<div
+						class={`${cardClass} bg-gray-900`}
+						data-video-tile
+						data-video-id={tile.video.src ? undefined : tile.video.youtubeId}
+						data-video-start={tile.video.start ?? 0}
+						data-video-title={tile.labels[lang]}
+					>
+						{tile.video.src && (
+							<video
+								src={tile.video.src}
+								autoplay
+								muted
+								loop
+								playsinline
+								preload="metadata"
+								aria-label={tile.labels[lang]}
+								class="absolute inset-0 h-full w-full object-cover"
 							/>
-						</a>
-					) : (
-						<a href={tile.getHref?.(lang)} class={cardClass}>
-							{tile.image && (
-								<Image
-									src={tile.image}
-									alt=""
-									width={1200}
-									class={imageClass(tile.fitClass, tile.imagePositionClass)}
-								/>
-							)}
-							<span class={labelClass}>{tile.labels[lang]}</span>
-						</a>
-					)}
-				</li>
-			))
-		}
+						)}
+						<span class={labelClass}>{tile.labels[lang]}</span>
+					</div>
+				) : tile.logo ? (
+					<a
+						href={tile.getHref?.(lang)}
+						class={`${cardClass} flex items-center justify-center bg-brand transition-colors hover:bg-brand-dark`}
+					>
+						<Image
+							src={tile.logo}
+							alt={tile.labels[lang]}
+							height={164}
+							class="h-16 w-auto transition-transform duration-300 group-hover:scale-105 sm:h-20"
+						/>
+					</a>
+				) : (
+					<a href={tile.getHref?.(lang)} class={cardClass}>
+						{tile.image && (
+							<Image src={tile.image} alt="" width={1200} class={imageClass(tile.fitClass, tile.imagePositionClass)} />
+						)}
+						<span class={labelClass}>{tile.labels[lang]}</span>
+					</a>
+				)}
+			</li>
+		))}
 	</ul>
 </section>
 

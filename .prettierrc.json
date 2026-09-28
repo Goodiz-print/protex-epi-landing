@@ -8,11 +8,15 @@
 	"overrides": [
 		{
 			"files": "*.astro",
-			"options": { "parser": "astro" }
+			"options": {
+				"parser": "astro"
+			}
 		},
 		{
-			"files": ["*.yml", "*.yaml", "*.md"],
-			"options": { "useTabs": false }
+			"files": ["package.json", "*.yml", "*.yaml", "*.md"],
+			"options": {
+				"useTabs": false
+			}
 		}
 	]
 }

@@ -54,17 +54,15 @@ const categories = [
 						{t('cookie.category.functionalDesc')}
 					</span>
 				</label>
-				{
-					categories.map((category) => (
-						<label class="flex items-start gap-2 text-sm text-gray-600">
-							<input type="checkbox" data-cookie-category={category.key} class="mt-1" />
-							<span>
-								<span class="block font-medium text-gray-900">{t(category.labelKey)}</span>
-								{t(category.descKey)}
-							</span>
-						</label>
-					))
-				}
+				{categories.map((category) => (
+					<label class="flex items-start gap-2 text-sm text-gray-600">
+						<input type="checkbox" data-cookie-category={category.key} class="mt-1" />
+						<span>
+							<span class="block font-medium text-gray-900">{t(category.labelKey)}</span>
+							{t(category.descKey)}
+						</span>
+					</label>
+				))}
 			</div>
 			<button
 				type="button"

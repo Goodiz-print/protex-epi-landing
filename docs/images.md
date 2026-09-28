@@ -4,10 +4,10 @@ Ce projet utilise le composant `<Image />` d'Astro (`astro:assets`) pour optimis
 
 ## Où placer les fichiers
 
-| Dossier | Usage | Optimisé par Astro ? |
-| --- | --- | --- |
-| `src/assets/images/` | Photos, illustrations, logos utilisés dans les composants `.astro` | ✅ Oui |
-| `public/` | Fichiers statiques qui doivent garder un chemin/nom fixe (favicon, `robots.txt`, image `og:image` partagée par URL) | ❌ Non (servi tel quel) |
+| Dossier              | Usage                                                                                                               | Optimisé par Astro ?    |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------- | ----------------------- |
+| `src/assets/images/` | Photos, illustrations, logos utilisés dans les composants `.astro`                                                  | ✅ Oui                  |
+| `public/`            | Fichiers statiques qui doivent garder un chemin/nom fixe (favicon, `robots.txt`, image `og:image` partagée par URL) | ❌ Non (servi tel quel) |
 
 **Règle simple : par défaut, toute nouvelle image de contenu va dans `src/assets/images/`.**
 

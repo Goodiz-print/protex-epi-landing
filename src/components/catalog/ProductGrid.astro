@@ -38,111 +38,109 @@ const chipIdle = 'border-gray-300 text-gray-700 hover:border-brand hover:text-br
 const chipActive = 'border-brand bg-brand text-white';
 ---
 
-{
-	products.length === 0 ? (
-		<p class="text-gray-500">{t('catalog.noProducts')}</p>
-	) : (
-		<div
-			data-product-listing
-			data-page-size={LISTING_PAGE_SIZE}
-			data-view-label={t('catalog.viewProduct')}
-			data-payload-url={payloadUrl}
-			data-total={groups.length}
-			class="lg:grid lg:grid-cols-[260px_1fr] lg:items-start lg:gap-8"
-		>
-			<slot name="sidebar" />
-			<div class="min-w-0">
-				{refinements.length > 0 && (
-					<nav class="mb-5 flex flex-wrap gap-2" aria-label={t('catalog.refinements.label')}>
-						<a href="?" data-refinement-chip="" class={`${chipBase} ${chipActive}`} aria-current="true">
-							{t('catalog.refinements.all')}
+{products.length === 0 ? (
+	<p class="text-gray-500">{t('catalog.noProducts')}</p>
+) : (
+	<div
+		data-product-listing
+		data-page-size={LISTING_PAGE_SIZE}
+		data-view-label={t('catalog.viewProduct')}
+		data-payload-url={payloadUrl}
+		data-total={groups.length}
+		class="lg:grid lg:grid-cols-[260px_1fr] lg:items-start lg:gap-8"
+	>
+		<slot name="sidebar" />
+		<div class="min-w-0">
+			{refinements.length > 0 && (
+				<nav class="mb-5 flex flex-wrap gap-2" aria-label={t('catalog.refinements.label')}>
+					<a href="?" data-refinement-chip="" class={`${chipBase} ${chipActive}`} aria-current="true">
+						{t('catalog.refinements.all')}
+					</a>
+					{refinements.map((refinement) => (
+						<a
+							href={`?type=${refinement.slug}`}
+							data-refinement-chip={refinement.slug}
+							data-groups={JSON.stringify(refinement.groups)}
+							data-exclude={JSON.stringify(refinement.exclude ?? [])}
+							class={`${chipBase} ${chipIdle}`}
+						>
+							{refinement.labels[lang]}
 						</a>
-						{refinements.map((refinement) => (
-							<a
-								href={`?type=${refinement.slug}`}
-								data-refinement-chip={refinement.slug}
-								data-groups={JSON.stringify(refinement.groups)}
-								data-exclude={JSON.stringify(refinement.exclude ?? [])}
-								class={`${chipBase} ${chipIdle}`}
-							>
-								{refinement.labels[lang]}
-							</a>
-						))}
-					</nav>
-				)}
-				<div class="mb-4 flex flex-wrap items-end justify-between gap-4">
-					<p class="text-sm text-gray-500" data-results-count>
-						{groups.length} {t('catalog.resultsCount')}
-					</p>
-					<div class="flex flex-wrap items-center gap-4">
-						<label class="flex items-center gap-2 text-sm text-gray-700">
-							{t('catalog.sort.label')}
-							<select
-								data-sort-select
-								class="rounded-md border border-gray-300 px-2 py-1.5 text-sm focus:border-brand focus:outline-none"
-							>
-								<option value="relevance">{t('catalog.sort.relevance')}</option>
-								<option value="price-asc">{t('catalog.sort.priceAsc')}</option>
-								<option value="price-desc">{t('catalog.sort.priceDesc')}</option>
-							</select>
-						</label>
-					</div>
-				</div>
-
-				<p class="hidden text-gray-500" data-no-results>
-					{t('catalog.noResults')}
-				</p>
-
-				<ul class="grid grid-cols-2 gap-4 sm:grid-cols-2 xl:grid-cols-3" data-product-list>
-					{groups.slice(0, LISTING_PAGE_SIZE).map((group) => (
-						<li>
-							<ProductCard
-								lang={lang}
-								product={group.primary}
-								title={group.displayName}
-								colourways={group.colourways}
-								priceRange={{ min: group.priceMin, max: group.priceMax }}
-								sizes={group.sizes}
-							/>
-						</li>
 					))}
-				</ul>
-
-				<div class="mt-8 text-center">
-					<button
-						type="button"
-						data-load-more
-						class="hidden rounded-btn bg-btn-gray px-6 py-3.5 font-heading text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-btn-dark"
-					>
-						{t('catalog.loadMore')}
-					</button>
+				</nav>
+			)}
+			<div class="mb-4 flex flex-wrap items-end justify-between gap-4">
+				<p class="text-sm text-gray-500" data-results-count>
+					{groups.length} {t('catalog.resultsCount')}
+				</p>
+				<div class="flex flex-wrap items-center gap-4">
+					<label class="flex items-center gap-2 text-sm text-gray-700">
+						{t('catalog.sort.label')}
+						<select
+							data-sort-select
+							class="rounded-md border border-gray-300 px-2 py-1.5 text-sm focus:border-brand focus:outline-none"
+						>
+							<option value="relevance">{t('catalog.sort.relevance')}</option>
+							<option value="price-asc">{t('catalog.sort.priceAsc')}</option>
+							<option value="price-desc">{t('catalog.sort.priceDesc')}</option>
+						</select>
+					</label>
 				</div>
-
-				{/* Accès sans JavaScript (et maillage interne pour les crawlers) vers
-				les modèles au-delà de la première page de cartes. */}
-				{groups.length > LISTING_PAGE_SIZE && (
-					<details class="mt-8 border-t border-gray-200 pt-4">
-						<summary class="cursor-pointer text-sm font-medium text-gray-600 hover:text-brand">
-							{t('catalog.allModels')} ({groups.length})
-						</summary>
-						<ul class="mt-3 columns-2 gap-4 text-sm sm:columns-3">
-							{groups.map((group) => (
-								<li class="mb-1 break-inside-avoid">
-									<a
-										href={getProductUrl(lang, group.primary.category, group.primary.subcategory, group.primary.slug)}
-										class="text-gray-600 hover:text-brand"
-									>
-										{group.displayName}
-									</a>
-								</li>
-							))}
-						</ul>
-					</details>
-				)}
 			</div>
+
+			<p class="hidden text-gray-500" data-no-results>
+				{t('catalog.noResults')}
+			</p>
+
+			<ul class="grid grid-cols-2 gap-4 sm:grid-cols-2 xl:grid-cols-3" data-product-list>
+				{groups.slice(0, LISTING_PAGE_SIZE).map((group) => (
+					<li>
+						<ProductCard
+							lang={lang}
+							product={group.primary}
+							title={group.displayName}
+							colourways={group.colourways}
+							priceRange={{ min: group.priceMin, max: group.priceMax }}
+							sizes={group.sizes}
+						/>
+					</li>
+				))}
+			</ul>
+
+			<div class="mt-8 text-center">
+				<button
+					type="button"
+					data-load-more
+					class="hidden rounded-btn bg-btn-gray px-6 py-3.5 font-heading text-sm font-bold uppercase tracking-wide text-white transition-colors hover:bg-btn-dark"
+				>
+					{t('catalog.loadMore')}
+				</button>
+			</div>
+
+			{/* Accès sans JavaScript (et maillage interne pour les crawlers) vers
+				les modèles au-delà de la première page de cartes. */}
+			{groups.length > LISTING_PAGE_SIZE && (
+				<details class="mt-8 border-t border-gray-200 pt-4">
+					<summary class="cursor-pointer text-sm font-medium text-gray-600 hover:text-brand">
+						{t('catalog.allModels')} ({groups.length})
+					</summary>
+					<ul class="mt-3 columns-2 gap-4 text-sm sm:columns-3">
+						{groups.map((group) => (
+							<li class="mb-1 break-inside-avoid">
+								<a
+									href={getProductUrl(lang, group.primary.category, group.primary.subcategory, group.primary.slug)}
+									class="text-gray-600 hover:text-brand"
+								>
+									{group.displayName}
+								</a>
+							</li>
+						))}
+					</ul>
+				</details>
+			)}
 		</div>
-	)
-}
+	</div>
+)}
 
 <script>
 	import { escapeHtml } from '../../utils/html';
@@ -258,9 +256,7 @@ const chipActive = 'border-brand bg-brand text-white';
 				const suppliers = selectedSuppliers();
 				const sortMode = sortSelect?.value ?? 'relevance';
 
-				let filtered = items.filter(
-					(item) => supplierCheckboxes.length === 0 || suppliers.has(item.data.s),
-				);
+				let filtered = items.filter((item) => supplierCheckboxes.length === 0 || suppliers.has(item.data.s));
 
 				if (activeRefinement) {
 					const { groups, exclude } = activeRefinement;

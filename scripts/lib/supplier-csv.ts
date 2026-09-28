@@ -213,10 +213,7 @@ export interface BuildMascotProductEntryResult {
 	warnings: string[];
 }
 
-export function buildMascotEntry(
-	group: MascotProductGroup,
-	mapping: CategoryMapping,
-): BuildMascotProductEntryResult {
+export function buildMascotEntry(group: MascotProductGroup, mapping: CategoryMapping): BuildMascotProductEntryResult {
 	const warnings: string[] = [];
 	const firstRow = group.rows[0];
 	const name = firstRow['nom'];
@@ -367,18 +364,14 @@ export function buildBlakladerProductEntry(
 	const name = firstRow['LIBELLE40'];
 	const description = firstRow['LIBELLE240'];
 
-	const colourResolution = resolveDeterministicValue(
-		group.rows.map((row) => colourIndex.get(row['REFCIALE']) ?? ''),
-	);
+	const colourResolution = resolveDeterministicValue(group.rows.map((row) => colourIndex.get(row['REFCIALE']) ?? ''));
 	if (colourResolution.hadMismatch) {
 		warnings.push(
 			`colour mismatch for baseRef=${group.baseRef}: using "${colourResolution.value}", ignored [${colourResolution.ignoredValues.join(', ')}]`,
 		);
 	}
 
-	const priceResolution = resolveDeterministicValue(
-		group.rows.map((row) => Number(row['TARIF'].replace(',', '.'))),
-	);
+	const priceResolution = resolveDeterministicValue(group.rows.map((row) => Number(row['TARIF'].replace(',', '.'))));
 	if (priceResolution.hadMismatch) {
 		warnings.push(
 			`price mismatch for baseRef=${group.baseRef}: using ${priceResolution.value}, ignored [${priceResolution.ignoredValues.join(', ')}]`,
