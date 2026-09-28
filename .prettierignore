@@ -1,0 +1,8 @@
+dist/
+.astro/
+node_modules/
+pnpm-lock.yaml
+public/
+scripts/reports/
+# Catalogs (one product per line), mappings and overrides are written by the catalog scripts.
+src/data/**/*.json
