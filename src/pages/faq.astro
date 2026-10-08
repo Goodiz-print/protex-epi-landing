@@ -43,7 +43,8 @@ const faqs = [
 			'Chaque fiche produit précise la catégorie de risque et les normes européennes applicables (EN, Règlement (UE) 2016/425). En cas de doute sur l’adéquation d’un équipement à votre analyse de risques ou à votre document unique, notre équipe technique peut vous conseiller sur le choix du produit.',
 	},
 	{
-		question: 'Puis-je obtenir un certificat de conformité (déclaration UE de conformité, fiche technique) pour mes achats ?',
+		question:
+			'Puis-je obtenir un certificat de conformité (déclaration UE de conformité, fiche technique) pour mes achats ?',
 		answer:
 			'Oui. Les fiches techniques et déclarations de conformité sont disponibles sur chaque fiche produit ou peuvent vous être transmises sur simple demande à notre service commercial, notamment dans le cadre d’un contrôle interne ou d’une réponse à un marché public.',
 	},
@@ -80,17 +81,19 @@ const faqJsonLd = {
 		<Breadcrumb items={[{ label: t('catalog.breadcrumb.home'), href: '/' }, { label: title }]} />
 		<h1 class="mb-6 text-2xl font-semibold text-gray-900">{title}</h1>
 		<div class="space-y-3">
-			{
-				faqs.map((faq) => (
-					<details class="rounded-md border border-gray-200 p-4">
-						<summary class="cursor-pointer font-medium text-gray-900">{faq.question}</summary>
-						<p class="mt-2 text-gray-700">{faq.answer}</p>
-					</details>
-				))
-			}
+			{faqs.map((faq) => (
+				<details class="rounded-md border border-gray-200 p-4">
+					<summary class="cursor-pointer font-medium text-gray-900">{faq.question}</summary>
+					<p class="mt-2 text-gray-700">{faq.answer}</p>
+				</details>
+			))}
 		</div>
 		<p class="mt-8 text-gray-700">
-			D'autres questions ? <a href="/contact" class="font-medium text-brand hover:text-brand-dark">Contactez-nous</a>.
+			D'autres questions ?{' '}
+			<a href="/contact" class="font-medium text-brand hover:text-brand-dark">
+				Contactez-nous
+			</a>
+			.
 		</p>
 	</main>
 </Layout>

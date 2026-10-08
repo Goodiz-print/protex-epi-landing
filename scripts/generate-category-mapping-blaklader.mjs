@@ -13,10 +13,7 @@ import { parse } from 'csv-parse/sync';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, '..');
-const CSV_PATH = resolve(
-	ROOT,
-	'src/data/suppliers/blaklader/Blaklader - FAB-DIS 3.0 - 2026.xlsm - B01_COMMERCE.csv',
-);
+const CSV_PATH = resolve(ROOT, 'src/data/suppliers/blaklader/Blaklader - FAB-DIS 3.0 - 2026.xlsm - B01_COMMERCE.csv');
 const MAPPING_PATH = resolve(ROOT, 'src/data/category-mapping.blaklader.json');
 
 const BASE_REF_LENGTH = 12;
@@ -37,7 +34,14 @@ const RULES = [
 	{
 		category: 'pieds',
 		subcategory: 'chaussures-basses',
-		keywords: ['basket', 'sandale', 'chaussures de securite', 'chaussure de securite', 'chaussures basse', 'chaussure basse'],
+		keywords: [
+			'basket',
+			'sandale',
+			'chaussures de securite',
+			'chaussure de securite',
+			'chaussures basse',
+			'chaussure basse',
+		],
 	},
 
 	// Headwear.
@@ -49,25 +53,39 @@ const RULES = [
 
 	// Clothing line/collection overrides (checked before the generic garment-type rule below).
 	{ category: 'corps', subcategory: 'vetements-haute-visibilite', keywords: ['high vis', 'hi-vis', 'fluo'] },
-	{ category: 'corps', subcategory: 'vetements-pluie', keywords: ["vent/pluie/neige", 'vetements de pluie'] },
+	{ category: 'corps', subcategory: 'vetements-pluie', keywords: ['vent/pluie/neige', 'vetements de pluie'] },
 
 	// Generic garment types.
 	{
 		category: 'corps',
 		subcategory: 'vetements-travail',
 		keywords: [
-			'pantalon', 'veste', 'tee shirt', 'sweatershirt', 'short', 'cotte a bretelles',
-			'combinaison', 'gilet', 'polo', 'chemise', 'blouse', 'pirate trousers',
-			'underwear', 'skirt', 'kilt', 'ceinture', 'bretelles', 'genouillere', 'tablier', 'capuche',
+			'pantalon',
+			'veste',
+			'tee shirt',
+			'sweatershirt',
+			'short',
+			'cotte a bretelles',
+			'combinaison',
+			'gilet',
+			'polo',
+			'chemise',
+			'blouse',
+			'pirate trousers',
+			'underwear',
+			'skirt',
+			'kilt',
+			'ceinture',
+			'bretelles',
+			'genouillere',
+			'tablier',
+			'capuche',
 		],
 	},
 ];
 
 function normalize(text) {
-	return text
-		.normalize('NFD')
-		.replace(/[̀-ͯ]/g, '')
-		.toLowerCase();
+	return text.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 }
 
 function classify(fam1l, fam2l, libelle40) {

@@ -33,7 +33,7 @@ export const customisationCopy = {
 		],
 	},
 	compliance: {
-		fr: "Chaque marquage respecte le Règlement (UE) 2016/425 : sur les vêtements haute visibilité, les bandes réfléchissantes obligatoires restent intactes.",
+		fr: 'Chaque marquage respecte le Règlement (UE) 2016/425 : sur les vêtements haute visibilité, les bandes réfléchissantes obligatoires restent intactes.',
 		en: 'Every marking complies with Regulation (EU) 2016/425: on high-visibility garments, the mandatory reflective bands are left intact.',
 	} satisfies Copy,
 	equipmentTitle: {
@@ -138,7 +138,10 @@ export const customisationSteps = {
 			body: 'Nous recommandons le procédé et les emplacements adaptés au support, au volume et aux conditions d’usage.',
 		},
 		{ title: 'Validation', body: 'Vous validez une maquette précise avant tout lancement en production.' },
-		{ title: 'Production et livraison', body: 'Nous produisons puis livrons vos équipements dans les délais convenus.' },
+		{
+			title: 'Production et livraison',
+			body: 'Nous produisons puis livrons vos équipements dans les délais convenus.',
+		},
 	],
 	en: [
 		{ title: 'Choose your equipment', body: 'You pick the PPE and garments to mark according to your activity.' },

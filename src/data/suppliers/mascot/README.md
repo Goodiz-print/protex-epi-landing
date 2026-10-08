@@ -12,12 +12,12 @@ modification des routes ni des composants**.
 
 ## 1. Fichiers du dossier
 
-| Fichier | Rôle | Versionné ? |
-|---|---|---|
-| `MASCOT_extended_productdata_FR.csv` | **Maître** — 291 Mo, 96 colonnes, ~41 399 lignes (1/variante EAN), ~937 produits. Images, composition, type, tailles, description. | ❌ gitignoré (trop volumineux, local seulement) |
-| `Produits-Table 1.csv` | Prix **2025 + 2026** propres + nom commercial. ~3 047 articles (1 ligne/taille). | ❌ gitignoré |
-| `Retouches-Table 1.csv` | Services de retouche (poches genoux, reconditionnement…). **Non-produits, ignoré.** | ❌ gitignoré |
-| `mascot-products.slim.csv` | **CSV allégé** produit par `scripts/prepare-mascot-csv.mjs` — 33 Mo, 12 colonnes. Intermédiaire local, lu uniquement par `scripts/generate-catalog-data.mjs`. | ❌ gitignoré |
+| Fichier                              | Rôle                                                                                                                                                          | Versionné ?                                     |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
+| `MASCOT_extended_productdata_FR.csv` | **Maître** — 291 Mo, 96 colonnes, ~41 399 lignes (1/variante EAN), ~937 produits. Images, composition, type, tailles, description.                            | ❌ gitignoré (trop volumineux, local seulement) |
+| `Produits-Table 1.csv`               | Prix **2025 + 2026** propres + nom commercial. ~3 047 articles (1 ligne/taille).                                                                              | ❌ gitignoré                                    |
+| `Retouches-Table 1.csv`              | Services de retouche (poches genoux, reconditionnement…). **Non-produits, ignoré.**                                                                           | ❌ gitignoré                                    |
+| `mascot-products.slim.csv`           | **CSV allégé** produit par `scripts/prepare-mascot-csv.mjs` — 33 Mo, 12 colonnes. Intermédiaire local, lu uniquement par `scripts/generate-catalog-data.mjs`. | ❌ gitignoré                                    |
 
 Format des exports bruts : **UTF-8, délimiteur `;`, décimales à virgule** (`132,95`), retours
 CRLF, champs multi-lignes entre guillemets. ⚠️ Plusieurs en-têtes contiennent des **espaces
@@ -43,18 +43,18 @@ distinctes du groupe (informationnelles, non commandables — le site est une vi
 
 Schéma cible : `src/content/schemas/product.ts`.
 
-| Champ `Product` | Source (dans le slim CSV / extended) |
-|---|---|
-| clé de groupe | `produitQualiteColoris` (extended `Numéro de produit-qualité-coloris`) |
-| `styleCode` | `produitQualite` (`Numéro de produit-qualité`) |
-| `colour` | `coloris` (`Coloris`) |
-| `name` | `nom` = `NOM DE PRODUIT` de Produits-Table (jointure EAN) ; repli `Nom du produit (ancien)` |
-| `description` | `texteTechnique` (`Texte technique`) ; repli `qualite` (composition) |
-| `price` | **min** des `prix2026` du groupe (`NEW - PRIX 2026 BRUT H.T.`, jointure EAN). Le prix varie par taille → on affiche le plus bas (« à partir de »). |
-| `imageUrl` | `image1000` — 1ʳᵉ URL de `Images produit 1 000 px` (`https://pimage.mascot.fr/…`) |
-| `sizes` | `taille` (`Taille UE`) collapsé sur le groupe |
-| `category` / `subcategory` | via `src/data/category-mapping.mascot.json`, clé = `produit` |
-| `sourceSkus` | `ean` (`Numéro EAN`) de chaque ligne |
+| Champ `Product`            | Source (dans le slim CSV / extended)                                                                                                               |
+| -------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| clé de groupe              | `produitQualiteColoris` (extended `Numéro de produit-qualité-coloris`)                                                                             |
+| `styleCode`                | `produitQualite` (`Numéro de produit-qualité`)                                                                                                     |
+| `colour`                   | `coloris` (`Coloris`)                                                                                                                              |
+| `name`                     | `nom` = `NOM DE PRODUIT` de Produits-Table (jointure EAN) ; repli `Nom du produit (ancien)`                                                        |
+| `description`              | `texteTechnique` (`Texte technique`) ; repli `qualite` (composition)                                                                               |
+| `price`                    | **min** des `prix2026` du groupe (`NEW - PRIX 2026 BRUT H.T.`, jointure EAN). Le prix varie par taille → on affiche le plus bas (« à partir de »). |
+| `imageUrl`                 | `image1000` — 1ʳᵉ URL de `Images produit 1 000 px` (`https://pimage.mascot.fr/…`)                                                                  |
+| `sizes`                    | `taille` (`Taille UE`) collapsé sur le groupe                                                                                                      |
+| `category` / `subcategory` | via `src/data/category-mapping.mascot.json`, clé = `produit`                                                                                       |
+| `sourceSkus`               | `ean` (`Numéro EAN`) de chaque ligne                                                                                                               |
 
 ### Jointure prix + nom (par EAN)
 

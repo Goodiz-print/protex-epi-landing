@@ -17,9 +17,9 @@ const t = useTranslations(lang);
 const quoteHref = `${getQuoteUrl(lang)}?product=${encodeURIComponent(product.name)}&sku=${encodeURIComponent(product.styleCode)}`;
 
 // price 0 = donnée fournisseur cassée : ignorée pour l'affichage.
-const positivePrices = (colourways.length > 0 ? colourways.map((colourway) => colourway.price) : [product.price]).filter(
-	(price) => price > 0,
-);
+const positivePrices = (
+	colourways.length > 0 ? colourways.map((colourway) => colourway.price) : [product.price]
+).filter((price) => price > 0);
 const priceLabel =
 	positivePrices.length > 0
 		? formatPriceRange(Math.min(...positivePrices), Math.max(...positivePrices), lang)
@@ -45,54 +45,58 @@ const supplierLabels: Record<string, string> = { portwest: 'Portwest', blaklader
 	</div>
 	<div>
 		<h1 class="font-heading text-3xl font-bold text-gray-900">{product.name}</h1>
-		<p class="mt-2 text-sm text-gray-500">{t('product.number')}: {product.styleCode}</p>
-		<p class="mt-4 text-xl font-bold text-gray-900" data-pagefind-meta="price">{priceLabel}</p>
+		<p class="mt-2 text-sm text-gray-500">
+			{t('product.number')}: {product.styleCode}
+		</p>
+		<p class="mt-4 text-xl font-bold text-gray-900" data-pagefind-meta="price">
+			{priceLabel}
+		</p>
 
-		{
-			otherColourways.length > 0 ? (
-				<div class="mt-5">
-					<p class="text-sm font-medium text-gray-500">
-						{t('catalog.colourLabel')}: <span class="text-gray-900">{product.colour}</span>
-					</p>
-					<ul class="mt-2 flex flex-wrap gap-2">
-						{otherColourways.map((colourway) => (
-							<li>
-								<a
-									href={getProductUrl(lang, colourway.category, colourway.subcategory, colourway.slug)}
-									title={colourway.colour}
-									aria-current={colourway.id === product.id ? 'page' : undefined}
-									class={`block h-14 w-14 overflow-hidden rounded-md border-2 bg-gray-50 ${
-										colourway.id === product.id ? 'border-brand' : 'border-gray-200 hover:border-gray-400'
-									}`}
-								>
-									<img
-										src={colourway.imageUrl}
-										width="56"
-										height="56"
-										alt={colourway.colour}
-										loading="lazy"
-										decoding="async"
-										class="h-full w-full object-contain"
-										onerror="this.onerror=null;this.src='/images/product-placeholder.svg';"
-									/>
-								</a>
-							</li>
-						))}
-					</ul>
-				</div>
-			) : (
-				<p class="mt-5 text-sm text-gray-500">
+		{otherColourways.length > 0 ? (
+			<div class="mt-5">
+				<p class="text-sm font-medium text-gray-500">
 					{t('catalog.colourLabel')}: <span class="text-gray-900">{product.colour}</span>
 				</p>
-			)
-		}
+				<ul class="mt-2 flex flex-wrap gap-2">
+					{otherColourways.map((colourway) => (
+						<li>
+							<a
+								href={getProductUrl(lang, colourway.category, colourway.subcategory, colourway.slug)}
+								title={colourway.colour}
+								aria-current={colourway.id === product.id ? 'page' : undefined}
+								class={`block h-14 w-14 overflow-hidden rounded-md border-2 bg-gray-50 ${
+									colourway.id === product.id ? 'border-brand' : 'border-gray-200 hover:border-gray-400'
+								}`}
+							>
+								<img
+									src={colourway.imageUrl}
+									width="56"
+									height="56"
+									alt={colourway.colour}
+									loading="lazy"
+									decoding="async"
+									class="h-full w-full object-contain"
+									onerror="this.onerror=null;this.src='/images/product-placeholder.svg';"
+								/>
+							</a>
+						</li>
+					))}
+				</ul>
+			</div>
+		) : (
+			<p class="mt-5 text-sm text-gray-500">
+				{t('catalog.colourLabel')}: <span class="text-gray-900">{product.colour}</span>
+			</p>
+		)}
 
 		<div class="mt-5">
 			<SizeList lang={lang} sizes={product.sizes} />
 		</div>
 
 		<div class="mt-8">
-			<Button href={quoteHref} variant="primary">{t('catalog.requestQuote')}</Button>
+			<Button href={quoteHref} variant="primary">
+				{t('catalog.requestQuote')}
+			</Button>
 		</div>
 
 		<div class="product-tabs mt-10">
@@ -130,22 +134,18 @@ const supplierLabels: Record<string, string> = { portwest: 'Portwest', blaklader
 							<th class="py-2 pr-4 text-left font-medium text-gray-500">{t('catalog.colourLabel')}</th>
 							<td class="py-2 text-gray-900">{product.colour}</td>
 						</tr>
-						{
-							product.sizes.length > 0 && (
-								<tr class="border-b border-gray-200">
-									<th class="py-2 pr-4 text-left font-medium text-gray-500">{t('catalog.sizesAvailable')}</th>
-									<td class="py-2 text-gray-900">{product.sizes.join(', ')}</td>
-								</tr>
-							)
-						}
-						{
-							product.sourceSkus.length > 0 && (
-								<tr>
-									<th class="py-2 pr-4 align-top text-left font-medium text-gray-500">{t('product.skus')}</th>
-									<td class="py-2 text-gray-900">{product.sourceSkus.join(', ')}</td>
-								</tr>
-							)
-						}
+						{product.sizes.length > 0 && (
+							<tr class="border-b border-gray-200">
+								<th class="py-2 pr-4 text-left font-medium text-gray-500">{t('catalog.sizesAvailable')}</th>
+								<td class="py-2 text-gray-900">{product.sizes.join(', ')}</td>
+							</tr>
+						)}
+						{product.sourceSkus.length > 0 && (
+							<tr>
+								<th class="py-2 pr-4 align-top text-left font-medium text-gray-500">{t('product.skus')}</th>
+								<td class="py-2 text-gray-900">{product.sourceSkus.join(', ')}</td>
+							</tr>
+						)}
 					</tbody>
 				</table>
 			</section>

@@ -29,22 +29,20 @@ const slides = [
 		des slides tronqués sur les grands écrans). */}
 	<div class="relative aspect-[13/5] w-full overflow-hidden">
 		<ul class="flex h-full transition-transform duration-700 ease-in-out" data-track>
-			{
-				slides.map((slide, index) => (
-					<li class="relative h-full w-full shrink-0 basis-full">
-						<a href={slide.href} class="block h-full w-full">
-							<Image
-								src={slide.image}
-								alt=""
-								width={2000}
-								height={769}
-								class="h-full w-full object-cover object-center"
-								loading={index === 0 ? 'eager' : 'lazy'}
-							/>
-						</a>
-					</li>
-				))
-			}
+			{slides.map((slide, index) => (
+				<li class="relative h-full w-full shrink-0 basis-full">
+					<a href={slide.href} class="block h-full w-full">
+						<Image
+							src={slide.image}
+							alt=""
+							width={2000}
+							height={769}
+							class="h-full w-full object-cover object-center"
+							loading={index === 0 ? 'eager' : 'lazy'}
+						/>
+					</a>
+				</li>
+			))}
 		</ul>
 
 		<button
@@ -77,16 +75,14 @@ const slides = [
 		</button>
 
 		<div class="absolute inset-x-0 bottom-4 flex justify-center gap-2" data-dots>
-			{
-				slides.map((_, index) => (
-					<button
-						type="button"
-						data-dot={index}
-						aria-label={`${t('home.hero.goToSlide')} ${index + 1}`}
-						class="h-2.5 w-2.5 rounded-full bg-white/50 transition-colors data-[active=true]:bg-white"
-					/>
-				))
-			}
+			{slides.map((_, index) => (
+				<button
+					type="button"
+					data-dot={index}
+					aria-label={`${t('home.hero.goToSlide')} ${index + 1}`}
+					class="h-2.5 w-2.5 rounded-full bg-white/50 transition-colors data-[active=true]:bg-white"
+				/>
+			))}
 		</div>
 	</div>
 </section>

@@ -21,15 +21,78 @@ const UNCLASSIFIED = { category: 'a-trier', subcategory: null };
 // Ordered most-specific-first: the first matching rule wins.
 const RULES = [
 	// MAINS
-	{ category: 'mains', subcategory: 'outils-coupe', keywords: ['cutter', 'couteau', 'lame de securite', 'outil de coupe'] },
-	{ category: 'mains', subcategory: 'hygiene-sante', keywords: ['hygiene', 'gel hydroalcoolique', 'savon', 'creme', 'pommade', 'secours', 'secourisme', 'lingette'] },
-	{ category: 'mains', subcategory: 'gants-protection', keywords: ['gant', 'glove', 'glv', 'gauntlet', 'manchette', 'mitaine'] },
+	{
+		category: 'mains',
+		subcategory: 'outils-coupe',
+		keywords: ['cutter', 'couteau', 'lame de securite', 'outil de coupe'],
+	},
+	{
+		category: 'mains',
+		subcategory: 'hygiene-sante',
+		keywords: ['hygiene', 'gel hydroalcoolique', 'savon', 'creme', 'pommade', 'secours', 'secourisme', 'lingette'],
+	},
+	{
+		category: 'mains',
+		subcategory: 'gants-protection',
+		keywords: ['gant', 'glove', 'glv', 'gauntlet', 'manchette', 'mitaine'],
+	},
 
 	// TETE (order matters: ouie/yeux/respiratoire before generic casque)
-	{ category: 'tete', subcategory: 'protection-ouie', keywords: ["bouchon d'oreille", 'bouchon auditif', 'anti-bruit', 'casque anti-bruit', 'protection auditive', 'bouchons', 'ear plug'] },
-	{ category: 'tete', subcategory: 'protection-yeux', keywords: ['lunette', 'visiere', 'ecran facial', 'surlunette', 'visor', 'eye-shield', 'eye shield', 'goggle', 'glasses'] },
-	{ category: 'tete', subcategory: 'protection-respiratoire', keywords: ['masque', 'respiratoire', 'ffp1', 'ffp2', 'ffp3', 'cartouche filtrante', 'demi-masque'] },
-	{ category: 'tete', subcategory: 'protection-tete', keywords: ['casque', 'casquette anti-heurt', 'bump cap', 'helmet', 'bonnet', 'beanie', 'cagoule', 'balaclava', 'chapka', 'bandeau', 'trucker cap', 'chapeau', 'echarpe', 'hijab', 'tour de cou', 'serre-tete'] },
+	{
+		category: 'tete',
+		subcategory: 'protection-ouie',
+		keywords: [
+			"bouchon d'oreille",
+			'bouchon auditif',
+			'anti-bruit',
+			'casque anti-bruit',
+			'protection auditive',
+			'bouchons',
+			'ear plug',
+		],
+	},
+	{
+		category: 'tete',
+		subcategory: 'protection-yeux',
+		keywords: [
+			'lunette',
+			'visiere',
+			'ecran facial',
+			'surlunette',
+			'visor',
+			'eye-shield',
+			'eye shield',
+			'goggle',
+			'glasses',
+		],
+	},
+	{
+		category: 'tete',
+		subcategory: 'protection-respiratoire',
+		keywords: ['masque', 'respiratoire', 'ffp1', 'ffp2', 'ffp3', 'cartouche filtrante', 'demi-masque'],
+	},
+	{
+		category: 'tete',
+		subcategory: 'protection-tete',
+		keywords: [
+			'casque',
+			'casquette anti-heurt',
+			'bump cap',
+			'helmet',
+			'bonnet',
+			'beanie',
+			'cagoule',
+			'balaclava',
+			'chapka',
+			'bandeau',
+			'trucker cap',
+			'chapeau',
+			'echarpe',
+			'hijab',
+			'tour de cou',
+			'serre-tete',
+		],
+	},
 
 	// CORPS
 	{ category: 'corps', subcategory: 'vetements-haute-visibilite', keywords: ['haute visibilite', 'hi-vis', 'fluo'] },
@@ -38,32 +101,96 @@ const RULES = [
 		category: 'corps',
 		subcategory: 'equipement-antichute',
 		keywords: [
-			'harnais', 'antichute', 'longe', 'ligne de vie', "point d'ancrage", 'mousqueton',
-			'laniere', 'sangle', 'lifeline', 'elingue', 'crochet de securite', 'absorbeur de choc',
+			'harnais',
+			'antichute',
+			'longe',
+			'ligne de vie',
+			"point d'ancrage",
+			'mousqueton',
+			'laniere',
+			'sangle',
+			'lifeline',
+			'elingue',
+			'crochet de securite',
+			'absorbeur de choc',
 		],
 	},
 	{
 		category: 'corps',
 		subcategory: 'vetements-travail',
 		keywords: [
-			'veste', 'pantalon', 'blouse', 'combinaison', 'gilet', 'polaire', 'chemise',
-			'tablier', 'bleu de travail', 'salopette', 'short', 'sweat', 'polo', 't-shirt',
-			'doudoune', 'parka', 'bermuda', 'cotte', 'bretelles', 'jogging', 'jogger',
-			'legging', 'blouson', 'softshell', 'bodywarmer', 'tunique', 'manteau',
-			'trouser', 'jacket', 'coat', 'sous-vetement', 'sous vetement', 'base layer',
-			'thermique', 'pull', 'henley', 'chasuble', 'tee shirt', 'tee-shirt',
-			'ceinture', 'support belt', 'genouillere', 'coudiere',
+			'veste',
+			'pantalon',
+			'blouse',
+			'combinaison',
+			'gilet',
+			'polaire',
+			'chemise',
+			'tablier',
+			'bleu de travail',
+			'salopette',
+			'short',
+			'sweat',
+			'polo',
+			't-shirt',
+			'doudoune',
+			'parka',
+			'bermuda',
+			'cotte',
+			'bretelles',
+			'jogging',
+			'jogger',
+			'legging',
+			'blouson',
+			'softshell',
+			'bodywarmer',
+			'tunique',
+			'manteau',
+			'trouser',
+			'jacket',
+			'coat',
+			'sous-vetement',
+			'sous vetement',
+			'base layer',
+			'thermique',
+			'pull',
+			'henley',
+			'chasuble',
+			'tee shirt',
+			'tee-shirt',
+			'ceinture',
+			'support belt',
+			'genouillere',
+			'coudiere',
 		],
 	},
 
 	// PIEDS (specific before generic)
-	{ category: 'pieds', subcategory: 'accessoires-chaussures', keywords: ['lacet', 'semelle', 'sur-chaussure', 'guetre', 'chaussette', 'sock'] },
-	{ category: 'pieds', subcategory: 'bottes', keywords: ['botte', 'boot', 'waders', 'cuissarde', 'rigger', 'wellington'] },
+	{
+		category: 'pieds',
+		subcategory: 'accessoires-chaussures',
+		keywords: ['lacet', 'semelle', 'sur-chaussure', 'guetre', 'chaussette', 'sock'],
+	},
+	{
+		category: 'pieds',
+		subcategory: 'bottes',
+		keywords: ['botte', 'boot', 'waders', 'cuissarde', 'rigger', 'wellington'],
+	},
 	{ category: 'pieds', subcategory: 'chaussures-hautes', keywords: ['chaussure haute', 'brodequin', 'montante'] },
 	{
 		category: 'pieds',
 		subcategory: 'chaussures-basses',
-		keywords: ['chaussure basse', 'basket de securite', 'chaussure', 'basket', 'sandale', 'sandal', 'mocassin', 'sabot', 'trainer'],
+		keywords: [
+			'chaussure basse',
+			'basket de securite',
+			'chaussure',
+			'basket',
+			'sandale',
+			'sandal',
+			'mocassin',
+			'sabot',
+			'trainer',
+		],
 	},
 
 	// USAGE UNIQUE
@@ -71,10 +198,7 @@ const RULES = [
 ];
 
 function normalize(text) {
-	return text
-		.normalize('NFD')
-		.replace(/[̀-ͯ]/g, '')
-		.toLowerCase();
+	return text.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 }
 
 function classify(product, description) {

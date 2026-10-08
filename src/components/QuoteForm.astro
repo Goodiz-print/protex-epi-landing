@@ -22,7 +22,9 @@ const t = useTranslations(lang);
 
 	{/* Piège à bots : masqué visuellement et retiré de l'ordre de tabulation. */}
 	<p class="hidden" aria-hidden="true">
-		<label>{t('quote.form.honeypot')} <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+		<label>
+			{t('quote.form.honeypot')} <input name="bot-field" tabindex="-1" autocomplete="off" />
+		</label>
 	</p>
 
 	{/* Horodatage d'ouverture de la page, posé par le script ci-dessous : la

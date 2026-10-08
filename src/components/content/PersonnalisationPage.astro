@@ -56,26 +56,28 @@ const equipmentAlts = {
 			<p class="text-lg font-medium text-gray-900">{copy.lead[lang]}</p>
 			<p>{copy.intro[lang]}</p>
 			<ul class="space-y-2">
-				{
-					copy.highlights[lang].map((item) => (
-						<li class="flex gap-3">
-							<svg class="mt-1 h-4 w-4 shrink-0 text-brand" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-								<path
-									fill-rule="evenodd"
-									d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-									clip-rule="evenodd"
-								/>
-							</svg>
-							{item}
-						</li>
-					))
-				}
+				{copy.highlights[lang].map((item) => (
+					<li class="flex gap-3">
+						<svg class="mt-1 h-4 w-4 shrink-0 text-brand" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+							<path
+								fill-rule="evenodd"
+								d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+								clip-rule="evenodd"
+							/>
+						</svg>
+						{item}
+					</li>
+				))}
 			</ul>
 			<p>{copy.compliance[lang]}</p>
 		</div>
 		<Image
 			src={equipeChantier}
-			alt={lang === 'en' ? 'Team wearing PPE customised with their company logo' : "Équipe portant des EPI personnalisés au logo de l'entreprise"}
+			alt={
+				lang === 'en'
+					? 'Team wearing PPE customised with their company logo'
+					: "Équipe portant des EPI personnalisés au logo de l'entreprise"
+			}
 			width={1200}
 			height={800}
 			class="rounded-lg"
@@ -85,36 +87,42 @@ const equipmentAlts = {
 	<h2 class="mb-3 mt-12 font-heading text-2xl font-bold uppercase text-gray-900">{copy.equipmentTitle[lang]}</h2>
 	<p class="mb-6 text-gray-700">{copy.equipmentIntro[lang]}</p>
 	<div class="grid gap-4 sm:grid-cols-3">
-		{
-			customisationEquipment[lang].map((item, index) => (
-				<figure class="overflow-hidden rounded-lg border border-gray-200">
-					{/* Carré plein (sources 1408²) : le logo brodé reste entièrement visible.
+		{customisationEquipment[lang].map((item, index) => (
+			<figure class="overflow-hidden rounded-lg border border-gray-200">
+				{/* Carré plein (sources 1408²) : le logo brodé reste entièrement visible.
 						La photo de dos (portrait) est recadrée sur le haut du dos, où est le logo. */}
-					<Image
-						src={equipmentImages[index]}
-						alt={equipmentAlts[lang][index]}
-						width={800}
-						height={800}
-						class:list={['aspect-square w-full object-cover', index === 1 ? 'object-[center_28%]' : 'object-center']}
-					/>
-					<figcaption class="p-4 text-sm text-gray-700">
-						<strong class="text-gray-900">{item.title}</strong> — {item.body}
-					</figcaption>
-				</figure>
-			))
-		}
+				<Image
+					src={equipmentImages[index]}
+					alt={equipmentAlts[lang][index]}
+					width={800}
+					height={800}
+					class:list={['aspect-square w-full object-cover', index === 1 ? 'object-[center_28%]' : 'object-center']}
+				/>
+				<figcaption class="p-4 text-sm text-gray-700">
+					<strong class="text-gray-900">{item.title}</strong> — {item.body}
+				</figcaption>
+			</figure>
+		))}
 	</div>
 	<div class="mt-4 grid gap-4 sm:grid-cols-2">
 		<Image
 			src={equipeGroupe}
-			alt={lang === 'en' ? 'Site team in customised helmets and high-visibility jackets' : 'Équipe de chantier en casques et vestes haute visibilité personnalisés'}
+			alt={
+				lang === 'en'
+					? 'Site team in customised helmets and high-visibility jackets'
+					: 'Équipe de chantier en casques et vestes haute visibilité personnalisés'
+			}
 			width={1200}
 			height={800}
 			class="h-56 w-full rounded-lg object-cover"
 		/>
 		<Image
 			src={equipeBureau}
-			alt={lang === 'en' ? 'Office team in a customised polo and bodywarmer' : 'Équipe tertiaire en polo et bodywarmer personnalisés'}
+			alt={
+				lang === 'en'
+					? 'Office team in a customised polo and bodywarmer'
+					: 'Équipe tertiaire en polo et bodywarmer personnalisés'
+			}
 			width={1200}
 			height={800}
 			class="h-56 w-full rounded-lg object-cover"
@@ -124,60 +132,65 @@ const equipmentAlts = {
 	<h2 class="mb-3 mt-12 font-heading text-2xl font-bold uppercase text-gray-900">{copy.techniquesTitle[lang]}</h2>
 	<p class="mb-6 text-gray-700">{copy.techniquesIntro[lang]}</p>
 	<div class="grid gap-4 sm:grid-cols-3">
-		{
-			customisationTechniques[lang].map((technique, index) => (
-				<article class="overflow-hidden rounded-lg border border-gray-200">
-					{/* Sources carrées affichées entières : le « Mon logo » n'est plus coupé. */}
-					<Image src={techniqueImages[index]} alt={`${technique.name}`} width={800} height={800} class="aspect-square w-full object-cover" />
-					<div class="p-4">
-						<h3 class="mb-2 font-heading text-lg font-bold text-gray-900">{technique.name}</h3>
-						<p class="text-sm text-gray-700">{technique.body}</p>
-					</div>
-				</article>
-			))
-		}
+		{customisationTechniques[lang].map((technique, index) => (
+			<article class="overflow-hidden rounded-lg border border-gray-200">
+				{/* Sources carrées affichées entières : le « Mon logo » n'est plus coupé. */}
+				<Image
+					src={techniqueImages[index]}
+					alt={`${technique.name}`}
+					width={800}
+					height={800}
+					class="aspect-square w-full object-cover"
+				/>
+				<div class="p-4">
+					<h3 class="mb-2 font-heading text-lg font-bold text-gray-900">{technique.name}</h3>
+					<p class="text-sm text-gray-700">{technique.body}</p>
+				</div>
+			</article>
+		))}
 	</div>
 	<p class="mt-4 text-gray-700">
 		{copy.techniquesOutro[lang]}
-		<a href={guideHref} class="font-medium text-brand hover:text-brand-dark">{copy.guideLink[lang]}</a>.
+		<a href={guideHref} class="font-medium text-brand hover:text-brand-dark">
+			{copy.guideLink[lang]}
+		</a>
+		.
 	</p>
 
 	<h2 class="mb-4 mt-12 font-heading text-2xl font-bold uppercase text-gray-900">{copy.stepsTitle[lang]}</h2>
 	<ol class="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-		{
-			customisationSteps[lang].map((step, index) => (
-				<li class="rounded-lg border border-gray-200 p-4">
-					<span class="mb-2 flex h-8 w-8 items-center justify-center rounded-full bg-brand font-heading font-bold text-white">
-						{index + 1}
-					</span>
-					<h3 class="mb-1 font-semibold text-gray-900">{step.title}</h3>
-					<p class="text-sm text-gray-700">{step.body}</p>
-				</li>
-			))
-		}
+		{customisationSteps[lang].map((step, index) => (
+			<li class="rounded-lg border border-gray-200 p-4">
+				<span class="mb-2 flex h-8 w-8 items-center justify-center rounded-full bg-brand font-heading font-bold text-white">
+					{index + 1}
+				</span>
+				<h3 class="mb-1 font-semibold text-gray-900">{step.title}</h3>
+				<p class="text-sm text-gray-700">{step.body}</p>
+			</li>
+		))}
 	</ol>
 
 	<h2 class="mb-4 mt-12 font-heading text-2xl font-bold uppercase text-gray-900">{copy.whyTitle[lang]}</h2>
 	<ul class="grid gap-3 sm:grid-cols-2">
-		{
-			customisationBenefits[lang].map((benefit) => (
-				<li class="flex gap-3 text-gray-700">
-					<svg class="mt-1 h-4 w-4 shrink-0 text-brand" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-						<path
-							fill-rule="evenodd"
-							d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
-							clip-rule="evenodd"
-						/>
-					</svg>
-					{benefit}
-				</li>
-			))
-		}
+		{customisationBenefits[lang].map((benefit) => (
+			<li class="flex gap-3 text-gray-700">
+				<svg class="mt-1 h-4 w-4 shrink-0 text-brand" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+					<path
+						fill-rule="evenodd"
+						d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+						clip-rule="evenodd"
+					/>
+				</svg>
+				{benefit}
+			</li>
+		))}
 	</ul>
 
 	<div class="mt-12 rounded-lg bg-gray-50 p-8 text-center">
 		<p class="mb-4 font-heading text-xl font-bold text-gray-900">{copy.ctaTitle[lang]}</p>
 		<p class="mb-6 text-gray-700">{copy.ctaBody[lang]}</p>
-		<Button href={quoteHref} variant="primary">{copy.ctaButton[lang]}</Button>
+		<Button href={quoteHref} variant="primary">
+			{copy.ctaButton[lang]}
+		</Button>
 	</div>
 </main>

@@ -7,6 +7,9 @@ import { ui } from '~/i18n/ui';
 const lang = 'fr' as const;
 ---
 
-<Layout title={`${standardsCopy.metaTitle[lang]} — ${ui.fr['site.title']}`} description={standardsCopy.metaDescription[lang]}>
+<Layout
+	title={`${standardsCopy.metaTitle[lang]} — ${ui.fr['site.title']}`}
+	description={standardsCopy.metaDescription[lang]}
+>
 	<NormesPage lang={lang} />
 </Layout>

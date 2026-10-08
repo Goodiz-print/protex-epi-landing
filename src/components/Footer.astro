@@ -26,7 +26,10 @@ const aboutLinks = [
 ];
 const customerLinks = [
 	{ href: `${legalPrefix}/faq`, label: t('footer.legal.faq') },
-	{ href: `${legalPrefix}${lang === 'en' ? '/marking-guide' : '/guide-marquage'}`, label: t('footer.legal.markingGuide') },
+	{
+		href: `${legalPrefix}${lang === 'en' ? '/marking-guide' : '/guide-marquage'}`,
+		label: t('footer.legal.markingGuide'),
+	},
 	{ href: `${legalPrefix}${lang === 'en' ? '/privacy' : '/donnees-personnelles'}`, label: t('footer.legal.privacy') },
 	{ href: getQuoteUrl(lang), label: t('home.quote.cta') },
 ];
@@ -42,58 +45,60 @@ const linkClass = 'hover:text-brand';
 			<p class={columnTitleClass}>{t('footer.headOffice.title')}</p>
 			<ul class="space-y-2 text-sm">
 				<li>{t('footer.contact.addressLine')}</li>
-				<li><a href="tel:0557027587" class={linkClass}>05 57 02 75 87</a></li>
 				<li>
-					<a href="mailto:contact@protex-epi.com" class={linkClass}>contact@protex-epi.com</a>
+					<a href="tel:0557027587" class={linkClass}>
+						05 57 02 75 87
+					</a>
+				</li>
+				<li>
+					<a href="mailto:contact@protex-epi.com" class={linkClass}>
+						contact@protex-epi.com
+					</a>
 				</li>
 			</ul>
 		</div>
 		<div>
 			<p class={columnTitleClass}>{t('footer.categories.title')}</p>
 			<ul class="space-y-2 text-sm">
-				{
-					categoryLinks.map((link) => (
-						<li>
-							<a href={link.href} class={linkClass}>
-								{link.label}
-							</a>
-						</li>
-					))
-				}
+				{categoryLinks.map((link) => (
+					<li>
+						<a href={link.href} class={linkClass}>
+							{link.label}
+						</a>
+					</li>
+				))}
 			</ul>
 		</div>
 		<div>
 			<p class={columnTitleClass}>{t('footer.legal.title')}</p>
 			<ul class="space-y-2 text-sm">
-				{
-					aboutLinks.map((link) => (
-						<li>
-							<a href={link.href} class={linkClass}>
-								{link.label}
-							</a>
-						</li>
-					))
-				}
+				{aboutLinks.map((link) => (
+					<li>
+						<a href={link.href} class={linkClass}>
+							{link.label}
+						</a>
+					</li>
+				))}
 			</ul>
 		</div>
 		<div>
 			<p class={columnTitleClass}>{t('footer.customers.title')}</p>
 			<ul class="space-y-2 text-sm">
-				{
-					customerLinks.map((link) => (
-						<li>
-							<a href={link.href} class={linkClass}>
-								{link.label}
-							</a>
-						</li>
-					))
-				}
+				{customerLinks.map((link) => (
+					<li>
+						<a href={link.href} class={linkClass}>
+							{link.label}
+						</a>
+					</li>
+				))}
 			</ul>
 		</div>
 	</div>
 	<div class="border-t border-gray-300">
 		<div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-6 sm:flex-row">
-			<p class="text-sm">© {year} {t('site.title')} — {t('footer.copyright')}</p>
+			<p class="text-sm">
+				© {year} {t('site.title')} — {t('footer.copyright')}
+			</p>
 			<LanguagePicker />
 		</div>
 	</div>

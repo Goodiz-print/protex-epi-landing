@@ -1,0 +1,4 @@
+# Commits de mise en forme seule, ignorés par git blame
+# (git config blame.ignoreRevsFile .git-blame-ignore-revs ; GitHub les ignore d'office).
+# style: appliquer Prettier
+35b4be13aa2b1f20f44665a1ee683475669528bc

@@ -8,6 +8,13 @@ astro dev --background
 
 Manage the background server with `astro dev stop`, `astro dev status`, and `astro dev logs`.
 
+Before pushing, run what the CI (`.github/workflows/ci.yml`) runs: `pnpm astro check`,
+`pnpm test` (Node's built-in test runner, files in `tests/`) and `pnpm format:check`
+(`pnpm format` fixes it). The site build itself runs on Netlify deploy previews.
+`tests/catalog-data.test.mjs` checks the committed catalog: unique ids/slugs, known
+categories, overrides applied — after editing an override file, run the matching catalog
+script before committing.
+
 ## Catalog data
 
 Detailed, step-by-step documentation of every catalog script (inputs, outputs, procedures)
@@ -16,7 +23,8 @@ lives in `docs/scripts-catalogue.md`. npm aliases: `pnpm run generate:catalog`,
 `pnpm run check:images`.
 
 The product catalog is **not** built from the supplier CSVs at build time. The raw
-exports live in `src/data/suppliers/` and are **gitignored**; what is committed and
+exports live in `src/data/suppliers/` and are **gitignored** (every file there but the
+README files — never commit an export, whatever its format); what is committed and
 what `astro dev`/`astro build` actually read is the pre-computed
 `src/data/catalog/products.<supplier>.json` (loaded by
 `src/content/loaders/json-products-loader.ts`).

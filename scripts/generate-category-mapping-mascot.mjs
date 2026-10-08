@@ -33,10 +33,18 @@ const RULES = [
 	{ category: 'pieds', subcategory: 'accessoires-chaussures', keywords: ['semelle', 'lacet', 'chaussette'] },
 
 	// --- Tête (textile headwear — à revoir, ce ne sont pas des casques de protection). ---
-	{ category: 'tete', subcategory: 'protection-tete', keywords: ['bonnet', 'casquette', 'beret', 'chapeau', 'cagoule'] },
+	{
+		category: 'tete',
+		subcategory: 'protection-tete',
+		keywords: ['bonnet', 'casquette', 'beret', 'chapeau', 'cagoule'],
+	},
 
 	// --- Corps — spécifiques avant la règle générique vêtements. ---
-	{ category: 'corps', subcategory: 'vetements-haute-visibilite', keywords: ['circulation', 'haute visibilite', 'hi-vis', 'fluo'] },
+	{
+		category: 'corps',
+		subcategory: 'vetements-haute-visibilite',
+		keywords: ['circulation', 'haute visibilite', 'hi-vis', 'fluo'],
+	},
 	{ category: 'corps', subcategory: 'vetements-pluie', keywords: ['pluie'] },
 
 	// --- Corps — vêtements de travail (le gros du catalogue). ---
@@ -44,10 +52,30 @@ const RULES = [
 		category: 'corps',
 		subcategory: 'vetements-travail',
 		keywords: [
-			'pantalon', 'pantacourt', 'short', 'salopette', 'combinaison', 'veste', 'gilet',
-			't-shirt', 'polo', 'sweatshirt', 'sweat', 'pull', 'tricot', 'calecon', 'chemise',
-			'blouse', 'jupe', 'jeans', 'parka', 'softshell', 'polaire', 'micropolaire',
-			'thermique', 'grand froid',
+			'pantalon',
+			'pantacourt',
+			'short',
+			'salopette',
+			'combinaison',
+			'veste',
+			'gilet',
+			't-shirt',
+			'polo',
+			'sweatshirt',
+			'sweat',
+			'pull',
+			'tricot',
+			'calecon',
+			'chemise',
+			'blouse',
+			'jupe',
+			'jeans',
+			'parka',
+			'softshell',
+			'polaire',
+			'micropolaire',
+			'thermique',
+			'grand froid',
 		],
 	},
 
@@ -59,17 +87,12 @@ const RULES = [
 	{
 		category: 'corps',
 		subcategory: 'vetements-travail',
-		keywords: [
-			'capuche', 'genouillere', 'tour de cou', 'ceinture', 'porte-badge', 'porte-marteau', 'poche',
-		],
+		keywords: ['capuche', 'genouillere', 'tour de cou', 'ceinture', 'porte-badge', 'porte-marteau', 'poche'],
 	},
 ];
 
 function normalize(text) {
-	return text
-		.normalize('NFD')
-		.replace(/[̀-ͯ]/g, '')
-		.toLowerCase();
+	return text.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 }
 
 function classify(type) {

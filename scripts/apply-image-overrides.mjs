@@ -31,7 +31,9 @@ for (const supplier of SUPPLIERS) {
 	const { changed, unknown } = applyImageOverrides(products, overrides);
 	if (changed > 0) writeCatalog(catalogPath, products);
 
-	console.log(`${supplier}: ${Object.keys(overrides).length} image override(s) — ${changed} catalog product(s) updated`);
+	console.log(
+		`${supplier}: ${Object.keys(overrides).length} image override(s) — ${changed} catalog product(s) updated`,
+	);
 	if (unknown.length > 0) {
 		console.warn(`${supplier}: ${unknown.length} override(s) match no catalog product: ${unknown.join(', ')}`);
 	}

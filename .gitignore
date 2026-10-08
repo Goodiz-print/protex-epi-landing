@@ -23,8 +23,11 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
-# Raw supplier exports — source of truth for regenerating the catalog, never committed.
-# They are only needed locally, to run scripts/prepare-mascot-csv.mjs (Mascot) and
-# scripts/generate-catalog-data.mjs. What the site builds from is the generated
-# src/data/catalog/products.<supplier>.json, which IS committed.
-src/data/suppliers/**/*.csv
+# Raw supplier exports (CSV, XLSM, XLSX…) — source of truth for regenerating the catalog,
+# never committed. They are only needed locally, to run scripts/prepare-mascot-csv.mjs
+# (Mascot) and scripts/generate-catalog-data.mjs. What the site builds from is the generated
+# src/data/catalog/products.<supplier>.json, which IS committed. Only the README files that
+# explain each folder are kept (the second line re-includes the folders so they can be).
+src/data/suppliers/**/*
+!src/data/suppliers/**/
+!src/data/suppliers/**/README.md
