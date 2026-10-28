@@ -5,6 +5,7 @@ import assert from 'node:assert/strict';
 import { describe, it } from 'node:test';
 import { buildEntryId, buildProductSlug } from '../scripts/lib/supplier-csv.ts';
 import { hasProductImage, isIncompleteProduct, PLACEHOLDER_IMAGE_URL } from '../src/utils/product-image.ts';
+import { applyPriceMultiplier } from '../src/utils/pricing.ts';
 import { formatSizeRange } from '../src/utils/sizes.ts';
 import { slugify } from '../src/utils/slugify.ts';
 
@@ -74,5 +75,17 @@ describe('product visibility', () => {
 	it('detects the placeholder image', () => {
 		assert.equal(hasProductImage(product), true);
 		assert.equal(hasProductImage({ imageUrl: PLACEHOLDER_IMAGE_URL }), false);
+	});
+});
+
+describe('applyPriceMultiplier', () => {
+	it('multiplies the supplier price by 1.7, rounded to the cent', () => {
+		assert.equal(applyPriceMultiplier(10), 17);
+		assert.equal(applyPriceMultiplier(12.35), 21);
+		assert.equal(applyPriceMultiplier(9.99), 16.98);
+	});
+
+	it('keeps an unknown price (0) at 0', () => {
+		assert.equal(applyPriceMultiplier(0), 0);
 	});
 });

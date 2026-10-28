@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import type { Loader, LoaderContext } from 'astro/loaders';
 import type { Product } from '../schemas/product.ts';
 import { isIncompleteProduct } from '../../utils/product-image.ts';
+import { applyPriceMultiplier } from '../../utils/pricing.ts';
 
 // Reads the pre-computed catalog data written by `scripts/generate-catalog-data.mjs`.
 // All the CSV parsing, joining and category mapping happens in that script, manually,
@@ -40,7 +41,10 @@ async function runSync(options: JsonProductsLoaderOptions, context: LoaderContex
 				skipped++;
 				continue;
 			}
-			const parsedData = await parseData({ id: product.id, data: product });
+			const parsedData = await parseData({
+				id: product.id,
+				data: { ...product, price: applyPriceMultiplier(product.price) },
+			});
 			store.set({ id: product.id, data: parsedData, digest: generateDigest(parsedData) });
 		}
 
